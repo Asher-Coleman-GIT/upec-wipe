@@ -228,8 +228,14 @@ function loadBrokers() {
 }
 
 // Mask secret leaves so they never reach the browser.
+// Every secret leaf config.example.json can define. Adding a credential to the
+// example config without adding it here leaks it verbatim through
+// GET /api/config to anything with dashboard read access — which is how
+// relay.apiKey (SimpleLogin) and hibp.apiKey went unmasked.
 const SECRET_PATHS = [
   ['capsolver', 'apiKey'],
+  ['hibp', 'apiKey'],
+  ['relay', 'apiKey'],
   ['email', 'smtp', 'pass'],
   ['notify', 'webhook'],
 ];
@@ -456,8 +462,19 @@ app.put('/api/config', (req, res) => {
   const merged = mergeConfig(existing, incoming);
   const passphrase = CONFIG_PASSPHRASE;
   const encrypted = isConfigEncrypted({ configPath: CONFIG, encPath: CONFIG_ENC });
+  // Refuse rather than fall back to plaintext. Writing config.json next to an
+  // active config.json.enc put the full PII back on disk in the clear AND had no
+  // effect, because loadConfig() prefers the .enc file — a silent double
+  // failure. Make the operator supply the passphrase instead.
+  if (encrypted && !passphrase) {
+    return res.status(409).json({
+      error: 'Config is encrypted but no passphrase is available to this process. '
+        + 'Restart the dashboard with AIDR_PASSPHRASE set; refusing to write a plaintext config.json.',
+    });
+  }
+
   try {
-    if (encrypted && passphrase) {
+    if (encrypted) {
       // Re-encrypt the merged config and write to the enc file.
       const envelope = secrets.encryptConfig(merged, passphrase);
       writeJsonAtomic(CONFIG_ENC, envelope, 0o600);

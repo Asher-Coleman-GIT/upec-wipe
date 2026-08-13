@@ -16,9 +16,32 @@
  * No personal info lives here — all values come from config.json at runtime.
  */
 
+const _fs = require('fs');
+
 let _cachedConfig = null;
 function _getConfig() {
   if (_cachedConfig) return _cachedConfig;
+
+  // Go through lib/config.js loadConfig() so an encrypted config works. A bare
+  // require('./config.json') returns nothing once --encrypt-config has moved the
+  // PII into config.json.enc, which used to blank every value interpolated below
+  // and silently disable the whole browser opt-out path.
+  //
+  // loadConfig() calls process.exit(1) when no config exists at all, so only
+  // call it once a config file is actually present: requiring this module must
+  // stay safe on a fresh clone (setup, --list, the test suite).
+  try {
+    const { loadConfig, CONFIG_PATH, CONFIG_ENC_PATH } = require('./lib/config');
+    if (_fs.existsSync(CONFIG_ENC_PATH) || _fs.existsSync(CONFIG_PATH)) {
+      _cachedConfig = loadConfig();
+      return _cachedConfig;
+    }
+  } catch (_) {
+    // Missing lib/, unreadable envelope, or no passphrase. watcher.js reports
+    // the real error on its own loadConfig() call; fall through so requiring
+    // broker metadata never throws.
+  }
+
   try {
     _cachedConfig = require('./config.json');
   } catch (_) {
@@ -31,12 +54,48 @@ const config = new Proxy({}, {
   get(_, prop) { return _getConfig()[prop]; },
 });
 
-const { firstName: F, lastName: L, fullName: N, state: ST, city: C, email: E, zip: Z } = new Proxy({}, {
-  get(_, prop) { return (_getConfig().person || {})[prop]; },
-});
-const enc = s => encodeURIComponent(s);
+/**
+ * The person whose values the default export is built from.
+ *
+ * `config.person` is the historical single-person key. `config.persons` is the
+ * multi-person format that lib/config.js getPersonsFromConfig() prefers; a
+ * config using only `persons` has no `config.person`, so without this fallback
+ * every interpolated value below became `undefined` — search URLs read
+ * "?q=undefined" and every formFields value was undefined.
+ */
+function _primaryPerson() {
+  const cfg = _getConfig();
+  if (cfg.person) return cfg.person;
+  if (Array.isArray(cfg.persons) && cfg.persons.length > 0) return cfg.persons[0];
+  return {};
+}
 
-module.exports = [
+// Never interpolate the literal string "undefined" into a URL or a form value.
+// A missing field becomes empty, which fails a lookup honestly (notFound)
+// instead of searching brokers for a person named "undefined".
+const enc = s => encodeURIComponent(s == null ? '' : s);
+
+/**
+ * Build the broker list for one person.
+ *
+ * These values must be resolved per person, not once at module load: watcher.js
+ * loops `for (const person of persons)` and each iteration needs that person's
+ * own name, city, state, zip and email in the search URLs and form fields.
+ * Baking them once meant person B's run submitted person A's PII to the broker.
+ *
+ * @param {object} [person]  defaults to _primaryPerson()
+ * @returns {object[]} a fresh array of fresh broker objects
+ */
+function buildBrokers(person) {
+  const p = person || _primaryPerson();
+  // Coerce missing fields to '' up front. Not every interpolation site below
+  // goes through enc(), so this is what guarantees no template ever renders the
+  // literal string "undefined" into a broker URL or form value.
+  const s = (v) => (v == null ? '' : String(v));
+  const F = s(p.firstName), L = s(p.lastName), N = s(p.fullName);
+  const ST = s(p.state), C = s(p.city), E = s(p.email), Z = s(p.zip);
+
+  return [
 
   // ═══ Priority 1 — California DELETE Act portal (covers all ~500 CA-registered brokers) ═══
 
@@ -526,4 +585,13 @@ module.exports = [
     priority: 1,
   },
 
-];
+  ];
+}
+
+// Default export stays an array so every existing `require('./brokers')` call
+// site keeps working unchanged. `.forPerson(person)` is the per-person build
+// used by watcher.js inside its persons loop.
+const brokers = buildBrokers();
+brokers.forPerson = buildBrokers;
+
+module.exports = brokers;

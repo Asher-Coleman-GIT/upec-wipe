@@ -199,21 +199,26 @@ async function handlePrivacyManager(page) {
 // ─── Generic form filler ──────────────────────────────────────────────────────
 
 /**
- * Resolve the active person from config, supporting both single-person
- * ({ person: {...} }) and multi-person ({ persons: [...] }) configs.
- * Generic brokers are domain-level opt-outs; using persons[0] is acceptable
- * and matches the prior single-person behavior.
+ * Resolve the person whose details go into generic opt-out forms.
+ *
+ * Prefer an explicit person: fillGenericForm() submits a real name, email, state
+ * and zip, so "generic" does not mean person-agnostic. Falling back to
+ * config.person / persons[0] keeps older call sites (and single-person setups)
+ * working unchanged.
+ *
+ * @param {object} [person] the person the caller is currently processing
  * @returns {{ firstName, lastName, fullName, email, state, zip }}
  */
-function activePerson() {
+function activePerson(person) {
+  if (person) return person;
   const cfg = getConfig();
   if (cfg.person) return cfg.person;
   if (Array.isArray(cfg.persons) && cfg.persons.length > 0) return cfg.persons[0];
   throw new Error('No person/persons in config.json');
 }
 
-function getFieldMap() {
-  const { firstName: F, lastName: L, fullName: N, email: E, state: ST, zip: Z } = activePerson();
+function getFieldMap(person) {
+  const { firstName: F, lastName: L, fullName: N, email: E, state: ST, zip: Z } = activePerson(person);
   return [
     // email (try first — many sites only need this)
     { selectors: ['input[type="email"]', 'input[name*="email" i]', 'input[placeholder*="email" i]'], value: E },
@@ -236,9 +241,9 @@ function getFieldMap() {
   ];
 }
 
-async function fillGenericForm(page) {
+async function fillGenericForm(page, person) {
   let filledAny = false;
-  for (const field of getFieldMap()) {
+  for (const field of getFieldMap(person)) {
     if (field.special === 'selectDeleteOrOptOut') {
       // Try to pick "Delete", "Opt-Out", or "Do Not Sell" from a dropdown
       for (const sel of field.selectors) {
@@ -299,7 +304,11 @@ async function submitForm(page) {
 
 // ─── Process one generic URL ──────────────────────────────────────────────────
 
-async function processGenericUrl(page, broker, state, dryRun = false, injectedDeadSet) {
+async function processGenericUrl(page, broker, state, dryRun = false, injectedDeadSet, opts = {}) {
+  // The person whose PII gets typed in, and the state key their history lives
+  // under. Defaults keep single-person and older call sites identical.
+  const person = opts.person;
+  const key = opts.stateKey || broker.name;
   // Allowlist: the user explicitly wants to stay listed on this host, so never
   // navigate or submit. Returned before any network request.
   let allowCfg = null;
@@ -310,7 +319,7 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
 
   // WP4: if the entry is in pending-confirmation state, use the shorter 14-day
   // re-check window so the user has a chance to click the confirmation link.
-  const entry = state.optOuts[broker.name];
+  const entry = state.optOuts[key];
   if (entry) {
     const stamp = entry.lastAttempt || entry.lastSuccess;
     if (stamp) {
@@ -364,10 +373,18 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
     // Strategy 1: click "Do Not Sell" link
     const clicked = await clickDoNotSell(page);
     if (clicked) {
-      // After clicking, try to fill any follow-up form
-      await fillGenericForm(page);
-      await submitForm(page);
-      return finalize('Do Not Sell clicked');
+      // Clicking that link is not an opt-out. It usually opens a modal or a
+      // follow-up page. This branch used to ignore both return values below and
+      // report success unconditionally, which earned a recordSuccess() and a
+      // 90-day cooldown for a broker that received nothing.
+      await fillGenericForm(page, person);
+      const submitted = await submitForm(page);
+      if (submitted) return finalize('Do Not Sell clicked, form submitted');
+      // The click may still have flipped a preference with no form at all, so a
+      // confirmation page counts. Otherwise a human has to finish it.
+      const confirmed = await detectConfirmationRequired(page);
+      if (confirmed.pending) return { status: 'pending_confirm', detail: confirmed.snippet || 'Do Not Sell clicked, confirmation required' };
+      return { status: 'manual', detail: 'Do Not Sell clicked but nothing was submitted — finish this one by hand' };
     }
 
     // Strategy 2: OneTrust / TrustArc privacy manager
@@ -375,12 +392,16 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
     if (managed) return finalize('Privacy manager opted out');
 
     // Strategy 3: fill form
-    const filled = await fillGenericForm(page);
+    const filled = await fillGenericForm(page, person);
     if (filled) {
       const submitted = await submitForm(page);
       if (submitted) return finalize('Form submitted');
-      // Filled but no submit button found — still counts as partial
-      return { status: 'success', detail: 'Form filled (no submit button found)' };
+      // Filled but no submit control found. This is NOT a success: nothing was
+      // sent to the broker. Reporting it as one would call recordSuccess(),
+      // stamp lastSuccess, and suppress the broker for RECHECK_DAYS — telling
+      // the user their data was removed when no request ever left the machine.
+      // 'manual' keeps the entry due and surfaces it in the manual list.
+      return { status: 'manual', detail: 'Form filled but no submit control found — finish this one by hand' };
     }
 
     // Strategy 4: look for a DSAR / privacy request link on privacy policy pages
@@ -498,6 +519,14 @@ function classifyOutcome(status, detail) {
 
 async function runGenericBrokers(context, explicitBrokerHosts, state, logResult, recordSuccess, opts = {}) {
   const dryRun = !!opts.dryRun;
+  // Which person this pass is for. fillGenericForm() submits a real name and
+  // email, so a household needs one pass per person: previously the pass ran once
+  // with persons[0] and keyed state on the bare broker name, which left everyone
+  // else unsubmitted while marking the broker done for all of them.
+  const { stateKey } = require('./lib/config');
+  const person = activePerson(opts.person);
+  const personCount = opts.personCount || 1;
+  const keyFor = (name) => stateKey(name, person, personCount);
   // Allow tests to inject a custom broker list and/or process function.
   const brokers = opts.injectedBrokers !== undefined
     ? opts.injectedBrokers
@@ -539,7 +568,7 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
 
       let result;
       try {
-        result = await processFn(page, broker, state, dryRun);
+        result = await processFn(page, broker, state, dryRun, opts.injectedDeadSet, { person, stateKey: keyFor(broker.name) });
       } catch (err) {
         // One broker must never abort the whole run or skip the cleanup below.
         result = { status: 'error', detail: (err && err.message ? err.message.slice(0, 80) : 'error') };
@@ -560,16 +589,19 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
         stats[bucket] = (stats[bucket] || 0) + 1;
       }
 
+      // All three record under the per-person key so one household member's
+      // success never suppresses another's submission.
+      const recordKey = keyFor(broker.name);
       if (result.status === 'success') {
-        recordSuccess(broker.name, result.detail || '');
+        recordSuccess(recordKey, result.detail || '');
       } else if (result.status === 'pending_confirm') {
         const { recordPendingConfirmation } = require('./lib/config');
-        recordPendingConfirmation(broker.name, result.detail || '');
+        recordPendingConfirmation(recordKey, result.detail || '');
       } else if (result.status === 'error' || result.status === 'dead') {
         const { recordFailure } = require('./lib/config');
         // B24: record the real status so defunct/drift can tell a gone site
         // ('dead') from a transient error, rather than collapsing both to 'error'.
-        recordFailure(broker.name, result.status === 'dead' ? 'dead' : 'error');
+        recordFailure(recordKey, result.status === 'dead' ? 'dead' : 'error');
       }
 
       await prunePopups(); // reap any popups / tabs this broker opened
@@ -603,4 +635,4 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
   };
 }
 
-module.exports = { runGenericBrokers, loadGenericBrokers, classifyNavError, classifyOutcome, isDeadStatus, loadDeadSet, DEAD_URLS_PATH, _setConfig };
+module.exports = { runGenericBrokers, loadGenericBrokers, processGenericUrl, classifyNavError, classifyOutcome, isDeadStatus, loadDeadSet, DEAD_URLS_PATH, _setConfig };
