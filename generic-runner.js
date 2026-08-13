@@ -523,8 +523,16 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
   // email, so a household needs one pass per person: previously the pass ran once
   // with persons[0] and keyed state on the bare broker name, which left everyone
   // else unsubmitted while marking the broker done for all of them.
+  //
+  // Resolve it LAZILY: do not call activePerson() here. That reads config.json,
+  // which turns "no config on disk" into a hard failure for every caller that
+  // injects its own brokers or process function — CI has no config.json, so an
+  // eager read passed locally and broke the Node matrix. getFieldMap(person)
+  // already falls back to config.person / persons[0] at the moment a form is
+  // actually filled, and stateKey() returns the bare broker name whenever there
+  // is no person or only one, so neither path needs config up front.
   const { stateKey } = require('./lib/config');
-  const person = activePerson(opts.person);
+  const person = opts.person;
   const personCount = opts.personCount || 1;
   const keyFor = (name) => stateKey(name, person, personCount);
   // Allow tests to inject a custom broker list and/or process function.
