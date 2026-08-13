@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * auto-identity-remove — interactive setup
+ * auto-identity-remove - interactive setup
  *
  * Run once: node setup.js
  *
@@ -166,11 +166,11 @@ module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingC
 
 async function main() {
   rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-  console.log('\n🔒 auto-identity-remove — Setup\n');
+  console.log('\n🔒 auto-identity-remove - Setup\n');
   console.log('This will create config.json with your personal info (gitignored).');
   console.log('Run this once. Re-run anytime to update.\n');
 
-  // Load existing config if present — including the encrypted layouts.
+  // Load existing config if present - including the encrypted layouts.
   const prior = readExistingConfig();
   if (prior.encrypted && prior.locked) {
     // Never overwrite an encrypted config we cannot read. Doing so would write
@@ -186,8 +186,8 @@ async function main() {
   const existing = prior.config;
   if (prior.exists) {
     console.log(prior.encrypted
-      ? 'ℹ  Existing encrypted config found — press Enter to keep current values.\n'
-      : 'ℹ  Existing config.json found — press Enter to keep current values.\n');
+      ? 'ℹ  Existing encrypted config found - press Enter to keep current values.\n'
+      : 'ℹ  Existing config.json found - press Enter to keep current values.\n');
   }
   const p = existing.person || {};
 
@@ -209,7 +209,7 @@ async function main() {
   // ── CapSolver ────────────────────────────────────────────────────────────
   console.log('\n── CAPTCHA Solving ────────────────────────────────────────');
   console.log('Some opt-out forms have CAPTCHAs. CapSolver (capsolver.com)');
-  console.log('solves them automatically for ~$0.001 each — pennies per month.');
+  console.log('solves them automatically for ~$0.001 each - pennies per month.');
   console.log('Sign up free at https://capsolver.com and paste your API key below.');
   console.log('Leave blank to skip (those sites go to your manual list instead).\n');
   const capsolverKey = await ask('CapSolver API key', (existing.capsolver||{}).apiKey || '');
@@ -218,7 +218,7 @@ async function main() {
   console.log('\n── Notifications ──────────────────────────────────────────');
   const textTo = await ask('iMessage number to text results to (e.g. +15125550000)', (existing.notify||{}).textTo || '');
   // WP2: webhook works on any OS (ntfy.sh, Slack, Discord-style). Optional.
-  const webhook = await ask('Notification webhook URL — works on any OS, optional (e.g. https://ntfy.sh/my-topic)', (existing.notify||{}).webhook || '');
+  const webhook = await ask('Notification webhook URL - works on any OS, optional (e.g. https://ntfy.sh/my-topic)', (existing.notify||{}).webhook || '');
 
   // ── Profile dir ──────────────────────────────────────────────────────────
   const defaultProfileDir = path.join(os.homedir(), '.config', 'auto-identity-remove');
@@ -240,7 +240,7 @@ async function main() {
   for (const site of acctSites) {
     const hasExisting = accounts[site.key]?.password;
     if (hasExisting) {
-      const update = await confirm(`  ${site.label} — account already stored. Update?`);
+      const update = await confirm(`  ${site.label} - account already stored. Update?`);
       if (!update) continue;
     } else {
       const doSetup = await confirm(`  Set up ${site.label} account? (${site.url})`);

@@ -13,8 +13,8 @@ four P1s that same-family review had missed:
 
 | Found by the outside model | Missed by same-family review because |
 |---|---|
-| `docker build` fails — `groupadd --gid 1001` collides with the base image's `pwuser` | The Docker test asserted the Dockerfile *contained strings*, never that it built. Text-shaped test, text-shaped confidence. |
-| Playwright client 1.60.0 vs base image v1.52.0 — no launchable Chromium | Both numbers were individually plausible. Nothing compared them. |
+| `docker build` fails - `groupadd --gid 1001` collides with the base image's `pwuser` | The Docker test asserted the Dockerfile *contained strings*, never that it built. Text-shaped test, text-shaped confidence. |
+| Playwright client 1.60.0 vs base image v1.52.0 - no launchable Chromium | Both numbers were individually plausible. Nothing compared them. |
 | A `persons: []` config blanks every broker form value; a mixed config submits person A's PII under person B's request | Destructuring a Proxy evaluates its getters immediately. The lazy-config abstraction *looked* lazy. |
 | Generic runner recorded `success` for "form filled but no submit control found" | The line even had a comment explaining why it was fine. It was not fine. |
 
@@ -27,7 +27,7 @@ have already decided the code is correct.
 
 ## The three layers
 
-### 1. Copilot code review — always on, fork-safe
+### 1. Copilot code review - always on, fork-safe
 
 The only layer that covers pull requests from forks, because it needs no secret.
 Enable it as a repository ruleset targeting `main`:
@@ -38,11 +38,11 @@ Settings → Rules → Rulesets → New branch ruleset → target `main` → ena
 Solo-maintainer tuning: leave **Review new pushes** off so a single PR is not
 billed once per push, and leave **Review draft pull requests** off.
 
-Cost note: since 2026-06-01 Copilot code review is usage-based — it bills AI
+Cost note: since 2026-06-01 Copilot code review is usage-based - it bills AI
 credits for tokens *and* consumes GitHub Actions minutes. Budget accordingly
 before turning on per-push review.
 
-### 2. `npm run review:cross-model` — deep pre-merge pass
+### 2. `npm run review:cross-model` - deep pre-merge pass
 
 ```bash
 npm run review:cross-model                              # diff vs origin/main
@@ -58,7 +58,7 @@ to `docs/reviews/cross-model/<date>-<sha>.md` and exits non-zero on a P1.
 Exits 0 with a clear message when `codex` is absent or unauthenticated, and
 honours `SKIP_CROSS_MODEL=1`, so it is safe to wire into a git hook.
 
-### 3. This document — the policy and the record
+### 3. This document - the policy and the record
 
 ## Why there is no OpenAI-key job in CI
 
@@ -67,7 +67,7 @@ than not doing it:
 
 - **`pull_request` from a fork** gets a read-only `GITHUB_TOKEN` and **no access
   to repository or organization secrets**. `${{ secrets.OPENAI_API_KEY }}`
-  resolves to an empty string on every fork PR — so a key-based reviewer job
+  resolves to an empty string on every fork PR - so a key-based reviewer job
   would be decorative precisely where an outside contribution needs review.
 - **`pull_request_target`** does receive secrets, because it runs the workflow
   from the base ref. Reviewing the PR then requires checking out untrusted head
@@ -77,7 +77,7 @@ than not doing it:
 So: no model API key in CI, ever, and no `pull_request_target`. What CI *does*
 run with zero secrets is the `cross-model-gate` job, which checks whether a PR
 touching tier-1 files carries a `Cross-model-review:` trailer, and the `docker`
-job, which builds the image and launches a real browser — the behavioural test
+job, which builds the image and launches a real browser - the behavioural test
 that would have caught two of the four P1s above.
 
 Sources (fetched 2026-08-12):
@@ -85,7 +85,7 @@ Sources (fetched 2026-08-12):
 [configuring automatic Copilot code review](https://docs.github.com/en/copilot/how-tos/agents/copilot-code-review/automatic-code-review),
 [Copilot code review and Actions minutes](https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026/).
 
-## Tier 1 — a second-family review is required before merge
+## Tier 1 - a second-family review is required before merge
 
 Chosen by what actually touches PII, crypto, subprocesses, or inbound untrusted
 data. Not by line count or churn.
@@ -106,7 +106,7 @@ data. Not by line count or churn.
 | `setup.js` | Writes the PII file and installs the scheduler |
 | `Dockerfile`, `docker-compose.yml` | The only realistic deployment path for Linux and NAS users |
 
-Tier 2 — Copilot alone is enough: `watcher.js` orchestration, `lib/report.js`,
+Tier 2 - Copilot alone is enough: `watcher.js` orchestration, `lib/report.js`,
 `lib/logger.js`, `lib/audit.js`, `lib/exposure.js`, `lib/diff.js`, `data/`,
 `docs/`, `test/`.
 
@@ -142,7 +142,7 @@ rejected.
 - The outside model was also wrong here. Of eight findings in the first pass, one
   ("broker definitions capture one person's PII") was right about the mechanism
   but described the wrong consequence, and had to be re-derived by hand before it
-  could be fixed. **Verify every finding against the code before acting on it** —
+  could be fixed. **Verify every finding against the code before acting on it** -
   a confident review from a different model is a lead, not a verdict.
 - The real fix for the two Docker P1s was not a review at all. It was building the
   image. Where a behavioural test is possible, write that instead of asking a

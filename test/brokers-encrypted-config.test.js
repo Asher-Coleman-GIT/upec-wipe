@@ -2,8 +2,8 @@
  * test/brokers-encrypted-config.test.js
  *
  * brokers.js read the config with a bare `require('./config.json')`. After
- * `node watcher.js --encrypt-config` there is no config.json — the PII lives in
- * config.json.enc — so that require threw, the catch substituted
+ * `node watcher.js --encrypt-config` there is no config.json - the PII lives in
+ * config.json.enc - so that require threw, the catch substituted
  * `{ person: {}, persons: [], email: {} }`, and every interpolated value went
  * empty. Measured on the real module: 107 formFields values, 0 non-empty, and
  * search URLs collapsed to "https://www.spokeo.com/search?q=&type=pp&state=".

@@ -17,7 +17,7 @@
  *      getPersonsFromConfig() actually prefers) has no `config.person` at all,
  *      so every value became undefined. searchUrl degraded to
  *      "...?q=undefined&state=undefined" and every formFields entry was
- *      undefined — the browser opt-out path submitted nothing usable for anyone.
+ *      undefined - the browser opt-out path submitted nothing usable for anyone.
  *
  *   2. With both keys present, watcher.js loops `for (const person of persons)`
  *      but the form values stayed pinned to `config.person`, so person B's run
@@ -25,8 +25,8 @@
  *      one household member's PII under another's opt-out request is a privacy
  *      harm caused by the tool itself.
  *
- * The email path was never affected — lib/email.js builds its body from the
- * `person` argument — which is why the suite stayed green.
+ * The email path was never affected - lib/email.js builds its body from the
+ * `person` argument - which is why the suite stayed green.
  */
 
 const { test } = require('node:test');

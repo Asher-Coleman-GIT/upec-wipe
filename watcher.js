@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * auto-identity-remove — watcher.js (thin orchestrator)
+ * auto-identity-remove - watcher.js (thin orchestrator)
  *
  * Automated data broker opt-out runner. Internals live in lib/ (config,
  * logger, notify, captcha, forms, broker-runner, platform).
@@ -697,7 +697,7 @@ if (KNOW_MODE) {
 brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, person: persons[0], capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config });
 
 // Detect brokers that have been consistently unreachable across recent runs.
-// Defunct brokers still run — the warning is informational so the user can
+// Defunct brokers still run - the warning is informational so the user can
 // prune stale entries from brokers.js if the site is truly gone.
 const defunctNames = findDefunct(state.optOuts || {});
 if (defunctNames.length > 0) {
@@ -755,11 +755,11 @@ async function _mainBody() {
   const brokers = require('./brokers');
   const { runGenericBrokers } = require('./generic-runner');
 
-  console.log('\n🔒 auto-identity-remove — starting run');
-  if (PREVIEW)       console.log('👀 PREVIEW — field values and target URLs will be printed before submit. No state will be saved.');
-  else if (DRY_RUN)  console.log('🧪 DRY RUN — forms will be filled but NOT submitted. No state will be saved.');
-  if (VERIFY)        console.log('🔍 VERIFY — re-checking listings. No forms submitted. Verification results are saved.');
-  if (POLLUTE_COUNT) console.log(`⚠️  NOISE MODE — ${POLLUTE_COUNT} bogus record(s) will be submitted to acceptsBogus brokers.`);
+  console.log('\n🔒 auto-identity-remove - starting run');
+  if (PREVIEW)       console.log('👀 PREVIEW - field values and target URLs will be printed before submit. No state will be saved.');
+  else if (DRY_RUN)  console.log('🧪 DRY RUN - forms will be filled but NOT submitted. No state will be saved.');
+  if (VERIFY)        console.log('🔍 VERIFY - re-checking listings. No forms submitted. Verification results are saved.');
+  if (POLLUTE_COUNT) console.log(`⚠️  NOISE MODE - ${POLLUTE_COUNT} bogus record(s) will be submitted to acceptsBogus brokers.`);
   console.log(`📅 ${new Date().toLocaleString()}`);
   console.log(`📋 ${brokers.length} explicit brokers + 500+ generic | re-check window: ${RECHECK_DAYS} days\n`);
 
@@ -785,7 +785,7 @@ async function _mainBody() {
 
     // Print summary
     console.log('\n' + '='.repeat(54));
-    console.log('Verification results — ' + new Date().toLocaleString());
+    console.log('Verification results - ' + new Date().toLocaleString());
     console.log('='.repeat(54));
     console.log(`  verified_clear : ${result.verified_clear.length}`);
     console.log(`  still_listed   : ${result.still_listed.length}`);
@@ -805,14 +805,14 @@ async function _mainBody() {
   // ── SERP scan mode: search-engine broker visibility audit ────────────────
   if (SERP_SCAN) {
     const { runSerpScan } = require('./lib/serp-scan');
-    console.log('\n🔎 SERP scan — checking broker visibility in search engines');
+    console.log('\n🔎 SERP scan - checking broker visibility in search engines');
     console.log('   DDG first, then Bing, then Google (may be blocked).\n');
     const summary = await runSerpScan(context, persons, brokers);
     await context.close().catch(() => {});
 
     const pad = (s, n) => String(s).padEnd(n);
     console.log('\n' + '='.repeat(62));
-    console.log('SERP Scan Results — ' + new Date().toLocaleString());
+    console.log('SERP Scan Results - ' + new Date().toLocaleString());
     console.log('='.repeat(62));
 
     if (summary.blocked.length > 0) {
@@ -875,7 +875,7 @@ async function _mainBody() {
   if (RETRY_FAILED) {
     const log = loadLastLog(LOG_DIR);
     if (!log) {
-      console.log('⚠️  --retry-failed: no previous log found in logs/ — running all brokers.');
+      console.log('⚠️  --retry-failed: no previous log found in logs/ - running all brokers.');
     } else {
       retryFailedFromLog = extractFailedBrokers(log);
       console.log(`🔄 --retry-failed: ${retryFailedFromLog.size} broker(s) from last log`);
@@ -943,7 +943,7 @@ async function _mainBody() {
     }
 
     if (ONLY_ARG || SKIP_ARG || RETRY_FAILED) {
-      console.log(`🔎 Filter applied — ${sorted.length} broker(s) will run`);
+      console.log(`🔎 Filter applied - ${sorted.length} broker(s) will run`);
     }
 
     console.log('\n── Explicit broker opt-outs ───────────────────────────────');
@@ -960,9 +960,9 @@ async function _mainBody() {
       const bogBrokers = brokers.filter(b => b.acceptsBogus === true);
 
       if (bogBrokers.length === 0) {
-        console.log('\n⚠️  --pollute: no brokers tagged acceptsBogus: true — nothing to do.');
+        console.log('\n⚠️  --pollute: no brokers tagged acceptsBogus: true - nothing to do.');
       } else {
-        console.log(`\n── Noise mode — submitting ${POLLUTE_COUNT} bogus record(s) to ${bogBrokers.length} broker(s) ─`);
+        console.log(`\n── Noise mode - submitting ${POLLUTE_COUNT} bogus record(s) to ${bogBrokers.length} broker(s) ─`);
         for (let i = 0; i < POLLUTE_COUNT; i++) {
           const fakePerson = generateBogusPerson();
           console.log(`\n   [bogus ${i + 1}/${POLLUTE_COUNT}] ${fakePerson.firstName} ${fakePerson.lastName} (${fakePerson.city}, ${fakePerson.state})`);
@@ -987,7 +987,7 @@ async function _mainBody() {
   // One generic pass PER PERSON.
   //
   // This used to run once, using persons[0], with state keyed on the bare broker
-  // name. But fillGenericForm() submits a real name, email, state and zip — so
+  // name. But fillGenericForm() submits a real name, email, state and zip - so
   // "generic" is not person-agnostic for the brokers that take a form. The old
   // shape meant only persons[0] was ever requested while the single state entry
   // marked the broker done for the whole household, and the report claimed
@@ -1059,7 +1059,7 @@ async function _mainBody() {
   const totalProcessed = results.succeeded.length + results.skipped.length + results.notFound.length + results.captchaFailed.length + results.manual.length + results.errors.length;
   const short = `🔒 Privacy Watcher (${new Date().toLocaleDateString()}):\n✅ Removed: ${results.succeeded.length}\n⏭  Skipped: ${results.skipped.length}\n📋 Manual: ${results.captchaFailed.length + results.manual.length}\n📊 Total: ${totalProcessed} brokers checked`;
   sendText(short, notify);
-  desktopNotify('Privacy Watcher', `Done — ${results.succeeded.length} removed, ${results.captchaFailed.length + results.manual.length} need manual action (${totalProcessed} total)`);
+  desktopNotify('Privacy Watcher', `Done - ${results.succeeded.length} removed, ${results.captchaFailed.length + results.manual.length} need manual action (${totalProcessed} total)`);
 }
 
 main().catch(err => {

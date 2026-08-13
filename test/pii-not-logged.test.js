@@ -9,8 +9,8 @@
  *   console.warn(`[forms] select unmatched: selector="${sel}" value="${value}" ...`)
  *
  * The values in that map are the user's state, city, zip, country and name. The
- * trigger is mundane — a broker renames a state or country dropdown, or an
- * international postal/region form — and the output goes to stdout, which lands
+ * trigger is mundane - a broker renames a state or country dropdown, or an
+ * international postal/region form - and the output goes to stdout, which lands
  * in `logs/`, in `journalctl`, in `docker logs`, and in the dashboard's live run
  * stream. A privacy tool printing the user's address to a log is the exact
  * failure it exists to prevent.

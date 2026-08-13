@@ -4,7 +4,7 @@
  * config.json holds a legal name, home address, phone, date of birth, the SMTP
  * password and every API key. state.json holds the full per-broker submission
  * history. Both were created with the process umask, which on a default Linux or
- * macOS box means 0644 — readable by every local account.
+ * macOS box means 0644 - readable by every local account.
  *
  * That is a nothing-burger on a single-user laptop and a real exposure on the
  * machines this tool is being asked to run on: a Synology NAS with family

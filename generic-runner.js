@@ -174,7 +174,7 @@ async function clickDoNotSell(page) {
 // ─── OneTrust / TrustArc / Osano preference opt-out ─────────────────────────
 
 async function handlePrivacyManager(page) {
-  // OneTrust toggle — turn off all non-essential categories
+  // OneTrust toggle - turn off all non-essential categories
   const toggles = await page.locator('.ot-tgl input[type="checkbox"]:checked').all();
   for (const t of toggles) {
     try { await t.click(); } catch(_) {}
@@ -187,7 +187,7 @@ async function handlePrivacyManager(page) {
     await saveBtn.click().catch(() => {});
     return true;
   }
-  // TrustArc — "Required Only" button
+  // TrustArc - "Required Only" button
   const reqOnly = page.locator('button:has-text("Required Only"), button:has-text("Reject All")').first();
   if ((await reqOnly.count()) > 0) {
     await reqOnly.click().catch(() => {});
@@ -220,7 +220,7 @@ function activePerson(person) {
 function getFieldMap(person) {
   const { firstName: F, lastName: L, fullName: N, email: E, state: ST, zip: Z } = activePerson(person);
   return [
-    // email (try first — many sites only need this)
+    // email (try first - many sites only need this)
     { selectors: ['input[type="email"]', 'input[name*="email" i]', 'input[placeholder*="email" i]'], value: E },
     // first name
     { selectors: ['input[name="firstName"]', 'input[name*="first" i]', 'input[placeholder*="first name" i]'], value: F },
@@ -232,7 +232,7 @@ function getFieldMap(person) {
     { selectors: ['select[name*="state" i]', 'input[name*="state" i]'], value: ST },
     // zip
     { selectors: ['input[name*="zip" i]', 'input[name*="postal" i]'], value: Z },
-    // request type — select "Delete" or "Do Not Sell" where applicable
+    // request type - select "Delete" or "Do Not Sell" where applicable
     {
       selectors: ['select[name*="request" i]', 'select[name*="type" i]', 'select[id*="request" i]'],
       value: null,  // handled specially below
@@ -329,7 +329,7 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
       // never written by current code and its presence should not alter behavior.
       if (entry.pendingConfirm && entry.pendingConfirm.since) {
         if (ageDays < CONFIRM_RECHECK_DAYS) {
-          return { status: 'skipped', detail: `pending confirm — retry in ${Math.max(0, Math.round(CONFIRM_RECHECK_DAYS - ageDays))}d` };
+          return { status: 'skipped', detail: `pending confirm - retry in ${Math.max(0, Math.round(CONFIRM_RECHECK_DAYS - ageDays))}d` };
         }
         // confirmation window elapsed → fall through to re-attempt
       } else if (ageDays < RECHECK_DAYS) {
@@ -359,7 +359,7 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
     // is reachable, but every strategy below is mutating (clicks a Do Not Sell
     // button or submits a form). Stop here so --dry-run is genuinely safe.
     if (dryRun) {
-      return { status: 'skipped', detail: 'dry-run — generic opt-out not submitted' };
+      return { status: 'skipped', detail: 'dry-run - generic opt-out not submitted' };
     }
 
     // Helper: convert a "success" result into "pending_confirm" if the
@@ -384,7 +384,7 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
       // confirmation page counts. Otherwise a human has to finish it.
       const confirmed = await detectConfirmationRequired(page);
       if (confirmed.pending) return { status: 'pending_confirm', detail: confirmed.snippet || 'Do Not Sell clicked, confirmation required' };
-      return { status: 'manual', detail: 'Do Not Sell clicked but nothing was submitted — finish this one by hand' };
+      return { status: 'manual', detail: 'Do Not Sell clicked but nothing was submitted - finish this one by hand' };
     }
 
     // Strategy 2: OneTrust / TrustArc privacy manager
@@ -398,10 +398,10 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
       if (submitted) return finalize('Form submitted');
       // Filled but no submit control found. This is NOT a success: nothing was
       // sent to the broker. Reporting it as one would call recordSuccess(),
-      // stamp lastSuccess, and suppress the broker for RECHECK_DAYS — telling
+      // stamp lastSuccess, and suppress the broker for RECHECK_DAYS - telling
       // the user their data was removed when no request ever left the machine.
       // 'manual' keeps the entry due and surfaces it in the manual list.
-      return { status: 'manual', detail: 'Form filled but no submit control found — finish this one by hand' };
+      return { status: 'manual', detail: 'Form filled but no submit control found - finish this one by hand' };
     }
 
     // Strategy 4: look for a DSAR / privacy request link on privacy policy pages
@@ -490,11 +490,11 @@ function loadGenericBrokers(explicitBrokerHosts) {
  * Map a processGenericUrl status to a genericStats outcome bucket key.
  *
  * Outcome buckets (WP5):
- *   submitted        — form found and submitted (success / pending_confirm)
- *   no_form_found    — page loaded but nothing automatable (manual / dead)
- *   error            — exception during processing
- *   dry-run-skipped  — submit deferred because dryRun=true
- *   skipped-recent   — site visited recently, skipped by recheck window
+ *   submitted        - form found and submitted (success / pending_confirm)
+ *   no_form_found    - page loaded but nothing automatable (manual / dead)
+ *   error            - exception during processing
+ *   dry-run-skipped  - submit deferred because dryRun=true
+ *   skipped-recent   - site visited recently, skipped by recheck window
  */
 function classifyOutcome(status, detail) {
   switch (status) {
@@ -526,7 +526,7 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
   //
   // Resolve it LAZILY: do not call activePerson() here. That reads config.json,
   // which turns "no config on disk" into a hard failure for every caller that
-  // injects its own brokers or process function — CI has no config.json, so an
+  // injects its own brokers or process function - CI has no config.json, so an
   // eager read passed locally and broke the Node matrix. getFieldMap(person)
   // already falls back to config.person / persons[0] at the moment a form is
   // actually filled, and stateKey() returns the bare broker name whenever there

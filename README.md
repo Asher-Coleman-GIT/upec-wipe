@@ -61,7 +61,7 @@ node bin/aidr.js run
 ```
 
 > Tip: run `npm link` (or `npm i -g .`) so you can type `aidr` directly instead
-> of `node bin/aidr.js`. There is no `./node_modules/.bin/aidr` — npm only
+> of `node bin/aidr.js`. There is no `./node_modules/.bin/aidr` - npm only
 > creates `.bin` shims for *dependencies*, never for the package's own `bin`.
 
 ### The `aidr` command
@@ -164,7 +164,7 @@ docker run --rm --init \
 
 Or with compose: `docker compose run --rm watcher node watcher.js --dry-run`.
 
-**Create `state.json` before the first run** — `touch state.json` is enough. If
+**Create `state.json` before the first run** - `touch state.json` is enough. If
 the path does not exist, Docker creates a *directory* there and the run fails on
 a confusing `EISDIR`.
 

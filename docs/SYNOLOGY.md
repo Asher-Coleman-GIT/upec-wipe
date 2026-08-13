@@ -4,7 +4,7 @@ Asked in [issue #8](https://github.com/stephenlthorn/auto-identity-remove/issues
 does this run on a DS720+ (Celeron J4125, x86_64, 2 GB RAM), and what is the
 memory footprint in practice?
 
-**Short answer:** yes, and comfortably — about **250 MB peak** for a full
+**Short answer:** yes, and comfortably - about **250 MB peak** for a full
 40-broker run. But nobody had actually tried it before that issue, and three
 defects meant it could not have worked. All three are fixed; the numbers below
 are measured, not estimated.
@@ -13,7 +13,7 @@ are measured, not estimated.
 
 | | Symptom on a NAS |
 |---|---|
-| `docker build` aborted | `groupadd: GID '1001' already exists` — the Dockerfile created a user at uid/gid 1001, which the official Playwright base image already uses for `pwuser`. The image never built, for anyone. |
+| `docker build` aborted | `groupadd: GID '1001' already exists` - the Dockerfile created a user at uid/gid 1001, which the official Playwright base image already uses for `pwuser`. The image never built, for anyone. |
 | Browser could not launch | The base image was pinned to Playwright v1.52.0 (ships chromium build 1169) while `npm ci` installed the Playwright client 1.60.0 (needs build 1223). Even with the build fixed, every run died with `Executable doesn't exist at /ms-playwright/chromium-1223/...`. |
 | No state was ever saved | Every durable write is tmp-file + `rename()`. `rename()` onto a Docker **single-file** bind mount returns `EBUSY`, and the documented recipe mounted `state.json` exactly that way. Nothing persisted, so each scheduled run re-submitted every broker from scratch. |
 
@@ -30,9 +30,9 @@ Full 40-broker serial run inside the container, using cgroup v2 accounting
 |---|---|---|
 | Default profile, uncapped | **248.5 MB** | all 40 brokers |
 | `AIDR_LOW_MEMORY=1`, hard 700 MB cap | **235.8 MB** | all 40 brokers |
-| After launch, before any broker | 140 MB | — |
+| After launch, before any broker | 140 MB | - |
 
-Memory is **flat across the run** — 236 MB after 10 brokers, 248 MB after 40 — so
+Memory is **flat across the run** - 236 MB after 10 brokers, 248 MB after 40 - so
 there is no page or context leak that compounds over a long run. The tool
 processes brokers strictly serially, one page at a time, which is what keeps the
 ceiling low.
@@ -44,7 +44,7 @@ concurrency here without revisiting these numbers.
 Image size on disk, `linux/amd64` (the DS720+ architecture): **940 MB**. Most of
 that is the Chromium build in the Playwright base image.
 
-So on a 2 GB DS720+, with DSM itself typically using 600–900 MB, a ~250 MB
+So on a 2 GB DS720+, with DSM itself typically using 600-900 MB, a ~250 MB
 container leaves real headroom. 2 GB is enough; you do not need the RAM upgrade
 for this.
 
@@ -98,7 +98,7 @@ whatever mode it arrived with.
 
 This is the one thing to get right. Mounting `state.json` as a file breaks
 atomic writes (`EBUSY`, see above). There is now a fallback that keeps state
-working anyway, but it gives up crash-atomicity — so mount the directory and
+working anyway, but it gives up crash-atomicity - so mount the directory and
 keep the guarantee:
 
 ```bash
@@ -124,7 +124,7 @@ reachable without submitting anything.
 
 ### 5. Schedule it
 
-Do not use the in-container scheduler on a NAS — use DSM's own. Control Panel →
+Do not use the in-container scheduler on a NAS - use DSM's own. Control Panel →
 Task Scheduler → Create → Scheduled Task → User-defined script, monthly on the
 1st at 09:00:
 
@@ -139,11 +139,11 @@ versions.
 
 | Setting | Why |
 |---|---|
-| `AIDR_LOW_MEMORY=1` | Adds `--disable-gpu`, `--no-zygote` and friends. Saved ~13 MB peak in testing — small, but it also cuts background work on slow cores. |
+| `AIDR_LOW_MEMORY=1` | Adds `--disable-gpu`, `--no-zygote` and friends. Saved ~13 MB peak in testing - small, but it also cuts background work on slow cores. |
 | `TZ=<your zone>` | Containers are UTC. Without this a "1st of the month, 9am" schedule and every report timestamp land in the wrong hour. |
-| `--init` / `init: true` | Otherwise node is PID 1, `docker stop` cannot reap the Chromium children, and the state lock is left behind — wedging the next run. |
+| `--init` / `init: true` | Otherwise node is PID 1, `docker stop` cannot reap the Chromium children, and the state lock is left behind - wedging the next run. |
 | `--memory=1g` | Not required (peak is ~250 MB) but it turns a runaway into a container restart instead of DSM killing something else. |
-| `shm_size` | The compose file sets 512 MB. Not strictly needed — the code passes `--disable-dev-shm-usage`, so a plain `docker run` with the default 64 MB `/dev/shm` works — but real shared memory is faster. |
+| `shm_size` | The compose file sets 512 MB. Not strictly needed - the code passes `--disable-dev-shm-usage`, so a plain `docker run` with the default 64 MB `/dev/shm` works - but real shared memory is faster. |
 
 ## What does not work on a NAS
 
@@ -171,5 +171,5 @@ docker compose run --rm watcher node -e \
 ```
 
 If you have a DS720+ and run this, please report back on
-[issue #8](https://github.com/stephenlthorn/auto-identity-remove/issues/8) — real
+[issue #8](https://github.com/stephenlthorn/auto-identity-remove/issues/8) - real
 hardware numbers are better than my emulated ones.

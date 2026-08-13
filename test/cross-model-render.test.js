@@ -75,7 +75,7 @@ const META = {
 
 test('the report header records what was reviewed and by what', () => {
   const md = renderReport({ summary: 'one P1 found', findings: [FINDING] }, META);
-  assert.match(md, /# Cross-model review — abc1234/);
+  assert.match(md, /# Cross-model review - abc1234/);
   assert.match(md, /reviewer family \| OpenAI \(non-Anthropic\)/);
   assert.match(md, /base \| origin\/main/);
   assert.match(md, /files reviewed \| 2/);

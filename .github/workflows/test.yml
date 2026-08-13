@@ -56,7 +56,7 @@ jobs:
   # `docker build` aborted on a uid collision with the base image, and the
   # Playwright client version did not match the browser build in the image. Both
   # are only detectable by building the thing and launching a browser. The old
-  # docker test asserted the Dockerfile *contained strings* — text-shaped test,
+  # docker test asserted the Dockerfile *contained strings* - text-shaped test,
   # text-shaped confidence.
   #
   # Docker is the only realistic deployment path for Linux and NAS users

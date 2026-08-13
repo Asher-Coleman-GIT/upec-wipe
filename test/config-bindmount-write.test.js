@@ -20,7 +20,7 @@
  *
  * Fallback contract: if the rename fails because the target is a mount point or
  * lives on a different device, write in place instead. That trades the atomicity
- * guarantee for actually persisting, which is the correct trade — the .bak copy
+ * guarantee for actually persisting, which is the correct trade - the .bak copy
  * still covers the truncation case that atomicity was protecting against.
  */
 

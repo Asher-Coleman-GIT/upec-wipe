@@ -1,4 +1,4 @@
-# docker-compose.yml — auto-identity-remove
+# docker-compose.yml - auto-identity-remove
 #
 # One-off run:        docker compose run --rm watcher
 # Preview only:       docker compose run --rm watcher node watcher.js --dry-run
@@ -11,10 +11,10 @@ services:
   watcher:
     build: .
     # node runs as PID 1 without this, so `docker stop` cannot reap the Chromium
-    # children and the state lock is left behind — wedging the next run.
+    # children and the state lock is left behind - wedging the next run.
     init: true
     volumes:
-      # Not :ro — config.json is written back by --encrypt-config and by the
+      # Not :ro - config.json is written back by --encrypt-config and by the
       # right-to-know pending-request bookkeeping.
       - ./config.json:/app/config.json
       - ./state.json:/app/state.json

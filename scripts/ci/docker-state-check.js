@@ -2,7 +2,7 @@
 /**
  * scripts/ci/docker-state-check.js
  *
- * Runs inside the built image with state.json bind-mounted as a single FILE —
+ * Runs inside the built image with state.json bind-mounted as a single FILE -
  * the recipe the README documents. rename() onto a bind mount returns EBUSY, so
  * before the _renameOrRewrite fallback every state write in Docker was silently
  * discarded and each scheduled run resubmitted every broker from scratch.

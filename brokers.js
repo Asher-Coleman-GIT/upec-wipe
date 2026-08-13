@@ -1,19 +1,19 @@
 /**
- * brokers.js — data broker opt-out definitions
+ * brokers.js - data broker opt-out definitions
  *
  * Each entry describes one broker and HOW to automate its opt-out.
  *
  * method:
- *   'search-form'  — search for the person, extract listing URL, submit opt-out
- *   'direct-form'  — go straight to the opt-out URL and fill the form
- *   'email'        — send a removal-request email
- *   'manual'       — too complex to automate; added to the printed manual list
+ *   'search-form'  - search for the person, extract listing URL, submit opt-out
+ *   'direct-form'  - go straight to the opt-out URL and fill the form
+ *   'email'        - send a removal-request email
+ *   'manual'       - too complex to automate; added to the printed manual list
  *
- * captchaLikely    — true = pre-attempt CapSolver before submit
- * priority         — 1 = highest (most commonly searched / highest risk)
- * timeoutMs        — optional per-broker navigation timeout in ms (default: 15000)
+ * captchaLikely    - true = pre-attempt CapSolver before submit
+ * priority         - 1 = highest (most commonly searched / highest risk)
+ * timeoutMs        - optional per-broker navigation timeout in ms (default: 15000)
  *
- * No personal info lives here — all values come from config.json at runtime.
+ * No personal info lives here - all values come from config.json at runtime.
  */
 
 const _fs = require('fs');
@@ -60,7 +60,7 @@ const config = new Proxy({}, {
  * `config.person` is the historical single-person key. `config.persons` is the
  * multi-person format that lib/config.js getPersonsFromConfig() prefers; a
  * config using only `persons` has no `config.person`, so without this fallback
- * every interpolated value below became `undefined` — search URLs read
+ * every interpolated value below became `undefined` - search URLs read
  * "?q=undefined" and every formFields value was undefined.
  */
 function _primaryPerson() {
@@ -97,7 +97,7 @@ function buildBrokers(person) {
 
   return [
 
-  // ═══ Priority 1 — California DELETE Act portal (covers all ~500 CA-registered brokers) ═══
+  // ═══ Priority 1 - California DELETE Act portal (covers all ~500 CA-registered brokers) ═══
 
   // CA DROP (Delete Request and Opt-out Platform) is not yet live as of late 2025.
   // SB 362 broker-side compliance deadline is August 1, 2026.
@@ -113,7 +113,7 @@ function buildBrokers(person) {
     notes: 'CA DROP (Delete Request and Opt-out Platform) under SB 362 is not yet live. The broker-side compliance deadline is August 1, 2026. CPPA has missed several preceding milestones; ongoing litigation (Data Brokers Association v. Bonta) may further delay. Official registry: https://cppa.ca.gov/data_broker_registry/',
   },
 
-  // ═══ Priority 1 — High-traffic people-search sites ═══════════════════════
+  // ═══ Priority 1 - High-traffic people-search sites ═══════════════════════
 
   {
     name: 'Spokeo',
@@ -267,7 +267,7 @@ function buildBrokers(person) {
   {
     name: 'CheckPeople',
     method: 'direct-form',
-    // Their /opt-out page redirects — use the search-based removal flow instead
+    // Their /opt-out page redirects - use the search-based removal flow instead
     optOutUrl: `https://checkpeople.com/opt-out?firstName=${enc(F)}&lastName=${enc(L)}&state=${ST}`,
     formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'select[name*="state" i]': ST },
     submitSelector: 'button[type="submit"]',
@@ -275,7 +275,7 @@ function buildBrokers(person) {
     priority: 2,
   },
 
-  // ═══ Priority 2 — Additional people-search sites ══════════════════════════
+  // ═══ Priority 2 - Additional people-search sites ══════════════════════════
 
   {
     name: 'ThatsThem',
@@ -285,7 +285,7 @@ function buildBrokers(person) {
     submitSelector: 'button[type="submit"]',
     captchaLikely: false,
     priority: 2,
-    // No SSN/DOB gate — safe to submit arbitrary name/email for noise mode
+    // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
   },
 
@@ -329,7 +329,7 @@ function buildBrokers(person) {
     submitSelector: 'button[type="submit"]',
     captchaLikely: false,
     priority: 2,
-    // No SSN/DOB gate — safe to submit arbitrary name/email for noise mode
+    // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
   },
 
@@ -341,7 +341,7 @@ function buildBrokers(person) {
     submitSelector: 'button[type="submit"]',
     captchaLikely: false,
     priority: 2,
-    // No SSN/DOB gate — safe to submit arbitrary name/email for noise mode
+    // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
   },
 
@@ -353,7 +353,7 @@ function buildBrokers(person) {
     submitSelector: 'button[type="submit"]',
     captchaLikely: false,
     priority: 2,
-    // No SSN/DOB gate — safe to submit arbitrary name/email for noise mode
+    // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
   },
 
@@ -397,8 +397,8 @@ function buildBrokers(person) {
     priority: 2,
   },
 
-  // ═══ Priority 1 — Major upstream aggregators ══════════════════════════════
-  // These feed many smaller sites — highest leverage opt-outs
+  // ═══ Priority 1 - Major upstream aggregators ══════════════════════════════
+  // These feed many smaller sites - highest leverage opt-outs
 
   {
     name: 'Acxiom',
@@ -562,7 +562,7 @@ function buildBrokers(person) {
   // ═══ Manual-only (requires human interaction) ═════════════════════════════
 
   {
-    name: 'Google — Results About You',
+    name: 'Google - Results About You',
     method: 'manual',
     optOutUrl: 'https://myaccount.google.com/data-and-privacy',
     notes: 'Use "Results about you" to flag address/phone in search results.',
@@ -570,7 +570,7 @@ function buildBrokers(person) {
   },
 
   {
-    name: 'Google — Outdated Content',
+    name: 'Google - Outdated Content',
     method: 'manual',
     optOutUrl: 'https://search.google.com/search-console/remove-outdated-content',
     notes: 'Submit if any cached pages show your personal info.',

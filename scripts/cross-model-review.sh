@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# scripts/cross-model-review.sh — review changes with a model from a different
+# scripts/cross-model-review.sh - review changes with a model from a different
 # family than the one that wrote them.
 #
 # Why this exists: issue #8. Most of this codebase was written and reviewed by
@@ -65,7 +65,7 @@ if ! command -v codex >/dev/null 2>&1; then
   exit 3
 fi
 
-# `codex login status` reports on stderr, not stdout — check both streams or this
+# `codex login status` reports on stderr, not stdout - check both streams or this
 # probe reports every authenticated user as logged out.
 if ! codex login status 2>&1 | grep -qi "logged in"; then
   echo "codex is not authenticated. Run: codex login"
@@ -97,7 +97,7 @@ fi
 TARGETS="$(printf '%s\n' "$TARGETS" | sed '/^$/d' | while read -r f; do [ -f "$f" ] && echo "$f"; done || true)"
 
 if [ -z "$TARGETS" ]; then
-  echo "no reviewable changes against $BASE — nothing to do"
+  echo "no reviewable changes against $BASE - nothing to do"
   exit 0
 fi
 
@@ -110,7 +110,7 @@ echo "cross-model review: $FILE_COUNT file(s) against $BASE"
 # maintainer's real name, home address and phone, and state.json holds their
 # broker history.
 #
-# The checkout is built from "everything git would commit" — tracked files plus
+# The checkout is built from "everything git would commit" - tracked files plus
 # untracked-but-not-ignored files. That is scrubbed by construction, because
 # config.json, state.json, inbox/ and .claude/ are all gitignored. It also means
 # the reviewer sees your *current* content, including uncommitted edits and
@@ -145,7 +145,7 @@ done
 # the files in full instead of a stale patch.
 if [ -n "$(git status --porcelain -- $(printf '%s ' $TARGETS) 2>/dev/null)" ]; then
   if [ "$FULL" = "0" ]; then
-    echo "note: uncommitted changes in scope — reviewing those files in full rather than a diff"
+    echo "note: uncommitted changes in scope - reviewing those files in full rather than a diff"
     FULL=1
   fi
 else

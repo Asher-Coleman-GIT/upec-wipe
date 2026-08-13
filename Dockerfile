@@ -1,11 +1,11 @@
-# Dockerfile — auto-identity-remove
+# Dockerfile - auto-identity-remove
 #
 # Based on the official Playwright image, which ships Chromium plus every system
 # library it needs for both amd64 and arm64.
 #
 # IMPORTANT: the image tag below must match the `playwright` version pinned in
-# package.json. The image contains exactly one Chromium build — the one its own
-# Playwright release expects — so a mismatched client fails at launch with
+# package.json. The image contains exactly one Chromium build - the one its own
+# Playwright release expects - so a mismatched client fails at launch with
 # "Executable doesn't exist at /ms-playwright/chromium-<rev>/chrome-linux/chrome".
 # test/docker-build-contract.test.js enforces the match; do not bump one without
 # the other.
@@ -41,11 +41,11 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 COPY . .
 
 # Run as non-root. The base image already ships `pwuser` (uid/gid 1001) with a
-# home directory and the right access to /ms-playwright, so reuse it — creating
+# home directory and the right access to /ms-playwright, so reuse it - creating
 # another account at uid 1001 collides with it and aborts the build.
 RUN chown -R pwuser:pwuser /app
 
 USER pwuser
 
-# Default command — override with e.g. `node watcher.js --dry-run`
+# Default command - override with e.g. `node watcher.js --dry-run`
 CMD ["node", "watcher.js"]

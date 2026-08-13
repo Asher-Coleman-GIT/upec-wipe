@@ -45,7 +45,7 @@ test('install.sh installs the Playwright Chromium browser', () => {
 
 test('install.sh prints the next step, as a command that actually runs', () => {
   // This used to assert the literal string "aidr setup", which install.sh
-  // satisfied with `./node_modules/.bin/aidr setup` — a path npm never creates
+  // satisfied with `./node_modules/.bin/aidr setup` - a path npm never creates
   // for a package's own bin entry. The test passed; the documented command did
   // not exist. Assert the working invocation instead.
   const src = read();

@@ -9,7 +9,7 @@
  * nothing in a 1255-test suite noticed, because nothing tested the docs.
  *
  * These are cheap static checks. They cannot verify that a command does the
- * right thing, only that the thing the docs tell you to run exists at all —
+ * right thing, only that the thing the docs tell you to run exists at all -
  * which is the failure that actually shipped.
  */
 

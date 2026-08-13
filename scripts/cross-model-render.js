@@ -48,7 +48,7 @@ function renderReport({ summary, findings }, meta) {
   const sorted = [...findings].sort((a, b) => (ORDER[a.severity] ?? 3) - (ORDER[b.severity] ?? 3));
 
   const lines = [];
-  lines.push(`# Cross-model review — ${meta.head}`);
+  lines.push(`# Cross-model review - ${meta.head}`);
   lines.push('');
   lines.push('| | |');
   lines.push('|---|---|');

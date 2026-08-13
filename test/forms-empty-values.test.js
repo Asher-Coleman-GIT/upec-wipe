@@ -4,8 +4,8 @@
  * fillForm() used to attempt every entry in the formFields map regardless of
  * value. With a partially-filled config (no middle name, no city, or the
  * persons[]-vs-person mismatch that used to blank every value) that meant
- * either page.fill(undefined) — which throws into a swallowing catch, then
- * hands `undefined` to the semantic field resolver — or page.fill('') on a
+ * either page.fill(undefined) - which throws into a swallowing catch, then
+ * hands `undefined` to the semantic field resolver - or page.fill('') on a
  * field the broker had already prefilled, wiping it.
  *
  * A field with nothing to say should be left alone.

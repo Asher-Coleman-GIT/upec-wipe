@@ -17,7 +17,7 @@
  * entire output is "here is what was removed", claiming a removal that never
  * happened is the worst failure mode available.
  *
- * Correct classification is 'manual' — the page is real and automatable up to a
+ * Correct classification is 'manual' - the page is real and automatable up to a
  * point, but a human has to finish it. classifyOutcome() already buckets
  * 'manual' as no_form_found, and runGenericBrokers does not call recordSuccess
  * for it, so the entry stays due.

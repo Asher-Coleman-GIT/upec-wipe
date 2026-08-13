@@ -5,8 +5,8 @@
  *
  * setup.js reads its "keep current values" defaults with a raw
  * `fs.existsSync(CONFIG_PATH)` + `JSON.parse(fs.readFileSync(CONFIG_PATH))`.
- * After `--encrypt-config` there is no config.json — the PII lives in
- * config.json.enc — so re-running setup on an encrypted install:
+ * After `--encrypt-config` there is no config.json - the PII lives in
+ * config.json.enc - so re-running setup on an encrypted install:
  *
  *   1. shows blank prompts, as though the user had never configured anything;
  *   2. writes a fresh **plaintext** config.json next to the still-active
@@ -17,7 +17,7 @@
  * So the user's full PII lands back on disk in the clear, they lose their
  * existing values, and the edit they just made is silently ignored. Identical
  * defect class to the dashboard `PUT /api/config` plaintext spill fixed earlier
- * in this change set — which is the tell that the first fix should have prompted
+ * in this change set - which is the tell that the first fix should have prompted
  * a search for siblings.
  *
  * setup.js is an interactive wizard, so these are checks on the helper it uses
@@ -123,7 +123,7 @@ test('setup.js refuses to write plaintext over an encrypted install', () => {
   assert.doesNotMatch(
     src,
     /existing = JSON\.parse\(fs\.readFileSync\(CONFIG_PATH/,
-    'setup.js must not parse CONFIG_PATH directly — that misses config.json.enc entirely',
+    'setup.js must not parse CONFIG_PATH directly - that misses config.json.enc entirely',
   );
   assert.match(
     src,

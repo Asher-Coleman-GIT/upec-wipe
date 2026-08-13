@@ -117,7 +117,7 @@ test('.dockerignore excludes every artifact that can carry PII or secrets', () =
   for (const entry of mustExclude) {
     const bare = entry.replace(/\/$/, '');
     const hit = ignored.some(l => l === entry || l === bare || l === `${bare}/` || l === `${bare}/*`);
-    assert.ok(hit, `.dockerignore must exclude "${entry}" — otherwise it is baked into the image`);
+    assert.ok(hit, `.dockerignore must exclude "${entry}" - otherwise it is baked into the image`);
   }
 });
 

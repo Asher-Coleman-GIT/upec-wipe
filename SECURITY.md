@@ -28,7 +28,7 @@ you.
 
 So the bugs that matter most here are the ones that:
 
-1. Move PII somewhere unintended — a log, a snapshot, a report, an error message,
+1. Move PII somewhere unintended - a log, a snapshot, a report, an error message,
    another local user via file permissions, a third-party site chosen by a remote
    registry rather than by you, or the wrong form field.
 2. Submit one person's PII under another person's opt-out request.
@@ -85,7 +85,7 @@ unauthenticated port.
 ## Review process
 
 This codebase was largely written by an AI model, and the review loop initially
-used the same model family — which
+used the same model family - which
 [issue #8](https://github.com/stephenlthorn/auto-identity-remove/issues/8)
 correctly identified as an echo chamber. There is now a cross-model review
 requirement for every file that touches PII, crypto, subprocesses or untrusted

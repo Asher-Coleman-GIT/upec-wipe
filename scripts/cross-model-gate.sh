@@ -32,7 +32,7 @@ CHANGED="$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" || true)"
 TIER1_TOUCHED="$(printf '%s\n' "$CHANGED" | grep -E "$TIER1_PATTERN" || true)"
 
 if [ -z "$TIER1_TOUCHED" ]; then
-  echo "No tier-1 files changed — cross-model review not required."
+  echo "No tier-1 files changed - cross-model review not required."
   exit 0
 fi
 
@@ -68,7 +68,7 @@ Background: docs/CROSS_MODEL_REVIEW.md
 MSG
 
 if [ "${CROSS_MODEL_STRICT:-0}" = "1" ]; then
-  echo "CROSS_MODEL_STRICT=1 — failing."
+  echo "CROSS_MODEL_STRICT=1 - failing."
   exit 1
 fi
 
