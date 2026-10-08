@@ -170,7 +170,29 @@ function validateRunRequest(body, modeArgsMap) {
   return { ok: true, mode, only: only.value, skip: skip.value };
 }
 
+// The dashboard serves PII and can trigger real submissions. This fork never
+// binds it to anything but loopback; reach it remotely through `ssh -L`.
+function isLoopbackHost(host) {
+  const h = String(host || '').trim().toLowerCase();
+  if (h === 'localhost' || h === '::1' || h === '[::1]') return true;
+  const m = h.match(/^127\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  return !!m && m.slice(1).every(o => Number(o) <= 255);
+}
+
+function dashboardStartupProblems({ host, authConfigured }) {
+  const problems = [];
+  if (!isLoopbackHost(host)) {
+    problems.push(`AIDR_HOST=${host} is not a loopback address. This fork only binds 127.0.0.1/::1; use "ssh -L 8080:127.0.0.1:8080 host" for remote access.`);
+  }
+  if (!authConfigured) {
+    problems.push('No credentials set. Start it with `aidr dashboard` (generates a one-time login) or set AIDR_USER and AIDR_PASS.');
+  }
+  return problems;
+}
+
 module.exports = {
+  isLoopbackHost,
+  dashboardStartupProblems,
   LIVE_MODES,
   FILTER_MODES,
   isLiveMode,

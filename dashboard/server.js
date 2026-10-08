@@ -22,7 +22,7 @@
  *   POST /api/run                -> { mode, only?, skip? } (modes: see MODE_ARGS)
  *   POST /api/run/stop           -> terminate current run (SIGTERM, then SIGKILL)
  *   GET  /api/schedule           -> systemd timer status (enabled/next/cadence)
- *   POST /api/schedule           -> { action: enable|disable|preset, preset? }
+ *   POST /api/schedule           -> 501 (disabled in this fork; needs root)
  *   GET  /api/auth/whoami        -> current user + credential source
  *   POST /api/auth/password      -> change login (requires current password)
  *   GET  /api/freeze             -> credit/identity freeze checklist + status
@@ -32,8 +32,8 @@
  *   for HTTP Basic, and/or AIDR_TOKEN for header token auth (X-AIDR-Token). A
  *   request is allowed if it satisfies EITHER. Credentials can be changed at
  *   runtime via the Admin tab, which writes a scrypt-hashed dashboard/.auth.json
- *   that overrides the env vars. If nothing is set the dashboard is open (a
- *   warning is logged) - only acceptable on a trusted, isolated network.
+ *   that overrides the env vars. If nothing is set the dashboard refuses to
+ *   start, and it only binds loopback addresses.
  *   Cross-origin mutating requests are rejected (CSRF defense); the app does
  *   not depend on a reverse proxy for access control.
  */
@@ -43,7 +43,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { spawn, execFile } = require('child_process');
-const { validateRunRequest, modeHonorsFilters, classifyStatus, resolveEnvCreds } = require('./validate');
+const { validateRunRequest, modeHonorsFilters, classifyStatus, resolveEnvCreds, dashboardStartupProblems } = require('./validate');
 const { configStatus } = require('./config-status');
 const { FREEZE_TARGETS, TARGET_KEYS, getFreezeStatus } = require('../lib/freeze');
 
@@ -576,30 +576,10 @@ app.get('/api/schedule', async (_req, res) => {
   res.json({ enabled, active, next, oncalendar, presets: Object.keys(CALENDARS) });
 });
 
-app.post('/api/schedule', async (req, res) => {
-  const { action, preset } = req.body || {};
-  if (action === 'enable') {
-    const r = await sh('systemctl', ['enable', '--now', TIMER]);
-    if (r.err) {
-      const msg = r.errout.trim() || (r.err && r.err.message) || 'systemctl enable failed';
-      return res.status(500).json({ error: msg });
-    }
-  } else if (action === 'disable') {
-    const r = await sh('systemctl', ['disable', '--now', TIMER]);
-    if (r.err) {
-      const msg = r.errout.trim() || (r.err && r.err.message) || 'systemctl disable failed';
-      return res.status(500).json({ error: msg });
-    }
-  } else if (action === 'preset' && CALENDARS[preset]) {
-    const unit = `[Unit]\nDescription=auto-identity-remove ${preset} run\n\n[Timer]\nUnit=aidr.service\nOnCalendar=${CALENDARS[preset]}\nPersistent=true\nRandomizedDelaySec=1800\n\n[Install]\nWantedBy=timers.target\n`;
-    try { fs.writeFileSync('/etc/systemd/system/aidr.timer', unit); } catch (e) { return res.status(500).json({ error: e.message }); }
-    const rd = await sh('systemctl', ['daemon-reload']);
-    if (rd.err) return res.status(500).json({ error: rd.errout.trim() || (rd.err && rd.err.message) || 'daemon-reload failed' });
-    const rs = await sh('systemctl', ['restart', TIMER]);
-    if (rs.err) return res.status(500).json({ error: rs.errout.trim() || (rs.err && rs.err.message) || 'restart failed' });
-  } else return res.status(400).json({ error: 'bad action' });
-  const enabled = (await sh('systemctl', ['is-enabled', TIMER])).out.trim();
-  res.json({ ok: true, enabled });
+// Disabled in this fork: it wrote /etc/systemd/system, which needs the dashboard
+// to run as root. `aidr setup` installs a per-user timer instead.
+app.post('/api/schedule', (_req, res) => {
+  res.status(501).json({ error: 'Schedule editing is disabled in this fork (it needs root). Use `aidr setup` to install the per-user systemd timer.' });
 });
 
 app.get('/api/version', (_req, res) => {
@@ -651,12 +631,16 @@ if (require.main === module) {
     console.error(`aidr-dashboard: ${PASSPHRASE_ERROR.message}`);
     process.exit(1);
   }
+  const problems = dashboardStartupProblems({ host: HOST, authConfigured: authConfigured() });
+  if (problems.length) {
+    for (const p of problems) console.error(`aidr-dashboard: ${p}`);
+    process.exit(1);
+  }
   app.listen(PORT, HOST, () => {
     const c = loadCreds();
-    const mode = authConfigured() ? [c ? `basic(${c.source})` : null, TOKEN ? 'token' : null].filter(Boolean).join('+') : 'OPEN';
+    const mode = [c ? `basic(${c.source})` : null, TOKEN ? 'token' : null].filter(Boolean).join('+');
     console.log(`aidr-dashboard listening on ${HOST}:${PORT} (root=${ROOT}, auth=${mode})`);
     if (c && c.source === 'broken') console.warn('WARNING: .auth.json is present but corrupt - all logins will fail until it is fixed or removed.');
-    if (!authConfigured()) console.warn('WARNING: no credentials set - dashboard is UNAUTHENTICATED. Set AIDR_USER/AIDR_PASS or restrict the network.');
   });
 }
 

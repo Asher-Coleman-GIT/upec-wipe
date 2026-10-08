@@ -12,7 +12,7 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { isLiveMode, modeHonorsFilters, classifyStatus, resolveEnvCreds, validateFilter, validateRunRequest } = require('./validate');
+const { isLiveMode, modeHonorsFilters, classifyStatus, resolveEnvCreds, validateFilter, validateRunRequest, isLoopbackHost, dashboardStartupProblems } = require('./validate');
 
 // Mirror of server.js MODE_ARGS keys (values irrelevant to validation).
 const MODE_ARGS = {
@@ -222,4 +222,20 @@ test('resolveEnvCreds: only pass set -> envConfigured false, warning emitted', (
   const r = resolveEnvCreds('', 'secret');
   assert.equal(r.envConfigured, false);
   assert.ok(r.warning, 'should emit a warning');
+});
+
+test('isLoopbackHost accepts loopback only', () => {
+  for (const h of ['127.0.0.1', '127.1.2.3', 'localhost', '::1', '[::1]', 'LOCALHOST']) {
+    assert.equal(isLoopbackHost(h), true, h);
+  }
+  for (const h of ['0.0.0.0', '::', '192.168.1.5', '10.0.0.1', 'example.com', '', '127.0.0.1.evil.com', '1270.0.0.1']) {
+    assert.equal(isLoopbackHost(h), false, h);
+  }
+});
+
+test('dashboardStartupProblems refuses non-loopback and missing auth', () => {
+  assert.deepEqual(dashboardStartupProblems({ host: '127.0.0.1', authConfigured: true }), []);
+  assert.equal(dashboardStartupProblems({ host: '0.0.0.0', authConfigured: true }).length, 1);
+  assert.equal(dashboardStartupProblems({ host: '127.0.0.1', authConfigured: false }).length, 1);
+  assert.equal(dashboardStartupProblems({ host: '0.0.0.0', authConfigured: false }).length, 2);
 });

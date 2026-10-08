@@ -78,9 +78,7 @@ ls -l config.json state.json
 git check-ignore -v config.json state.json
 ```
 
-If you run the dashboard, keep it bound to localhost and set `AIDR_USER` /
-`AIDR_PASS`. On a NAS or shared box, assume anything on the LAN can reach an
-unauthenticated port.
+Start the dashboard only with `aidr dashboard`. It refuses to bind anything but loopback and refuses to start without credentials. For remote access use `ssh -L 8080:127.0.0.1:8080 <host>`.
 
 ## Review process
 

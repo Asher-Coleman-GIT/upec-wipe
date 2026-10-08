@@ -16,7 +16,7 @@ It wraps the existing tooling rather than reimplementing it:
   webhook, account passwords) are masked in transit and preserved on save
   unless you type a new value. If `../config.json` doesn't exist yet the form is
   prefilled from `../config.example.json` and the first Save creates it (`0600`).
-- **Schedule** - enable/disable and set the cadence of a systemd timer (see
+- **Schedule** - read-only status of the systemd timer (see
   *Scheduling* below).
 - **Logs** - browses `../logs/`. A dated report is written when a real run
   *completes*, so the list is empty mid-run (watch the live console instead).
@@ -27,11 +27,10 @@ The only dependency is `express`.
 ## Run
 
 ```bash
-cd dashboard
-npm install
-AIDR_PORT=8080 AIDR_USER=admin AIDR_PASS='a-strong-password' node server.js
-# open http://localhost:8080
+aidr dashboard
 ```
+
+It prints a one-time login. Running `node server.js` directly without `AIDR_USER`/`AIDR_PASS` refuses to start.
 
 ## Auth
 
@@ -41,14 +40,13 @@ on a reverse proxy for access control):
 | Var | Default | Meaning |
 |-----|---------|---------|
 | `AIDR_PORT` | `8080` | Listen port |
-| `AIDR_HOST` | `127.0.0.1` | Bind address. Defaults to loopback (local access only). Set `AIDR_HOST=0.0.0.0` **only** if you intend LAN/public access (use a reverse proxy with TLS). |
+| `AIDR_HOST` | 127.0.0.1 | Bind address. Must be loopback (127.x, ::1, localhost); anything else refuses to start. For remote access use ssh -L. |
 | `AIDR_USER` / `AIDR_PASS` | _(unset)_ | HTTP Basic credentials. **Both must be set** for the env credentials to be active (setting only one is treated as misconfigured and logs a warning). When set, **all routes except `/api/health`** require them (browser-native login prompt). |
 | `AIDR_TOKEN` | _(unset)_ | Token accepted **only** via the `X-AIDR-Token` header (for scripts/automation). Not accepted via query string. |
 
 A request is allowed if it satisfies **either** valid Basic credentials **or** a
 valid token. Cross-origin state-changing requests are rejected (CSRF defense).
-If none of the three are set the dashboard runs **unauthenticated** (and logs a
-warning) - only acceptable on a trusted, isolated network. Credentials are
+If none are set the dashboard refuses to start. Credentials are
 compared in constant time.
 
 ### Changing the login (Admin tab)
@@ -63,25 +61,12 @@ it is fixed or removed - it never silently downgrades to open access.
 
 ## Scheduling
 
-The **Schedule** tab manages a systemd timer (`aidr.timer`) that periodically
-runs `node watcher.js`. Presets: **daily / weekly / monthly** (03:30 local with
-30-min jitter). This requires the dashboard to run **as root** in the target
-environment, and the timer activates `aidr.service`, which you must install.
-
-Example units are in [`examples/`](examples/):
-
-- `examples/aidr-dashboard.service` - runs this dashboard (set your creds here).
-- `examples/aidr.service` - the oneshot the timer triggers (`node watcher.js`).
-
-Copy them to `/etc/systemd/system/`, edit paths/creds, then
-`systemctl daemon-reload && systemctl enable --now aidr-dashboard`. After that
-the Schedule tab can enable/disable `aidr.timer` and switch cadence.
+Disabled in this fork: the old Schedule tab wrote `/etc/systemd/system` and required running the dashboard as root. `aidr setup` installs a per-user systemd timer (or crontab/launchd) instead. The tab still shows status read-only.
 
 ## Security notes
 
 The config holds personal data and the UI can trigger real opt-out submissions,
 so set `AIDR_USER`/`AIDR_PASS` (and optionally `AIDR_TOKEN` for automation). The
-server binds `127.0.0.1` by default (loopback only); set `AIDR_HOST=0.0.0.0` if
-you need LAN access and use a TLS-terminating reverse proxy. `/api/health` is
+server binds loopback only. `/api/health` is
 intentionally unauthenticated and returns only `{ ok: true }` (no path or
 version disclosure).
