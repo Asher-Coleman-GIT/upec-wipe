@@ -159,9 +159,43 @@ function maybeEncryptConfig(opts) {
   return { encrypted: true, encPath: res.encPath };
 }
 
-module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingConfig };
+module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingConfig, buildConfig };
 
 // ─── Main setup ───────────────────────────────────────────────────────────────
+
+/**
+ * Build the config to write. Prompted fields win; every other key already in
+ * the config (relay, email, network, browser, generic, ...) is kept, so a
+ * re-run never wipes settings the user added by hand. `existing` is always the
+ * plain decrypted/parsed config object, never the encrypted envelope.
+ *
+ * @param {object} existing  current config ({} when none)
+ * @param {object} a         answers collected from the prompts
+ * @returns {object}
+ */
+function buildConfig(existing, a) {
+  const prev = existing || {};
+  return {
+    ...prev,
+    person: {
+      ...(prev.person || {}),
+      firstName: a.firstName,
+      lastName: a.lastName,
+      fullName: `${a.firstName} ${a.lastName}`,
+      aliases: a.aliases,
+      city: a.city,
+      country: a.country,
+      state: a.state,
+      zip: a.zip,
+      email: a.email,
+      phone: a.phone,
+      phoneFormatted: a.phoneFormatted,
+    },
+    capsolver: { ...(prev.capsolver || {}), apiKey: a.capsolverKey || 'CAP-YOUR_KEY_HERE' },
+    accounts: a.accounts,
+    profileDir: a.profileDir,
+  };
+}
 
 async function main() {
   rl = readline.createInterface({ input: process.stdin, output: process.stdout });
@@ -253,24 +287,10 @@ async function main() {
   }
 
   // ── Build config ─────────────────────────────────────────────────────────
-  const config = {
-    person: {
-      firstName,
-      lastName,
-      fullName: `${firstName} ${lastName}`,
-      aliases,
-      city,
-      country,
-      state,
-      zip,
-      email,
-      phone,
-      phoneFormatted,
-    },
-    capsolver: { apiKey: capsolverKey || 'CAP-YOUR_KEY_HERE' },
-    accounts,
-    profileDir,
-  };
+  const config = buildConfig(existing, {
+    firstName, lastName, aliases, city, country, state, zip, email, phone,
+    phoneFormatted, capsolverKey, accounts, profileDir,
+  });
 
   // 0600: config.json holds the legal name, home address, phone, DOB, the SMTP
   // password and every API key. The umask default (0644) makes all of that

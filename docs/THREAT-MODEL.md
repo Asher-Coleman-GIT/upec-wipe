@@ -1,6 +1,6 @@
 # Threat model
 
-This tool submits your identity to hundreds of companies on purpose. The goal of this fork is that each company learns nothing it did not already have, plus a throwaway email alias, and that nobody else learns anything at all.
+This tool submits your identity to hundreds of companies on purpose. The goal of this fork is that no company learns more than it already had, plus a throwaway email alias, and that the services listed below (SimpleLogin, CapSolver, your SMTP provider, HIBP) see only what they need to do their job.
 
 ## What each layer protects
 

@@ -131,3 +131,27 @@ test('setup.js refuses to write plaintext over an encrypted install', () => {
     'setup.js must act on the locked flag rather than overwriting an unreadable encrypted config',
   );
 });
+
+test('buildConfig keeps hand-added keys (relay, email, network) on a setup re-run', () => {
+  const { buildConfig } = require('../setup');
+  const existing = {
+    person: { firstName: 'Old', dob: '2000-01-01' },
+    relay: { provider: 'simplelogin', apiKey: 'K', required: true },
+    email: { smtp: { host: 'h', from: 'x@example.com' } },
+    network: { required: true, proxy: '' },
+    capsolver: { apiKey: 'OLD', extra: 1 },
+  };
+  const out = buildConfig(existing, {
+    firstName: 'New', lastName: 'Name', aliases: [], city: 'C', country: 'US',
+    state: 'S', zip: 'Z', email: 'e', phone: 'p', phoneFormatted: 'pf',
+    capsolverKey: 'NEW', accounts: {}, profileDir: '/p',
+  });
+  assert.deepEqual(out.relay, existing.relay);
+  assert.deepEqual(out.email, existing.email);
+  assert.deepEqual(out.network, existing.network);
+  assert.equal(out.person.firstName, 'New');
+  assert.equal(out.person.dob, '2000-01-01');
+  assert.equal(out.capsolver.apiKey, 'NEW');
+  assert.equal(out.capsolver.extra, 1);
+  assert.deepEqual(buildConfig({}, { firstName: 'a', lastName: 'b', aliases: [], accounts: {} }).accounts, {});
+});

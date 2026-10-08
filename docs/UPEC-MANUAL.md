@@ -127,15 +127,23 @@ It should say "Connected".
 
 This part is the same for Parts A and B.
 
-1. Run the setup questions. This asks for your name, address and other details, and saves them in `config.json` in this folder:
+1. Optional, only if you want encryption: create an empty passphrase file that only you can read. Do this before setup, because setup only wires the passphrase file into the monthly job if it already exists. Skip to step 2 if you do not want encryption:
+
+   ```
+   mkdir -p ~/.config/auto-identity-remove && install -m 600 /dev/null ~/.config/auto-identity-remove/passphrase
+   ```
+
+   Open it with `nano ~/.config/auto-identity-remove/passphrase`, type a long passphrase (a few random words), and save. Warning: if you lose the passphrase, your config cannot be recovered and you must run setup again.
+
+2. Run the setup questions. This asks for your name, address and other details, and saves them in `config.json` in this folder:
 
    ```
    node bin/aidr.js setup
    ```
 
-   It also schedules the monthly job. Answer each question and press Enter.
+   Answer each question and press Enter. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The cron and launchd fallbacks have no passphrase mechanism, so with an encrypted config those need the systemd timer or manual runs each month.
 
-2. Open the settings file in a simple editor:
+3. Open the settings file in a simple editor:
 
    ```
    nano config.json
@@ -163,7 +171,7 @@ This part is the same for Parts A and B.
 
    If you use a proxy instead, set `proxy` to an unauthenticated local one such as `socks5://10.64.0.1:1080`. A proxy address with a username and password in it (`user:pass@`) is not supported, so use an unauthenticated local proxy like that one. The config file may also contain a `notify` block from older versions. Notifications were removed from this fork, so you can delete that block.
 
-3. Lock down file permissions:
+4. Lock down file permissions:
 
    ```
    bash scripts/harden.sh
@@ -171,27 +179,15 @@ This part is the same for Parts A and B.
 
    You should see "Permissions hardened". If it says chmod has no effect, you are on `/mnt/c`. Go back to Part A step 2 and redo the install in your Linux home folder.
 
-4. Optional: encrypt your config. Skip this step if you do not want encryption. First create an empty passphrase file that only you can read:
-
-   ```
-   mkdir -p ~/.config/auto-identity-remove && install -m 600 /dev/null ~/.config/auto-identity-remove/passphrase
-   ```
-
-   Open it with `nano ~/.config/auto-identity-remove/passphrase`, type a long passphrase (a few random words), and save. Now run setup a second time. The monthly job only learns about the passphrase file if it exists when setup runs, so without this the scheduled job could not unlock your config. Press Enter at each question to keep your current answers:
-
-   ```
-   node bin/aidr.js setup
-   ```
-
-   It asks the same questions and re-installs the monthly job. Then encrypt:
+5. Optional: encrypt your config. Skip this if you did not create a passphrase file in step 1:
 
    ```
    AIDR_PASSPHRASE_FILE=~/.config/auto-identity-remove/passphrase node watcher.js --encrypt-config
    ```
 
-   Warning: if you lose the passphrase, your config cannot be recovered and you must run setup again. Set `AIDR_PASSPHRASE_FILE` the same way each time you run the tool by hand afterward. Also note that only the systemd timer (the usual Linux and WSL2 scheduler) can pass the passphrase file to the monthly job. The cron and launchd fallbacks have no passphrase mechanism, so with an encrypted config on those you must run the tool by hand each month.
+   It reports that the config was encrypted. Set `AIDR_PASSPHRASE_FILE` the same way each time you run the tool by hand afterward.
 
-5. Check that everything is ready:
+6. Check that everything is ready:
 
    ```
    node bin/aidr.js doctor
@@ -199,7 +195,7 @@ This part is the same for Parts A and B.
 
    It prints a list of checks. Fix anything marked as a problem before you continue.
 
-6. Rehearse a run with `aidr preview` (you run it as `node bin/aidr.js preview`). Make sure Mullvad is connected first. It does everything except submit:
+7. Rehearse a run with `aidr preview` (you run it as `node bin/aidr.js preview`). Make sure Mullvad is connected first. It does everything except submit:
 
    ```
    node bin/aidr.js preview
@@ -224,7 +220,7 @@ Docker runs the tool in a sealed box. Only use this if the club maintainer told 
    cp config.example.json config.json
    ```
 
-   Edit it with `nano config.json` as in Configure step 2.
+   Edit it with `nano config.json` as in Configure step 3.
 
 3. Create the files Docker mounts. This makes an empty state file, a logs folder, a private secrets folder and an empty passphrase file only you can read:
 
