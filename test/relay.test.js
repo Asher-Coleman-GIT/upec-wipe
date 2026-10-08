@@ -94,7 +94,9 @@ test('relay configured creates an alias via createImpl and caches it', async () 
   assert.equal(out, 'jane.alias@aliases.simplelogin.io');
   assert.equal(createArgs.length, 1, 'createImpl should be called exactly once');
   assert.equal(createArgs[0].apiKey, 'sl-test-key');
-  assert.equal(createArgs[0].note.includes('Jane Doe'), true, 'note should reference the person');
+  // M2: the alias note is stored at SimpleLogin, so it must not name the person.
+  assert.equal(createArgs[0].note, 'auto-identity-remove');
+  for (const pii of ['Jane', 'Doe', 'jane.doe@example.com']) assert.ok(!createArgs[0].note.includes(pii), `note leaks ${pii}`);
   const key = personKey(PERSON_A);
   assert.equal(state.relayAliases[key], 'jane.alias@aliases.simplelogin.io');
 });
@@ -114,7 +116,8 @@ test('second call reuses the cached alias without calling createImpl again', asy
 
 test('distinct persons get distinct cached aliases', async () => {
   const state = makeState();
-  const createImpl = async ({ note }) => (note.includes('Jane Doe') ? 'jane@a.io' : 'john@a.io');
+  let n = 0;
+  const createImpl = async () => (++n === 1 ? 'jane@a.io' : 'john@a.io');
 
   const a = await getSubmissionEmail({ config: RELAY_CFG, person: PERSON_A, state, createImpl });
   const b = await getSubmissionEmail({ config: RELAY_CFG, person: PERSON_B, state, createImpl });

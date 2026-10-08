@@ -33,8 +33,9 @@ test('no relay: everyone allowed with real email, masked=false', async () => {
 });
 
 test('one alias failure blocks only that person', async () => {
-  const createImpl = async ({ note }) => {
-    if (note.includes('Jane')) throw new Error('HTTP 500');
+  let n = 0;
+  const createImpl = async () => {
+    if (++n === 1) throw new Error('HTTP 500');
     return 'john-alias@simplelogin.com';
   };
   const plan = await buildSubmissionPlan({ config: RELAY, persons: [A, B], state: {}, createImpl });
