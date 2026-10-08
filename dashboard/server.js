@@ -55,8 +55,8 @@ const LOGS = path.join(ROOT, 'logs');
 const BROKERS = path.join(ROOT, 'brokers.js');
 const SERP_HISTORY = path.join(ROOT, 'data', 'serp-history.json');
 const secrets = require('../lib/secrets');
-const { isConfigEncrypted } = require('../lib/config');
-const CONFIG_PASSPHRASE = process.env.AIDR_PASSPHRASE || '';
+const { isConfigEncrypted, getPassphrase } = require('../lib/config');
+const CONFIG_PASSPHRASE = getPassphrase();
 const EXPOSURE_LIB = path.join(ROOT, 'lib', 'exposure.js');
 
 const PORT = Number.parseInt(process.env.AIDR_PORT, 10) || 8080;

@@ -142,7 +142,7 @@ if (FREEZE_MODE) {
 if (ENCRYPT_CONFIG || DECRYPT_CONFIG) {
   const { encryptConfigToDisk, decryptConfigToDisk, getPassphrase, PASSPHRASE_ENV } = require('./lib/config');
   if (!getPassphrase()) {
-    console.error(`No passphrase. Set ${PASSPHRASE_ENV} (export ${PASSPHRASE_ENV}=...) and re-run.`);
+    console.error(`No passphrase. Set ${PASSPHRASE_ENV} or AIDR_PASSPHRASE_FILE and re-run.`);
     process.exit(1);
   }
   try {

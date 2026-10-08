@@ -19,7 +19,7 @@ const readline = require('readline');
 const { execSync } = require('child_process');
 
 const { installSchedule } = require('./lib/scheduler');
-const { encryptConfigToDisk } = require('./lib/config');
+const { encryptConfigToDisk, getPassphrase } = require('./lib/config');
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 const CONFIG_ENC_PATH = path.join(__dirname, 'config.json.enc');
@@ -45,7 +45,7 @@ function readExistingConfig(opts) {
   const o = opts || {};
   const configPath = o.configPath || CONFIG_PATH;
   const encPath = o.encPath || CONFIG_ENC_PATH;
-  const passphrase = o.passphrase !== undefined ? o.passphrase : (process.env.AIDR_PASSPHRASE || '');
+  const passphrase = o.passphrase !== undefined ? o.passphrase : getPassphrase();
   const secrets = require('./lib/secrets');
 
   const decrypt = (envelope) => {
@@ -293,7 +293,7 @@ async function main() {
   // user who had deliberately turned encryption on, and loadConfig() would keep
   // reading the stale .enc so the edit above would not take effect either.
   if (prior.encrypted && !prior.locked) {
-    const encResult = maybeEncryptConfig({ passphrase: process.env.AIDR_PASSPHRASE || '' });
+    const encResult = maybeEncryptConfig({ passphrase: getPassphrase() });
     if (encResult.encrypted) {
       console.log(`🔒 Re-encrypted to ${encResult.encPath}; plaintext shredded.\n`);
     } else {
