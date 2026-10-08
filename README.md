@@ -2,7 +2,7 @@
 
 > **UPEC hardened fork.** Defaults differ from upstream: SimpleLogin relay required
 > and fail-closed, generic pass off, never runs as root, dashboard loopback-only.
-> Start with [FORK.md](FORK.md).
+> Start with [docs/UPEC-MANUAL.md](docs/UPEC-MANUAL.md).
 
 ![CI](https://github.com/stephenlthorn/auto-identity-remove/actions/workflows/test.yml/badge.svg)
 
