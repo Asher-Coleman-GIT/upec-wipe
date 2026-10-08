@@ -214,12 +214,6 @@ async function main() {
   console.log('Leave blank to skip (those sites go to your manual list instead).\n');
   const capsolverKey = await ask('CapSolver API key', (existing.capsolver||{}).apiKey || '');
 
-  // ── Notification ─────────────────────────────────────────────────────────
-  console.log('\n── Notifications ──────────────────────────────────────────');
-  const textTo = await ask('iMessage number to text results to (e.g. +15125550000)', (existing.notify||{}).textTo || '');
-  // WP2: webhook works on any OS (ntfy.sh, Slack, Discord-style). Optional.
-  const webhook = await ask('Notification webhook URL - works on any OS, optional (e.g. https://ntfy.sh/my-topic)', (existing.notify||{}).webhook || '');
-
   // ── Profile dir ──────────────────────────────────────────────────────────
   const defaultProfileDir = path.join(os.homedir(), '.config', 'auto-identity-remove');
   const profileDir = await ask('Browser profile directory', existing.profileDir || defaultProfileDir);
@@ -276,7 +270,6 @@ async function main() {
     },
     capsolver: { apiKey: capsolverKey || 'CAP-YOUR_KEY_HERE' },
     accounts,
-    notify: { textTo, ...(webhook ? { webhook } : {}) },
     profileDir,
   };
 

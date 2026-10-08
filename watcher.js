@@ -14,7 +14,7 @@ const os   = require('os');
 const { STATE_PATH, RECHECK_DAYS, loadConfig, loadState, saveState, recordSuccess, setDryRun, getPersonsFromConfig, loadCheckpoint, clearCheckpoint, findResumeIndex } = require('./lib/config');
 const { results, logResult, buildSummary, setDefunctBrokers } = require('./lib/logger');
 const { findDefunct, DEFUNCT_THRESHOLD } = require('./lib/defunct');
-const { sendText, desktopNotify, openInBrowser } = require('./lib/notify');
+const { openInBrowser } = require('./lib/notify');
 const brokerRunner = require('./lib/broker-runner');
 const { sendOptOutEmails } = require('./lib/email');
 const { isGenericEnabled, buildSubmissionPlan, withSubmissionEmail } = require('./lib/submission-plan');
@@ -544,42 +544,7 @@ try {
     await renderReportPdf({ html, outPath, context });
     console.log(`\nReport PDF written: ${outPath}`);
 
-    const smtp = reportConfig.email && reportConfig.email.smtp;
-    let emailed = false;
-    if (smtp && reportConfig.notify && reportConfig.notify.emailReportTo) {
-      let nodemailer;
-      try {
-        nodemailer = require('nodemailer');
-      } catch (_) {
-        nodemailer = null;
-      }
-      if (nodemailer) {
-        try {
-          const transporter = nodemailer.createTransport({
-            host: smtp.host,
-            port: smtp.port || 587,
-            secure: (smtp.port || 587) === 465,
-            auth: { user: smtp.user, pass: smtp.pass },
-          });
-          await transporter.sendMail({
-            from: smtp.from || smtp.user,
-            to: reportConfig.notify.emailReportTo,
-            subject: `Privacy report - ${model.period}`,
-            html,
-            attachments: [{ path: outPath }],
-          });
-          emailed = true;
-          console.log(`Report emailed to ${reportConfig.notify.emailReportTo}`);
-        } catch (err) {
-          console.error(`Report email failed: ${err.message.slice(0, 80)}`);
-        }
-      }
-    }
-
-    if (!emailed) {
-      desktopNotify('Privacy report', `Monthly report saved: ${outPath}`);
-      console.log(`Report saved (no SMTP configured or email failed). Actions needed: ${model.actionsNeeded.length}`);
-    }
+    console.log(`Report saved. Actions needed: ${model.actionsNeeded.length}`);
   } finally {
     await closeReportSession();
     lock.release(REPORT_LOCK_PATH);
@@ -641,7 +606,7 @@ if (INSTALL_SCHEDULER) {
 }
 
 const config = loadConfig();
-const { notify } = config;
+if (config.notify) console.log('ℹ  notify settings in config.json are ignored in this fork.');
 const state = loadState();
 const persons = getPersonsFromConfig(config);
 
@@ -862,7 +827,7 @@ async function _mainBody() {
   if (SERP_WATCH) {
     const { runSerpWatch } = require('./lib/serp-watch');
     console.log('\n SERP watch - scanning, then diffing against previous history');
-    console.log('   Alerts fire only when your name appears on a NEW domain.\n');
+    console.log('   New domains are printed below and recorded in data/serp-history.json.\n');
     const watch = await runSerpWatch(context, persons, brokers, { cfg: config });
     await session.close();
 
@@ -1083,17 +1048,10 @@ async function _mainBody() {
   console.log('═'.repeat(54));
   console.log(`\n📄 Log: ${logFile}`);
   console.log(`💾 State: ${STATE_PATH}\n`);
-
-  // iMessage
-  const totalProcessed = results.succeeded.length + results.skipped.length + results.notFound.length + results.captchaFailed.length + results.manual.length + results.errors.length;
-  const short = `🔒 Privacy Watcher (${new Date().toLocaleDateString()}):\n✅ Removed: ${results.succeeded.length}\n⏭  Skipped: ${results.skipped.length}\n📋 Manual: ${results.captchaFailed.length + results.manual.length}\n📊 Total: ${totalProcessed} brokers checked`;
-  sendText(short, notify);
-  desktopNotify('Privacy Watcher', `Done - ${results.succeeded.length} removed, ${results.captchaFailed.length + results.manual.length} need manual action (${totalProcessed} total)`);
 }
 
 main().catch(err => {
   console.error('\nFatal:', err.message);
-  sendText(`❌ Privacy Watcher crashed: ${err.message.slice(0, 100)}`, notify);
   process.exit(1);
 });
 

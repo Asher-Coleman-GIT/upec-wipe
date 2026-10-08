@@ -38,13 +38,6 @@
     "mylife":       { "email": "", "password": "" }
   },
 
-  "notify": {
-    "_comment": "iMessage number to text results to (macOS only). Leave blank to disable.",
-    "textTo": "+15125550000",
-    "_webhook_comment": "Optional webhook URL for notifications on any OS (ntfy.sh, Slack, Discord). Leave blank to disable.",
-    "webhook": ""
-  },
-
   "email": {
     "_comment": "SMTP config for sending opt-out emails. Required - without this, email brokers are logged as 'manual'. Gmail: host=smtp.gmail.com, port=587, use an App Password (myaccount.google.com/apppasswords). Outlook/Office365: host=smtp-mail.outlook.com, port=587.",
     "smtp": {

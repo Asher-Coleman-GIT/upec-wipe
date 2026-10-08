@@ -6,7 +6,7 @@
 
 ![CI](https://github.com/stephenlthorn/auto-identity-remove/actions/workflows/test.yml/badge.svg)
 
-Automated data broker opt-out runner for macOS, Linux, and Windows. Removes your personal information from **500+ people-search sites and data broker databases** on a monthly schedule - with CAPTCHA solving, persistent state tracking (so completed opt-outs aren't resubmitted every run), and an iMessage notification when done. [**Privacy & data flow ->**](docs/PRIVACY.md)
+Automated data broker opt-out runner for macOS, Linux, and Windows. Removes your personal information from **500+ people-search sites and data broker databases** on a monthly schedule - with CAPTCHA solving, persistent state tracking (so completed opt-outs aren't resubmitted every run), and a local log when done. [**Privacy & data flow ->**](docs/PRIVACY.md)
 
 ## What it does
 
@@ -17,8 +17,7 @@ Each month, the script:
 3. **Fills and submits** the opt-out form automatically
 4. **Solves CAPTCHAs** via [CapSolver](https://capsolver.com) (AI-powered, ~$0.001/solve)
 5. **Skips** brokers you were already removed from recently (90-day re-check window)
-6. **Sends you an iMessage** with the results summary
-7. **Opens** any sites that require manual action in your browser
+6. **Opens** any sites that require manual action in your browser
 
 Beyond the monthly run, it can also:
 
@@ -112,7 +111,6 @@ Every subcommand maps to the equivalent `node watcher.js --<flag>` invocation.
 | **Aliases** | Past names or variations (e.g. "Steve Doe") |
 | **CapSolver key** | For CAPTCHA-protected opt-out forms |
 | **One-time accounts** | Creates accounts on sites that require login (stored in `config.json`, gitignored) |
-| **iMessage** | Phone number to text the results summary to |
 | **Monthly schedule** | Registers a monthly job to run on the 1st at 9am (launchd / systemd / crontab / schtasks - detected automatically) |
 
 **Your personal info never leaves your machine.** `config.json` and `state.json` are both gitignored.
@@ -198,23 +196,6 @@ fidelity for less background work on slow cores.
 > **Synology / NAS users:** see [docs/SYNOLOGY.md](docs/SYNOLOGY.md) for a full
 > DSM Container Manager walkthrough, measured memory numbers, DSM Task Scheduler
 > setup, and the three defects that used to make the container unusable.
-
-### Webhook notifications (any OS)
-
-When running headless or in Docker you won't have iMessage or a desktop - use
-a webhook instead. Set `notify.webhook` in `config.json` to any ntfy.sh,
-Slack incoming-webhook, or Discord webhook URL:
-
-```json
-"notify": {
-  "textTo": "",
-  "webhook": "https://ntfy.sh/my-private-channel"
-}
-```
-
-The tool POSTs `{"text": "<summary>"}` after every run. Works on macOS, Linux,
-and Windows - the webhook fires in addition to (not instead of) any platform
-notification that is available.
 
 ---
 
@@ -419,7 +400,7 @@ A dated JSON report is saved to `logs/verify-YYYY-MM-DD.json`.
 
 ### Continuous SERP monitoring (`--serp-watch`)
 
-`node watcher.js --serp-watch` runs a search-engine scan, diffs the broker domains it finds against the previous `data/serp-history.json` snapshot, and dispatches an alert (via `lib/notify.js` `dispatchNotify`: macOS toast/iMessage, Linux `notify-send`, and/or the `notify.webhook` URL) only when your name appears on a NEW domain. Because the scan appends to `data/serp-history.json`, repeated runs diff against the prior run. Add `--serp-watch` to `run.sh` to have the existing monthly scheduler watch for new exposures.
+`node watcher.js --serp-watch` runs a search-engine scan, diffs the broker domains it finds against the previous `data/serp-history.json` snapshot, and prints new domains and records them in `data/serp-history.json` when your name appears on a NEW domain. Because the scan appends to that file, repeated runs diff against the prior run. Add `--serp-watch` to `run.sh` to have the existing monthly scheduler watch for new exposures.
 
 ---
 

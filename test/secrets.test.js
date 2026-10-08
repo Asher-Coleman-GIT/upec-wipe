@@ -20,7 +20,7 @@ const PLAIN = {
   person: { firstName: 'Ada', lastName: 'Lovelace', email: 'ada@example.com' },
   capsolver: { apiKey: 'CAP-SECRET-123' },
   email: { smtp: { host: 'smtp.example.com', port: 587, user: 'ada', pass: 'hunter2' } },
-  notify: { textTo: '+15125550000' },
+  profile: { label: 'main' },
 };
 const PASS = 'correct horse battery staple';
 

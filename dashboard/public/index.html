@@ -112,10 +112,6 @@
         <fieldset><legend>CapSolver (CAPTCHA solving)</legend>
           <label>API key <span class="secret-wrap"><input name="capsolver.apiKey" type="password" placeholder="CAP-…" /><button type="button" class="btn btn-clear-secret" data-clears="capsolver.apiKey" title="Clear this secret (sets it to empty on save)">Clear</button></span></label>
         </fieldset>
-        <fieldset><legend>Notifications</legend>
-          <label>Webhook (ntfy/Slack/Discord) <span class="secret-wrap"><input name="notify.webhook" placeholder="https://ntfy.sh/your-topic" /><button type="button" class="btn btn-clear-secret" data-clears="notify.webhook" title="Clear this secret (sets it to empty on save)">Clear</button></span></label>
-          <label>Text to (macOS iMessage) <input name="notify.textTo" /></label>
-        </fieldset>
         <fieldset><legend>SMTP (email-based opt-outs)</legend>
           <label>Host <input name="email.smtp.host" placeholder="smtp.gmail.com" /></label>
           <label>Port <input name="email.smtp.port" type="number" placeholder="587" /></label>
@@ -241,21 +237,12 @@
           <p class="wiz-err" data-err="3"></p>
         </section>
 
-        <!-- Step 5: Notifications (optional) -->
+        <!-- Step 5: Review -->
         <section class="wiz-step hidden" data-step="4">
-          <h3>Notifications <span class="dim">- optional</span></h3>
-          <p class="wiz-why dim">Get a ping when a run finishes. A webhook works on any OS (ntfy.sh, Slack, Discord). iMessage texting is macOS-only. Both are optional.</p>
-          <label>Webhook URL <input name="notify.webhook" placeholder="https://ntfy.sh/your-topic" /></label>
-          <label>Text to (macOS iMessage) <input name="notify.textTo" placeholder="+15125550000" /></label>
-          <p class="wiz-err" data-err="4"></p>
-        </section>
-
-        <!-- Step 6: Review -->
-        <section class="wiz-step hidden" data-step="5">
           <h3>Review &amp; save</h3>
           <p class="wiz-why dim">Here is what will be written to <code>config.json</code>. Secrets are shown masked. Go back to change anything.</p>
           <dl class="wiz-review" id="wizReview"></dl>
-          <p class="wiz-err" data-err="5"></p>
+          <p class="wiz-err" data-err="4"></p>
         </section>
       </form>
 

@@ -147,9 +147,8 @@ versions.
 
 ## What does not work on a NAS
 
-- **Desktop notifications.** `notify-send` needs a session bus. Use the SMTP
-  report (`notify.emailReportTo` in config) or a webhook.
-- **iMessage / `osascript` notifications.** macOS only.
+- **Notifications.** Removed in this fork. Check the log files and the
+  report PDF in the data directory instead.
 - **The interactive `setup.js` wizard.** Some steps want a real browser. Run it
   elsewhere and copy `config.json` over.
 - **Headed mode.** There is no display. The tool auto-detects this (Linux with no

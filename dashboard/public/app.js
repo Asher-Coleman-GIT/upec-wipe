@@ -495,17 +495,16 @@ api('/version').then(v => {
 // Required person fields (mirrors dashboard/config-status.js REQUIRED_PERSON_FIELDS
 // and lib/config.js getPersonsFromConfig). Keep in sync.
 const WIZ_REQUIRED = ['person.firstName', 'person.lastName', 'person.email'];
-// Per-step required field paths (index matches data-step). Steps 2/3/4 are optional.
+// Per-step required field paths (index matches data-step). Steps 2/3 are optional.
 const WIZ_STEP_REQUIRED = [
   ['person.firstName', 'person.lastName', 'person.email'], // step 0: Person
   ['person.country'],                                      // step 1: Region/Country
   [],                                                      // step 2: CapSolver (optional)
   [],                                                      // step 3: SMTP (optional)
-  [],                                                      // step 4: Notifications (optional)
-  [],                                                      // step 5: Review
+  [],                                                      // step 4: Review
 ];
-const WIZ_TOTAL_STEPS = 6;
-const WIZ_STEP_NAMES = ['Person', 'Region', 'CapSolver', 'Email', 'Notify', 'Review'];
+const WIZ_TOTAL_STEPS = 5;
+const WIZ_STEP_NAMES = ['Person', 'Region', 'CapSolver', 'Email', 'Review'];
 // Minimal fallback if /config cannot return the example (network/parse issue):
 // the wizard must still open with sensible blanks.
 const EXAMPLE_CONFIG_FALLBACK = {
@@ -513,7 +512,7 @@ const EXAMPLE_CONFIG_FALLBACK = {
     country: 'US', state: '', zip: '', email: '', phone: '', phoneFormatted: '' },
 };
 // Fields treated as secrets in the review (shown as "(set)" / "(blank)", never the value).
-const WIZ_SECRET_PATHS = new Set(['capsolver.apiKey', 'email.smtp.pass', 'notify.webhook']);
+const WIZ_SECRET_PATHS = new Set(['capsolver.apiKey', 'email.smtp.pass']);
 // Exact placeholder values shipped in config.example.json. When config.json is
 // absent the server returns the raw example (unmasked) from GET /api/config, so
 // the wizard must blank these out rather than silently saving the samples as if
@@ -534,7 +533,6 @@ const WIZ_EXAMPLE_PLACEHOLDERS = {
   'email.smtp.user': 'you@gmail.com',
   'email.smtp.pass': 'YOUR_GMAIL_APP_PASSWORD',
   'email.smtp.from': 'you@gmail.com',
-  'notify.textTo': '+15125550000',
 };
 // The example's sample aliases, blanked the same way (it is an array, so it is
 // matched after wizPrefill joins it to a comma string).
@@ -661,14 +659,12 @@ function wizRenderReview() {
   add('SMTP host', 'email.smtp.host');
   add('SMTP user', 'email.smtp.user');
   add('SMTP password', 'email.smtp.pass');
-  add('Webhook', 'notify.webhook');
-  add('Text to', 'notify.textTo');
   $('#wizReview').innerHTML = rows.join('');
 }
 async function wizFinish() {
   // Final guard: every globally-required field must be present.
   const missing = WIZ_REQUIRED.filter(p => wizGetValue(p) === '');
-  const errEl = $('.wiz-err[data-err="5"]');
+  const errEl = $('.wiz-err[data-err="4"]');
   if (missing.length) {
     if (errEl) errEl.textContent = 'Missing required: ' + missing.map(p => p.replace('person.', '')).join(', ') + '. Go back to the Person step.';
     return;

@@ -26,7 +26,6 @@ const {
   checkPlaywright,
   checkSMTP,
   checkCapsolver,
-  checkWebhook,
   runDoctor,
 } = require('../lib/doctor');
 
@@ -290,42 +289,6 @@ describe('checkCapsolver', () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
-// checkWebhook
-// ─────────────────────────────────────────────────────────────────────────────
-
-describe('checkWebhook', () => {
-  it('skips when webhook not configured', async () => {
-    const cfg = {};
-    const result = await checkWebhook(cfg, { headRequest: () => Promise.resolve(200) });
-    assert.equal(result.ok, true);
-    assert.match(result.hint, /not configured/i);
-  });
-
-  it('skips when webhook is empty string', async () => {
-    const cfg = { notify: { webhook: '' } };
-    const result = await checkWebhook(cfg, { headRequest: () => Promise.resolve(200) });
-    assert.equal(result.ok, true);
-    assert.match(result.hint, /not configured/i);
-  });
-
-  it('returns ok when HEAD request succeeds', async () => {
-    const cfg = { notify: { webhook: 'https://example.com/hook' } };
-    const result = await checkWebhook(cfg, { headRequest: () => Promise.resolve(200) });
-    assert.equal(result.ok, true);
-    assert.match(result.hint, /reachable/i);
-  });
-
-  it('returns not-ok when HEAD request fails', async () => {
-    const cfg = { notify: { webhook: 'https://example.com/hook' } };
-    const result = await checkWebhook(cfg, {
-      headRequest: () => Promise.reject(new Error('ENOTFOUND')),
-    });
-    assert.equal(result.ok, false);
-    assert.match(result.hint, /unreachable|ENOTFOUND/i);
-  });
-});
-
-// ─────────────────────────────────────────────────────────────────────────────
 // runDoctor - integration-level with mocked I/O
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -348,7 +311,7 @@ describe('runDoctor', () => {
     });
 
     assert.ok(Array.isArray(results));
-    assert.ok(results.length >= 6);
+    assert.ok(results.length >= 5);
     for (const r of results) {
       assert.ok('name' in r, 'missing name');
       assert.ok('ok'   in r, 'missing ok');
@@ -393,7 +356,7 @@ describe('runDoctor', () => {
 
   it('result summary includes ok, skipped, and failed counts', async () => {
     const dir = tmpDir();
-    // config.json missing => 1 failure; no smtp/capsolver/webhook => 3 skips
+    // config.json missing => 1 failure; no smtp/capsolver => 2 skips
     const { summary } = await runDoctor({
       rootDir: dir,
       requirePlaywright: () => { throw new Error('no playwright'); },

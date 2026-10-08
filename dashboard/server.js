@@ -431,7 +431,6 @@ app.get('/api/summary', (_req, res) => {
     configured: !!cfg,
     capsolver: !!(cfg && cfg.capsolver && cfg.capsolver.apiKey && cfg.capsolver.apiKey !== 'CAP-YOUR_KEY_HERE'),
     smtp: !!(cfg && cfg.email && cfg.email.smtp && cfg.email.smtp.host && cfg.email.smtp.user),
-    webhook: !!(cfg && cfg.notify && cfg.notify.webhook),
     stateExists: sm.exists, stateError: !!sm.parseError,
     run: { running: run.running, mode: run.mode, startedAt: run.startedAt, endedAt: run.endedAt, exitCode: run.exitCode },
   });

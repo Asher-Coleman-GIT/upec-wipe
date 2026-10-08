@@ -12,8 +12,8 @@ It wraps the existing tooling rather than reimplementing it:
   pending, confirm-emails, retry-failed, serp-scan, snapshot) with live
   streamed output (SSE) and `--only` / `--skip` filters.
 - **Config editor** - a form over `../config.json` (person, CapSolver, SMTP,
-  notifications, broker accounts). Secrets (CapSolver key, SMTP password,
-  webhook, account passwords) are masked in transit and preserved on save
+  broker accounts). Secrets (CapSolver key, SMTP password,
+  account passwords) are masked in transit and preserved on save
   unless you type a new value. If `../config.json` doesn't exist yet the form is
   prefilled from `../config.example.json` and the first Save creates it (`0600`).
 - **Schedule** - read-only status of the systemd timer (see
