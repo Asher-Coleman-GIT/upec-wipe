@@ -887,7 +887,7 @@ async function _mainBody() {
   // person whose relay alias is unavailable gets no submissions on any channel.
   const plan = await buildSubmissionPlan({ config, persons, state });
   for (const b of plan.blocked) {
-    console.error(`⛔ Skipping ${b.person.firstName} ${b.person.lastName}: ${b.reason}`);
+    console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
   }
   if (plan.allowed.length === 0) {
     console.error('⛔ No person has a usable submission email. Nothing submitted.');
