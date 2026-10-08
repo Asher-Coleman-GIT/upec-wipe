@@ -151,7 +151,7 @@ This part is the same for Parts A and B.
 
    Move with the arrow keys. To save, press Ctrl+O then Enter. To leave, press Ctrl+X. Set these three things exactly.
 
-   The relay (your SimpleLogin key). `"required": true` means the tool refuses to run without a working alias:
+   The relay (your SimpleLogin key). Setup already wrote this block with the placeholder `YOUR_SIMPLELOGIN_API_KEY`; replace it with your key. `"required": true` means nothing is submitted for you without a working alias:
 
    ```
    "relay": { "provider": "simplelogin", "apiKey": "<your key>", "required": true }
@@ -163,7 +163,7 @@ This part is the same for Parts A and B.
    "email": { "smtp": { "host": "...", "port": 587, "user": "<separate mailbox not linked to you>", "pass": "...", "from": "<the same separate mailbox>" } }
    ```
 
-   The network check. `"required": true` makes the tool stop unless Mullvad is on. Leave `proxy` empty if you use the Mullvad app:
+   The network check, also written by setup. `"required": true` makes the tool stop unless Mullvad is on. Leave `proxy` empty if you use the Mullvad app:
 
    ```
    "network": { "required": true, "proxy": "" }
@@ -287,6 +287,7 @@ It prints a web address and a login. Open the address in your browser and use th
 | `⛔ Network check failed - nothing was submitted. ...` | Connect Mullvad and check https://am.i.mullvad.net says you are using it. Then run again. |
 | `⛔ Skipping person #N: Relay alias creation failed: ...` | Check the SimpleLogin API key in `config.json` and that your SimpleLogin account is verified. |
 | `config.relay.required is true but no usable relay is configured (provider "simplelogin" + apiKey)` | Add your SimpleLogin key as `apiKey` in the `relay` block. |
+| `... relay.apiKey is still the placeholder. ...` | Setup wrote `YOUR_SIMPLELOGIN_API_KEY` as a placeholder. Replace it with your SimpleLogin API key in the `relay` block. Until then nothing is submitted. |
 | `Refusing to run as root. ...` | Do not use `sudo` or a root account for the tool. Use your own user (Part B). |
 | `chmod has no effect on ... (mode came back ...)` | You are on `/mnt/c`. Move the install to your Linux home folder (Part A step 2). |
 | `Passphrase file ... is readable by other users. Run: chmod 600 "..."` | Run the `chmod 600` command it prints. |

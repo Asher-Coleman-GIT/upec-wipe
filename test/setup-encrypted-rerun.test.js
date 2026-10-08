@@ -155,3 +155,44 @@ test('buildConfig keeps hand-added keys (relay, email, network) on a setup re-ru
   assert.equal(out.capsolver.extra, 1);
   assert.deepEqual(buildConfig({}, { firstName: 'a', lastName: 'b', aliases: [], accounts: {} }).accounts, {});
 });
+
+// I2 (final review): a fresh setup seeds the fork's fail-closed relay and
+// network blocks, and the placeholder key blocks the person with a clear reason.
+const SETUP_ANSWERS = {
+  firstName: 'New', lastName: 'Name', aliases: [], city: 'C', country: 'US',
+  state: 'S', zip: 'Z', email: 'real@example.com', phone: 'p', phoneFormatted: 'pf',
+  capsolverKey: 'NEW', accounts: {}, profileDir: '/p',
+};
+
+test('buildConfig seeds relay (required, placeholder key) and network (required) when absent', () => {
+  const { buildConfig } = require('../setup');
+  const out = buildConfig({}, SETUP_ANSWERS);
+  assert.deepEqual(out.relay, { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: true });
+  assert.deepEqual(out.network, { required: true, proxy: '' });
+});
+
+test('buildConfig never overrides existing relay or network values', () => {
+  const { buildConfig } = require('../setup');
+  const existing = {
+    relay: { provider: 'simplelogin', apiKey: 'REAL', required: false },
+    network: { required: false, proxy: 'socks5://10.64.0.1:1080' },
+  };
+  const out = buildConfig(existing, SETUP_ANSWERS);
+  assert.deepEqual(out.relay, existing.relay);
+  assert.deepEqual(out.network, existing.network);
+});
+
+test('seeded placeholder relay key fails closed with a clear reason, no API call, no real-email fallback', async () => {
+  const { buildConfig } = require('../setup');
+  const { buildSubmissionPlan } = require('../lib/submission-plan');
+  const config = buildConfig({}, SETUP_ANSWERS);
+  let calls = 0;
+  const plan = await buildSubmissionPlan({
+    config, persons: [config.person], state: {}, createImpl: async () => { calls += 1; return 'x@y.io'; },
+  });
+  assert.equal(calls, 0);
+  assert.equal(plan.allowed.length, 0);
+  assert.equal(plan.blocked.length, 1);
+  assert.match(plan.blocked[0].reason, /relay\.apiKey is still the placeholder/);
+  assert.ok(!plan.blocked[0].reason.includes('real@example.com'));
+});

@@ -194,6 +194,11 @@ function buildConfig(existing, a) {
     capsolver: { ...(prev.capsolver || {}), apiKey: a.capsolverKey || 'CAP-YOUR_KEY_HERE' },
     accounts: a.accounts,
     profileDir: a.profileDir,
+    // Fork defaults (fail closed): seeded only when absent, never overriding
+    // what the member already has. The placeholder key blocks every person
+    // until a real SimpleLogin key is pasted in.
+    relay: prev.relay !== undefined ? prev.relay : { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: true },
+    network: prev.network !== undefined ? prev.network : { required: true, proxy: '' },
   };
 }
 
