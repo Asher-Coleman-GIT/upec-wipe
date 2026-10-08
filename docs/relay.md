@@ -18,15 +18,22 @@ email-based opt-outs. Without `config.relay`, behavior is unchanged.
    ```json
    "relay": {
      "provider": "simplelogin",
-     "apiKey": "YOUR_SIMPLELOGIN_API_KEY"
+     "apiKey": "YOUR_SIMPLELOGIN_API_KEY",
+     "required": true
    }
    ```
 
 4. Run the tool normally. On the first run per person it POSTs to
-   `https://app.simplelogin.io/api/alias/custom/new` (with header
-   `Authentication: <apiKey>`) to mint a custom alias, then caches it in
-   `state.json` so no new alias is created on later runs. If the API call fails,
-   the run falls back to your real email so opt-outs are never blocked.
+   `https://app.simplelogin.io/api/alias/random/new?mode=word` (header
+   `Authentication: <apiKey>`) and caches the returned alias in `state.json`.
+   **If the API call fails, that person gets no submissions this run** - no
+   forms, no emails, no generic pass. With `"required": true` the run refuses to
+   start at all unless a relay is configured. Your real email is never used as a
+   fallback.
+5. Set `email.smtp.from` to an address that is not your real email (for example
+   a SimpleLogin reverse-alias or a mailbox on your own domain). While an alias is
+   in use, email opt-outs and right-to-know requests are skipped and listed as
+   manual if `from` is missing or is your real address.
 
 ## Apple Hide My Email (manual fallback)
 

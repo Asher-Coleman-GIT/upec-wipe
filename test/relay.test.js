@@ -24,7 +24,12 @@ const {
   getSubmissionEmail,
   personKey,
   createSimpleLoginAlias,
+  relayConfigured,
+  relayRequired,
+  smtpFromLeakReason,
+  RelayUnavailableError,
   RELAY_PROVIDERS,
+  SIMPLELOGIN_ALIAS_URL,
 } = require('../lib/relay');
 
 // -- Fixtures ------------------------------------------------------------------
@@ -129,27 +134,30 @@ test('RELAY_PROVIDERS lists simplelogin', () => {
   assert.equal(RELAY_PROVIDERS.includes('simplelogin'), true);
 });
 
-test('createSimpleLoginAlias posts to the documented endpoint with Authentication header', async () => {
+test('createSimpleLoginAlias posts to /api/alias/random/new and reads the email field', async () => {
   const fetchCalls = [];
   const fetchImpl = async (url, init) => {
     fetchCalls.push({ url, init });
-    return {
-      ok: true,
-      status: 201,
-      json: async () => ({ alias: 'generated.alias@aliases.simplelogin.io' }),
-    };
+    return { ok: true, status: 201, json: async () => ({ id: 1, email: 'brave.otter123@simplelogin.com' }) };
   };
 
   const alias = await createSimpleLoginAlias({ apiKey: 'sl-test-key', note: 'opt-out for Jane Doe', fetchImpl });
 
-  assert.equal(alias, 'generated.alias@aliases.simplelogin.io');
+  assert.equal(alias, 'brave.otter123@simplelogin.com');
   assert.equal(fetchCalls.length, 1);
-  assert.equal(fetchCalls[0].url, 'https://app.simplelogin.io/api/alias/custom/new');
+  assert.equal(fetchCalls[0].url, 'https://app.simplelogin.io/api/alias/random/new?mode=word');
+  assert.equal(SIMPLELOGIN_ALIAS_URL, fetchCalls[0].url);
   assert.equal(fetchCalls[0].init.method, 'POST');
   assert.equal(fetchCalls[0].init.headers.Authentication, 'sl-test-key');
-  assert.equal(fetchCalls[0].init.headers['Content-Type'], 'application/json');
-  const sentBody = JSON.parse(fetchCalls[0].init.body);
-  assert.equal(sentBody.note, 'opt-out for Jane Doe');
+  assert.equal(JSON.parse(fetchCalls[0].init.body).note, 'opt-out for Jane Doe');
+});
+
+test('createSimpleLoginAlias rejects a 2xx response without an email field', async () => {
+  const fetchImpl = async () => ({ ok: true, status: 201, json: async () => ({ alias: 'old-shape@x.io' }) });
+  await assert.rejects(
+    () => createSimpleLoginAlias({ apiKey: 'k', note: 'x', fetchImpl }),
+    /missing "email"/
+  );
 });
 
 test('createSimpleLoginAlias throws a useful error on a non-ok response', async () => {
@@ -163,4 +171,71 @@ test('createSimpleLoginAlias throws a useful error on a non-ok response', async 
     () => createSimpleLoginAlias({ apiKey: 'bad', note: 'x', fetchImpl }),
     /SimpleLogin alias creation failed.*401/
   );
+});
+
+// -- Strict fail-closed behaviour (fork) -----------------------------------------
+
+test('alias creation failure throws RelayUnavailableError instead of returning the real email', async () => {
+  const state = makeState();
+  const createImpl = async () => { throw new Error('HTTP 503'); };
+  await assert.rejects(
+    () => getSubmissionEmail({ config: RELAY_CFG, person: PERSON_A, state, createImpl }),
+    (err) => err instanceof RelayUnavailableError && /503/.test(err.message) && !err.message.includes(PERSON_A.email)
+  );
+  assert.equal(state.relayAliases[personKey(PERSON_A)], undefined, 'nothing cached on failure');
+});
+
+test('createImpl returning an empty alias throws', async () => {
+  await assert.rejects(
+    () => getSubmissionEmail({ config: RELAY_CFG, person: PERSON_A, state: makeState(), createImpl: async () => '' }),
+    RelayUnavailableError
+  );
+});
+
+test('relay.required with no apiKey throws', async () => {
+  await assert.rejects(
+    () => getSubmissionEmail({ config: { relay: { provider: 'simplelogin', required: true } }, person: PERSON_A, state: makeState() }),
+    /required/
+  );
+});
+
+test('relay.required with the example placeholder key throws without calling the API', async () => {
+  let calls = 0;
+  await assert.rejects(
+    () => getSubmissionEmail({
+      config: { relay: { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: true } },
+      person: PERSON_A, state: makeState(), createImpl: async () => { calls += 1; return 'x@y.io'; },
+    }),
+    RelayUnavailableError
+  );
+  assert.equal(calls, 0);
+});
+
+test('cached alias is reused under relay.required even when the API is down', async () => {
+  const state = makeState();
+  state.relayAliases = { [personKey(PERSON_A)]: 'cached@simplelogin.com' };
+  const out = await getSubmissionEmail({
+    config: { relay: { ...RELAY_CFG.relay, required: true } },
+    person: PERSON_A, state, createImpl: async () => { throw new Error('down'); },
+  });
+  assert.equal(out, 'cached@simplelogin.com');
+});
+
+test('relayConfigured / relayRequired', () => {
+  assert.equal(relayConfigured(RELAY_CFG), true);
+  assert.equal(relayConfigured({}), false);
+  assert.equal(relayConfigured({ relay: { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY' } }), false);
+  assert.equal(relayConfigured({ relay: { provider: 'firefox', apiKey: 'k' } }), false);
+  assert.equal(relayRequired({ relay: { required: true } }), true);
+  assert.equal(relayRequired({ relay: { required: 'yes' } }), false);
+  assert.equal(relayRequired({}), false);
+});
+
+test('smtpFromLeakReason flags missing, equal, display-name and mixed-case from addresses', () => {
+  const p = { email: 'jane.doe@example.com' };
+  assert.match(smtpFromLeakReason({ user: 'jane.doe@example.com' }, p), /smtp\.from/);
+  assert.match(smtpFromLeakReason({ from: 'jane.doe@example.com' }, p), /real email/);
+  assert.match(smtpFromLeakReason({ from: 'Jane <Jane.Doe@Example.com>' }, p), /real email/);
+  assert.equal(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org' }, p), null);
+  assert.match(smtpFromLeakReason(undefined, p), /smtp\.from/);
 });
