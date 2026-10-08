@@ -18,6 +18,9 @@ const { openInBrowser } = require('./lib/notify');
 const brokerRunner = require('./lib/broker-runner');
 const { sendOptOutEmails } = require('./lib/email');
 const { isGenericEnabled, buildSubmissionPlan, submissionOptions, withSubmissionEmail } = require('./lib/submission-plan');
+const { PREVIEW_ALIAS } = require('./lib/relay');
+// Printed once when a preview/dry-run person has no cached alias yet.
+const PREVIEW_ALIAS_NOTE = `ℹ  Preview: no SimpleLogin alias was created; using ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
 const lock = require('./lib/lock');
 const { applyFilter, loadLastLog, extractFailedBrokers } = require('./lib/filter');
 const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./lib/allowlist-edit');
@@ -632,10 +635,11 @@ if (KNOW_MODE) {
     const emailBrokerCount = brokers.filter(b => b.method === 'email').length;
     console.log(`${emailBrokerCount} email broker(s) x ${persons.length} person(s)\n`);
 
-    const plan = await buildSubmissionPlan({ config, persons, state });
+    const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
     for (const b of plan.blocked) {
       console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
     }
+    if (plan.allowed.some(a => a.placeholder)) console.log(PREVIEW_ALIAS_NOTE);
     const result = await sendKnowRequests(brokers, config, {
       dryRun: DRY_RUN,
       ...submissionOptions(plan),
@@ -863,10 +867,11 @@ async function _mainBody() {
 
   // Resolve every person's submission email up front (fork: fail closed). A
   // person whose relay alias is unavailable gets no submissions on any channel.
-  const plan = await buildSubmissionPlan({ config, persons, state });
+  const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
   for (const b of plan.blocked) {
     console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
   }
+  if (plan.allowed.some(a => a.placeholder)) console.log(PREVIEW_ALIAS_NOTE);
   if (plan.allowed.length === 0) {
     console.error('⛔ No person has a usable submission email. Nothing submitted.');
     saveState();

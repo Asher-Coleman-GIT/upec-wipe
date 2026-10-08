@@ -249,3 +249,35 @@ test('smtpFromLeakReason flags an SMTP login (smtp.user) that is the real email,
   assert.match(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org', user: ' JANE.DOE@example.com ' }, p), /smtp\.user/);
   assert.equal(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org', user: 'separate-box@example.net' }, p), null);
 });
+
+// I6 (final review): preview/dry-run never mints a SimpleLogin alias.
+test('preview: no cached alias -> placeholder, createImpl never called, nothing cached', async () => {
+  const { PREVIEW_ALIAS } = require('../lib/relay');
+  assert.equal(PREVIEW_ALIAS, 'preview-alias@relay.invalid');
+  const state = makeState();
+  let calls = 0;
+  const out = await getSubmissionEmail({
+    config: { relay: { ...RELAY_CFG.relay, required: true } }, person: PERSON_A, state,
+    createImpl: async () => { calls += 1; return 'minted@simplelogin.com'; }, preview: true,
+  });
+  assert.equal(out, 'preview-alias@relay.invalid');
+  assert.equal(calls, 0);
+  assert.equal((state.relayAliases || {})[personKey(PERSON_A)], undefined, 'placeholder must not be cached');
+});
+
+test('preview: cached alias is used', async () => {
+  const state = makeState();
+  state.relayAliases = { [personKey(PERSON_A)]: 'cached@simplelogin.com' };
+  const out = await getSubmissionEmail({
+    config: RELAY_CFG, person: PERSON_A, state, preview: true,
+    createImpl: async () => { throw new Error('must not be called'); },
+  });
+  assert.equal(out, 'cached@simplelogin.com');
+});
+
+test('preview: relay.required with no usable relay still blocks', async () => {
+  await assert.rejects(
+    () => getSubmissionEmail({ config: { relay: { provider: 'simplelogin', required: true } }, person: PERSON_A, state: makeState(), preview: true }),
+    RelayUnavailableError
+  );
+});

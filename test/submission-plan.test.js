@@ -61,3 +61,18 @@ test('withSubmissionEmail swaps only the email', () => {
   assert.equal(A.email, 'jane@example.com', 'original not mutated');
   assert.equal(withSubmissionEmail(A, A.email), A);
 });
+
+test('preview plan: no alias minted, placeholder flagged, required relay still blocks', async () => {
+  let calls = 0;
+  const createImpl = async () => { calls += 1; return 'minted@simplelogin.com'; };
+  const state = { relayAliases: { 'john@example.com': 'john-cached@simplelogin.com' } };
+  const plan = await buildSubmissionPlan({ config: RELAY, persons: [A, B], state, createImpl, preview: true });
+  assert.equal(calls, 0, 'SimpleLogin API must not be called in preview');
+  assert.deepEqual(plan.allowed.map(x => [x.email, x.placeholder]), [
+    ['preview-alias@relay.invalid', true],
+    ['john-cached@simplelogin.com', false],
+  ]);
+  const req = await buildSubmissionPlan({ config: { relay: { required: true } }, persons: [A], state: {}, preview: true });
+  assert.equal(req.allowed.length, 0);
+  assert.equal(req.blocked.length, 1);
+});
