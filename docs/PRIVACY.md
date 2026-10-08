@@ -32,12 +32,11 @@ Your `config.json` is listed in `.gitignore` and is never committed to version c
 | Broker opt-out forms (HTTPS) | name, address, email, phone | every run, per broker |
 | CapSolver API (optional) | CAPTCHA image bytes ONLY | only when a broker presents a CAPTCHA |
 | Your SMTP server (optional) | email body containing your PII | only for email-method brokers |
-| Your webhook URL (optional) | summary text (opt-out counts, broker names) | end of run |
 
 **Notes:**
 - All broker form submissions go directly to the broker's own HTTPS endpoint - there is no proxy or intermediary.
 - CapSolver receives raw image bytes (a PNG/JPEG of the CAPTCHA challenge). It does not receive your name, address, email, or any other identifying field from `config.json`.
-- SMTP and webhook destinations are entirely under your control. You configure them in `config.json` and may leave them blank to disable.
+- The SMTP destination is entirely under your control. You configure it in `config.json` and may leave it blank to disable.
 
 ---
 

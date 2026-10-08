@@ -9,7 +9,6 @@
  *   • CapSolver API key (for CAPTCHA-protected sites)
  *   • Accounts for sites that require login (one-time)
  *   • macOS launchd scheduling (1st of every month)
- *   • iMessage notification number
  */
 
 const fs      = require('fs');
