@@ -56,7 +56,15 @@ const BROKERS = path.join(ROOT, 'brokers.js');
 const SERP_HISTORY = path.join(ROOT, 'data', 'serp-history.json');
 const secrets = require('../lib/secrets');
 const { isConfigEncrypted, getPassphrase } = require('../lib/config');
-const CONFIG_PASSPHRASE = getPassphrase();
+// getPassphrase() can throw (bad/missing/world-readable AIDR_PASSPHRASE_FILE).
+// Caught here so a plain `require('./server')` never crashes with a raw stack;
+// the error is instead reported and the process exits cleanly at startup
+// (see the require.main === module block below). A require()-only consumer
+// (e.g. tests) gets CONFIG_PASSPHRASE = '', which makes any encrypted config
+// report as locked/unreadable rather than silently using the wrong secret.
+let CONFIG_PASSPHRASE = '';
+let PASSPHRASE_ERROR = null;
+try { CONFIG_PASSPHRASE = getPassphrase(); } catch (err) { PASSPHRASE_ERROR = err; }
 const EXPOSURE_LIB = path.join(ROOT, 'lib', 'exposure.js');
 
 const PORT = Number.parseInt(process.env.AIDR_PORT, 10) || 8080;
@@ -638,6 +646,10 @@ app.post('/api/freeze', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 if (require.main === module) {
+  if (PASSPHRASE_ERROR) {
+    console.error(`aidr-dashboard: ${PASSPHRASE_ERROR.message}`);
+    process.exit(1);
+  }
   app.listen(PORT, HOST, () => {
     const c = loadCreds();
     const mode = authConfigured() ? [c ? `basic(${c.source})` : null, TOKEN ? 'token' : null].filter(Boolean).join('+') : 'OPEN';

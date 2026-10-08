@@ -664,6 +664,42 @@ test('readConfigMeta flags parseError when an encrypted config has no passphrase
   assert.equal(m.parseError, true);
 });
 
+// getPassphrase() throws on a bad AIDR_PASSPHRASE_FILE; require()-ing server.js
+// must catch that at module load (fail CLOSED and report at `node server.js`
+// startup, not crash a plain require with a raw stack). Here we only assert the
+// require()-level contract: no throw, and the resulting empty CONFIG_PASSPHRASE
+// makes an encrypted config report locked (parseError) instead of being decrypted
+// with the wrong (empty) passphrase.
+test('requiring server.js with a missing AIDR_PASSPHRASE_FILE does not throw; readConfigMeta then reports locked', () => {
+  const dir = _encTmpDir();
+  const configPath = _encPath.join(dir, 'config.json');
+  const encPath = _encPath.join(dir, 'config.json.enc');
+  const plain = { person: { firstName: 'Locked' } };
+  _encFs.writeFileSync(encPath, JSON.stringify(secrets.encryptConfig(plain, 'realpw')));
+
+  const prevPassphrase = process.env.AIDR_PASSPHRASE;
+  const prevPassphraseFile = process.env.AIDR_PASSPHRASE_FILE;
+  delete process.env.AIDR_PASSPHRASE;
+  process.env.AIDR_PASSPHRASE_FILE = _encPath.join(dir, 'does-not-exist');
+
+  purgeServerModule();
+  try {
+    let mod;
+    assert.doesNotThrow(() => { mod = require('./server'); });
+    // Omit `passphrase` so readConfigMeta falls back to the module-level
+    // CONFIG_PASSPHRASE computed at require time (which must be '' here).
+    const m = mod.readConfigMeta({ configPath, encPath });
+    assert.equal(m.exists, true);
+    assert.equal(m.parseError, true);
+  } finally {
+    if (prevPassphrase !== undefined) process.env.AIDR_PASSPHRASE = prevPassphrase;
+    else delete process.env.AIDR_PASSPHRASE;
+    if (prevPassphraseFile !== undefined) process.env.AIDR_PASSPHRASE_FILE = prevPassphraseFile;
+    else delete process.env.AIDR_PASSPHRASE_FILE;
+    purgeServerModule();
+  }
+});
+
 test('maskConfig still masks the capsolver key after decrypting', () => {
   const plain = { capsolver: { apiKey: 'CAP-SECRET' } };
   const masked = maskConfig(plain);
