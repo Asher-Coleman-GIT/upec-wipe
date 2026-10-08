@@ -141,7 +141,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js setup
    ```
 
-   Answer each question and press Enter. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The cron and launchd fallbacks have no passphrase mechanism, so with an encrypted config those need the systemd timer or manual runs each month.
+   Answer each question and press Enter. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The tool also looks for the passphrase in `~/.config/auto-identity-remove/passphrase` on its own, so the cron and launchd fallbacks and your manual commands find it there too.
 
 3. Open the settings file in a simple editor:
 
@@ -185,7 +185,7 @@ This part is the same for Parts A and B.
    AIDR_PASSPHRASE_FILE=~/.config/auto-identity-remove/passphrase node watcher.js --encrypt-config
    ```
 
-   It reports that the config was encrypted. Set `AIDR_PASSPHRASE_FILE` the same way each time you run the tool by hand afterward.
+   It reports that the config was encrypted. Afterward, plain commands such as `node bin/aidr.js doctor` and `node bin/aidr.js run` work without the `AIDR_PASSPHRASE_FILE=...` prefix, because the tool reads `~/.config/auto-identity-remove/passphrase` by default. Keep that file mode 600: the tool refuses it if other users can read it. If you keep the passphrase somewhere else, put `AIDR_PASSPHRASE_FILE=<path>` in front of each command instead.
 
 6. Check that everything is ready:
 

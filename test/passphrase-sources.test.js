@@ -66,3 +66,47 @@ test('empty passphrase file is refused', () => {
 test('missing AIDR_PASSPHRASE_FILE path throws a clear error', () => {
   assert.throws(() => getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: '/nonexistent/aidr' }), /AIDR_PASSPHRASE_FILE/);
 });
+
+// I1 (final review): ~/.config/auto-identity-remove/passphrase is the lowest-
+// priority source, so manual commands work unprefixed after --encrypt-config.
+function homeWithDefault(content, mode) {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-home-'));
+  if (content !== undefined) {
+    const dir = path.join(home, '.config', 'auto-identity-remove');
+    fs.mkdirSync(dir, { recursive: true });
+    const f = path.join(dir, 'passphrase');
+    fs.writeFileSync(f, content, { mode: mode || 0o600 });
+    fs.chmodSync(f, mode || 0o600);
+  }
+  return home;
+}
+
+test('default passphrase file in the home config dir is used last', () => {
+  const home = homeWithDefault('fromdefault\n');
+  assert.equal(getPassphrase(undefined, {}, home), 'fromdefault');
+  assert.equal(getPassphrase(undefined, { HOME: home }), 'fromdefault', 'HOME from an injected env is honoured');
+});
+
+test('default passphrase file has the lowest priority', () => {
+  const home = homeWithDefault('fromdefault');
+  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE: 'env' }, home), 'env');
+  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('file').f }, home), 'file');
+  const cred = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cred-'));
+  fs.writeFileSync(path.join(cred, 'aidr-passphrase'), 'fromcred');
+  assert.equal(getPassphrase(undefined, { CREDENTIALS_DIRECTORY: cred }, home), 'fromcred');
+});
+
+test('absent default passphrase file yields empty', () => {
+  assert.equal(getPassphrase(undefined, {}, homeWithDefault()), '');
+});
+
+test('group/world-readable default passphrase file is refused', { skip: !POSIX }, () => {
+  const home = homeWithDefault('x', 0o644);
+  assert.throws(() => getPassphrase(undefined, {}, home), /readable by other users/);
+});
+
+test('default passphrase path that is not a readable file throws (only ENOENT means absent)', () => {
+  const home = homeWithDefault();
+  fs.mkdirSync(path.join(home, '.config', 'auto-identity-remove', 'passphrase'), { recursive: true });
+  assert.throws(() => getPassphrase(undefined, {}, home));
+});
