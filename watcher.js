@@ -17,7 +17,7 @@ const { findDefunct, DEFUNCT_THRESHOLD } = require('./lib/defunct');
 const { sendText, desktopNotify, openInBrowser } = require('./lib/notify');
 const brokerRunner = require('./lib/broker-runner');
 const { sendOptOutEmails } = require('./lib/email');
-const { getSubmissionEmail } = require('./lib/relay');
+const { isGenericEnabled, buildSubmissionPlan, withSubmissionEmail } = require('./lib/submission-plan');
 const lock = require('./lib/lock');
 const { applyFilter, loadLastLog, extractFailedBrokers } = require('./lib/filter');
 const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./lib/allowlist-edit');
@@ -761,7 +761,8 @@ async function _mainBody() {
   if (VERIFY)        console.log('🔍 VERIFY - re-checking listings. No forms submitted. Verification results are saved.');
   if (POLLUTE_COUNT) console.log(`⚠️  NOISE MODE - ${POLLUTE_COUNT} bogus record(s) will be submitted to acceptsBogus brokers.`);
   console.log(`📅 ${new Date().toLocaleString()}`);
-  console.log(`📋 ${brokers.length} explicit brokers + 500+ generic | re-check window: ${RECHECK_DAYS} days\n`);
+  const GENERIC_ENABLED = isGenericEnabled(process.argv, config);
+  console.log(`📋 ${brokers.length} explicit brokers${GENERIC_ENABLED ? ' + 500+ generic' : ' (generic pass off - pass --generic to enable)'} | re-check window: ${RECHECK_DAYS} days\n`);
 
   // Launch persistent browser (reuses profile / saved logins)
   fs.mkdirSync(profileDir, { recursive: true });
@@ -882,21 +883,28 @@ async function _mainBody() {
     }
   }
 
-  for (const person of persons) {
+  // Resolve every person's submission email up front (fork: fail closed). A
+  // person whose relay alias is unavailable gets no submissions on any channel.
+  const plan = await buildSubmissionPlan({ config, persons, state });
+  for (const b of plan.blocked) {
+    console.error(`⛔ Skipping ${b.person.firstName} ${b.person.lastName}: ${b.reason}`);
+  }
+  if (plan.allowed.length === 0) {
+    console.error('⛔ No person has a usable submission email. Nothing submitted.');
+    saveState();
+    await context.close().catch(() => {});
+    process.exitCode = 1;
+    return;
+  }
+
+  for (const { person, email: submissionEmail, masked } of plan.allowed) {
     if (persons.length > 1) {
       console.log(`\n${'='.repeat(54)}`);
       console.log(`Running for: ${person.firstName} ${person.lastName}`);
       console.log('='.repeat(54));
     }
-
-    // Resolve a masked/relay submission email for this person (cached in
-    // state.relayAliases by lib/relay). Returns person.email unchanged when no
-    // relay is configured, so existing setups are unaffected. Persisted later
-    // by the run's saveState().
-    const submissionEmail = await getSubmissionEmail({ config, person, state });
-    if (submissionEmail && submissionEmail !== person.email) {
-      console.log(`   Using masked email for submissions: ${submissionEmail}`);
-    }
+    if (masked) console.log(`   Using masked email for submissions: ${submissionEmail}`);
+    else console.log('   ⚠ No relay configured: brokers will receive your real email.');
 
     brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, person, capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config, submissionEmail });
 
@@ -998,20 +1006,26 @@ async function _mainBody() {
   // faster run that quietly skips people. Domain-level toggles (cookie /
   // "Do Not Sell") get re-applied per person, which is harmless.
   const genericTotals = {};
-  for (const person of persons) {
-    if (persons.length > 1) {
-      console.log(`\n── Generic brokers for ${person.firstName} ${person.lastName} ──`);
-    }
-    const genericResult = await runGenericBrokers(context, explicitHosts, state, logResult, recordSuccess, {
-      dryRun: DRY_RUN,
-      person,
-      personCount: persons.length,
-    });
-    if (genericResult && genericResult.genericStats) {
-      for (const [k, v] of Object.entries(genericResult.genericStats)) {
-        genericTotals[k] = (genericTotals[k] || 0) + (typeof v === 'number' ? v : 0);
+  if (GENERIC_ENABLED) {
+    for (const { person, email } of plan.allowed) {
+      if (persons.length > 1) {
+        console.log(`\n── Generic brokers for ${person.firstName} ${person.lastName} ──`);
+      }
+      // getFieldMap() fills email fields from person.email, so hand it the
+      // alias-bearing copy. stateKey() keys on names, so state is unaffected.
+      const genericResult = await runGenericBrokers(context, explicitHosts, state, logResult, recordSuccess, {
+        dryRun: DRY_RUN,
+        person: withSubmissionEmail(person, email),
+        personCount: persons.length,
+      });
+      if (genericResult && genericResult.genericStats) {
+        for (const [k, v] of Object.entries(genericResult.genericStats)) {
+          genericTotals[k] = (genericTotals[k] || 0) + (typeof v === 'number' ? v : 0);
+        }
       }
     }
+  } else {
+    console.log('\n── Generic brokers: off (fork default; --generic or generic.enabled to opt in) ──');
   }
   results.genericStats = genericTotals;
 

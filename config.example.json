@@ -57,9 +57,15 @@
   },
 
   "relay": {
-    "_comment": "OPTIONAL masked-email relay. When set, opt-out submissions use a per-person alias instead of person.email so brokers never get your real address. Currently supports provider 'simplelogin' via API. Apple Hide My Email and Firefox Relay are manual-only - see docs/relay.md. Omit this block entirely to submit with your real email (default).",
+    "_comment": "Fork default: required. Without a working SimpleLogin relay the run refuses to start. See docs/relay.md.",
     "provider": "simplelogin",
-    "apiKey": "YOUR_SIMPLELOGIN_API_KEY"
+    "apiKey": "YOUR_SIMPLELOGIN_API_KEY",
+    "required": true
+  },
+
+  "generic": {
+    "_comment": "Heuristic pass over ~490 sites from public datasets. Off in this fork. Set enabled to true (or pass --generic) to opt in; it uses your relay alias.",
+    "enabled": false
   },
 
   "profileDir": "~/.config/auto-identity-remove"
