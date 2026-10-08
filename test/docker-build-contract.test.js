@@ -160,3 +160,10 @@ test('docker-compose.yml no longer declares the obsolete top-level version key',
     'the top-level `version:` key is obsolete in Compose v2 and emits a warning on every command',
   );
 });
+
+test('docker-compose.yml drops capabilities and blocks privilege escalation', () => {
+  assert.match(compose, /cap_drop:\s*\[ALL\]/);
+  assert.match(compose, /no-new-privileges:true/);
+  assert.match(compose, /AIDR_PASSPHRASE_FILE=\/run\/secrets\/aidr-passphrase/);
+  assert.doesNotMatch(compose, /AIDR_PASSPHRASE=/);
+});

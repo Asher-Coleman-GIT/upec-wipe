@@ -19,3 +19,4 @@ logs/reports/
 *.log
 .DS_Store
 .claude/
+secrets/

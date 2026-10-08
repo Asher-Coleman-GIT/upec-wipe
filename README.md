@@ -1,5 +1,9 @@
 # auto-identity-remove
 
+> **UPEC hardened fork.** Defaults differ from upstream: SimpleLogin relay required
+> and fail-closed, generic pass off, never runs as root, dashboard loopback-only.
+> Start with [FORK.md](FORK.md).
+
 ![CI](https://github.com/stephenlthorn/auto-identity-remove/actions/workflows/test.yml/badge.svg)
 
 Automated data broker opt-out runner for macOS, Linux, and Windows. Removes your personal information from **500+ people-search sites and data broker databases** on a monthly schedule - with CAPTCHA solving, persistent state tracking (so completed opt-outs aren't resubmitted every run), and an iMessage notification when done. [**Privacy & data flow ->**](docs/PRIVACY.md)

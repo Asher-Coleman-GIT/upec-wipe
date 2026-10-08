@@ -13,6 +13,12 @@ services:
     # node runs as PID 1 without this, so `docker stop` cannot reap the Chromium
     # children and the state lock is left behind - wedging the next run.
     init: true
+    user: pwuser
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    secrets:
+      - aidr-passphrase
     volumes:
       # Not :ro - config.json is written back by --encrypt-config and by the
       # right-to-know pending-request bookkeeping.
@@ -21,6 +27,7 @@ services:
       - ./logs:/app/logs
     environment:
       - NODE_ENV=production
+      - AIDR_PASSPHRASE_FILE=/run/secrets/aidr-passphrase
       # Container clocks are UTC. The scheduler and the report timestamps use
       # local time, so set this to your zone or a "1st of the month, 9am" run
       # lands at the wrong hour.
@@ -31,3 +38,9 @@ services:
     # The code also passes --disable-dev-shm-usage so a plain `docker run`
     # without this setting still works, but a real shm is faster.
     shm_size: 512mb
+
+secrets:
+  aidr-passphrase:
+    # chmod 600 this file on the host. Remove this block and the service's
+    # `secrets:` / AIDR_PASSPHRASE_FILE lines if you do not encrypt the config.
+    file: ./secrets/aidr-passphrase
