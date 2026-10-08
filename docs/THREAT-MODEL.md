@@ -25,7 +25,7 @@ This tool submits your identity to hundreds of companies on purpose. The goal of
 
 ## A note on proxies
 
-`network.proxy` must be an unauthenticated local proxy, for example Mullvad's `socks5://10.64.0.1:1080`. A proxy URL that contains a username and password (`user:pass@`) is not supported. With credentials the run stops instead of leaking.
+`network.proxy` must be an unauthenticated local proxy, for example Mullvad's `socks5://10.64.0.1:1080`. A proxy URL that contains a username and password (`user:pass@`) is not supported, so use an unauthenticated local proxy.
 
 ## Rules for the club
 

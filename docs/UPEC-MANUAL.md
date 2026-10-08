@@ -161,7 +161,7 @@ This part is the same for Parts A and B.
    "network": { "required": true, "proxy": "" }
    ```
 
-   If you use a proxy instead, set `proxy` to an unauthenticated local one such as `socks5://10.64.0.1:1080`. A proxy address with a username and password in it (`user:pass@`) is not supported, and the run stops rather than leaking. The config file may also contain a `notify` block from older versions. Notifications were removed from this fork, so you can delete that block.
+   If you use a proxy instead, set `proxy` to an unauthenticated local one such as `socks5://10.64.0.1:1080`. A proxy address with a username and password in it (`user:pass@`) is not supported, so use an unauthenticated local proxy like that one. The config file may also contain a `notify` block from older versions. Notifications were removed from this fork, so you can delete that block.
 
 3. Lock down file permissions:
 
@@ -171,19 +171,25 @@ This part is the same for Parts A and B.
 
    You should see "Permissions hardened". If it says chmod has no effect, you are on `/mnt/c`. Go back to Part A step 2 and redo the install in your Linux home folder.
 
-4. Optional: encrypt your config. First create an empty passphrase file that only you can read:
+4. Optional: encrypt your config. Skip this step if you do not want encryption. First create an empty passphrase file that only you can read:
 
    ```
    mkdir -p ~/.config/auto-identity-remove && install -m 600 /dev/null ~/.config/auto-identity-remove/passphrase
    ```
 
-   Open it with `nano ~/.config/auto-identity-remove/passphrase`, type a long passphrase (a few random words), and save. Then encrypt:
+   Open it with `nano ~/.config/auto-identity-remove/passphrase`, type a long passphrase (a few random words), and save. Now run setup a second time. The monthly job only learns about the passphrase file if it exists when setup runs, so without this the scheduled job could not unlock your config. Press Enter at each question to keep your current answers:
+
+   ```
+   node bin/aidr.js setup
+   ```
+
+   It asks the same questions and re-installs the monthly job. Then encrypt:
 
    ```
    AIDR_PASSPHRASE_FILE=~/.config/auto-identity-remove/passphrase node watcher.js --encrypt-config
    ```
 
-   Warning: if you lose the passphrase, your config cannot be recovered and you must run setup again. Set `AIDR_PASSPHRASE_FILE` the same way each time you run the tool afterward.
+   Warning: if you lose the passphrase, your config cannot be recovered and you must run setup again. Set `AIDR_PASSPHRASE_FILE` the same way each time you run the tool by hand afterward. Also note that only the systemd timer (the usual Linux and WSL2 scheduler) can pass the passphrase file to the monthly job. The cron and launchd fallbacks have no passphrase mechanism, so with an encrypted config on those you must run the tool by hand each month.
 
 5. Check that everything is ready:
 
@@ -256,6 +262,8 @@ Docker runs the tool in a sealed box. Only use this if the club maintainer told 
    ```
 
    With Docker, use `docker compose run --rm watcher` instead.
+
+   On WSL2 the scheduled job only runs if Ubuntu is running with systemd enabled and Mullvad is connected on Windows. Otherwise run it by hand.
 
 3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The scheduled job cannot do this part, so you must.
 4. See which brokers still need you:
