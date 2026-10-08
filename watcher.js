@@ -17,7 +17,7 @@ const { findDefunct, DEFUNCT_THRESHOLD } = require('./lib/defunct');
 const { openInBrowser } = require('./lib/notify');
 const brokerRunner = require('./lib/broker-runner');
 const { sendOptOutEmails } = require('./lib/email');
-const { isGenericEnabled, buildSubmissionPlan, withSubmissionEmail } = require('./lib/submission-plan');
+const { isGenericEnabled, buildSubmissionPlan, submissionOptions, withSubmissionEmail } = require('./lib/submission-plan');
 const lock = require('./lib/lock');
 const { applyFilter, loadLastLog, extractFailedBrokers } = require('./lib/filter');
 const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./lib/allowlist-edit');
@@ -636,11 +636,9 @@ if (KNOW_MODE) {
     for (const b of plan.blocked) {
       console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
     }
-    const aliasFor = new Map(plan.allowed.map(a => [a.person, a.email]));
     const result = await sendKnowRequests(brokers, config, {
       dryRun: DRY_RUN,
-      submissionEmailFor: (p) => aliasFor.get(p),
-      blockedPersons: new Set(plan.blocked.map(b => b.person)),
+      ...submissionOptions(plan),
     });
     if (!DRY_RUN) saveState();
 
@@ -877,6 +875,14 @@ async function _mainBody() {
     return;
   }
 
+  // Email opt-outs (no browser needed - skipped in verify mode). Once per run,
+  // not per person: sendOptOutEmails loops over every person itself, so the
+  // plan's resolver and blocked set must cover all of them at once.
+  if (!VERIFY) {
+    console.log('── Email opt-outs ─────────────────────────────────────────');
+    await sendOptOutEmails(brokers, config, undefined, { dryRun: DRY_RUN, ...submissionOptions(plan) });
+  }
+
   for (const { person, email: submissionEmail, masked } of plan.allowed) {
     if (persons.length > 1) {
       console.log(`\n${'='.repeat(54)}`);
@@ -892,12 +898,6 @@ async function _mainBody() {
     // city, state, zip and email into searchUrl and formFields, so reusing the
     // module-level array would submit persons[0]'s PII on every iteration.
     const personBrokers = brokers.forPerson(person);
-
-    // Email opt-outs (no browser needed - skipped in verify mode)
-    if (!VERIFY) {
-      console.log('── Email opt-outs ─────────────────────────────────────────');
-      await sendOptOutEmails(brokers, config, undefined, { submissionEmailFor: (p) => (p === person ? submissionEmail : undefined) });
-    }
 
     const filterOpts = {
       only:             ONLY_ARG,
