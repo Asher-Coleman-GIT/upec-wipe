@@ -24,7 +24,8 @@ const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./l
 const { diffResults, loadPreviousLog } = require('./lib/diff');
 const { renderAuditMarkdown, writeAuditFile, timestampForFilename } = require('./lib/audit');
 const { buildStealthScript } = require('./lib/stealth');
-const { buildLaunchOptions, resolveHeadless, isLowMemory } = require('./lib/browser');
+const { resolveHeadless, isLowMemory } = require('./lib/browser');
+const { openBrowserSession, EgressError } = require('./lib/browser-session');
 require('./lib/privilege').exitIfRoot();
 
 const PREVIEW           = process.argv.includes('--preview');
@@ -396,6 +397,7 @@ if (COMPLAINTS_MODE) {
   (async () => {
     let newPage;
     let context;
+    let session = null;
     if (!DRY_RUN) {
       let chromiumForPdf;
       try {
@@ -404,9 +406,8 @@ if (COMPLAINTS_MODE) {
         const fallback = path.join(os.homedir(), '.openclaw', 'plugins', 'node_modules', 'playwright');
         ({ chromium: chromiumForPdf } = require(fallback));
       }
-      const profileDirForPdf = (config.profileDir || '~/.config/auto-identity-remove')
-        .replace(/^~(?=\/|$)/, os.homedir());
-      context = await chromiumForPdf.launchPersistentContext(profileDirForPdf, buildLaunchOptions({ headless: true }));
+      session = await openBrowserSession({ chromium: chromiumForPdf, config, headless: true, needsNetwork: false });
+      context = session.context;
       newPage = () => context.newPage();
     } else {
       console.log('\nDRY RUN - writing complaint text only, skipping PDF generation.');
@@ -419,7 +420,7 @@ if (COMPLAINTS_MODE) {
       const txtCount = written.filter(p => p.endsWith('.txt')).length;
       console.log(`   ${txtCount} text, ${pdfCount} PDF\n`);
     } finally {
-      if (context) await context.close().catch(() => {});
+      if (session) await session.close();
     }
     process.exit(0);
   })().catch(err => {
@@ -442,9 +443,6 @@ if (CONFIRM_EMAILS) {
     ({ chromium: chromiumForConfirm } = require(fallback));
   }
 
-  const profileDirForConfirm = (loadConfig().profileDir || '~/.config/auto-identity-remove')
-    .replace(/^~(?=\/|$)/, os.homedir());
-
   // Acquire the same process lock as main() - processConfirmationEmails calls
   // recordSuccess -> saveState, so it must not race a concurrent normal run.
   const CONFIRM_LOCK_PATH = STATE_PATH + '.lock';
@@ -458,7 +456,7 @@ if (CONFIRM_EMAILS) {
 
   (async () => {
     console.log(`\nProcessing confirmation emails from: ${confirmEmailsDir}`);
-    const context = await chromiumForConfirm.launchPersistentContext(profileDirForConfirm, buildLaunchOptions({ headless: true }));
+    const { context, close } = await openBrowserSession({ chromium: chromiumForConfirm, config: loadConfig(), headless: true });
 
     try {
       const result = await processConfirmationEmails(context, brokers, {
@@ -479,7 +477,7 @@ if (CONFIRM_EMAILS) {
       const total = result.processed.length + result.unmatched.length + result.failed.length;
       console.log(`\nDone: ${result.processed.length} confirmed, ${result.unmatched.length} unmatched, ${result.failed.length} failed (${total} .eml files)\n`);
     } finally {
-      await context.close().catch(() => {});
+      await close();
       lock.release(CONFIRM_LOCK_PATH);
     }
     process.exit(0);
@@ -509,8 +507,6 @@ try {
 }
 
 const reportConfig = loadConfig();
-const profileDirForReport = (reportConfig.profileDir || '~/.config/auto-identity-remove')
-  .replace(/^~(?=\/|$)/, os.homedir());
 
 const REPORT_LOCK_PATH = STATE_PATH + '.lock';
 try {
@@ -542,7 +538,7 @@ try {
   fs.mkdirSync(REPORT_DIR, { recursive: true });
   const outPath = reportPdfPath(new Date());
 
-  const context = await chromiumForReport.launchPersistentContext(profileDirForReport, buildLaunchOptions({ headless: true }));
+  const { context, close: closeReportSession } = await openBrowserSession({ chromium: chromiumForReport, config: reportConfig, headless: true, needsNetwork: false });
 
   try {
     await renderReportPdf({ html, outPath, context });
@@ -585,7 +581,7 @@ try {
       console.log(`Report saved (no SMTP configured or email failed). Actions needed: ${model.actionsNeeded.length}`);
     }
   } finally {
-    await context.close().catch(() => {});
+    await closeReportSession();
     lock.release(REPORT_LOCK_PATH);
   }
   process.exit(0);
@@ -646,8 +642,6 @@ if (INSTALL_SCHEDULER) {
 
 const config = loadConfig();
 const { notify } = config;
-const profileDir = (config.profileDir || '~/.config/auto-identity-remove')
-  .replace(/^~(?=\/|$)/, os.homedir());
 const state = loadState();
 const persons = getPersonsFromConfig(config);
 
@@ -775,9 +769,6 @@ async function _mainBody() {
   const GENERIC_ENABLED = isGenericEnabled(process.argv, config);
   console.log(`📋 ${brokers.length} explicit brokers${GENERIC_ENABLED ? ' + 500+ generic' : ' (generic pass off - pass --generic to enable)'} | re-check window: ${RECHECK_DAYS} days\n`);
 
-  // Launch persistent browser (reuses profile / saved logins)
-  fs.mkdirSync(profileDir, { recursive: true });
-
   // Headless mode: respect HEADLESS env var, else auto-detect.
   // Default to false (headed) on platforms where a display is likely present.
   // In Docker (no $DISPLAY on linux), default to headless: true so the tool actually runs.
@@ -785,7 +776,14 @@ async function _mainBody() {
   const headless = resolveHeadless();
   console.log(`🖥  Browser mode: ${headless ? 'headless' : 'headed'}${headlessEnv === undefined && process.platform === 'linux' ? ' (auto-detected)' : ''}${isLowMemory() ? ' [low-memory profile]' : ''}`);
 
-  const context = await chromium.launchPersistentContext(profileDir, buildLaunchOptions({ headless }));
+  let session;
+  try {
+    session = await openBrowserSession({ chromium, config, headless });
+  } catch (err) {
+    if (err instanceof EgressError) { console.error(`⛔ ${err.message}`); process.exitCode = 1; return; }
+    throw err;
+  }
+  const context = session.context;
   await context.addInitScript(buildStealthScript());
 
   // ── Verify mode: T+7 post-submit verification loop ───────────────────────
@@ -793,7 +791,7 @@ async function _mainBody() {
     const { runVerify } = require('./lib/verify-loop');
     const result = await runVerify(context, brokers, persons, { state, config });
     saveState();
-    await context.close().catch(() => {});
+    await session.close();
 
     // Print summary
     console.log('\n' + '='.repeat(54));
@@ -820,7 +818,7 @@ async function _mainBody() {
     console.log('\n🔎 SERP scan - checking broker visibility in search engines');
     console.log('   DDG first, then Bing, then Google (may be blocked).\n');
     const summary = await runSerpScan(context, persons, brokers);
-    await context.close().catch(() => {});
+    await session.close();
 
     const pad = (s, n) => String(s).padEnd(n);
     console.log('\n' + '='.repeat(62));
@@ -860,7 +858,7 @@ async function _mainBody() {
     console.log('\n SERP watch - scanning, then diffing against previous history');
     console.log('   Alerts fire only when your name appears on a NEW domain.\n');
     const watch = await runSerpWatch(context, persons, brokers, { cfg: config });
-    await context.close().catch(() => {});
+    await session.close();
 
     console.log('\n' + '='.repeat(62));
     console.log('SERP Watch Results - ' + new Date().toLocaleString());
@@ -903,7 +901,7 @@ async function _mainBody() {
   if (plan.allowed.length === 0) {
     console.error('⛔ No person has a usable submission email. Nothing submitted.');
     saveState();
-    await context.close().catch(() => {});
+    await session.close();
     process.exitCode = 1;
     return;
   }
@@ -1043,7 +1041,7 @@ async function _mainBody() {
   // Clear checkpoint now that the run completed successfully
   clearCheckpoint();
 
-  await context.close().catch(() => {});
+  await session.close();
 
   // Save run log (skipped in dry-run)
   if (!DRY_RUN) fs.writeFileSync(logFile, JSON.stringify(results, null, 2));

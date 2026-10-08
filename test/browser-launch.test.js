@@ -71,16 +71,28 @@ test('resolveHeadless auto-detects headless for a linux box with no DISPLAY', ()
   assert.equal(resolveHeadless({}, 'darwin'), false);
 });
 
-test('every chromium launch site in watcher.js goes through lib/browser', () => {
+test('every chromium launch site in watcher.js goes through lib/browser-session', () => {
   const watcher = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
-  const launches = watcher.match(/launchPersistentContext\(/g) || [];
-  assert.ok(launches.length >= 4, `expected at least 4 launch sites, found ${launches.length}`);
-
-  const optionCalls = watcher.match(/buildLaunchOptions\(/g) || [];
   assert.equal(
-    optionCalls.length,
-    launches.length,
-    `all ${launches.length} launchPersistentContext calls must build their options via buildLaunchOptions(); `
-    + `found ${optionCalls.length}. A launch site with hand-rolled options silently loses the container flags.`,
+    (watcher.match(/launchPersistentContext\(/g) || []).length,
+    0,
+    'watcher.js must not launch Chromium directly; use openBrowserSession (ephemeral profile, proxy, egress check)',
   );
+  const sessions = watcher.match(/openBrowserSession\(/g) || [];
+  assert.ok(sessions.length >= 4, `expected at least 4 session launch sites, found ${sessions.length}`);
+
+  const session = fs.readFileSync(path.join(__dirname, '..', 'lib', 'browser-session.js'), 'utf8');
+  assert.match(session, /launchPersistentContext\([^)]*buildLaunchOptions\(/,
+    'the session helper must build its options via buildLaunchOptions() so container flags are never lost');
+});
+
+test('buildLaunchOptions passes a proxy and blocks non-proxied WebRTC', () => {
+  const o = buildLaunchOptions({ headless: true, platform: 'linux', env: {}, proxy: { server: 'socks5://10.64.0.1:1080' } });
+  assert.deepEqual(o.proxy, { server: 'socks5://10.64.0.1:1080' });
+  assert.ok(o.args.includes('--force-webrtc-ip-handling-policy=disable_non_proxied_udp'));
+});
+
+test('buildLaunchOptions without proxy has no proxy key', () => {
+  const o = buildLaunchOptions({ headless: true, platform: 'linux', env: {} });
+  assert.equal('proxy' in o, false);
 });
