@@ -239,3 +239,13 @@ test('smtpFromLeakReason flags missing, equal, display-name and mixed-case from 
   assert.equal(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org' }, p), null);
   assert.match(smtpFromLeakReason(undefined, p), /smtp\.from/);
 });
+
+test('smtpFromLeakReason flags an SMTP login (smtp.user) that is the real email, any case', () => {
+  const p = { email: 'jane.doe@example.com' };
+  const r1 = smtpFromLeakReason({ from: 'optouts@my-alias-domain.org', user: 'jane.doe@example.com' }, p);
+  assert.match(r1, /smtp\.user/);
+  assert.ok(!r1.includes('jane.doe@example.com'), 'reason must not contain the address');
+  assert.match(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org', user: 'Jane.Doe@Example.COM' }, p), /smtp\.user/);
+  assert.match(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org', user: ' JANE.DOE@example.com ' }, p), /smtp\.user/);
+  assert.equal(smtpFromLeakReason({ from: 'optouts@my-alias-domain.org', user: 'separate-box@example.net' }, p), null);
+});

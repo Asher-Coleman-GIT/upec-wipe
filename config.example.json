@@ -39,13 +39,13 @@
   },
 
   "email": {
-    "_comment": "SMTP config for sending opt-out emails. Required - without this, email brokers are logged as 'manual'. Gmail: host=smtp.gmail.com, port=587, use an App Password (myaccount.google.com/apppasswords). Outlook/Office365: host=smtp-mail.outlook.com, port=587.",
+    "_comment": "Optional. Recommended: delete this whole block and handle email-only brokers by hand (they are logged as 'manual'). Brokers can see the SMTP account's own address (user), not just from, so only use a separate mailbox that is not linked to you, as both user and from. Never your everyday account. Gmail example for such a separate mailbox: host=smtp.gmail.com, port=587, an App Password (myaccount.google.com/apppasswords); Gmail rewrites from to the account address.",
     "smtp": {
       "host": "smtp.gmail.com",
       "port": 587,
-      "user": "you@gmail.com",
+      "user": "separate-mailbox@gmail.com",
       "pass": "YOUR_GMAIL_APP_PASSWORD",
-      "from": "you@gmail.com"
+      "from": "separate-mailbox@gmail.com"
     }
   },
 

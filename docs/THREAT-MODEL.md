@@ -6,7 +6,7 @@ This tool submits your identity to hundreds of companies on purpose. The goal of
 
 | Layer | Stops | Does not stop |
 | --- | --- | --- |
-| SimpleLogin alias (fail-closed: no alias, no submission) | Brokers learning your real email address. | A broker linking the alias to your name, because both are on the same form. |
+| SimpleLogin alias (fail-closed: no alias, no submission) | Brokers learning your real email address. | A broker linking the alias to your name, because both are on the same form. A broker seeing the address of the SMTP account (`email.smtp.user`) that sent an email opt-out: the alias does not hide it, so leave out the `email` block or use a separate mailbox not linked to you. |
 | VPN/proxy egress check (`network.required`, `network.proxy`) | Brokers and search engines seeing your home IP address. | It does not cover CapSolver, HIBP, SimpleLogin or SMTP traffic unless the VPN is system-wide (the Mullvad app). It does not survive the VPN dropping mid-run unless Mullvad Lockdown mode is on. |
 | Throwaway browser profile (new on every run unless `browser.persistentProfile` is true) | Cookies and fingerprint state piling up across broker sites. | Per-run fingerprinting of your browser. |
 | Generic pass off by default | Your data going to about 490 sites nobody reviewed. Turning it on with `--generic` (or `generic.enabled`) accepts that risk. | Nothing, once you opt in. |
@@ -20,6 +20,7 @@ This tool submits your identity to hundreds of companies on purpose. The goal of
 - The confirmation step. `Submitted` does not mean `deleted`. Run `aidr verify` to check.
 - Brokers adding you back later. Opt-outs have to be repeated every month.
 - Your SMTP provider. It sees every opt-out email you send.
+- The SMTP account itself. A broker that receives an opt-out email can see the address of the account it was sent from (`email.smtp.user`), whatever `from` says, because providers such as Gmail rewrite `From` and the account is in the envelope. The relay alias does not hide it. Leave out the `email` block (the default recommendation) or use a separate mailbox not linked to you.
 - CapSolver. It sees which broker pages you visit when it solves a CAPTCHA.
 - Anyone who already has control of your user account.
 

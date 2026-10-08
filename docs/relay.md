@@ -30,10 +30,17 @@ email-based opt-outs. Without `config.relay`, behavior is unchanged.
    forms, no emails, no generic pass. With `"required": true` the run refuses to
    start at all unless a relay is configured. Your real email is never used as a
    fallback.
-5. Set `email.smtp.from` to an address that is not your real email (for example
-   a SimpleLogin reverse-alias or a mailbox on your own domain). While an alias is
-   in use, email opt-outs and right-to-know requests are skipped and listed as
-   manual if `from` is missing or is your real address.
+5. Email-method brokers: the recommended setup is no `email` block at all, so
+   those brokers are listed as manual and you handle them by hand. A broker that
+   receives an email can see the SMTP account it came from (`email.smtp.user`),
+   not just `from`: Gmail and similar providers rewrite `From` to the account
+   address, and the account is in the envelope sender and `Return-Path` anyway.
+   So only a separate mailbox that is not linked to you is acceptable, used as
+   both `user` and `from`. A SimpleLogin reverse-alias does not work as `from`:
+   reverse-aliases are recipient addresses for replying to a contact, not
+   sender identities. While an alias is in use, email opt-outs and
+   right-to-know requests are skipped and listed as manual if `from` is
+   missing, or if `from` or `user` is your real address.
 
 ## Apple Hide My Email (manual fallback)
 

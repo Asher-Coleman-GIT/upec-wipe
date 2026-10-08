@@ -157,10 +157,10 @@ This part is the same for Parts A and B.
    "relay": { "provider": "simplelogin", "apiKey": "<your key>", "required": true }
    ```
 
-   The email block, used for brokers that only accept an email. Set `"from"` to an address that is not your real one. Alternatively, delete the whole `email` block and handle email-only brokers by hand (the tool lists them as manual):
+   The email block, used for brokers that only accept an email. **Recommended: delete the whole `email` block** and handle email-only brokers by hand. The tool lists them as manual. The reason: a broker that receives your email can see the address of the SMTP account it was sent from, whatever `"from"` says. Gmail, for example, replaces `"from"` with your Gmail address, and the account address also travels in the hidden envelope. So only keep this block if you have a separate mailbox that is not linked to you in any way, and use that mailbox for both `"user"` and `"from"`. Never use your everyday email account here. The tool refuses to send if `"user"` or `"from"` is your real email:
 
    ```
-   "email": { "smtp": { "host": "...", "port": 587, "user": "...", "pass": "...", "from": "<an address that is not your real one>" } }
+   "email": { "smtp": { "host": "...", "port": 587, "user": "<separate mailbox not linked to you>", "pass": "...", "from": "<the same separate mailbox>" } }
    ```
 
    The network check. `"required": true` makes the tool stop unless Mullvad is on. Leave `proxy` empty if you use the Mullvad app:
@@ -290,7 +290,7 @@ It prints a web address and a login. Open the address in your browser and use th
 | `Refusing to run as root. ...` | Do not use `sudo` or a root account for the tool. Use your own user (Part B). |
 | `chmod has no effect on ... (mode came back ...)` | You are on `/mnt/c`. Move the install to your Linux home folder (Part A step 2). |
 | `Passphrase file ... is readable by other users. Run: chmod 600 "..."` | Run the `chmod 600` command it prints. |
-| `... - not sent: ... Set email.smtp.from to a non-real address.` | Set `"from"` in the `email.smtp` block to an address that is not your real one, or handle that broker by hand. |
+| `... - not sent: ... Set email.smtp.from to a non-real address.` | Your SMTP account or `"from"` is your real email. Delete the `email` block and handle that broker by hand, or switch to a separate mailbox not linked to you. |
 | `aidr-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
 | `ℹ  notify settings in config.json are ignored in this fork.` | Harmless. Notifications were removed, so you can delete the `notify` block. |
 
