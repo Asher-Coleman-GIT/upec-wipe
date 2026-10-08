@@ -23,7 +23,7 @@ Commands go in a terminal, which is a window where you type instructions. Type e
 1. Create an account at simplelogin.io and verify your email.
 2. Go to Settings, then API Keys, then Create, and copy the key somewhere safe (a password manager is best).
 
-Why: each broker gets a throwaway address that forwards to you, so they never learn your real one.
+Why: the tool creates one throwaway address for you that forwards to your real inbox, and gives that same address to every broker, so they never learn your real one. Because it is the same address everywhere, brokers could still match their records about you on it.
 
 ## Part A: Windows (WSL2)
 
@@ -211,7 +211,7 @@ This part is the same for Parts A and B.
 
 ## Part C: Docker
 
-Docker runs the tool in a sealed box. Only use this if the club maintainer told you to. The Docker setup in this repository is still pending verification on a real Docker host, so expect to report problems.
+**Not supported yet. Do not use until the Docker verification in FORK.md is done.** Use Part A or Part B instead. The steps below are kept for the maintainer who runs that verification. They use a plain (unencrypted) `config.json`, because encryption has not been checked under Docker either.
 
 1. Install Docker Desktop (on Windows, enable the WSL2 backend), or on Linux install `docker.io`. Keep Mullvad connected on the host computer.
 2. Clone into your home folder as in Part A step 4, then copy the example config:
@@ -222,13 +222,13 @@ Docker runs the tool in a sealed box. Only use this if the club maintainer told 
 
    Edit it with `nano config.json` as in Configure step 3.
 
-3. Create the files Docker mounts. This makes an empty state file, a logs folder, a private secrets folder and an empty passphrase file only you can read:
+3. Create the files Docker mounts. This makes an empty state file and a logs folder:
 
    ```
-   touch state.json && mkdir -p logs && mkdir -m 700 secrets && install -m 600 /dev/null secrets/aidr-passphrase
+   touch state.json && mkdir -p logs
    ```
 
-   If you do not encrypt your config, remove the `secrets` lines from `docker-compose.yml`. If you do, the passphrase file must be readable by the container user (uid 1001): run `sudo chown 1001 secrets/aidr-passphrase`, then type your passphrase into it with `sudo nano secrets/aidr-passphrase`.
+   Remove the `secrets` lines from `docker-compose.yml`.
 
 4. Build the image:
 

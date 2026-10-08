@@ -32,6 +32,11 @@ needs user namespaces, which dropping all capabilities can block. If launch fail
 check what `buildLaunchOptions` passes in Docker (`grep -n "sandbox" lib/browser.js`).
 Do not add `SYS_ADMIN` back. Record the outcome here once checked.
 
+## Still to verify
+
+- The Docker steps above (build, `--doctor`, `--dry-run`, Chromium under `cap_drop: [ALL]`, the passphrase secret).
+- `LoadCredential=` in a systemd *user* unit on the target distro (Ubuntu 22.04/24.04): that the monthly job started by setup really receives the passphrase as `$CREDENTIALS_DIRECTORY/aidr-passphrase`.
+
 Secret file: `secrets/aidr-passphrase` must be mode 600 on the host
 (`chmod 600 secrets/aidr-passphrase`), because the tool refuses a group- or
 world-readable passphrase file. The container user must be able to read it:

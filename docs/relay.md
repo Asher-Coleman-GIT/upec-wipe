@@ -27,9 +27,10 @@ email-based opt-outs. Without `config.relay`, behavior is unchanged.
    `https://app.simplelogin.io/api/alias/random/new?mode=word` (header
    `Authentication: <apiKey>`) and caches the returned alias in `state.json`.
    **If the API call fails, that person gets no submissions this run** - no
-   forms, no emails, no generic pass. With `"required": true` the run refuses to
-   start at all unless a relay is configured. Your real email is never used as a
-   fallback.
+   forms, no emails, no generic pass. With `"required": true` and no usable
+   relay configured (or the placeholder key still in place), every person is
+   blocked and the run exits non-zero with no submissions. Your real email is
+   never used as a fallback.
 5. Email-method brokers: the recommended setup is no `email` block at all, so
    those brokers are listed as manual and you handle them by hand. A broker that
    receives an email can see the SMTP account it came from (`email.smtp.user`),

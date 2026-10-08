@@ -50,7 +50,7 @@
   },
 
   "relay": {
-    "_comment": "Fork default: required. Without a working SimpleLogin relay the run refuses to start. See docs/relay.md.",
+    "_comment": "Fork default: required. Without a working SimpleLogin relay (a real apiKey, not this placeholder) every person is blocked and the run exits non-zero with no submissions. One alias per person, shared by all brokers. See docs/relay.md.",
     "provider": "simplelogin",
     "apiKey": "YOUR_SIMPLELOGIN_API_KEY",
     "required": true

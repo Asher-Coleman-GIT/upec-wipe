@@ -34,7 +34,8 @@ function spawnNode(resolved) {
 
   if (resolved.command === 'dashboard') {
     // Boot the dashboard authenticated. server.js reads AIDR_USER/AIDR_PASS
-    // (see dashboard/server.js) and stays open if neither is set.
+    // (see dashboard/server.js) and refuses to start if no credentials are set,
+    // so generate a one-time pair when the caller did not supply one.
     if (!env.AIDR_USER || !env.AIDR_PASS) {
       const creds = generateDashboardCreds();
       env.AIDR_USER = creds.user;
