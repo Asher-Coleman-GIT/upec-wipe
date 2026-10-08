@@ -348,6 +348,7 @@ async function main() {
 }
 
 if (require.main === module) {
+  require('./lib/privilege').exitIfRoot();
   main().catch(err => {
     console.error('Setup error:', err.message);
     process.exit(1);

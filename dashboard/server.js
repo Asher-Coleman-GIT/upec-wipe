@@ -646,6 +646,7 @@ app.post('/api/freeze', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 if (require.main === module) {
+  require('../lib/privilege').exitIfRoot();
   if (PASSPHRASE_ERROR) {
     console.error(`aidr-dashboard: ${PASSPHRASE_ERROR.message}`);
     process.exit(1);
