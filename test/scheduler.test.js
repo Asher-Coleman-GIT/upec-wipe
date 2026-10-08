@@ -456,3 +456,21 @@ test('installScheduleForPlatform routes windows to schtasks', () => {
 
   assert.equal(result.method, 'schtasks', 'windows routes to schtasks');
 });
+
+test('systemd service sets UMask=0077 and NoNewPrivileges', () => {
+  const { service } = buildSystemdUnits('/home/u/aidr/run.sh', '/home/u/aidr/logs');
+  assert.match(service, /^UMask=0077$/m);
+  assert.match(service, /^NoNewPrivileges=yes$/m);
+  assert.doesNotMatch(service, /^User=root/m);
+  assert.doesNotMatch(service, /AIDR_PASSPHRASE=/);
+});
+
+test('systemd service loads the passphrase as a credential when given a file', () => {
+  const { service } = buildSystemdUnits('/s/run.sh', '/s/logs', { passphraseFile: '/home/u/.config/auto-identity-remove/passphrase' });
+  assert.match(service, /^LoadCredential=aidr-passphrase:\/home\/u\/\.config\/auto-identity-remove\/passphrase$/m);
+});
+
+test('systemd service has no LoadCredential line by default', () => {
+  const { service } = buildSystemdUnits('/s/run.sh', '/s/logs');
+  assert.doesNotMatch(service, /LoadCredential/);
+});

@@ -1,12 +1,18 @@
 #!/bin/bash
-# auto-identity-remove - manual trigger
-# Usage: ./run.sh
+# auto-identity-remove - manual trigger and scheduler entrypoint
+# Usage: ./run.sh [watcher.js flags]
 
 set -e
+umask 077
 cd "$(dirname "$0")"
 
-if [ ! -f config.json ]; then
-  echo "❌ config.json not found. Run: node setup.js"
+if [ "$(id -u)" = "0" ]; then
+  echo "Refusing to run as root. Use a dedicated unprivileged user or Docker." >&2
+  exit 1
+fi
+
+if [ ! -f config.json ] && [ ! -f config.json.enc ]; then
+  echo "config.json not found. Run: node setup.js" >&2
   exit 1
 fi
 
@@ -19,4 +25,4 @@ if [ -z "${PLAYWRIGHT_BROWSERS_PATH}" ]; then
   fi
 fi
 
-node watcher.js
+node watcher.js "$@"
