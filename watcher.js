@@ -672,7 +672,17 @@ if (KNOW_MODE) {
     const emailBrokerCount = brokers.filter(b => b.method === 'email').length;
     console.log(`${emailBrokerCount} email broker(s) x ${persons.length} person(s)\n`);
 
-    const result = await sendKnowRequests(brokers, config, { dryRun: DRY_RUN });
+    const plan = await buildSubmissionPlan({ config, persons, state });
+    for (const b of plan.blocked) {
+      console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
+    }
+    const aliasFor = new Map(plan.allowed.map(a => [a.person, a.email]));
+    const result = await sendKnowRequests(brokers, config, {
+      dryRun: DRY_RUN,
+      submissionEmailFor: (p) => aliasFor.get(p),
+      blockedPersons: new Set(plan.blocked.map(b => b.person)),
+    });
+    if (!DRY_RUN) saveState();
 
     console.log('\n' + '='.repeat(54));
     console.log('Right-to-know results - ' + new Date().toLocaleString());

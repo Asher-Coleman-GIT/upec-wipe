@@ -100,3 +100,40 @@ test('without submissionEmailFor, the body uses person.email (backward compatibl
   assert.ok(nmCalls[0].text.includes('jane.doe@example.com'), 'body should contain real email when no relay');
   assert.equal(nmCalls[0].replyTo, undefined, 'replyTo omitted when no masked email');
 });
+
+test('masked email + smtp.from equal to the real email: nothing sent, logged manual', async () => {
+  const { freshEmail, nmCalls, restore } = loadFreshEmailWithSmtpMock();
+  const logged = [];
+  patchDeps();
+  loggerMod.logResult = (name, status, detail) => logged.push({ name, status, detail });
+  try {
+    const cfg = { person: PERSON, email: { smtp: { ...SMTP_CFG, from: 'Jane <jane.doe@example.com>' } } };
+    await freshEmail.sendOptOutEmails([EMAIL_BROKER], cfg, 'linux', { submissionEmailFor: () => 'alias@simplelogin.com' });
+    assert.equal(nmCalls.length, 0, 'must not send');
+    assert.equal(logged[0].status, 'manual');
+    assert.match(logged[0].detail, /smtp\.from/);
+    assert.ok(!logged[0].detail.includes('jane.doe@example.com'));
+  } finally { restoreDeps(); restore(); }
+});
+
+test('masked email + no smtp.from: nothing sent', async () => {
+  const { freshEmail, nmCalls, restore } = loadFreshEmailWithSmtpMock();
+  patchDeps();
+  try {
+    const { from, ...noFrom } = SMTP_CFG;
+    const cfg = { person: PERSON, email: { smtp: noFrom } };
+    await freshEmail.sendOptOutEmails([EMAIL_BROKER], cfg, 'linux', { submissionEmailFor: () => 'alias@simplelogin.com' });
+    assert.equal(nmCalls.length, 0);
+  } finally { restoreDeps(); restore(); }
+});
+
+test('masked email + safe smtp.from: sent from smtp.from', async () => {
+  const { freshEmail, nmCalls, restore } = loadFreshEmailWithSmtpMock();
+  patchDeps();
+  try {
+    const cfg = { person: PERSON, email: { smtp: SMTP_CFG } };
+    await freshEmail.sendOptOutEmails([EMAIL_BROKER], cfg, 'linux', { submissionEmailFor: () => 'alias@simplelogin.com' });
+    assert.equal(nmCalls.length, 1);
+    assert.equal(nmCalls[0].from, 'u@x.com');
+  } finally { restoreDeps(); restore(); }
+});
