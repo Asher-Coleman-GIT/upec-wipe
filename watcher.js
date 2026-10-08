@@ -29,6 +29,7 @@ const { renderAuditMarkdown, writeAuditFile, timestampForFilename } = require('.
 const { buildStealthScript } = require('./lib/stealth');
 const { resolveHeadless, isLowMemory } = require('./lib/browser');
 const { openBrowserSession, EgressError } = require('./lib/browser-session');
+const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
 const PREVIEW           = process.argv.includes('--preview');
@@ -457,9 +458,20 @@ if (CONFIRM_EMAILS) {
     process.exit(1);
   }
 
+  // Ctrl+C / SIGTERM: close the browser (deletes the throwaway profile) and
+  // release the lock before exiting 130/143.
+  let confirmClose = null;
+  installSignalCleanup({
+    cleanup: async () => {
+      if (confirmClose) await confirmClose();
+      lock.release(CONFIRM_LOCK_PATH);
+    },
+  });
+
   (async () => {
     console.log(`\nProcessing confirmation emails from: ${confirmEmailsDir}`);
     const { context, close } = await openBrowserSession({ chromium: chromiumForConfirm, config: loadConfig(), headless: true });
+    confirmClose = close;
 
     try {
       const result = await processConfirmationEmails(context, brokers, {
@@ -719,6 +731,15 @@ async function main() {
     console.error(`Another instance is running, pid=${pid}. Exiting.`);
     process.exit(1);
   }
+
+  // Ctrl+C / SIGTERM mid-run: close the session (deletes the throwaway
+  // profile) and release the lock before exiting 130/143.
+  installSignalCleanup({
+    cleanup: async () => {
+      if (mainSession) await mainSession.close();
+      lock.release(LOCK_PATH);
+    },
+  });
 
   try {
     return await _mainBody();
