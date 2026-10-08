@@ -86,3 +86,12 @@ test('withBrowserSession cleans up when the body throws', async () => {
   assert.equal(chromium.calls.closed, 1);
   assert.equal(fs.existsSync(chromium.calls.launches[0].dir), false);
 });
+
+test('close() is idempotent: a second call is safe and the profile stays removed', async () => {
+  const chromium = fakeChromium({ mullvad_exit_ip: true });
+  const s = await openBrowserSession({ chromium, config: {}, headless: true });
+  const dir = chromium.calls.launches[0].dir;
+  await s.close();
+  await s.close();
+  assert.equal(fs.existsSync(dir), false);
+});

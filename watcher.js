@@ -738,6 +738,10 @@ const stamp = () => new Date().toLocaleTimeString();
 
 const LOCK_PATH = STATE_PATH + '.lock';
 
+// Set by _mainBody once the browser opens; main()'s finally closes it so the
+// throwaway profile is deleted even when the run throws.
+let mainSession = null;
+
 async function main() {
   // Acquire process lock to prevent concurrent runs racing on state.json
   try {
@@ -752,6 +756,7 @@ async function main() {
   try {
     return await _mainBody();
   } finally {
+    if (mainSession) await mainSession.close();
     lock.release(LOCK_PATH);
   }
 }
@@ -783,6 +788,7 @@ async function _mainBody() {
     if (err instanceof EgressError) { console.error(`⛔ ${err.message}`); process.exitCode = 1; return; }
     throw err;
   }
+  mainSession = session;
   const context = session.context;
   await context.addInitScript(buildStealthScript());
 
