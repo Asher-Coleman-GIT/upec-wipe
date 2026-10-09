@@ -45,6 +45,7 @@ function withoutEnvPassphrase(fn) {
     if (prevProfile === undefined) delete process.env.USERPROFILE; else process.env.USERPROFILE = prevProfile;
     if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
     else process.env.AIDR_PASSPHRASE = prev;
+    fs.rmSync(emptyHome, { recursive: true, force: true });
   }
 }
 

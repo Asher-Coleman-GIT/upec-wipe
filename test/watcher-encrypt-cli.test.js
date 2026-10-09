@@ -94,13 +94,17 @@ test('--encrypt-config without a passphrase exits non-zero', () => {
   fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(PLAIN, null, 2));
   // Empty HOME: the default ~/.config/auto-identity-remove/passphrase must not exist for the child.
   const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-empty-home-'));
-  assert.throws(
-    () => execFileSync('node', ['watcher.js', '--encrypt-config'], {
-      cwd: dir,
-      env: { ...process.env, AIDR_PASSPHRASE: '', HEADLESS: '1', HOME: emptyHome, USERPROFILE: emptyHome },
-      encoding: 'utf8',
-      timeout: 30000,
-    }),
-    /Command failed/
-  );
+  try {
+    assert.throws(
+      () => execFileSync('node', ['watcher.js', '--encrypt-config'], {
+        cwd: dir,
+        env: { ...process.env, AIDR_PASSPHRASE: '', HEADLESS: '1', HOME: emptyHome, USERPROFILE: emptyHome },
+        encoding: 'utf8',
+        timeout: 30000,
+      }),
+      /Command failed/
+    );
+  } finally {
+    fs.rmSync(emptyHome, { recursive: true, force: true });
+  }
 });
