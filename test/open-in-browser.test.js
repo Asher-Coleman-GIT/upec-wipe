@@ -1,8 +1,12 @@
 /**
  * test/open-in-browser.test.js
  *
- * Covers lib/notify.js openInBrowser, the only export left after the fork
- * removed notifications. child_process.spawn is stubbed; nothing is launched.
+ * Covers lib/notify.js openInBrowser and isSafeUrl. child_process.spawn is
+ * stubbed; nothing is launched.
+ *
+ * Audit M4: on win32 the URL went through `cmd /c start`, where & | ^ run
+ * commands. URLs can be page-supplied (DSAR links) or registry rows, so every
+ * URL is validated on every OS and win32 uses rundll32 without a shell.
  */
 
 'use strict';
@@ -44,17 +48,14 @@ test('openInBrowser: on linux calls xdg-open for each URL', () => {
   assert.ok(calls[1].args.includes('https://b.com'));
 });
 
-test('openInBrowser: on win32 uses cmd /c start with empty title before the URL', () => {
+test('openInBrowser: on win32 uses rundll32 url.dll,FileProtocolHandler, never cmd (audit M4)', () => {
   const { calls, restore } = stubSpawn();
-  notify.openInBrowser(['https://example.com'], 'win32');
+  notify.openInBrowser(['https://example.com/a?b=1'], 'win32');
   restore();
   assert.equal(calls.length, 1);
-  assert.equal(calls[0].cmd, 'cmd');
-  assert.ok(calls[0].args.includes('/c'));
-  assert.ok(calls[0].args.includes('start'));
-  const urlIdx = calls[0].args.indexOf('https://example.com');
-  const emptyIdx = calls[0].args.indexOf('');
-  assert.ok(emptyIdx !== -1 && emptyIdx < urlIdx);
+  assert.equal(calls[0].cmd, 'rundll32');
+  assert.deepEqual(calls[0].args, ['url.dll,FileProtocolHandler', 'https://example.com/a?b=1']);
+  assert.notEqual(calls[0].cmd, 'cmd');
 });
 
 test('openInBrowser: swallows spawn errors and does not throw', () => {
@@ -68,3 +69,48 @@ test('openInBrowser: swallows spawn errors and does not throw', () => {
     childProcess.spawn = orig;
   }
 });
+
+// -- Audit M4: URL validation -------------------------------------------------
+
+function captureConsole(fn) {
+  const lines = [];
+  const orig = { log: console.log, warn: console.warn, error: console.error };
+  console.log = console.warn = console.error = (...a) => lines.push(a.join(' '));
+  try { fn(); } finally { Object.assign(console, orig); }
+  return lines;
+}
+
+test('isSafeUrl accepts plain http and https URLs', () => {
+  assert.equal(notify.isSafeUrl('https://example.com/opt-out?id=1'), true);
+  assert.equal(notify.isSafeUrl('http://example.com/'), true);
+});
+
+test('isSafeUrl rejects non-http(s) protocols and unparseable input', () => {
+  for (const u of ['file:///etc/passwd', 'javascript:alert(1)', 'ftp://x.example/', 'mailto:a@b.example', 'not a url', '', null, undefined, 42]) {
+    assert.equal(notify.isSafeUrl(u), false, String(u));
+  }
+});
+
+test('isSafeUrl rejects shell metacharacters, quotes and whitespace', () => {
+  const bad = ['&', '|', '^', '<', '>', '"', '`', "'", ' ', '\t', '\n'];
+  for (const ch of bad) {
+    assert.equal(notify.isSafeUrl(`https://x.example/a${ch}calc`), false, JSON.stringify(ch));
+  }
+});
+
+for (const platform of ['win32', 'darwin', 'linux']) {
+  test(`openInBrowser on ${platform}: an unsafe URL is never passed to a process`, () => {
+    const { calls, restore } = stubSpawn();
+    let lines;
+    try {
+      lines = captureConsole(() => notify.openInBrowser(['https://a.example/x&whoami', 'https://ok.example/y'], platform));
+    } finally { restore(); }
+    assert.equal(calls.length, 1);
+    assert.ok(calls[0].args.includes('https://ok.example/y'));
+    for (const c of calls) assert.ok(!c.args.some(a => String(a).includes('whoami')));
+    const out = lines.join('\n');
+    assert.match(out, /not opened: unsafe URL/);
+    assert.match(out, /a\.example/);
+    assert.doesNotMatch(out, /whoami/, 'only the host is printed');
+  });
+}

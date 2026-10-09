@@ -15,8 +15,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SOURCES = ['watcher.js', 'setup.js', 'lib/notify.js', 'lib/serp-watch.js', 'lib/report.js', 'dashboard/server.js', 'dashboard/public/app.js'];
 
-test('lib/notify.js only exports openInBrowser', () => {
-  assert.deepEqual(Object.keys(require('../lib/notify')).sort(), ['openInBrowser']);
+test('lib/notify.js only exports openInBrowser and isSafeUrl', () => {
+  assert.deepEqual(Object.keys(require('../lib/notify')).sort(), ['isSafeUrl', 'openInBrowser']);
 });
 
 test('no source references a notification channel', () => {
