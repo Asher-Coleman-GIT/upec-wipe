@@ -32,8 +32,9 @@ echo "Node $(node -v) detected."
 
 # 3. Install dependencies (reproducible - uses package-lock.json).
 echo ""
-echo "Installing dependencies (npm ci)..."
-npm ci
+echo "Installing dependencies (npm ci --ignore-scripts)..."
+# --ignore-scripts: no dependency needs an install script, so none may run one.
+npm ci --ignore-scripts
 
 # 4. Install the Chromium browser Playwright drives.
 echo ""
@@ -46,7 +47,7 @@ npx playwright install chromium
 #    documented install.
 echo ""
 echo "Installing dashboard dependencies..."
-(cd dashboard && npm ci) || echo "  (dashboard deps failed - 'aidr dashboard' will not start until you run: cd dashboard && npm ci)"
+(cd dashboard && npm ci --ignore-scripts) || echo "  (dashboard deps failed - 'aidr dashboard' will not start until you run: cd dashboard && npm ci --ignore-scripts)"
 
 # 6. Next steps.
 echo ""

@@ -31,8 +31,9 @@ WORKDIR /app
 # Copy dependency manifests first for better layer caching
 COPY package.json package-lock.json ./
 
-# Install Node dependencies (Playwright browsers already in base image)
-RUN npm ci --omit=dev
+# Install Node dependencies (Playwright browsers already in base image).
+# --ignore-scripts: no dependency needs an install script, so none may run one.
+RUN npm ci --omit=dev --ignore-scripts
 
 # Playwright browsers are bundled in the base image at /ms-playwright
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
