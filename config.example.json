@@ -31,13 +31,6 @@
     "apiKey": ""
   },
 
-  "accounts": {
-    "_comment": "For sites that require a login. Leave password blank - setup.js will prompt you to create the account once, then store credentials here.",
-    "spokeo":       { "email": "", "password": "" },
-    "beenverified": { "email": "", "password": "" },
-    "mylife":       { "email": "", "password": "" }
-  },
-
   "email": {
     "_comment": "Optional. Recommended: delete this whole block and handle email-only brokers by hand (they are logged as 'manual'). Brokers can see the SMTP account's own address (user), not just from, so only use a separate mailbox that is not linked to you, as both user and from. Never your everyday account. Gmail example for such a separate mailbox: host=smtp.gmail.com, port=587, an App Password (myaccount.google.com/apppasswords); Gmail rewrites from to the account address.",
     "smtp": {

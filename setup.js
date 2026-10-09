@@ -7,7 +7,6 @@
  * Creates config.json from your answers and walks you through:
  *   • Personal info (name, address, email, phone)
  *   • CapSolver API key (for CAPTCHA-protected sites)
- *   • Accounts for sites that require login (one-time)
  *   • macOS launchd scheduling (1st of every month)
  */
 
@@ -15,7 +14,6 @@ const fs      = require('fs');
 const path    = require('path');
 const os      = require('os');
 const readline = require('readline');
-const { execSync } = require('child_process');
 
 const { installSchedule } = require('./lib/scheduler');
 const { encryptConfigToDisk, getPassphrase } = require('./lib/config');
@@ -192,7 +190,6 @@ function buildConfig(existing, a) {
       phoneFormatted: a.phoneFormatted,
     },
     capsolver: { ...(prev.capsolver || {}), apiKey: a.capsolverKey || 'CAP-YOUR_KEY_HERE' },
-    accounts: a.accounts,
     profileDir: a.profileDir,
     // Fork defaults (fail closed): seeded only when absent, never overriding
     // what the member already has. The placeholder key blocks every person
@@ -256,45 +253,10 @@ async function main() {
   const defaultProfileDir = path.join(os.homedir(), '.config', 'auto-identity-remove');
   const profileDir = await ask('Browser profile directory', existing.profileDir || defaultProfileDir);
 
-  // ── Accounts for sites that need login ───────────────────────────────────
-  console.log('\n── One-Time Account Setup ─────────────────────────────────');
-  console.log('A few high-priority sites require an account to opt out.');
-  console.log('Create the accounts now (one-time) and paste credentials here.');
-  console.log('They will be stored locally in config.json (gitignored).\n');
-
-  const acctSites = [
-    { key: 'spokeo',       url: 'https://www.spokeo.com/signup',       label: 'Spokeo'       },
-    { key: 'beenverified', url: 'https://www.beenverified.com/signup', label: 'BeenVerified' },
-    { key: 'mylife',       url: 'https://www.mylife.com/signup',       label: 'MyLife'       },
-  ];
-
-  const accounts = existing.accounts || {};
-  for (const site of acctSites) {
-    const hasExisting = accounts[site.key]?.password;
-    if (hasExisting) {
-      const update = await confirm(`  ${site.label} - account already stored. Update?`);
-      if (!update) continue;
-    } else {
-      const doSetup = await confirm(`  Set up ${site.label} account? (${site.url})`);
-      if (!doSetup) {
-        accounts[site.key] = { email: email, password: '' };
-        continue;
-      }
-      console.log(`  → Opening ${site.url} in your browser…`);
-      try { execSync(`open "${site.url}"`); } catch(_) {}
-      console.log('  Create the account, then come back here.\n');
-      await ask('  Press Enter when done');
-    }
-    const acctEmail = await ask(`  ${site.label} login email`, email);
-    const acctPass  = await ask(`  ${site.label} password`);
-    accounts[site.key] = { email: acctEmail, password: acctPass };
-    console.log(`  ✓ ${site.label} credentials saved.\n`);
-  }
-
   // ── Build config ─────────────────────────────────────────────────────────
   const config = buildConfig(existing, {
     firstName, lastName, aliases, city, country, state, zip, email, phone,
-    phoneFormatted, capsolverKey, accounts, profileDir,
+    phoneFormatted, capsolverKey, profileDir,
   });
 
   // 0600: config.json holds the legal name, home address, phone, DOB, the SMTP

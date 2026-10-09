@@ -110,7 +110,6 @@ Every subcommand maps to the equivalent `node watcher.js --<flag>` invocation.
 | **Personal info** | Name, city, state, ZIP, email, phone |
 | **Aliases** | Past names or variations (e.g. "Steve Doe") |
 | **CapSolver key** | For CAPTCHA-protected opt-out forms |
-| **One-time accounts** | Creates accounts on sites that require login (stored in `config.json`, gitignored) |
 | **Monthly schedule** | Registers a monthly job to run on the 1st at 9am (launchd / systemd / crontab / schtasks - detected automatically) |
 
 **Your personal info never leaves your machine.** `config.json` and `state.json` are both gitignored.

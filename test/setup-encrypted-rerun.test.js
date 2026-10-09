@@ -144,7 +144,7 @@ test('buildConfig keeps hand-added keys (relay, email, network) on a setup re-ru
   const out = buildConfig(existing, {
     firstName: 'New', lastName: 'Name', aliases: [], city: 'C', country: 'US',
     state: 'S', zip: 'Z', email: 'e', phone: 'p', phoneFormatted: 'pf',
-    capsolverKey: 'NEW', accounts: {}, profileDir: '/p',
+    capsolverKey: 'NEW', profileDir: '/p',
   });
   assert.deepEqual(out.relay, existing.relay);
   assert.deepEqual(out.email, existing.email);
@@ -153,7 +153,7 @@ test('buildConfig keeps hand-added keys (relay, email, network) on a setup re-ru
   assert.equal(out.person.dob, '2000-01-01');
   assert.equal(out.capsolver.apiKey, 'NEW');
   assert.equal(out.capsolver.extra, 1);
-  assert.deepEqual(buildConfig({}, { firstName: 'a', lastName: 'b', aliases: [], accounts: {} }).accounts, {});
+  assert.equal(buildConfig({}, { firstName: 'a', lastName: 'b', aliases: [] }).accounts, undefined);
 });
 
 // I2 (final review): a fresh setup seeds the fork's fail-closed relay and
@@ -161,7 +161,7 @@ test('buildConfig keeps hand-added keys (relay, email, network) on a setup re-ru
 const SETUP_ANSWERS = {
   firstName: 'New', lastName: 'Name', aliases: [], city: 'C', country: 'US',
   state: 'S', zip: 'Z', email: 'real@example.com', phone: 'p', phoneFormatted: 'pf',
-  capsolverKey: 'NEW', accounts: {}, profileDir: '/p',
+  capsolverKey: 'NEW', profileDir: '/p',
 };
 
 test('buildConfig seeds relay (required, placeholder key) and network (required) when absent', () => {
