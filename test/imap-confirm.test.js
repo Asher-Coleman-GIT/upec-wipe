@@ -701,3 +701,39 @@ test('failed: when goto throws, entry appears in failed array', async () => {
   assert.equal(result.failed[0].broker.name, 'Spokeo');
   assert.match(result.failed[0].error, /Navigation timeout/);
 });
+
+// ---- L7: forged mail must not mark success; state holds the host only -------
+
+test('L7: no confirmation text on the page records pending, not success', async () => {
+  const eml = makeEml('optout@spokeo.com', 'Click https://spokeo.com/confirm/abc to confirm.');
+  const ctx = makeContext();
+  ctx.newPage = async () => ({
+    goto: async () => {},
+    textContent: async () => 'Welcome to our homepage. Search for people.',
+    close: async () => {},
+  });
+  const success = [], pending = [];
+  const result = await processConfirmationEmails(ctx, [SPOKEO_BROKER], {
+    dir: 'confirms', dryRun: false,
+    _readDir: () => ['spokeo.eml'], _readFile: () => eml, _moveFile: () => {},
+    _recordSuccess: (n, d) => success.push([n, d]),
+    _recordPending: (n, d) => pending.push([n, d]),
+  });
+  assert.deepEqual(success, []);
+  assert.deepEqual(pending, [['Spokeo', 'email-confirm:spokeo.com']]);
+  assert.equal(result.processed[0].outcome, 'pending');
+});
+
+test('L7: confirmation text records success with the host only (no path or query)', async () => {
+  const eml = makeEml('optout@spokeo.com', 'Click https://spokeo.com/confirm/SECRETTOKEN?t=QQQ to confirm.');
+  const ctx = makeContext();
+  const success = [], pending = [];
+  await processConfirmationEmails(ctx, [SPOKEO_BROKER], {
+    dir: 'confirms', dryRun: false,
+    _readDir: () => ['spokeo.eml'], _readFile: () => eml, _moveFile: () => {},
+    _recordSuccess: (n, d) => success.push([n, d]),
+    _recordPending: (n, d) => pending.push([n, d]),
+  });
+  assert.deepEqual(success, [['Spokeo', 'email-confirm:spokeo.com']]);
+  assert.deepEqual(pending, []);
+});

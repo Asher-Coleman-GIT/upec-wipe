@@ -492,7 +492,7 @@ if (CONFIRM_EMAILS) {
       });
 
       for (const entry of result.processed) {
-        console.log(`  confirmed: ${entry.broker.name} -> ${entry.url}`);
+        console.log(`  ${entry.outcome === 'success' ? 'confirmed' : 'pending (no confirmation text on page)'}: ${entry.broker.name}`);
       }
       for (const entry of result.unmatched) {
         console.log(`  unmatched (${entry.reason}): ${entry.file}`);
