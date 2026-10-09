@@ -30,3 +30,6 @@ serp-history.json
 .env.*
 .DS_Store
 secrets/
+dashboard/.auth.json
+.superpowers/
+venv/

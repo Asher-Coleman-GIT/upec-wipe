@@ -113,6 +113,10 @@ test('.dockerignore excludes every artifact that can carry PII or secrets', () =
     'data/serp-history.json',
     'data/exposure-history.json',
     '.env',
+    'dashboard/.auth.json', // scrypt hash of the dashboard login (audit L12)
+    '.superpowers/',
+    'venv/',
+    'secrets/',
   ];
   for (const entry of mustExclude) {
     const bare = entry.replace(/\/$/, '');
