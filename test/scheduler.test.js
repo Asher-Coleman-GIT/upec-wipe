@@ -27,10 +27,21 @@ const path = require('node:path');
  * touched.  Cleaned up in afterEach.
  */
 let tmpDir;
+// L5: launchctl and schtasks are run via execFileSync (argv, no shell); record the calls.
+const _realExecFileSync = require('child_process').execFileSync;
+let efsCalls = [];
+let efsThrow = null;
 beforeEach(() => {
+  efsCalls = []; efsThrow = null;
+  require('child_process').execFileSync = (cmd, args) => {
+    efsCalls.push([cmd, ...args].join(' '));
+    if (efsThrow && efsThrow(cmd)) throw new Error('Access denied');
+    return '';
+  };
   tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'sched-test-'));
 });
 afterEach(() => {
+  require('child_process').execFileSync = _realExecFileSync;
   fs.rmSync(tmpDir, { recursive: true, force: true });
 });
 
@@ -87,7 +98,7 @@ test('buildSystemdUnits returns service and timer with correct content', () => {
 
   // Service
   assert.match(service, /\[Unit\]/, 'service has [Unit]');
-  assert.match(service, /ExecStart=\/bin\/bash \/path\/run\.sh/, 'ExecStart correct');
+  assert.match(service, /ExecStart="\/bin\/bash" "\/path\/run\.sh"/, 'ExecStart correct');
   assert.match(service, /systemd\.log/, 'stdout log referenced');
   assert.match(service, /systemd\.error\.log/, 'stderr log referenced');
 
@@ -157,7 +168,7 @@ test('macOS installer writes a plist file and returns method=launchd', () => {
   assert.equal(result.method, 'launchd', 'method is launchd on macOS host');
   // launchctl command was attempted
   assert.ok(
-    executed.some(c => c.includes('launchctl')),
+    efsCalls.some(c => c.startsWith('launchctl load ')),
     'launchctl was called'
   );
 });
@@ -302,10 +313,11 @@ test('Windows branch calls schtasks and returns method=schtasks on success', () 
   }
 
   assert.equal(result.method, 'schtasks');
-  assert.ok(executed.some(c => c.includes('schtasks')), 'schtasks was called');
-  assert.match(executed.find(c => c.includes('schtasks')), /\/SC MONTHLY/, 'monthly schedule');
-  assert.match(executed.find(c => c.includes('schtasks')), /\/D 1/, 'day=1');
-  assert.match(executed.find(c => c.includes('schtasks')), /\/ST 09:00/, 'time=09:00');
+  const sch = efsCalls.find(c => c.startsWith('schtasks '));
+  assert.ok(sch, 'schtasks was called');
+  assert.match(sch, /\/SC MONTHLY/, 'monthly schedule');
+  assert.match(sch, /\/D 1/, 'day=1');
+  assert.match(sch, /\/ST 09:00/, 'time=09:00');
   assert.match(result.detail, /auto-identity-remove/, 'task name in detail');
 });
 
@@ -314,9 +326,9 @@ test('Windows branch returns method=manual when schtasks throws', () => {
   const realExecSync = childProcess.execSync;
 
   childProcess.execSync = (cmd, opts) => {
-    if (cmd.includes('schtasks')) throw new Error('Access denied');
     return '';
   };
+  efsThrow = (cmd) => cmd === 'schtasks';
 
   // Suppress the console.log output for the manual command
   const origLog = console.log;
@@ -473,4 +485,50 @@ test('systemd service loads the passphrase as a credential when given a file', (
 test('systemd service has no LoadCredential line by default', () => {
   const { service } = buildSystemdUnits('/s/run.sh', '/s/logs');
   assert.doesNotMatch(service, /LoadCredential/);
+});
+
+// ─── L5: quoting and escaping of the install path ────────────────────────────
+
+const HOSTILE = "/tmp/a b;id%h'q";
+
+test('L5: cron line shell-quotes a path with a space, ; and %', () => {
+  const { buildCronLine, buildCrontabPayload } = require('../lib/scheduler');
+  const line = buildCronLine(HOSTILE);
+  assert.equal(line, "0 9 1 * * /bin/bash '/tmp/a b;id\\%h'\\''q'");
+  assert.equal(buildCrontabPayload('', line).split('\n')[0], line);
+  assert.equal(buildCronLine('/home/u/run.sh'), '0 9 1 * * /bin/bash /home/u/run.sh', 'safe paths stay plain (idempotent re-install)');
+});
+
+test('L5: systemd ExecStart is quoted, % doubled, $ doubled, LoadCredential quoted', () => {
+  const { service } = buildSystemdUnits('/tmp/a b;id%h/$x"y', '/tmp/l g', { passphraseFile: '/tmp/p f%' });
+  assert.match(service, /^ExecStart="\/bin\/bash" "\/tmp\/a b;id%%h\/\$\$x\\"y"$/m);
+  assert.match(service, /^LoadCredential=aidr-passphrase:"\/tmp\/p f%%"$/m);
+  assert.match(service, /^StandardOutput=append:\/tmp\/l g\/systemd\.log$/m);
+});
+
+test('L5: plist XML-escapes paths', () => {
+  const xml = buildPlist('/tmp/a&b<c>"d\'e/run.sh', '/tmp/l&g');
+  assert.ok(xml.includes('/tmp/a&amp;b&lt;c&gt;&quot;d&apos;e/run.sh'));
+  assert.ok(xml.includes('/tmp/l&amp;g/launchd.log'));
+  assert.ok(!xml.includes('a&b'));
+});
+
+test('L5: launchctl and schtasks get argv arrays, never a shell string', () => {
+  const { installScheduleForPlatform, buildWindowsSchtasksArgs } = require('../lib/scheduler');
+  const cp = require('child_process');
+  const realExecSync = cp.execSync;
+  const realHomedir = os.homedir;
+  const shellCalls = [];
+  cp.execSync = (c) => { shellCalls.push(c); return ''; };
+  os.homedir = () => tmpDir;
+  try {
+    installScheduleForPlatform({ platform: 'macos', scriptPath: path.join(tmpDir, 'a b;id', 'run.sh'), logDir: path.join(tmpDir, 'logs') });
+    installScheduleForPlatform({ platform: 'windows', scriptPath: path.join(tmpDir, 'a b;id', 'run.sh'), logDir: path.join(tmpDir, 'logs') });
+  } finally {
+    cp.execSync = realExecSync; os.homedir = realHomedir;
+  }
+  assert.deepEqual(shellCalls, [], 'no shell string was executed');
+  assert.ok(efsCalls.some(c => c.startsWith('launchctl load ')));
+  assert.ok(efsCalls.some(c => c.startsWith('schtasks /Create')));
+  assert.equal(buildWindowsSchtasksArgs('n', 'w')[0], '/Create');
 });
