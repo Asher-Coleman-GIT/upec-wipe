@@ -499,11 +499,29 @@ test('L5: cron line shell-quotes a path with a space, ; and %', () => {
   assert.equal(buildCronLine('/home/u/run.sh'), '0 9 1 * * /bin/bash /home/u/run.sh', 'safe paths stay plain (idempotent re-install)');
 });
 
-test('L5: systemd ExecStart is quoted, % doubled, $ doubled, LoadCredential quoted', () => {
+test('L5: systemd ExecStart is quoted, % doubled, $ doubled; LoadCredential unquoted with % doubled', () => {
   const { service } = buildSystemdUnits('/tmp/a b;id%h/$x"y', '/tmp/l g', { passphraseFile: '/tmp/p f%' });
   assert.match(service, /^ExecStart="\/bin\/bash" "\/tmp\/a b;id%%h\/\$\$x\\"y"$/m);
-  assert.match(service, /^LoadCredential=aidr-passphrase:"\/tmp\/p f%%"$/m);
+  // systemd takes the LoadCredential source verbatim: quotes would become part
+  // of the path and the credential is ignored (C2 review, systemd-analyze).
+  assert.match(service, /^LoadCredential=aidr-passphrase:\/tmp\/p f%%$/m);
   assert.match(service, /^StandardOutput=append:\/tmp\/l g\/systemd\.log$/m);
+});
+
+test('L5: systemd-analyze accepts the unit for a path with a space and %', (t) => {
+  const { spawnSync } = require('node:child_process');
+  if (spawnSync('systemd-analyze', ['--version']).status !== 0) return t.skip('systemd-analyze not installed');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-sd-'));
+  try {
+    const credDir = path.join(dir, 'p f%');
+    fs.mkdirSync(credDir);
+    fs.writeFileSync(path.join(credDir, 'pp'), 'x', { mode: 0o600 });
+    fs.writeFileSync(path.join(dir, 'run.sh'), '#!/bin/bash\n', { mode: 0o700 });
+    const { service } = buildSystemdUnits(path.join(dir, 'run.sh'), dir, { passphraseFile: path.join(credDir, 'pp') });
+    fs.writeFileSync(path.join(dir, 'aidr.service'), service);
+    const r = spawnSync('systemd-analyze', ['verify', '--user', path.join(dir, 'aidr.service')], { encoding: 'utf8' });
+    assert.doesNotMatch(r.stderr + r.stdout, /not valid|ignoring/i);
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
 
 test('L5: plist XML-escapes paths', () => {
