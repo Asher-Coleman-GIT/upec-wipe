@@ -737,3 +737,19 @@ test('L7: confirmation text records success with the host only (no path or query
   assert.deepEqual(success, [['Spokeo', 'email-confirm:spokeo.com']]);
   assert.deepEqual(pending, []);
 });
+
+test('dryRun entries carry outcome dry-run and are labelled as such, not pending', async () => {
+  const { describeConfirmOutcome, summarizeConfirmResult } = require('../lib/imap-confirm');
+  const eml = makeEml('optout@spokeo.com', 'Please visit https://spokeo.com/confirm/abc123 to confirm.');
+  const result = await processConfirmationEmails(makeContext(), [SPOKEO_BROKER], {
+    dir: 'confirms', dryRun: true, _readDir: () => ['spokeo.eml'], _readFile: () => eml,
+  });
+  assert.equal(result.processed[0].outcome, 'dry-run');
+  assert.equal(describeConfirmOutcome(result.processed[0]), 'would open (dry run)');
+  assert.equal(describeConfirmOutcome({ outcome: 'success' }), 'confirmed');
+  assert.equal(describeConfirmOutcome({ outcome: 'pending' }), 'pending (no confirmation text on page)');
+  assert.equal(
+    summarizeConfirmResult({ processed: [{ outcome: 'success' }, { outcome: 'pending' }, { outcome: 'dry-run' }], unmatched: [{}], failed: [] }),
+    'Done: 1 confirmed, 1 pending, 1 dry run, 1 unmatched, 0 failed (4 .eml files)'
+  );
+});

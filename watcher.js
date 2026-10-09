@@ -447,7 +447,7 @@ if (COMPLAINTS_MODE) {
 // ── --confirm-emails [dir]: process .eml files and auto-click confirm links ───
 if (CONFIRM_EMAILS) {
   const brokers = require('./brokers');
-  const { processConfirmationEmails } = require('./lib/imap-confirm');
+  const { processConfirmationEmails, describeConfirmOutcome, summarizeConfirmResult } = require('./lib/imap-confirm');
 
   // Launch a minimal headless browser context just for navigating confirm links
   let chromiumForConfirm;
@@ -492,7 +492,7 @@ if (CONFIRM_EMAILS) {
       });
 
       for (const entry of result.processed) {
-        console.log(`  ${entry.outcome === 'success' ? 'confirmed' : 'pending (no confirmation text on page)'}: ${entry.broker.name}`);
+        console.log(`  ${describeConfirmOutcome(entry)}: ${entry.broker.name}`);
       }
       for (const entry of result.unmatched) {
         console.log(`  unmatched (${entry.reason}): ${entry.file}`);
@@ -501,8 +501,7 @@ if (CONFIRM_EMAILS) {
         console.log(`  failed: ${entry.broker.name} -> ${entry.error}`);
       }
 
-      const total = result.processed.length + result.unmatched.length + result.failed.length;
-      console.log(`\nDone: ${result.processed.length} confirmed, ${result.unmatched.length} unmatched, ${result.failed.length} failed (${total} .eml files)\n`);
+      console.log(`\n${summarizeConfirmResult(result)}\n`);
     } finally {
       await close();
       lock.release(CONFIRM_LOCK_PATH);
