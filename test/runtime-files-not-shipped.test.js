@@ -29,6 +29,9 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
+// The test preload points AIDR_STATE_PATH at a temp file; this file needs the
+// default repo-root paths, and it never writes state.
+delete process.env.AIDR_STATE_PATH;
 const { CONFIG_PATH, CONFIG_ENC_PATH, STATE_PATH } = require('../lib/config');
 
 const ROOT = path.resolve(__dirname, '..');

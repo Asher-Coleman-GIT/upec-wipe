@@ -15,6 +15,9 @@
 
 const path = require('node:path');
 
+// Keep test runs off the repo's state.json as well.
+require('./test-state');
+
 const MULLVAD_CHECK_URL = 'https://am.i.mullvad.net/json';
 
 const realFetch = globalThis.fetch;
