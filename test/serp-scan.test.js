@@ -16,6 +16,8 @@
  */
 
 'use strict';
+// L14: keep the hash key out of the repo's data/ dir during tests.
+process.env.AIDR_SERP_KEY_PATH = require('node:path').join(require('node:fs').mkdtempSync(require('node:path').join(require('node:os').tmpdir(), 'serpkey-env-')), '.serp-key');
 
 const { test, beforeEach, afterEach } = require('node:test');
 const assert = require('node:assert/strict');
@@ -781,4 +783,20 @@ test('runSerpScan summary results include a broker hostname', async () => {
   const spokeo = summary.results.find(r => r.broker === 'Spokeo');
   assert.ok(spokeo, 'Spokeo should be in results');
   assert.equal(spokeo.hostname, 'spokeo.com', 'each result should carry the broker registrable hostname');
+});
+
+test('L14: hashPerson is keyed per install and the key file is created 0600', () => {
+  const fs = require('node:fs'), os = require('node:os'), path = require('node:path'), crypto = require('node:crypto');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'serpkey-'));
+  try {
+    const k1 = path.join(dir, 'a', '.serp-key'), k2 = path.join(dir, 'b', '.serp-key');
+    const h1 = hashPerson('Jane Doe', 'jane@example.com', { keyPath: k1 });
+    const h2 = hashPerson('Jane Doe', 'jane@example.com', { keyPath: k2 });
+    assert.notEqual(h1, h2, 'hash differs across installs');
+    assert.equal(h1, hashPerson('Jane Doe', 'jane@example.com', { keyPath: k1 }), 'stable within an install');
+    assert.equal(fs.statSync(k1).size, 32);
+    assert.equal(fs.statSync(k1).mode & 0o777, 0o600);
+    const plain = crypto.createHash('sha256').update('Jane Doe|jane@example.com').digest('hex');
+    assert.notEqual(h1, plain, 'not the old unsalted sha256');
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });

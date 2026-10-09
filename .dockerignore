@@ -33,3 +33,4 @@ secrets/
 dashboard/.auth.json
 .superpowers/
 venv/
+data/.serp-key

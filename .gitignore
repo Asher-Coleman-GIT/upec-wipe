@@ -20,3 +20,4 @@ logs/reports/
 .DS_Store
 .claude/
 secrets/
+data/.serp-key
