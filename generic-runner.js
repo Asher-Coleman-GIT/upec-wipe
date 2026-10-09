@@ -469,7 +469,8 @@ function loadGenericBrokers(explicitBrokerHosts) {
       if (Array.isArray(feeds)) {
         for (const row of feeds) {
           const url = row && row.optOutUrl;
-          if (!url || !url.startsWith('http')) continue;
+          // https only (audit M6): an http row would send PII in clear text.
+          if (!url || !/^https:\/\//i.test(url)) continue;
           try {
             const host = new URL(url).hostname.replace(/^www\./, '');
             if (seen.has(host)) continue;
