@@ -313,3 +313,12 @@ test('L15: readStateFileSafe drops __proto__/constructor/prototype keys from opt
     assert.equal({}.polluted, undefined, 'Object.prototype untouched');
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
+
+test('configErrorReason never returns config text from a JSON SyntaxError', () => {
+  const { configErrorReason } = require('../lib/config');
+  let err;
+  try { JSON.parse('{"email": jane.doe@example.com}'); } catch (e) { err = e; }
+  assert.match(err.message, /jane/, 'precondition: V8 quotes the text');
+  assert.equal(configErrorReason(err), 'config.json is not valid JSON');
+  assert.equal(configErrorReason(new Error('Passphrase file /x is readable by other users')), 'Passphrase file /x is readable by other users');
+});

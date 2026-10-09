@@ -132,3 +132,23 @@ test('--update-brokers says so when the encrypted config cannot be read (no sile
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('--update-brokers warning never echoes config contents from a JSON parse error', () => {
+  const { spawnSync } = require('node:child_process');
+  const dir = buildTempRepo();
+  // Malformed on purpose, right next to the email: V8 quotes this text in its SyntaxError.
+  fs.writeFileSync(path.join(dir, 'config.json'), '{"person": {"email": jane.doe@example.com, "lastName": "Turing"}}');
+  try {
+    const r = spawnSync('node', ['watcher.js', '--update-brokers'], {
+      cwd: dir,
+      env: { ...process.env, HEADLESS: '1', CA_REGISTRY_URL: 'https://127.0.0.1:1/ca.csv', VT_REGISTRY_URL: 'https://127.0.0.1:1/vt.csv' },
+      encoding: 'utf8',
+      timeout: 30000,
+    });
+    const out = r.stdout + r.stderr;
+    assert.match(out, /config could not be read/i);
+    assert.doesNotMatch(out, /jane|example\.com|Turing/i);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

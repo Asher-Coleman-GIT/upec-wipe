@@ -15,7 +15,7 @@ const path = require('path');
 const fs   = require('fs');
 const os   = require('os');
 
-const { STATE_PATH, RECHECK_DAYS, loadConfig, loadState, saveState, recordSuccess, setDryRun, getPersonsFromConfig, loadCheckpoint, clearCheckpoint, findResumeIndex } = require('./lib/config');
+const { STATE_PATH, RECHECK_DAYS, loadConfig, loadState, saveState, recordSuccess, setDryRun, getPersonsFromConfig, loadCheckpoint, clearCheckpoint, findResumeIndex, configErrorReason } = require('./lib/config');
 const { loadChromium } = require('./lib/playwright-loader');
 const { results, logResult, buildSummary, setDefunctBrokers } = require('./lib/logger');
 const { findDefunct, DEFUNCT_THRESHOLD } = require('./lib/defunct');
@@ -182,7 +182,7 @@ if (ENCRYPT_CONFIG || DECRYPT_CONFIG) {
     }
     process.exit(0);
   } catch (err) {
-    console.error(`Config migration failed: ${err.message}`);
+    console.error(`Config migration failed: ${configErrorReason(err)}`);
     process.exit(1);
   }
 }
@@ -271,7 +271,7 @@ if (_allowlistCmd) {
   try {
     cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
   } catch (err) {
-    console.error(`❌ could not read config.json: ${err.message}`);
+    console.error(`❌ could not read config.json: ${configErrorReason(err)}`);
     process.exit(1);
   }
   const next = _allowlistCmd.action === 'allow'
@@ -605,7 +605,8 @@ if (DOCTOR) {
     if (fs.existsSync(CONFIG_PATH) || fs.existsSync(CONFIG_ENC_PATH)) updateCfg = loadConfig();
   } catch (err) {
     // Say so: network.required / network.proxy from the config do not apply.
-    console.warn(`Warning: config could not be read (${err.message}); using network defaults (Mullvad check required).`);
+    const reason = configErrorReason(err);
+    console.warn(`Warning: config could not be read (${reason}); using network defaults (Mullvad check required).`);
     updateCfg = {};
   }
   setEgressConfig(updateCfg);
