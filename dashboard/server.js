@@ -1,4 +1,7 @@
 'use strict';
+// Audit M2: everything this process creates (run logs, audit files, snapshots,
+// complaints, reports, config rewrites) is owner-only, however it was launched.
+process.umask(0o077);
 /*
  * auto-identity-remove - web dashboard (optional)
  *

@@ -72,7 +72,7 @@ test('captureSubmitSnapshot: returns null when screenshot throws (no rethrow)', 
   assert.equal(result, null, 'must return null on screenshot failure, not throw');
 });
 
-test('captureSubmitSnapshot: calls mkdirSync with recursive: true', async () => {
+test('captureSubmitSnapshot: calls mkdirSync with recursive: true and mode 0700', async () => {
   let mkdirCalled = false;
   let mkdirOpts = null;
   const fakePage = {
@@ -89,7 +89,7 @@ test('captureSubmitSnapshot: calls mkdirSync with recursive: true', async () => 
   });
 
   assert.ok(mkdirCalled, 'mkdirSync must be called');
-  assert.deepEqual(mkdirOpts, { recursive: true });
+  assert.deepEqual(mkdirOpts, { recursive: true, mode: 0o700 });
 });
 
 // ── broker-runner integration tests ──────────────────────────────────────────

@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+// Audit M2: everything this process creates (run logs, audit files, snapshots,
+// complaints, reports, config rewrites) is owner-only, however it was launched.
+process.umask(0o077);
 /*
  * bin/aidr.js - friendly CLI dispatcher for auto-identity-remove.
  *

@@ -7,6 +7,10 @@
  * Run: node watcher.js   (add --dry-run to fill forms without submitting)
  */
 
+// Audit M2: everything this process creates (run logs, audit files, snapshots,
+// complaints, reports, config rewrites) is owner-only, however it was launched.
+process.umask(0o077);
+
 const path = require('path');
 const fs   = require('fs');
 const os   = require('os');
@@ -254,7 +258,7 @@ if (PENDING_MODE) {
 // ── --allow / --unallow <name>: edit config.json allowlist, then exit ────────
 const _allowlistCmd = parseAllowlistArgs(process.argv);
 if (_allowlistCmd) {
-  const { CONFIG_PATH } = require('./lib/config');
+  const { CONFIG_PATH, writeFileFsync } = require('./lib/config');
   if (_allowlistCmd.error || !_allowlistCmd.name) {
     console.error(`❌ ${_allowlistCmd.action === 'unallow' ? '--unallow' : '--allow'} requires a broker name, e.g. --${_allowlistCmd.action} Spokeo`);
     process.exit(1);
@@ -269,10 +273,9 @@ if (_allowlistCmd) {
   const next = _allowlistCmd.action === 'allow'
     ? addToAllowlist(cfg, _allowlistCmd.name)
     : removeFromAllowlist(cfg, _allowlistCmd.name);
-  // Atomic write: tmp -> rename (mirrors lib/config.js saveState semantics).
-  const tmp = CONFIG_PATH + '.tmp';
-  fs.writeFileSync(tmp, JSON.stringify(next, null, 2) + '\n');
-  fs.renameSync(tmp, CONFIG_PATH);
+  // Atomic 0600 write: tmp (opened 0600) -> fsync -> rename -> chmod 0600.
+  // config.json holds the legal name, address and every key (audit M2).
+  writeFileFsync(CONFIG_PATH, JSON.stringify(next, null, 2) + '\n');
   const verb = _allowlistCmd.action === 'allow' ? 'Added to' : 'Removed from';
   console.log(`\n📌 ${verb} allowlist: ${_allowlistCmd.name}`);
   console.log(`   Allowlist now: ${(next.allowlist || []).join(', ') || '(empty)'}\n`);
@@ -564,7 +567,7 @@ try {
   const model = buildReportModel({ state, brokers, exposure });
   const html = renderReportHtml(model);
 
-  fs.mkdirSync(REPORT_DIR, { recursive: true });
+  fs.mkdirSync(REPORT_DIR, { recursive: true, mode: 0o700 });
   const outPath = reportPdfPath(new Date());
 
   const { context, close: closeReportSession } = await openBrowserSession({ chromium: chromiumForReport, config: reportConfig, headless: true, needsNetwork: false });
@@ -717,7 +720,7 @@ if (process.env.PLAYWRIGHT_BROWSERS_PATH === undefined) {
 }
 
 const LOG_DIR = path.join(__dirname, 'logs');
-fs.mkdirSync(LOG_DIR, { recursive: true });
+fs.mkdirSync(LOG_DIR, { recursive: true, mode: 0o700 });
 // Timestamped to the second (B8): two runs on the same day must not overwrite
 // each other, otherwise loadPreviousLog/diffResults can never diff intraday runs.
 const logFile = path.join(LOG_DIR, `run-${timestampForFilename(new Date().toISOString())}.json`);
