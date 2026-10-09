@@ -197,3 +197,20 @@ test('loadLastLog returns null when run file contains invalid JSON', () => {
   assert.equal(result, null);
   fs.rmSync(dir, { recursive: true });
 });
+
+test('extractFailedBrokers reads the real run-log shape written by logResult ({ broker, status })', () => {
+  const logger = require('../lib/logger');
+  logger.resetResults();
+  const origLog = console.log;
+  console.log = () => {};
+  try {
+    logger.logResult('BeenVerified', 'captcha_failed', 'https://www.beenverified.com/app/optout/search');
+    logger.logResult('Radaris', 'error', 'Timeout');
+    logger.logResult('Spokeo', 'success', 'done');
+  } finally { console.log = origLog; }
+  const log = JSON.parse(JSON.stringify(logger.results)); // as read back from logs/run-*.json
+  const names = extractFailedBrokers(log);
+  assert.ok(names.has('BeenVerified'), `captcha_failed broker retried: ${[...names]}`);
+  assert.ok(names.has('Radaris'));
+  assert.equal(names.has('Spokeo'), false);
+});
