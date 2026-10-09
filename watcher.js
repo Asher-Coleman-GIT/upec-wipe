@@ -16,6 +16,7 @@ const fs   = require('fs');
 const os   = require('os');
 
 const { STATE_PATH, RECHECK_DAYS, loadConfig, loadState, saveState, recordSuccess, setDryRun, getPersonsFromConfig, loadCheckpoint, clearCheckpoint, findResumeIndex } = require('./lib/config');
+const { loadChromium } = require('./lib/playwright-loader');
 const { results, logResult, buildSummary, setDefunctBrokers } = require('./lib/logger');
 const { findDefunct, DEFUNCT_THRESHOLD } = require('./lib/defunct');
 const { openInBrowser } = require('./lib/notify');
@@ -419,12 +420,7 @@ if (COMPLAINTS_MODE) {
     let session = null;
     if (!DRY_RUN) {
       let chromiumForPdf;
-      try {
-        ({ chromium: chromiumForPdf } = require('playwright'));
-      } catch (_) {
-        const fallback = path.join(os.homedir(), '.openclaw', 'plugins', 'node_modules', 'playwright');
-        ({ chromium: chromiumForPdf } = require(fallback));
-      }
+      chromiumForPdf = loadChromium();
       session = await openBrowserSession({ chromium: chromiumForPdf, config, headless: true, needsNetwork: false });
       context = session.context;
       newPage = () => context.newPage();
@@ -455,12 +451,7 @@ if (CONFIRM_EMAILS) {
 
   // Launch a minimal headless browser context just for navigating confirm links
   let chromiumForConfirm;
-  try {
-    ({ chromium: chromiumForConfirm } = require('playwright'));
-  } catch (_) {
-    const fallback = path.join(os.homedir(), '.openclaw', 'plugins', 'node_modules', 'playwright');
-    ({ chromium: chromiumForConfirm } = require(fallback));
-  }
+  chromiumForConfirm = loadChromium();
 
   // Acquire the same process lock as main() - processConfirmationEmails calls
   // recordSuccess -> saveState, so it must not race a concurrent normal run.
@@ -535,12 +526,7 @@ const {
 } = require('./lib/exposure');
 
 let chromiumForReport;
-try {
-  ({ chromium: chromiumForReport } = require('playwright'));
-} catch (_) {
-  const fallback = path.join(os.homedir(), '.openclaw', 'plugins', 'node_modules', 'playwright');
-  ({ chromium: chromiumForReport } = require(fallback));
-}
+chromiumForReport = loadChromium();
 
 const reportConfig = loadConfig();
 
@@ -715,14 +701,9 @@ if (defunctNames.length > 0) {
   console.log('   These will still run. Remove from brokers.js if site is gone.\n');
 }
 
-// Try local node_modules first, then fall back to global openclaw install
+// Project-local Playwright only (audit L6: no home-dir fallback)
 let chromium;
-try {
-  ({ chromium } = require('playwright'));
-} catch (_) {
-  const fallback = path.join(os.homedir(), '.openclaw', 'plugins', 'node_modules', 'playwright');
-  ({ chromium } = require(fallback));
-}
+chromium = loadChromium();
 
 const isMac = process.platform === 'darwin';
 
