@@ -153,12 +153,17 @@ app.use((_req, res, next) => {
 // below compares two attacker-controlled values, so the Host itself is pinned.
 // The port may be the configured PORT or the port the connection actually hit
 // (differs under AIDR_PORT=0 or a published container port).
+// A configured AIDR_HOST that is another IPv4 loopback literal (127/8) is
+// accepted too, so the URL bin/aidr.js prints works; a rebinding attacker
+// cannot send an IP-literal Host for their own name.
+const EXTRA_HOST = /^127(\.\d{1,3}){3}$/.test(HOST) && HOST !== '127.0.0.1' ? HOST : null;
 function hostAllowed(req) {
   const host = String(req.get('host') || '').toLowerCase();
   const ports = new Set([String(PORT)]);
   if (req.socket && req.socket.localPort) ports.add(String(req.socket.localPort));
   for (const p of ports) {
     if (host === `127.0.0.1:${p}` || host === `localhost:${p}` || host === `[::1]:${p}`) return true;
+    if (EXTRA_HOST && host === `${EXTRA_HOST}:${p}`) return true;
   }
   return false;
 }

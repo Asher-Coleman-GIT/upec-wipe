@@ -1103,6 +1103,22 @@ function rawRequest(server, { pathname = '/api/version', headers = {}, method = 
   });
 }
 
+test('L1: AIDR_HOST on another loopback address is accepted as a Host, non-loopback names still 421', async () => {
+  process.env.AIDR_HOST = '127.0.0.5';
+  const { server, close } = await buildServer();
+  try {
+    const port = server.address().port;
+    const auth = basicAuth('testuser', 'testpass');
+    const ok = await rawRequest(server, { headers: { Host: `127.0.0.5:${port}`, Authorization: auth } });
+    assert.equal(ok.status, 200, 'the configured loopback host must be accepted');
+    const other = await rawRequest(server, { headers: { Host: `127.0.0.6:${port}`, Authorization: auth } });
+    assert.equal(other.status, 421, 'only the configured loopback address, not all of 127/8');
+  } finally {
+    delete process.env.AIDR_HOST;
+    await close();
+  }
+});
+
 test('L1: a foreign Host header is rejected with 421 (DNS rebinding)', async () => {
   const { server, close } = await buildServer();
   try {
