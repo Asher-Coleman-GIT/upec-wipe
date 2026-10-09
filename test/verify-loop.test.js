@@ -368,3 +368,22 @@ test('H2: still_listed outcome writes verifiedStillListedAt on the state object'
   assert.ok(entry, 'state.optOuts entry must exist after runVerify');
   assert.ok(entry.verifiedStillListedAt, 'verifiedStillListedAt must be set on the shared state object');
 });
+
+// ── L8: each person is searched with their own broker URLs ───────────────────
+test('L8: two persons are verified with their own forPerson broker entries', async () => {
+  const base = [searchBroker('B1')];
+  base.forPerson = (p) => [{ ...searchBroker('B1'), searchUrl: `https://b1.example/search?n=${p.firstName}` }];
+  const p1 = { firstName: 'Ann', lastName: 'One' };
+  const p2 = { firstName: 'Bob', lastName: 'Two' };
+  const state = { optOuts: {
+    'B1|Ann One': { lastSuccess: daysAgo(8) },
+    'B1|Bob Two': { lastSuccess: daysAgo(8) },
+  } };
+  const seen = [];
+  const fakeFind = async (_page, broker, person) => { seen.push([person.firstName, broker.searchUrl]); return null; };
+  await runVerify(makeContext(), base, [p1, p2], { findUrl: fakeFind, state });
+  assert.deepEqual(seen, [
+    ['Ann', 'https://b1.example/search?n=Ann'],
+    ['Bob', 'https://b1.example/search?n=Bob'],
+  ]);
+});
