@@ -113,7 +113,8 @@ test('no env-var bypass: NODE_ENV=test and NODE_TEST_CONTEXT still run the check
 
 test('lib/egress.js reads no env var to decide whether to check', () => {
   const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'lib', 'egress.js'), 'utf8');
-  assert.doesNotMatch(src, /NODE_ENV|NODE_TEST_CONTEXT|isTestEnv/);
+  // Code reads only; comments may mention the variables.
+  assert.doesNotMatch(src, /process\.env\.(NODE_ENV|NODE_TEST_CONTEXT)|process\.env\[|isTestEnv/);
 });
 
 test('every test command loads the egress-off preload', () => {

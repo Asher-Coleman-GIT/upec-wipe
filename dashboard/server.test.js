@@ -6,7 +6,9 @@
  * spawned and no real config/state files are touched: CONFIG + STATE paths are
  * redirected to temp files, which are cleaned up after each test.
  *
- * Run with: node --test (from the dashboard/ directory)
+ * Run with: npm test (from the dashboard/ directory). It preloads
+ * ../test/helpers/egress-off.js; plain `node --test` would let the Node-side
+ * egress gate make a real request to am.i.mullvad.net.
  *
  * Dependencies: node built-ins only (http, fs, path, os, crypto) + express
  * (already in dashboard/node_modules).
@@ -1253,12 +1255,14 @@ test('L4: the dashboard spawns the watcher with childEnv', () => {
 
 test('L4: every child process the dashboard starts gets childEnv', () => {
   const src = fs.readFileSync(path.join(__dirname, 'server.js'), 'utf8');
-  const calls = [...src.matchAll(/\b(spawn|execFile|exec|fork)\(/g)];
+  // Bare calls only (not re.exec(...)); each slice ends where the next call starts.
+  const calls = [...src.matchAll(/(?<![.\w])(spawn|spawnSync|execFile|execFileSync|exec|execSync|fork)\(/g)];
   assert.ok(calls.length >= 2, 'found spawn and execFile call sites');
-  for (const m of calls) {
-    const call = src.slice(m.index, src.indexOf(')', src.indexOf('}', m.index)) + 1);
-    assert.match(call, /env: childEnv\(process\.env/, `${m[1]} call without childEnv: ${call}`);
-  }
+  calls.forEach((m, i) => {
+    const end = i + 1 < calls.length ? calls[i + 1].index : src.length;
+    const call = src.slice(m.index, Math.min(end, m.index + 400));
+    assert.match(call, /env: childEnv\(process\.env/, `${m[1]} call without childEnv: ${call.slice(0, 120)}`);
+  });
 });
 
 test('PUT /api/config: a non-plain-object body (array) is refused and the file is unchanged', async () => {
