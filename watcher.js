@@ -461,16 +461,22 @@ if (CONFIRM_EMAILS) {
   // Ctrl+C / SIGTERM: close the browser (deletes the throwaway profile) and
   // release the lock before exiting 130/143.
   let confirmClose = null;
+  let confirmProfile = null; // set as soon as the profile dir exists, before launch
   installSignalCleanup({
     cleanup: async () => {
       if (confirmClose) await confirmClose();
+      else if (confirmProfile) confirmProfile.cleanup();
       lock.release(CONFIRM_LOCK_PATH);
+    },
+    syncCleanup: () => {
+      if (confirmProfile) confirmProfile.cleanup();
+      try { lock.release(CONFIRM_LOCK_PATH); } catch (_) { /* best effort */ }
     },
   });
 
   (async () => {
     console.log(`\nProcessing confirmation emails from: ${confirmEmailsDir}`);
-    const { context, close } = await openBrowserSession({ chromium: chromiumForConfirm, config: loadConfig(), headless: true });
+    const { context, close } = await openBrowserSession({ chromium: chromiumForConfirm, config: loadConfig(), headless: true, onProfile: (p) => { confirmProfile = p; } });
     confirmClose = close;
 
     try {
@@ -720,6 +726,7 @@ const LOCK_PATH = STATE_PATH + '.lock';
 // Set by _mainBody once the browser opens; main()'s finally closes it so the
 // throwaway profile is deleted even when the run throws.
 let mainSession = null;
+let mainProfile = null; // throwaway profile, known before the browser finishes launching
 
 async function main() {
   // Acquire process lock to prevent concurrent runs racing on state.json
@@ -737,7 +744,12 @@ async function main() {
   installSignalCleanup({
     cleanup: async () => {
       if (mainSession) await mainSession.close();
+      else if (mainProfile) mainProfile.cleanup();
       lock.release(LOCK_PATH);
+    },
+    syncCleanup: () => {
+      if (mainProfile) mainProfile.cleanup();
+      try { lock.release(LOCK_PATH); } catch (_) { /* best effort */ }
     },
   });
 
@@ -771,7 +783,7 @@ async function _mainBody() {
 
   let session;
   try {
-    session = await openBrowserSession({ chromium, config, headless });
+    session = await openBrowserSession({ chromium, config, headless, onProfile: (p) => { mainProfile = p; } });
   } catch (err) {
     if (err instanceof EgressError) { console.error(`⛔ ${err.message}`); process.exitCode = 1; return; }
     throw err;
