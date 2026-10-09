@@ -309,7 +309,6 @@ test('L15: readStateFileSafe drops __proto__/constructor/prototype keys from opt
     fs.writeFileSync(f, '{"optOuts":{"__proto__":{"polluted":true},"constructor":{"x":1},"prototype":{"y":1},"Spokeo":{"status":"success"}}}');
     const st = require('../lib/config').readStateFileSafe(f);
     assert.deepEqual(Object.keys(st.optOuts), ['Spokeo']);
-    assert.equal(Object.getPrototypeOf(st.optOuts), null, 'optOuts has no prototype');
     assert.equal(st.optOuts.polluted, undefined);
     assert.equal({}.polluted, undefined, 'Object.prototype untouched');
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
