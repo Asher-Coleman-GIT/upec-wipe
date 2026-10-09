@@ -82,7 +82,7 @@ maps to an existing entrypoint:
 | `aidr report` | Generates the monthly PDF + emails the summary |
 | `aidr pending` | Lists brokers awaiting an email-confirmation click |
 | `aidr serp` | Scans search engines for where your name still ranks |
-| `aidr serp-watch` | Scans and alerts only when your name appears on a NEW domain |
+| `aidr serp-watch` | Scans and lists domains where your name newly appears |
 | `aidr breach` | Checks Have I Been Pwned and recommends a credit freeze on high-severity breaches |
 | `aidr freeze` | Shows the credit/identity-freeze checklist and its status |
 | `aidr complaints` | Generates regulator complaints for brokers past the CCPA/GDPR deadline |

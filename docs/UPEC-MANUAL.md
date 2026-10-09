@@ -2,12 +2,27 @@
 
 ## What this does
 
-Data brokers are companies that collect and sell your name, address and phone number. This tool visits hundreds of them each month and files the opt-out forms for you. It is set up here so that brokers only ever see a throwaway email address and a VPN address, never your real ones.
+Data brokers are companies that collect and sell your name, address and phone number. Once a month this tool works through 44 of the biggest ones (Spokeo, Whitepages, Radaris, MyLife and others): it finds your listing and files the opt-out form for you. Brokers that only take requests by email, or that need something the tool cannot do, go on a list for you to finish by hand.
+
+It is set up here so that brokers see a throwaway email address and a VPN address instead of your real ones:
+
+- **Your email.** SimpleLogin makes one alias for you that forwards to your real inbox. Every form gets the alias. If no alias can be made, nothing is submitted for you.
+- **Your IP address.** The tool checks that Mullvad is on before it visits any site and before it contacts any other service. If the check fails, the run stops and nothing is sent.
+- **Your machine.** It uses a fresh browser profile each run, files only you can read, and no notifications. Nothing reports back to anyone.
+
+A month looks like this:
+
+1. The scheduled job runs on the 1st (or you run `node bin/aidr.js run`).
+2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
+3. You check what is left with `node bin/aidr.js pending`, and later whether you are really gone with `node bin/aidr.js verify`.
+
+Some extra commands send more about you to other services: `breach` sends your real email to Have I Been Pwned, and `serp` searches for your name and city on search engines. They are off unless you run them. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
 ## What you need before starting
 
 - A Mullvad account (mullvad.net). You can pay without giving an email address.
 - A SimpleLogin account (simplelogin.io) with an API key.
+- Optional: a CapSolver account (capsolver.com) with a small balance, see below.
 - About 1 hour.
 
 Commands go in a terminal, which is a window where you type instructions. Type each command exactly, then press Enter. To paste into most terminals, right-click. Every command below sits in its own box, with a sentence before it saying what it does and a sentence after it saying what you should see.
@@ -25,9 +40,23 @@ Commands go in a terminal, which is a window where you type instructions. Type e
 
 Why: the tool creates one throwaway address for you that forwards to your real inbox, and gives that same address to every broker, so they never learn your real one. Because it is the same address everywhere, brokers could still match their records about you on it.
 
+## Before you start: CapSolver (optional)
+
+A few brokers (today BeenVerified, MyLife and FamilyTreeNow) put a CAPTCHA on their opt-out page. CapSolver is a paid service that solves these automatically, for about $0.001 each, so a few cents a month.
+
+You can skip it. Without a key those brokers show up on your manual list and their pages open in your browser at the end of a run, so you can solve the CAPTCHA yourself.
+
+If you want it:
+
+1. Create an account at capsolver.com and add a small balance.
+2. Copy your API key from the dashboard. It starts with `CAP-`.
+3. Paste it when setup asks for "CapSolver API key", or later put it in `config.json` as `"capsolver": { "apiKey": "CAP-..." }`.
+
+What CapSolver sees: your account, the address of the broker page that showed the CAPTCHA and the CAPTCHA's site key. It gets no image and none of your details. It connects straight from your computer, so it is covered by the Mullvad check like everything else. To skip CapSolver for one run, add `--no-capsolver`.
+
 ## Part A: Windows (WSL2)
 
-WSL2 gives Windows a built-in Linux. This tool runs inside it.
+WSL2 gives Windows a built-in Linux. This tool runs inside it. Connect Mullvad before you start: the install steps download from several sites, and without Mullvad they see your home address.
 
 1. Open the Start menu, type PowerShell, right-click it and choose Run as administrator. This installs Ubuntu:
 
@@ -141,7 +170,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js setup
    ```
 
-   Answer each question and press Enter. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The tool also looks for the passphrase in `~/.config/auto-identity-remove/passphrase` on its own, so the cron and launchd fallbacks and your manual commands find it there too.
+   Answer each question and press Enter. It asks for your name, aliases, city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The tool also looks for the passphrase in `~/.config/auto-identity-remove/passphrase` on its own, so the cron and launchd fallbacks and your manual commands find it there too.
 
 3. Open the settings file in a simple editor:
 
@@ -193,7 +222,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js doctor
    ```
 
-   It prints a list of checks. Fix anything marked as a problem before you continue.
+   It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP and CapSolver checks connect to those services, so they only run when Mullvad is on; otherwise they say "skipped: not on Mullvad".
 
 7. Rehearse a run with `aidr preview` (you run it as `node bin/aidr.js preview`). Make sure Mullvad is connected first. It does everything except submit:
 
@@ -262,7 +291,8 @@ This part is the same for Parts A and B.
    On WSL2 the scheduled job only runs if Ubuntu is running with systemd enabled and Mullvad is connected on Windows. Otherwise run it by hand.
 
 3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The scheduled job cannot do this part, so you must.
-4. See which brokers still need you:
+4. Every few months, check you are really gone with `node bin/aidr.js verify`.
+5. See which brokers still need you:
 
    ```
    node bin/aidr.js pending
@@ -278,7 +308,33 @@ A web page for browsing results. It only works on this computer.
 node bin/aidr.js dashboard
 ```
 
-It prints a web address and a login. Open the address in your browser and use that login.
+It prints a web address and a login. Open that address in your browser and use that login. `127.0.0.1`, `localhost` and `[::1]` with the printed port all work; any other name is refused (`misdirected request`). After 10 wrong logins in 15 minutes it locks for the rest of that window. New passwords set in the Admin tab must be at least 12 characters.
+
+## Command reference
+
+Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your computer; see [PRIVACY.md](PRIVACY.md) for details.
+
+| Command | What it does | Sends |
+| --- | --- | --- |
+| `setup` | Asks for your details, writes `config.json`, installs the monthly job. | Nothing. |
+| `doctor` | Checks your setup. | Only on Mullvad: a connection to your SMTP host and one request to CapSolver. |
+| `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. | Your name in each broker's search page. |
+| `run` | The real opt-out pass. | Brokers: your name, city, state, zip, phone where asked, and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. Your SMTP server: email opt-outs, only if you kept the `email` block. |
+| `pending` | Lists brokers waiting for a confirmation click or a manual step. | Nothing. |
+| `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
+| `list` | Lists the brokers and their last status. | Nothing. |
+| `score` | Prints your exposure score (0 to 100) and its trend. | Nothing. |
+| `report` | Saves a monthly PDF report on this computer. | Nothing. |
+| `complaints` | Writes regulator complaints for brokers past the legal deadline, for you to file. | Nothing. |
+| `freeze` | Shows the credit-freeze checklist (Equifax, Experian, TransUnion and others). | Nothing. |
+| `know` | Sends CCPA or GDPR "what do you hold about me" requests. Without the `email` block it prints the text for you to send. | Your SMTP server and brokers: your name, city, state, zip, phone and alias. |
+| `breach` | Checks Have I Been Pwned for breaches. Needs `hibp.apiKey`. | **Your real email** to haveibeenpwned.com. |
+| `serp` | Searches DuckDuckGo, Bing and Google for your name. | `"<your full name>" "<city>, <state>"` to those search engines. |
+| `serp-watch` | Like `serp`, and lists sites where your name is new since last time. | Same as `serp`. |
+| `update-brokers` | Refreshes the extra broker list from the California and Vermont registries. | Nothing about you. |
+| `dashboard` | Starts the local web page. | Nothing. Runs started from it send what the command would. |
+
+Useful options for `run` and `preview`: `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time), `--no-capsolver` (treat CAPTCHA brokers as manual) and `--generic` (also try about 490 smaller sites from public lists; off by default because nobody reviewed them). `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
 
 ## Troubleshooting
 
@@ -294,6 +350,14 @@ It prints a web address and a login. Open the address in your browser and use th
 | `... - not sent: email.smtp.from ... Set email.smtp.from to a non-real address.` | Your `"from"` is missing or is your real email. Set it to a non-real address. |
 | `... - not sent: email.smtp.user ... Use a separate SMTP mailbox that is not linked to you, or remove the email block ...` | Your SMTP login is your real email and brokers can see it. Switch to a separate mailbox not linked to you, or delete the `email` block and handle those brokers by hand. |
 | `aidr-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
+| `Network check failed for direct connections - nothing was sent. ...` | The tool was about to contact SimpleLogin, CapSolver, HIBP, your SMTP server or a registry, and Mullvad is off. Connect the Mullvad app and run again. |
+| `Note: network.proxy covers the browser only. ...` | You set `network.proxy`. Brokers see the proxy, but those services see your real IP. Use the Mullvad app instead if that matters to you. |
+| `Playwright is not installed. Run: npm ci --ignore-scripts && npx playwright install chromium` | Run that command in the tool's folder. |
+| `misdirected request: unexpected Host header` (dashboard) | Open the address the dashboard printed (or `localhost` with the same port). |
+| `too many failed login attempts; try again later` (dashboard) | Wait up to 15 minutes, then log in with the printed login. |
+| `Refusing a schedule path containing a newline: ...` | Your home folder or install path contains a line break. Install in a normal folder. |
+| `config.json is not valid JSON` (any command) | A hand edit broke `config.json`. Open it with `nano config.json` and look for a missing comma or quote near where you last edited. The message never shows the broken line, so your details stay out of logs. |
+| `Warning: ... (serp-key) is damaged; replacing it. ...` | Harmless. Your search-scan history starts over once. |
 | `ℹ  notify settings in config.json are ignored in this fork.` | Harmless. Notifications were removed, so you can delete the `notify` block. |
 
 Before you rely on this, read [THREAT-MODEL.md](THREAT-MODEL.md) to see what it does and does not protect.
