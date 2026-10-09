@@ -990,7 +990,16 @@ async function _mainBody() {
     console.log('\n── Explicit broker opt-outs ───────────────────────────────');
     for (const broker of sorted) {
       process.stdout.write(`\n[${stamp()}] ${broker.name}… `);
-      await brokerRunner.processBroker(context, broker);
+      try {
+        await brokerRunner.processBroker(context, broker);
+      } catch (err) {
+        if (!(err instanceof EgressError)) throw err;
+        console.error(`\n⛔ ${err.message}`);
+        saveState();
+        await session.close();
+        process.exitCode = 1;
+        return;
+      }
     }
   }
 

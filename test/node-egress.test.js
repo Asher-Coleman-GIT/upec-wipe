@@ -241,11 +241,9 @@ test('CapSolver: failing gate means createTask is never posted', async () => {
     const captcha = require('../lib/captcha');
     failingGate({});
     const page = { url: () => 'https://broker.example/opt-out', evaluate: async () => 'site-key' };
-    const lines = await captureLog(async () => {
-      assert.equal(await captcha.solveRecaptcha(page, { apiKey: 'CAP-REAL-KEY-1234567890' }), false);
-    });
+    // The EgressError propagates (it stops the run; see captcha-egress.test.js).
+    await assert.rejects(() => captcha.solveRecaptcha(page, { apiKey: 'CAP-REAL-KEY-1234567890' }), EgressError);
     assert.equal(posts, 0);
-    assert.ok(lines.some(l => /Network check failed/.test(l)));
   } finally {
     Module._load = origLoad;
   }
