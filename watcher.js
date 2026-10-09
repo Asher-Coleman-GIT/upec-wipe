@@ -33,6 +33,9 @@ const { renderAuditMarkdown, writeAuditFile, timestampForFilename } = require('.
 const { buildStealthScript } = require('./lib/stealth');
 const { resolveHeadless, isLowMemory } = require('./lib/browser');
 const { openBrowserSession, EgressError } = require('./lib/browser-session');
+// Node-direct calls (SimpleLogin, CapSolver, HIBP, SMTP, registries) are gated
+// by lib/egress ensureNodeEgress, which reads the config given here (audit M7).
+const { setEgressConfig } = require('./lib/egress');
 const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
@@ -343,6 +346,7 @@ if (BREACH_CHECK) {
   } = require('./lib/hibp');
 
   const cfg     = loadConfig();
+  setEgressConfig(cfg);
   const persons = getPersonsFromConfig(cfg);
   const emails  = collectEmails(persons);
   const apiKey  = cfg.hibp && cfg.hibp.apiKey;
@@ -359,7 +363,7 @@ if (BREACH_CHECK) {
 
   (async () => {
     console.log(`\nChecking ${emails.length} email(s) against Have I Been Pwned...`);
-    const result = await runBreachCheck({ emails, apiKey, brokers });
+    const result = await runBreachCheck({ emails, apiKey, brokers, config: cfg });
     console.log('\n' + formatBreachReport(result) + '\n');
     process.exit(0);
   })().catch(err => {
@@ -608,7 +612,15 @@ if (DOCTOR) {
   // pre-ladder block) to avoid falling through into the normal Playwright run.
   const brokers = require('./brokers');
   const { runUpdateBrokers } = require('./lib/feeds');
-  runUpdateBrokers({ brokers, logFn: (m) => console.log(m) })
+  // The egress gate needs network.required / network.proxy. With no readable
+  // config it falls back to {} and requires Mullvad (fail closed).
+  let updateCfg = {};
+  try {
+    const { CONFIG_PATH, CONFIG_ENC_PATH } = require('./lib/config');
+    if (fs.existsSync(CONFIG_PATH) || fs.existsSync(CONFIG_ENC_PATH)) updateCfg = loadConfig();
+  } catch (_) { updateCfg = {}; }
+  setEgressConfig(updateCfg);
+  runUpdateBrokers({ brokers, logFn: (m) => console.log(m), config: updateCfg })
     .then(() => process.exit(0))
     .catch(err => {
       console.error('update-brokers error:', err.message);
@@ -632,6 +644,7 @@ if (INSTALL_SCHEDULER) {
 }
 
 const config = loadConfig();
+setEgressConfig(config);
 if (config.notify) console.log('ℹ  notify settings in config.json are ignored in this fork.');
 const state = loadState();
 const persons = getPersonsFromConfig(config);
@@ -904,7 +917,16 @@ async function _mainBody() {
 
   // Resolve every person's submission email up front (fork: fail closed). A
   // person whose relay alias is unavailable gets no submissions on any channel.
-  const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
+  let plan;
+  try {
+    plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
+  } catch (err) {
+    if (!(err instanceof EgressError)) throw err;
+    console.error(`⛔ ${err.message}`);
+    await session.close();
+    process.exitCode = 1;
+    return;
+  }
   for (const b of plan.blocked) {
     console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
   }
@@ -922,7 +944,16 @@ async function _mainBody() {
   // plan's resolver and blocked set must cover all of them at once.
   if (!VERIFY) {
     console.log('── Email opt-outs ─────────────────────────────────────────');
-    await sendOptOutEmails(brokers, config, undefined, { dryRun: DRY_RUN, ...submissionOptions(plan) });
+    try {
+      await sendOptOutEmails(brokers, config, undefined, { dryRun: DRY_RUN, ...submissionOptions(plan) });
+    } catch (err) {
+      if (!(err instanceof EgressError)) throw err;
+      console.error(`⛔ ${err.message}`);
+      saveState();
+      await session.close();
+      process.exitCode = 1;
+      return;
+    }
   }
 
   for (const { person, email: submissionEmail, masked } of plan.allowed) {
