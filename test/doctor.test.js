@@ -58,7 +58,7 @@ describe('checkConfig', () => {
 
     const result = await checkConfig(dir);
     assert.equal(result.ok, false);
-    assert.match(result.hint, /parse/i);
+    assert.match(result.hint, /not valid JSON/i);
   });
 
   it('returns not-ok and mentions missing firstName', async () => {
@@ -159,7 +159,7 @@ describe('checkState', () => {
 
     const result = await checkState(dir);
     assert.equal(result.ok, false);
-    assert.match(result.hint, /parse/i);
+    assert.match(result.hint, /not valid JSON/i);
   });
 
   it('returns not-ok when optOuts is not an object', async () => {
