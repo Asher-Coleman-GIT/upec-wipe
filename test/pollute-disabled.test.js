@@ -31,7 +31,8 @@ function runWatcher(args) {
     "const Module = require('module');",
     'const orig = Module._load;',
     'Module._load = function (req, ...rest) {',
-    "  if (/playwright/.test(String(req))) process.stderr.write('BROWSER_MODULE_LOADED\\n');",
+    // The package itself, not ./lib/playwright-loader (which loads it lazily).
+    "  if (/^playwright(-core)?(\\/|$)/.test(String(req))) process.stderr.write('BROWSER_MODULE_LOADED\\n');",
     '  return orig.call(this, req, ...rest);',
     '};',
   ].join('\n'));
