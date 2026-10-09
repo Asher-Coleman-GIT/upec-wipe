@@ -1,11 +1,16 @@
 /**
  * test/helpers/test-state.js
  *
- * Loaded by the test preload (egress-off.js). Points AIDR_STATE_PATH at a
- * per-process temp file unless something already set it, so parallel test
- * files never race on, or write to, the repo's own state.json. Children
- * inherit the parent's path; tests that need their own state file set
- * AIDR_STATE_PATH explicitly or call setTestStatePath.
+ * Loaded by the test preload (egress-off.js). Gives every test file its own
+ * temp AIDR_STATE_PATH, so parallel test files never race on, or write to,
+ * the repo's state.json.
+ *
+ * The preload runs first in the `node --test` orchestrator, whose env every
+ * test-file process inherits. So the orchestrator records its pid
+ * (AIDR_TEST_STATE_ROOT_PID) and the path it made (AIDR_TEST_STATE_AUTO). A
+ * direct child of the orchestrator (a test file) that still sees that auto path
+ * makes its own. Processes a test spawns inherit the test file's path, and a
+ * path a test set explicitly is never replaced.
  */
 'use strict';
 
@@ -13,8 +18,14 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
-if (!process.env.AIDR_STATE_PATH) {
+const env = process.env;
+const inheritedAuto = !!env.AIDR_TEST_STATE_AUTO && env.AIDR_STATE_PATH === env.AIDR_TEST_STATE_AUTO;
+const isTestFile = String(process.ppid) === env.AIDR_TEST_STATE_ROOT_PID;
+
+if (!env.AIDR_STATE_PATH || (inheritedAuto && isTestFile)) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-test-state-'));
-  process.env.AIDR_STATE_PATH = path.join(dir, 'state.json');
+  env.AIDR_STATE_PATH = path.join(dir, 'state.json');
+  env.AIDR_TEST_STATE_AUTO = env.AIDR_STATE_PATH;
+  if (!env.AIDR_TEST_STATE_ROOT_PID) env.AIDR_TEST_STATE_ROOT_PID = String(process.pid);
   process.on('exit', () => { try { fs.rmSync(dir, { recursive: true, force: true }); } catch (_) {} });
 }
