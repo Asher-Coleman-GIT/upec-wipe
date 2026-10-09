@@ -14,7 +14,7 @@ A month looks like this:
 
 1. The scheduled job runs on the 1st (or you run `node bin/aidr.js run`).
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
-3. You check what is left with `node bin/aidr.js pending`, and later whether you are really gone with `node bin/aidr.js verify`.
+3. Brokers you must finish by hand are listed in the summary at the end of the run, and their pages open in your browser. `node bin/aidr.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/aidr.js verify` checks whether you are really gone.
 
 Some extra commands send more about you to other services: `breach` sends your real email to Have I Been Pwned, and `serp` searches for your name and city on search engines. They are off unless you run them. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
@@ -44,7 +44,7 @@ Why: the tool creates one throwaway address for you that forwards to your real i
 
 A few brokers (today BeenVerified, MyLife and FamilyTreeNow) put a CAPTCHA on their opt-out page. CapSolver is a paid service that solves these automatically, for about $0.001 each, so a few cents a month.
 
-You can skip it. Without a key those brokers show up on your manual list and their pages open in your browser at the end of a run, so you can solve the CAPTCHA yourself.
+You can skip it. Without a key, a broker whose page shows a CAPTCHA is marked as failed in the run summary and its page opens in your browser at the end of the run, so you can solve the CAPTCHA and finish the form yourself. `--retry-failed` tries those brokers again on a later run.
 
 If you want it:
 
@@ -52,7 +52,7 @@ If you want it:
 2. Copy your API key from the dashboard. It starts with `CAP-`.
 3. Paste it when setup asks for "CapSolver API key", or later put it in `config.json` as `"capsolver": { "apiKey": "CAP-..." }`.
 
-What CapSolver sees: your account, the address of the broker page that showed the CAPTCHA and the CAPTCHA's site key. It gets no image and none of your details. It connects straight from your computer, so it is covered by the Mullvad check like everything else. To skip CapSolver for one run, add `--no-capsolver`.
+What CapSolver sees: your account, the address of the broker page that showed the CAPTCHA and the CAPTCHA's site key (a public code the page uses to identify its CAPTCHA). It gets no image and none of your details. It connects straight from your computer, so it is covered by the Mullvad check like everything else. To skip CapSolver for one run, add `--no-capsolver`.
 
 ## Part A: Windows (WSL2)
 
@@ -170,7 +170,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js setup
    ```
 
-   Answer each question and press Enter. It asks for your name, aliases, city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The tool also looks for the passphrase in `~/.config/auto-identity-remove/passphrase` on its own, so the cron and launchd fallbacks and your manual commands find it there too.
+   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The tool also looks for the passphrase in `~/.config/auto-identity-remove/passphrase` on its own, so the cron and launchd fallbacks and your manual commands find it there too.
 
 3. Open the settings file in a simple editor:
 
@@ -222,7 +222,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js doctor
    ```
 
-   It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP and CapSolver checks connect to those services, so they only run when Mullvad is on; otherwise they say "skipped: not on Mullvad".
+   It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP and CapSolver checks connect to those services, so they wait for the same network check as a run: with the Mullvad app off they say "skipped: not on Mullvad". It also works after you encrypt your config.
 
 7. Rehearse a run with `aidr preview` (you run it as `node bin/aidr.js preview`). Make sure Mullvad is connected first. It does everything except submit:
 
@@ -308,7 +308,7 @@ A web page for browsing results. It only works on this computer.
 node bin/aidr.js dashboard
 ```
 
-It prints a web address and a login. Open that address in your browser and use that login. `127.0.0.1`, `localhost` and `[::1]` with the printed port all work; any other name is refused (`misdirected request`). After 10 wrong logins in 15 minutes it locks for the rest of that window. New passwords set in the Admin tab must be at least 12 characters.
+It prints a web address and a login. Open that address in your browser and use that login. `127.0.0.1` or `localhost` with the printed port both work; any other name is refused with a `misdirected request` error, which protects against web pages that try to reach the dashboard. After 10 wrong logins in 15 minutes it locks for the rest of that window. New passwords set in the Admin tab must be at least 12 characters.
 
 ## Command reference
 
@@ -317,17 +317,17 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 | Command | What it does | Sends |
 | --- | --- | --- |
 | `setup` | Asks for your details, writes `config.json`, installs the monthly job. | Nothing. |
-| `doctor` | Checks your setup. | Only on Mullvad: a connection to your SMTP host and one request to CapSolver. |
-| `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. | Your name in each broker's search page. |
-| `run` | The real opt-out pass. | Brokers: your name, city, state, zip, phone where asked, and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. Your SMTP server: email opt-outs, only if you kept the `email` block. |
-| `pending` | Lists brokers waiting for a confirmation click or a manual step. | Nothing. |
+| `doctor` | Checks your setup. | After the network check passes: a connection to your SMTP host and one request to CapSolver. |
+| `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
+| `run` | The real opt-out pass. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. Your SMTP server: email opt-outs, only if you kept the `email` block. |
+| `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
 | `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers and their last status. | Nothing. |
 | `score` | Prints your exposure score (0 to 100) and its trend. | Nothing. |
 | `report` | Saves a monthly PDF report on this computer. | Nothing. |
 | `complaints` | Writes regulator complaints for brokers past the legal deadline, for you to file. | Nothing. |
 | `freeze` | Shows the credit-freeze checklist (Equifax, Experian, TransUnion and others). | Nothing. |
-| `know` | Sends CCPA or GDPR "what do you hold about me" requests. Without the `email` block it prints the text for you to send. | Your SMTP server and brokers: your name, city, state, zip, phone and alias. |
+| `know` | Sends "what do you hold about me" requests under the California (CCPA) or European (GDPR) privacy law, to the brokers that take requests by email. Without the `email` block it prints the text for you to send. | With the `email` block: your SMTP server and those brokers get your name, city, state, zip, phone and alias. SimpleLogin: a request for your alias if none exists yet. Without the block: nothing. |
 | `breach` | Checks Have I Been Pwned for breaches. Needs `hibp.apiKey`. | **Your real email** to haveibeenpwned.com. |
 | `serp` | Searches DuckDuckGo, Bing and Google for your name. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `serp-watch` | Like `serp`, and lists sites where your name is new since last time. | Same as `serp`. |

@@ -15,10 +15,11 @@ Everything comes from your local `config.json` (or `config.json.enc` if you encr
 
 | Field | Used for | Sent to |
 | --- | --- | --- |
-| `person.firstName`, `lastName`, `fullName`, `aliases` | Search URLs and opt-out forms | Brokers. Search engines on `serp`. SMTP provider and email brokers if you keep the `email` block. |
+| `person.firstName`, `lastName`, `fullName` | Search URLs and opt-out forms | Brokers. Search engines on `serp`. SMTP provider and email brokers if you keep the `email` block. |
 | `person.city`, `state`, `zip`, `country` | Forms and search URLs | Brokers. City and state go to search engines on `serp`. |
 | `person.email` | Your real address. Never given to brokers when a relay is set. | SimpleLogin (as the inbox the alias forwards to). HIBP on `aidr breach`. |
-| `person.phone`, `phoneFormatted` | Forms that ask for a phone number, and email opt-outs | Brokers that ask for it. SMTP provider if you keep the `email` block. |
+| `person.phone`, `phoneFormatted` | Email opt-outs only. No broker form gets your phone. | Your SMTP provider and the email brokers, only if you keep the `email` block. |
+| `person.aliases` | Asked for by setup, but nothing uses it today. | Nobody. |
 | `relay.apiKey` | Creating your alias | SimpleLogin |
 | `capsolver.apiKey` | Solving CAPTCHAs | CapSolver |
 | `hibp.apiKey` | Breach check | HIBP |
@@ -40,17 +41,17 @@ Every connection uses one of three paths.
 
 | Destination | What is sent | When | Path |
 | --- | --- | --- | --- |
-| Explicit brokers (44 in `brokers.js`, such as Spokeo, Whitepages, Radaris, MyLife) | Search URLs with your name and state. Forms with your name, city, state, zip, phone where asked, and your alias in every email field. | `aidr run` | Browser |
-| Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. | `aidr preview` | Browser |
+| Explicit brokers (44 in `brokers.js`, such as Spokeo, Whitepages, Radaris, MyLife) | Search URLs with your name and state. Forms with your name, city, state, zip and your alias in every email field. | `aidr run` | Browser |
+| Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. CapSolver is not called and nothing opens in your everyday browser. | `aidr preview` | Browser |
 | Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `aidr verify` | Browser |
 | About 490 other sites from public datasets and the CA and Vermont registries | Name, alias, state and zip on whatever form the site has. A "Do Not Sell" link can lead to any page. | Only with `--generic` or `generic.enabled: true` | Browser |
 | DuckDuckGo, Bing, Google | `"<full name>" "<city>, <state>"` for every person | `aidr serp`, `aidr serp-watch`, dashboard "serp" | Browser |
 | `am.i.mullvad.net` | Nothing but your IP | Every browser session that visits sites, and once per run before any direct connection | Browser and direct |
 | `api.ipify.org` | Nothing but your IP: once through the proxy, once direct (this one shows your real IP) | Only when `network.proxy` is set | Browser and direct |
 | SimpleLogin (`app.simplelogin.io`) | Your API key and a neutral note. SimpleLogin already knows your real inbox, because the alias forwards there. | A real run or `aidr know`, when no alias is cached yet for that person | Direct |
-| CapSolver (`api.capsolver.com`) | Your API key, the address of the broker page showing the CAPTCHA and the CAPTCHA's site key (for AWS WAF also its key, iv and context). No images, and none of your config fields. | A broker shows a CAPTCHA and you set a real key | Direct |
+| CapSolver (`api.capsolver.com`) | Your API key, the address of the broker page showing the CAPTCHA and the CAPTCHA's site key, a public code the page uses to identify its CAPTCHA (for AWS WAF also its key, iv and context). No images, and none of your config fields. | A broker shows a CAPTCHA and you set a real key | Direct |
 | Your SMTP server, then the broker | Subject with your full name. Body with your name, city, state, zip, phone and alias. The broker can also see the SMTP account address. TLS 1.2 or newer is required. | A real run, only if you keep the `email` block. The recommended setup deletes it. | Direct |
-| Your SMTP server, then the broker | A CCPA or GDPR right-to-know request with the same fields | `aidr know` with the `email` block. Without it, the request text is printed for you to send by hand. | Direct |
+| Your SMTP server, then the broker | A right-to-know request under the California (CCPA) or European (GDPR) privacy law, asking what the broker holds about you, with the same fields | `aidr know` with the `email` block. Without it, the request text is printed for you to send by hand. | Direct |
 | Have I Been Pwned | **Your real email**, for every person, plus your HIBP key. The user agent is a generic `Mozilla/5.0`. | `aidr breach`, only with `hibp.apiKey` set | Direct |
 | `oag.ca.gov`, `bizfilings.vermont.gov` | Nothing about you | `aidr update-brokers` | Direct |
 | Your SMTP host (connection only) and `api.capsolver.com` (one HEAD request) | Nothing about you | `aidr doctor` | Direct |
@@ -63,16 +64,16 @@ Every connection uses one of three paths.
 
 - `config.json` (or `config.json.enc`): all your details. Encryption covers this file only.
 - `state.json`: which brokers you submitted to and when, and your alias mapping keyed by your real email. Plaintext.
-- `logs/`: run results. Error details keep only the site's address, not the page path. Previews that show filled-in fields are printed to the screen and not written to `logs/run-*.json`. On the monthly systemd job, everything printed goes to `logs/systemd.log`. That includes the right-to-know text that `aidr know` prints when there is no `email` block.
+- `logs/`: plaintext, and it holds personal data. Each real run writes `logs/audit-*.md`, which starts with your full name and **real email**. `aidr complaints` writes complaint letters under `logs/complaints/` with your name, location, real email and phone. `--snapshot` saves screenshots of filled-in forms under `logs/snapshots/`. Error details in `logs/run-*.json` keep only the site's address, and previews that show filled-in fields are printed to the screen, not written there. On the monthly systemd job, everything the run prints goes to `logs/systemd.log`, including broker listing addresses that contain your name. Never share `logs/` files for help; copy only the lines you need and remove your details.
 - `data/serp-history.json` and `data/exposure-history.json`: search-scan and exposure-score history. `data/.serp-key` is a random key used to label the search history without writing your name.
 
 New files are created readable only by you (umask 077, mode 600).
 
 ## Who learns what
 
-- **Brokers** learn your name and location (which they have already) and the alias. They also see a Mullvad IP. Because all brokers get the same alias, they could match their records on it.
+- **Brokers** learn your name and location (which they have already) and the alias. They also see a Mullvad IP (or your proxy's IP if you set `network.proxy`). Because all brokers get the same alias, they could match their records on it.
 - **SimpleLogin** knows your real inbox and every alias. It sees which brokers email you.
-- **CapSolver** knows your account and the addresses of broker opt-out pages that showed a CAPTCHA. Today those are BeenVerified, MyLife and FamilyTreeNow, and their opt-out addresses have no name in them. Without a key, those brokers are listed as manual. `--no-capsolver` does the same.
+- **CapSolver** knows your account and the addresses of broker opt-out pages that showed a CAPTCHA. Today those are BeenVerified, MyLife and FamilyTreeNow, and their opt-out addresses have no name in them. Without a key, a broker whose page shows a CAPTCHA is recorded as failed (`captcha_failed`) and its page opens in your browser at the end of the run; `--retry-failed` tries it again later. `--no-capsolver` records those brokers as manual instead.
 - **HIBP** gets your real email when you run `aidr breach`.
 - **Search engines** get your full name with your city and state when you run `aidr serp`.
 - **Your SMTP provider** sees every opt-out email, if you keep the `email` block.
@@ -84,7 +85,7 @@ New files are created readable only by you (umask 077, mode 600).
 git check-ignore config.json state.json logs/run.json data/.serp-key
 ```
 
-All four names are printed, so none of them can be committed.
+All four names are printed, so a normal `git add` skips them. (`git add -f` would still add them; never do that.)
 
 ```
 node bin/aidr.js preview
@@ -96,6 +97,6 @@ Shows what each broker form would get, without submitting. This does use the net
 node bin/aidr.js doctor
 ```
 
-Checks your setup. Its network probes (SMTP host, CapSolver) run only on Mullvad; off Mullvad they show as skipped.
+Checks your setup. Its network probes (SMTP host, CapSolver) run only after the direct-connection check passes, so off Mullvad they show as skipped. With `network.proxy` set or `network.required: false` they run straight from your real IP.
 
 For the threats this does and does not cover, read [THREAT-MODEL.md](THREAT-MODEL.md).

@@ -79,7 +79,7 @@ maps to an existing entrypoint:
 | `aidr run` | Runs the opt-out pass for real |
 | `aidr verify` | Re-searches brokers and reports whether you still appear |
 | `aidr score` | Prints your 0-100 exposure score and its month-over-month trend |
-| `aidr report` | Generates the monthly PDF + emails the summary |
+| `aidr report` | Generates the monthly PDF report (saved locally) |
 | `aidr pending` | Lists brokers awaiting an email-confirmation click |
 | `aidr serp` | Scans search engines for where your name still ranks |
 | `aidr serp-watch` | Scans and lists domains where your name newly appears |
