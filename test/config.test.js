@@ -300,3 +300,17 @@ test('recordFailure trims history to 5 entries', () => {
   cfg.setDryRun(false);
   if (prev === undefined) delete state.optOuts[name]; else state.optOuts[name] = prev;
 });
+
+test('L15: readStateFileSafe drops __proto__/constructor/prototype keys from optOuts', () => {
+  const fs = require('node:fs'), os = require('node:os'), path = require('node:path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'state-proto-'));
+  try {
+    const f = path.join(dir, 'state.json');
+    fs.writeFileSync(f, '{"optOuts":{"__proto__":{"polluted":true},"constructor":{"x":1},"prototype":{"y":1},"Spokeo":{"status":"success"}}}');
+    const st = require('../lib/config').readStateFileSafe(f);
+    assert.deepEqual(Object.keys(st.optOuts), ['Spokeo']);
+    assert.equal(Object.getPrototypeOf(st.optOuts), null, 'optOuts has no prototype');
+    assert.equal(st.optOuts.polluted, undefined);
+    assert.equal({}.polluted, undefined, 'Object.prototype untouched');
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});

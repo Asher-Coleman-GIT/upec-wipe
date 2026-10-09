@@ -415,3 +415,10 @@ test('P3: pollCapSolver stops when the absolute wall-clock deadline is exceeded'
 });
 
 // ── end CAPTCHA routing fixes ─────────────────────────────────────────────────
+
+test('L15: every CapSolver axios instance sets proxy: false', () => {
+  const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'lib', 'captcha.js'), 'utf8');
+  const creates = src.match(/require\('axios'\)\.create\(\{[^}]*\}\)/g) || [];
+  assert.ok(creates.length >= 5, 'found the axios instances');
+  for (const c of creates) assert.match(c, /proxy:\s*false/, c);
+});

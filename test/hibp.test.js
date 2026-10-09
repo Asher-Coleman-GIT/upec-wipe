@@ -124,7 +124,7 @@ test('checkBreaches sends hibp-api-key header, User-Agent, and truncateResponse=
   assert.ok(url.includes('truncateResponse=false'));
   assert.ok(url.includes(encodeURIComponent('jane@example.com')));
   assert.equal(init.headers['hibp-api-key'], 'secret-key');
-  assert.equal(init.headers['User-Agent'], 'auto-identity-remove');
+  assert.equal(init.headers['User-Agent'], 'Mozilla/5.0', 'L15: generic UA, does not name the tool');
 });
 
 test('checkBreaches returns [] on 404 (no breaches found)', async () => {
