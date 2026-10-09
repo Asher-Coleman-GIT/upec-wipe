@@ -1080,9 +1080,12 @@ async function _mainBody() {
   const manualUrls = [...results.captchaFailed, ...results.manual]
     .map(r => r.detail || '')
     .filter(u => u.startsWith('http'));
-  if (manualUrls.length > 0) {
+  // A dry run opens nothing: the everyday browser does not use network.proxy.
+  if (manualUrls.length > 0 && !DRY_RUN) {
     console.log(`\n🖥  Opening ${manualUrls.length} manual site(s) in browser…`);
     openInBrowser(manualUrls);
+  } else if (manualUrls.length > 0) {
+    console.log(`\n🖥  ${manualUrls.length} manual site(s) would open in your browser on a real run.`);
   }
 
   // Print summary
