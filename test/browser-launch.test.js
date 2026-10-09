@@ -95,4 +95,13 @@ test('buildLaunchOptions passes a proxy and blocks non-proxied WebRTC', () => {
 test('buildLaunchOptions without proxy has no proxy key', () => {
   const o = buildLaunchOptions({ headless: true, platform: 'linux', env: {} });
   assert.equal('proxy' in o, false);
+  assert.ok(o.args.includes('--force-webrtc-ip-handling-policy=disable_non_proxied_udp'), 'L10: WebRTC policy is always set');
+  assert.equal(o.args.some(a => a.startsWith('--host-resolver-rules')), false, 'no resolver rules without a proxy');
+});
+
+test('L13: a proxy adds host-resolver-rules that exclude only the proxy host', () => {
+  const o = buildLaunchOptions({ headless: true, platform: 'linux', env: {}, proxy: { server: 'socks5://proxy.example.net:1080' } });
+  assert.ok(o.args.includes('--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE proxy.example.net'));
+  const o2 = buildLaunchOptions({ headless: true, platform: 'linux', env: {}, proxy: { server: 'http://10.64.0.1:8080' } });
+  assert.ok(o2.args.includes('--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 10.64.0.1'));
 });
