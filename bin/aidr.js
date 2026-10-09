@@ -17,6 +17,7 @@ process.umask(0o077);
 const path = require('path');
 const { spawn } = require('child_process');
 const { resolveCommand, resolveSpawnTarget, buildHelp } = require('../lib/cli-map');
+const { cliChildEnv } = require('../lib/child-env');
 const { generateDashboardCreds } = require('../lib/dashboard-creds');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -32,7 +33,7 @@ function printVersion() {
 
 function spawnNode(resolved) {
   const { cwd, args } = resolveSpawnTarget(resolved, ROOT);
-  const env = { ...process.env };
+  const env = cliChildEnv(resolved.command, process.env);
   let onSpawn = null;
 
   if (resolved.command === 'dashboard') {

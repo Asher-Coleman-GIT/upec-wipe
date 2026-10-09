@@ -1083,3 +1083,151 @@ test('M3: the config editor has no fields for file-only keys or broker accounts'
     assert.equal(html.includes(`name="${prefix}`), false, `index.html must not offer an input for ${prefix}`);
   }
 });
+
+// ---- wave C2: L1 / L2 / L3 / L4 ----------------------------------------------
+
+function rawRequest(server, { pathname = '/api/version', headers = {}, method = 'GET', body } = {}) {
+  return new Promise((resolve, reject) => {
+    const req = http.request({ hostname: '127.0.0.1', port: server.address().port, path: pathname, method, headers }, (res) => {
+      const chunks = [];
+      res.on('data', c => chunks.push(c));
+      res.on('end', () => {
+        const raw = Buffer.concat(chunks).toString();
+        let json = null; try { json = JSON.parse(raw); } catch (_) {}
+        resolve({ status: res.statusCode, headers: res.headers, json, raw });
+      });
+    });
+    req.on('error', reject);
+    if (body !== undefined) req.write(JSON.stringify(body));
+    req.end();
+  });
+}
+
+test('L1: a foreign Host header is rejected with 421 (DNS rebinding)', async () => {
+  const { server, close } = await buildServer();
+  try {
+    const port = server.address().port;
+    const auth = basicAuth('testuser', 'testpass');
+    const bad = await rawRequest(server, { headers: { Host: `evil.com:${port}`, Authorization: auth } });
+    assert.equal(bad.status, 421);
+    assert.ok(bad.json && bad.json.error);
+    const badPort = await rawRequest(server, { headers: { Host: '127.0.0.1:1', Authorization: auth } });
+    assert.equal(badPort.status, 421);
+    const health = await rawRequest(server, { pathname: '/api/health', headers: { Host: `evil.com:${port}` } });
+    assert.equal(health.status, 421, 'health is not exempt');
+    for (const h of [`127.0.0.1:${port}`, `localhost:${port}`, `[::1]:${port}`]) {
+      const ok = await rawRequest(server, { headers: { Host: h, Authorization: auth } });
+      assert.equal(ok.status, 200, `Host ${h} must be accepted`);
+    }
+  } finally {
+    await close();
+  }
+});
+
+test('L1: 10 failed logins lock the address out with 429, even for valid credentials', async () => {
+  const { server, close } = await buildServer();
+  try {
+    for (let i = 0; i < 10; i++) {
+      const r = await rawRequest(server, { headers: { Authorization: basicAuth('testuser', 'wrong' + i) } });
+      assert.equal(r.status, 401, `attempt ${i}`);
+    }
+    const locked = await rawRequest(server, { headers: { Authorization: basicAuth('testuser', 'testpass') } });
+    assert.equal(locked.status, 429);
+  } finally {
+    await close();
+  }
+});
+
+test('L1: requests with no credentials at all do not count toward the lockout', async () => {
+  const { server, close } = await buildServer();
+  try {
+    for (let i = 0; i < 15; i++) await rawRequest(server, {});
+    const ok = await rawRequest(server, { headers: { Authorization: basicAuth('testuser', 'testpass') } });
+    assert.equal(ok.status, 200);
+  } finally {
+    await close();
+  }
+});
+
+test('L1: new passwords shorter than 12 characters are refused', async () => {
+  const { server, close } = await buildServer();
+  try {
+    const hdr = { Authorization: basicAuth('testuser', 'testpass'), 'Content-Type': 'application/json' };
+    const r = await rawRequest(server, {
+      method: 'POST', pathname: '/api/auth/password', headers: hdr,
+      body: { currentPassword: 'testpass', newPassword: 'elevenchars' },
+    });
+    assert.equal(r.status, 400);
+    assert.match(r.json.error, /12/);
+  } finally {
+    await close();
+  }
+});
+
+test('L2: every response carries the security headers', async () => {
+  const { server, close } = await buildServer();
+  try {
+    const auth = basicAuth('testuser', 'testpass');
+    for (const [pathname, headers] of [['/', { Authorization: auth }], ['/', {}], ['/api/health', {}], ['/api/version', { Authorization: auth }]]) {
+      const r = await rawRequest(server, { pathname, headers });
+      assert.equal(r.headers['content-security-policy'], "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      assert.equal(r.headers['x-frame-options'], 'DENY');
+      assert.equal(r.headers['x-content-type-options'], 'nosniff');
+      assert.equal(r.headers['referrer-policy'], 'no-referrer');
+    }
+  } finally {
+    await close();
+  }
+});
+
+test('L2: the UI works under the CSP (no inline script, handler or style)', () => {
+  const html = fs.readFileSync(path.join(__dirname, 'public', 'index.html'), 'utf8');
+  const js = fs.readFileSync(path.join(__dirname, 'public', 'app.js'), 'utf8');
+  assert.equal(/<script(?![^>]*\bsrc=)/i.test(html), false, 'no inline <script>');
+  assert.equal(/\son[a-z]+\s*=/i.test(html), false, 'no inline handler attributes in html');
+  assert.equal(/\sstyle\s*=/i.test(html), false, 'no style attributes in html');
+  assert.equal(/<style/i.test(html), false, 'no <style> block');
+  assert.equal(/(href|src|action)\s*=\s*["'\`]?javascript:/i.test(html + js), false, 'no javascript: URLs');
+  assert.equal(/\son(click|change|input|submit)\s*=/i.test(js), false, 'no inline handlers built in app.js');
+  assert.equal(/\sstyle\s*=/i.test(js), false, 'no style attributes built in app.js');
+  assert.equal(/\.style\.cssText|setAttribute\(\s*['"]style/.test(js), false);
+});
+
+test('L3: deleting .auth.json at runtime never opens the dashboard', async () => {
+  const authFile = path.join(__dirname, '.auth.json');
+  let orig = null; try { orig = fs.readFileSync(authFile, 'utf8'); } catch (_) {}
+  const salt = 'ab'.repeat(8);
+  const hash = crypto.scryptSync('filepass-123456', salt, 64).toString('hex');
+  fs.writeFileSync(authFile, JSON.stringify({ user: 'fileuser', salt, hash }));
+  const { server, close } = await buildServer({ user: '', pass: '' });
+  try {
+    const ok = await rawRequest(server, { pathname: '/api/config', headers: { Authorization: basicAuth('fileuser', 'filepass-123456') } });
+    assert.equal(ok.status, 200);
+    fs.unlinkSync(authFile);
+    const r = await rawRequest(server, { pathname: '/api/config' });
+    assert.equal(r.status, 401);
+    const r2 = await rawRequest(server, { pathname: '/api/config', headers: { Authorization: basicAuth('fileuser', 'filepass-123456') } });
+    assert.equal(r2.status, 401);
+  } finally {
+    await close();
+    try { fs.unlinkSync(authFile); } catch (_) {}
+    if (orig !== null) fs.writeFileSync(authFile, orig);
+  }
+});
+
+test('L4: childEnv strips dashboard credentials but keeps passphrase sources', () => {
+  const { childEnv } = require('../lib/child-env');
+  const env = childEnv({ AIDR_PASS: 'a', AIDR_USER: 'b', AIDR_TOKEN: 'c', AIDR_PASSPHRASE_FILE: '/f', AIDR_PASSPHRASE: 'p', PATH: '/bin' }, { HEADLESS: '1' });
+  assert.equal('AIDR_PASS' in env, false);
+  assert.equal('AIDR_USER' in env, false);
+  assert.equal('AIDR_TOKEN' in env, false);
+  assert.equal(env.AIDR_PASSPHRASE_FILE, '/f');
+  assert.equal(env.AIDR_PASSPHRASE, 'p');
+  assert.equal(env.HEADLESS, '1');
+});
+
+test('L4: the dashboard spawns the watcher with childEnv', () => {
+  const src = fs.readFileSync(path.join(__dirname, 'server.js'), 'utf8');
+  assert.match(src, /spawn\('node', args, \{ cwd: ROOT, env: childEnv\(process\.env/);
+  assert.equal(/\{\s*\.\.\.process\.env/.test(src), false);
+});

@@ -292,7 +292,7 @@ async function loadWhoami() {
 $('#savePw').addEventListener('click', async () => {
   const cur = $('#curPw').value, np = $('#newPw').value, np2 = $('#newPw2').value, nu = $('#newUser').value.trim();
   const msg = $('#pwMsg');
-  if (np.length < 6) { msg.className = 'pw-msg err'; msg.textContent = '❌ New password must be at least 6 characters.'; return; }
+  if (np.length < 12) { msg.className = 'pw-msg err'; msg.textContent = '❌ New password must be at least 12 characters.'; return; }
   if (np !== np2) { msg.className = 'pw-msg err'; msg.textContent = '❌ New passwords do not match.'; return; }
   const r = await api('/auth/password', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ currentPassword: cur, newPassword: np, newUsername: nu || undefined }) });

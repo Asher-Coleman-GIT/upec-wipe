@@ -50,6 +50,7 @@ const { isDeepStrictEqual } = require('util');
 const { spawn, execFile } = require('child_process');
 const { validateRunRequest, modeHonorsFilters, classifyStatus, resolveEnvCreds, dashboardStartupProblems } = require('./validate');
 const { configStatus } = require('./config-status');
+const { childEnv } = require('../lib/child-env');
 const { FREEZE_TARGETS, TARGET_KEYS, getFreezeStatus } = require('../lib/freeze');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -118,9 +119,13 @@ function checkBasic(u, p) {
   return c.source === 'file' ? safeEq(hashPw(p, c.salt), c.hash) : safeEq(p, c.pass);
 }
 const authConfigured = () => !!(loadCreds() || TOKEN);
+// Audit L3: whether auth is required is decided once, at startup, and never
+// downgrades. If credentials were present when we started and vanish later
+// (e.g. .auth.json deleted), every request is denied instead of the server opening.
+const AUTH_REQUIRED = authConfigured();
 
 function authorized(req) {
-  if (!authConfigured()) return true;
+  if (!AUTH_REQUIRED && !authConfigured()) return true;
   if (TOKEN) { // header only - never accept the token via query string (leaks to logs/history)
     const t = req.get('x-aidr-token');
     if (t && safeEq(t, TOKEN)) return true;
@@ -135,9 +140,60 @@ function authorized(req) {
   }
   return false;
 }
+// Audit L2: security headers on every response (including errors and 4xx).
+const CSP = "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
+app.use((_req, res, next) => {
+  res.set('Content-Security-Policy', CSP);
+  res.set('X-Frame-Options', 'DENY');
+  res.set('X-Content-Type-Options', 'nosniff');
+  res.set('Referrer-Policy', 'no-referrer');
+  next();
+});
+// Audit L1: Host allowlist (DNS-rebinding defense). The Origin/Host CSRF check
+// below compares two attacker-controlled values, so the Host itself is pinned.
+// The port may be the configured PORT or the port the connection actually hit
+// (differs under AIDR_PORT=0 or a published container port).
+function hostAllowed(req) {
+  const host = String(req.get('host') || '').toLowerCase();
+  const ports = new Set([String(PORT)]);
+  if (req.socket && req.socket.localPort) ports.add(String(req.socket.localPort));
+  for (const p of ports) {
+    if (host === `127.0.0.1:${p}` || host === `localhost:${p}` || host === `[::1]:${p}`) return true;
+  }
+  return false;
+}
+app.use((req, res, next) => {
+  if (hostAllowed(req)) return next();
+  res.status(421).json({ error: 'misdirected request: unexpected Host header' });
+});
+// Audit L1: in-memory limiter for failed auth, per remote address.
+const AUTH_FAIL_MAX = 10;
+const AUTH_FAIL_WINDOW_MS = 15 * 60 * 1000;
+const authFailures = new Map(); // addr -> [timestamps]
+function recentFailures(addr, now) {
+  const arr = (authFailures.get(addr) || []).filter(t => now - t < AUTH_FAIL_WINDOW_MS);
+  if (arr.length) authFailures.set(addr, arr); else authFailures.delete(addr);
+  return arr;
+}
+function recordAuthFailure(addr, now) {
+  const arr = recentFailures(addr, now);
+  arr.push(now);
+  authFailures.set(addr, arr);
+  if (authFailures.size > 1000) { // bound memory: drop expired addresses
+    for (const a of authFailures.keys()) recentFailures(a, now);
+  }
+}
 app.use((req, res, next) => {
   if (req.path === '/api/health') return next();
+  const addr = (req.socket && req.socket.remoteAddress) || 'unknown';
+  const now = Date.now();
+  if (recentFailures(addr, now).length >= AUTH_FAIL_MAX) {
+    res.set('Retry-After', String(Math.ceil(AUTH_FAIL_WINDOW_MS / 1000)));
+    return res.status(429).json({ error: 'too many failed login attempts; try again later' });
+  }
   if (authorized(req)) return next();
+  // A request with no credentials at all is the normal browser prompt, not a guess.
+  if (req.get('authorization') || req.get('x-aidr-token')) recordAuthFailure(addr, now);
   res.set('WWW-Authenticate', 'Basic realm="aidr dashboard"');
   res.status(401).json({ error: 'unauthorized' });
 });
@@ -160,7 +216,7 @@ app.get('/api/auth/whoami', (_req, res) => {
 });
 app.post('/api/auth/password', (req, res) => {
   const { currentPassword, newPassword, newUsername } = req.body || {};
-  if (!newPassword || String(newPassword).length < 6) return res.status(400).json({ error: 'new password must be at least 6 characters' });
+  if (!newPassword || String(newPassword).length < 12) return res.status(400).json({ error: 'new password must be at least 12 characters' });
   const c = loadCreds();
   // If a basic credential exists (env or file), the current password must match.
   // (The auth middleware already gated this route; this is the extra in-session check.)
@@ -398,7 +454,7 @@ function startRun(mode, opts = {}) {
   pushLine(`$ node ${args.join(' ')}`);
 
   // args are an array (no shell), so --only/--skip values can't inject commands.
-  child = spawn('node', args, { cwd: ROOT, env: { ...process.env, HEADLESS: '1', CI: '1' } });
+  child = spawn('node', args, { cwd: ROOT, env: childEnv(process.env, { HEADLESS: '1', CI: '1' }) });
   run.pid = child.pid;
 
   const onData = buf => String(buf).split(/\r?\n/).forEach(l => { if (l.length) pushLine(l); });
