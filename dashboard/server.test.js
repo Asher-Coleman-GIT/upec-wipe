@@ -1231,3 +1231,13 @@ test('L4: the dashboard spawns the watcher with childEnv', () => {
   assert.match(src, /spawn\('node', args, \{ cwd: ROOT, env: childEnv\(process\.env/);
   assert.equal(/\{\s*\.\.\.process\.env/.test(src), false);
 });
+
+test('L4: every child process the dashboard starts gets childEnv', () => {
+  const src = fs.readFileSync(path.join(__dirname, 'server.js'), 'utf8');
+  const calls = [...src.matchAll(/\b(spawn|execFile|exec|fork)\(/g)];
+  assert.ok(calls.length >= 2, 'found spawn and execFile call sites');
+  for (const m of calls) {
+    const call = src.slice(m.index, src.indexOf(')', src.indexOf('}', m.index)) + 1);
+    assert.match(call, /env: childEnv\(process\.env/, `${m[1]} call without childEnv: ${call}`);
+  }
+});

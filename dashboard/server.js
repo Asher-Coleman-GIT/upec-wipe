@@ -657,7 +657,7 @@ app.post('/api/run/stop', (_req, res) => {
 // examples/ in this folder and the README). Requires the dashboard to run as root.
 const TIMER = 'aidr.timer';
 const sh = (cmd, args) => new Promise(resolve =>
-  execFile(cmd, args, { timeout: 8000 }, (err, out, errout) => resolve({ err, out: String(out || ''), errout: String(errout || '') })));
+  execFile(cmd, args, { timeout: 8000, env: childEnv(process.env) }, (err, out, errout) => resolve({ err, out: String(out || ''), errout: String(errout || '') })));
 
 const CALENDARS = { daily: '*-*-* 03:30:00', weekly: 'Sun *-*-* 03:30:00', monthly: '*-*-01 03:30:00' };
 
