@@ -29,11 +29,20 @@ function tmpDir() {
 // the "no passphrase" assertions: passing passphrase:'' falls back to the env
 // var (getPassphrase treats '' as "use the env"), so an ambient AIDR_PASSPHRASE
 // in the shell/CI would otherwise make those tests non-hermetic.
+// Hermetic: also points HOME/USERPROFILE at an empty dir so a developer's real
+// ~/.config/auto-identity-remove/passphrase cannot supply a passphrase.
 function withoutEnvPassphrase(fn) {
   const prev = process.env.AIDR_PASSPHRASE;
+  const prevHome = process.env.HOME;
+  const prevProfile = process.env.USERPROFILE;
+  const emptyHome = tmpDir();
   delete process.env.AIDR_PASSPHRASE;
+  process.env.HOME = emptyHome;
+  process.env.USERPROFILE = emptyHome;
   try { fn(); }
   finally {
+    if (prevHome === undefined) delete process.env.HOME; else process.env.HOME = prevHome;
+    if (prevProfile === undefined) delete process.env.USERPROFILE; else process.env.USERPROFILE = prevProfile;
     if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
     else process.env.AIDR_PASSPHRASE = prev;
   }

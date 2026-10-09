@@ -156,7 +156,22 @@ function buildServer({ user = 'testuser', pass = 'testpass', cfgContent, stateCo
   try { fs.unlinkSync(statePath); } catch (_) {}
 
   purgeServerModule();
-  const { app } = require('./server');
+  // server.js calls getPassphrase() at require time, which now also reads
+  // ~/.config/auto-identity-remove/passphrase. Require it under an empty HOME so
+  // the developer's real default passphrase file cannot change the outcome.
+  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-dash-home-'));
+  const prevHome = process.env.HOME;
+  const prevProfile = process.env.USERPROFILE;
+  process.env.HOME = emptyHome;
+  process.env.USERPROFILE = emptyHome;
+  let app;
+  try {
+    ({ app } = require('./server'));
+  } finally {
+    if (prevHome === undefined) delete process.env.HOME; else process.env.HOME = prevHome;
+    if (prevProfile === undefined) delete process.env.USERPROFILE; else process.env.USERPROFILE = prevProfile;
+    fs.rmSync(emptyHome, { recursive: true, force: true });
+  }
 
   const server = http.createServer(app);
   return new Promise((resolve) => {
