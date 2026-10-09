@@ -291,7 +291,8 @@ It prints a web address and a login. Open the address in your browser and use th
 | `Refusing to run as root. ...` | Do not use `sudo` or a root account for the tool. Use your own user (Part B). |
 | `chmod has no effect on ... (mode came back ...)` | You are on `/mnt/c`. Move the install to your Linux home folder (Part A step 2). |
 | `Passphrase file ... is readable by other users. Run: chmod 600 "..."` | Run the `chmod 600` command it prints. |
-| `... - not sent: ... Set email.smtp.from to a non-real address.` | Your SMTP account or `"from"` is your real email. Delete the `email` block and handle that broker by hand, or switch to a separate mailbox not linked to you. |
+| `... - not sent: email.smtp.from ... Set email.smtp.from to a non-real address.` | Your `"from"` is missing or is your real email. Set it to a non-real address. |
+| `... - not sent: email.smtp.user ... Use a separate SMTP mailbox that is not linked to you, or remove the email block ...` | Your SMTP login is your real email and brokers can see it. Switch to a separate mailbox not linked to you, or delete the `email` block and handle those brokers by hand. |
 | `aidr-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
 | `ℹ  notify settings in config.json are ignored in this fork.` | Harmless. Notifications were removed, so you can delete the `notify` block. |
 

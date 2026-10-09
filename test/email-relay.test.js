@@ -137,3 +137,34 @@ test('masked email + safe smtp.from: sent from smtp.from', async () => {
     assert.equal(nmCalls[0].from, 'u@x.com');
   } finally { restoreDeps(); restore(); }
 });
+
+test('masked email + smtp.user is the real email: the log advises a separate mailbox, not changing smtp.from', async () => {
+  const { freshEmail, nmCalls, restore } = loadFreshEmailWithSmtpMock();
+  const logged = [];
+  patchDeps();
+  loggerMod.logResult = (name, status, detail) => logged.push({ name, status, detail });
+  try {
+    const cfg = { person: PERSON, email: { smtp: { ...SMTP_CFG, user: 'jane.doe@example.com', from: 'optouts@alias.org' } } };
+    await freshEmail.sendOptOutEmails([EMAIL_BROKER], cfg, 'linux', { submissionEmailFor: () => 'alias@simplelogin.com' });
+    assert.equal(nmCalls.length, 0, 'must not send');
+    const line = logged.map(l => String(l.detail)).join('\n');
+    assert.match(line, /separate SMTP mailbox/);
+    assert.match(line, /remove the email block/);
+    assert.ok(!/Set email\.smtp\.from/.test(line), 'from-advice is wrong for the user case');
+    assert.ok(!line.includes('jane.doe@example.com'), 'the address must not be logged');
+  } finally { restore(); restoreDeps(); }
+});
+
+test('masked email + smtp.from is the real email: the log still says to set a non-real from', async () => {
+  const { freshEmail, restore } = loadFreshEmailWithSmtpMock();
+  const logged = [];
+  patchDeps();
+  loggerMod.logResult = (name, status, detail) => logged.push({ name, status, detail });
+  try {
+    const cfg = { person: PERSON, email: { smtp: { ...SMTP_CFG, from: 'jane.doe@example.com' } } };
+    await freshEmail.sendOptOutEmails([EMAIL_BROKER], cfg, 'linux', { submissionEmailFor: () => 'alias@simplelogin.com' });
+    const line = logged.map(l => String(l.detail)).join('\n');
+    assert.match(line, /Set email\.smtp\.from to a non-real address/);
+    assert.ok(!line.includes('jane.doe@example.com'));
+  } finally { restore(); restoreDeps(); }
+});

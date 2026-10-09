@@ -94,3 +94,28 @@ test('alias in use + smtp.from is the real email: logged manual, not sent', asyn
     assert.ok(!h.logged.some(l => String(l.detail).includes('jane.doe@example.com')));
   } finally { h.restore(); }
 });
+
+test('alias in use + smtp.user is the real email: advice is a separate mailbox, not smtp.from', async () => {
+  const h = load();
+  try {
+    const cfg = { person: PERSON, email: { smtp: { ...SMTP, user: 'jane.doe@example.com' } } };
+    const r = await h.mod.sendKnowRequests([BROKER], cfg, { submissionEmailFor: () => 'alias@simplelogin.com' });
+    assert.equal(h.sent.length, 0);
+    assert.deepEqual(r.manual, ['Pipl']);
+    const line = h.logged.map(l => String(l.detail)).join('\n');
+    assert.match(line, /separate SMTP mailbox/);
+    assert.match(line, /remove the email block/);
+    assert.ok(!/Set email\.smtp\.from/.test(line));
+    assert.ok(!line.includes('jane.doe@example.com'));
+  } finally { h.restore(); }
+});
+
+test('alias in use + smtp.from is the real email: advice still says to set a non-real from', async () => {
+  const h = load();
+  try {
+    const cfg = { person: PERSON, email: { smtp: { ...SMTP, from: 'jane.doe@example.com' } } };
+    await h.mod.sendKnowRequests([BROKER], cfg, { submissionEmailFor: () => 'alias@simplelogin.com' });
+    const line = h.logged.map(l => String(l.detail)).join('\n');
+    assert.match(line, /Set email\.smtp\.from to a non-real address/);
+  } finally { h.restore(); }
+});
