@@ -580,7 +580,7 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
         result = await processFn(page, broker, state, dryRun, opts.injectedDeadSet, { person, stateKey: keyFor(broker.name) });
       } catch (err) {
         // One broker must never abort the whole run or skip the cleanup below.
-        result = { status: 'error', detail: (err && err.message ? err.message.slice(0, 80) : 'error') };
+        result = { status: 'error', detail: (err && err.message ? require('./lib/redact').redactUrlsInText(err.message).slice(0, 80) : 'error') };
         // If the working page itself crashed, replace it so the run can continue.
         if (typeof page.isClosed === 'function' && page.isClosed()) {
           try { page = await context.newPage(); } catch (_) {}
