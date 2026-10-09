@@ -1191,6 +1191,9 @@ test('L2: the UI works under the CSP (no inline script, handler or style)', () =
   assert.equal(/\son(click|change|input|submit)\s*=/i.test(js), false, 'no inline handlers built in app.js');
   assert.equal(/\sstyle\s*=/i.test(js), false, 'no style attributes built in app.js');
   assert.equal(/\.style\.cssText|setAttribute\(\s*['"]style/.test(js), false);
+  // default-src 'self' also covers img-src, so a data: favicon is blocked.
+  assert.equal(/(href|src)\s*=\s*["']data:/i.test(html), false, 'no data: URLs in html');
+  assert.ok(fs.existsSync(path.join(__dirname, 'public', 'favicon.svg')), 'favicon served as a file');
 });
 
 test('L3: deleting .auth.json at runtime never opens the dashboard', async () => {
