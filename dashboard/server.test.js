@@ -965,3 +965,121 @@ test('PUT /api/config refuses to write plaintext beside an active encrypted conf
     await close();
   }
 });
+
+// -- Audit M3: PUT /api/config cannot redirect a masked secret or switch off
+// protections. A host/port change must not carry the stored SMTP password to a
+// new server, and network/relay/generic/browser/profileDir are file-only. -------
+
+const M3_BASE = {
+  person: { firstName: 'Jane' },
+  email: { smtp: { host: 'smtp.example.com', port: 587, user: 'u@example.com', pass: 'REAL-SMTP-PASS', from: 'u@example.com' } },
+  relay: { provider: 'simplelogin', apiKey: 'SL-REAL-KEY', required: true },
+  network: { required: true, proxy: '' },
+  generic: { enabled: false },
+  browser: { persistentProfile: false },
+  profileDir: '~/.config/auto-identity-remove',
+};
+
+async function m3Put(body) {
+  const { server, close, realConfig } = await buildServer({ cfgContent: M3_BASE });
+  try {
+    const r = await request(server, {
+      method: 'PUT',
+      pathname: '/api/config',
+      headers: {
+        Authorization: basicAuth('testuser', 'testpass'),
+        Origin: `http://127.0.0.1:${server.address().port}`,
+      },
+      body,
+    });
+    const saved = JSON.parse(fs.readFileSync(realConfig, 'utf8'));
+    return { r, saved };
+  } finally {
+    await close();
+  }
+}
+
+test('M3: SMTP host change with a MASK password is refused (400) and nothing is written', async () => {
+  const MASK = '••••••••';
+  const { r, saved } = await m3Put({ email: { smtp: { host: 'evil.example', pass: MASK } } });
+  assert.equal(r.status, 400, JSON.stringify(r.json));
+  assert.equal(r.json.error, 'Re-enter email.smtp.pass when changing the SMTP host or port.');
+  assert.equal(saved.email.smtp.host, 'smtp.example.com');
+  assert.equal(saved.email.smtp.pass, 'REAL-SMTP-PASS');
+});
+
+test('M3: SMTP port change with the password omitted (as the UI does for MASK) is refused (400)', async () => {
+  const { r, saved } = await m3Put({ email: { smtp: { port: 2525 } } });
+  assert.equal(r.status, 400, JSON.stringify(r.json));
+  assert.equal(saved.email.smtp.port, 587);
+});
+
+test('M3: SMTP host change with a re-entered password is accepted', async () => {
+  const { r, saved } = await m3Put({ email: { smtp: { host: 'smtp2.example.com', pass: 'NEW-PASS' } } });
+  assert.equal(r.status, 200, JSON.stringify(r.json));
+  assert.equal(saved.email.smtp.host, 'smtp2.example.com');
+  assert.equal(saved.email.smtp.pass, 'NEW-PASS');
+});
+
+test('M3: network.required false is refused (403)', async () => {
+  const { r, saved } = await m3Put({ network: { required: false } });
+  assert.equal(r.status, 403, JSON.stringify(r.json));
+  assert.equal(r.json.error, 'network can only be changed by editing config.json directly.');
+  assert.equal(saved.network.required, true);
+});
+
+test('M3: relay change is refused (403)', async () => {
+  const { r, saved } = await m3Put({ relay: { required: false } });
+  assert.equal(r.status, 403, JSON.stringify(r.json));
+  assert.equal(r.json.error, 'relay can only be changed by editing config.json directly.');
+  assert.equal(saved.relay.required, true);
+});
+
+test('M3: generic, browser and profileDir changes are refused (403)', async () => {
+  for (const [body, key] of [
+    [{ generic: { enabled: true } }, 'generic'],
+    [{ browser: { persistentProfile: true } }, 'browser'],
+    [{ profileDir: '/tmp/elsewhere' }, 'profileDir'],
+    [{ relay: null }, 'relay'],
+  ]) {
+    const { r } = await m3Put(body);
+    assert.equal(r.status, 403, `${key}: ${JSON.stringify(r.json)}`);
+    assert.equal(r.json.error, `${key} can only be changed by editing config.json directly.`);
+  }
+});
+
+test('M3: adding a protected key that was absent is refused (403)', async () => {
+  const { server, close } = await buildServer({ cfgContent: { person: { firstName: 'Jane' } } });
+  try {
+    const r = await request(server, {
+      method: 'PUT',
+      pathname: '/api/config',
+      headers: { Authorization: basicAuth('testuser', 'testpass'), Origin: `http://127.0.0.1:${server.address().port}` },
+      body: { network: { required: false } },
+    });
+    assert.equal(r.status, 403, JSON.stringify(r.json));
+  } finally {
+    await close();
+  }
+});
+
+test('M3: unchanged round-trip of the whole masked config is accepted (200)', async () => {
+  const MASK = '••••••••';
+  const masked = JSON.parse(JSON.stringify(M3_BASE));
+  masked.email.smtp.pass = MASK;
+  masked.relay.apiKey = MASK;
+  masked.person.firstName = 'Janet';
+  const { r, saved } = await m3Put({ config: masked });
+  assert.equal(r.status, 200, JSON.stringify(r.json));
+  assert.equal(saved.person.firstName, 'Janet');
+  assert.equal(saved.email.smtp.pass, 'REAL-SMTP-PASS');
+  assert.equal(saved.relay.apiKey, 'SL-REAL-KEY');
+  assert.deepEqual(saved.network, M3_BASE.network);
+});
+
+test('M3: the config editor has no fields for file-only keys or broker accounts', () => {
+  const html = fs.readFileSync(path.join(__dirname, 'public', 'index.html'), 'utf8');
+  for (const prefix of ['network.', 'relay.', 'generic.', 'browser.', 'profileDir', 'accounts.']) {
+    assert.equal(html.includes(`name="${prefix}`), false, `index.html must not offer an input for ${prefix}`);
+  }
+});

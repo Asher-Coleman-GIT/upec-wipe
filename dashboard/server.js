@@ -17,7 +17,8 @@ process.umask(0o077);
  *   GET  /api/state              -> ../state.json (raw; {error} if unparseable)
  *   GET  /api/summary            -> counts + config flags + run state
  *   GET  /api/config             -> ../config.json with secrets masked
- *   PUT  /api/config             -> merge-write ../config.json (masked secrets preserved)
+ *   PUT  /api/config             -> merge-write ../config.json (masked secrets preserved;
+ *                                   network/relay/generic/browser/profileDir are file-only)
  *   GET  /api/logs               -> list of files in ../logs
  *   GET  /api/logs/:name         -> one log file (size-capped, streamed)
  *   GET  /api/run/status         -> current/last run state
@@ -45,6 +46,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { isDeepStrictEqual } = require('util');
 const { spawn, execFile } = require('child_process');
 const { validateRunRequest, modeHonorsFilters, classifyStatus, resolveEnvCreds, dashboardStartupProblems } = require('./validate');
 const { configStatus } = require('./config-status');
@@ -283,6 +285,43 @@ function mergeConfig(existing, incoming) {
   return incoming;
 }
 
+// Audit M3: keys that switch off or redirect the fork's protections (egress
+// gate, alias relay, generic pass, persistent profile). They can only be changed
+// by editing config.json directly; the dashboard refuses any change to them.
+// Unchanged values are fine because the UI may round-trip the whole config.
+const FILE_ONLY_KEYS = ['network', 'relay', 'generic', 'browser', 'profileDir'];
+const hasOwn = (o, k) => !!o && typeof o === 'object' && Object.prototype.hasOwnProperty.call(o, k);
+const smtpOf = (c) => (c && c.email && typeof c.email === 'object' && c.email.smtp && typeof c.email.smtp === 'object') ? c.email.smtp : {};
+
+/**
+ * Decide whether a PUT /api/config may be written. Returns null when it may,
+ * or { status, error } to refuse.
+ * - 403 when a FILE_ONLY_KEYS value differs from the stored one (changed,
+ *   added or removed).
+ * - 400 when email.smtp.host or port changes and the stored SMTP password
+ *   would be carried over (MASK or omitted) to the new server.
+ */
+function configWriteGuard(existing, incoming, merged) {
+  const ex = existing || {};
+  for (const k of FILE_ONLY_KEYS) {
+    if (!hasOwn(incoming, k)) continue;
+    if (hasOwn(ex, k) !== hasOwn(merged, k) || !isDeepStrictEqual(ex[k], merged[k])) {
+      return { status: 403, error: `${k} can only be changed by editing config.json directly.` };
+    }
+  }
+  const oldSmtp = smtpOf(ex);
+  const newSmtp = smtpOf(merged);
+  const inSmtp = smtpOf(incoming);
+  const differs = (a, b) => String(a == null ? '' : a) !== String(b == null ? '' : b);
+  const destChanged = differs(oldSmtp.host, newSmtp.host) || differs(oldSmtp.port, newSmtp.port);
+  const reEntered = typeof inSmtp.pass === 'string' && inSmtp.pass !== MASK;
+  const passKept = typeof oldSmtp.pass === 'string' && oldSmtp.pass !== '' && newSmtp.pass === oldSmtp.pass;
+  if (destChanged && passKept && !reEntered) {
+    return { status: 400, error: 'Re-enter email.smtp.pass when changing the SMTP host or port.' };
+  }
+  return null;
+}
+
 // classifyStatus is imported from validate.js (canonical mapping, browser app.js mirrors this; keep in sync).
 // Status vocab from lib/logger.js: success / notFound / unverified / pending_confirm / error / captcha_failed / dead / manual
 
@@ -470,6 +509,8 @@ app.put('/api/config', (req, res) => {
   const m = readConfigMeta();
   const existing = (m.exists && !m.parseError && m.data) ? m.data : {};
   const merged = mergeConfig(existing, incoming);
+  const refusal = configWriteGuard(existing, incoming, merged);
+  if (refusal) return res.status(refusal.status).json({ error: refusal.error });
   const passphrase = CONFIG_PASSPHRASE;
   const encrypted = isConfigEncrypted({ configPath: CONFIG, encPath: CONFIG_ENC });
   // Refuse rather than fall back to plaintext. Writing config.json next to an
@@ -646,4 +687,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { app, loadBrokers, maskConfig, mergeConfig, loadCreds, MASK, configStatus, readConfigMeta };
+module.exports = { app, loadBrokers, maskConfig, mergeConfig, configWriteGuard, FILE_ONLY_KEYS, loadCreds, MASK, configStatus, readConfigMeta };
