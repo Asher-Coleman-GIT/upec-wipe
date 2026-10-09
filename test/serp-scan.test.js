@@ -800,3 +800,27 @@ test('L14: hashPerson is keyed per install and the key file is created 0600', ()
     assert.notEqual(h1, plain, 'not the old unsalted sha256');
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
+
+test('L14 polish: an existing key is never overwritten; a damaged key is replaced with a warning', () => {
+  const fs = require('node:fs'), os = require('node:os'), path = require('node:path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'serpkey2-'));
+  const origWarn = console.warn;
+  const warnings = [];
+  console.warn = (...a) => warnings.push(a.join(' '));
+  try {
+    const k = path.join(dir, '.serp-key');
+    const key = Buffer.alloc(32, 7);
+    fs.writeFileSync(k, key, { mode: 0o600 });
+    hashPerson('A', 'a@example.com', { keyPath: k });
+    assert.deepEqual(fs.readFileSync(k), key, 'existing 32-byte key kept');
+    assert.equal(warnings.length, 0);
+
+    fs.writeFileSync(k, 'short');
+    hashPerson('A', 'a@example.com', { keyPath: k });
+    assert.equal(fs.readFileSync(k).length, 32, 'damaged key replaced');
+    assert.ok(warnings.some((w) => /serp-key/.test(w) && /history/i.test(w)), `warned: ${warnings}`);
+  } finally {
+    console.warn = origWarn;
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
