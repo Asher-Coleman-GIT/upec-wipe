@@ -14,7 +14,7 @@ A month looks like this:
 
 1. The scheduled job runs on the 1st (or you run `node bin/aidr.js run`).
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
-3. Brokers you must finish by hand are listed in the summary at the end of the run, and their pages open in your browser. `node bin/aidr.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/aidr.js verify` checks whether you are really gone.
+3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/aidr.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/aidr.js verify` checks whether you are really gone.
 
 Some extra commands send more about you to other services: `breach` sends your real email to Have I Been Pwned, and `serp` searches for your name and city on search engines. They are off unless you run them. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
@@ -327,7 +327,7 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 | `report` | Saves a monthly PDF report on this computer. | Nothing. |
 | `complaints` | Writes regulator complaints for brokers past the legal deadline, for you to file. | Nothing. |
 | `freeze` | Shows the credit-freeze checklist (Equifax, Experian, TransUnion and others). | Nothing. |
-| `know` | Sends "what do you hold about me" requests under the California (CCPA) or European (GDPR) privacy law, to the brokers that take requests by email. Without the `email` block it prints the text for you to send. | With the `email` block: your SMTP server and those brokers get your name, city, state, zip, phone and alias. SimpleLogin: a request for your alias if none exists yet. Without the block: nothing. |
+| `know` | Sends "what do you hold about me" requests under the California (CCPA) or European (GDPR) privacy law, to the brokers that take requests by email. Without the `email` block it prints the text for you to send. | SimpleLogin: a request for your alias if none exists yet. With the `email` block, also your SMTP server and those brokers: your name, city, state, zip, phone and alias. |
 | `breach` | Checks Have I Been Pwned for breaches. Needs `hibp.apiKey`. | **Your real email** to haveibeenpwned.com. |
 | `serp` | Searches DuckDuckGo, Bing and Google for your name. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `serp-watch` | Like `serp`, and lists sites where your name is new since last time. | Same as `serp`. |
