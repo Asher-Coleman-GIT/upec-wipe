@@ -1241,3 +1241,23 @@ test('L4: every child process the dashboard starts gets childEnv', () => {
     assert.match(call, /env: childEnv\(process\.env/, `${m[1]} call without childEnv: ${call}`);
   }
 });
+
+test('PUT /api/config: a non-plain-object body (array) is refused and the file is unchanged', async () => {
+  const cfgContent = { person: { firstName: 'Jane' }, relay: { required: true } };
+  const { server, close, realConfig } = await buildServer({ cfgContent });
+  try {
+    const before = fs.readFileSync(realConfig, 'utf8');
+    for (const body of [[{ person: { firstName: 'X' } }], { config: ['x'] }]) {
+      const r = await request(server, {
+        method: 'PUT',
+        pathname: '/api/config',
+        headers: { Authorization: basicAuth('testuser', 'testpass'), Origin: `http://127.0.0.1:${server.address().port}` },
+        body,
+      });
+      assert.equal(r.status, 400, `expected 400 for ${JSON.stringify(body)}, got ${r.status}`);
+    }
+    assert.equal(fs.readFileSync(realConfig, 'utf8'), before);
+  } finally {
+    await close();
+  }
+});

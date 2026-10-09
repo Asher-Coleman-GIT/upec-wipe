@@ -559,7 +559,10 @@ app.get('/api/config/status', (_req, res) => {
 
 app.put('/api/config', (req, res) => {
   const incoming = req.body && req.body.config ? req.body.config : req.body;
-  if (!incoming || typeof incoming !== 'object') return res.status(400).json({ error: 'invalid config' });
+  // Plain objects only: an array would be merged as the whole config.
+  if (!incoming || typeof incoming !== 'object' || Array.isArray(incoming)) {
+    return res.status(400).json({ error: 'invalid config' });
+  }
   // Use decryption-aware reader so the merge base is always the full decrypted config,
   // not an empty object (which would wipe fields not present in the submitted form).
   const m = readConfigMeta();
