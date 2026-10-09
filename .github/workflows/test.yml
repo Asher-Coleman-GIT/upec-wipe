@@ -41,7 +41,7 @@ jobs:
           (cd dashboard && npm audit --audit-level=moderate)
 
       - name: Run tests
-        run: node --test test/*.test.js dashboard/validate.test.js dashboard/config-status.test.js
+        run: node --require ./test/helpers/egress-off.js --test test/*.test.js dashboard/validate.test.js dashboard/config-status.test.js
 
   dashboard:
     runs-on: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
 
       - name: Run dashboard tests
         working-directory: dashboard
-        run: node --test
+        run: node --require ../test/helpers/egress-off.js --test
 
   # Behavioural counterpart to test/docker-build-contract.test.js.
   #

@@ -12,8 +12,9 @@
  * - otherwise am.i.mullvad.net/json must report mullvad_exit_ip true, else it
  *   throws EgressError and nothing is sent.
  *
- * Every test injects fetchJson (or relies on the test-mode no-op); nothing
- * here touches the real network.
+ * Every test injects fetchJson or stubs global fetch; nothing here touches
+ * the real network. The gate has no env-var bypass: the npm test scripts
+ * preload test/helpers/egress-off.js instead.
  */
 'use strict';
 
@@ -92,20 +93,40 @@ test('check page unreachable: throws EgressError', async () => {
   await assert.rejects(() => egress.ensureNodeEgress({}, { fetchJson: async () => { throw new Error('ENOTFOUND'); } }), EgressError);
 });
 
-test('no injected fetch under the test runner: no-op, no network', async () => {
+test('no env-var bypass: NODE_ENV=test and NODE_TEST_CONTEXT still run the check', async () => {
   egress._resetNodeEgress();
-  const prev = process.env.NODE_ENV;
+  const prev = { env: process.env.NODE_ENV, ctx: process.env.NODE_TEST_CONTEXT };
   process.env.NODE_ENV = 'test';
+  process.env.NODE_TEST_CONTEXT = 'child';
   const origFetch = globalThis.fetch;
-  let hit = 0;
-  globalThis.fetch = async () => { hit++; throw new Error('network'); };
+  const urls = [];
+  globalThis.fetch = async (u) => { urls.push(String(u)); return new Response('{"mullvad_exit_ip":false}', { status: 200 }); };
   try {
-    assert.equal((await egress.ensureNodeEgress({ network: { required: true } })).ok, true);
-    assert.equal(hit, 0);
+    await assert.rejects(() => egress.ensureNodeEgress({ network: { required: true } }), EgressError);
+    assert.deepEqual(urls, [egress.MULLVAD_CHECK_URL]);
   } finally {
     globalThis.fetch = origFetch;
-    if (prev === undefined) delete process.env.NODE_ENV; else process.env.NODE_ENV = prev;
+    if (prev.env === undefined) delete process.env.NODE_ENV; else process.env.NODE_ENV = prev.env;
+    if (prev.ctx === undefined) delete process.env.NODE_TEST_CONTEXT; else process.env.NODE_TEST_CONTEXT = prev.ctx;
   }
+});
+
+test('lib/egress.js reads no env var to decide whether to check', () => {
+  const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'lib', 'egress.js'), 'utf8');
+  assert.doesNotMatch(src, /NODE_ENV|NODE_TEST_CONTEXT|isTestEnv/);
+});
+
+test('every test command loads the egress-off preload', () => {
+  const fs = require('node:fs'), path = require('node:path');
+  const root = path.join(__dirname, '..');
+  const rootPkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
+  assert.match(rootPkg.scripts.test, /--require[ =]\.\/test\/helpers\/egress-off\.js/);
+  const dashPkg = JSON.parse(fs.readFileSync(path.join(root, 'dashboard', 'package.json'), 'utf8'));
+  assert.match(dashPkg.scripts.test, /--require[ =]\.\.\/test\/helpers\/egress-off\.js/);
+  const ci = fs.readFileSync(path.join(root, '.github', 'workflows', 'test.yml'), 'utf8');
+  const runs = ci.split('\n').filter((l) => /run:\s*node\b.*--test\b/.test(l));
+  assert.ok(runs.length >= 2, 'found the CI test steps');
+  for (const l of runs) assert.match(l, /--require[ =]\S*egress-off\.js/, l);
 });
 
 test('browser-session re-exports the same EgressError class', () => {
