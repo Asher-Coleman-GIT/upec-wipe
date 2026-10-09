@@ -550,3 +550,12 @@ test('L5: launchctl and schtasks get argv arrays, never a shell string', () => {
   assert.ok(efsCalls.some(c => c.startsWith('schtasks /Create')));
   assert.equal(buildWindowsSchtasksArgs('n', 'w')[0], '/Create');
 });
+
+test('unit and cron builders refuse paths containing a newline (no directive or job injection)', () => {
+  const { buildSystemdUnits, buildCronLine } = require('../lib/scheduler');
+  const bad = '/tmp/x\nExecStartPre=/bin/evil';
+  assert.throws(() => buildSystemdUnits(bad, '/tmp/l'), /newline/);
+  assert.throws(() => buildSystemdUnits('/tmp/run.sh', '/tmp/l\r\nX=1'), /newline/);
+  assert.throws(() => buildSystemdUnits('/tmp/run.sh', '/tmp/l', { passphraseFile: bad }), /newline/);
+  assert.throws(() => buildCronLine('/tmp/a\n* * * * * /bin/evil'), /newline/);
+});
