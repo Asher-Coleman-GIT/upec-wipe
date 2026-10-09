@@ -108,3 +108,27 @@ test('--encrypt-config without a passphrase exits non-zero', () => {
     fs.rmSync(emptyHome, { recursive: true, force: true });
   }
 });
+
+test('--update-brokers says so when the encrypted config cannot be read (no silent fallback)', () => {
+  const { spawnSync } = require('node:child_process');
+  const dir = buildTempRepo();
+  fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(PLAIN, null, 2));
+  runWatcher(dir, ['--encrypt-config']);
+  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-empty-home-'));
+  try {
+    const r = spawnSync('node', ['watcher.js', '--update-brokers'], {
+      cwd: dir,
+      env: {
+        ...process.env, AIDR_PASSPHRASE: '', HOME: emptyHome, USERPROFILE: emptyHome, HEADLESS: '1',
+        // Never reach the real registries from a test.
+        CA_REGISTRY_URL: 'https://127.0.0.1:1/ca.csv', VT_REGISTRY_URL: 'https://127.0.0.1:1/vt.csv',
+      },
+      encoding: 'utf8',
+      timeout: 30000,
+    });
+    assert.match(r.stdout + r.stderr, /config could not be read .*network defaults/i);
+  } finally {
+    fs.rmSync(emptyHome, { recursive: true, force: true });
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

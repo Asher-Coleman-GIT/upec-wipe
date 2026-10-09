@@ -603,7 +603,11 @@ if (DOCTOR) {
   try {
     const { CONFIG_PATH, CONFIG_ENC_PATH } = require('./lib/config');
     if (fs.existsSync(CONFIG_PATH) || fs.existsSync(CONFIG_ENC_PATH)) updateCfg = loadConfig();
-  } catch (_) { updateCfg = {}; }
+  } catch (err) {
+    // Say so: network.required / network.proxy from the config do not apply.
+    console.warn(`Warning: config could not be read (${err.message}); using network defaults (Mullvad check required).`);
+    updateCfg = {};
+  }
   setEgressConfig(updateCfg);
   runUpdateBrokers({ brokers, logFn: (m) => console.log(m), config: updateCfg })
     .then(() => process.exit(0))
