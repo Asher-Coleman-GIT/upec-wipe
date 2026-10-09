@@ -824,3 +824,18 @@ test('L14 polish: an existing key is never overwritten; a damaged key is replace
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('L14 polish: a directory or unreadable file at the key path is a clear error, not endless recursion', () => {
+  const fs = require('node:fs'), os = require('node:os'), path = require('node:path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'serpkey3-'));
+  try {
+    const asDir = path.join(dir, 'keydir');
+    fs.mkdirSync(asDir);
+    assert.throws(() => hashPerson('A', 'a@example.com', { keyPath: asDir }), (e) => e.code === 'EISDIR');
+    if (process.getuid && process.getuid() !== 0) {
+      const locked = path.join(dir, 'locked');
+      fs.writeFileSync(locked, Buffer.alloc(32, 1), { mode: 0o000 });
+      assert.throws(() => hashPerson('A', 'a@example.com', { keyPath: locked }), (e) => e.code === 'EACCES');
+    }
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});
