@@ -175,7 +175,7 @@ test('runSerpWatch reports a new domain in the result', async () => {
     }),
   });
 
-  assert.equal(result.alerted, true);
+  assert.equal('alerted' in result, false, 'no alerted flag (notifications were removed)');
   assert.deepEqual(result.diff.newDomains, ['radaris.com']);
 });
 
@@ -191,7 +191,7 @@ test('runSerpWatch reports no new domains when nothing is new', async () => {
     }),
   });
 
-  assert.equal(result.alerted, false);
+  assert.equal('alerted' in result, false, 'no alerted flag (notifications were removed)');
   assert.deepEqual(result.diff.newDomains, []);
   assert.deepEqual(result.diff.goneDomains, ['radaris.com']);
 });
@@ -206,7 +206,7 @@ test('runSerpWatch treats first-ever run (empty history) as all-new and alerts',
     }),
   });
 
-  assert.equal(result.alerted, true);
+  assert.equal('alerted' in result, false, 'no alerted flag (notifications were removed)');
   assert.deepEqual(result.diff.newDomains, ['spokeo.com']);
 });
 
@@ -216,7 +216,7 @@ test('runSerpWatch does not alert when the scan finds nothing', async () => {
     _runSerpScan: async () => ({ total_brokers_appearing: 0, results: [], blocked: [] }),
   });
 
-  assert.equal(result.alerted, false);
+  assert.equal('alerted' in result, false, 'no alerted flag (notifications were removed)');
   assert.deepEqual(result.diff.newDomains, []);
 });
 

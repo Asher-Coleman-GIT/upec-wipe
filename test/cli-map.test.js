@@ -143,3 +143,9 @@ test('buildHelp renders the program name and every subcommand', () => {
     assert.match(help, new RegExp(`\\b${name}\\b`), `help must mention ${name}`);
   }
 });
+
+test('L9: report and serp-watch descriptions no longer promise email or alerts', () => {
+  assert.equal(COMMANDS.report.desc, 'Generate the monthly PDF report (saved locally)');
+  assert.equal(COMMANDS['serp-watch'].desc, 'Scan and list domains where your name newly appears');
+  assert.doesNotMatch(buildHelp(), /alert|email report/i);
+});

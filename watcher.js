@@ -856,7 +856,7 @@ async function _mainBody() {
     return;
   }
 
-  // -- SERP watch mode: scan + diff vs history + alert on NEW domains ---------
+  // -- SERP watch mode: scan + diff vs history, list NEW domains ---------
   if (SERP_WATCH) {
     const { runSerpWatch } = require('./lib/serp-watch');
     console.log('\n SERP watch - scanning, then diffing against previous history');
@@ -876,7 +876,6 @@ async function _mainBody() {
     if (watch.diff.newDomains.length > 0) {
       console.log('\n  WARNING: NEW domains your name now appears on:');
       for (const d of watch.diff.newDomains) console.log(`     - ${d}`);
-      console.log(watch.alerted ? '\n  An alert was dispatched.' : '\n  (No alert channel configured.)');
     } else {
       console.log('\n  No new broker domains since the last scan.');
     }
