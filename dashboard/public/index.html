@@ -59,7 +59,6 @@
       <button class="tab active" id="tabbtn-brokers" role="tab" aria-selected="true" aria-controls="tab-brokers" data-tab="brokers">Brokers</button>
       <button class="tab" id="tabbtn-freeze" role="tab" aria-selected="false" aria-controls="tab-freeze" data-tab="freeze">Freeze</button>
       <button class="tab" id="tabbtn-config" role="tab" aria-selected="false" aria-controls="tab-config" data-tab="config">Config</button>
-      <button class="tab" id="tabbtn-schedule" role="tab" aria-selected="false" aria-controls="tab-schedule" data-tab="schedule">Schedule</button>
       <button class="tab" id="tabbtn-logs" role="tab" aria-selected="false" aria-controls="tab-logs" data-tab="logs">Logs</button>
       <button class="tab" id="tabbtn-admin" role="tab" aria-selected="false" aria-controls="tab-admin" data-tab="admin">Admin</button>
     </nav>
@@ -121,24 +120,6 @@
           <label>From <input name="email.smtp.from" /></label>
         </fieldset>
       </form>
-    </section>
-
-    <section class="card tab-panel hidden" id="tab-schedule" role="tabpanel" aria-labelledby="tabbtn-schedule">
-      <h3>Automated schedule</h3>
-      <p class="dim">Runs <code>node watcher.js</code> on a systemd timer inside this container.</p>
-      <div class="sched-row">
-        <span>Status:</span> <span class="pill" id="schedEnabled">-</span>
-        <span>Next run:</span> <strong id="schedNext">-</strong>
-        <span>Cadence:</span> <strong id="schedCal">-</strong>
-      </div>
-      <div class="sched-actions">
-        <button class="btn btn-primary" id="schedEnable">Enable</button>
-        <button class="btn" id="schedDisable">Disable</button>
-        <span class="adv-label dim">cadence:</span>
-        <button class="btn" data-preset="monthly">Monthly</button>
-        <button class="btn" data-preset="weekly">Weekly</button>
-        <button class="btn" data-preset="daily">Daily</button>
-      </div>
     </section>
 
     <section class="card tab-panel hidden" id="tab-admin" role="tabpanel" aria-labelledby="tabbtn-admin">

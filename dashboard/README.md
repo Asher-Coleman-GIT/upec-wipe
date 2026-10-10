@@ -16,8 +16,6 @@ It wraps the existing tooling rather than reimplementing it:
   account passwords) are masked in transit and preserved on save
   unless you type a new value. If `../config.json` doesn't exist yet the form is
   prefilled from `../config.example.json` and the first Save creates it (`0600`).
-- **Schedule** - read-only status of the systemd timer (see
-  *Scheduling* below).
 - **Logs** - browses `../logs/`. A dated report is written when a real run
   *completes*, so the list is empty mid-run (watch the live console instead).
 - **Admin** - change the login from the browser (see *Auth* below).
@@ -61,7 +59,7 @@ it is fixed or removed - it never silently downgrades to open access.
 
 ## Scheduling
 
-Disabled in this fork: the old Schedule tab wrote `/etc/systemd/system` and required running the dashboard as root. `aidr setup` installs a per-user systemd timer (or crontab/launchd) instead. The tab still shows status read-only.
+Removed in this fork. Runs start only when you press a button here or run a command; there is no Schedule tab.
 
 ## Security notes
 

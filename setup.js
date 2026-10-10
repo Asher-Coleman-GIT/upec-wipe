@@ -7,7 +7,6 @@
  * Creates config.json from your answers and walks you through:
  *   • Personal info (name, address, email, phone)
  *   • CapSolver API key (for CAPTCHA-protected sites)
- *   • macOS launchd scheduling (1st of every month)
  */
 
 // Audit M2: everything this process creates (run logs, audit files, snapshots,
@@ -19,7 +18,6 @@ const path    = require('path');
 const os      = require('os');
 const readline = require('readline');
 
-const { installSchedule } = require('./lib/scheduler');
 const { encryptConfigToDisk, getPassphrase } = require('./lib/config');
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
@@ -307,16 +305,6 @@ async function main() {
   if (!fs.existsSync(STATE_PATH)) {
     fs.writeFileSync(STATE_PATH, JSON.stringify({ optOuts: {}, createdAt: new Date().toISOString() }, null, 2), { mode: 0o600 });
     console.log('✅ state.json initialized (tracks opt-out history).\n');
-  }
-
-  // ── Cross-platform scheduling ─────────────────────────────────────────────
-  console.log('── Monthly Schedule ────────────────────────────────────────');
-  const doSchedule = await confirm('Schedule to run automatically on the 1st of every month at 9am?');
-  if (doSchedule) {
-    const scriptPath = path.join(__dirname, 'run.sh');
-    const logDir     = path.join(__dirname, 'logs');
-    const result = installSchedule({ scriptPath, logDir });
-    console.log(`✅ [${result.method}] ${result.detail}\n`);
   }
 
   rl.close();

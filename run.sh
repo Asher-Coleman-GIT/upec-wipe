@@ -1,5 +1,5 @@
 #!/bin/bash
-# auto-identity-remove - manual trigger and scheduler entrypoint
+# auto-identity-remove - manual run entrypoint
 # Usage: ./run.sh [watcher.js flags]
 
 set -e

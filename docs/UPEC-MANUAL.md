@@ -12,7 +12,7 @@ It is set up here so that brokers see a throwaway email address and a VPN addres
 
 A month looks like this:
 
-1. The scheduled job runs on the 1st (or you run `node bin/aidr.js run`).
+1. You run `node bin/aidr.js run` (nothing runs on its own).
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
 3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/aidr.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/aidr.js verify` checks whether you are really gone.
 
@@ -156,7 +156,7 @@ It should say "Connected".
 
 This part is the same for Parts A and B.
 
-1. Optional, only if you want encryption: create an empty passphrase file that only you can read. Do this before setup, because setup only wires the passphrase file into the monthly job if it already exists. Skip to step 2 if you do not want encryption:
+1. Optional, only if you want encryption: create an empty passphrase file that only you can read. Skip to step 2 if you do not want encryption:
 
    ```
    mkdir -p ~/.config/auto-identity-remove && install -m 600 /dev/null ~/.config/auto-identity-remove/passphrase
@@ -170,7 +170,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js setup
    ```
 
-   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. When it asks about scheduling, say yes. That installs the monthly job, and if the passphrase file from step 1 exists, the monthly systemd job is given access to it. The tool also looks for the passphrase in `~/.config/auto-identity-remove/passphrase` on its own, so the cron and launchd fallbacks and your manual commands find it there too.
+   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/auto-identity-remove/passphrase` on its own.
 
 3. Open the settings file in a simple editor:
 
@@ -280,7 +280,7 @@ This part is the same for Parts A and B.
 ## Part D: Every month
 
 1. Connect Mullvad.
-2. Run the tool (the scheduled job from setup does this automatically on the 1st, but you can also run it yourself):
+2. Run the tool:
 
    ```
    node bin/aidr.js run
@@ -288,9 +288,7 @@ This part is the same for Parts A and B.
 
    With Docker, use `docker compose run --rm watcher` instead.
 
-   On WSL2 the scheduled job only runs if Ubuntu is running with systemd enabled and Mullvad is connected on Windows. Otherwise run it by hand.
-
-3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The scheduled job cannot do this part, so you must.
+3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The tool cannot do this part, so you must.
 4. Every few months, check you are really gone with `node bin/aidr.js verify`.
 5. See which brokers still need you:
 
@@ -316,7 +314,7 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 
 | Command | What it does | Sends |
 | --- | --- | --- |
-| `setup` | Asks for your details, writes `config.json`, installs the monthly job. | Nothing. |
+| `setup` | Asks for your details and writes `config.json`. | Nothing. |
 | `doctor` | Checks your setup. | After the network check passes: a connection to your SMTP host and one request to CapSolver. |
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
 | `run` | The real opt-out pass. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. Your SMTP server: email opt-outs, only if you kept the `email` block. |
@@ -355,7 +353,6 @@ Useful options for `run` and `preview`: `--only <broker>` and `--skip <broker>` 
 | `Playwright is not installed. Run: npm ci --ignore-scripts && npx playwright install chromium` | Run that command in the tool's folder. |
 | `misdirected request: unexpected Host header` (dashboard) | Open the address the dashboard printed (or `localhost` with the same port). |
 | `too many failed login attempts; try again later` (dashboard) | Wait up to 15 minutes, then log in with the printed login. |
-| `Refusing a schedule path containing a newline: ...` | Your home folder or install path contains a line break. Install in a normal folder. |
 | `config.json is not valid JSON` (any command) | A hand edit broke `config.json`. Open it with `nano config.json` and look for a missing comma or quote near where you last edited. The message never shows the broken line, so your details stay out of logs. |
 | `Warning: ... (serp-key) is damaged; replacing it. ...` | Harmless. Your search-scan history starts over once. |
 | `ℹ  notify settings in config.json are ignored in this fork.` | Harmless. Notifications were removed, so you can delete the `notify` block. |

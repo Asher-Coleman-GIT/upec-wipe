@@ -2,7 +2,7 @@
  * test/passphrase-sources.test.js
  *
  * The passphrase may come from AIDR_PASSPHRASE, a file named by
- * AIDR_PASSPHRASE_FILE, or a systemd credential (LoadCredential=aidr-passphrase:...).
+ * AIDR_PASSPHRASE_FILE, or the default file ~/.config/auto-identity-remove/passphrase.
  */
 
 'use strict';
@@ -36,17 +36,6 @@ test('AIDR_PASSPHRASE_FILE is read and one trailing LF or CRLF stripped', () => 
   assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('s3cret\n').f }), 's3cret');
   assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('s3cret\r\n').f }), 's3cret');
   assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('  spaced  ').f }), '  spaced  ');
-});
-
-test('systemd CREDENTIALS_DIRECTORY/aidr-passphrase is used', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cred-'));
-  fs.writeFileSync(path.join(dir, 'aidr-passphrase'), 'fromcred');
-  assert.equal(getPassphrase(undefined, { CREDENTIALS_DIRECTORY: dir }), 'fromcred');
-});
-
-test('missing credential file under CREDENTIALS_DIRECTORY yields empty', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cred-'));
-  assert.equal(getPassphrase(undefined, { CREDENTIALS_DIRECTORY: dir }), '');
 });
 
 test('nothing set yields empty string', () => {
@@ -91,9 +80,6 @@ test('default passphrase file has the lowest priority', () => {
   const home = homeWithDefault('fromdefault');
   assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE: 'env' }, home), 'env');
   assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('file').f }, home), 'file');
-  const cred = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cred-'));
-  fs.writeFileSync(path.join(cred, 'aidr-passphrase'), 'fromcred');
-  assert.equal(getPassphrase(undefined, { CREDENTIALS_DIRECTORY: cred }, home), 'fromcred');
 });
 
 test('absent default passphrase file yields empty', () => {

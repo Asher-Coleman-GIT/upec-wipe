@@ -15,7 +15,7 @@ are measured, not estimated.
 |---|---|
 | `docker build` aborted | `groupadd: GID '1001' already exists` - the Dockerfile created a user at uid/gid 1001, which the official Playwright base image already uses for `pwuser`. The image never built, for anyone. |
 | Browser could not launch | The base image was pinned to Playwright v1.52.0 (ships chromium build 1169) while `npm ci` installed the Playwright client 1.60.0 (needs build 1223). Even with the build fixed, every run died with `Executable doesn't exist at /ms-playwright/chromium-1223/...`. |
-| No state was ever saved | Every durable write is tmp-file + `rename()`. `rename()` onto a Docker **single-file** bind mount returns `EBUSY`, and the documented recipe mounted `state.json` exactly that way. Nothing persisted, so each scheduled run re-submitted every broker from scratch. |
+| No state was ever saved | Every durable write is tmp-file + `rename()`. `rename()` onto a Docker **single-file** bind mount returns `EBUSY`, and the documented recipe mounted `state.json` exactly that way. Nothing persisted, so each run re-submitted every broker from scratch. |
 
 `test/docker-build-contract.test.js` and the `docker` job in CI now build the
 image and launch a real browser on every push, so this class of failure cannot
@@ -57,7 +57,7 @@ for this.
   canvas. Real broker pages carry ad and tracker JavaScript and will run higher.
   Budget ~400 MB rather than 250 MB before you consider it tight.
 - J4125 is four slow cores. Expect a full run to take noticeably longer than on a
-  laptop. It is a monthly unattended job, so that does not matter much.
+  laptop. Start it and come back later.
 
 ## Setup on DSM 7 (Container Manager)
 
@@ -122,25 +122,21 @@ TZ=America/New_York AIDR_LOW_MEMORY=1 docker compose run --rm watcher node watch
 Always do a `--dry-run` first. It navigates and confirms the brokers are
 reachable without submitting anything.
 
-### 5. Schedule it
+### 5. Run it
 
-Do not use the in-container scheduler on a NAS - use DSM's own. Control Panel →
-Task Scheduler → Create → Scheduled Task → User-defined script, monthly on the
-1st at 09:00:
+This fork does not schedule runs. When you want a run (about once a month), SSH
+in and run:
 
 ```bash
-cd /volume1/docker/auto-identity-remove && /usr/local/bin/docker compose run --rm watcher
+cd /volume1/docker/auto-identity-remove && docker compose run --rm watcher
 ```
-
-Check the docker path with `which docker` over SSH; DSM has moved it between
-versions.
 
 ## Settings that matter on a small box
 
 | Setting | Why |
 |---|---|
 | `AIDR_LOW_MEMORY=1` | Adds `--disable-gpu`, `--no-zygote` and friends. Saved ~13 MB peak in testing - small, but it also cuts background work on slow cores. |
-| `TZ=<your zone>` | Containers are UTC. Without this a "1st of the month, 9am" schedule and every report timestamp land in the wrong hour. |
+| `TZ=<your zone>` | Containers are UTC. Without this every report timestamp lands in the wrong hour. |
 | `--init` / `init: true` | Otherwise node is PID 1, `docker stop` cannot reap the Chromium children, and the state lock is left behind - wedging the next run. |
 | `--memory=1g` | Not required (peak is ~250 MB) but it turns a runaway into a container restart instead of DSM killing something else. |
 | `shm_size` | The compose file sets 512 MB. Not strictly needed - the code passes `--disable-dev-shm-usage`, so a plain `docker run` with the default 64 MB `/dev/shm` works - but real shared memory is faster. |

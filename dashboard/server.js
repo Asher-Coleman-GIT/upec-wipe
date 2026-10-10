@@ -25,8 +25,6 @@ process.umask(0o077);
  *   GET  /api/run/stream         -> Server-Sent Events live output
  *   POST /api/run                -> { mode, only?, skip? } (modes: see MODE_ARGS)
  *   POST /api/run/stop           -> terminate current run (SIGTERM, then SIGKILL)
- *   GET  /api/schedule           -> systemd timer status (enabled/next/cadence)
- *   POST /api/schedule           -> 501 (disabled in this fork; needs root)
  *   GET  /api/auth/whoami        -> current user + credential source
  *   POST /api/auth/password      -> change login (requires current password)
  *   GET  /api/freeze             -> credit/identity freeze checklist + status
@@ -47,7 +45,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { isDeepStrictEqual } = require('util');
-const { spawn, execFile } = require('child_process');
+const { spawn } = require('child_process');
 const { validateRunRequest, modeHonorsFilters, classifyStatus, resolveEnvCreds, dashboardStartupProblems } = require('./validate');
 const { configStatus } = require('./config-status');
 const { childEnv } = require('../lib/child-env');
@@ -658,35 +656,6 @@ app.post('/api/run/stop', (_req, res) => {
   // Escalate to SIGKILL if it hasn't exited; don't leave run.running stuck.
   setTimeout(() => { try { if (child === c) c.kill('SIGKILL'); } catch (_) {} }, 8000);
   res.json({ ok: true });
-});
-
-// ---- scheduler (systemd timer aidr.timer + aidr.service) ------------------
-// NOTE: the timer activates aidr.service, which the operator must install (see
-// examples/ in this folder and the README). Requires the dashboard to run as root.
-const TIMER = 'aidr.timer';
-const sh = (cmd, args) => new Promise(resolve =>
-  execFile(cmd, args, { timeout: 8000, env: childEnv(process.env) }, (err, out, errout) => resolve({ err, out: String(out || ''), errout: String(errout || '') })));
-
-const CALENDARS = { daily: '*-*-* 03:30:00', weekly: 'Sun *-*-* 03:30:00', monthly: '*-*-01 03:30:00' };
-
-app.get('/api/schedule', async (_req, res) => {
-  const enabled = (await sh('systemctl', ['is-enabled', TIMER])).out.trim();
-  const active = (await sh('systemctl', ['is-active', TIMER])).out.trim();
-  const list = (await sh('systemctl', ['list-timers', TIMER, '--all', '--no-pager'])).out;
-  let next = null;
-  const m = list.split('\n').find(l => l.includes(TIMER));
-  if (m) { const parts = m.trim().split(/\s{2,}/); const v = parts[0]; next = (v && v !== 'n/a' && v !== '-') ? v : null; }
-  let oncalendar = null;
-  const cat = await sh('systemctl', ['cat', TIMER]);
-  const cm = cat.out.match(/OnCalendar=(.+)/);
-  if (cm) oncalendar = cm[1].trim();
-  res.json({ enabled, active, next, oncalendar, presets: Object.keys(CALENDARS) });
-});
-
-// Disabled in this fork: it wrote /etc/systemd/system, which needs the dashboard
-// to run as root. `aidr setup` installs a per-user timer instead.
-app.post('/api/schedule', (_req, res) => {
-  res.status(501).json({ error: 'Schedule editing is disabled in this fork (it needs root). Use `aidr setup` to install the per-user systemd timer.' });
 });
 
 app.get('/api/version', (_req, res) => {

@@ -277,7 +277,6 @@ $$('.tab').forEach(t => t.addEventListener('click', () => {
   $('#tab-' + t.dataset.tab).classList.remove('hidden');
   if (t.dataset.tab === 'config') loadConfig();
   if (t.dataset.tab === 'logs') loadLogs();
-  if (t.dataset.tab === 'schedule') loadSchedule();
   if (t.dataset.tab === 'admin') loadWhoami();
   if (t.dataset.tab === 'freeze') loadFreeze();
 }));
@@ -302,20 +301,6 @@ $('#savePw').addEventListener('click', async () => {
     $('#curPw').value = $('#newPw').value = $('#newPw2').value = $('#newUser').value = '';
   } else { msg.className = 'pw-msg err'; msg.textContent = '❌ ' + (r.error || 'change failed'); }
 });
-
-// ---------- schedule ----------
-async function loadSchedule() {
-  const s = await api('/schedule');
-  const pill = $('#schedEnabled');
-  pill.textContent = s.enabled || 'unknown';
-  pill.className = 'pill ' + (s.enabled === 'enabled' ? 'good' : 'warn');
-  $('#schedNext').textContent = s.next || '-';
-  $('#schedCal').textContent = s.oncalendar || '-';
-}
-const postSchedule = body => api('/schedule', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(loadSchedule);
-$('#schedEnable').addEventListener('click', () => postSchedule({ action: 'enable' }));
-$('#schedDisable').addEventListener('click', () => postSchedule({ action: 'disable' }));
-$$('[data-preset]').forEach(b => b.addEventListener('click', () => postSchedule({ action: 'preset', preset: b.dataset.preset })));
 
 // ---------- config ----------
 const getPath = (o, p) => p.split('.').reduce((a, k) => (a == null ? a : a[k]), o);

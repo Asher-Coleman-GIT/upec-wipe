@@ -6,7 +6,7 @@
 
 ![CI](https://github.com/stephenlthorn/auto-identity-remove/actions/workflows/test.yml/badge.svg)
 
-Automated data broker opt-out runner for macOS, Linux, and Windows. Removes your personal information from **500+ people-search sites and data broker databases** on a monthly schedule - with CAPTCHA solving, persistent state tracking (so completed opt-outs aren't resubmitted every run), and a local log when done. [**Privacy & data flow ->**](docs/PRIVACY.md)
+Automated data broker opt-out runner for macOS, Linux, and Windows. Removes your personal information from **500+ people-search sites and data broker databases** whenever you run it - with CAPTCHA solving, persistent state tracking (so completed opt-outs aren't resubmitted every run), and a local log when done. [**Privacy & data flow ->**](docs/PRIVACY.md)
 
 ## What it does
 
@@ -19,7 +19,7 @@ Each month, the script:
 5. **Skips** brokers you were already removed from recently (90-day re-check window)
 6. **Opens** any sites that require manual action in your browser
 
-Beyond the monthly run, it can also:
+Beyond the opt-out run, it can also:
 
 - **Score your exposure** - a single 0-100 number with a month-over-month trend (`aidr score`), built from verified removals, search-engine visibility, and breach data
 - **Close the loop** - re-verify removals (`aidr verify`), watch search engines for new listings (`aidr serp-watch`), and generate a monthly PDF report (`aidr report`)
@@ -34,7 +34,7 @@ Beyond the monthly run, it can also:
 ## Requirements
 
 - Node.js 20+
-- macOS, Linux, or Windows (scheduling adapts automatically)
+- macOS, Linux, or Windows
 - [Playwright](https://playwright.dev) browsers installed
 
 ```bash
@@ -53,7 +53,7 @@ cd auto-identity-remove
 # 2. One-command install (checks Node, installs deps + the Chromium browser)
 bash install.sh
 
-# 3. Run interactive setup (creates config.json and schedules the monthly job)
+# 3. Run interactive setup (creates config.json)
 node bin/aidr.js setup
 
 # 4. Preview what it will do - submits nothing
@@ -74,7 +74,7 @@ maps to an existing entrypoint:
 
 | Command | What it does |
 |---------|--------------|
-| `aidr setup` | Interactive first-run setup (creates `config.json`, schedules the monthly job) |
+| `aidr setup` | Interactive first-run setup (creates `config.json`) |
 | `aidr preview` | Dry-run: fills forms but submits nothing |
 | `aidr run` | Runs the opt-out pass for real |
 | `aidr verify` | Re-searches brokers and reports whether you still appear |
@@ -110,9 +110,10 @@ Every subcommand maps to the equivalent `node watcher.js --<flag>` invocation.
 | **Personal info** | Name, city, state, ZIP, email, phone |
 | **Aliases** | Past names or variations (e.g. "Steve Doe") |
 | **CapSolver key** | For CAPTCHA-protected opt-out forms |
-| **Monthly schedule** | Registers a monthly job to run on the 1st at 9am (launchd / systemd / crontab / schtasks - detected automatically) |
 
 **Your personal info never leaves your machine.** `config.json` and `state.json` are both gitignored.
+
+This fork runs only when you start it. Setup installs no scheduled job; run it yourself (about once a month is plenty).
 
 ---
 
@@ -172,8 +173,8 @@ a confusing `EISDIR`.
 **`--init` matters.** Without it node is PID 1, `docker stop` cannot reap the
 Chromium children, and the state lock is left behind, wedging the next run.
 
-**`TZ` matters.** Containers are UTC. Without it a "1st of the month, 9am"
-schedule and every report timestamp land in the wrong hour.
+**`TZ` matters.** Containers are UTC. Without it every report timestamp lands
+in the wrong hour.
 
 **Prefer mounting a directory over individual files.** `rename()` onto a Docker
 single-file bind mount fails with `EBUSY`, which is how every state write in
@@ -193,8 +194,8 @@ full 40-broker run peaks at about 250 MB either way; the flag trades some render
 fidelity for less background work on slow cores.
 
 > **Synology / NAS users:** see [docs/SYNOLOGY.md](docs/SYNOLOGY.md) for a full
-> DSM Container Manager walkthrough, measured memory numbers, DSM Task Scheduler
-> setup, and the three defects that used to make the container unusable.
+> DSM Container Manager walkthrough, measured memory numbers,
+> and the three defects that used to make the container unusable.
 
 ---
 
@@ -202,7 +203,7 @@ fidelity for less background work on slow cores.
 
 ```
 auto-identity-remove/
-├── setup.js            ← Run once: interactive setup + scheduling
+├── setup.js            ← Run once: interactive setup
 ├── watcher.js          ← Main runner
 ├── brokers.js          ← Broker list with opt-out strategies
 ├── run.sh              ← Manual trigger
@@ -399,7 +400,7 @@ A dated JSON report is saved to `logs/verify-YYYY-MM-DD.json`.
 
 ### Continuous SERP monitoring (`--serp-watch`)
 
-`node watcher.js --serp-watch` runs a search-engine scan, diffs the broker domains it finds against the previous `data/serp-history.json` snapshot, and prints new domains and records them in `data/serp-history.json` when your name appears on a NEW domain. Because the scan appends to that file, repeated runs diff against the prior run. Add `--serp-watch` to `run.sh` to have the existing monthly scheduler watch for new exposures.
+`node watcher.js --serp-watch` runs a search-engine scan, diffs the broker domains it finds against the previous `data/serp-history.json` snapshot, and prints new domains and records them in `data/serp-history.json` when your name appears on a NEW domain. Because the scan appends to that file, repeated runs diff against the prior run. Run it after each opt-out run to catch new exposures.
 
 ---
 
@@ -439,7 +440,9 @@ The script is **idempotent** - running it twice produces no change. You can add 
 
 ---
 
-## Uninstall / disable schedule
+## Removing a schedule from an older version
+
+This fork never schedules runs. If you ran setup from an earlier version and said yes to the monthly schedule, remove it:
 
 | Platform | Command |
 |----------|---------|

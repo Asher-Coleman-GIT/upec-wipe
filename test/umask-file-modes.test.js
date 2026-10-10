@@ -124,14 +124,12 @@ test('watcher --allow X keeps config.json at 0600 under umask 022', { skip: SKIP
 
 test('every logs/ and data/ mkdirSync passes mode 0o700', () => {
   const files = ['watcher.js', 'lib/audit.js', 'lib/complaint.js', 'lib/exposure.js', 'lib/imap-confirm.js',
-    'lib/serp-scan.js', 'lib/snapshot.js', 'lib/scheduler.js', 'lib/browser-session.js'];
+    'lib/serp-scan.js', 'lib/snapshot.js', 'lib/browser-session.js'];
   const offenders = [];
   for (const rel of files) {
     const lines = fs.readFileSync(path.join(ROOT, rel), 'utf8').split('\n');
     lines.forEach((line, i) => {
       if (!/mkdirSync\(/.test(line)) return;
-      // The launchd/systemd unit dirs live outside the repo and are not PII dirs.
-      if (/plistPath|unitDir/.test(line)) return;
       if (!/mode:\s*0o700/.test(line)) offenders.push(`${rel}:${i + 1}: ${line.trim()}`);
     });
   }

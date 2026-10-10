@@ -4,6 +4,9 @@ Fork of https://github.com/stephenlthorn/auto-identity-remove pinned at the comm
 `UPSTREAM_BASE`. See `docs/superpowers/specs/2026-10-07-upec-hardened-fork-design.md`
 for what changed and why.
 
+Runs are manual only. Setup installs no scheduled job, and there is no
+`--install-scheduler` or dashboard Schedule tab.
+
 ## Pulling upstream changes
 
     bash scripts/upstream-review.sh | less
@@ -35,7 +38,6 @@ Do not add `SYS_ADMIN` back. Record the outcome here once checked.
 ## Still to verify
 
 - The Docker steps above (build, `--doctor`, `--dry-run`, Chromium under `cap_drop: [ALL]`, the passphrase secret).
-- `LoadCredential=` in a systemd *user* unit on the target distro (Ubuntu 22.04/24.04): that the monthly job started by setup really receives the passphrase as `$CREDENTIALS_DIRECTORY/aidr-passphrase`.
 
 Secret file: `secrets/aidr-passphrase` must be mode 600 on the host
 (`chmod 600 secrets/aidr-passphrase`), because the tool refuses a group- or

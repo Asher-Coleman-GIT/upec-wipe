@@ -3,8 +3,7 @@
 # One-off run:        docker compose run --rm watcher
 # Preview only:       docker compose run --rm watcher node watcher.js --dry-run
 #
-# For a scheduled monthly run, use cron/systemd on the host (or DSM Task
-# Scheduler on a Synology) to invoke `docker compose run --rm watcher`.
+# Runs are manual only: this fork does not schedule them.
 # docs/SYNOLOGY.md has a worked NAS example.
 
 services:
@@ -28,9 +27,8 @@ services:
     environment:
       - NODE_ENV=production
       - AIDR_PASSPHRASE_FILE=/run/secrets/aidr-passphrase
-      # Container clocks are UTC. The scheduler and the report timestamps use
-      # local time, so set this to your zone or a "1st of the month, 9am" run
-      # lands at the wrong hour.
+      # Container clocks are UTC. Report timestamps use local time, so set
+      # this to your zone or they land at the wrong hour.
       - TZ=${TZ:-UTC}
       # Set to 1 on hosts with ~2GB RAM. See docs/SYNOLOGY.md.
       - AIDR_LOW_MEMORY=${AIDR_LOW_MEMORY:-0}

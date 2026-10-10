@@ -48,12 +48,18 @@ if (process.argv.includes('--pollute')) {
   process.exit(1);
 }
 
+// Runs are manual only in this fork. Refuse the old flag rather than let it fall
+// through to a real opt-out run.
+if (process.argv.includes('--install-scheduler')) {
+  console.error('--install-scheduler was removed: this fork runs only when you start it.');
+  process.exit(1);
+}
+
 const PREVIEW           = process.argv.includes('--preview');
 const DRY_RUN           = process.argv.includes('--dry-run') || PREVIEW; // --preview implies --dry-run
 const VERIFY            = process.argv.includes('--verify');
 const SERP_SCAN         = process.argv.includes('--serp-scan');
 const SERP_WATCH        = process.argv.includes('--serp-watch');
-const INSTALL_SCHEDULER = process.argv.includes('--install-scheduler');
 const DOCTOR            = process.argv[2] === 'doctor' || process.argv.includes('--doctor');
 
 // ── Filter flags ──────────────────────────────────────────────────────────────
@@ -325,7 +331,6 @@ if (KNOW_STATUS) {
     confirmEmails:    CONFIRM_EMAILS,
     serpScan:         SERP_SCAN,
     serpWatch:        SERP_WATCH,
-    installScheduler: INSTALL_SCHEDULER,
     encryptConfig:    ENCRYPT_CONFIG,
     decryptConfig:    DECRYPT_CONFIG,
     freeze:           FREEZE_MODE,
@@ -619,19 +624,6 @@ if (DOCTOR) {
 } else {
 
 setDryRun(DRY_RUN); // makes recordSuccess/saveState no-op-on-disk in dry-run
-
-// ── --install-scheduler: register with OS scheduler and exit ─────────────────
-if (INSTALL_SCHEDULER) {
-  const { installScheduleForPlatform } = require('./lib/scheduler');
-  const { getPlatform } = require('./lib/platform');
-  const scriptPath = path.join(__dirname, 'run.sh');
-  const logDir     = path.join(__dirname, 'logs');
-  const platform   = getPlatform();
-  const result     = installScheduleForPlatform({ platform, scriptPath, logDir });
-  console.log(`\nScheduler installed via ${result.method}:`);
-  console.log(`  ${result.detail}\n`);
-  process.exit(0);
-}
 
 const config = loadConfig();
 setEgressConfig(config);

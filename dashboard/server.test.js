@@ -231,7 +231,6 @@ test('all other routes return 401 without auth', async () => {
       '/api/config',
       '/api/state',
       '/api/run/status',
-      '/api/schedule',
       '/api/auth/whoami',
     ];
     for (const pathname of routes) {
@@ -1257,7 +1256,7 @@ test('L4: every child process the dashboard starts gets childEnv', () => {
   const src = fs.readFileSync(path.join(__dirname, 'server.js'), 'utf8');
   // Bare calls only (not re.exec(...)); each slice ends where the next call starts.
   const calls = [...src.matchAll(/(?<![.\w])(spawn|spawnSync|execFile|execFileSync|exec|execSync|fork)\(/g)];
-  assert.ok(calls.length >= 2, 'found spawn and execFile call sites');
+  assert.ok(calls.length >= 1, 'found the spawn call site');
   calls.forEach((m, i) => {
     const end = i + 1 < calls.length ? calls[i + 1].index : src.length;
     const call = src.slice(m.index, Math.min(end, m.index + 400));

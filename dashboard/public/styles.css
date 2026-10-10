@@ -113,8 +113,6 @@ legend { color: var(--accent); font-weight: 700; padding: 0 6px; font-size: 13px
 .admin-form input { width: 100%; }
 .pw-msg { font-size: 13px; margin-top: 10px; }
 .pw-msg.ok { color: #7ee787; } .pw-msg.err { color: #ff7b72; }
-.sched-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 14px 0; font-size: 14px; }
-.sched-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 code { background: var(--panel2); padding: 1px 6px; border-radius: 5px; font-family: var(--mono); font-size: 12px; }
 .foot { text-align: center; color: var(--dim); font-size: 11.5px; padding: 8px 0 16px; }
 
@@ -140,7 +138,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 @media (max-width: 600px) {
   /* Touch-friendly controls */
   .btn { padding: 10px 14px; min-height: 42px; flex: 1 1 auto; }
-  .run-controls, .sched-actions { gap: 6px; }
+  .run-controls { gap: 6px; }
   .adv-label { width: 100%; margin: 4px 0 0; }
   /* Broker table: keep Broker / Status / action; drop Method, Pri, Scope, Last action */
   .grid th:nth-child(2), .grid td:nth-child(2),
