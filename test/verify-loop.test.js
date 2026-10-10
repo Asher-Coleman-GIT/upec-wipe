@@ -21,17 +21,16 @@
 const { test, beforeEach, afterEach } = require('node:test');
 const assert = require('node:assert/strict');
 
-// ── Silence console/stdout during tests ────────────────────────────────────────
-let origLog, origWrite;
+// ── Silence console during tests ───────────────────────────────────────────────
+// Not process.stdout.write: under node --test that carries this file's results
+// to the runner, and patching it can hide them.
+let origLog;
 beforeEach(() => {
-  origLog   = console.log;
-  origWrite = process.stdout.write.bind(process.stdout);
+  origLog = console.log;
   console.log = () => {};
-  process.stdout.write = () => true;
 });
 afterEach(() => {
   console.log = origLog;
-  process.stdout.write = origWrite;
 });
 
 // ── Helpers ───────────────────────────────────────────────────────────────────

@@ -16,23 +16,25 @@
  */
 
 'use strict';
+// runSerpScan waits 5-15 s between engines (jitterSleep); the repo's speed
+// switch turns that off. Must be set before lib/timing is first required.
+process.env.TURBO = '1';
 // L14: keep the hash key out of the repo's data/ dir during tests.
 process.env.AIDR_SERP_KEY_PATH = require('node:path').join(require('node:fs').mkdtempSync(require('node:path').join(require('node:os').tmpdir(), 'serpkey-env-')), '.serp-key');
 
 const { test, beforeEach, afterEach } = require('node:test');
 const assert = require('node:assert/strict');
 
-// Silence console during tests
-let origLog, origWrite;
+// Silence the module's console output during tests. Not process.stdout.write:
+// under node --test that is how this file reports results to the runner, so
+// patching it hid 53 of the 57 results.
+let origLog;
 beforeEach(() => {
-  origLog   = console.log;
-  origWrite = process.stdout.write.bind(process.stdout);
+  origLog = console.log;
   console.log = () => {};
-  process.stdout.write = () => true;
 });
 afterEach(() => {
   console.log = origLog;
-  process.stdout.write = origWrite;
 });
 
 const {
