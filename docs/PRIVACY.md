@@ -17,7 +17,7 @@ Everything comes from your local `config.json` (or `config.json.enc` if you encr
 | --- | --- | --- |
 | `person.firstName`, `lastName`, `fullName` | Search URLs and opt-out forms | Brokers. Search engines on `serp`. SMTP provider and email brokers if you keep the `email` block. |
 | `person.city`, `state`, `zip`, `country` | Forms and search URLs | Brokers. City and state go to search engines on `serp`. |
-| `person.email` | Your real address. Never given to brokers when a relay is set, except: with `person.removeRealEmail: true` (a setup question, off by default) the emailed opt-outs (Spokeo, Pipl) also name it, so records filed under it can be found. The alias is still the sender and reply address, and web forms never get it. | SimpleLogin (as the inbox the alias forwards to). HIBP on `aidr breach`. |
+| `person.email` | Your real address. Never given to brokers when a relay is set. | SimpleLogin (as the inbox the alias forwards to). HIBP on `aidr breach`. |
 | `person.phone`, `phoneFormatted` | Email opt-outs only. No broker form gets your phone. | Your SMTP provider and the email brokers, only if you keep the `email` block. |
 | `person.aliases` | Asked for by setup, but nothing uses it today. | Nobody. |
 | `person.dob` | Optional (setup). Only forms that require it: PrivateRecords today. Left blank, PrivateRecords goes to your manual list. Never written to run logs. | PrivateRecords |

@@ -1,9 +1,9 @@
 /**
- * test/dob-real-email.test.js
+ * test/dob.test.js
  *
- * 2026-10-11: optional date of birth (used only where a form requires it) and
- * an opt-in line asking email opt-out brokers to also delete records under the
- * member's real email. The alias stays the sender/reply address.
+ * 2026-10-11: optional date of birth, used only where a form requires it.
+ * The real-email opt-in built alongside it was withdrawn the same day (it only
+ * reached Spokeo and Pipl): emailed opt-outs carry the alias alone.
  */
 'use strict';
 const { test } = require('node:test');
@@ -20,22 +20,20 @@ test('parseDob accepts YYYY-MM-DD and rejects anything else', () => {
   for (const bad of ['', '04/07/1990', '1990-13-01', '1990-02-30', '2999-01-01', 'abc']) assert.equal(parseDob(bad), null, bad);
 });
 
-test('setup stores the date of birth and the real-email choice', () => {
-  const out = buildConfig({}, { ...BASE, dob: '1990-04-07', removeRealEmail: true });
+test('setup stores the date of birth', () => {
+  const out = buildConfig({}, { ...BASE, dob: '1990-04-07' });
   assert.equal(out.person.dob, '1990-04-07');
-  assert.equal(out.person.removeRealEmail, true);
 });
 
-test('a blank date of birth is not stored, and the real-email choice defaults off', () => {
+test('a blank date of birth is not stored', () => {
   const out = buildConfig({}, { ...BASE, dob: '' });
   assert.equal('dob' in out.person, false);
-  assert.equal(out.person.removeRealEmail, false);
 });
 
-test('setup asks both questions', () => {
+test('setup asks for the date of birth and has no real-email opt-in', () => {
   const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'setup.js'), 'utf8');
   assert.match(src, /Date of birth/);
-  assert.match(src, /real email/i);
+  assert.doesNotMatch(src, /removeRealEmail/);
 });
 
 const P = { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', city: 'Austin', state: 'TX', zip: '73301', email: 'jane.doe@example.com', country: 'US' };
@@ -81,14 +79,8 @@ async function send(person) {
   return calls[0];
 }
 
-test('opted in: the email asks to also delete records under the real email; alias stays the reply address', async () => {
+test('the real email never appears in an emailed opt-out, even with the old removeRealEmail flag set', async () => {
   const mail = await send({ ...P, fullName: 'Jane Doe', removeRealEmail: true });
-  assert.match(mail.text, /also delete any records associated with jane\.doe@example\.com/);
-  assert.ok(mail.text.includes(`Email: ${ALIAS}`));
-  assert.equal(mail.replyTo, ALIAS);
-});
-
-test('not opted in: the real email never appears', async () => {
-  const mail = await send({ ...P, fullName: 'Jane Doe' });
   assert.ok(!mail.text.includes('jane.doe@example.com'));
+  assert.equal(mail.replyTo, ALIAS);
 });

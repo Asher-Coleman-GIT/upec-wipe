@@ -202,7 +202,6 @@ function buildConfig(existing, a) {
       phone: a.phone,
       phoneFormatted: a.phoneFormatted,
       ...(a.dob ? { dob: a.dob } : {}),
-      removeRealEmail: a.removeRealEmail !== undefined ? !!a.removeRealEmail : !!(prev.person && prev.person.removeRealEmail),
     },
     capsolver: { ...(prev.capsolver || {}), apiKey: a.capsolverKey || 'CAP-YOUR_KEY_HERE' },
     profileDir: a.profileDir,
@@ -254,9 +253,6 @@ async function main() {
   const phoneFormatted = formatPhone(phone, country);
   let dob = await ask('Date of birth (YYYY-MM-DD, optional; only used where a site\'s form requires it)', p.dob || '');
   while (dob && !parseDob(dob)) dob = await ask('  That is not a valid date. Use YYYY-MM-DD, or leave blank', '');
-  console.log('\nEmail opt-outs (Spokeo, Pipl) go out from your alias. They cannot match');
-  console.log('records filed under your real email unless the request names it.');
-  const removeRealEmail = /^y(es)?$/i.test(await ask('Also ask them to delete records under your real email? (y/n)', p.removeRealEmail ? 'y' : 'n'));
 
   // ── CapSolver ────────────────────────────────────────────────────────────
   console.log('\n── CAPTCHA Solving ────────────────────────────────────────');
@@ -281,7 +277,7 @@ async function main() {
   // ── Build config ─────────────────────────────────────────────────────────
   const config = buildConfig(existing, {
     firstName, lastName, aliases, city, country, state, zip, email, phone,
-    phoneFormatted, dob, removeRealEmail, capsolverKey, simpleloginKey, profileDir,
+    phoneFormatted, dob, capsolverKey, simpleloginKey, profileDir,
   });
 
   // 0600: config.json holds the legal name, home address, phone, DOB, the SMTP
