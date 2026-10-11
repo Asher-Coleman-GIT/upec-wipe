@@ -196,3 +196,25 @@ test('seeded placeholder relay key fails closed with a clear reason, no API call
   assert.match(plan.blocked[0].reason, /relay\.apiKey is still the placeholder/);
   assert.ok(!plan.blocked[0].reason.includes('real@example.com'));
 });
+
+// Setup asks for the SimpleLogin key, so members no longer have to hand-edit
+// config.json (or, worse, paste the key into setup.js) to get past the placeholder.
+test('buildConfig writes the SimpleLogin key answered in setup', () => {
+  const { buildConfig } = require('../setup');
+  const out = buildConfig({}, { ...SETUP_ANSWERS, simpleloginKey: 'sl-key' });
+  assert.deepEqual(out.relay, { provider: 'simplelogin', apiKey: 'sl-key', required: true });
+});
+
+test('a SimpleLogin key answered in setup replaces the placeholder but keeps other relay settings', () => {
+  const { buildConfig } = require('../setup');
+  const existing = { relay: { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: false } };
+  const out = buildConfig(existing, { ...SETUP_ANSWERS, simpleloginKey: 'sl-key' });
+  assert.deepEqual(out.relay, { provider: 'simplelogin', apiKey: 'sl-key', required: false });
+});
+
+test('a blank SimpleLogin answer keeps the existing key', () => {
+  const { buildConfig } = require('../setup');
+  const existing = { relay: { provider: 'simplelogin', apiKey: 'REAL', required: true } };
+  const out = buildConfig(existing, { ...SETUP_ANSWERS, simpleloginKey: '' });
+  assert.deepEqual(out.relay, existing.relay);
+});

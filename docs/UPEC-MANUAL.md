@@ -170,7 +170,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js setup
    ```
 
-   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/auto-identity-remove/passphrase` on its own.
+   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, then your CapSolver key (leave it blank to skip), then your SimpleLogin API key, then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/auto-identity-remove/passphrase` on its own.
 
 3. Open the settings file in a simple editor:
 
@@ -180,7 +180,7 @@ This part is the same for Parts A and B.
 
    Move with the arrow keys. To save, press Ctrl+O then Enter. To leave, press Ctrl+X. Set these three things exactly.
 
-   The relay (your SimpleLogin key). Setup already wrote this block with the placeholder `YOUR_SIMPLELOGIN_API_KEY`; replace it with your key. `"required": true` means nothing is submitted for you without a working alias:
+   The relay (your SimpleLogin key). Setup already wrote this block with the key you gave it. If you left the key blank, it holds the placeholder `YOUR_SIMPLELOGIN_API_KEY`; replace it with your key (or re-run setup). `"required": true` means nothing is submitted for you without a working alias:
 
    ```
    "relay": { "provider": "simplelogin", "apiKey": "<your key>", "required": true }

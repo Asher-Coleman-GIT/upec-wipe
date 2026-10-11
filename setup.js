@@ -19,6 +19,7 @@ const os      = require('os');
 const readline = require('readline');
 
 const { encryptConfigToDisk, getPassphrase } = require('./lib/config');
+const { relayConfigured } = require('./lib/relay');
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 const CONFIG_ENC_PATH = path.join(__dirname, 'config.json.enc');
@@ -175,6 +176,13 @@ module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingC
  */
 function buildConfig(existing, a) {
   const prev = existing || {};
+  // Fork defaults (fail closed): seeded only when absent, never overriding
+  // what the member already has. The placeholder key blocks every person
+  // until a real SimpleLogin key is given. A key answered in setup replaces
+  // only apiKey; a blank answer keeps whatever is there.
+  const seededRelay = { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: true };
+  const baseRelay = prev.relay !== undefined ? prev.relay : seededRelay;
+  const relay = a.simpleloginKey ? { ...seededRelay, ...baseRelay, apiKey: a.simpleloginKey } : baseRelay;
   return {
     ...prev,
     person: {
@@ -193,10 +201,7 @@ function buildConfig(existing, a) {
     },
     capsolver: { ...(prev.capsolver || {}), apiKey: a.capsolverKey || 'CAP-YOUR_KEY_HERE' },
     profileDir: a.profileDir,
-    // Fork defaults (fail closed): seeded only when absent, never overriding
-    // what the member already has. The placeholder key blocks every person
-    // until a real SimpleLogin key is pasted in.
-    relay: prev.relay !== undefined ? prev.relay : { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: true },
+    relay,
     network: prev.network !== undefined ? prev.network : { required: true, proxy: '' },
   };
 }
@@ -251,6 +256,14 @@ async function main() {
   console.log('Leave blank to skip (those sites go to your manual list instead).\n');
   const capsolverKey = await ask('CapSolver API key', (existing.capsolver||{}).apiKey || '');
 
+  // ── SimpleLogin ──────────────────────────────────────────────────────────
+  console.log('\n── Email Alias (SimpleLogin) ──────────────────────────────');
+  console.log('Brokers get a SimpleLogin alias instead of your real email.');
+  console.log('Get a key at https://app.simplelogin.io/dashboard/api_key');
+  console.log('Nothing is submitted for you until a key is set.\n');
+  const hasRelayKey = relayConfigured(existing);
+  const simpleloginKey = await ask(hasRelayKey ? 'SimpleLogin API key (Enter keeps the current one)' : 'SimpleLogin API key');
+
   // ── Profile dir ──────────────────────────────────────────────────────────
   const defaultProfileDir = path.join(os.homedir(), '.config', 'auto-identity-remove');
   const profileDir = await ask('Browser profile directory', existing.profileDir || defaultProfileDir);
@@ -258,7 +271,7 @@ async function main() {
   // ── Build config ─────────────────────────────────────────────────────────
   const config = buildConfig(existing, {
     firstName, lastName, aliases, city, country, state, zip, email, phone,
-    phoneFormatted, capsolverKey, profileDir,
+    phoneFormatted, capsolverKey, simpleloginKey, profileDir,
   });
 
   // 0600: config.json holds the legal name, home address, phone, DOB, the SMTP

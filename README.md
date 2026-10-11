@@ -110,6 +110,7 @@ Every subcommand maps to the equivalent `node watcher.js --<flag>` invocation.
 | **Personal info** | Name, city, state, ZIP, email, phone |
 | **Aliases** | Past names or variations (e.g. "Steve Doe") |
 | **CapSolver key** | For CAPTCHA-protected opt-out forms |
+| **SimpleLogin key** | Brokers get an alias instead of your real email; nothing is submitted until it is set |
 
 **Your personal info never leaves your machine.** `config.json` and `state.json` are both gitignored.
 
