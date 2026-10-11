@@ -29,7 +29,7 @@ test('L11: logResult persists the redacted detail but prints the full one', () =
   try { logger.logResult('B', 'preview', 'input[first]="Jane"', 'values not persisted'); }
   finally { console.log = orig; }
   assert.match(printed[0], /Jane/);
-  assert.equal(logger.results.skipped[0].detail, 'values not persisted');
+  assert.equal(logger.results.previewed[0].detail, 'values not persisted');
   logger.resetResults();
 });
 
