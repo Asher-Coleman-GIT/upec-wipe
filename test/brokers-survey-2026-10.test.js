@@ -42,7 +42,7 @@ const REPAIRED = {
   PeopleSearchNow: ['#subject-firstname', '#subject-lastname', '#subject-email'],
   SearchPeopleFree: ['#o_first', '#o_last', '#o_email'],
   SocialCatfish: ['#first-name', '#last-name', '#email'],
-  PrivateRecords: ['#oo-email'],
+  PrivateRecords: ['#contact-email'],
 };
 
 for (const n of REMOVED) test(`${n} is removed`, () => assert.equal(brokers.find(b => b.name === n), undefined));

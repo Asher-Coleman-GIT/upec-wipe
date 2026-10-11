@@ -34,22 +34,22 @@
 | Spokeo | search-form | no | surveyed 2026-10 | yes |
 | WhitePages | search-form | no | untested | yes |
 | FastPeopleSearch | search-form | yes | surveyed 2026-10 | yes |
-| TruePeopleSearch | direct-form | no | untested | yes |
-| BeenVerified | search-form | yes | untested | yes |
+| TruePeopleSearch | direct-form | no | surveyed 2026-10-11 (assisted) | yes |
+| BeenVerified | manual | - | surveyed 2026-10-11 (you pick your record) | yes |
 | PeopleConnect Suppression Center | manual | n/a | manual | yes |
 | PeopleFinders | direct-form | no | untested | no |
-| MyLife | search-form | yes | untested | no |
-| FamilyTreeNow | direct-form | yes | untested | no |
+| MyLife | search-form | yes | opt-out page moved to /privacyrequest 2026-10-11 | no |
+| FamilyTreeNow | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
 | CheckPeople | direct-form | no | untested | no |
 | ThatsThem | direct-form | no | untested | no |
 | USPhonebook | direct-form | yes | surveyed 2026-10 | yes |
-| SmartBackgroundChecks | direct-form | no | untested | no |
+| SmartBackgroundChecks | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
 | SearchPeopleFree | direct-form | yes | surveyed 2026-10 | no |
 | PeopleSearchNow | direct-form | yes | surveyed 2026-10 | no |
 | InfoTracer | manual | n/a | manual | no |
 | SocialCatfish | direct-form | yes | surveyed 2026-10 | no |
-| NationalPublicData | direct-form | no | untested | no |
-| PrivateRecords | direct-form | no | surveyed 2026-10 | no |
+| NationalPublicData | manual | - | surveyed 2026-10-11 (needs your profile link) | no |
+| PrivateRecords | direct-form | no | surveyed 2026-10-11 (also asks for date of birth) | no |
 | Acxiom | manual | n/a | manual | no |
 | LexisNexis | manual | n/a | manual | no |
 | ZoomInfo | manual | n/a | manual | no |
@@ -58,12 +58,12 @@
 | Spokeo (email) | email | n/a | untested | no |
 | Epsilon | manual | n/a | manual | no |
 | OptOutPrescreen (credit bureaus) | manual | n/a | manual | yes |
-| DataAxle | direct-form | no | surveyed 2026-10 | no |
+| DataAxle | manual | - | surveyed 2026-10-11 (old box was a newsletter signup) | no |
 | Pipl | email | n/a | untested | no |
 | Google - Results About You | manual | n/a | manual | no |
 | Google - Outdated Content | manual | n/a | manual | no |
 
-Sites that show a bot-protection page (Cloudflare and similar) are reported as **manual** with their link at run time, whatever this table says. In the 2026-10 survey that was WhitePages, TruePeopleSearch, BeenVerified, PeopleFinders, MyLife, FamilyTreeNow, CheckPeople, ThatsThem, SmartBackgroundChecks and NationalPublicData. Re-check any broker with `node scripts/inspect-broker-forms.js <name>` (read-only, dummy person).
+Sites that show a bot-protection page (Cloudflare and similar) are reported as **manual** with their link at run time, whatever this table says. In the 2026-10 survey that was WhitePages, TruePeopleSearch, BeenVerified, PeopleFinders, MyLife, FamilyTreeNow, CheckPeople, ThatsThem, SmartBackgroundChecks and NationalPublicData. Re-check any broker with `node scripts/inspect-broker-forms.js <name>` (read-only, dummy person). With `ASSIST=1` the window is visible and you complete each bot check yourself; the 2026-10-11 assisted survey got past every check except WhitePages, CheckPeople, PeopleSearchNow and ThatsThem.
 
 ### Removed in the 2026-10 survey
 

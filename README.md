@@ -279,7 +279,7 @@ If you want to know exactly which brokers are hand-verified vs heuristic, see [S
 | WhitePages | Search → find listing → suppression form |
 | FastPeopleSearch | Search → opt-out form |
 | TruePeopleSearch | Direct opt-out form |
-| BeenVerified | Opt-out search form |
+| BeenVerified | Manual (pick your own record) |
 | Radaris | Search → privacy form |
 | Intelius | Direct opt-out form |
 | PeopleFinders | Direct opt-out form |
@@ -296,7 +296,7 @@ If you want to know exactly which brokers are hand-verified vs heuristic, see [S
 | PeopleSearchNow | Direct opt-out form |
 | InfoTracer | Direct opt-out form |
 | SocialCatfish | Direct opt-out form |
-| NationalPublicData | Direct opt-out form |
+| NationalPublicData | Manual (needs your profile link) |
 | ClustrMaps | Direct opt-out form |
 | PrivateRecords | Direct opt-out form |
 | **Acxiom** | Direct form (feeds dozens of downstream brokers) |

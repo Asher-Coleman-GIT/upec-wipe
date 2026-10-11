@@ -89,3 +89,38 @@ test('a label match on a checkbox is never typed into or counted as text', async
   const r = await fillForm(failingPage({ label: { tag: 'input', type: 'checkbox' } }), { 'input[name*="email" i]': 'jane@example.com' });
   assert.equal(r.filled.filter(f => f.kind === 'text').length, 0);
 });
+
+// PrivateRecords 2026-10-11: ticking "Remove My Information" reveals the
+// name/city/zip fields a moment later.
+function revealingPage() {
+  let revealed = false;
+  const waits = [];
+  const locator = (sel) => {
+    const visible = () => sel === '#r-removal' || revealed;
+    const self = {
+      first: () => self,
+      count: async () => 1,
+      isVisible: async () => visible(),
+      waitFor: async ({ state, timeout }) => { waits.push({ sel, state, timeout }); revealed = true; },
+      evaluate: async (fn) => fn({ tagName: 'INPUT', type: sel === '#r-removal' ? 'radio' : 'text' }),
+      fill: async () => {}, selectOption: async () => {}, check: async () => {},
+    };
+    return self;
+  };
+  return { waits, page: { locator, getByLabel: () => ({ count: async () => 0 }), evaluate: async () => null, $$: async () => [] } };
+}
+
+test('after ticking a box, waits briefly for the fields it reveals', async () => {
+  const { page, waits } = revealingPage();
+  const r = await fillForm(page, { '#r-removal': 'on', '#first': 'Jane' });
+  assert.deepEqual(r.filled.map(f => f.selector), ['#r-removal', '#first']);
+  assert.equal(waits[0].sel, '#first');
+  assert.ok(waits[0].timeout <= 2000);
+});
+
+test('without a ticked box first, a hidden field is not waited for', async () => {
+  const { page, waits } = revealingPage();
+  const r = await fillForm(page, { '#first': 'Jane' });
+  assert.deepEqual(r.missed, ['#first']);
+  assert.equal(waits.length, 0);
+});

@@ -40,9 +40,18 @@ function dumpFrame() {
     if (!t && el.closest('label')) t = el.closest('label').innerText;
     return (t || '').trim().slice(0, 60);
   };
+  const forms = [...document.forms];
+  // Nearest heading above the control's form, to tell two forms on one page apart.
+  const heading = el => {
+    const root = el.closest('form') || el;
+    const hs = [...document.querySelectorAll('h1,h2,h3,h4,legend')].filter(h => h.compareDocumentPosition(root) & Node.DOCUMENT_POSITION_FOLLOWING);
+    return hs.length ? hs[hs.length - 1].innerText.trim().slice(0, 60) : '';
+  };
   const controls = [...document.querySelectorAll('input,select,textarea')].filter(el => el.type !== 'hidden' && vis(el)).map(el => ({
     tag: el.tagName.toLowerCase(), type: el.type, name: el.name, id: el.id,
     placeholder: el.placeholder || '', aria: el.getAttribute('aria-label') || '', label: label(el),
+    form: forms.indexOf(el.form), heading: heading(el),
+    options: el.tagName === 'SELECT' ? [...el.options].slice(0, 8).map(o => `${o.value}=${o.text.trim().slice(0, 20)}`) : undefined,
   }));
   const buttons = [...document.querySelectorAll('button,input[type=submit]')].filter(vis)
     .map(b => ({ text: (b.innerText || b.value || '').trim().slice(0, 40), id: b.id, inForm: !!b.closest('form') })).slice(0, 25);
@@ -62,7 +71,10 @@ function dumpFrame() {
   const browser = await chromium.launch(buildLaunchOptions({ headless: process.env.HEADED !== '1' && !ASSIST }));
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'en-US' });
   await ctx.addInitScript(buildStealthScript()).catch(() => {});
-  const targets = brokers.filter(b => b.method !== 'manual' && b.method !== 'email' && (!only.length || only.includes(b.name)));
+  // Arguments are broker names, or page URLs to survey as they are.
+  const urls = only.filter(a => /^https?:\/\//i.test(a)).map(u => ({ name: new URL(u).hostname + new URL(u).pathname, optOutUrl: u }));
+  const names = only.filter(a => !/^https?:\/\//i.test(a));
+  const targets = [...brokers.filter(b => b.method !== 'manual' && b.method !== 'email' && (only.length ? names.includes(b.name) : true)), ...urls];
   for (const b of targets) {
     const page = await ctx.newPage();
     const out = { name: b.name, url: b.optOutUrl, formFields: Object.keys(b.formFields || {}), at: new Date().toISOString() };
@@ -84,7 +96,7 @@ function dumpFrame() {
         if (d && d.controls.length) out.frames.push({ url: f.url(), ...d });
       }
       out.blocked = detectBlockPage({ status: out.status, title: out.title, text: out.main.text });
-      out.main.text = out.main.text.slice(0, 600);
+      out.main.text = out.main.text.slice(0, 1500);
     } catch (e) {
       out.error = String(e.message).split('\n')[0];
     }

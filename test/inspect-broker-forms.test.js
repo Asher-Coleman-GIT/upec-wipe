@@ -22,3 +22,11 @@ test('ASSIST=1 lets the member clear a bot check before the page is recorded', (
 test('the survey records opt-out links, so a "click here first" step can be found', () => {
   assert.match(src, /const links = \[\.\.\.document\.querySelectorAll\(.a.\)\]/);
 });
+test('the survey records each control\'s form and heading, and dropdown options', () => {
+  assert.match(src, /form: /);
+  assert.match(src, /heading: /);
+  assert.match(src, /options: /);
+});
+test('the survey takes a page URL as well as a broker name', () => {
+  assert.match(src, /\/\^https\?:\\\/\\\/\/i?\.test\(/);
+});

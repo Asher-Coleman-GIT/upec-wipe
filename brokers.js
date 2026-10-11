@@ -154,8 +154,10 @@ function buildBrokers(person) {
     name: 'TruePeopleSearch',
     method: 'direct-form',
     optOutUrl: 'https://www.truepeoplesearch.com/removal',
-    formFields: { 'input[name*="name"],input[placeholder*="name" i]': N, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
+    // Surveyed 2026-10-11. The page header has its own name search box, so
+    // broad name selectors typed into that instead of the opt-out form.
+    formFields: { '#FirstName': F, '#LastName': L, '#Email': E, '#AuthorizeContact': 'on' },
+    submitSelector: 'button:has-text("Send Request")',
     captchaLikely: false,
     priority: 1,
     usOnly: true,
@@ -164,16 +166,11 @@ function buildBrokers(person) {
 
   {
     name: 'BeenVerified',
-    method: 'search-form',
-    searchUrl: 'https://www.beenverified.com/app/optout/search',
-    listingPattern: /beenverified\.com/i,
+    method: 'manual',
     optOutUrl: 'https://www.beenverified.com/app/optout/search',
-    formFields: { 'input[name="firstName"]': F, 'input[name="lastName"]': L, 'select[name="state"]': ST },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: true,
     priority: 1,
     usOnly: true,
-    expectedSender: 'noreply@beenverified.com',
+    notes: 'Search your name and state at https://www.beenverified.com/app/optout/search, pick your own record from the results, then confirm with your alias email. The record has to be chosen by you.',
   },
 
   {
@@ -201,7 +198,7 @@ function buildBrokers(person) {
     method: 'search-form',
     searchUrl: `https://www.mylife.com/find-people/results.pubview?searchtype=PEOPLE&firstname=${enc(F)}&lastname=${enc(L)}&state=${ST}`,
     listingPattern: /mylife\.com\/[^/]+\/[^/]+-\d+\.html/i,
-    optOutUrl: 'https://www.mylife.com/privacy-policy/',
+    optOutUrl: 'https://www.mylife.com/privacyrequest',
     formFields: { 'input[type="email"]': E },
     submitSelector: 'button[type="submit"]',
     captchaLikely: true,
@@ -213,8 +210,8 @@ function buildBrokers(person) {
     name: 'FamilyTreeNow',
     method: 'direct-form',
     optOutUrl: 'https://www.familytreenow.com/optout',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
+    formFields: { '#FirstName': F, '#LastName': L, '#Email': E, '#AuthorizeContact': 'on' },
+    submitSelector: 'button:has-text("Begin Privacy Request")',
     captchaLikely: true,
     priority: 1,
     expectedSender: 'noreply@familytreenow.com',
@@ -259,10 +256,10 @@ function buildBrokers(person) {
   {
     name: 'SmartBackgroundChecks',
     method: 'direct-form',
-    optOutUrl: 'https://www.smartbackgroundchecks.com/optout',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'select[name*="state" i]': ST },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    optOutUrl: 'https://www.smartbackgroundchecks.com/remove',
+    formFields: { '#subject_fn': F, '#subject_ln': L, '#subject_email': E, '#confirm_authorize': 'on' },
+    submitSelector: 'form button:has-text("Submit")',
+    captchaLikely: true,
     priority: 2,
   },
 
@@ -304,7 +301,7 @@ function buildBrokers(person) {
     name: 'SocialCatfish',
     method: 'direct-form',
     optOutUrl: 'https://socialcatfish.com/opt-out/?id=request_optout',
-    formFields: { '#first-name': F, '#last-name': L, '#email': E },
+    formFields: { '#ccpa_state': ST, '#first-name': F, '#last-name': L, '#email': E },
     submitSelector: 'button:has-text("Submit Now")',
     captchaLikely: true,
     priority: 2,
@@ -312,20 +309,20 @@ function buildBrokers(person) {
 
   {
     name: 'NationalPublicData',
-    method: 'direct-form',
+    method: 'manual',
     optOutUrl: 'https://nationalpublicdata.com/optout.html',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
     priority: 2,
+    notes: 'Search for yourself on the site, copy your profile link, and paste it into "Your Profile Link" at https://nationalpublicdata.com/optout.html',
   },
 
   {
     name: 'PrivateRecords',
     method: 'direct-form',
     optOutUrl: 'https://www.privaterecords.net/api/helper/optOutLight/search',
-    formFields: { '#r-removal': 'on', '#oo-email': E },
-    submitSelector: 'button[type="submit"]',
+    // The form also asks for a date of birth, which the tool does not hold;
+    // without it the site refuses the request and it shows up as not submitted.
+    formFields: { '#r-removal': 'on', '#first': F, '#last': L, '#city': C, '#zip': Z, '#state': ST, '#contact-email': E },
+    submitSelector: '#submit-btn',
     captchaLikely: false,
     priority: 2,
   },
@@ -401,12 +398,10 @@ function buildBrokers(person) {
 
   {
     name: 'DataAxle',
-    method: 'direct-form',
-    optOutUrl: 'https://www.data-axle.com/privacy-policy/#optout',
-    formFields: { 'form input[name="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://www.data-axle.com/privacy-rights-request/',
     priority: 2,
+    notes: 'Use the Consumer Privacy Rights Request form: https://www.data-axle.com/privacy-rights-request/ (the email box on their privacy page is a newsletter signup, not an opt-out).',
   },
 
   // ═══ Email-based opt-outs ═════════════════════════════════════════════════
