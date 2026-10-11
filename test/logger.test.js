@@ -68,7 +68,7 @@ test('buildSummary includes expected counts and action-required block', () => {
 
   const s = logger.buildSummary();
   assert.match(s, /✅ Submitted \(form accepted\):\s+2/);
-  assert.match(s, /⏭  Skipped \(fresh\):\s+1/);
+  assert.match(s, /⏭  Skipped \(done recently\):\s+1/);
   assert.match(s, /🔍 Not listed:\s+1/);
   assert.match(s, /📋 Manual needed:\s+2/); // captchaFailed + manual
   assert.match(s, /❌ Errors:\s+1/);
@@ -344,4 +344,24 @@ test('buildSummary with no state set omits drift section (backward-compat)', () 
   logger.setStateForSummary(null);
   const s = logger.buildSummary();
   assert.equal(s.includes('Drift detected'), false);
+});
+test('previews have their own bucket and summary line', () => {
+  logger.resetResults();
+  logger.logResult('A', 'preview', 'x');
+  logger.logResult('B', 'skipped', 'done 3 days ago');
+  assert.equal(logger.results.previewed.length, 1);
+  assert.equal(logger.results.skipped.length, 1);
+  const s = logger.buildSummary();
+  assert.match(s, /Previewed \(not submitted\):\s+1/);
+  assert.match(s, /Skipped \(done recently\):\s+1/);
+  assert.doesNotMatch(s, /Skipped \(fresh\)/);
+});
+test('no preview line on a real run', () => {
+  logger.resetResults();
+  assert.doesNotMatch(logger.buildSummary(), /Previewed/);
+});
+test('no generic line when the generic pass did not run', () => {
+  logger.resetResults();
+  logger.results.genericStats = {};
+  assert.doesNotMatch(logger.buildSummary(), /Generic runner/);
 });

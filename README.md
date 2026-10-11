@@ -238,7 +238,8 @@ auto-identity-remove/
 On each run you'll see:
 - `✅ Submitted (form accepted)` - opt-out form was submitted this run
 - `📧 Awaiting email confirm` - broker replied "check your email to confirm"; click the link in your inbox. Auto-retried after 14 days if still pending.
-- `⏭  Skipped (fresh)` - removed recently, re-check not due yet
+- `⏭  Skipped (done recently)` - removed recently, re-check not due yet
+- `👀 Previewed (not submitted)` - a preview filled the form but sent nothing (preview only)
 - `🔍 Not listed` - your name wasn't found on that site
 - `📋 Manual needed` - opened in your browser for you to handle
 - `❌ Error` - network/timeout issue, will retry next run
