@@ -53,3 +53,20 @@ test('a blocked opt-out page is manual with the link', async () => {
   assert.equal(logged[0].status, 'manual');
   assert.match(logged[0].detail, /https:\/\/d\.example\/optout/);
 });
+
+test('a challenge page served with HTTP 503 is manual with the link, not an error', async () => {
+  logged.length = 0; blockedReason = 'blocked by bot protection';
+  configure({ dryRun: true, preview: false, person: { country: 'US' } });
+  const ctx503 = { newPage: async () => ({ goto: async () => ({ status: () => 503 }), close: async () => {}, locator: () => ({ first: () => ({ count: async () => 0 }) }) }) };
+  await processBroker(ctx503, DIRECT);
+  assert.equal(logged[0].status, 'manual');
+  assert.match(logged[0].detail, /https:\/\/d\.example\/optout/);
+});
+
+test('a plain 503 that is not a challenge page is still an error', async () => {
+  logged.length = 0; blockedReason = null;
+  configure({ dryRun: true, preview: false, person: { country: 'US' } });
+  const ctx503 = { newPage: async () => ({ goto: async () => ({ status: () => 503 }), close: async () => {}, locator: () => ({ first: () => ({ count: async () => 0 }) }) }) };
+  await processBroker(ctx503, DIRECT);
+  assert.equal(logged[0].status, 'error');
+});

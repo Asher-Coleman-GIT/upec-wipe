@@ -179,3 +179,10 @@ test('a person with no state does not get a states-limited broker', async () => 
   await processBroker(null, { name: 'CA only', method: 'manual', states: ['CA'], optOutUrl: 'https://x' });
   assert.equal(logged.length, 0);
 });
+
+test('a resident whose config spells out the state still gets a states-limited broker', async () => {
+  logged.length = 0;
+  configure({ dryRun: true, person: { country: 'US', state: ' California ' } });
+  await processBroker(null, { name: 'CA only', method: 'manual', states: ['CA'], optOutUrl: 'https://x' });
+  assert.equal(logged[0] && logged[0].status, 'manual');
+});

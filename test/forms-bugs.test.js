@@ -237,7 +237,9 @@ test('Fix8: fillForm logs a warning when a select cannot be matched', async () =
         },
       }),
     }),
-    getByLabel: () => ({ first: () => ({ fill: async () => {} }) }),
+    // An unmatched select now falls through to the label fallback (it is not
+    // reported as filled), so the stub needs a real-looking count().
+    getByLabel: () => ({ count: async () => 0, first: () => ({ fill: async () => {} }) }),
   };
 
   const personDE = { country: 'DE', state: '', zip: '' };

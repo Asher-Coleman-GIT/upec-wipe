@@ -68,7 +68,7 @@ test('buildSummary includes expected counts and action-required block', () => {
 
   const s = logger.buildSummary();
   assert.match(s, /✅ Submitted \(form accepted\):\s+2/);
-  assert.match(s, /⏭  Skipped \(done recently\):\s+1/);
+  assert.match(s, /⏭  Skipped:\s+1/);
   assert.match(s, /🔍 Not listed:\s+1/);
   assert.match(s, /📋 Manual needed:\s+2/); // captchaFailed + manual
   assert.match(s, /❌ Errors:\s+1/);
@@ -353,7 +353,7 @@ test('previews have their own bucket and summary line', () => {
   assert.equal(logger.results.skipped.length, 1);
   const s = logger.buildSummary();
   assert.match(s, /Previewed \(not submitted\):\s+1/);
-  assert.match(s, /Skipped \(done recently\):\s+1/);
+  assert.match(s, /Skipped:\s+1/);
   assert.doesNotMatch(s, /Skipped \(fresh\)/);
 });
 test('no preview line on a real run', () => {
@@ -364,4 +364,12 @@ test('no generic line when the generic pass did not run', () => {
   logger.resetResults();
   logger.results.genericStats = {};
   assert.doesNotMatch(logger.buildSummary(), /Generic runner/);
+});
+
+test('the skipped line does not claim a reason (it holds dry-run, allowlisted and US-only skips too)', () => {
+  logger.resetResults();
+  logger.logResult('A', 'skipped', 'dry-run - form filled but not submitted');
+  const s = logger.buildSummary();
+  assert.match(s, /⏭  Skipped:\s+1/);
+  assert.doesNotMatch(s, /done recently/);
 });
