@@ -86,6 +86,17 @@
   ]
  },
  {
+  "domain": "aboutads.info",
+  "name": "optout.aboutads.info.",
+  "urls": [
+   "https://optout.aboutads.info."
+  ],
+  "sources": [
+   "badbool"
+  ],
+  "contacts": []
+ },
+ {
   "domain": "abovedata.io",
   "name": "Above Data, Inc.",
   "urls": [
@@ -3354,17 +3365,6 @@
   "contacts": []
  },
  {
-  "domain": "glba",
-  "name": "Regulatory Obligations Clarification:  With respect to whether Acxiom is subject to certain regulations",
-  "urls": [
-   "https://GLBA"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
- },
- {
   "domain": "gm.com",
   "name": "General Motors LLC",
   "urls": [
@@ -3812,17 +3812,6 @@
   ]
  },
  {
-  "domain": "income",
-  "name": "•\tPrevious employer name",
-  "urls": [
-   "https://income"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
- },
- {
   "domain": "indexexchange.com",
   "name": "Index Exchange Inc.",
   "urls": [
@@ -3849,17 +3838,6 @@
   "contacts": [
    "privacy@infillion.com"
   ]
- },
- {
-  "domain": "info.",
-  "name": "optout.aboutads.info.",
-  "urls": [
-   "https://optout.aboutads.info."
-  ],
-  "sources": [
-   "badbool"
-  ],
-  "contacts": []
  },
  {
   "domain": "infopay.com",
@@ -4500,17 +4478,6 @@
   "contacts": [
    "privacy@leidos.com"
   ]
- },
- {
-  "domain": "liens",
-  "name": "o Public records (e.g.",
-  "urls": [
-   "https://liens"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
  },
  {
   "domain": "liftbasedata.com",
@@ -5402,17 +5369,6 @@
   ]
  },
  {
-  "domain": "non-profit",
-  "name": "The business implements a robust credentialing process that requires that purchasers are legitimate business",
-  "urls": [
-   "https://non-profit"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
- },
- {
   "domain": "nordicdataresources.com",
   "name": "Nordic Data Resources AS",
   "urls": [
@@ -5703,17 +5659,6 @@
   "contacts": [
    "ccpa@paramountdirectmarketing.com"
   ]
- },
- {
-  "domain": "passport",
-  "name": "•\tID type (DL",
-  "urls": [
-   "https://passport"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
  },
  {
   "domain": "penlink.com",
@@ -6826,17 +6771,6 @@
   ]
  },
  {
-  "domain": "sagestream",
-  "name": "The business’ affiliates",
-  "urls": [
-   "https://SageStream"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
- },
- {
   "domain": "salesassistiq.ai",
   "name": "Aniline, Inc.",
   "urls": [
@@ -7430,17 +7364,6 @@
   "contacts": [
    "privacy@statara.com"
   ]
- },
- {
-  "domain": "state",
-  "name": "•\tHome Address (Street",
-  "urls": [
-   "https://State"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": []
  },
  {
   "domain": "staterecords.org",

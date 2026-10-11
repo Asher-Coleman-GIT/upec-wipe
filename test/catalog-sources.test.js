@@ -54,3 +54,13 @@ test('http urls are upgraded to https', () => {
   const c = buildCandidates({ rows: [{ name: 'H', url: 'http://h.example.com/a', source: 'markup' }] });
   assert.deepEqual(c[0].urls, ['https://h.example.com/a']);
 });
+
+test('a trailing dot in a host (BADBOOL "https://optout.aboutads.info.") does not make a bogus domain', () => {
+  const c = buildCandidates({ rows: [{ name: 'A', url: 'https://optout.aboutads.info.', source: 'badbool' }] });
+  assert.deepEqual(c.map(x => x.domain), ['aboutads.info']);
+});
+
+test('a registry "website" that is a word, not a host, is dropped', () => {
+  const c = buildCandidates({ rows: [{ name: 'X', url: 'https://GLBA', source: 'ca-registry' }, { name: 'Y', url: 'https://non-profit', source: 'ca-registry' }] });
+  assert.deepEqual(c, []);
+});
