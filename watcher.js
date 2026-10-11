@@ -1085,8 +1085,12 @@ async function _mainBody() {
   console.log('\n' + '═'.repeat(54));
   console.log(summary);
   console.log('═'.repeat(54));
-  console.log(`\n📄 Log: ${logFile}`);
-  console.log(`💾 State: ${STATE_PATH}\n`);
+  if (DRY_RUN) {
+    console.log(`\n📄 Log: none - a ${PREVIEW ? 'preview' : 'dry run'} writes no log and saves no state. The summary above is the whole result.\n`);
+  } else {
+    console.log(`\n📄 Log: ${logFile}`);
+    console.log(`💾 State: ${STATE_PATH}\n`);
+  }
 }
 
 main().catch(err => {

@@ -230,7 +230,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js preview
    ```
 
-   Nothing is submitted. Expect a line with `🛡  Network: Mullvad exit`. Now do the real run:
+   Nothing is submitted. Expect a line with `🛡  Network: Mullvad exit`. A preview writes no log file and saves no state: the summary on screen is the whole result, so read it there. Now do the real run:
 
    ```
    node bin/aidr.js run
