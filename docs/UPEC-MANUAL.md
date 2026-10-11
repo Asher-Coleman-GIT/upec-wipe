@@ -222,7 +222,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js doctor
    ```
 
-   It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP and CapSolver checks connect to those services, so they wait for the same network check as a run: with the Mullvad app off they say "skipped: not on Mullvad". It also works after you encrypt your config.
+   It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP, CapSolver and SimpleLogin checks connect to those services, so they wait for the same network check as a run: with the Mullvad app off they say "skipped: not on Mullvad". It also works after you encrypt your config.
 
 7. Rehearse a run with `aidr preview` (you run it as `node bin/aidr.js preview`). Make sure Mullvad is connected first. It does everything except submit:
 
@@ -315,7 +315,7 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 | Command | What it does | Sends |
 | --- | --- | --- |
 | `setup` | Asks for your details and writes `config.json`. | Nothing. |
-| `doctor` | Checks your setup. | After the network check passes: a connection to your SMTP host and one request to CapSolver. |
+| `doctor` | Checks your setup, including that SimpleLogin accepts your key. | After the network check passes: a connection to your SMTP host, one request to CapSolver, and one read-only request to SimpleLogin with your key (it creates no alias). |
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
 | `run` | The real opt-out pass. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. Your SMTP server: email opt-outs, only if you kept the `email` block. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |

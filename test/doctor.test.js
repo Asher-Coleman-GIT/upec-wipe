@@ -26,6 +26,7 @@ const {
   checkPlaywright,
   checkSMTP,
   checkCapsolver,
+  checkSimpleLogin,
   runDoctor,
 } = require('../lib/doctor');
 
@@ -285,6 +286,74 @@ describe('checkCapsolver', () => {
     });
     assert.equal(result.ok, false);
     assert.match(result.hint, /unreachable|ENOTFOUND/i);
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// checkSimpleLogin
+// ─────────────────────────────────────────────────────────────────────────────
+
+describe('checkSimpleLogin', () => {
+  const KEY = 'sl-real-key-123';
+  const relay = (extra) => ({ relay: { provider: 'simplelogin', apiKey: KEY, required: true, ...extra } });
+
+  it('skips when no relay block is set', async () => {
+    const result = await checkSimpleLogin({}, { simpleLoginRequest: () => Promise.resolve(200) });
+    assert.equal(result.ok, true);
+    assert.match(result.hint, /not configured/i);
+  });
+
+  it('fails on the placeholder key when the relay is required', async () => {
+    let called = false;
+    const cfg = relay({ apiKey: 'YOUR_SIMPLELOGIN_API_KEY' });
+    const result = await checkSimpleLogin(cfg, { simpleLoginRequest: () => { called = true; return Promise.resolve(200); } });
+    assert.equal(result.ok, false);
+    assert.match(result.hint, /placeholder/i);
+    assert.equal(called, false, 'no request with a placeholder key');
+  });
+
+  it('skips the placeholder key when the relay is not required', async () => {
+    const cfg = relay({ apiKey: 'YOUR_SIMPLELOGIN_API_KEY', required: false });
+    const result = await checkSimpleLogin(cfg, { simpleLoginRequest: () => Promise.resolve(200) });
+    assert.equal(result.ok, true);
+    assert.match(result.hint, /placeholder/i);
+  });
+
+  it('passes when SimpleLogin accepts the key, sending it only in the Authentication header', async () => {
+    let seen;
+    const result = await checkSimpleLogin(relay(), {
+      simpleLoginRequest: (url, key) => { seen = { url, key }; return Promise.resolve(200); },
+    });
+    assert.equal(result.ok, true);
+    assert.match(result.hint, /accepted/i);
+    assert.equal(seen.url, 'https://app.simplelogin.io/api/user_info');
+    assert.equal(seen.key, KEY);
+    assert.doesNotMatch(result.hint, new RegExp(KEY));
+  });
+
+  it('fails with a clear hint when SimpleLogin rejects the key', async () => {
+    const result = await checkSimpleLogin(relay(), { simpleLoginRequest: () => Promise.resolve(401) });
+    assert.equal(result.ok, false);
+    assert.match(result.hint, /rejected/i);
+    assert.doesNotMatch(result.hint, new RegExp(KEY));
+  });
+
+  it('fails when SimpleLogin cannot be reached', async () => {
+    const result = await checkSimpleLogin(relay(), { simpleLoginRequest: () => Promise.reject(new Error('ENOTFOUND')) });
+    assert.equal(result.ok, false);
+    assert.match(result.hint, /unreachable|ENOTFOUND/i);
+  });
+
+  it('is skipped off Mullvad and never contacts SimpleLogin', async () => {
+    const { EgressError } = require('../lib/egress');
+    let called = false;
+    const result = await checkSimpleLogin(relay(), {
+      ensureEgress: () => { throw new EgressError('not on Mullvad'); },
+      simpleLoginRequest: () => { called = true; return Promise.resolve(200); },
+    });
+    assert.equal(result.ok, true);
+    assert.match(result.hint, /not on Mullvad/);
+    assert.equal(called, false);
   });
 });
 
