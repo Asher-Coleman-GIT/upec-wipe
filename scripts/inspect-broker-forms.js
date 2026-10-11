@@ -9,6 +9,9 @@
  *
  *   node scripts/inspect-broker-forms.js [broker name ...]
  *   HEADED=1 WAIT=20000 node scripts/inspect-broker-forms.js TruePeopleSearch
+ *   ASSIST=1 node scripts/inspect-broker-forms.js
+ *     (visible window; when a site shows a bot check, complete it and the
+ *      survey carries on)
  *
  * Output: one JSON file per broker in logs/broker-survey/ (gitignored).
  */
@@ -21,7 +24,9 @@ const { loadChromium } = require(path.join(ROOT, 'lib/playwright-loader'));
 const { buildLaunchOptions } = require(path.join(ROOT, 'lib/browser'));
 const { buildStealthScript } = require(path.join(ROOT, 'lib/stealth'));
 const { ensureNodeEgress } = require(path.join(ROOT, 'lib/egress'));
-const { detectBlockPage } = require(path.join(ROOT, 'lib/block-page'));
+const { detectBlockPage, checkPageBlockedDetail } = require(path.join(ROOT, 'lib/block-page'));
+const { waitForHumanCheck } = require(path.join(ROOT, 'lib/assist'));
+const ASSIST = process.env.ASSIST === '1';
 const brokers = require(path.join(ROOT, 'brokers')).forPerson({ firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', state: 'TX', city: 'Austin', zip: '73301', email: 'jane@example.com', country: 'US' });
 
 const OUT = path.join(ROOT, 'logs', 'broker-survey');
@@ -41,9 +46,12 @@ function dumpFrame() {
   }));
   const buttons = [...document.querySelectorAll('button,input[type=submit]')].filter(vis)
     .map(b => ({ text: (b.innerText || b.value || '').trim().slice(0, 40), id: b.id, inForm: !!b.closest('form') })).slice(0, 25);
+  const links = [...document.querySelectorAll('a')].filter(vis)
+    .map(a => ({ text: (a.innerText || '').trim().slice(0, 50), href: a.getAttribute('href') || '' }))
+    .filter(a => /opt|remov|suppress|delete|privacy|continue|start|begin|record/i.test(a.text + ' ' + a.href)).slice(0, 25);
   const captcha = !!document.querySelector('iframe[src*="recaptcha"],iframe[src*="hcaptcha"],iframe[src*="turnstile"],.g-recaptcha,.h-captcha,.cf-turnstile');
   const text = document.body ? document.body.innerText.slice(0, 2000) : '';
-  return { controls, buttons, captcha, text };
+  return { controls, buttons, links, captcha, text };
 }
 
 (async () => {
@@ -51,7 +59,7 @@ function dumpFrame() {
   await ensureNodeEgress({ network: { required: true } });
   fs.mkdirSync(OUT, { recursive: true, mode: 0o700 });
   const chromium = loadChromium();
-  const browser = await chromium.launch(buildLaunchOptions({ headless: process.env.HEADED !== '1' }));
+  const browser = await chromium.launch(buildLaunchOptions({ headless: process.env.HEADED !== '1' && !ASSIST }));
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'en-US' });
   await ctx.addInitScript(buildStealthScript()).catch(() => {});
   const targets = brokers.filter(b => b.method !== 'manual' && b.method !== 'email' && (!only.length || only.includes(b.name)));
@@ -61,6 +69,10 @@ function dumpFrame() {
     try {
       const resp = await page.goto(b.optOutUrl, { waitUntil: 'domcontentloaded', timeout: 25000 });
       out.status = resp ? resp.status() : null;
+      if (ASSIST) {
+        const blocked = await checkPageBlockedDetail(page, resp);
+        if (blocked && blocked.solvable) out.assisted = await waitForHumanCheck(page, { brokerName: b.name });
+      }
       await page.waitForTimeout(Number(process.env.WAIT || 5000));
       out.finalUrl = page.url();
       out.title = await page.title();

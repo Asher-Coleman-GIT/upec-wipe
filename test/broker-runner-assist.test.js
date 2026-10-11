@@ -94,3 +94,12 @@ test('assist: a hard block on the search page stays manual without waiting', asy
   assert.equal(waitCalls, 0);
   assert.equal(logged.at(-1).status, 'manual');
 });
+
+test('assist: a search interrupted by the site\'s own post-check redirect is tried again', async () => {
+  reset();
+  const interrupted = new Error('page.goto: Navigation to "https://s.example/q" is interrupted by another navigation to "https://s.example/q?__cf_chl_tk=x"');
+  findSeq = [new BlockedPageError('blocked by bot protection', { solvable: true }), interrupted, 'https://s.example/p/1'];
+  configure({ dryRun: true, preview: true, assist: true, person: { country: 'US' } });
+  await processBroker(ctx, SEARCH);
+  assert.equal(logged.at(-1).status, 'preview', JSON.stringify(logged.at(-1)));
+});

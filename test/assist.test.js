@@ -45,3 +45,23 @@ test('gives up at once if the page turns into a hard block', async () => {
   assert.equal(ok, false);
   assert.equal(calls, 1);
 });
+
+test('after the check clears, waits for the page to finish loading before handing back', async () => {
+  const states = [];
+  const page = { bringToFront: async () => {}, waitForLoadState: async (s) => { states.push(s); } };
+  const ok = await waitForHumanCheck(page, {
+    brokerName: 'B', timeoutMs: 1000, pollMs: 1,
+    check: async () => null, sleep: noSleep, log: () => {},
+  });
+  assert.equal(ok, true);
+  assert.deepEqual(states, ['load']);
+});
+
+test('a page that never reports load still hands back', async () => {
+  const page = { bringToFront: async () => {}, waitForLoadState: async () => { throw new Error('Timeout 15000ms exceeded'); } };
+  const ok = await waitForHumanCheck(page, {
+    brokerName: 'B', timeoutMs: 1000, pollMs: 1,
+    check: async () => null, sleep: noSleep, log: () => {},
+  });
+  assert.equal(ok, true);
+});
