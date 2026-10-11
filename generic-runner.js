@@ -33,6 +33,7 @@ const { detectConfirmationRequired } = require('./lib/confirm');
 const { CONFIRM_RECHECK_DAYS, loadConfig } = require('./lib/config');
 const { withRetry } = require('./lib/retry');
 const { isAllowlisted } = require('./lib/filter');
+const { registrableDomain } = require('./lib/serp-scan');
 
 // Config is loaded lazily so that modules importing only the pure helpers
 // (classifyNavError, isDeadStatus, loadDeadSet) don't require config.json.
@@ -436,7 +437,7 @@ function loadGenericBrokers(explicitBrokerHosts) {
       if (!row.urlFinal || !row.urlFinal.startsWith('http')) continue;
       try {
         const host = new URL(row.urlFinal).hostname.replace(/^www\./, '');
-        if (seen.has(host)) continue;
+        if (seen.has(host) || seen.has(registrableDomain(host))) continue;
         seen.add(host);
         brokers.push({ name: row.name || host, url: row.urlFinal, source: 'markup' });
       } catch(_) {}
@@ -450,7 +451,7 @@ function loadGenericBrokers(explicitBrokerHosts) {
       if (!url.startsWith('http')) continue;
       try {
         const host = new URL(url).hostname.replace(/^www\./, '');
-        if (seen.has(host)) continue;
+        if (seen.has(host) || seen.has(registrableDomain(host))) continue;
         seen.add(host);
         brokers.push({ name: host, url, source: 'badbool' });
       } catch(_) {}
@@ -473,7 +474,7 @@ function loadGenericBrokers(explicitBrokerHosts) {
           if (!url || !/^https:\/\//i.test(url)) continue;
           try {
             const host = new URL(url).hostname.replace(/^www\./, '');
-            if (seen.has(host)) continue;
+            if (seen.has(host) || seen.has(registrableDomain(host))) continue;
             seen.add(host);
             brokers.push({ name: row.name || host, url, source: row.source || 'feed' });
           } catch(_) {}

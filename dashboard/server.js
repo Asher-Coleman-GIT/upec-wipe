@@ -478,6 +478,15 @@ app.get('/api/brokers', (_req, res) => {
     confidence: b.confidence || null, optOutUrl: b.optOutUrl || null,
     note: b.note || b.notes || null,
   }));
+  // Reviewed and manual catalog sites (data/catalog/); unreviewed ones do not run.
+  try {
+    const { loadCatalog, catalogSummary } = require('../lib/catalog');
+    for (const c of catalogSummary(loadCatalog(undefined, () => {}))) {
+      if (c.state === 'unreviewed' || c.state === 'excluded') continue;
+      list.push({ name: c.name, method: `catalog (${c.state})`, priority: 5, usOnly: true, captchaLikely: false,
+        confidence: c.reviewedAt ? `reviewed ${c.reviewedAt}` : null, optOutUrl: c.optOutUrl, note: null, source: 'catalog' });
+    }
+  } catch (_) { /* the catalog is optional */ }
   res.json(list);
 });
 

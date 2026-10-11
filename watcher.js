@@ -213,6 +213,17 @@ if (LIST_MODE) {
     const last   = entry && entry.lastSuccess ? entry.lastSuccess.slice(0, 10) : '-';
     console.log(pad(b.name, 40) + pad(status, 18) + last);
   }
+  const { loadCatalog, catalogSummary } = require('./lib/catalog');
+  const catalog = catalogSummary(loadCatalog());
+  if (catalog.length) {
+    console.log(`\nCatalog sites (${catalog.length})`);
+    console.log('-'.repeat(80));
+    for (const c of catalog) {
+      const entry = state.optOuts && state.optOuts[c.name];
+      const last = entry && entry.lastSuccess ? entry.lastSuccess.slice(0, 10) : '-';
+      console.log(pad(c.name, 40) + pad(c.state + (c.reviewedAt ? ` ${c.reviewedAt}` : ''), 28) + last);
+    }
+  }
   console.log('');
   process.exit(0);
 }
@@ -765,6 +776,15 @@ async function main() {
 
 async function _mainBody() {
   const brokers = require('./brokers');
+  const { loadCatalog, catalogBrokersForPerson, catalogDomains } = require('./lib/catalog');
+  const { explicitHostsOf } = require('./lib/feeds');
+  // Reviewed sites from data/catalog/ run after the 32, through the same
+  // processBroker path. A bad record is skipped with a warning by the loader.
+  const catalogRecords = loadCatalog();
+  const explicitCatalogOpts = {
+    explicitHosts: explicitHostsOf(brokers),
+    explicitNames: new Set(brokers.map(b => b.name.toLowerCase())),
+  };
   const { runGenericBrokers } = require('./generic-runner');
 
   console.log('\nauto-identity-remove - starting run');
@@ -954,7 +974,10 @@ async function _mainBody() {
     // Rebuild the broker list for THIS person. brokers.js interpolates names,
     // city, state, zip and email into searchUrl and formFields, so reusing the
     // module-level array would submit persons[0]'s PII on every iteration.
-    const personBrokers = brokers.forPerson(person);
+    const personBrokers = [
+      ...brokers.forPerson(person),
+      ...catalogBrokersForPerson(catalogRecords, person, explicitCatalogOpts),
+    ];
 
     const filterOpts = {
       only:             ONLY_ARG,
@@ -1016,6 +1039,7 @@ async function _mainBody() {
       } catch(_) { return ''; }
     }).filter(Boolean)
   );
+  for (const d of catalogDomains(catalogRecords)) explicitHosts.add(d);
 
   // One generic pass PER PERSON.
   //

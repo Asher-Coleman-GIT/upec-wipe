@@ -322,6 +322,10 @@ For each site it tries four strategies in order:
 
 Sites requiring manual action are opened in your browser automatically.
 
+### Reviewed site catalog
+
+Sites from the generic lists that have been checked by hand live in `data/catalog/`, one file per site. Reviewed sites run after the main brokers, with the same checks and the same status words; sites that need you get a link under Action Required. The generic pass never visits a site the catalog knows. See `docs/CATALOG-REVIEW.md` for how sites are surveyed and reviewed.
+
 ### Manual (opened in browser for you)
 
 | Site | Why manual |
