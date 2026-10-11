@@ -162,7 +162,7 @@ module.exports = { detectBlockPage, BlockedPageError, checkPageBlocked };
 
 - [ ] **Step 4: Run it to verify it passes**
 
-Run: `node --test test/block-page.test.js` — Expected: 7 pass.
+Run: `node --test test/block-page.test.js` - Expected: 7 pass.
 
 - [ ] **Step 5: Commit**
 
@@ -522,7 +522,7 @@ Replace the preview block (Step 4b) body with:
     }
 ```
 
-- [ ] **Step 4: Run tests** — the three files above plus `test/forms-*.test.js test/broker-runner-*.test.js`; all pass.
+- [ ] **Step 4: Run tests** - the three files above plus `test/forms-*.test.js test/broker-runner-*.test.js`; all pass.
 
 - [ ] **Step 5: Commit**
 
@@ -567,7 +567,7 @@ test('no generic line when the generic pass did not run', () => {
 });
 ```
 
-- [ ] **Step 2: Run** `node --test test/logger.test.js` — Expected: FAIL.
+- [ ] **Step 2: Run** `node --test test/logger.test.js` - Expected: FAIL.
 
 - [ ] **Step 3: Implement** in `lib/logger.js`:
   - add `previewed: []` to `results`, and `'previewed'` to the `resetResults` key list;
@@ -576,7 +576,7 @@ test('no generic line when the generic pass did not run', () => {
   - replace the skipped line with `` `⏭  Skipped (done recently):   ${results.skipped.length}` `` and insert after it `results.previewed.length ? `👀 Previewed (not submitted): ${results.previewed.length}` : ''`.
   - grep for other readers of `results.skipped` that expected previews (`grep -rn "results.skipped\|\.skipped" lib watcher.js dashboard/server.js`) and confirm none counted previews on purpose.
 
-- [ ] **Step 4: Run** `npm test` — all pass (update any assertion that matched "Skipped (fresh)").
+- [ ] **Step 4: Run** `npm test` - all pass (update any assertion that matched "Skipped (fresh)").
 
 - [ ] **Step 5: Commit** `git commit -am "fix(summary): count previews separately; drop empty generic line"`
 
@@ -633,7 +633,7 @@ test('a person with no state does not get a states-limited broker', async () => 
 
 (Use the names that file already uses for its logger capture and context stub.)
 
-- [ ] **Step 2: Run** — FAIL.
+- [ ] **Step 2: Run** - FAIL.
 
 - [ ] **Step 3: Implement**
 
@@ -663,7 +663,7 @@ test('a person with no state does not get a states-limited broker', async () => 
 
 `git rm test/brokers-ca-delete.test.js test/brokers-caldrop.test.js`.
 
-- [ ] **Step 4: Run** `npm test` — pass, except `docs-commands` README count (fixed in Task 7; run that test last).
+- [ ] **Step 4: Run** `npm test` - pass, except `docs-commands` README count (fixed in Task 7; run that test last).
 
 - [ ] **Step 5: Commit** `git commit -am "feat(brokers): California DROP only for California residents"` (include the new and removed test files with `git add -A test brokers.js lib/broker-runner.js`).
 
@@ -721,7 +721,7 @@ test('CAPTCHA brokers from the survey ask CapSolver first', () => {
 });
 ```
 
-- [ ] **Step 2: Run** `node --test test/brokers-survey-2026-10.test.js` — FAIL.
+- [ ] **Step 2: Run** `node --test test/brokers-survey-2026-10.test.js` - FAIL.
 
 - [ ] **Step 3: Implement in `brokers.js`** (values via the existing `F`, `L`, `E`, `ST` variables; never literal personal data):
 
@@ -770,7 +770,7 @@ Replace Equifax/Experian (marketing) with:
 
 Turn ZoomInfo, Epsilon, Acxiom, LexisNexis, InfoTracer, Clearbit and Addresses.com into `method: 'manual'` with the `optOutUrl` from `MANUAL`, remove their `formFields`/`submitSelector`/`searchUrl`, and set `notes` to one sentence that includes the URL, e.g. Acxiom: `'The opt-out form is embedded from isapps.acxiom.com and cannot be automated: https://www.acxiom.com/optout/'`; Addresses.com: `'The old opt-out page is gone (404). Look for a privacy or opt-out link at https://www.addresses.com/'`.
 
-- [ ] **Step 4: Run** `npm test` — pass except the README count (Task 7).
+- [ ] **Step 4: Run** `npm test` - pass except the README count (Task 7).
 
 - [ ] **Step 5: Commit** `git add brokers.js test/brokers-survey-2026-10.test.js && git commit -m "fix(brokers): apply the 2026-10 live survey"`
 
@@ -805,7 +805,7 @@ test('the survey script checks Mullvad before visiting anything', () => {
 });
 ```
 
-- [ ] **Step 2: Run** — FAIL (missing file).
+- [ ] **Step 2: Run** - FAIL (missing file).
 
 - [ ] **Step 3: Implement** `scripts/inspect-broker-forms.js`:
 
@@ -902,7 +902,7 @@ Docs:
 - STATUS.md: regenerate the table from `brokers.js` (name, method, CAPTCHA, confidence = `surveyed 2026-10` for repaired entries, `manual` for manual ones), update "42" to the new count, add a short "Removed in 2026-10" list with the reason for each.
 - UPEC-MANUAL.md troubleshooting rows: `blocked by bot protection - open in your normal browser: <link>` → "The site blocks automated browsers or VPN addresses. Open the link yourself; try another Mullvad server if it blocks you too." and `form not recognised ... do it by hand` → "The site changed its form. Open the link and fill it in yourself; report it so the definition can be updated."
 
-- [ ] **Step 4: Run** `npm test` and `cd dashboard && node --test` — all pass.
+- [ ] **Step 4: Run** `npm test` and `cd dashboard && node --test` - all pass.
 
 - [ ] **Step 5: Commit** `git add -A scripts test README.md STATUS.md docs/UPEC-MANUAL.md && git commit -m "docs: broker survey script, counts and troubleshooting"`
 
