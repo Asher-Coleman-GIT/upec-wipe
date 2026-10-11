@@ -328,6 +328,27 @@ test('findListingUrl throws → unverifiable (not a false positive)', async () =
   assert.equal(result.verified_clear.length, 0);
 });
 
+test('a challenge page on the verify search is unverifiable, never verified_clear', async () => {
+  process.env.TURBO = '1';
+  const { findListingUrl } = require('../lib/forms');
+  const broker  = searchBroker('WalledBroker');
+  const person  = { firstName: 'Jane', lastName: 'Doe' };
+  const state   = makeState('WalledBroker', 8);
+  const challengePage = {
+    goto: async () => ({ status: () => 403 }),
+    title: async () => 'Just a moment...',
+    evaluate: async (fn, arg) => (arg ? [] : 'Performing security verification'),
+    close: async () => {},
+  };
+  const context = { newPage: async () => challengePage };
+
+  const result = await runVerify(context, [broker], [person], { findUrl: findListingUrl, state });
+
+  assert.equal(result.verified_clear.length, 0, 'a blocked search must never confirm deletion');
+  assert.equal(result.unverifiable.length, 1);
+  assert.match(result.unverifiable[0].reason, /bot protection/);
+});
+
 // ── Test 12: H2 regression - state mutation is observable after runVerify ────
 // watcher.js calls saveState() after runVerify returns. This test proves the
 // mutation is in place on the state object, ready to persist.

@@ -34,3 +34,9 @@ test('checkPageBlocked reads title and text from the page', async () => {
   assert.equal(await checkPageBlocked(ok, { status: () => 200 }), null);
   assert.equal(await checkPageBlocked(ok, null), null, 'no response object (same-document nav) is fine');
 });
+test('checkPageBlocked fails safe when the page cannot report title or text', async () => {
+  const bare = {};
+  assert.equal(await checkPageBlocked(bare, { status: () => 200 }), null);
+  const throwing = { title: () => { throw new Error('closed'); }, evaluate: () => { throw new Error('closed'); } };
+  assert.equal(await checkPageBlocked(throwing, { status: () => 200 }), null);
+});
