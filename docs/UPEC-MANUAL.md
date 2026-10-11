@@ -332,7 +332,7 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 | `update-brokers` | Refreshes the extra broker list from the California and Vermont registries. | Nothing about you. |
 | `dashboard` | Starts the local web page. | Nothing. Runs started from it send what the command would. |
 
-Useful options for `run` and `preview`: `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time), `--no-capsolver` (treat CAPTCHA brokers as manual) and `--generic` (also try about 490 smaller sites from public lists; off by default because nobody reviewed them). `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
+Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time), `--no-capsolver` (treat CAPTCHA brokers as manual) and `--generic` (also try about 490 smaller sites from public lists; off by default because nobody reviewed them). `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
 
 ## Troubleshooting
 
@@ -353,7 +353,8 @@ Useful options for `run` and `preview`: `--only <broker>` and `--skip <broker>` 
 | `Playwright is not installed. Run: npm ci --ignore-scripts && npx playwright install chromium` | Run that command in the tool's folder. |
 | `misdirected request: unexpected Host header` (dashboard) | Open the address the dashboard printed (or `localhost` with the same port). |
 | `too many failed login attempts; try again later` (dashboard) | Wait up to 15 minutes, then log in with the printed login. |
-| `blocked by bot protection - open in your normal browser: <link>` | The site blocks automated browsers or VPN addresses. Open the link yourself. If it blocks you too, try another Mullvad server. |
+| `blocked by bot protection - open in your normal browser: <link>` | The site blocks automated browsers or VPN addresses. Run again with `--assist` and complete the check in the browser window when asked. If the page says "you have been blocked" or "Error 1005", the site refuses this Mullvad server: switch servers or open the link yourself. |
+| `... (check not completed in time) - open in your normal browser: <link>` | `--assist` waited 3 minutes and the check did not clear. Open the link yourself, or run that broker again with `--assist --only <broker>`. |
 | `form not recognised (none of your details could be filled) - do it by hand: <link>` | The site changed its form, so nothing was submitted. Open the link and fill it in yourself. `node scripts/inspect-broker-forms.js <broker>` shows the current form so the definition can be updated. |
 | `config.json is not valid JSON` (any command) | A hand edit broke `config.json`. Open it with `nano config.json` and look for a missing comma or quote near where you last edited. The message never shows the broken line, so your details stay out of logs. |
 | `Warning: ... (serp-key) is damaged; replacing it. ...` | Harmless. Your search-scan history starts over once. |

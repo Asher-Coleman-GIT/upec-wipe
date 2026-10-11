@@ -40,3 +40,35 @@ test('checkPageBlocked fails safe when the page cannot report title or text', as
   const throwing = { title: () => { throw new Error('closed'); }, evaluate: () => { throw new Error('closed'); } };
   assert.equal(await checkPageBlocked(throwing, { status: () => 200 }), null);
 });
+
+// --assist: a person can clear a challenge, but not a hard block.
+test('challenge pages are solvable by a person', () => {
+  const { isSolvableChallenge } = require('../lib/block-page');
+  for (const p of [
+    { title: 'Just a moment...', text: '' },
+    { title: '', text: 'Performing security verification' },
+    { title: 'Checking your browser', text: '' },
+    { title: '', text: 'Are you human? You are accessing a page that needs extra human verification' },
+    { title: 'Access to this page has been denied', text: 'Press & Hold to confirm you are a human' },
+    { title: 'Just a moment...', text: 'Please complete the security challenge' },
+  ]) assert.equal(isSolvableChallenge(p), true, JSON.stringify(p));
+});
+test('hard blocks are not solvable by a person', () => {
+  const { isSolvableChallenge } = require('../lib/block-page');
+  assert.equal(isSolvableChallenge({ title: 'Attention Required! | Cloudflare', text: 'Sorry, you have been blocked' }), false);
+  assert.equal(isSolvableChallenge({ title: 'Access denied | checkpeople.com used Cloudflare to restrict access', text: 'Error 1005' }), false);
+  assert.equal(isSolvableChallenge({ status: 403, title: 'Forbidden', text: '' }), false);
+});
+test('checkPageBlockedDetail reports reason and solvability', async () => {
+  const { checkPageBlockedDetail } = require('../lib/block-page');
+  const challenge = { title: async () => 'Just a moment...', evaluate: async () => '' };
+  assert.deepEqual(await checkPageBlockedDetail(challenge, { status: () => 403 }), { reason: 'blocked by bot protection', solvable: true });
+  const hard = { title: async () => 'Attention Required! | Cloudflare', evaluate: async () => 'Sorry, you have been blocked' };
+  assert.deepEqual(await checkPageBlockedDetail(hard, { status: () => 403 }), { reason: 'blocked by bot protection', solvable: false });
+  const ok = { title: async () => 'Opt out', evaluate: async () => 'Email' };
+  assert.equal(await checkPageBlockedDetail(ok, { status: () => 200 }), null);
+});
+test('BlockedPageError carries solvability', () => {
+  assert.equal(new BlockedPageError('x', { solvable: true }).solvable, true);
+  assert.equal(new BlockedPageError('x').solvable, false);
+});

@@ -56,6 +56,13 @@ if (process.argv.includes('--install-scheduler')) {
 }
 
 const PREVIEW           = process.argv.includes('--preview');
+// --assist: pause on bot-protection checks so the member can clear them in the
+// browser window (lib/assist.js). Needs a visible window; refuse before any work.
+const ASSIST            = process.argv.includes('--assist');
+if (ASSIST && resolveHeadless()) {
+  console.error('--assist needs a visible browser window (a desktop session, not HEADLESS=1 or a display-less server).');
+  process.exit(1);
+}
 const DRY_RUN           = process.argv.includes('--dry-run') || PREVIEW; // --preview implies --dry-run
 const VERIFY            = process.argv.includes('--verify');
 const SERP_SCAN         = process.argv.includes('--serp-scan');
@@ -684,7 +691,7 @@ if (KNOW_MODE) {
   });
 } else {
 
-brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, person: persons[0], capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config });
+brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, assist: ASSIST, person: persons[0], capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config });
 
 // Detect brokers that have been consistently unreachable across recent runs.
 // Defunct brokers still run - the warning is informational so the user can
@@ -762,6 +769,7 @@ async function _mainBody() {
 
   console.log('\n🔒 auto-identity-remove - starting run');
   if (PREVIEW)       console.log('👀 PREVIEW - field values and target URLs will be printed before submit. No state will be saved.');
+  if (ASSIST)        console.log('🧑 ASSIST - when a site shows a bot check, the run waits for you to complete it in the browser window (up to 3 min each).');
   else if (DRY_RUN)  console.log('🧪 DRY RUN - forms will be filled but NOT submitted. No state will be saved.');
   if (VERIFY)        console.log('🔍 VERIFY - re-checking listings. No forms submitted. Verification results are saved.');
   console.log(`📅 ${new Date().toLocaleString()}`);
@@ -941,7 +949,7 @@ async function _mainBody() {
     if (masked) console.log(`   Using masked email for submissions: ${submissionEmail}`);
     else console.log('   ⚠ No relay configured: brokers will receive your real email.');
 
-    brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, person, capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config, submissionEmail });
+    brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, assist: ASSIST, person, capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config, submissionEmail });
 
     // Rebuild the broker list for THIS person. brokers.js interpolates names,
     // city, state, zip and email into searchUrl and formFields, so reusing the
