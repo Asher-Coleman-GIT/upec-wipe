@@ -49,7 +49,7 @@
 | InfoTracer | manual | n/a | manual | no |
 | SocialCatfish | direct-form | yes | surveyed 2026-10 | no |
 | NationalPublicData | manual | - | surveyed 2026-10-11 (needs your profile link) | no |
-| PrivateRecords | direct-form | no | surveyed 2026-10-11 (also asks for date of birth) | no |
+| PrivateRecords | direct-form | no | surveyed 2026-10-11 (needs your date of birth; manual without it) | no |
 | Acxiom | manual | n/a | manual | no |
 | LexisNexis | manual | n/a | manual | no |
 | ZoomInfo | manual | n/a | manual | no |

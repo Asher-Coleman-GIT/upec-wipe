@@ -17,6 +17,10 @@
  */
 
 const _fs = require('fs');
+// Same rule as the config loader below: requiring this file alone (tests copy
+// it into a temp dir) must not throw. Without lib/, no form gets a birth date.
+let parseDob = () => null;
+try { ({ parseDob } = require('./lib/dob')); } catch (_) { /* no lib/ */ }
 
 let _cachedConfig = null;
 function _getConfig() {
@@ -94,6 +98,8 @@ function buildBrokers(person) {
   const s = (v) => (v == null ? '' : String(v));
   const F = s(p.firstName), L = s(p.lastName), N = s(p.fullName);
   const ST = s(p.state), C = s(p.city), E = s(p.email), Z = s(p.zip);
+  // Optional; only forms that require it use it (see requires: ['dob']).
+  const DOB = parseDob(p.dob) || { year: '', monthName: '', day: '' };
 
   return [
 
@@ -331,9 +337,10 @@ function buildBrokers(person) {
     name: 'PrivateRecords',
     method: 'direct-form',
     optOutUrl: 'https://www.privaterecords.net/api/helper/optOutLight/search',
-    // The form also asks for a date of birth, which the tool does not hold;
-    // without it the site refuses the request and it shows up as not submitted.
-    formFields: { '#r-removal': 'on', '#first': F, '#last': L, '#city': C, '#zip': Z, '#state': ST, '#contact-email': E },
+    // The removal form requires a date of birth; without one the broker is
+    // listed as manual instead of submitting a request the site rejects.
+    requires: ['dob'],
+    formFields: { '#r-removal': 'on', '#first': F, '#last': L, '#dob-m': DOB.monthName, '#dob-d': DOB.day, '#dob-y': DOB.year, '#city': C, '#zip': Z, '#state': ST, '#contact-email': E },
     submitSelector: '#submit-btn',
     captchaLikely: false,
     priority: 2,
