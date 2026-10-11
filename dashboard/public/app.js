@@ -34,9 +34,9 @@ async function loadSummary() {
       pill(`${s.optedOut} opted out`, s.optedOut ? 'good' : 'muted'),
       pill(`${s.pending} pending`, s.pending ? 'warn' : 'muted'),
       pill(`${s.manual} manual`, 'muted'),
-      pill(s.configured ? 'config ✓' : 'no config', s.configured ? 'good' : 'bad'),
-      pill(s.capsolver ? 'CapSolver ✓' : 'CapSolver ✗', s.capsolver ? 'good' : 'warn'),
-      pill(s.smtp ? 'SMTP ✓' : 'SMTP ✗', s.smtp ? 'good' : 'warn'),
+      pill(s.configured ? 'config ok' : 'no config', s.configured ? 'good' : 'bad'),
+      pill(s.capsolver ? 'CapSolver ok' : 'CapSolver missing', s.capsolver ? 'good' : 'warn'),
+      pill(s.smtp ? 'SMTP ok' : 'SMTP off', s.smtp ? 'good' : 'warn'),
       s.stateError ? pill('state.json unreadable', 'bad') : '',
     ].join('');
   } catch (_) { $('#summary').innerHTML = '<span class="pill bad">API error</span>'; }
@@ -119,9 +119,9 @@ let firstLine = true;
 function classify(line) {
   if (/^\$ /.test(line)) return 'line-cmd';
   if (/^- |process exited/.test(line)) return 'line-end';
-  if (/✅|success|✓/i.test(line)) return 'line-ok';
-  if (/⚠️|warn|skip/i.test(line)) return 'line-warn';
-  if (/❌|error|fail/i.test(line)) return 'line-err';
+  if (/^\s*(SUBMITTED|PASS)\b|success|✓/i.test(line)) return 'line-ok';
+  if (/^\s*(MANUAL|SKIP|CAPTCHA FAIL)\b|warn|skip/i.test(line)) return 'line-warn';
+  if (/^\s*(ERROR|FAIL)\b|error|fail/i.test(line)) return 'line-err';
   return '';
 }
 function appendLine(line) {
@@ -156,7 +156,7 @@ function openStream() {
         finishRun(s && s.exitCode != null ? s.exitCode : '?');
       }
     }).catch(() => {
-      appendLine('⚠️ could not reach server - stopping.');
+      appendLine('Warning: could not reach server - stopping.');
       finishRun('?');
     });
   };
@@ -173,7 +173,7 @@ function startRunPoll() {
     runPoll = setInterval(() => {
       // Fix 3: safety timeout so the poll cannot run forever.
       if (pollStartedAt && (Date.now() - pollStartedAt) > POLL_TIMEOUT_MS) {
-        appendLine('⚠️ run poll safety timeout reached - stopping.');
+        appendLine('Warning: run poll safety timeout reached - stopping.');
         finishRun('timeout');
         return;
       }
@@ -212,11 +212,11 @@ async function doRun(mode) {
     // stream - otherwise a freshly-opened EventSource replays the *previous*
     // run's buffer and a stale 'end' event, desyncing the controls.
     const r = await api('/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-    if (r && r.error) { appendLine('⚠️ ' + r.error); setRunning(false); return; }
+    if (r && r.error) { appendLine('Warning: ' + r.error); setRunning(false); return; }
     openStream(); startRunPoll();
   } catch (err) {
     // Fix 4: wrap doRun in try/catch.
-    appendLine('⚠️ run request failed: ' + (err && err.message || String(err)));
+    appendLine('Warning: run request failed: ' + (err && err.message || String(err)));
     setRunning(false);
     stopRunPoll();
   }
@@ -291,15 +291,15 @@ async function loadWhoami() {
 $('#savePw').addEventListener('click', async () => {
   const cur = $('#curPw').value, np = $('#newPw').value, np2 = $('#newPw2').value, nu = $('#newUser').value.trim();
   const msg = $('#pwMsg');
-  if (np.length < 12) { msg.className = 'pw-msg err'; msg.textContent = '❌ New password must be at least 12 characters.'; return; }
-  if (np !== np2) { msg.className = 'pw-msg err'; msg.textContent = '❌ New passwords do not match.'; return; }
+  if (np.length < 12) { msg.className = 'pw-msg err'; msg.textContent = 'Error: New password must be at least 12 characters.'; return; }
+  if (np !== np2) { msg.className = 'pw-msg err'; msg.textContent = 'Error: New passwords do not match.'; return; }
   const r = await api('/auth/password', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ currentPassword: cur, newPassword: np, newUsername: nu || undefined }) });
   if (r.ok) {
     msg.className = 'pw-msg ok';
-    msg.innerHTML = `✅ Updated. Log in again as <b>${esc(r.user)}</b> with the new password - your browser will re-prompt on the next action.`;
+    msg.innerHTML = `Updated. Log in again as <b>${esc(r.user)}</b> with the new password - your browser will re-prompt on the next action.`;
     $('#curPw').value = $('#newPw').value = $('#newPw2').value = $('#newUser').value = '';
-  } else { msg.className = 'pw-msg err'; msg.textContent = '❌ ' + (r.error || 'change failed'); }
+  } else { msg.className = 'pw-msg err'; msg.textContent = 'Error: ' + (r.error || 'change failed'); }
 });
 
 // ---------- config ----------
@@ -308,7 +308,7 @@ function setPath(o, p, v) { const ks = p.split('.'); let c = o; ks.slice(0, -1).
 async function loadConfig() {
   const r = await api('/config');
   $('#configState').textContent = r.parseError
-    ? '⚠️ config.json exists but could not be parsed - fix or re-save to overwrite.'
+    ? 'Warning: config.json exists but could not be parsed - fix or re-save to overwrite.'
     : (r.exists ? 'Editing live config.json (secrets masked).' : 'No config.json yet - fields prefilled from the example. Save to create it.');
   const c = r.config || {};
   $$('#configForm input').forEach(inp => {
@@ -347,7 +347,7 @@ $('#saveConfig').addEventListener('click', async () => {
     setPath(cfg, inp.name, v);
   });
   const r = await api('/config', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ config: cfg }) });
-  $('#configState').textContent = r.ok ? '✅ Saved.' : ('❌ ' + (r.error || 'save failed'));
+  $('#configState').textContent = r.ok ? 'Saved.' : ('Error: ' + (r.error || 'save failed'));
   loadSummary();
 });
 

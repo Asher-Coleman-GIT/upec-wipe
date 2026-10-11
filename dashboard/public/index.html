@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span class="logo">🛡️</span><div><h1>auto-identity-remove</h1><p class="sub">data-broker opt-out control panel</p></div></div>
+    <div class="brand"><svg class="logo" width="26" height="26" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2 3.5v4c0 3.6 2.6 6.4 6 7.5 3.4-1.1 6-3.9 6-7.5v-4z" fill="#3b6ea8"/></svg><div><h1>auto-identity-remove</h1><p class="sub">data-broker opt-out control panel</p></div></div>
     <div class="summary" id="summary"><span class="pill muted">loading…</span></div>
   </header>
 
@@ -31,10 +31,10 @@
     <section class="card run-card">
       <div class="run-controls">
         <button class="btn btn-primary" data-mode="preview" title="Fill forms without submitting">▶ Preview (dry-run)</button>
-        <button class="btn btn-danger" data-mode="real" title="Submit real opt-outs">⚡ Run real opt-outs</button>
-        <button class="btn" data-mode="verify" title="Re-check brokers with a recorded success">🔁 Verify</button>
-        <button class="btn" data-mode="doctor" title="Self-diagnose configuration">🩺 Doctor</button>
-        <button class="btn" data-mode="list" title="List brokers + status from state.json">📋 List</button>
+        <button class="btn btn-danger" data-mode="real" title="Submit real opt-outs">Run real opt-outs</button>
+        <button class="btn" data-mode="verify" title="Re-check brokers with a recorded success">Verify</button>
+        <button class="btn" data-mode="doctor" title="Self-diagnose configuration">Doctor</button>
+        <button class="btn" data-mode="list" title="List brokers + status from state.json">List</button>
         <span class="run-filters">
           <input id="onlyInput" placeholder="--only (comma names)" aria-label="Only these brokers (comma-separated names)" />
           <input id="skipInput" placeholder="--skip (comma names)" aria-label="Skip these brokers (comma-separated names)" />
@@ -44,12 +44,12 @@
       </div>
       <div class="run-controls run-advanced">
         <span class="dim adv-label">email confirmations:</span>
-        <button class="btn" data-mode="pending" title="List brokers awaiting email confirmation">📨 Pending</button>
-        <button class="btn" data-mode="confirm" title="Auto-click confirmation links in received .eml files">✅ Confirm emails</button>
+        <button class="btn" data-mode="pending" title="List brokers awaiting email confirmation">Pending</button>
+        <button class="btn" data-mode="confirm" title="Auto-click confirmation links in received .eml files">Confirm emails</button>
         <span class="dim adv-label">advanced:</span>
         <button class="btn" data-mode="retry" title="Re-run only brokers that failed last time">↻ Retry failed</button>
-        <button class="btn" data-mode="serp" title="Search engine scan for residual listings">🔎 SERP scan</button>
-        <button class="btn" data-mode="snapshot" title="Runs REAL opt-out submissions AND saves a page snapshot per broker.">📸 Real run + snapshots</button>
+        <button class="btn" data-mode="serp" title="Search engine scan for residual listings">SERP scan</button>
+        <button class="btn" data-mode="snapshot" title="Runs REAL opt-out submissions AND saves a page snapshot per broker.">Real run + snapshots</button>
       </div>
       <!-- aria-live="off": high-frequency stream would flood screen readers; run status is announced via #runStatus -->
       <pre class="console" id="console" role="log" aria-live="off" aria-atomic="false" aria-label="Run output"><span class="dim">Console output appears here. Pick an action above.</span></pre>
@@ -88,7 +88,7 @@
     <section class="card tab-panel hidden" id="tab-config" role="tabpanel" aria-labelledby="tabbtn-config">
       <div class="config-head">
         <p class="dim" id="configState"></p>
-        <button class="btn btn-primary" id="saveConfig">💾 Save config</button>
+        <button class="btn btn-primary" id="saveConfig">Save config</button>
       </div>
       <form id="configForm" class="config-form">
         <p class="dim">Network, relay, generic, browser and profileDir settings are not editable here. Change them by editing config.json directly. Changing the SMTP host or port needs the SMTP password re-entered.</p>
@@ -132,7 +132,7 @@
           <label>New password <input id="newPw" type="password" autocomplete="new-password" /></label>
           <label>Confirm new password <input id="newPw2" type="password" autocomplete="new-password" /></label>
         </fieldset>
-        <button type="button" class="btn btn-primary" id="savePw">🔑 Update login</button>
+        <button type="button" class="btn btn-primary" id="savePw">Update login</button>
         <p class="pw-msg" id="pwMsg"></p>
       </form>
     </section>
@@ -148,7 +148,7 @@
 
   <div class="modal hidden" id="confirmModal">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmDesc">
-      <h3 id="confirmTitle">⚡ Confirm live action?</h3>
+      <h3 id="confirmTitle">Confirm live action?</h3>
       <p id="confirmAction" class="dim confirm-action"></p>
       <p id="confirmDesc">This drives a real browser and submits opt-out requests to live data-broker sites using your configured PII. This is not a drill.</p>
       <div class="modal-actions">

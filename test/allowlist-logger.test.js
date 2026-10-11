@@ -9,14 +9,14 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 
-const { STATUS_BUCKET, ICONS, logResult, resetResults, results } = require('../lib/logger');
+const { STATUS_BUCKET, LABELS, logResult, resetResults, results } = require('../lib/logger');
 
 test('STATUS_BUCKET maps allowlisted -> skipped', () => {
   assert.equal(STATUS_BUCKET.allowlisted, 'skipped');
 });
 
-test('ICONS has an entry for allowlisted', () => {
-  assert.ok(ICONS.allowlisted, 'expected an icon for the allowlisted status');
+test('LABELS has an entry for allowlisted', () => {
+  assert.ok(LABELS.allowlisted, 'expected a label for the allowlisted status');
 });
 
 test('logResult routes an allowlisted entry into results.skipped', () => {

@@ -230,7 +230,7 @@ This part is the same for Parts A and B.
    node bin/aidr.js preview
    ```
 
-   Nothing is submitted. Expect a line with `🛡  Network: Mullvad exit`. A preview writes no log file and saves no state: the summary on screen is the whole result, so read it there. Now do the real run:
+   Nothing is submitted. Expect a line with `Network: Mullvad exit`. A preview writes no log file and saves no state: the summary on screen is the whole result, so read it there. Now do the real run:
 
    ```
    node bin/aidr.js run
@@ -338,8 +338,8 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 
 | Message | What to do |
 | --- | --- |
-| `⛔ Network check failed - nothing was submitted. ...` | Connect Mullvad and check https://am.i.mullvad.net says you are using it. Then run again. |
-| `⛔ Skipping person #N: Relay alias creation failed: ...` | Check the SimpleLogin API key in `config.json` and that your SimpleLogin account is verified. |
+| `Network check failed - nothing was submitted. ...` | Connect Mullvad and check https://am.i.mullvad.net says you are using it. Then run again. |
+| `Skipping person #N: Relay alias creation failed: ...` | Check the SimpleLogin API key in `config.json` and that your SimpleLogin account is verified. |
 | `config.relay.required is true but no usable relay is configured (provider "simplelogin" + apiKey)` | Add your SimpleLogin key as `apiKey` in the `relay` block. |
 | `... relay.apiKey is still the placeholder. ...` | Setup wrote `YOUR_SIMPLELOGIN_API_KEY` as a placeholder. Replace it with your SimpleLogin API key in the `relay` block. Until then nothing is submitted. |
 | `Refusing to run as root. ...` | Do not use `sudo` or a root account for the tool. Use your own user (Part B). |

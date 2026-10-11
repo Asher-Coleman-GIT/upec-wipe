@@ -277,14 +277,14 @@ const _allowlistCmd = parseAllowlistArgs(process.argv);
 if (_allowlistCmd) {
   const { CONFIG_PATH, writeFileFsync } = require('./lib/config');
   if (_allowlistCmd.error || !_allowlistCmd.name) {
-    console.error(`❌ ${_allowlistCmd.action === 'unallow' ? '--unallow' : '--allow'} requires a broker name, e.g. --${_allowlistCmd.action} Spokeo`);
+    console.error(`Error: ${_allowlistCmd.action === 'unallow' ? '--unallow' : '--allow'} requires a broker name, e.g. --${_allowlistCmd.action} Spokeo`);
     process.exit(1);
   }
   let cfg;
   try {
     cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
   } catch (err) {
-    console.error(`❌ could not read config.json: ${configErrorReason(err)}`);
+    console.error(`Error: could not read config.json: ${configErrorReason(err)}`);
     process.exit(1);
   }
   const next = _allowlistCmd.action === 'allow'
@@ -294,7 +294,7 @@ if (_allowlistCmd) {
   // config.json holds the legal name, address and every key (audit M2).
   writeFileFsync(CONFIG_PATH, JSON.stringify(next, null, 2) + '\n');
   const verb = _allowlistCmd.action === 'allow' ? 'Added to' : 'Removed from';
-  console.log(`\n📌 ${verb} allowlist: ${_allowlistCmd.name}`);
+  console.log(`\n${verb} allowlist: ${_allowlistCmd.name}`);
   console.log(`   Allowlist now: ${(next.allowlist || []).join(', ') || '(empty)'}\n`);
   process.exit(0);
 }
@@ -662,7 +662,7 @@ if (KNOW_MODE) {
 
     const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
     for (const b of plan.blocked) {
-      console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
+      console.error(`Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
     }
     if (plan.allowed.some(a => a.placeholder)) console.log(PREVIEW_ALIAS_NOTE);
     const result = await sendKnowRequests(brokers, config, {
@@ -699,7 +699,7 @@ brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, assist: ASSIST, pers
 const defunctNames = findDefunct(state.optOuts || {});
 if (defunctNames.length > 0) {
   setDefunctBrokers(defunctNames);
-  console.log(`\n⚰️  ${defunctNames.length} broker(s) flagged as defunct (${DEFUNCT_THRESHOLD}+ consecutive unreachable errors):`);
+  console.log(`\n${defunctNames.length} broker(s) flagged as defunct (${DEFUNCT_THRESHOLD}+ consecutive unreachable errors):`);
   console.log(`   ${defunctNames.join(', ')}`);
   console.log('   These will still run. Remove from brokers.js if site is gone.\n');
 }
@@ -767,27 +767,27 @@ async function _mainBody() {
   const brokers = require('./brokers');
   const { runGenericBrokers } = require('./generic-runner');
 
-  console.log('\n🔒 auto-identity-remove - starting run');
-  if (PREVIEW)       console.log('👀 PREVIEW - field values and target URLs will be printed before submit. No state will be saved.');
-  if (ASSIST)        console.log('🧑 ASSIST - when a site shows a bot check, the run waits for you to complete it in the browser window (up to 3 min each).');
-  else if (DRY_RUN)  console.log('🧪 DRY RUN - forms will be filled but NOT submitted. No state will be saved.');
-  if (VERIFY)        console.log('🔍 VERIFY - re-checking listings. No forms submitted. Verification results are saved.');
-  console.log(`📅 ${new Date().toLocaleString()}`);
+  console.log('\nauto-identity-remove - starting run');
+  if (PREVIEW)       console.log('PREVIEW - field values and target URLs will be printed before submit. No state will be saved.');
+  if (ASSIST)        console.log('ASSIST - when a site shows a bot check, the run waits for you to complete it in the browser window (up to 3 min each).');
+  else if (DRY_RUN)  console.log('DRY RUN - forms will be filled but NOT submitted. No state will be saved.');
+  if (VERIFY)        console.log('VERIFY - re-checking listings. No forms submitted. Verification results are saved.');
+  console.log(`Started: ${new Date().toLocaleString()}`);
   const GENERIC_ENABLED = isGenericEnabled(process.argv, config);
-  console.log(`📋 ${brokers.length} explicit brokers${GENERIC_ENABLED ? ' + 500+ generic' : ' (generic pass off - pass --generic to enable)'} | re-check window: ${RECHECK_DAYS} days\n`);
+  console.log(`${brokers.length} explicit brokers${GENERIC_ENABLED ? ' + 500+ generic' : ' (generic pass off - pass --generic to enable)'} | re-check window: ${RECHECK_DAYS} days\n`);
 
   // Headless mode: respect HEADLESS env var, else auto-detect.
   // Default to false (headed) on platforms where a display is likely present.
   // In Docker (no $DISPLAY on linux), default to headless: true so the tool actually runs.
   const headlessEnv = process.env.HEADLESS;
   const headless = resolveHeadless();
-  console.log(`🖥  Browser mode: ${headless ? 'headless' : 'headed'}${headlessEnv === undefined && process.platform === 'linux' ? ' (auto-detected)' : ''}${isLowMemory() ? ' [low-memory profile]' : ''}`);
+  console.log(`Browser mode: ${headless ? 'headless' : 'headed'}${headlessEnv === undefined && process.platform === 'linux' ? ' (auto-detected)' : ''}${isLowMemory() ? ' [low-memory profile]' : ''}`);
 
   let session;
   try {
     session = await openBrowserSession({ chromium, config, headless, onProfile: (p) => { mainProfile = p; } });
   } catch (err) {
-    if (err instanceof EgressError) { console.error(`⛔ ${err.message}`); process.exitCode = 1; return; }
+    if (err instanceof EgressError) { console.error(`${err.message}`); process.exitCode = 1; return; }
     throw err;
   }
   mainSession = session;
@@ -823,7 +823,7 @@ async function _mainBody() {
   // ── SERP scan mode: search-engine broker visibility audit ────────────────
   if (SERP_SCAN) {
     const { runSerpScan } = require('./lib/serp-scan');
-    console.log('\n🔎 SERP scan - checking broker visibility in search engines');
+    console.log('\nSERP scan - checking broker visibility in search engines');
     console.log('   DDG first, then Bing, then Google (may be blocked).\n');
     const summary = await runSerpScan(context, persons, brokers);
     await session.close();
@@ -892,10 +892,10 @@ async function _mainBody() {
   if (RETRY_FAILED) {
     const log = loadLastLog(LOG_DIR);
     if (!log) {
-      console.log('⚠️  --retry-failed: no previous log found in logs/ - running all brokers.');
+      console.log('Warning: --retry-failed: no previous log found in logs/ - running all brokers.');
     } else {
       retryFailedFromLog = extractFailedBrokers(log);
-      console.log(`🔄 --retry-failed: ${retryFailedFromLog.size} broker(s) from last log`);
+      console.log(`--retry-failed: ${retryFailedFromLog.size} broker(s) from last log`);
     }
   }
 
@@ -906,17 +906,17 @@ async function _mainBody() {
     plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
   } catch (err) {
     if (!(err instanceof EgressError)) throw err;
-    console.error(`⛔ ${err.message}`);
+    console.error(`${err.message}`);
     await session.close();
     process.exitCode = 1;
     return;
   }
   for (const b of plan.blocked) {
-    console.error(`⛔ Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
+    console.error(`Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
   }
   if (plan.allowed.some(a => a.placeholder)) console.log(PREVIEW_ALIAS_NOTE);
   if (plan.allowed.length === 0) {
-    console.error('⛔ No person has a usable submission email. Nothing submitted.');
+    console.error('No person has a usable submission email. Nothing submitted.');
     saveState();
     await session.close();
     process.exitCode = 1;
@@ -932,7 +932,7 @@ async function _mainBody() {
       await sendOptOutEmails(brokers, config, undefined, { dryRun: DRY_RUN, ...submissionOptions(plan) });
     } catch (err) {
       if (!(err instanceof EgressError)) throw err;
-      console.error(`⛔ ${err.message}`);
+      console.error(`${err.message}`);
       saveState();
       await session.close();
       process.exitCode = 1;
@@ -947,7 +947,7 @@ async function _mainBody() {
       console.log('='.repeat(54));
     }
     if (masked) console.log(`   Using masked email for submissions: ${submissionEmail}`);
-    else console.log('   ⚠ No relay configured: brokers will receive your real email.');
+    else console.log('   Warning: No relay configured: brokers will receive your real email.');
 
     brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, assist: ASSIST, person, capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config, submissionEmail });
 
@@ -988,7 +988,7 @@ async function _mainBody() {
     }
 
     if (ONLY_ARG || SKIP_ARG || RETRY_FAILED) {
-      console.log(`🔎 Filter applied - ${sorted.length} broker(s) will run`);
+      console.log(`Filter applied - ${sorted.length} broker(s) will run`);
     }
 
     console.log('\n── Explicit broker opt-outs ───────────────────────────────');
@@ -999,7 +999,7 @@ async function _mainBody() {
         await brokerRunner.processBroker(context, broker);
       } catch (err) {
         if (!(err instanceof EgressError)) throw err;
-        console.error(`\n⛔ ${err.message}`);
+        console.error(`\n${err.message}`);
         saveState();
         await session.close();
         process.exitCode = 1;
@@ -1066,7 +1066,7 @@ async function _mainBody() {
   if (!DRY_RUN) {
     const prevLog = loadPreviousLog(LOG_DIR, logFile);
     const diff = diffResults(prevLog, results);
-    console.log(`\n📊 ${diff.summary}`);
+    console.log(`\n${diff.summary}`);
 
     const auditMd = renderAuditMarkdown({
       person: persons[0],
@@ -1074,7 +1074,7 @@ async function _mainBody() {
       results,
     });
     const auditPath = writeAuditFile(LOG_DIR, auditMd, results.runAt);
-    console.log(`📝 Audit: ${auditPath}`);
+    console.log(`Audit: ${auditPath}`);
   }
 
   // Open manual-required sites
@@ -1083,10 +1083,10 @@ async function _mainBody() {
     .filter(u => u.startsWith('http'));
   // A dry run opens nothing: the everyday browser does not use network.proxy.
   if (manualUrls.length > 0 && !DRY_RUN) {
-    console.log(`\n🖥  Opening ${manualUrls.length} manual site(s) in browser…`);
+    console.log(`\nOpening ${manualUrls.length} manual site(s) in browser…`);
     openInBrowser(manualUrls);
   } else if (manualUrls.length > 0) {
-    console.log(`\n🖥  ${manualUrls.length} manual site(s) would open in your browser on a real run.`);
+    console.log(`\n${manualUrls.length} manual site(s) would open in your browser on a real run.`);
   }
 
   // Print summary
@@ -1095,10 +1095,10 @@ async function _mainBody() {
   console.log(summary);
   console.log('═'.repeat(54));
   if (DRY_RUN) {
-    console.log(`\n📄 Log: none - a ${PREVIEW ? 'preview' : 'dry run'} writes no log and saves no state. The summary above is the whole result.\n`);
+    console.log(`\nLog: none - a ${PREVIEW ? 'preview' : 'dry run'} writes no log and saves no state. The summary above is the whole result.\n`);
   } else {
-    console.log(`\n📄 Log: ${logFile}`);
-    console.log(`💾 State: ${STATE_PATH}\n`);
+    console.log(`\nLog: ${logFile}`);
+    console.log(`State: ${STATE_PATH}\n`);
   }
 }
 

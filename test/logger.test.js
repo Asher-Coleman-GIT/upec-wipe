@@ -67,11 +67,11 @@ test('buildSummary includes expected counts and action-required block', () => {
   logger.logResult('G', 'error');
 
   const s = logger.buildSummary();
-  assert.match(s, /✅ Submitted \(form accepted\):\s+2/);
-  assert.match(s, /⏭  Skipped:\s+1/);
-  assert.match(s, /🔍 Not listed:\s+1/);
-  assert.match(s, /📋 Manual needed:\s+2/); // captchaFailed + manual
-  assert.match(s, /❌ Errors:\s+1/);
+  assert.match(s, /Submitted \(form accepted\):\s+2/);
+  assert.match(s, /Skipped:\s+1/);
+  assert.match(s, /Not listed:\s+1/);
+  assert.match(s, /Manual needed:\s+2/); // captchaFailed + manual
+  assert.match(s, /Errors:\s+1/);
   assert.match(s, /Action Required/);
   assert.match(s, /• E/);
   assert.match(s, /• F/);
@@ -82,7 +82,7 @@ test('buildSummary omits action-required block when nothing manual', () => {
   logger.logResult('A', 'success');
   const s = logger.buildSummary();
   assert.equal(s.includes('Action Required'), false);
-  assert.match(s, /📋 Manual needed:\s+0/);
+  assert.match(s, /Manual needed:\s+0/);
 });
 
 test('resetResults clears every bucket in place and keeps the shared reference', () => {
@@ -115,8 +115,8 @@ test('STATUS_BUCKET maps dead to dead bucket', () => {
   assert.equal(logger.STATUS_BUCKET.dead, 'dead');
 });
 
-test('ICONS has 💀 for dead', () => {
-  assert.equal(logger.ICONS.dead, '💀');
+test('LABELS has DEAD for dead', () => {
+  assert.equal(logger.LABELS.dead, 'DEAD');
 });
 
 test('resetResults clears the dead bucket', () => {
@@ -138,9 +138,9 @@ test('logResult routes pending_confirm into pendingConfirm bucket', () => {
   assert.equal(logger.results.succeeded.length, 0);
 });
 
-test('STATUS_BUCKET maps pending_confirm and ICONS has 📧', () => {
+test('STATUS_BUCKET maps pending_confirm and LABELS has CONFIRM', () => {
   assert.equal(logger.STATUS_BUCKET.pending_confirm, 'pendingConfirm');
-  assert.equal(logger.ICONS.pending_confirm, '📧');
+  assert.equal(logger.LABELS.pending_confirm, 'CONFIRM');
 });
 
 test('resetResults clears pendingConfirm bucket', () => {
@@ -157,7 +157,7 @@ test('buildSummary lists pending-confirmation brokers in their own section', () 
   logger.logResult('Spokeo', 'pending_confirm', 'We have sent you a confirmation');
   logger.logResult('Acxiom', 'success');
   const s = logger.buildSummary();
-  assert.match(s, /📧 Awaiting email confirm:\s+2/);
+  assert.match(s, /Awaiting email confirm:\s+2/);
   assert.match(s, /Awaiting email confirmation/);
   assert.match(s, /• Pipl/);
   assert.match(s, /• Spokeo/);
@@ -176,13 +176,13 @@ test('buildSummary uses "Submitted (form accepted)" wording, not "Removed"', () 
 test('buildSummary contains honest disclaimer footer', () => {
   logger.resetResults();
   const s = logger.buildSummary();
-  assert.match(s, /Submitted ≠ confirmed deleted/);
+  assert.match(s, /Submitted does not mean deleted/);
   assert.match(s, /--verify/);
 });
 
 test('DISCLAIMER constant is exported', () => {
   assert.equal(typeof logger.DISCLAIMER, 'string');
-  assert.match(logger.DISCLAIMER, /Submitted ≠ confirmed deleted/);
+  assert.match(logger.DISCLAIMER, /Submitted does not mean deleted/);
 });
 
 // ── WP3 (this WP): inbox checklist for pending_confirm ───────────────────────
@@ -220,7 +220,7 @@ test('buildSummary omits Watch your inbox section when pendingConfirm is empty',
   assert.equal(s.includes('Watch your inbox'), false);
 });
 
-test('buildSummary shows 💀 Dead line and excludes dead from ❌ Errors count', () => {
+test('buildSummary shows Dead line and excludes dead from Errors count', () => {
   logger.resetResults();
   logger.logResult('ok.com', 'success');
   logger.logResult('gone1.com', 'dead', 'HTTP 404');
@@ -229,11 +229,11 @@ test('buildSummary shows 💀 Dead line and excludes dead from ❌ Errors count'
 
   const s = logger.buildSummary();
   // Dead line present with correct count
-  assert.match(s, /💀 Dead \(stale URL\):\s+2/);
+  assert.match(s, /Dead \(stale URL\):\s+2/);
   // Errors shows only genuine errors, not dead ones
-  assert.match(s, /❌ Errors:\s+1/);
+  assert.match(s, /Errors:\s+1/);
   // Sanity-check success
-  assert.match(s, /✅ Submitted \(form accepted\):\s+1/);
+  assert.match(s, /Submitted \(form accepted\):\s+1/);
 });
 
 // ── WP5: genericStats in summary ─────────────────────────────────────────────
@@ -370,6 +370,18 @@ test('the skipped line does not claim a reason (it holds dry-run, allowlisted an
   logger.resetResults();
   logger.logResult('A', 'skipped', 'dry-run - form filled but not submitted');
   const s = logger.buildSummary();
-  assert.match(s, /⏭  Skipped:\s+1/);
+  assert.match(s, /Skipped:\s+1/);
   assert.doesNotMatch(s, /done recently/);
+});
+
+test('result lines and the summary carry no emoji', () => {
+  const lines = [];
+  const orig = console.log; console.log = (s) => lines.push(String(s));
+  try {
+    logger.resetResults();
+    for (const st of Object.keys(logger.STATUS_BUCKET)) logger.logResult('B', st, 'detail');
+  } finally { console.log = orig; }
+  const out = lines.join('\n') + '\n' + logger.buildSummary();
+  assert.doesNotMatch(out, /\p{Extended_Pictographic}/u);
+  assert.match(lines[0], /^SUBMITTED +\[B\] detail$/);
 });

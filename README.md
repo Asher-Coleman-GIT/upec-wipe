@@ -236,14 +236,14 @@ auto-identity-remove/
 ```
 
 On each run you'll see:
-- `✅ Submitted (form accepted)` - opt-out form was submitted this run
-- `📧 Awaiting email confirm` - broker replied "check your email to confirm"; click the link in your inbox. Auto-retried after 14 days if still pending.
-- `⏭  Skipped` - not attempted this run: done recently (re-check not due), waiting on an email confirmation, on your allowlist, US-only for a non-US person, or a dry run
-- `👀 Previewed (not submitted)` - a preview filled the form but sent nothing (preview only)
-- `🔍 Not listed` - your name wasn't found on that site
-- `📋 Manual needed` - opened in your browser for you to handle
-- `❌ Error` - network/timeout issue, will retry next run
-- `💀 Dead (stale URL)` - broker URL is gone (DNS/404); not counted as an error
+- `Submitted (form accepted)` - opt-out form was submitted this run
+- `Awaiting email confirm` - broker replied "check your email to confirm"; click the link in your inbox. Auto-retried after 14 days if still pending.
+- `Skipped` - not attempted this run: done recently (re-check not due), waiting on an email confirmation, on your allowlist, US-only for a non-US person, or a dry run
+- `Previewed (not submitted)` - a preview filled the form but sent nothing (preview only)
+- `Not listed` - your name wasn't found on that site
+- `Manual needed` - opened in your browser for you to handle
+- `Errors` - network/timeout issue, will retry next run
+- `Dead (stale URL)` - broker URL is gone (DNS/404); not counted as an error
 
 > **Submitted ≠ confirmed deleted.** Use `node watcher.js --verify` for spot-check verification. See [STATUS.md](STATUS.md) for a per-broker confidence table.
 
@@ -260,10 +260,10 @@ Be skeptical of the counts this tool prints. Broker sites change their DOM
 constantly and a selector that no longer matches fails quietly. That is the
 central limitation of the whole approach, not a bug that is about to be fixed.
 
-The `✅ Submitted` count means the form was accepted by the broker. It does **not** prove deletion. To check:
+The `Submitted` count means the form was accepted by the broker. It does **not** prove deletion. To check:
 
 1. Run `node watcher.js --verify` - re-searches each broker where a successful opt-out was recorded and reports whether your name still appears.
-2. Look at the `📧 Awaiting email confirm` section after each run - these are half-done until you click the link.
+2. Look at the `Awaiting email confirm` section after each run - these are half-done until you click the link.
 
 If you want to know exactly which brokers are hand-verified vs heuristic, see [STATUS.md](STATUS.md).
 
@@ -422,7 +422,7 @@ This fetches the California (SB-362) and Vermont registries over HTTP (no browse
 
 ### Pruning stale / dead URLs
 
-The Markup dataset is years old; many of the ~489 generic opt-out URLs now 404 or fail DNS lookup. These are classified as `💀 Dead (stale URL)` in run output and do **not** count as errors.
+The Markup dataset is years old; many of the ~489 generic opt-out URLs now 404 or fail DNS lookup. These are classified as `Dead (stale URL)` in run output and do **not** count as errors.
 
 After several runs have accumulated in `logs/`, trim permanently-dead hostnames from future runs so they are skipped without any network request:
 

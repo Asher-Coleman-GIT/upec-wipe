@@ -208,7 +208,7 @@ function buildConfig(existing, a) {
 
 async function main() {
   rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-  console.log('\n🔒 auto-identity-remove - Setup\n');
+  console.log('\nauto-identity-remove - Setup\n');
   console.log('This will create config.json with your personal info (gitignored).');
   console.log('Run this once. Re-run anytime to update.\n');
 
@@ -218,7 +218,7 @@ async function main() {
     // Never overwrite an encrypted config we cannot read. Doing so would write
     // plaintext PII beside the .enc file, lose the user's existing values, and
     // have no runtime effect (loadConfig prefers the .enc).
-    console.error('\n❌ An encrypted config exists (config.json.enc) but it could not be decrypted.');
+    console.error('\nError: An encrypted config exists (config.json.enc) but it could not be decrypted.');
     console.error('   Set the passphrase and re-run so your current values are preserved:\n');
     console.error('     AIDR_PASSPHRASE=... node setup.js\n');
     console.error('   Refusing to continue: writing a plaintext config.json here would put your');
@@ -278,7 +278,7 @@ async function main() {
   // password and every API key. The umask default (0644) makes all of that
   // readable by any other local account.
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), { mode: 0o600 });
-  console.log('\n✅ config.json saved.\n');
+  console.log('\nconfig.json saved.\n');
 
   // -- At-rest encryption ------------------------------------------------------
   //
@@ -289,9 +289,9 @@ async function main() {
   if (prior.encrypted && !prior.locked) {
     const encResult = maybeEncryptConfig({ passphrase: getPassphrase() });
     if (encResult.encrypted) {
-      console.log(`🔒 Re-encrypted to ${encResult.encPath}; plaintext shredded.\n`);
+      console.log(`Re-encrypted to ${encResult.encPath}; plaintext shredded.\n`);
     } else {
-      console.error('⚠  Could not re-encrypt the config. config.json is currently PLAINTEXT.');
+      console.error('Warning: Could not re-encrypt the config. config.json is currently PLAINTEXT.');
       console.error('   Fix it now with: AIDR_PASSPHRASE=... node watcher.js --encrypt-config\n');
     }
   } else {
@@ -317,13 +317,13 @@ async function main() {
   // Initialize state.json if not present
   if (!fs.existsSync(STATE_PATH)) {
     fs.writeFileSync(STATE_PATH, JSON.stringify({ optOuts: {}, createdAt: new Date().toISOString() }, null, 2), { mode: 0o600 });
-    console.log('✅ state.json initialized (tracks opt-out history).\n');
+    console.log('state.json initialized (tracks opt-out history).\n');
   }
 
   rl.close();
 
   console.log('─'.repeat(54));
-  console.log('✅ Setup complete!\n');
+  console.log('Setup complete!\n');
   console.log('  Run now:      node watcher.js');
   console.log('  Manual run:   ./run.sh');
   console.log('  Check state:  cat state.json\n');
