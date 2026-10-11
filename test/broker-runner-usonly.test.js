@@ -160,3 +160,22 @@ test('broker without usOnly flag is NOT skipped for a non-US user', async () => 
   );
   assert.equal(skipEntry, undefined, 'global broker must not be skipped by the usOnly guard');
 });
+
+test('a states-limited broker is silent for a person outside those states', async () => {
+  logged.length = 0;
+  configure({ dryRun: true, person: { country: 'US', state: 'UT' } });
+  await processBroker(null, { name: 'CA only', method: 'manual', states: ['CA'], optOutUrl: 'https://x' });
+  assert.equal(logged.length, 0);
+});
+test('a states-limited broker runs for a resident', async () => {
+  logged.length = 0;
+  configure({ dryRun: true, person: { country: 'US', state: 'ca' } });
+  await processBroker(null, { name: 'CA only', method: 'manual', states: ['CA'], optOutUrl: 'https://x' });
+  assert.equal(logged[0].status, 'manual');
+});
+test('a person with no state does not get a states-limited broker', async () => {
+  logged.length = 0;
+  configure({ dryRun: true, person: { country: 'US' } });
+  await processBroker(null, { name: 'CA only', method: 'manual', states: ['CA'], optOutUrl: 'https://x' });
+  assert.equal(logged.length, 0);
+});

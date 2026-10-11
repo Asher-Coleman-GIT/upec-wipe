@@ -97,20 +97,14 @@ function buildBrokers(person) {
 
   return [
 
-  // ═══ Priority 1 - California DELETE Act portal (covers all ~500 CA-registered brokers) ═══
-
-  // CA DROP (Delete Request and Opt-out Platform) is not yet live as of late 2025.
-  // SB 362 broker-side compliance deadline is August 1, 2026.
-  // Keeping this entry as manual with the official CPPA registry landing page.
+  // ═══ California residents only ═══
   {
-    name: 'California DELETE Portal',
-    optOutUrl: 'https://cppa.ca.gov/data_broker_registry/',
+    name: 'California DROP',
     method: 'manual',
+    optOutUrl: 'https://privacy.ca.gov/drop/',
+    states: ['CA'],
     priority: 1,
-    confidence: 'documented_not_live',
-    usOnly: false,
-    note: 'CA DROP delete portal is not yet live. SB 362 broker-side compliance deadline is August 1, 2026.',
-    notes: 'CA DROP (Delete Request and Opt-out Platform) under SB 362 is not yet live. The broker-side compliance deadline is August 1, 2026. CPPA has missed several preceding milestones; ongoing litigation (Data Brokers Association v. Bonta) may further delay. Official registry: https://cppa.ca.gov/data_broker_registry/',
+    notes: 'California DROP: one request reaches every data broker registered in California. Submit once at https://privacy.ca.gov/drop/',
   },
 
   // ═══ Priority 1 - High-traffic people-search sites ═══════════════════════
@@ -575,14 +569,6 @@ function buildBrokers(person) {
     optOutUrl: 'https://search.google.com/search-console/remove-outdated-content',
     notes: 'Submit if any cached pages show your personal info.',
     priority: 3,
-  },
-
-  {
-    name: 'CalPrivacy DROP',
-    method: 'manual',
-    optOutUrl: 'https://cppa.ca.gov/data_broker_registry/',
-    notes: 'California one-stop opt-out: submits to all 4000+ registered CA data brokers. Submit once if you are a CA resident.',
-    priority: 1,
   },
 
   ];
