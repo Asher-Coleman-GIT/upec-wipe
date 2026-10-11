@@ -116,10 +116,11 @@ test('unreviewed and excluded records do nothing at run time', () => {
   assert.deepEqual(catalogBrokersForPerson([a, b], PERSON), []);
 });
 
-test('subdomain of an explicit host is dropped, and so is a name clash', () => {
+test('subdomain of an explicit host is dropped; a name clash is renamed (final review #6)', () => {
   const recs = [base({ domain: 'searchquarry.com' }), base({ domain: 'x.com', name: 'Spokeo' })];
+  recs[1].review.definition.optOutUrl = 'https://x.com/opt-out';
   const out = catalogBrokersForPerson(recs, PERSON, { explicitHosts: new Set(['members.searchquarry.com']), explicitNames: new Set(['spokeo']) });
-  assert.deepEqual(out, []);
+  assert.deepEqual(out.map(b => b.name), ['Spokeo (x.com)']);
 });
 
 test('catalogDomains and catalogSummary list every record', () => {

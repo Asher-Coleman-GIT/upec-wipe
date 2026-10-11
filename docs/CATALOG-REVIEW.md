@@ -25,7 +25,7 @@ For each site in the batch, edit its record's `review`:
 - `"state": "manual"` with `optOutUrl` and `notes` when a person has to do it, or
 - `"state": "excluded"` when the site is not about individuals.
 
-Values are tokens: `{firstName}`, `{lastName}`, `{fullName}`, `{email}`, `{city}`, `{state}`, `{stateName}`, `{zip}`, `{dobMonthName}`, `{dobDay}`, `{dobYear}`. The only literals allowed are `on` and option values the survey recorded for a dropdown. Never type a real value.
+Values are tokens: `{firstName}`, `{lastName}`, `{fullName}`, `{email}`, `{city}`, `{state}`, `{stateName}`, `{zip}`, `{dobMonthName}`, `{dobDay}`, `{dobYear}`. The only literals allowed are `on` and option values the survey recorded for a dropdown. Never type a real value. URLs may not contain `{email}` at all, and identity query parameters (`first`, `name`, `q`, `zip`...) must be tokens. Definition URLs must be on the site's own domain or on a platform listed in the record's `formHosts` (for example a broker whose privacy form is hosted on `onetrust.com`). At run time a reviewed site whose page lands anywhere else is listed as manual and nothing is filled.
 
 Rules learned from the 2026-10 surveys:
 

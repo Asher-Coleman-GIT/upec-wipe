@@ -12,7 +12,8 @@
   ],
   "contacts": [
    "privacy@01advertising.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "33across.com",
@@ -27,7 +28,8 @@
   ],
   "contacts": [
    "privacy@33across.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "33mileradius.com",
@@ -42,7 +44,8 @@
   ],
   "contacts": [
    "operations@ignitevisibility.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "4-eyes.ai",
@@ -53,22 +56,36 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
+ },
+ {
+  "domain": "5x5coop.com",
+  "name": "5X5 US, LLC",
+  "urls": [
+   "https://5x5data.com/dsr-out/"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "5x5data.com"
+  ]
  },
  {
   "domain": "5x5data.com",
-  "name": "5X5 US, LLC",
+  "name": "5x5 US, LLC",
   "urls": [
-   "https://5x5data.com/dsr-out/",
    "https://privacy.5x5data.com/5x5/opt-out; https://5x5data.com/privacy-policy/"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "contact@join5x5.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "6sense.com",
@@ -83,7 +100,8 @@
   ],
   "contacts": [
    "privacy@6sense.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "aboutads.info",
@@ -94,7 +112,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "abovedata.io",
@@ -109,7 +128,8 @@
   ],
   "contacts": [
    "privacy@abovedata.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "acbj.com",
@@ -120,7 +140,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "accurateappend.com",
@@ -135,7 +156,8 @@
   ],
   "contacts": [
    "shawn@accurateappend.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "achcoop.com",
@@ -150,7 +172,8 @@
   ],
   "contacts": [
    "privacy@achcoop.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "acronymix.com",
@@ -165,7 +188,8 @@
   ],
   "contacts": [
    "privacy@acronymix.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "activimpact.ai",
@@ -178,7 +202,8 @@
   ],
   "contacts": [
    "privacy@activimpact.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adagio.io",
@@ -191,7 +216,8 @@
   ],
   "contacts": [
    "dpo@adagio.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adara.com",
@@ -202,7 +228,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "adept-id.com",
@@ -217,7 +244,8 @@
   ],
   "contacts": [
    "privacy@adept-id.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adprime.com",
@@ -230,7 +258,8 @@
   ],
   "contacts": [
    "privacy@adprime.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adsquare.com",
@@ -245,7 +274,8 @@
   ],
   "contacts": [
    "privacy@adsquare.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adstradata.com",
@@ -260,7 +290,8 @@
   ],
   "contacts": [
    "privacy.officer@adstradata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adswizz.com",
@@ -273,7 +304,8 @@
   ],
   "contacts": [
    "privacy@adswizz.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "adttribution.com",
@@ -286,7 +318,8 @@
   ],
   "contacts": [
    "hello@adttrbution.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "advancedbackgroundchecks.com",
@@ -299,7 +332,8 @@
   ],
   "contacts": [
    "privacy@mtalley.zendesk.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "affinity.co",
@@ -313,18 +347,26 @@
   ],
   "contacts": [
    "privacy@affinity.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "affinity.solutions",
   "name": "Affinity Solutions",
   "urls": [
-   "https://www.affinity.solutions/data-privacy-notice/"
+   "https://www.affinity.solutions/data-privacy-notice/",
+   "https://affinitysolutions-privacy.my.onetrust.com/webform/a564cfa1-53bf-4c10-bf95-cd907432d7e8/7e4e6bf3-6562-454e-8c73-6a7bd1f4b336"
   ],
   "sources": [
-   "markup"
+   "markup",
+   "ca-registry"
   ],
-  "contacts": []
+  "contacts": [
+   "privacy@affinitysolutions.com"
+  ],
+  "formHosts": [
+   "onetrust.com"
+  ]
  },
  {
   "domain": "affinityanswers.com",
@@ -338,7 +380,8 @@
   ],
   "contacts": [
    "dataprivacy@affinityanswers.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "agedleadstore.com",
@@ -349,7 +392,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "aggknowledge.ai",
@@ -362,7 +406,8 @@
   ],
   "contacts": [
    "privacy@aggknowledge.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "agile-ed.com",
@@ -375,7 +420,8 @@
   ],
   "contacts": [
    "personal_data_opt_out@agile-ed.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "agrmarketingsolutions.com",
@@ -390,7 +436,8 @@
   ],
   "contacts": [
    "stephen@agrmarketingsolutions.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "aidentified.com",
@@ -404,7 +451,8 @@
   ],
   "contacts": [
    "privacy@aidentified.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "alescodata.com",
@@ -417,7 +465,8 @@
   ],
   "contacts": [
    "legal@alescodata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "alikeaudience.com",
@@ -432,7 +481,8 @@
   ],
   "contacts": [
    "privacy@alikeaudience.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "allantgroup.com",
@@ -445,7 +495,8 @@
   ],
   "contacts": [
    "privacy@allantgroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "alliantinsight.com",
@@ -459,7 +510,8 @@
   ],
   "contacts": [
    "compliance@alliantdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "alphonso.tv",
@@ -474,7 +526,8 @@
   ],
   "contacts": [
    "tom.cushing@lgads.tv"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "altairdata.com",
@@ -489,7 +542,8 @@
   ],
   "contacts": [
    "dpelland@altairci.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "altrata.com",
@@ -504,18 +558,26 @@
   ],
   "contacts": [
    "legal@altrata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "amplemarket.com",
   "name": "Tagis, Inc.",
   "urls": [
-   "https://www.amplemarket.com/legal/privacy"
+   "https://www.amplemarket.com/legal/privacy",
+   "https://portal.usepylon.com/amplemarket/forms/privacy-request-form; https://www.amplemarket.com/legal/data-broker-privacy-notice"
   ],
   "sources": [
-   "markup"
+   "markup",
+   "ca-registry"
   ],
-  "contacts": []
+  "contacts": [
+   "legal@amplemarket.com"
+  ],
+  "formHosts": [
+   "usepylon.com"
+  ]
  },
  {
   "domain": "analytics-iq.com",
@@ -528,7 +590,8 @@
   ],
   "contacts": [
    "privacy@analyticsiq.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "anchorcomputer.com",
@@ -539,7 +602,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "andrewswharton.com",
@@ -550,22 +614,22 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "anteriad.com",
   "name": "Anteriad, LLC",
   "urls": [
-   "https://anteriad.com/privacy-center",
    "https://anteriad.com/; https://anteriad.com/privacy-portal"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy@anteriad.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "apollo.io",
@@ -580,7 +644,8 @@
   ],
   "contacts": [
    "dpo@apollo.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "apollointeractive.com",
@@ -594,7 +659,8 @@
   ],
   "contacts": [
    "deatherage@apollointeractive.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "applovin.com",
@@ -607,7 +673,8 @@
   ],
   "contacts": [
    "datarequests@applovin.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "appscience.ai",
@@ -622,7 +689,8 @@
   ],
   "contacts": [
    "privacy@appscience.inc"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "arccorp.com",
@@ -636,7 +704,8 @@
   ],
   "contacts": [
    "legalteam@arccorp.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "aristotle.com",
@@ -650,7 +719,8 @@
   ],
   "contacts": [
    "dpo@aristotle.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "astoriacompany.com",
@@ -665,19 +735,25 @@
   ],
   "contacts": [
    "bizdev@astoriacompany.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "atdata.com",
   "name": "AtData, LLC",
   "urls": [
+   "https://privacyportal-cdn.onetrust.com/dsarwebform/b38ccfa3-c14a-451e-bf1d-974d1e278b7c/6214ac53-9059-474d-a847-800250556e9d.html",
    "https://www.atdata.com"
   ],
   "sources": [
+   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy_support@atdata.com"
+  ],
+  "formHosts": [
+   "onetrust.com"
   ]
  },
  {
@@ -693,7 +769,8 @@
   ],
   "contacts": [
    "compliance@allgoodmediagroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "audienceacuity.com",
@@ -708,7 +785,8 @@
   ],
   "contacts": [
    "privacy@audienceacuity.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "audiencemix.net",
@@ -721,7 +799,8 @@
   ],
   "contacts": [
    "privacy@audiencemix.net"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "audiencepoint.com",
@@ -732,7 +811,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "audigent.com",
@@ -747,7 +827,8 @@
   ],
   "contacts": [
    "ca_drop_audigent@experian.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "autoweb.com",
@@ -762,7 +843,8 @@
   ],
   "contacts": [
    "autolegal@autoweb.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "aviato.co",
@@ -775,7 +857,8 @@
   ],
   "contacts": [
    "privacy@aviato.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "awl.com",
@@ -786,7 +869,24 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
+ },
+ {
+  "domain": "azerion.com",
+  "name": "Azerion US Inc.",
+  "urls": [
+   "https://www.hybridtheory.com/privacy-notice/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "dpo_hybridtheory@azerion.com"
+  ],
+  "formHosts": [
+   "hybridtheory.com"
+  ]
  },
  {
   "domain": "azira.com",
@@ -800,7 +900,8 @@
   ],
   "contacts": [
    "privacy@azira.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "babelstreet.com",
@@ -813,7 +914,8 @@
   ],
   "contacts": [
    "privacy@babelstreet.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "batchleads.io",
@@ -826,20 +928,8 @@
   ],
   "contacts": [
    "ops@equimine.com"
-  ]
- },
- {
-  "domain": "bathroom-remodel-today.com",
-  "name": "LEAD ENHANCE LLC",
-  "urls": [
-   "https://bathroom-remodel-today.com/privacy/"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "josh@lead-enhance.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "bbdirect.com",
@@ -853,7 +943,8 @@
   ],
   "contacts": [
    "melodyrongstad@bbdirect.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bdex.com",
@@ -867,7 +958,8 @@
   ],
   "contacts": [
    "privacy@bdex.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bdo.com",
@@ -882,7 +974,8 @@
   ],
   "contacts": [
    "privacy@bdo-gci.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "becausal.com",
@@ -895,7 +988,8 @@
   ],
   "contacts": [
    "privacy@becausal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "beeswax.com",
@@ -910,7 +1004,8 @@
   ],
   "contacts": [
    "privacy@beeswax.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "belardiwong.com",
@@ -925,7 +1020,8 @@
   ],
   "contacts": [
    "privacy.officer@belardiwong.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "benutech.com",
@@ -938,7 +1034,8 @@
   ],
   "contacts": [
    "chad.brown@benutech.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bestpickreports.com",
@@ -953,7 +1050,8 @@
   ],
   "contacts": [
    "operations@ignitevisibility.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "big-village.com",
@@ -968,7 +1066,8 @@
   ],
   "contacts": [
    "jp.sardi@brightmountainmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bigdbm.com",
@@ -983,7 +1082,8 @@
   ],
   "contacts": [
    "privacy@bigdbm.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "biointelli.com",
@@ -998,7 +1098,8 @@
   ],
   "contacts": [
    "privacy@biointelli.net"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "biscience.com",
@@ -1009,7 +1110,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "biscred.com",
@@ -1022,7 +1124,8 @@
   ],
   "contacts": [
    "privacy@biscred.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "blackbaud.com",
@@ -1037,7 +1140,8 @@
   ],
   "contacts": [
    "privacy@blackbaud.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "blackbox.email",
@@ -1048,7 +1152,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "blackpearl.com",
@@ -1063,7 +1168,8 @@
   ],
   "contacts": [
    "richard.doone@blackpearl.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "blis.com",
@@ -1078,7 +1184,8 @@
   ],
   "contacts": [
    "privacy@blis.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "blueaction.io",
@@ -1091,7 +1198,8 @@
   ],
   "contacts": [
    "info@blueaction.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bluefireleads.com",
@@ -1104,7 +1212,8 @@
   ],
   "contacts": [
    "dev@bluefireleads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "blueprintaudiences.com",
@@ -1117,7 +1226,8 @@
   ],
   "contacts": [
    "privacy@blueprintaudiences.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "boam.ai",
@@ -1130,7 +1240,8 @@
   ],
   "contacts": [
    "privacy@boam.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bombora.com",
@@ -1145,7 +1256,8 @@
   ],
   "contacts": [
    "legal@bombora.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "bookyourdata.com",
@@ -1160,29 +1272,26 @@
   ],
   "contacts": [
    "data@bookyourdata.com"
-  ]
- },
- {
-  "domain": "box.com",
-  "name": "EAB Global, Inc.",
-  "urls": [
-   "https://eab.app.box.com/s/ig1xoav1pag3q3af1k812bdthzfyhcwn"
   ],
-  "sources": [
-   "markup"
-  ],
-  "contacts": []
+  "formHosts": []
  },
  {
   "domain": "brandwatch.com",
   "name": "Crimson Hexagon",
   "urls": [
-   "https://www.brandwatch.com/confirmation/legal-data/"
+   "https://www.brandwatch.com/confirmation/legal-data/",
+   "https://portals.dporganizer.com/fa778b0e-817f-4c96-b13d-e2b614470033"
   ],
   "sources": [
-   "markup"
+   "markup",
+   "ca-registry"
   ],
-  "contacts": []
+  "contacts": [
+   "dpo@cision.com"
+  ],
+  "formHosts": [
+   "dporganizer.com"
+  ]
  },
  {
   "domain": "bridg.com",
@@ -1196,7 +1305,8 @@
   ],
   "contacts": [
    "legalnotices@cardlytics.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "brooksim.com",
@@ -1211,7 +1321,8 @@
   ],
   "contacts": [
    "privacy@brooksim.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "buildertrend.com",
@@ -1226,7 +1337,8 @@
   ],
   "contacts": [
    "legal@buildertrend.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "buxtonco.com",
@@ -1240,45 +1352,53 @@
   ],
   "contacts": [
    "consumerprivacy@buxtonco.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "buyerlink.co",
   "name": "Buyerlink Inc.",
   "urls": [
-   "https://www.buyerlink.co/privacy",
    "https://www.buyerlink.co"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "legal@buyerlink.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "buyerlink.com",
+  "name": "Buyerlink Inc.",
+  "urls": [
+   "https://www.buyerlink.co/privacy"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "buyerlink.co"
+  ]
+ },
+ {
+  "domain": "cadent.tv",
+  "name": "Cadent, LLC",
+  "urls": [
+   "https://www.cadent.com/your-privacy-choices",
+   "https://www.cadent.tv"
   ],
   "sources": [
    "markup",
    "ca-registry"
   ],
   "contacts": [
-   "legal@buyerlink.com"
-  ]
- },
- {
-  "domain": "cadent.com",
-  "name": "Cadent, LLC",
-  "urls": [
-   "https://www.cadent.com/your-privacy-choices"
-  ],
-  "sources": [
-   "markup"
-  ],
-  "contacts": []
- },
- {
-  "domain": "cadent.tv",
-  "name": "Cadent LLC",
-  "urls": [
-   "https://www.cadent.tv"
-  ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
    "privacy@cadent.tv"
+  ],
+  "formHosts": [
+   "cadent.com"
   ]
  },
  {
@@ -1292,7 +1412,8 @@
   ],
   "contacts": [
    "safety@cameo.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "campaigner.com",
@@ -1305,7 +1426,8 @@
   ],
   "contacts": [
    "privacy@ziffdavis.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "captifytechnologies.com",
@@ -1320,7 +1442,8 @@
   ],
   "contacts": [
    "legal-captify@verve.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "captiv8.io",
@@ -1333,7 +1456,8 @@
   ],
   "contacts": [
    "privacy@captiv8.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "careerbuilder.com",
@@ -1344,7 +1468,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "carneydirect.com",
@@ -1358,7 +1483,8 @@
   ],
   "contacts": [
    "privacy@carneydirect.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cashmereai.com",
@@ -1373,7 +1499,8 @@
   ],
   "contacts": [
    "farbod@cashmereai.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "catalina.com",
@@ -1388,7 +1515,8 @@
   ],
   "contacts": [
    "privacyteam@catalina.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "catalist.us",
@@ -1403,7 +1531,8 @@
   ],
   "contacts": [
    "privacy@catalist.us"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cbinsights.com",
@@ -1416,7 +1545,8 @@
   ],
   "contacts": [
    "privacy@cbinsights.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cdkglobal.com",
@@ -1431,7 +1561,8 @@
   ],
   "contacts": [
    "james.kinzer@cdk.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cengagegroup.com",
@@ -1442,7 +1573,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "censia.com",
@@ -1457,7 +1589,8 @@
   ],
   "contacts": [
    "support@censia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "checksecrets.com",
@@ -1468,7 +1601,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "choreograph.com",
@@ -1483,7 +1617,8 @@
   ],
   "contacts": [
    "datagovernance@choreograph.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cinqdi.com",
@@ -1496,7 +1631,8 @@
   ],
   "contacts": [
    "support@cinqdi.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "circana.com",
@@ -1509,6 +1645,23 @@
   ],
   "contacts": [
    "privacy@circana.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "cision.com",
+  "name": "Cision",
+  "urls": [
+   "https://portals.dporganizer.com/fa778b0e-817f-4c96-b13d-e2b614470033"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "dpo@cision.com"
+  ],
+  "formHosts": [
+   "dporganizer.com"
   ]
  },
  {
@@ -1524,7 +1677,8 @@
   ],
   "contacts": [
    "business@citydata.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "civisanalytics.com",
@@ -1539,7 +1693,8 @@
   ],
   "contacts": [
    "dataprotectionmail@civisanalytics.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "claritas.com",
@@ -1554,6 +1709,23 @@
   ],
   "contacts": [
    "rhonda.rich@claritas.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "clarivate.com",
+  "name": "DR Decision Resources, LLC",
+  "urls": [
+   "https://privacyportal.onetrust.com/webform/7636e208-dda4-4218-8026-e1bc155873fc/draft/c3eedb35-4568-4772-87fb-4d8ae17ac233; https://privacyportal.onetrust.com/webform/7636e208-dda4-4218-8026-e1bc155873fc/draft/8651c266-68d4-43a8-b7ca-7bd8398843d6"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "drgdsr@clarivate.com"
+  ],
+  "formHosts": [
+   "onetrust.com"
   ]
  },
  {
@@ -1568,7 +1740,8 @@
   ],
   "contacts": [
    "privacy@clay.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "clearcompany.com",
@@ -1582,7 +1755,8 @@
   ],
   "contacts": [
    "privacy@clearcompany.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "clearview.ai",
@@ -1596,7 +1770,8 @@
   ],
   "contacts": [
    "privacy-requests@clearview.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "clickagy.com",
@@ -1610,7 +1785,8 @@
   ],
   "contacts": [
    "privacy@clickagy.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "clientcommand.com",
@@ -1624,7 +1800,8 @@
   ],
   "contacts": [
    "legal@clientcommand.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "clustrmaps.com",
@@ -1635,7 +1812,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "coasttechnology.com",
@@ -1648,19 +1826,25 @@
   ],
   "contacts": [
    "info@dealershiptoolkit.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cognism.com",
-  "name": "Cognism",
+  "name": "Cognism, Inc.",
   "urls": [
+   "https://cognism.privacy.saymine.io/cognism",
    "https://www.cognism.com"
   ],
   "sources": [
+   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy@cognism.com"
+  ],
+  "formHosts": [
+   "saymine.io"
   ]
  },
  {
@@ -1676,7 +1860,8 @@
   ],
   "contacts": [
    "legal@collectivedata.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "commercesignals.com",
@@ -1689,7 +1874,8 @@
   ],
   "contacts": [
    "info@commercesignals.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "complementics.com",
@@ -1702,7 +1888,8 @@
   ],
   "contacts": [
    "akatavic@econtext.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "completemailinglists.com",
@@ -1716,7 +1903,8 @@
   ],
   "contacts": [
    "ewoolf@completemailinglists.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "completemedicallists.com",
@@ -1731,7 +1919,8 @@
   ],
   "contacts": [
    "tburnell@completemedicallists.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "comscore.com",
@@ -1745,7 +1934,8 @@
   ],
   "contacts": [
    "privacy@comscore.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "connectedinvestors.com",
@@ -1760,7 +1950,8 @@
   ],
   "contacts": [
    "dataprivacy@connectedinvestors.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "connectionholdings.com",
@@ -1773,7 +1964,8 @@
   ],
   "contacts": [
    "amanda@connectionholdings.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "connextdigital.com",
@@ -1784,7 +1976,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "consumercanvas.net",
@@ -1797,7 +1990,8 @@
   ],
   "contacts": [
    "privacy@consumercanvas.net"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "contactout.com",
@@ -1810,7 +2004,8 @@
   ],
   "contacts": [
    "albert@contactout.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "contacts411.com",
@@ -1821,7 +2016,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "convergemarketing.com",
@@ -1836,7 +2032,8 @@
   ],
   "contacts": [
    "privacy@convergemarketing.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "convex.com",
@@ -1851,7 +2048,8 @@
   ],
   "contacts": [
    "support@convexlabs.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "costar.com",
@@ -1865,7 +2063,8 @@
   ],
   "contacts": [
    "globalprivacyinbox@costar.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "coxautoinc.com",
@@ -1878,7 +2077,8 @@
   ],
   "contacts": [
    "consumer-privacy-ops@coxautoinc.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "crexi.com",
@@ -1889,7 +2089,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "crisil.com",
@@ -1898,12 +2099,10 @@
    "https://www.crisil.com/content/crisilcom/en/home/crisil-privacy-notice.html"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "privacy1@crisil.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "criteo.com",
@@ -1916,22 +2115,36 @@
   ],
   "contacts": [
    "dpo@criteo.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "crosspixel.net",
+  "name": "Cross Pixel Media, Inc.",
+  "urls": [
+   "https://privacy.crsspxl.com/; https://crosspixel.net/privacy-policy/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacy@rbarrel.com"
+  ],
+  "formHosts": [
+   "crsspxl.com"
   ]
  },
  {
   "domain": "crsspxl.com",
   "name": "Cross Pixel Media, Inc.",
   "urls": [
-   "https://privacy.crsspxl.com/optout",
-   "https://privacy.crsspxl.com/; https://crosspixel.net/privacy-policy/"
+   "https://privacy.crsspxl.com/optout"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "privacy@rbarrel.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "crunchbase.com",
@@ -1946,7 +2159,8 @@
   ],
   "contacts": [
    "legal@crunchbase.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cuebiq.com",
@@ -1961,7 +2175,8 @@
   ],
   "contacts": [
    "legal@cuebiq.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "cybba.com",
@@ -1974,7 +2189,8 @@
   ],
   "contacts": [
    "privacy@cybba.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datadecisionsgroup.com",
@@ -1988,7 +2204,8 @@
   ],
   "contacts": [
    "privacy@datadecisionsgroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datadelivers.com",
@@ -2003,7 +2220,8 @@
   ],
   "contacts": [
    "privacy@datadelivers.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datadesk.io",
@@ -2016,7 +2234,8 @@
   ],
   "contacts": [
    "privacy@datadesk.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datafy.com",
@@ -2030,7 +2249,8 @@
   ],
   "contacts": [
    "opt-out@datafy.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datalane.com",
@@ -2043,7 +2263,8 @@
   ],
   "contacts": [
    "admin@datalane.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datalinedata.com",
@@ -2057,7 +2278,8 @@
   ],
   "contacts": [
    "privacy.officer@datalinedata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datamangroup.com",
@@ -2070,7 +2292,8 @@
   ],
   "contacts": [
    "dale@datamangroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datanyze.com",
@@ -2084,7 +2307,8 @@
   ],
   "contacts": [
    "privacy@datanyze.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datapartners.com",
@@ -2098,7 +2322,8 @@
   ],
   "contacts": [
    "info@datapartners.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dataskip.io",
@@ -2109,7 +2334,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "datasys.com",
@@ -2123,7 +2349,8 @@
   ],
   "contacts": [
    "seth.lubin@datasys.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "date-detective.app",
@@ -2137,7 +2364,8 @@
   ],
   "contacts": [
    "info@date-detective.app"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "datonics.com",
@@ -2152,7 +2380,8 @@
   ],
   "contacts": [
    "accounting@datonics.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dealersocket.com",
@@ -2166,7 +2395,8 @@
   ],
   "contacts": [
    "privacy@solera.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dealerx.com",
@@ -2180,7 +2410,8 @@
   ],
   "contacts": [
    "privacy@dealerx.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dealmachine.com",
@@ -2193,7 +2424,8 @@
   ],
   "contacts": [
    "support@dealmachine.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "decide.co",
@@ -2207,7 +2439,8 @@
   ],
   "contacts": [
    "privacy@decide.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "decisionlinks.com",
@@ -2222,7 +2455,8 @@
   ],
   "contacts": [
    "support@decisionlinks.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "deeprootanalytics.com",
@@ -2237,14 +2471,16 @@
   ],
   "contacts": [
    "notice@deeprootanalytics.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "deepsync.com",
   "name": "Compact Information Systems, LLC",
   "urls": [
    "https://deepsync.com/privacy-policy/",
-   "https://deepsync.com/accudata/"
+   "https://deepsync.com/accudata/",
+   "https://deepsync.com"
   ],
   "sources": [
    "markup",
@@ -2252,7 +2488,8 @@
   ],
   "contacts": [
    "legal@deepsync.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "definitivehc.com",
@@ -2267,14 +2504,16 @@
   ],
   "contacts": [
    "populidrop@definitivehc.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "deloitte.com",
   "name": "Deloitte Consulting LLP",
   "urls": [
    "https://www.deloitte.com/us/en/legal/privacy/predictrisk-privacy-notice.html",
-   "https://datasubject.deloitte.com/"
+   "https://datasubject.deloitte.com/",
+   "https://datasubject.deloitte.com"
   ],
   "sources": [
    "markup",
@@ -2282,7 +2521,8 @@
   ],
   "contacts": [
    "usprivacyquestions@deloitte.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "demandbase.com",
@@ -2296,14 +2536,14 @@
   ],
   "contacts": [
    "privacy@demandbase.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "demandscience.com",
   "name": "Demand Science US, LLC",
   "urls": [
    "https://demandscience.com/privacy-policy/",
-   "https://demandscience.com/privacy-policy?utm_campaign=terminus-redirect",
    "https://demandscience.com/"
   ],
   "sources": [
@@ -2312,7 +2552,8 @@
   ],
   "contacts": [
    "legal@demandscience.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "demyst.com",
@@ -2323,7 +2564,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "diablomedia.com",
@@ -2334,7 +2576,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "dice.com",
@@ -2349,6 +2592,23 @@
   ],
   "contacts": [
    "support@dice.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "digitalmediasolutions.com",
+  "name": "Digital Media Solutions, LLC",
+  "urls": [
+   "https://dmsunsub.io"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "compliancedept@dmsgroup.com"
+  ],
+  "formHosts": [
+   "dmsunsub.io"
   ]
  },
  {
@@ -2363,7 +2623,8 @@
   ],
   "contacts": [
    "privacy@digitalvikingmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "disconetwork.com",
@@ -2378,7 +2639,8 @@
   ],
   "contacts": [
    "privacy@disconetwork.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "disqus.com",
@@ -2393,19 +2655,21 @@
   ],
   "contacts": [
    "privacy@disqus.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dmsunsub.io",
   "name": "Digital Media Solutions, LLC",
   "urls": [
-   "https://dmsunsub.io"
+   "https://dms-privacy.my.onetrust.com/webform/506f8b15-11ff-4f18-95fa-48ff903e623f/4268d0f0-bd98-4afb-b33a-a7a922ae182a"
   ],
   "sources": [
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "compliancedept@dmsgroup.com"
+  "contacts": [],
+  "formHosts": [
+   "onetrust.com"
   ]
  },
  {
@@ -2419,7 +2683,8 @@
   ],
   "contacts": [
    "privacyofficer@dnb.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "donorbureau.com",
@@ -2432,20 +2697,8 @@
   ],
   "contacts": [
    "ccpa@donorbureau.com"
-  ]
- },
- {
-  "domain": "dporganizer.com",
-  "name": "Crimson Hexagon",
-  "urls": [
-   "https://portals.dporganizer.com/fa778b0e-817f-4c96-b13d-e2b614470033"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "dpo@cision.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "draup.com",
@@ -2458,7 +2711,8 @@
   ],
   "contacts": [
    "amareshr@draup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dresdendirect.com",
@@ -2469,7 +2723,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "dspolitical.com",
@@ -2482,7 +2737,8 @@
   ],
   "contacts": [
    "andy@mstreetlegal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dstillery.com",
@@ -2497,7 +2753,8 @@
   ],
   "contacts": [
    "privacy@dstillery.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "dtn.com",
@@ -2512,19 +2769,25 @@
   ],
   "contacts": [
    "legal@dtn.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "eab.com",
   "name": "EAB Global, Inc.",
   "urls": [
+   "https://eab.app.box.com/s/ig1xoav1pag3q3af1k812bdthzfyhcwn",
    "https://eab.com/privacy-policy/"
   ],
   "sources": [
+   "markup",
    "ca-registry"
   ],
   "contacts": [
    "legal@eab.com"
+  ],
+  "formHosts": [
+   "box.com"
   ]
  },
  {
@@ -2536,7 +2799,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "edvisors.com",
@@ -2551,7 +2815,8 @@
   ],
   "contacts": [
    "customerservice@edvisors.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ekata.com",
@@ -2562,7 +2827,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "elocal.com",
@@ -2575,7 +2841,8 @@
   ],
   "contacts": [
    "privacy@elocal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "eltoro.com",
@@ -2590,7 +2857,8 @@
   ],
   "contacts": [
    "privacy@eltoro.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "endgame.io",
@@ -2605,7 +2873,8 @@
   ],
   "contacts": [
    "info@endgame.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "enformion.com",
@@ -2620,7 +2889,8 @@
   ],
   "contacts": [
    "support@enformion.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "enigma.com",
@@ -2635,7 +2905,8 @@
   ],
   "contacts": [
    "privacy@enigma.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "enlyft.com",
@@ -2648,7 +2919,8 @@
   ],
   "contacts": [
    "chirag@enlyft.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "enrichlayer.com",
@@ -2661,7 +2933,8 @@
   ],
   "contacts": [
    "privacy@enrichlayer.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "eprodirect.com",
@@ -2672,7 +2945,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "equifax.com",
@@ -2686,7 +2960,8 @@
   ],
   "contacts": [
    "usprivacy@equifax.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "erepublic.com",
@@ -2697,7 +2972,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "everleads.com",
@@ -2710,7 +2986,8 @@
   ],
   "contacts": [
    "privacy@everleads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "evertrue.com",
@@ -2723,7 +3000,8 @@
   ],
   "contacts": [
    "privacy@evertrue.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "evorra.com",
@@ -2737,7 +3015,8 @@
   ],
   "contacts": [
    "privacy@evorra.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "evs7.com",
@@ -2748,7 +3027,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "exa.ai",
@@ -2761,7 +3041,8 @@
   ],
   "contacts": [
    "compliance@exa.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "exactcustomer.com",
@@ -2774,7 +3055,8 @@
   ],
   "contacts": [
    "info@exactcustomer.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "exactdata.com",
@@ -2787,7 +3069,8 @@
   ],
   "contacts": [
    "privacy@exactdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "exactmatchmarketing.com",
@@ -2800,7 +3083,8 @@
   ],
   "contacts": [
    "datarequest@exactmatch.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "exlservice.com",
@@ -2814,7 +3098,8 @@
   ],
   "contacts": [
    "privacy@exlservice.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "experian.com",
@@ -2830,7 +3115,8 @@
   ],
   "contacts": [
    "ca_drop_fsd@experian.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "experience.com",
@@ -2843,18 +3129,26 @@
   ],
   "contacts": [
    "privacy@experience.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "exploreatlas.io",
   "name": "Hunt Club Inc",
   "urls": [
-   "https://www.exploreatlas.io/privacy"
+   "https://www.exploreatlas.io/privacy",
+   "https://www.huntclub.com/privacy"
   ],
   "sources": [
-   "markup"
+   "markup",
+   "ca-registry"
   ],
-  "contacts": []
+  "contacts": [
+   "scott@huntclub.com"
+  ],
+  "formHosts": [
+   "huntclub.com"
+  ]
  },
  {
   "domain": "explorium.ai",
@@ -2869,7 +3163,8 @@
   ],
   "contacts": [
    "contact@explorium.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "eyeota.com",
@@ -2884,7 +3179,8 @@
   ],
   "contacts": [
    "privacy@eyeota.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "famousbirthdays.com",
@@ -2898,7 +3194,8 @@
   ],
   "contacts": [
    "privacy@famousbirthdays.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "faraday.ai",
@@ -2912,7 +3209,8 @@
   ],
   "contacts": [
    "ccpa@faraday.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fetch.com",
@@ -2925,7 +3223,8 @@
   ],
   "contacts": [
    "c.brown@fetchrewards.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fi-navigator.com",
@@ -2938,7 +3237,8 @@
   ],
   "contacts": [
    "privacy@fi-navigator.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fideo.ai",
@@ -2952,7 +3252,8 @@
   ],
   "contacts": [
    "dpo@fideo.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fifty.io",
@@ -2966,7 +3267,8 @@
   ],
   "contacts": [
    "privacy@fifty.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "findem.ai",
@@ -2981,7 +3283,8 @@
   ],
   "contacts": [
    "privacy@findem.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "finsum.com",
@@ -2996,7 +3299,8 @@
   ],
   "contacts": [
    "privacy@broadridge.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "finthrive.com",
@@ -3012,7 +3316,8 @@
   ],
   "contacts": [
    "tsg@finthrive.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "firstdirectmarketing.com",
@@ -3026,7 +3331,8 @@
   ],
   "contacts": [
    "privacy@firstdirectmarketing.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "firstorion.com",
@@ -3041,7 +3347,8 @@
   ],
   "contacts": [
    "snichols@firstorion.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fivestarrated.com",
@@ -3056,7 +3363,8 @@
   ],
   "contacts": [
    "operations@ignitevisibility.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "flashintel.ai",
@@ -3067,7 +3375,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "focus-usa.com",
@@ -3082,7 +3391,8 @@
   ],
   "contacts": [
    "michaelu@focus-usa.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fogdatascience.com",
@@ -3095,7 +3405,8 @@
   ],
   "contacts": [
    "info@fogdatascience.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "forager.ai",
@@ -3110,21 +3421,11 @@
   ],
   "contacts": [
    "privacy@forager.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "forddirect.com",
-  "name": "DealerDirect LLC",
-  "urls": [
-   "https://www.forddirect.com/privacy"
-  ],
-  "sources": [
-   "markup"
-  ],
-  "contacts": []
- },
- {
-  "domain": "forddirectprivacy.com",
   "name": "DealerDirect LLC",
   "urls": [
    "https://www.forddirectprivacy.com"
@@ -3134,6 +3435,23 @@
   ],
   "contacts": [
    "dprivacy@forddirect.com"
+  ],
+  "formHosts": [
+   "forddirectprivacy.com"
+  ]
+ },
+ {
+  "domain": "forddirectprivacy.com",
+  "name": "DealerDirect LLC",
+  "urls": [
+   "https://www.forddirect.com/privacy"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "forddirect.com"
   ]
  },
  {
@@ -3145,7 +3463,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "foundryco.com",
@@ -3156,7 +3475,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "fourcornerhome.com",
@@ -3169,7 +3489,8 @@
   ],
   "contacts": [
    "john@fourcornerhome.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fourleafdata.com",
@@ -3184,7 +3505,8 @@
   ],
   "contacts": [
    "privacy@fourleafdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "foursquare.com",
@@ -3199,7 +3521,8 @@
   ],
   "contacts": [
    "privacyteam@foursquare.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fourthwall.tv",
@@ -3214,7 +3537,8 @@
   ],
   "contacts": [
    "californiadrop@fourthwall.tv"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fraiser.org",
@@ -3229,7 +3553,8 @@
   ],
   "contacts": [
    "privacy@fraiser.org"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "freepeoplesearch.com",
@@ -3244,7 +3569,8 @@
   ],
   "contacts": [
    "compliance@freepeoplesearch.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "freewheel.com",
@@ -3259,7 +3585,8 @@
   ],
   "contacts": [
    "legalnotices@freewheel.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fullcontact.com",
@@ -3274,7 +3601,8 @@
   ],
   "contacts": [
    "privacy@fullcontact.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fusable.com",
@@ -3287,7 +3615,8 @@
   ],
   "contacts": [
    "privacy@fusable.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fushiamedia.com",
@@ -3300,7 +3629,8 @@
   ],
   "contacts": [
    "lgold@fushiamedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "fusion92.com",
@@ -3314,7 +3644,8 @@
   ],
   "contacts": [
    "databroker@fusion92.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "getelevar.com",
@@ -3327,7 +3658,8 @@
   ],
   "contacts": [
    "privacy@getelevar.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "getliminal.com",
@@ -3340,7 +3672,8 @@
   ],
   "contacts": [
    "privacy@getliminal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "getrev.ai",
@@ -3351,7 +3684,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "giantpartners.com",
@@ -3362,7 +3696,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "gm.com",
@@ -3376,7 +3711,8 @@
   ],
   "contacts": [
    "privacy@gm.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "grassrootsanalytics.com",
@@ -3390,7 +3726,8 @@
   ],
   "contacts": [
    "operations@grassrootsanalytics.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "grayhairsoftware.com",
@@ -3404,7 +3741,8 @@
   ],
   "contacts": [
    "privacy@grayhairsoftware.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "graze.social",
@@ -3418,7 +3756,8 @@
   ],
   "contacts": [
    "devin@graze.social"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "greatlakeslists.com",
@@ -3433,6 +3772,23 @@
   ],
   "contacts": [
    "ccpa@greatlakeslists.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "greenwich.com",
+  "name": "Crisil Irvena US LLC",
+  "urls": [
+   "https://www.crisil.com/content/crisilcom/en/home/crisil-privacy-notice.html"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacy1@crisil.com"
+  ],
+  "formHosts": [
+   "crisil.com"
   ]
  },
  {
@@ -3444,7 +3800,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "groundtruth.com",
@@ -3458,7 +3815,8 @@
   ],
   "contacts": [
    "legal@groundtruth.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "growbots.com",
@@ -3473,7 +3831,8 @@
   ],
   "contacts": [
    "operations@growbots.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "growinglibraries.com",
@@ -3488,7 +3847,8 @@
   ],
   "contacts": [
    "ian@growinglibraries.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "growthcode.io",
@@ -3501,7 +3861,8 @@
   ],
   "contacts": [
    "jonathon@growthcode.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "gsdsi.com",
@@ -3514,7 +3875,8 @@
   ],
   "contacts": [
    "privacy@gsdsi.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "h1.co",
@@ -3527,6 +3889,23 @@
   ],
   "contacts": [
    "inquiries@h1.co"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "health-union.com",
+  "name": "Health Union, LLC",
+  "urls": [
+   "https://privacyportal.onetrust.com/webform/c402d2db-7536-4212-a23d-ed4a33c1b3b2/e3aec736-7c0a-4313-a3e7-132ff601397a; https://health-union.com/privacy-choices/; https://health-union.com/privacy-notice/; https://health-union.com/consumer-health-notice/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacy@health-union.com"
+  ],
+  "formHosts": [
+   "onetrust.com"
   ]
  },
  {
@@ -3541,7 +3920,8 @@
   ],
   "contacts": [
    "security@healthcare.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "healthlinkdimensions.com",
@@ -3555,7 +3935,8 @@
   ],
   "contacts": [
    "privacy@healthlinkdimensions.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "healthwisedata.com",
@@ -3570,7 +3951,8 @@
   ],
   "contacts": [
    "privacy@healthwisedata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "heartbeat.ai",
@@ -3585,7 +3967,8 @@
   ],
   "contacts": [
    "contact@heartbeat.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "helixcampaigns.com",
@@ -3600,7 +3983,8 @@
   ],
   "contacts": [
    "info@helixcampaigns.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "hightouch.com",
@@ -3611,7 +3995,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "hireez.com",
@@ -3625,6 +4010,21 @@
   ],
   "contacts": [
    "privacy@hireez.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "hivestack.com",
+  "name": "Hivestack Inc.",
+  "urls": [
+   "https://perion.com/ccpa/"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "perion.com"
   ]
  },
  {
@@ -3636,7 +4036,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "hubspot.com",
@@ -3651,20 +4052,8 @@
   ],
   "contacts": [
    "privacy@hubspot.com"
-  ]
- },
- {
-  "domain": "huntclub.com",
-  "name": "Hunt Club Inc",
-  "urls": [
-   "https://www.huntclub.com/privacy"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "scott@huntclub.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "hunter.io",
@@ -3679,7 +4068,8 @@
   ],
   "contacts": [
    "matt@hunter.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "hybridtheory.com",
@@ -3688,12 +4078,10 @@
    "https://www.hybridtheory.com/privacy-notice/"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "dpo_hybridtheory@azerion.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "i-360.com",
@@ -3708,7 +4096,8 @@
   ],
   "contacts": [
    "privacy@i-360.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "id5.io",
@@ -3723,7 +4112,8 @@
   ],
   "contacts": [
    "privacy@id5.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "idatabasesolutions.com",
@@ -3738,7 +4128,8 @@
   ],
   "contacts": [
    "justin@idatabasesolutions.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ididata.com",
@@ -3753,7 +4144,8 @@
   ],
   "contacts": [
    "statebasedprivacy@ididata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "idmap.ai",
@@ -3766,7 +4158,8 @@
   ],
   "contacts": [
    "michael.belsky@idmap.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ileads.com",
@@ -3781,7 +4174,8 @@
   ],
   "contacts": [
    "remove@ileads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "illumin.com",
@@ -3794,7 +4188,8 @@
   ],
   "contacts": [
    "itops@illumin.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "inboundinsight.com",
@@ -3809,7 +4204,8 @@
   ],
   "contacts": [
    "privacy@inboundinsight.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "indexexchange.com",
@@ -3822,7 +4218,8 @@
   ],
   "contacts": [
    "privacy@indexexchange.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "infillion.com",
@@ -3837,7 +4234,8 @@
   ],
   "contacts": [
    "privacy@infillion.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "infopay.com",
@@ -3852,7 +4250,8 @@
   ],
   "contacts": [
    "compliance@infopay.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "informa.com",
@@ -3866,18 +4265,8 @@
   ],
   "contacts": [
    "groupdpo@informa.com"
-  ]
- },
- {
-  "domain": "informatechtarget.com",
-  "name": "TechTarget, Inc.",
-  "urls": [
-   "https://www.informatechtarget.com/ccpa-privacy-notice/"
   ],
-  "sources": [
-   "markup"
-  ],
-  "contacts": []
+  "formHosts": []
  },
  {
   "domain": "information.com",
@@ -3892,7 +4281,8 @@
   ],
   "contacts": [
    "compliance@information.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "infutor.com",
@@ -3905,21 +4295,22 @@
   ],
   "contacts": [
    "privacy@infutor.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "inmar.com",
-  "name": "Inmar-OIQ, LLC",
+  "name": "Inmar Brand Solutions, Inc.",
   "urls": [
    "https://www.inmar.com/about/privacy-policy"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy_office@inmar.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "inmarket.com",
@@ -3930,7 +4321,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "instantcheckmate.com",
@@ -3945,7 +4337,8 @@
   ],
   "contacts": [
    "tara.buck@peopleconnect.us"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "instantly.ai",
@@ -3960,6 +4353,23 @@
   ],
   "contacts": [
    "privacy@instantly.ai"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "intalytics.com",
+  "name": "Intalytics, Inc.",
+  "urls": [
+   "https://kalibrate.com/data-subject-access-request-form/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacy@kalibrate.com"
+  ],
+  "formHosts": [
+   "kalibrate.com"
   ]
  },
  {
@@ -3975,7 +4385,8 @@
   ],
   "contacts": [
    "legal@intelius.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "intentiq.com",
@@ -3990,7 +4401,8 @@
   ],
   "contacts": [
    "privacy@intentiq.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "intentsify.io",
@@ -4005,7 +4417,8 @@
   ],
   "contacts": [
    "legal@intentsify.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "internetbrands.com",
@@ -4020,7 +4433,8 @@
   ],
   "contacts": [
    "privacy@internetbrands.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ipapi.co",
@@ -4034,7 +4448,8 @@
   ],
   "contacts": [
    "privacy@kloudend.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "iqvia.com",
@@ -4045,7 +4460,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "irys.us",
@@ -4059,7 +4475,8 @@
   ],
   "contacts": [
    "privacy@irys.us"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ispot.tv",
@@ -4073,7 +4490,8 @@
   ],
   "contacts": [
    "privacy@ispot.tv"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "issgovernance.com",
@@ -4086,7 +4504,24 @@
    "ca-registry"
   ],
   "contacts": [
+   "dataprotectionofficer@issgovernance.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "issmarketintelligence.com",
+  "name": "Asset International, Inc.",
+  "urls": [
+   "https://www.issgovernance.com/privacy-legal/ccpa/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
    "dataprotectionofficer@iss-stoxx.com"
+  ],
+  "formHosts": [
+   "issgovernance.com"
   ]
  },
  {
@@ -4102,7 +4537,8 @@
   ],
   "contacts": [
    "chrissy@jdmlistservices.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "jdpower.com",
@@ -4116,7 +4552,8 @@
   ],
   "contacts": [
    "jdpowerprivacy@jdpa.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "jigyasaanalytics.com",
@@ -4127,7 +4564,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "jmr-media.com",
@@ -4142,7 +4580,8 @@
   ],
   "contacts": [
    "jon@jmr-media.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "juicebox.ai",
@@ -4155,7 +4594,8 @@
   ],
   "contacts": [
    "privacy@juicebox.work"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "jungroup.com",
@@ -4170,7 +4610,8 @@
   ],
   "contacts": [
    "ccpa@jungroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "kalibrate.com",
@@ -4179,12 +4620,10 @@
    "https://kalibrate.com/data-subject-access-request-form/"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "privacy@kalibrate.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "kargo.com",
@@ -4199,18 +4638,26 @@
   ],
   "contacts": [
    "ccparequest@kargo.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "kbsynergy.com",
   "name": "KB Synergy Inc",
   "urls": [
-   "https://kbsynergy.com/privacy-policy-ccpa-do-not-sell-my-information/"
+   "https://kbsynergy.com/privacy-policy-ccpa-do-not-sell-my-information/",
+   "https://hiy.ywv.mybluehost.me/website_8088244e/privacy-policy-ccpa-do-not-sell-my-information/"
   ],
   "sources": [
-   "markup"
+   "markup",
+   "ca-registry"
   ],
-  "contacts": []
+  "contacts": [
+   "info@kbsynergy.com"
+  ],
+  "formHosts": [
+   "mybluehost.me"
+  ]
  },
  {
   "domain": "keymarketingadvantage.com",
@@ -4223,7 +4670,8 @@
   ],
   "contacts": [
    "lbridson@keymarketingadvantage.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "keymarketingcorp.com",
@@ -4234,7 +4682,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "keywordconnects.com",
@@ -4249,7 +4698,8 @@
   ],
   "contacts": [
    "operations@ignitevisibility.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "kidslivesafe.com",
@@ -4264,7 +4714,8 @@
   ],
   "contacts": [
    "privacyinfo@kidslivesafe.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "kindsight.io",
@@ -4279,7 +4730,8 @@
   ],
   "contacts": [
    "privacy+california@iwave.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "kindskiptracing.com",
@@ -4292,6 +4744,23 @@
   ],
   "contacts": [
    "compliance@kindskiptracing.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "knowertech.com",
+  "name": "Rainbarrel USA LLC",
+  "urls": [
+   "https://www.rbarrel.com/opt-out"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacy@rbarrel.com"
+  ],
+  "formHosts": [
+   "rbarrel.com"
   ]
  },
  {
@@ -4307,7 +4776,8 @@
   ],
   "contacts": [
    "dataprivacy@koddi.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "komodohealth.com",
@@ -4322,7 +4792,8 @@
   ],
   "contacts": [
    "trust-and-safety@komodohealth.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "kontextdata.com",
@@ -4337,7 +4808,8 @@
   ],
   "contacts": [
    "info@kontextdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "l2-data.com",
@@ -4352,6 +4824,23 @@
   ],
   "contacts": [
    "lauren.pembo@l2political.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "lead-enhance.com",
+  "name": "LEAD ENHANCE LLC",
+  "urls": [
+   "https://bathroom-remodel-today.com/privacy/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "josh@lead-enhance.com"
+  ],
+  "formHosts": [
+   "bathroom-remodel-today.com"
   ]
  },
  {
@@ -4366,7 +4855,8 @@
   ],
   "contacts": [
    "tom@lead411.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "leadfeeder.com",
@@ -4379,7 +4869,8 @@
   ],
   "contacts": [
    "dpo@leadfeeder.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "leadiq.com",
@@ -4394,7 +4885,8 @@
   ],
   "contacts": [
    "privacy@leadiq.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "leadmemedia.com",
@@ -4409,7 +4901,8 @@
   ],
   "contacts": [
    "californiaregistry@leadmemedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "leadpost.com",
@@ -4423,7 +4916,8 @@
   ],
   "contacts": [
    "amanda@leadpost.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "leadsmarket.com",
@@ -4434,7 +4928,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "leadspace.com",
@@ -4449,7 +4944,8 @@
   ],
   "contacts": [
    "compliance_privacy@leadspace.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "learnmore.com",
@@ -4462,7 +4958,8 @@
   ],
   "contacts": [
    "compliance@learnmore.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "leidosiq.com",
@@ -4477,7 +4974,8 @@
   ],
   "contacts": [
    "privacy@leidos.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "liftbasedata.com",
@@ -4491,7 +4989,8 @@
   ],
   "contacts": [
    "dataprivacy@liftbasedata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "lightboxre.com",
@@ -4506,7 +5005,8 @@
   ],
   "contacts": [
    "jfranks@lightboxre.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "lightcast.io",
@@ -4517,7 +5017,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "lionsharemarketing.com",
@@ -4532,7 +5033,8 @@
   ],
   "contacts": [
    "ap@lionsharemarketing.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "listkit.io",
@@ -4547,7 +5049,8 @@
   ],
   "contacts": [
    "andre@listkit.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "livedatatechnologies.com",
@@ -4560,7 +5063,8 @@
   ],
   "contacts": [
    "remove@livedatatechnologies.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "liveintent.com",
@@ -4575,7 +5079,8 @@
   ],
   "contacts": [
    "privacy@zetaglobal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "liveramp.com",
@@ -4590,7 +5095,8 @@
   ],
   "contacts": [
    "consumercare@liveramp.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "lizdev.com",
@@ -4605,7 +5111,8 @@
   ],
   "contacts": [
    "privacyanddatacompliancereview@lizdev.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "lob.com",
@@ -4619,7 +5126,8 @@
   ],
   "contacts": [
    "privacy.inbox@lob.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "locatesmarter.com",
@@ -4630,7 +5138,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "lookify.io",
@@ -4645,34 +5154,25 @@
   ],
   "contacts": [
    "support@lookify.io"
-  ]
- },
- {
-  "domain": "loopme.ai",
-  "name": "Chartboost, LLC",
-  "urls": [
-   "https://loopme.ai/chartboost/"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "privacy@loopme.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "loopme.com",
   "name": "LoopMe Limited",
   "urls": [
    "https://legal.loopme.com/privacy-center",
-   "https://loopme.com"
+   "https://loopme.ai/chartboost/"
   ],
   "sources": [
    "markup",
    "ca-registry"
   ],
   "contacts": [
-   "legal@loopme.com"
+   "privacy@loopme.com"
+  ],
+  "formHosts": [
+   "loopme.ai"
   ]
  },
  {
@@ -4684,7 +5184,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "lsmapps.com",
@@ -4699,7 +5200,8 @@
   ],
   "contacts": [
    "guy.hamawi@lsmapps.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "lusha.com",
@@ -4714,7 +5216,8 @@
   ],
   "contacts": [
    "legal@lusha.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "m1-data.com",
@@ -4729,7 +5232,8 @@
   ],
   "contacts": [
    "service@m1-data.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "madhive.com",
@@ -4744,7 +5248,8 @@
   ],
   "contacts": [
    "privacy@madhive.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "magnite.com",
@@ -4759,7 +5264,8 @@
   ],
   "contacts": [
    "privacy@magnite.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "mailinglists.com",
@@ -4774,7 +5280,8 @@
   ],
   "contacts": [
    "unsubscribe@mailinglists.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "malvernmedia.com",
@@ -4787,7 +5294,8 @@
   ],
   "contacts": [
    "info@malvernmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "marketforcecorp.com",
@@ -4798,7 +5306,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "marketingarchitects.com",
@@ -4811,7 +5320,8 @@
   ],
   "contacts": [
    "privacy@markarch.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "marketops.com",
@@ -4825,7 +5335,8 @@
   ],
   "contacts": [
    "privacy@marketops.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "marriott.com",
@@ -4840,7 +5351,8 @@
   ],
   "contacts": [
    "privacy@marriott.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "matchbookdata.com",
@@ -4855,7 +5367,8 @@
   ],
   "contacts": [
    "privacy@matchbookdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "maxmind.com",
@@ -4869,7 +5382,8 @@
   ],
   "contacts": [
    "tgonzalez@maxmind.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "media.net",
@@ -4883,7 +5397,8 @@
   ],
   "contacts": [
    "privacy@media.net"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "mediaocean.com",
@@ -4894,7 +5409,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "mediawallah.com",
@@ -4909,7 +5425,8 @@
   ],
   "contacts": [
    "privacy@mediawallah.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "medprosystems.com",
@@ -4924,7 +5441,8 @@
   ],
   "contacts": [
    "privacy@medprosystems.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "meettie.com",
@@ -4937,7 +5455,8 @@
   ],
   "contacts": [
    "info@meettie.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "melissa.com",
@@ -4952,7 +5471,8 @@
   ],
   "contacts": [
    "compliance@melissa.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "meltwater.com",
@@ -4967,7 +5487,8 @@
   ],
   "contacts": [
    "privacy@meltwater.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "merkle.com",
@@ -4981,7 +5502,8 @@
   ],
   "contacts": [
    "americas.dpo@dentsu.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "messagedigital.com",
@@ -4996,7 +5518,8 @@
   ],
   "contacts": [
    "privacy@messagedigital.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "milestonemarketingsolutions.com",
@@ -5011,21 +5534,35 @@
   ],
   "contacts": [
    "accounting@milestonemarketingsolutions.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "minerva.io",
   "name": "Minerva BI Inc",
   "urls": [
-   "https://pages.minerva.io/privacy-policy",
    "https://preferences.minerva.io/"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy@minerva.io"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "minervadata.xyz",
+  "name": "Minerva BI Inc",
+  "urls": [
+   "https://pages.minerva.io/privacy-policy"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "minerva.io"
   ]
  },
  {
@@ -5041,7 +5578,8 @@
   ],
   "contacts": [
    "info@missionwired.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "mobilefuse.com",
@@ -5054,7 +5592,8 @@
   ],
   "contacts": [
    "danb@mobilefuse.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "mobilewalla.com",
@@ -5069,7 +5608,8 @@
   ],
   "contacts": [
    "jclark@mobilewalla.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "modfxlabs.com",
@@ -5083,7 +5623,8 @@
   ],
   "contacts": [
    "mandeep@modfxlabs.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "modigie.com",
@@ -5096,7 +5637,8 @@
   ],
   "contacts": [
    "dpauli@modigie.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "mogean.com",
@@ -5107,7 +5649,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "monevo.us",
@@ -5118,7 +5661,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "monitorbase.com",
@@ -5132,7 +5676,8 @@
   ],
   "contacts": [
    "privacy@monitorbase.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "moodys.com",
@@ -5146,7 +5691,8 @@
   ],
   "contacts": [
    "privacy@moodys.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "mrss.com",
@@ -5157,7 +5703,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "multimedialists.com",
@@ -5172,20 +5719,8 @@
   ],
   "contacts": [
    "daniel@multimedialists.com"
-  ]
- },
- {
-  "domain": "mybluehost.me",
-  "name": "KB Synergy Inc",
-  "urls": [
-   "https://hiy.ywv.mybluehost.me/website_8088244e/privacy-policy-ccpa-do-not-sell-my-information/"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "info@kbsynergy.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "mydataprivacy.com",
@@ -5196,7 +5731,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "n-focus.com",
@@ -5210,7 +5746,8 @@
   ],
   "contacts": [
    "consumer@n-focus.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "namericanmedia.com",
@@ -5221,7 +5758,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "narvar.com",
@@ -5235,7 +5773,8 @@
   ],
   "contacts": [
    "legal@narvar.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nationalopinioninstitute.com",
@@ -5250,7 +5789,8 @@
   ],
   "contacts": [
    "privacy@nationalopinioninstitute.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nativo.com",
@@ -5261,7 +5801,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "ncsolutions.com",
@@ -5272,7 +5813,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "neighbor.report",
@@ -5283,10 +5825,11 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
-  "domain": "neptuneaii.com",
+  "domain": "neptuneops.com",
   "name": "Neptune Ops LLC",
   "urls": [
    "https://neptuneaii.com/legal/privacy-policy"
@@ -5296,6 +5839,9 @@
   ],
   "contacts": [
    "miller@neptuneops.com"
+  ],
+  "formHosts": [
+   "neptuneaii.com"
   ]
  },
  {
@@ -5309,7 +5855,8 @@
   ],
   "contacts": [
    "amyl@networx.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "newmexicodatainsights.com",
@@ -5322,7 +5869,8 @@
   ],
   "contacts": [
    "privacy@eleris.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nextroll.com",
@@ -5336,7 +5884,8 @@
   ],
   "contacts": [
    "legal@nextroll.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nexxen.com",
@@ -5351,7 +5900,8 @@
   ],
   "contacts": [
    "compliance@nexxen.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nielsen.com",
@@ -5366,7 +5916,8 @@
   ],
   "contacts": [
    "privacy.department@nielsen.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nordicdataresources.com",
@@ -5379,7 +5930,8 @@
   ],
   "contacts": [
    "privacy@nordicdataresources.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "numlookup.com",
@@ -5392,7 +5944,8 @@
   ],
   "contacts": [
    "hello@numlookup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "nuwber.com",
@@ -5406,7 +5959,8 @@
   ],
   "contacts": [
    "support@nuwber.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "oan.pl",
@@ -5421,7 +5975,8 @@
   ],
   "contacts": [
    "privacy@oan.pl"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ocean.io",
@@ -5434,7 +5989,8 @@
   ],
   "contacts": [
    "kny@ocean.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ogury.com",
@@ -5447,7 +6003,8 @@
   ],
   "contacts": [
    "legal@ogury.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "omginc.xyz",
@@ -5462,7 +6019,8 @@
   ],
   "contacts": [
    "privacy@omginc.xyz"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "onaudience.com",
@@ -5477,7 +6035,8 @@
   ],
   "contacts": [
    "privacy@onaudience.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "oncoreleads.com",
@@ -5488,7 +6047,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "onetrust.com",
@@ -5497,25 +6057,26 @@
    "https://privacyportal.onetrust.com/webform/f6a59500-f900-4652-b030-0cd51afe15a5/87ca07e4-e06c-4ad8-9aa6-ccbbaa8750c1",
    "https://privacyportal-cdn.onetrust.com/dsarwebform/2de26f06-de6f-45a7-8e1d-7d1148a3f301/draft/7a5dc7d1-cc7e-43a8-9f24-702807deb65b.html",
    "https://privacyportal-uk.onetrust.com/webform/d2cb5e2f-e4f8-4ada-be9f-38f2e699fd45/3216c7cb-cf10-465b-84f8-867628ba5273",
-   "https://privacyportal-cdn.onetrust.com/dsarwebform/b38ccfa3-c14a-451e-bf1d-974d1e278b7c/6214ac53-9059-474d-a847-800250556e9d.html",
+   "https://anteriad.com/privacy-center",
    "https://privacyportal.onetrust.com/webform/49a9a972-547e-4c49-b23c-4cc77554cacb/3aab0bde-ec0c-4ce9-8e6f-cf12a9a950a5",
-   "https://privacyportal.onetrust.com/webform/18c06089-a9ec-473c-a6d8-23d20fea46af/43201dea-88d7-44cd-9142-e5b4f485e428",
-   "https://dms-privacy.my.onetrust.com/webform/506f8b15-11ff-4f18-95fa-48ff903e623f/4268d0f0-bd98-4afb-b33a-a7a922ae182a",
    "https://privacyportal.onetrust.com/webform/4a8e10dc-2293-42ea-ad06-886bc22167a6/20341940-11c2-4c43-9b64-194e952203fd",
-   "https://affinitysolutions-privacy.my.onetrust.com/webform/a564cfa1-53bf-4c10-bf95-cd907432d7e8/7e4e6bf3-6562-454e-8c73-6a7bd1f4b336",
    "https://privacyportal-eu.onetrust.com/webform/031dc37f-2093-4055-9d04-22f83329fe9f/a4fb8ed6-8389-4a17-a3be-ca808c6b300e",
-   "https://privacyportal.onetrust.com/webform/7636e208-dda4-4218-8026-e1bc155873fc/draft/c3eedb35-4568-4772-87fb-4d8ae17ac233; https://privacyportal.onetrust.com/webform/7636e208-dda4-4218-8026-e1bc155873fc/draft/8651c266-68d4-43a8-b7ca-7bd8398843d6",
-   "https://privacyportal-cdn.onetrust.com/dsarwebform/41aebd10-58ee-4c98-9dd5-aa66c9be664a/0099df9c-c0aa-4bf7-bd5f-7f4ff46768f6.html; https://cpa-ui.walmart.com/dc/privacy/en-US/affirmation?brandCode=WMT&languageCode=en-US&market=US"
+   "https://privacyportal.onetrust.com/webform/07e8dc4d-6686-403e-9b11-39fe7347d2f4/2f999bd2-c826-498c-a504-894eaf543b6f",
+   "https://privacyportal-cdn.onetrust.com/dsarwebform/41aebd10-58ee-4c98-9dd5-aa66c9be664a/0099df9c-c0aa-4bf7-bd5f-7f4ff46768f6.html; https://cpa-ui.walmart.com/dc/privacy/en-US/affirmation?brandCode=WMT&languageCode=en-US&market=US",
+   "https://privacyportal.onetrust.com/webform/0f61f895-d08d-410f-b96d-ecfd34fd42e3/8d4dfe0d-998d-4c1d-ab6d-4357670fa8e9"
   ],
   "sources": [
    "markup",
    "ca-registry"
   ],
   "contacts": [
-   "privacy@affinitysolutions.com",
    "onlineops@awl.com",
-   "drgdsr@clarivate.com",
-   "privacy@vizio.com"
+   "privacyofficer@iqvia.com",
+   "privacy@vizio.com",
+   "privacy@lightcast.io"
+  ],
+  "formHosts": [
+   "anteriad.com"
   ]
  },
  {
@@ -5527,7 +6088,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "onspotdata.com",
@@ -5541,7 +6103,8 @@
   ],
   "contacts": [
    "accounting@onspotdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "opensend.com",
@@ -5556,7 +6119,8 @@
   ],
   "contacts": [
    "privacy@opensend.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "openx.com",
@@ -5571,7 +6135,8 @@
   ],
   "contacts": [
    "privacy@openx.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "optable.co",
@@ -5584,7 +6149,8 @@
   ],
   "contacts": [
    "legal@optable.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "outbrain.com",
@@ -5599,7 +6165,8 @@
   ],
   "contacts": [
    "privacy@teads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "outlogic.io",
@@ -5614,7 +6181,8 @@
   ],
   "contacts": [
    "privacy@outlogic.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "outwardmedia.com",
@@ -5629,6 +6197,21 @@
   ],
   "contacts": [
    "privacy@outwardmedia.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "owneriq.com",
+  "name": "Inmar-OIQ, LLC",
+  "urls": [
+   "https://www.inmar.com/about/privacy-policy"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "inmar.com"
   ]
  },
  {
@@ -5644,7 +6227,8 @@
   ],
   "contacts": [
    "privacy@pacificeast.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "paramountdirectmarketing.com",
@@ -5658,6 +6242,39 @@
   ],
   "contacts": [
    "ccpa@paramountdirectmarketing.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "path2response.com",
+  "name": "Path2Response, LLC",
+  "urls": [
+   "https://privacyportal-cdn.onetrust.com/dsarwebform/2de26f06-de6f-45a7-8e1d-7d1148a3f301/draft/7a5dc7d1-cc7e-43a8-9f24-702807deb65b.html"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacyinfo@path2response.com"
+  ],
+  "formHosts": [
+   "onetrust.com"
+  ]
+ },
+ {
+  "domain": "paynetonline.com",
+  "name": "Knowledge Works, Inc.",
+  "urls": [
+   "https://www.equifax.com/personal/my-privacy/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "usprivacy@equifax.com"
+  ],
+  "formHosts": [
+   "equifax.com"
   ]
  },
  {
@@ -5671,7 +6288,8 @@
   ],
   "contacts": [
    "privacy@penlink.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "peoplebyname.com",
@@ -5682,7 +6300,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "peopledatalabs.com",
@@ -5697,7 +6316,8 @@
   ],
   "contacts": [
    "privacy@peopledatalabs.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "peoplefindersdaas.com",
@@ -5712,7 +6332,8 @@
   ],
   "contacts": [
    "bryce@peoplefindersdaas.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "peoplesearcher.com",
@@ -5723,7 +6344,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "peoplewhiz.com",
@@ -5738,22 +6360,22 @@
   ],
   "contacts": [
    "cyrus@peoplewhiz.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "perion.com",
-  "name": "Hivestack Inc.",
+  "name": "Hivestack Technologies Inc.",
   "urls": [
-   "https://perion.com/ccpa/",
    "https://www.perion.com"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy@hivestack.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "persistent.id",
@@ -5767,7 +6389,8 @@
   ],
   "contacts": [
    "privacy@persistent.id"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "pii.ai",
@@ -5778,7 +6401,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "pimeyes.com",
@@ -5789,7 +6413,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "pipl.com",
@@ -5804,7 +6429,8 @@
   ],
   "contacts": [
    "privacy@pipl.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "pitchbook.com",
@@ -5818,7 +6444,8 @@
   ],
   "contacts": [
    "legal@pitchbook.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "placeexchange.com",
@@ -5833,7 +6460,8 @@
   ],
   "contacts": [
    "privacy@placeexchange.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "plug-industries.com",
@@ -5846,7 +6474,8 @@
   ],
   "contacts": [
    "blakehogan@plug-industries.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "plungedigital.com",
@@ -5861,7 +6490,8 @@
   ],
   "contacts": [
    "privacy@plungedigital.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "pmg.com",
@@ -5876,7 +6506,8 @@
   ],
   "contacts": [
    "dataprivacy@pmg.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "podscribe.com",
@@ -5889,7 +6520,8 @@
   ],
   "contacts": [
    "privacy@podscribe.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "popacta.com",
@@ -5903,7 +6535,8 @@
   ],
   "contacts": [
    "legal@popacta.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "porchgroupmedia.com",
@@ -5918,7 +6551,8 @@
   ],
   "contacts": [
    "lchiodo@porchgroupmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "possiblenow.com",
@@ -5933,7 +6567,8 @@
   ],
   "contacts": [
    "californiadrop@possiblenowmarketing.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "postie.com",
@@ -5947,7 +6582,8 @@
   ],
   "contacts": [
    "legal@postie.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "postpilot.com",
@@ -5961,22 +6597,26 @@
   ],
   "contacts": [
    "operations@postpilot.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "precisely.com",
   "name": "Precisely Software Incorporated",
   "urls": [
    "https://www.precisely.com/your-privacy-choices/",
-   "https://www.precisely.com/legal/placeiq-california-notice-at-collection-and-privacy-notice"
+   "https://www.precisely.com/legal/placeiq-california-notice-at-collection-and-privacy-notice",
+   "https://www.precisely.com/legal/california-notice-at-collection-and-privacy-notice"
   ],
   "sources": [
    "markup",
    "ca-registry"
   ],
   "contacts": [
-   "placeiq.privacy@precisely.com"
-  ]
+   "placeiq.privacy@precisely.com",
+   "privacy@precisely.com"
+  ],
+  "formHosts": []
  },
  {
   "domain": "predactiv.com",
@@ -5987,7 +6627,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "preqin.com",
@@ -6002,20 +6643,8 @@
   ],
   "contacts": [
    "preqin.dp@blackrock.com"
-  ]
- },
- {
-  "domain": "privacychoice.com",
-  "name": "Semcasting, Inc.",
-  "urls": [
-   "https://privacychoice.com/"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "jgreer@semcasting.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "privacypillar.com",
@@ -6027,7 +6656,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "privacyrights.org",
@@ -6038,7 +6668,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "privatereports.com",
@@ -6049,7 +6680,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "privco.com",
@@ -6063,7 +6695,8 @@
   ],
   "contacts": [
    "legal@privco.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "prodpro.com",
@@ -6074,7 +6707,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "propensity.com",
@@ -6087,7 +6721,8 @@
   ],
   "contacts": [
    "infosec@propensity.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "propertyradar.com",
@@ -6102,7 +6737,8 @@
   ],
   "contacts": [
    "privacy@propertyradar.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "propertyreach.com",
@@ -6117,7 +6753,8 @@
   ],
   "contacts": [
    "compliance@propertyreach.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "propertyrecs.com",
@@ -6128,7 +6765,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "proxima.ai",
@@ -6141,7 +6779,8 @@
   ],
   "contacts": [
    "privacy@proxima.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "publicdatacheck.com",
@@ -6156,7 +6795,8 @@
   ],
   "contacts": [
    "privacyinfo@publicdatacheck.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "publicdatausa.com",
@@ -6167,7 +6807,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "publicinfoservices.com",
@@ -6182,7 +6823,8 @@
   ],
   "contacts": [
    "privacyinfo@publicinfoservices.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "publicrecord.com",
@@ -6195,7 +6837,8 @@
   ],
   "contacts": [
    "compliance@publicrecord.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "pubmatic.com",
@@ -6210,7 +6853,8 @@
   ],
   "contacts": [
    "privacy@pubmatic.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "pulsepoint.com",
@@ -6224,7 +6868,8 @@
   ],
   "contacts": [
    "dataprivacy@pulsepoint.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "pwc.com",
@@ -6235,7 +6880,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "quad.com",
@@ -6249,7 +6895,8 @@
   ],
   "contacts": [
    "databroker@quad.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "quadrant.io",
@@ -6264,7 +6911,8 @@
   ],
   "contacts": [
    "privacy@quadrant.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "qualfon.com",
@@ -6279,7 +6927,8 @@
   ],
   "contacts": [
    "consumerprivacy@qualfon.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "quorum.inc",
@@ -6292,7 +6941,8 @@
   ],
   "contacts": [
    "ezra@quorum.inc"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "radaris.com",
@@ -6303,7 +6953,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "rampedup.io",
@@ -6317,7 +6968,8 @@
   ],
   "contacts": [
    "privacy@rampedup.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rayinsights.com",
@@ -6332,7 +6984,8 @@
   ],
   "contacts": [
    "ddemarsh@rayinsights.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rbarrel.com",
@@ -6341,12 +6994,10 @@
    "https://www.rbarrel.com/opt-out"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "privacy@rbarrel.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "realeflow.com",
@@ -6357,7 +7008,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "realintent.co",
@@ -6372,7 +7024,8 @@
   ],
   "contacts": [
    "aaron@realintent.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "realsourcedata.com",
@@ -6387,7 +7040,8 @@
   ],
   "contacts": [
    "privacy@realsourcedata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "recordsfinder.com",
@@ -6400,7 +7054,8 @@
   ],
   "contacts": [
    "aregsakanyan@gmail.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "recruitbot.com",
@@ -6415,7 +7070,8 @@
   ],
   "contacts": [
    "privacy@salesbot.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "redidata.com",
@@ -6429,7 +7085,8 @@
   ],
   "contacts": [
    "privacy@redidata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "redmob.io",
@@ -6444,7 +7101,8 @@
   ],
   "contacts": [
    "privacy@redmob.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "reklaimyours.com",
@@ -6458,7 +7116,8 @@
   ],
   "contacts": [
    "finance@reklaimyours.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "relpro.com",
@@ -6471,7 +7130,8 @@
   ],
   "contacts": [
    "info@relpro.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "remodeling.com",
@@ -6486,7 +7146,8 @@
   ],
   "contacts": [
    "operations@ignitevisibility.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "remodelyourhome.com",
@@ -6497,7 +7158,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "resonate.com",
@@ -6511,7 +7173,8 @@
   ],
   "contacts": [
    "techleads@resonate.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "responseamerica.net",
@@ -6524,7 +7187,8 @@
   ],
   "contacts": [
    "ncoa@responseamerica.net"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "retention.com",
@@ -6535,7 +7199,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "revcontent.com",
@@ -6550,7 +7215,8 @@
   ],
   "contacts": [
    "privacy@revcontent.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "revealmobile.com",
@@ -6565,7 +7231,8 @@
   ],
   "contacts": [
    "info@revealmobile.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "reveliolabs.com",
@@ -6580,7 +7247,8 @@
   ],
   "contacts": [
    "hannah@reveliolabs.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "revenuebase.ai",
@@ -6593,7 +7261,8 @@
   ],
   "contacts": [
    "privacy@revenuebase.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "revoptimal.com",
@@ -6607,7 +7276,8 @@
   ],
   "contacts": [
    "privacy@revoptimal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rgrmarketing.com",
@@ -6620,7 +7290,8 @@
   ],
   "contacts": [
    "drop@rgrmarketing.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rhetorik.com",
@@ -6631,7 +7302,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "richmediallc.com",
@@ -6646,7 +7318,8 @@
   ],
   "contacts": [
    "jeff@richmediallc.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ripple-roi.com",
@@ -6659,7 +7332,8 @@
   ],
   "contacts": [
    "dylan@ripple-fx.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rocketreach.co",
@@ -6673,7 +7347,8 @@
   ],
   "contacts": [
    "privacy@rocketreach.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rooftopdigital.com",
@@ -6684,7 +7359,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "roq.ad",
@@ -6699,7 +7375,8 @@
   ],
   "contacts": [
    "contact@roq.ad"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rorpartners.com",
@@ -6712,7 +7389,8 @@
   ],
   "contacts": [
    "privacy@rorpartners.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "roundsky.com",
@@ -6726,7 +7404,8 @@
   ],
   "contacts": [
    "legal@roundsky.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rrd.com",
@@ -6740,7 +7419,8 @@
   ],
   "contacts": [
    "valassisprivacy.request@rrd.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "rushmorelabs.com",
@@ -6753,22 +7433,36 @@
   ],
   "contacts": [
    "privacy@rushmorelabs.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "sabio.inc",
+  "name": "Sabio, Inc.",
+  "urls": [
+   "https://www.sabioctv.com/do-not-sell-my-info"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "sabioctv.com"
   ]
  },
  {
   "domain": "sabioctv.com",
-  "name": "Sabio, Inc.",
+  "name": "Sabio Inc",
   "urls": [
-   "https://www.sabioctv.com/do-not-sell-my-info",
    "https://www.sabioctv.com/"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy@sabio.inc"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "salesassistiq.ai",
@@ -6781,7 +7475,8 @@
   ],
   "contacts": [
    "jen@aniline.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "salesforce-sites.com",
@@ -6794,7 +7489,8 @@
   ],
   "contacts": [
    "privacy@erepublic.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "salesintel.io",
@@ -6807,7 +7503,8 @@
   ],
   "contacts": [
    "support@salesintel.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "salutarydata.com",
@@ -6822,7 +7519,8 @@
   ],
   "contacts": [
    "privacy@salutarydata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "samba.tv",
@@ -6837,22 +7535,20 @@
   ],
   "contacts": [
    "jagdip.sekhon@samba.tv"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "saymine.io",
   "name": "360 Media Direct",
   "urls": [
-   "https://360-media-direct.privacy.saymine.io/360_Media_Direct",
-   "https://cognism.privacy.saymine.io/cognism"
+   "https://360-media-direct.privacy.saymine.io/360_Media_Direct"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "privacy@360mediadirect.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "sbfe.org",
@@ -6866,7 +7562,8 @@
   ],
   "contacts": [
    "info@sbfe.org"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "scanbuy.com",
@@ -6877,7 +7574,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "scileads.com",
@@ -6890,7 +7588,8 @@
   ],
   "contacts": [
    "privacy@scileads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "seamless.ai",
@@ -6905,7 +7604,8 @@
   ],
   "contacts": [
    "privacy@seamlessleads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "searchpublicrecords.com",
@@ -6920,7 +7620,8 @@
   ],
   "contacts": [
    "privacyinfo@searchpublicrecords.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "searchquarry.com",
@@ -6931,7 +7632,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "seekout.com",
@@ -6946,7 +7648,8 @@
   ],
   "contacts": [
    "legal@seekout.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "semantiqhealth.com",
@@ -6959,7 +7662,8 @@
   ],
   "contacts": [
    "ops@semantiqhealth.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "semasio.com",
@@ -6973,18 +7677,26 @@
   ],
   "contacts": [
    "info@semasio.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "semcasting.com",
   "name": "Semcasting, Inc.",
   "urls": [
-   "https://www.semcasting.com/privacy-choice"
+   "https://www.semcasting.com/privacy-choice",
+   "https://privacychoice.com/"
   ],
   "sources": [
-   "markup"
+   "markup",
+   "ca-registry"
   ],
-  "contacts": []
+  "contacts": [
+   "jgreer@semcasting.com"
+  ],
+  "formHosts": [
+   "privacychoice.com"
+  ]
  },
  {
   "domain": "sg360.com",
@@ -6997,7 +7709,8 @@
   ],
   "contacts": [
    "charlesg@sg360.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sharelocalmedia.com",
@@ -7011,7 +7724,8 @@
   ],
   "contacts": [
    "privacy-team@sharelocalmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sharethrough.com",
@@ -7026,7 +7740,8 @@
   ],
   "contacts": [
    "dataprotection@sharethrough.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sheerid.com",
@@ -7041,7 +7756,8 @@
   ],
   "contacts": [
    "privacy@sheerid.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "similarweb.com",
@@ -7056,7 +7772,8 @@
   ],
   "contacts": [
    "legal@similarweb.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "simiocloud.com",
@@ -7070,7 +7787,8 @@
   ],
   "contacts": [
    "privacy@simiocloud.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "siteimpact.com",
@@ -7084,7 +7802,8 @@
   ],
   "contacts": [
    "dataprivacy@siteimpact.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "skydeo.com",
@@ -7097,7 +7816,8 @@
   ],
   "contacts": [
    "privacy@skydeo.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "slashdotmedia.com",
@@ -7111,7 +7831,8 @@
   ],
   "contacts": [
    "roger.abbott@slashdotmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "smarte.pro",
@@ -7124,7 +7845,8 @@
   ],
   "contacts": [
    "privacy@smarteprivacy.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "smartmove.us",
@@ -7139,7 +7861,8 @@
   ],
   "contacts": [
    "compliance@ctam.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sms-inc.com",
@@ -7154,7 +7877,8 @@
   ],
   "contacts": [
    "dataprivacyteam@sms-inc.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "snov.io",
@@ -7169,7 +7893,8 @@
   ],
   "contacts": [
    "v.budkevych@snov.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "socialgist.ai",
@@ -7178,11 +7903,25 @@
    "https://www.socialgist.ai/privacy-and-terms"
   ],
   "sources": [
-   "markup",
    "ca-registry"
   ],
   "contacts": [
    "cwolfe@socialgist.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "socialgist.com",
+  "name": "Effyis, Inc.",
+  "urls": [
+   "https://www.socialgist.ai/privacy-and-terms"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "socialgist.ai"
   ]
  },
  {
@@ -7196,7 +7935,8 @@
   ],
   "contacts": [
    "sojernlegal@sojern.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sourcepathdigital.com",
@@ -7211,7 +7951,8 @@
   ],
   "contacts": [
    "privacy@sourcepathdigital.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sovrn.com",
@@ -7226,7 +7967,8 @@
   ],
   "contacts": [
    "privacy@sovrn.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "speedeondata.com",
@@ -7241,7 +7983,8 @@
   ],
   "contacts": [
    "accounting@speedeondata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "spglobal.com",
@@ -7254,7 +7997,8 @@
   ],
   "contacts": [
    "privacy@spglobal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sportsilab.com",
@@ -7267,7 +8011,8 @@
   ],
   "contacts": [
    "privacy@sportsilab.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sproutsocial.com",
@@ -7280,7 +8025,8 @@
   ],
   "contacts": [
    "dpo@sproutsocial.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "spycloud.com",
@@ -7295,7 +8041,8 @@
   ],
   "contacts": [
    "privacy@spycloud.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "spydialer.com",
@@ -7308,7 +8055,8 @@
   ],
   "contacts": [
    "info@spydialer.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "spyfly.com",
@@ -7323,7 +8071,8 @@
   ],
   "contacts": [
    "privacyinfo@spyfly.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "stackadapt.com",
@@ -7338,7 +8087,8 @@
   ],
   "contacts": [
    "privacy@stackadapt.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "start.io",
@@ -7349,7 +8099,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "statara.com",
@@ -7363,7 +8114,8 @@
   ],
   "contacts": [
    "privacy@statara.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "staterecords.org",
@@ -7376,7 +8128,8 @@
   ],
   "contacts": [
    "compliance@intermedia.team"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "statsocial.com",
@@ -7390,7 +8143,8 @@
   ],
   "contacts": [
    "privacy@statsocial.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "steppingblocks.com",
@@ -7404,7 +8158,8 @@
   ],
   "contacts": [
    "privacy@steppingblocks.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "sterling.ai",
@@ -7419,7 +8174,8 @@
   ],
   "contacts": [
    "privacy@sterling.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "stirista.com",
@@ -7434,7 +8190,8 @@
   ],
   "contacts": [
    "info@stirista.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "strategicdataintelligence.com",
@@ -7447,7 +8204,8 @@
   ],
   "contacts": [
    "m.curtis@sdintelligence.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "subgraph.tech",
@@ -7460,7 +8218,8 @@
   ],
   "contacts": [
    "privacy@subgraph.tech"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "supplier.io",
@@ -7474,7 +8233,8 @@
   ],
   "contacts": [
    "dj.merino@supplier.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "swoop.com",
@@ -7489,7 +8249,8 @@
   ],
   "contacts": [
    "privacyrights@swoop.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "swordfish.ai",
@@ -7504,7 +8265,8 @@
   ],
   "contacts": [
    "contact@swordfish.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "t-mobile.com",
@@ -7519,7 +8281,8 @@
   ],
   "contacts": [
    "mmp-privacy@t-mobile.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "taboola.com",
@@ -7534,22 +8297,20 @@
   ],
   "contacts": [
    "privacy@taboola.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "tapad.com",
   "name": "Tapad, Inc.",
   "urls": [
-   "https://crportal.tapad.com/#/",
-   "https://tapad.com/global-privacy-notice"
+   "https://crportal.tapad.com/#/"
   ],
   "sources": [
-   "markup",
-   "ca-registry"
+   "markup"
   ],
-  "contacts": [
-   "ca_drop_tapad@experian.com"
-  ]
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "targetsmart.com",
@@ -7563,7 +8324,8 @@
   ],
   "contacts": [
    "privacy@targetsmart.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "tauxbe.com",
@@ -7576,7 +8338,8 @@
   ],
   "contacts": [
    "sourcing@tauxbe.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "teads.com",
@@ -7589,7 +8352,8 @@
   ],
   "contacts": [
    "dpo@teads.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "teamdms.com",
@@ -7600,7 +8364,22 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
+ },
+ {
+  "domain": "techtarget.com",
+  "name": "TechTarget, Inc.",
+  "urls": [
+   "https://www.informatechtarget.com/ccpa-privacy-notice/"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "informatechtarget.com"
+  ]
  },
  {
   "domain": "telephonelists.biz",
@@ -7613,7 +8392,8 @@
   ],
   "contacts": [
    "richard@evs7.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "telesign.com",
@@ -7627,6 +8407,21 @@
   ],
   "contacts": [
    "california-opt-out@telesign.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "terminus.com",
+  "name": "Terminus Software, Inc.",
+  "urls": [
+   "https://demandscience.com/privacy-policy?utm_campaign=terminus-redirect"
+  ],
+  "sources": [
+   "markup"
+  ],
+  "contacts": [],
+  "formHosts": [
+   "demandscience.com"
   ]
  },
  {
@@ -7642,7 +8437,8 @@
   ],
   "contacts": [
    "privacy@thebridgecorp.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "thedatagroup.com",
@@ -7656,7 +8452,8 @@
   ],
   "contacts": [
    "jhenson@thedatagroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "thedatatrust.com",
@@ -7671,7 +8468,8 @@
   ],
   "contacts": [
    "info@thedatatrust.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "theorg.com",
@@ -7686,7 +8484,8 @@
   ],
   "contacts": [
    "privacy@theorg.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "theswarm.com",
@@ -7700,6 +8499,23 @@
   ],
   "contacts": [
    "privcy@theswarm.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "theworknumber.com",
+  "name": "Equifax Workforce Solutions LLC",
+  "urls": [
+   "https://www.equifax.com/personal/my-privacy/"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "usprivacy@equifax.com"
+  ],
+  "formHosts": [
+   "equifax.com"
   ]
  },
  {
@@ -7715,7 +8531,8 @@
   ],
   "contacts": [
    "barry.gold@thinkdatagroup.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "thomsonreuters.com",
@@ -7730,7 +8547,8 @@
   ],
   "contacts": [
    "privacy.enquiries@thomsonreuters.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "tl1mkt.com",
@@ -7743,7 +8561,8 @@
   ],
   "contacts": [
    "fran@tl1mkt.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "traackr.com",
@@ -7758,7 +8577,8 @@
   ],
   "contacts": [
    "legal@traackr.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "transunion.com",
@@ -7773,7 +8593,8 @@
   ],
   "contacts": [
    "privacy@transunion.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "trestleiq.com",
@@ -7788,7 +8609,8 @@
   ],
   "contacts": [
    "privacy@trestleiq.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "triplelift.com",
@@ -7802,7 +8624,8 @@
   ],
   "contacts": [
    "privacy@triplelift.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "trueblueanalytics.org",
@@ -7817,7 +8640,8 @@
   ],
   "contacts": [
    "privacy@trueblueanalytics.org"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "truedata.co",
@@ -7832,7 +8656,8 @@
   ],
   "contacts": [
    "privacy@truedata.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "trueopulence.com",
@@ -7843,7 +8668,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "trustandwill.com",
@@ -7856,7 +8682,8 @@
   ],
   "contacts": [
    "privacy@hugelegaltech.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "trustarc.eu",
@@ -7867,7 +8694,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "truthed.com",
@@ -7880,7 +8708,8 @@
   ],
   "contacts": [
    "anita@truthed.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "truthfinder.com",
@@ -7895,7 +8724,8 @@
   ],
   "contacts": [
    "legal@peopleconnect.us"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "tunnldata.com",
@@ -7910,7 +8740,8 @@
   ],
   "contacts": [
    "notice@tunnldata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "unacast.com",
@@ -7924,7 +8755,8 @@
   ],
   "contacts": [
    "privacy@unacast.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "unearthcampaigns.com",
@@ -7939,7 +8771,8 @@
   ],
   "contacts": [
    "privacy@unearthcampaigns.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "unmask.com",
@@ -7954,7 +8787,8 @@
   ],
   "contacts": [
    "compliance@unmask.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "upcell.io",
@@ -7968,7 +8802,8 @@
   ],
   "contacts": [
    "policy@upcell.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "uplead.com",
@@ -7983,7 +8818,8 @@
   ],
   "contacts": [
    "techteam@uplead.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "upscapital.com",
@@ -7994,7 +8830,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "urbanscience.com",
@@ -8007,7 +8844,8 @@
   ],
   "contacts": [
    "usdatabroker@urbanscience.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "us.com",
@@ -8021,7 +8859,8 @@
   ],
   "contacts": [
    "ccpa@idm.us.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "usa-official.com",
@@ -8032,7 +8871,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "usadata.com",
@@ -8046,7 +8886,8 @@
   ],
   "contacts": [
    "support@usadata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "usdatacorporation.com",
@@ -8061,20 +8902,8 @@
   ],
   "contacts": [
    "privacy@usdatacorporation.com"
-  ]
- },
- {
-  "domain": "usepylon.com",
-  "name": "Tagis Inc",
-  "urls": [
-   "https://portal.usepylon.com/amplemarket/forms/privacy-request-form; https://www.amplemarket.com/legal/data-broker-privacy-notice"
   ],
-  "sources": [
-   "ca-registry"
-  ],
-  "contacts": [
-   "legal@amplemarket.com"
-  ]
+  "formHosts": []
  },
  {
   "domain": "usmarketinggrp.com",
@@ -8089,7 +8918,8 @@
   ],
   "contacts": [
    "privacy@usmarketinggrp.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "uspeoplesearch.com",
@@ -8104,7 +8934,8 @@
   ],
   "contacts": [
    "compliance@uspeoplesearch.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "valpak.com",
@@ -8115,7 +8946,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "vector.co",
@@ -8130,7 +8962,8 @@
   ],
   "contacts": [
    "joshua@vector.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "veeva.com",
@@ -8145,7 +8978,8 @@
   ],
   "contacts": [
    "privacy@veeva.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "vendelux.com",
@@ -8160,7 +8994,8 @@
   ],
   "contacts": [
    "ben@vendelux.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "venntel.com",
@@ -8175,7 +9010,8 @@
   ],
   "contacts": [
    "privacy@venntel.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "venpath.net",
@@ -8186,7 +9022,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "ventiveiq.com",
@@ -8201,7 +9038,8 @@
   ],
   "contacts": [
    "privacy@ventiveiq.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "veraset.com",
@@ -8216,7 +9054,8 @@
   ],
   "contacts": [
    "tax@veraset.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "veripages.com",
@@ -8227,7 +9066,8 @@
   "sources": [
    "badbool"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "verisk.com",
@@ -8238,7 +9078,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "versium.com",
@@ -8253,7 +9094,8 @@
   ],
   "contacts": [
    "privacy@versium.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "vi.co",
@@ -8266,19 +9108,25 @@
   ],
   "contacts": [
    "privacy@vi.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "viantinc.com",
   "name": "Viant US LLC",
   "urls": [
+   "https://privacyportal.onetrust.com/webform/18c06089-a9ec-473c-a6d8-23d20fea46af/43201dea-88d7-44cd-9142-e5b4f485e428",
    "https://www.viantinc.com"
   ],
   "sources": [
+   "markup",
    "ca-registry"
   ],
   "contacts": [
    "privacy@viantinc.com"
+  ],
+  "formHosts": [
+   "onetrust.com"
   ]
  },
  {
@@ -8294,7 +9142,8 @@
   ],
   "contacts": [
    "privacy@videoamp.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "visitiq.io",
@@ -8308,7 +9157,8 @@
   ],
   "contacts": [
    "james.dunay@visitiq.io"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "vistarmedia.com",
@@ -8323,7 +9173,8 @@
   ],
   "contacts": [
    "privacy@vistarmedia.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "visualvisitor.com",
@@ -8338,7 +9189,8 @@
   ],
   "contacts": [
    "privacy@visualvisitor.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "vrtcal.com",
@@ -8353,7 +9205,8 @@
   ],
   "contacts": [
    "privacy@vrtcal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "warmly.ai",
@@ -8368,7 +9221,8 @@
   ],
   "contacts": [
    "privacy@warmly.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "wealthfeed.com",
@@ -8383,7 +9237,8 @@
   ],
   "contacts": [
    "sam@wealthfeed.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "webbula.com",
@@ -8397,7 +9252,8 @@
   ],
   "contacts": [
    "legal@webbula.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "weinform.org",
@@ -8408,7 +9264,8 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
   "domain": "wiland.com",
@@ -8422,7 +9279,8 @@
   ],
   "contacts": [
    "privacy@wiland.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "windfall.com",
@@ -8436,7 +9294,8 @@
   ],
   "contacts": [
    "privacy@windfall.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "winrdata.com",
@@ -8450,7 +9309,8 @@
   ],
   "contacts": [
    "privacyoffice@winrdata.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "winwithoptimal.com",
@@ -8461,10 +9321,11 @@
   "sources": [
    "markup"
   ],
-  "contacts": []
+  "contacts": [],
+  "formHosts": []
  },
  {
-  "domain": "wiza.co",
+  "domain": "wiza.com",
   "name": "Wiza, Inc.",
   "urls": [
    "https://www.wiza.co"
@@ -8474,6 +9335,9 @@
   ],
   "contacts": [
    "harrison@wiza.com"
+  ],
+  "formHosts": [
+   "wiza.co"
   ]
  },
  {
@@ -8488,7 +9352,8 @@
   ],
   "contacts": [
    "legal@wunderkind.co"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "wurl.com",
@@ -8501,6 +9366,23 @@
   ],
   "contacts": [
    "dataprotection@wurl.com"
+  ],
+  "formHosts": []
+ },
+ {
+  "domain": "www360mediadirect.com",
+  "name": "Subdirect LLC",
+  "urls": [
+   "https://360-media-direct.privacy.saymine.io/360_Media_Direct"
+  ],
+  "sources": [
+   "ca-registry"
+  ],
+  "contacts": [
+   "privacy@360mediadirect.com"
+  ],
+  "formHosts": [
+   "saymine.io"
   ]
  },
  {
@@ -8516,7 +9398,8 @@
   ],
   "contacts": [
    "privacy@xcelerated.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "yieldmo.com",
@@ -8529,7 +9412,8 @@
   ],
   "contacts": [
    "privacy@yieldmo.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "yobi.ai",
@@ -8542,7 +9426,8 @@
   ],
   "contacts": [
    "privacy@yobi.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "zendesk.com",
@@ -8555,7 +9440,8 @@
   ],
   "contacts": [
    "privacy@techtarget.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "zerotoone.ai",
@@ -8568,7 +9454,8 @@
   ],
   "contacts": [
    "legal@zerotoone.ai"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "zetaglobal.com",
@@ -8583,7 +9470,8 @@
   ],
   "contacts": [
    "privacy@zetaglobal.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "ziffdavis.com",
@@ -8596,7 +9484,8 @@
   ],
   "contacts": [
    "legal@ziffdavis.com"
-  ]
+  ],
+  "formHosts": []
  },
  {
   "domain": "zs.com",
@@ -8611,6 +9500,7 @@
   ],
   "contacts": [
    "dataprivacy@zs.com"
-  ]
+  ],
+  "formHosts": []
  }
 ]
