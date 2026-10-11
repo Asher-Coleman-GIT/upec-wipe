@@ -186,3 +186,16 @@ test('a resident whose config spells out the state still gets a states-limited b
   await processBroker(null, { name: 'CA only', method: 'manual', states: ['CA'], optOutUrl: 'https://x' });
   assert.equal(logged[0] && logged[0].status, 'manual');
 });
+
+test('appliesToPerson says whether a states-limited broker is relevant', () => {
+  const { appliesToPerson } = require('../lib/broker-runner');
+  const ca = { name: 'CA only', states: ['CA'] };
+  assert.equal(appliesToPerson(ca, { state: 'UT' }), false);
+  assert.equal(appliesToPerson(ca, { state: 'california' }), true);
+  assert.equal(appliesToPerson({ name: 'any' }, { state: 'UT' }), true);
+});
+
+test('the run loop does not print a header for a broker that does not apply', () => {
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'watcher.js'), 'utf8');
+  assert.match(src, /if \(!brokerRunner\.appliesToPerson\(broker, person\)\) continue;\s*process\.stdout\.write\(`\\n\[\$\{stamp\(\)\}\] \$\{broker\.name\}…/);
+});

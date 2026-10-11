@@ -985,6 +985,7 @@ async function _mainBody() {
 
     console.log('\n── Explicit broker opt-outs ───────────────────────────────');
     for (const broker of sorted) {
+      if (!brokerRunner.appliesToPerson(broker, person)) continue;
       process.stdout.write(`\n[${stamp()}] ${broker.name}… `);
       try {
         await brokerRunner.processBroker(context, broker);
