@@ -45,7 +45,7 @@ function patchedLoad(request, parent, isMain) {
     logResult: (name, status, detail) => logged.push({ name, status, detail }),
     STATUS_BUCKET: {},
   };
-  if (request === './forms') return { fillForm: async () => {}, findListingUrl: async () => null };
+  if (request === './forms') return { fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }), findListingUrl: async () => null };
   if (request === './captcha') return { detectAndSolveCaptcha: async () => true };
   if (request === './confirm') return { detectConfirmationRequired: async () => ({ pending: false, snippet: '' }) };
   if (request === './success') return { classifyPostSubmit: () => ({ outcome: 'success', snippet: 'ok' }) };

@@ -36,7 +36,7 @@ function patchedLoad(request, parent, isMain) {
   if (!parent?.filename?.includes('broker-runner')) return originalLoad(request, parent, isMain);
   if (request === './config') return configMock;
   if (request === './logger') return { logResult: () => {} };
-  if (request === './forms') return { fillForm: async () => {}, findListingUrl: async () => null };
+  if (request === './forms') return { fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }), findListingUrl: async () => null };
   if (request === './captcha') return { detectAndSolveCaptcha: async () => true };
   if (request === './confirm') return { detectConfirmationRequired: async () => ({ pending: false }) };
   if (request === './retry') return { withRetry: fn => fn() };

@@ -2,7 +2,7 @@
  * test/broker-runner-preview.test.js - WP4 --preview flag
  *
  * Verifies that processBroker, when configured with preview: true:
- *   - calls page.evaluate to extract field values
+ *   - reports only the fields fillForm says it filled (never a page-wide dump)
  *   - calls logResult with status 'preview' and detail containing field/value pairs
  *   - does NOT submit the form (preview implies dry-run)
  *   - does NOT call logResult with 'skipped' (preview log replaces it)
@@ -17,6 +17,8 @@ const Module = require('module');
 const originalLoad = Module._load.bind(Module);
 
 const logged = [];
+const FILLED = { filled: [{ selector: 'first', value: 'Jane', kind: 'text' }, { selector: 'email', value: 'jane@example.com', kind: 'text' }], missed: [] };
+let fillReport = FILLED;
 const recorded = { success: [], pending: [] };
 
 const configMock = {
@@ -39,7 +41,7 @@ function patchedLoad(request, parent, isMain) {
     logResult: (name, status, detail) => logged.push({ name, status, detail }),
     STATUS_BUCKET: { preview: 'skipped' }, // exposed for runner to check
   };
-  if (request === './forms') return { fillForm: async () => {}, findListingUrl: async () => null };
+  if (request === './forms') return { fillForm: async () => fillReport, findListingUrl: async () => null };
   if (request === './captcha') return { detectAndSolveCaptcha: async () => true };
   if (request === './confirm') return { detectConfirmationRequired: async () => ({ pending: false, snippet: '' }) };
   return originalLoad(request, parent, isMain);
@@ -85,6 +87,7 @@ const BROKER = {
 };
 
 function clearAll() {
+  fillReport = FILLED;
   logged.length = 0;
   recorded.success.length = 0;
   recorded.pending.length = 0;
@@ -126,42 +129,26 @@ test('preview: form is NOT submitted (no success or pending_confirm logged)', as
   assert.equal(recorded.success.length, 0, 'recordSuccess must NOT be called');
 });
 
-test('preview: page.evaluate is called to extract field values', async () => {
+test('preview: page fields the tool did not fill are not shown', async () => {
   clearAll();
-  let evaluateCalled = false;
-  const ctx = {
-    newPage: async () => ({
-      goto: async () => ({}),
-      evaluate: async () => {
-        evaluateCalled = true;
-        return FIXTURE_FIELDS;
-      },
-      locator: () => ({
-        first: () => ({
-          fill: async () => {},
-          count: async () => 1,
-          isVisible: async () => true,
-          click: async () => {},
-        }),
-      }),
-      close: async () => {},
-    }),
-  };
-
   configure({ dryRun: true, preview: true, person: { country: 'US' }, capsolver: null });
-  await processBroker(ctx, BROKER);
-
-  assert.ok(evaluateCalled, 'page.evaluate must be called in preview mode');
+  // The page itself carries a pre-set promotional checkbox; only fillForm's report counts.
+  await processBroker(makeContext({ evaluateResult: [{ name: 'promotional', value: 'on', type: 'checkbox' }] }), BROKER);
+  const entry = logged.find(l => l.name === BROKER.name && l.status === 'preview');
+  assert.ok(entry);
+  assert.doesNotMatch(entry.detail, /promotional/);
 });
 
-test('preview with empty fields: still logs preview status with URL', async () => {
+test('preview with nothing filled: reports the form as not recognised, with the URL', async () => {
   clearAll();
+  fillReport = { filled: [], missed: ['first', 'email'] };
   configure({ dryRun: true, preview: true, person: { country: 'US' }, capsolver: null });
 
   await processBroker(makeContext({ evaluateResult: [] }), BROKER);
 
-  const entry = logged.find(l => l.name === BROKER.name && l.status === 'preview');
-  assert.ok(entry, 'logResult must be called with status "preview" even with no fields');
+  const entry = logged.find(l => l.name === BROKER.name && l.status === 'manual');
+  assert.ok(entry, 'an unrecognised form is manual, not a preview');
+  assert.match(entry.detail, /form not recognised/);
   assert.match(entry.detail, /radaris\.com\/optout/, 'detail should still include URL');
 });
 

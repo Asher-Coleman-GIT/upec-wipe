@@ -50,7 +50,7 @@ test('processBrokerWithPerson lets EgressError out and still closes the page', a
       recordFailure: () => {}, loadState: () => ({ optOuts: {} }), saveCheckpoint: () => {}, stateKey: (b) => b,
     };
     if (request === './logger') return { logResult: (n, s) => logged.push(s), STATUS_BUCKET: {} };
-    if (request === './forms') return { fillForm: async () => {}, findListingUrl: async () => null };
+    if (request === './forms') return { fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }), findListingUrl: async () => null };
     if (request === './captcha') return { detectAndSolveCaptcha: async () => { throw new EgressError('gate'); } };
     if (request === './retry') return { withRetry: (fn) => fn() };
     if (request === './timing') return { jitterSleep: async () => {} };

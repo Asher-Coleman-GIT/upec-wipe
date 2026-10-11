@@ -23,7 +23,7 @@ function loadRunner(captchaCalls, logged) {
       recordFailure: () => {}, loadState: () => ({ optOuts: {} }), saveCheckpoint: () => {}, stateKey: (b) => b,
     };
     if (request === './logger') return { logResult: (n, s) => logged.push(s), STATUS_BUCKET: {} };
-    if (request === './forms') return { fillForm: async () => {}, findListingUrl: async () => null };
+    if (request === './forms') return { fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }), findListingUrl: async () => null };
     if (request === './captcha') return { detectAndSolveCaptcha: async () => { captchaCalls.n++; return true; } };
     if (request === './retry') return { withRetry: (fn) => fn() };
     if (request === './timing') return { jitterSleep: async () => {} };

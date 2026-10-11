@@ -50,7 +50,7 @@ function patchedLoad(request, parent, isMain) {
   }
   // forms and captcha are required but never called in the usOnly path
   if (request === './forms' && parent?.filename?.includes('broker-runner')) {
-    return { fillForm: async () => {}, findListingUrl: async () => null };
+    return { fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }), findListingUrl: async () => null };
   }
   if (request === './captcha' && parent?.filename?.includes('broker-runner')) {
     return { detectAndSolveCaptcha: async () => true };

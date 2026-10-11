@@ -63,6 +63,7 @@ function loadRunnerWithStubs() {
       return {
         fillForm: async (page, formFields, person, submissionEmail) => {
           fillFormCalls.push({ formFields, person, submissionEmail });
+          return { filled: [{ selector: 'email', value: String(submissionEmail || ''), kind: 'text' }], missed: [] };
         },
         findListingUrl: async () => null,
       };

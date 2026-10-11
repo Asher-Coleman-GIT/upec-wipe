@@ -48,7 +48,7 @@ function patchedLoad(request, parent, isMain) {
     STATUS_BUCKET: {},
   };
   if (request === './forms') return {
-    fillForm: async () => {},
+    fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }),
     findListingUrl: async () => null,  // will be overridden per-test via broker.method
   };
   if (request === './captcha') return { detectAndSolveCaptcha: async () => true };
