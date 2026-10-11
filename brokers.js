@@ -143,9 +143,9 @@ function buildBrokers(person) {
     searchUrl: `https://www.fastpeoplesearch.com/name/${enc(F)}-${enc(L)}_${ST}`,
     listingPattern: /fastpeoplesearch\.com\/name\//i,
     optOutUrl: 'https://www.fastpeoplesearch.com/optout',
-    formFields: { 'input[id="optout_name"],input[name*="name"]': N, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    formFields: { '#firstname': F, '#lastname': L, '#email': E, 'input[name="legal"]': 'on' },
+    submitSelector: 'form button[type="submit"]',
+    captchaLikely: true,
     priority: 1,
     usOnly: true,
   },
@@ -177,28 +177,12 @@ function buildBrokers(person) {
   },
 
   {
-    name: 'Radaris',
-    method: 'search-form',
-    searchUrl: `https://radaris.com/p/${enc(F)}/${enc(L)}/`,
-    listingPattern: /radaris\.com\/p\//i,
-    optOutUrl: 'https://radaris.com/control/privacy',
-    formFields: { 'input[name*="first"],input[placeholder*="first" i]': F, 'input[name*="last"],input[placeholder*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    timeoutMs: 30000,
+    name: 'PeopleConnect Suppression Center',
+    method: 'manual',
+    optOutUrl: 'https://suppression.peopleconnect.us/login',
     priority: 1,
-    expectedSender: 'noreply@radaris.com',
-  },
-
-  {
-    name: 'Intelius',
-    method: 'direct-form',
-    optOutUrl: 'https://www.intelius.com/optout',
-    formFields: { 'input[name="firstName"]': F, 'input[name="lastName"]': L, 'input[type="email"]': E, 'select[name="state"]': ST },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 1,
-    expectedSender: 'privacy@intelius.com',
+    usOnly: true,
+    notes: 'Intelius, TruthFinder and Instant Checkmate: sign in with your alias at https://suppression.peopleconnect.us/login, enter the emailed code, then suppress each record.',
   },
 
   {
@@ -213,16 +197,6 @@ function buildBrokers(person) {
   },
 
   {
-    name: 'PeopleSmart',
-    method: 'direct-form',
-    optOutUrl: 'https://www.peoplesmart.com/optout-go',
-    formFields: { 'input[name="firstName"]': F, 'input[name="lastName"]': L, 'input[type="email"]': E, 'select[name="state"]': ST },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 1,
-  },
-
-  {
     name: 'MyLife',
     method: 'search-form',
     searchUrl: `https://www.mylife.com/find-people/results.pubview?searchtype=PEOPLE&firstname=${enc(F)}&lastname=${enc(L)}&state=${ST}`,
@@ -233,18 +207,6 @@ function buildBrokers(person) {
     captchaLikely: true,
     priority: 1,
     expectedSender: 'support@mylife.com',
-  },
-
-  {
-    name: 'Nuwber',
-    method: 'search-form',
-    searchUrl: `https://nuwber.com/person/search?name=${enc(N)}&state=${ST}`,
-    listingPattern: /nuwber\.com\/person\//i,
-    optOutUrl: 'https://nuwber.com/removal/link',
-    formFields: { 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 1,
   },
 
   {
@@ -286,21 +248,10 @@ function buildBrokers(person) {
   {
     name: 'USPhonebook',
     method: 'direct-form',
-    optOutUrl: 'https://www.usphonebook.com/opt-out',
-    formFields: { 'input[name*="name" i]': N, 'input[name*="email" i]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 2,
-    usOnly: true,
-  },
-
-  {
-    name: 'PublicDataUSA',
-    method: 'direct-form',
-    optOutUrl: 'https://www.publicdatausa.com/remove.php',
-    formFields: { 'input[name*="name" i]': N, 'input[name*="email" i]': E, 'input[name*="state" i]': ST },
-    submitSelector: 'input[type="submit"],button[type="submit"]',
-    captchaLikely: false,
+    optOutUrl: 'https://www.usphonebook.com/removal',
+    formFields: { '#subject-firstname': F, '#subject-lastname': L, '#subject-email': E, '#agreement': 'on' },
+    submitSelector: 'button:has-text("Begin Removal Process")',
+    captchaLikely: true,
     priority: 2,
     usOnly: true,
   },
@@ -319,9 +270,9 @@ function buildBrokers(person) {
     name: 'SearchPeopleFree',
     method: 'direct-form',
     optOutUrl: 'https://www.searchpeoplefree.com/opt-out',
-    formFields: { 'input[name*="name" i]': N, 'input[name*="email" i]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    formFields: { '#o_first': F, '#o_last': L, '#o_email': E, '#o_terms': 'on' },
+    submitSelector: 'button:has-text("Begin removal process")',
+    captchaLikely: true,
     priority: 2,
     // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
@@ -331,9 +282,9 @@ function buildBrokers(person) {
     name: 'PeopleSearchNow',
     method: 'direct-form',
     optOutUrl: 'https://www.peoplesearchnow.com/opt-out',
-    formFields: { 'input[name*="name" i]': N, 'input[name*="email" i]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    formFields: { '#subject-firstname': F, '#subject-lastname': L, '#subject-email': E, '#agreement': 'on' },
+    submitSelector: 'button:has-text("Begin Removal Process")',
+    captchaLikely: true,
     priority: 2,
     // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
@@ -341,23 +292,21 @@ function buildBrokers(person) {
 
   {
     name: 'InfoTracer',
-    method: 'direct-form',
+    method: 'manual',
     optOutUrl: 'https://infotracer.com/optout/',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
     priority: 2,
     // No SSN/DOB gate - safe to submit arbitrary name/email for noise mode
     acceptsBogus: true,
+    notes: 'The page asks you to prove you are human first: https://infotracer.com/optout/',
   },
 
   {
     name: 'SocialCatfish',
     method: 'direct-form',
-    optOutUrl: 'https://socialcatfish.com/opt-out/',
-    formFields: { 'input[name*="name" i]': N, 'input[name*="email" i]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    optOutUrl: 'https://socialcatfish.com/opt-out/?id=request_optout',
+    formFields: { '#first-name': F, '#last-name': L, '#email': E },
+    submitSelector: 'button:has-text("Submit Now")',
+    captchaLikely: true,
     priority: 2,
   },
 
@@ -372,20 +321,10 @@ function buildBrokers(person) {
   },
 
   {
-    name: 'ClustrMaps',
-    method: 'direct-form',
-    optOutUrl: 'https://clustrmaps.com/bl/opt-out',
-    formFields: { 'input[name*="name" i]': N, 'input[name*="email" i]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 2,
-  },
-
-  {
     name: 'PrivateRecords',
     method: 'direct-form',
     optOutUrl: 'https://www.privaterecords.net/api/helper/optOutLight/search',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
+    formFields: { '#r-removal': 'on', '#oo-email': E },
     submitSelector: 'button[type="submit"]',
     captchaLikely: false,
     priority: 2,
@@ -396,95 +335,44 @@ function buildBrokers(person) {
 
   {
     name: 'Acxiom',
-    method: 'direct-form',
-    optOutUrl: 'https://isapps.acxiom.com/optout/optout.aspx',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'input[name*="zip" i]': Z },
-    submitSelector: 'input[type="submit"],button[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://www.acxiom.com/optout/',
     priority: 1,
+    notes: 'The opt-out form is embedded from isapps.acxiom.com and cannot be automated: https://www.acxiom.com/optout/',
   },
 
   {
     name: 'LexisNexis',
-    method: 'direct-form',
-    optOutUrl: 'https://optout.lexisnexis.com/',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'input[name*="zip" i]': Z },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://consumer.risk.lexisnexis.com/opt',
     priority: 1,
+    notes: 'Multi-step request portal: https://consumer.risk.lexisnexis.com/opt',
   },
 
   {
     name: 'ZoomInfo',
-    method: 'direct-form',
-    optOutUrl: 'https://www.zoominfo.com/update-my-info',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://www.zoominfo.com/trust-center/your-privacy',
     priority: 1,
+    notes: 'The old opt-out page is gone (404). Request deletion on the privacy page: https://www.zoominfo.com/trust-center/your-privacy',
   },
 
   {
     name: 'Clearbit',
-    method: 'direct-form',
-    optOutUrl: 'https://clearbit.com/privacy/opt-out',
-    formFields: { 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://clearbit.com/privacy-policy',
     priority: 1,
+    notes: 'The opt-out page is gone (404); the privacy policy says how to ask for deletion: https://clearbit.com/privacy-policy',
   },
 
   // ═══ Additional people-search / data broker sites ════════════════════════
 
   {
-    name: 'PeekYou',
-    method: 'direct-form',
-    optOutUrl: 'https://www.peekyou.com/about/contact/optout/',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'input[name*="city" i]': C, 'input[name*="state" i]': ST },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
-    priority: 1,
-  },
-
-  {
     name: 'Addresses.com',
-    method: 'direct-form',
-    optOutUrl: 'https://www.addresses.com/optout.php',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://www.addresses.com/',
     priority: 2,
-  },
-
-  {
-    name: 'AnyWho',
-    method: 'direct-form',
-    optOutUrl: 'https://www.anywho.com/optout',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
-    priority: 2,
-  },
-
-  {
-    name: 'TruthFinder',
-    method: 'direct-form',
-    optOutUrl: 'https://www.truthfinder.com/opt-out/',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[name*="state" i]': ST },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 1,
-  },
-
-  {
-    name: 'InstantCheckmate',
-    method: 'direct-form',
-    optOutUrl: 'https://www.instantcheckmate.com/opt-out/',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[name*="state" i]': ST },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
-    priority: 1,
-    expectedSender: 'noreply@instantcheckmate.com',
+    notes: 'The old opt-out page is gone (404). Look for a privacy or opt-out link at https://www.addresses.com/',
   },
 
   {
@@ -496,49 +384,26 @@ function buildBrokers(person) {
 
   {
     name: 'Epsilon',
-    method: 'direct-form',
-    optOutUrl: 'https://www.epsilon.com/privacy/data-subject-rights-request',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    method: 'manual',
+    optOutUrl: 'https://legal.epsilon.com/dsr',
     priority: 2,
+    notes: 'The request form has a CAPTCHA and multi-select fields: https://legal.epsilon.com/dsr',
   },
 
   {
-    name: 'Oracle Data Cloud',
-    method: 'direct-form',
-    optOutUrl: 'https://datacloudoptout.oracle.com/',
-    formFields: { 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
-    captchaLikely: false,
+    name: 'OptOutPrescreen (credit bureaus)',
+    method: 'manual',
+    optOutUrl: 'https://www.optoutprescreen.com/',
     priority: 2,
-  },
-
-  {
-    name: 'Equifax (marketing)',
-    method: 'direct-form',
-    optOutUrl: 'https://www.equifax.com/privacy/opt-out/',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'input[name*="zip" i]': Z },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
-    priority: 2,
-  },
-
-  {
-    name: 'Experian (marketing)',
-    method: 'direct-form',
-    optOutUrl: 'https://www.experian.com/privacy/opting_out.html',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[name*="addr" i]': C, 'input[name*="zip" i]': Z },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
-    priority: 2,
+    usOnly: true,
+    notes: 'Equifax, Experian, TransUnion and Innovis prescreened offers: opt out for 5 years online at https://www.optoutprescreen.com/ (permanent needs a signed form).',
   },
 
   {
     name: 'DataAxle',
     method: 'direct-form',
     optOutUrl: 'https://www.data-axle.com/privacy-policy/#optout',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'input[name*="zip" i]': Z },
+    formFields: { 'form input[name="email"]': E },
     submitSelector: 'button[type="submit"]',
     captchaLikely: false,
     priority: 2,
