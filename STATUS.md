@@ -37,8 +37,8 @@
 | TruePeopleSearch | direct-form | no | surveyed 2026-10-11 (assisted) | yes |
 | BeenVerified | manual | - | surveyed 2026-10-11 (you pick your record) | yes |
 | PeopleConnect Suppression Center | manual | n/a | manual | yes |
-| PeopleFinders | direct-form | no | untested | no |
-| MyLife | search-form | yes | opt-out page moved to /privacyrequest 2026-10-11 | no |
+| PeopleFinders | direct-form | yes | surveyed 2026-10-11 (step 1 of 2; step 2 is the emailed link) | no |
+| MyLife | search, then manual | - | surveyed 2026-10-11 (embedded form; you get your listing link) | no |
 | FamilyTreeNow | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
 | CheckPeople | direct-form | no | untested | no |
 | ThatsThem | direct-form | no | untested | no |

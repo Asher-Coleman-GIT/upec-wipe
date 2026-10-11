@@ -124,3 +124,27 @@ test('without a ticked box first, a hidden field is not waited for', async () =>
   assert.deepEqual(r.missed, ['#first']);
   assert.equal(waits.length, 0);
 });
+
+// PrivateRecords 2026-10-11: the state dropdown's options are full names.
+function namedStatePage(optionValues) {
+  const chosen = [];
+  const el = {
+    first: () => el, count: async () => 1, isVisible: async () => true,
+    evaluate: async (fn) => fn({ tagName: 'SELECT', type: 'select-one' }),
+    selectOption: async (v) => { const want = typeof v === 'object' ? v.label : v; if (!optionValues.includes(want)) throw new Error('no option'); chosen.push(want); },
+  };
+  return { chosen, page: { locator: () => el, getByLabel: () => ({ count: async () => 0 }), evaluate: async () => null, $$: async () => [] } };
+}
+
+test('a state code fills a dropdown that lists full state names', async () => {
+  const { page, chosen } = namedStatePage(['Texas', 'Utah']);
+  const r = await fillForm(page, { '#state': 'UT' });
+  assert.deepEqual(chosen, ['Utah']);
+  assert.equal(r.filled.length, 1);
+});
+
+test('a full state name fills a dropdown that lists codes', async () => {
+  const { page, chosen } = namedStatePage(['TX', 'UT']);
+  await fillForm(page, { '#state': 'Utah' });
+  assert.deepEqual(chosen, ['UT']);
+});

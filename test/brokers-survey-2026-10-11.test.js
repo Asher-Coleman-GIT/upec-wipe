@@ -65,3 +65,18 @@ test('BeenVerified is manual: you pick your own record from the results', () => 
 test('MyLife points at its privacy request page, not the privacy policy', () => {
   assert.equal(get('MyLife').optOutUrl, 'https://www.mylife.com/privacyrequest');
 });
+
+test('MyLife searches, then hands over the listing (its form cannot be completed)', () => {
+  const b = get('MyLife');
+  assert.equal(b.manualAfterSearch, true);
+  assert.equal(b.formFields, undefined);
+});
+
+test('PeopleFinders fills only the step-one Right to Opt-Out form', () => {
+  const b = get('PeopleFinders');
+  const k = Object.keys(b.formFields);
+  assert.ok(k.every(s => s.startsWith('form:has(button:has-text("Send Request"))')), 'every field is scoped to that form');
+  assert.equal(b.formFields['form:has(button:has-text("Send Request")) select'], 'subject');
+  assert.match(b.submitSelector, /Send Request/);
+  assert.equal(b.captchaLikely, true);
+});

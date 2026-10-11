@@ -186,9 +186,19 @@ function buildBrokers(person) {
     name: 'PeopleFinders',
     method: 'direct-form',
     optOutUrl: 'https://www.peoplefinders.com/opt-out',
-    formFields: { 'input[name*="first" i]': F, 'input[name*="last" i]': L, 'input[type="email"]': E, 'input[name*="state" i]': ST },
-    submitSelector: 'button[type="submit"],input[type="submit"]',
-    captchaLikely: false,
+    // Surveyed 2026-10-11. Step 1 is the "Right to Opt-Out" form (the one with
+    // Send Request): name and email, and they email a link. That link opens
+    // the Record Suppression Form (date of birth, address, phone) - step 2,
+    // done by hand from the email. The page has both forms, so scope to the first.
+    formFields: {
+      'form:has(button:has-text("Send Request")) input[placeholder="First Name"]': F,
+      'form:has(button:has-text("Send Request")) input[placeholder="Last Name"]': L,
+      'form:has(button:has-text("Send Request")) input[placeholder="Email"]': E,
+      'form:has(button:has-text("Send Request")) select': 'subject',
+      'form:has(button:has-text("Send Request")) input[type="checkbox"]': 'on',
+    },
+    submitSelector: 'form:has(button:has-text("Send Request")) button:has-text("Send Request")',
+    captchaLikely: true,
     priority: 1,
     expectedSender: 'support@peoplefinders.com',
   },
@@ -198,9 +208,11 @@ function buildBrokers(person) {
     method: 'search-form',
     searchUrl: `https://www.mylife.com/find-people/results.pubview?searchtype=PEOPLE&firstname=${enc(F)}&lastname=${enc(L)}&state=${ST}`,
     listingPattern: /mylife\.com\/[^/]+\/[^/]+-\d+\.html/i,
+    // The request form is a Jotform embedded in /privacyrequest whose email
+    // box is a separate verification widget. Search, then hand over.
     optOutUrl: 'https://www.mylife.com/privacyrequest',
-    formFields: { 'input[type="email"]': E },
-    submitSelector: 'button[type="submit"]',
+    manualAfterSearch: true,
+    notes: 'the form asks for the profile URL, your name, city, ZIP, state and email',
     captchaLikely: true,
     priority: 1,
     expectedSender: 'support@mylife.com',
