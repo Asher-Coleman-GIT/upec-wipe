@@ -24,7 +24,7 @@ const brokerRunner = require('./lib/broker-runner');
 const { isGenericEnabled, buildSubmissionPlan, submissionOptions, withSubmissionEmail } = require('./lib/submission-plan');
 const { PREVIEW_ALIAS } = require('./lib/relay');
 // Printed once when a preview/dry-run person has no cached alias yet.
-const PREVIEW_ALIAS_NOTE = `ℹ  Preview: no SimpleLogin alias was created; using ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
+const PREVIEW_ALIAS_NOTE = `Note: Preview: no SimpleLogin alias was created; using ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
 const lock = require('./lib/lock');
 const { applyFilter, loadLastLog, extractFailedBrokers } = require('./lib/filter');
 const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./lib/allowlist-edit');
@@ -718,7 +718,7 @@ setDryRun(DRY_RUN); // makes recordSuccess/saveState no-op-on-disk in dry-run
 
 const config = loadConfig();
 setEgressConfig(config);
-if (config.notify) console.log('ℹ  notify settings in config.json are ignored in this fork.');
+if (config.notify) console.log('Note: notify settings in config.json are ignored in this fork.');
 const state = loadState();
 const persons = getPersonsFromConfig(config);
 

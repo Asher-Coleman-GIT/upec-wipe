@@ -316,7 +316,7 @@ test('formatBreachReport lists broker cross-references', () => {
     freeze: true,
   });
   assert.match(report, /also data brokers/);
-  assert.match(report, /SpokeoLeak \(spokeo\.com\) ↔ broker "Spokeo"/);
+  assert.match(report, /SpokeoLeak \(spokeo\.com\) <-> broker "Spokeo"/);
 });
 
 // ─── collectEmails / missingKeyMessage ───────────────────────────────────────

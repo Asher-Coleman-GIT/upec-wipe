@@ -271,8 +271,8 @@ async function main() {
   const existing = prior.config;
   if (prior.exists) {
     console.log(prior.encrypted
-      ? 'ℹ  Existing encrypted config found - press Enter to keep current values.\n'
-      : 'ℹ  Existing config.json found - press Enter to keep current values.\n');
+      ? 'Note: Existing encrypted config found - press Enter to keep current values.\n'
+      : 'Note: Existing config.json found - press Enter to keep current values.\n');
   }
   const p = existing.person || {};
 

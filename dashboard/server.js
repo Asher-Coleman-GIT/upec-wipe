@@ -31,7 +31,7 @@ process.umask(0o077);
  *   POST /api/freeze             -> { key, action: done|clear } mark a freeze target
  *
  * Auth (all routes except /api/health, static + API): set UPEC_WIPE_USER + UPEC_WIPE_PASS
- *   for HTTP Basic, and/or UPEC_WIPE_TOKEN for header token auth (X-UPEC_WIPE-Token). A
+ *   for HTTP Basic, and/or UPEC_WIPE_TOKEN for header token auth (X-UPEC-WIPE-Token). A
  *   request is allowed if it satisfies EITHER. Credentials can be changed at
  *   runtime via the Admin tab, which writes a scrypt-hashed dashboard/.auth.json
  *   that overrides the env vars. If nothing is set the dashboard refuses to

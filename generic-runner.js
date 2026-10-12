@@ -32,11 +32,11 @@ const FEEDS_PATH      = path.join(__dirname, 'data', 'feeds-brokers.json');
 const DEAD_URLS_PATH  = path.join(__dirname, 'data', 'dead-urls.json');
 
 const { detectConfirmationRequired } = require('./lib/confirm');
-const { CONFIRM_RECHECK_DAYS, loadConfig } = require('./lib/config');
+const { CONFIRM_RECHECK_DAYS, RECHECK_DAYS, loadConfig } = require('./lib/config');
 const { withRetry } = require('./lib/retry');
 const { EgressError } = require('./lib/egress');
 const { isAllowlisted } = require('./lib/filter');
-const { registrableDomain } = require('./lib/serp-scan');
+const { registrableDomain } = require('./lib/domain');
 
 // Config is loaded lazily so that modules importing only the pure helpers
 // (classifyNavError, isDeadStatus, loadDeadSet) don't require config.json.
@@ -60,8 +60,6 @@ function getConfig() {
 function _setConfig(cfg) {
   _config = cfg || null;
 }
-
-const RECHECK_DAYS = 90;
 
 // ─── Dead-URL cache ───────────────────────────────────────────────────────────
 // Loaded once at module init; missing / malformed file treated as empty set.
