@@ -297,8 +297,23 @@ describe('checkSimpleLogin', () => {
   const KEY = 'sl-real-key-123';
   const relay = (extra) => ({ relay: { provider: 'simplelogin', apiKey: KEY, required: true, ...extra } });
 
-  it('skips when no relay block is set', async () => {
-    const result = await checkSimpleLogin({}, { simpleLoginRequest: () => Promise.resolve(200) });
+  it('fails when no relay block is set: a required relay blocks every submission', async () => {
+    let called = false;
+    const result = await checkSimpleLogin({}, { simpleLoginRequest: () => { called = true; return Promise.resolve(200); } });
+    assert.equal(result.ok, false);
+    assert.match(result.hint, /nothing will be submitted/i);
+    assert.match(result.hint, /re-run setup/i);
+    assert.equal(called, false);
+  });
+
+  it('fails when the relay block has no provider and is required', async () => {
+    const result = await checkSimpleLogin({ relay: { apiKey: KEY } }, { simpleLoginRequest: () => Promise.resolve(200) });
+    assert.equal(result.ok, false);
+    assert.match(result.hint, /nothing will be submitted/i);
+  });
+
+  it('skips without failing when no relay is set and relay.required is false', async () => {
+    const result = await checkSimpleLogin({ relay: { required: false } }, { simpleLoginRequest: () => Promise.resolve(200) });
     assert.equal(result.ok, true);
     assert.match(result.hint, /not configured/i);
   });
@@ -390,7 +405,8 @@ describe('runDoctor', () => {
 
   it('returns exit code 0 when no failures', async () => {
     const dir = tmpDir();
-    const cfg = { person: { firstName: 'A', lastName: 'B', email: 'c@d.com', zip: '99999' } };
+    // relay.required false: with the default a missing relay is a doctor failure.
+    const cfg = { person: { firstName: 'A', lastName: 'B', email: 'c@d.com', zip: '99999' }, relay: { required: false } };
     fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(cfg));
     const fakeBin = path.join(dir, 'chrome');
     fs.writeFileSync(fakeBin, '');
