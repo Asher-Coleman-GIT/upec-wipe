@@ -1012,6 +1012,8 @@ async function _mainBody() {
   }
 
 
+  // Counts brokers across persons, so a person boundary never skips a re-check.
+  let sinceCheck = 0;
   for (const { person, email: submissionEmail, masked } of plan.allowed) {
     if (persons.length > 1) {
       console.log(`\n${'='.repeat(54)}`);
@@ -1067,7 +1069,6 @@ async function _mainBody() {
     }
 
     console.log('\n── Explicit broker opt-outs ───────────────────────────────');
-    let sinceCheck = 0;
     for (const broker of sorted) {
       if (!brokerRunner.appliesToPerson(broker, person)) continue;
       process.stdout.write(`\n[${stamp()}] ${broker.name}… `);
@@ -1116,12 +1117,23 @@ async function _mainBody() {
       }
       // getFieldMap() fills email fields from person.email, so hand it the
       // alias-bearing copy. stateKey() keys on names, so state is unaffected.
-      const genericResult = await runGenericBrokers(context, explicitHosts, state, logResult, recordSuccess, {
-        dryRun: DRY_RUN,
-        person: withSubmissionEmail(person, email),
-        personCount: persons.length,
-        recheckEgress: session.recheckEgress,
-      });
+      let genericResult;
+      try {
+        genericResult = await runGenericBrokers(context, explicitHosts, state, logResult, recordSuccess, {
+          dryRun: DRY_RUN,
+          person: withSubmissionEmail(person, email),
+          personCount: persons.length,
+          recheckEgress: session.recheckEgress,
+        });
+      } catch (err) {
+        // Same clean stop as the explicit loop: nothing more is submitted.
+        if (!(err instanceof EgressError)) throw err;
+        console.error(`\n${err.message}`);
+        saveState();
+        await session.close();
+        process.exitCode = 1;
+        return;
+      }
       if (genericResult && genericResult.genericStats) {
         for (const [k, v] of Object.entries(genericResult.genericStats)) {
           genericTotals[k] = (genericTotals[k] || 0) + (typeof v === 'number' ? v : 0);

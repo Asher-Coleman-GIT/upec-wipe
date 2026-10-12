@@ -15,3 +15,16 @@ test('both broker loops re-check the browser egress', () => {
   assert.match(src, /await session\.recheckEgress\(\)/);
   assert.match(src, /recheckEgress: session\.recheckEgress/);
 });
+
+test('the explicit-loop re-check counter runs across persons', () => {
+  const counter = src.indexOf('let sinceCheck = 0;');
+  assert.ok(counter > 0);
+  assert.ok(counter < src.indexOf('for (const { person, email: submissionEmail, masked } of plan.allowed)'));
+});
+
+test('a VPN drop in the generic pass stops the run cleanly', () => {
+  const block = src.slice(src.indexOf('await runGenericBrokers(context'), src.indexOf('results.genericStats = genericTotals'));
+  assert.match(block, /instanceof EgressError/);
+  assert.match(block, /saveState\(\)/);
+  assert.match(block, /process\.exitCode = 1/);
+});

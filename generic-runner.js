@@ -556,7 +556,8 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
 
       let result;
       try {
-        if (opts.recheckEgress && stats.attempted > 0 && stats.attempted % EGRESS_RECHECK_EVERY === 0) {
+        // Before the first broker too: the pass can start long after the launch check.
+        if (opts.recheckEgress && stats.attempted % EGRESS_RECHECK_EVERY === 0) {
           await opts.recheckEgress();
         }
         result = await processFn(page, broker, state, dryRun, opts.injectedDeadSet, { person, stateKey: keyFor(broker.name) });
