@@ -161,7 +161,7 @@ function maybeEncryptConfig(opts) {
   return { encrypted: true, encPath: res.encPath };
 }
 
-module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingConfig, buildConfig };
+module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingConfig, buildConfig, dedicatedMailboxProblem };
 
 // ─── Main setup ───────────────────────────────────────────────────────────────
 
@@ -175,6 +175,43 @@ module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingC
  * @param {object} a         answers collected from the prompts
  * @returns {object}
  */
+/**
+ * Why `mailbox` cannot be the dedicated sender for `aidr run --email`, or null.
+ * Blank means "skip". Brokers see this address, so it may not be the real one.
+ * @param {string} mailbox
+ * @param {string} realEmail
+ * @returns {string|null}
+ */
+function dedicatedMailboxProblem(mailbox, realEmail) {
+  const m = String(mailbox || '').trim().toLowerCase();
+  if (!m) return null;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)) return 'That is not an email address.';
+  if (realEmail && m === String(realEmail).trim().toLowerCase()) return 'That is your everyday (real) email. Brokers see this address; use a new mailbox made only for this.';
+  return null;
+}
+
+// The email block for phase 2 email requests: one dedicated mailbox as both
+// SMTP login and sender. A blank mailbox keeps whatever block is there.
+function buildEmailBlock(prevEmail, a) {
+  const mailbox = String(a.mailbox || '').trim();
+  if (!mailbox) return prevEmail;
+  const prev = prevEmail || {};
+  const prevSmtp = prev.smtp || {};
+  return {
+    ...prev,
+    smtp: {
+      ...prevSmtp,
+      host: a.smtpHost || prevSmtp.host || 'smtp.gmail.com',
+      port: prevSmtp.port || 587,
+      user: mailbox,
+      pass: a.appPassword || prevSmtp.pass || '',
+      from: mailbox,
+    },
+    paceSeconds: prev.paceSeconds || 45,
+    maxPerRun: prev.maxPerRun || 100,
+  };
+}
+
 function buildConfig(existing, a) {
   const prev = existing || {};
   // Fork defaults (fail closed): seeded only when absent, never overriding
@@ -186,6 +223,7 @@ function buildConfig(existing, a) {
   const relay = a.simpleloginKey ? { ...seededRelay, ...baseRelay, apiKey: a.simpleloginKey } : baseRelay;
   const prevPerson = { ...(prev.person || {}) };
   if (a.dob === '') delete prevPerson.dob; // a blank answer clears it
+  const email = buildEmailBlock(prev.email, a);
   return {
     ...prev,
     person: {
@@ -207,6 +245,7 @@ function buildConfig(existing, a) {
     profileDir: a.profileDir,
     relay,
     network: prev.network !== undefined ? prev.network : { required: true, proxy: '' },
+    ...(email !== undefined ? { email } : {}),
   };
 }
 
@@ -270,6 +309,27 @@ async function main() {
   const hasRelayKey = relayConfigured(existing);
   const simpleloginKey = await ask(hasRelayKey ? 'SimpleLogin API key (Enter keeps the current one)' : 'SimpleLogin API key');
 
+  // ── Email requests (phase 2) ─────────────────────────────────────────────
+  console.log('\n── Email Requests (dedicated mailbox, optional) ───────────');
+  console.log('Some data brokers only take privacy requests by email. `aidr run --email`');
+  console.log('sends them from a mailbox made only for this - brokers see that address,');
+  console.log('so never use your everyday email. For Gmail: create a new account, turn on');
+  console.log('2-step verification, then make an app password at');
+  console.log('https://myaccount.google.com/apppasswords');
+  console.log('Leave the address blank to skip (the email step stays off).\n');
+  const prevSmtp = (existing.email && existing.email.smtp) || {};
+  let mailbox = await ask('Dedicated email address', prevSmtp.user || '');
+  for (let problem = dedicatedMailboxProblem(mailbox, email); problem; problem = dedicatedMailboxProblem(mailbox, email)) {
+    console.log(`  ${problem}`);
+    mailbox = await ask('Dedicated email address (blank to skip)', '');
+  }
+  let smtpHost = '';
+  let appPassword = '';
+  if (mailbox) {
+    smtpHost = await ask('SMTP server', prevSmtp.host || 'smtp.gmail.com');
+    appPassword = await askSecret(prevSmtp.pass ? 'App password (Enter keeps the current one)' : 'App password');
+  }
+
   // ── Profile dir ──────────────────────────────────────────────────────────
   const defaultProfileDir = path.join(os.homedir(), '.config', 'auto-identity-remove');
   const profileDir = await ask('Browser profile directory', existing.profileDir || defaultProfileDir);
@@ -278,6 +338,7 @@ async function main() {
   const config = buildConfig(existing, {
     firstName, lastName, aliases, city, country, state, zip, email, phone,
     phoneFormatted, dob, capsolverKey, simpleloginKey, profileDir,
+    mailbox, smtpHost, appPassword,
   });
 
   // 0600: config.json holds the legal name, home address, phone, DOB, the SMTP
