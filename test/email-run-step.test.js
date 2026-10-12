@@ -79,3 +79,10 @@ test('resends count toward maxPerRun and go first', async () => {
   assert.equal(out.sent.length, 1);
   assert.equal(out.sent[0].to, 'p@alpha.com');
 });
+
+test('a stopped email run names the real command to re-run', async () => {
+  const err = Object.assign(new Error('connect failed'), { code: 'ECONNECTION' });
+  const { d, out } = deps({ makeTransport: () => ({ sendMail: async () => { throw err; } }) });
+  assert.equal(await runEmailStep(d), 1);
+  assert.match(out.lines.join('\n'), /run upec-wipe run --email again/);
+});

@@ -35,3 +35,10 @@ test('--know .catch saves state before releasing the lock and prints an EgressEr
   assert.ok(release > save, 'saveState() must run before the lock is released');
   assert.match(block, /err instanceof EgressError/);
 });
+
+test('--know checks the email setup before it can create a SimpleLogin alias', () => {
+  const block = src.slice(src.indexOf('if (KNOW_MODE) {'), src.indexOf('const code = await runKnowStep('));
+  const check = block.indexOf('checkEmailSetup(');
+  assert.ok(check > 0, 'checkEmailSetup is called in the --know block');
+  assert.ok(check < block.indexOf('buildSubmissionPlan('), 'and before buildSubmissionPlan');
+});

@@ -113,3 +113,32 @@ test('an interrupted send (status unknown) is noted once and not sent again', as
   assert.deepEqual(notes, ["  note: Pipl right-to-know request may or may not have been sent last time; it is not sent again. Check the dedicated mailbox's Sent folder."]);
   assert.equal(out.sent.length, 0);
 });
+
+test('a know address that failed twice goes to manual and is not sent', async () => {
+  const state = { optOuts: {}, emailFailures: { [`${KNOW_PREFIX}Pipl`]: 2 } };
+  const { d, out } = deps({ state });
+  assert.equal(await runKnowStep(d), 0);
+  assert.equal(out.sent.length, 0);
+  assert.match(out.lines.join('\n'), /manual Pipl: right-to-know email to privacy@pipl\.com failed or bounced/);
+});
+
+test('a bounced know address goes to manual', () => {
+  const manual = [];
+  const state = { emailReplies: { [`${KNOW_PREFIX}Pipl`]: { outcome: 'bounced', at: 't' } } };
+  const items = buildKnowPlan({ brokers: BROKERS, persons: [P], state, submissionEmailFor: () => ALIAS, blockedPersons: new Set(), maxPerRun: 100, manual });
+  assert.deepEqual(items, []);
+  assert.deepEqual(manual, [{ name: 'Pipl', to: 'privacy@pipl.com' }]);
+});
+
+test('two brokers sharing one address get one request per person', () => {
+  const brokers = [...BROKERS, { name: 'PiplToo', method: 'email', emailTo: 'privacy@PIPL.com' }];
+  const items = buildKnowPlan({ brokers, persons: [P], state: {}, submissionEmailFor: () => ALIAS, blockedPersons: new Set(), maxPerRun: 100 });
+  assert.deepEqual(items.map(i => i.name), ['Pipl']);
+});
+
+test('a stopped know run names the real command to re-run', async () => {
+  const err = Object.assign(new Error('connect failed'), { code: 'ECONNECTION' });
+  const { d, out } = deps({ makeTransport: () => ({ sendMail: async () => { throw err; } }) });
+  assert.equal(await runKnowStep(d), 1);
+  assert.match(out.lines.join('\n'), /run upec-wipe know again/);
+});

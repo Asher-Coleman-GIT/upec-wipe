@@ -721,6 +721,14 @@ if (KNOW_MODE) {
   acquireStateLockOrExit();
 
   (async () => {
+    // Check the mailbox setup first: a run that will be refused must not
+    // create a SimpleLogin alias.
+    const { checkEmailSetup } = require('./lib/email-step');
+    const setupProblem = checkEmailSetup({ config, persons, isTTY: !!process.stdin.isTTY, preview: DRY_RUN });
+    if (setupProblem) {
+      console.log(`Right-to-know not sent: ${setupProblem}.`);
+      return 1;
+    }
     const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
     for (const b of plan.blocked) {
       console.error(`Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
