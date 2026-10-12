@@ -25,3 +25,16 @@ test('generic-runner takes RECHECK_DAYS from lib/config', () => {
   const src = fs.readFileSync(path.join(__dirname, '..', 'generic-runner.js'), 'utf8');
   assert.ok(!/const RECHECK_DAYS\s*=/.test(src));
 });
+
+test('registrableDomain keeps three labels under a two-label public suffix', () => {
+  assert.equal(registrableDomain('www.broker.co.uk'), 'broker.co.uk');
+  assert.equal(registrableDomain('broker.co.uk'), 'broker.co.uk');
+  assert.equal(registrableDomain('a.b.example.com.au'), 'example.com.au');
+  assert.equal(registrableDomain('co.uk'), 'co.uk');
+  assert.equal(registrableDomain('example.com'), 'example.com');
+  assert.equal(registrableDomain('localhost'), 'localhost');
+});
+
+test('catalog-sources uses the same suffix list as lib/domain', () => {
+  assert.equal(require('../lib/catalog-sources').BARE_SUFFIXES, require('../lib/domain').BARE_SUFFIXES);
+});

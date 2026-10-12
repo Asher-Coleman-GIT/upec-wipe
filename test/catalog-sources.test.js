@@ -41,13 +41,18 @@ test('explicit brokers, dead hosts and bare public suffixes are dropped', () => 
     rows: [
       { name: 'S', url: 'https://members.searchquarry.com/x', source: 'badbool' },
       { name: 'D', url: 'https://dead.example.org/', source: 'markup' },
-      { name: 'U', url: 'https://broker.co.uk/', source: 'markup' },
+      { name: 'U', url: 'https://co.uk/', source: 'markup' },
       { name: 'K', url: 'https://keep.example.net/', source: 'markup' },
     ],
     explicitHosts: new Set(['searchquarry.com']),
     deadHosts: new Set(['dead.example.org']),
   });
   assert.deepEqual(c.map(x => x.domain), ['example.net']);
+});
+
+test('a broker under a two-label suffix keeps its own domain', () => {
+  const c = buildCandidates({ rows: [{ name: 'U', url: 'https://www.broker.co.uk/optout', source: 'markup' }] });
+  assert.deepEqual(c.map(x => x.domain), ['broker.co.uk']);
 });
 
 test('http urls are upgraded to https', () => {
