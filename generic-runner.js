@@ -12,10 +12,10 @@
  *         and submit any form it opens
  *      b. Form with email and/or name fields → fill + submit
  *      c. DSAR / data request link → manual list
+ *   4. If nothing automatable → manual list
  *   Cookie-consent managers are not used: a cookie choice made in the
  *   throwaway browser profile is deleted with the profile, so it is never an
  *   opt-out.
- *   4. If nothing automatable → manual list
  *
  * Returns: { succeeded, skipped, manual, errors }
  */

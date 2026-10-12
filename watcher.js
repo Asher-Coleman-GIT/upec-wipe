@@ -24,7 +24,7 @@ const brokerRunner = require('./lib/broker-runner');
 const { isGenericEnabled, buildSubmissionPlan, submissionOptions, withSubmissionEmail } = require('./lib/submission-plan');
 const { PREVIEW_ALIAS } = require('./lib/relay');
 // Printed once when a preview/dry-run person has no cached alias yet.
-const PREVIEW_ALIAS_NOTE = `Note: Preview: no SimpleLogin alias was created; using ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
+const PREVIEW_ALIAS_NOTE = `Note: no SimpleLogin alias exists yet, so this preview uses ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
 const lock = require('./lib/lock');
 const { applyFilter, loadLastLog, extractFailedBrokers } = require('./lib/filter');
 const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./lib/allowlist-edit');

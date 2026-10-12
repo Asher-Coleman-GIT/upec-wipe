@@ -3,7 +3,7 @@
  *
  * 2026-10-11: optional date of birth, used only where a form requires it.
  * The real-email opt-in built alongside it was withdrawn the same day (it only
- * reached Spokeo and Pipl): emailed opt-outs carry the alias alone.
+ * reached Spokeo and Pipl). Emailed requests go through lib/email-step.js and are tested there.
  */
 'use strict';
 const { test } = require('node:test');
