@@ -116,6 +116,16 @@ test('relay configured creates an alias via createImpl and caches it', async () 
   assert.equal(state.relayAliases[key], 'jane.alias@aliases.simplelogin.io');
 });
 
+test('relay.required false with a fully configured relay still returns the alias, never the real email', async () => {
+  const state = makeState();
+  let createCalls = 0;
+  const createImpl = async () => { createCalls += 1; return 'jane.optional@aliases.simplelogin.io'; };
+  const out = await getSubmissionEmail({ config: { relay: { ...RELAY_CFG.relay, required: false } }, person: PERSON_A, state, createImpl });
+  assert.equal(out, 'jane.optional@aliases.simplelogin.io');
+  assert.notEqual(out, PERSON_A.email);
+  assert.equal(createCalls, 1);
+});
+
 test('second call reuses the cached alias without calling createImpl again', async () => {
   const state = makeState();
   let createCalls = 0;
