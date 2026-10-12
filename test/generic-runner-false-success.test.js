@@ -30,6 +30,7 @@ const {
   processGenericUrl,
   classifyOutcome,
   _setConfig,
+  _clickDoNotSell,
 } = require('../generic-runner');
 
 // Selectors fillGenericForm() looks for. The stub reports these present so the
@@ -217,6 +218,22 @@ test('clicking Do Not Sell and actually submitting the follow-up form IS a succe
   const result = await processGenericUrl(page, BROKER, freshState(), false, new Set());
   assert.equal(result.status, 'success', 'the genuine happy path must not regress');
   assert.ok(page.clicked.some(s => s.includes('button[type="submit"]')));
+});
+
+test('Do Not Sell clicked, nothing filled, a submit button present: the button is not clicked', async () => {
+  const page = makeDoNotSellPage({ hasForm: false, hasSubmit: true });
+  const result = await processGenericUrl(page, BROKER, freshState(), false, new Set());
+  assert.notEqual(result.status, 'success');
+  assert.equal(result.status, 'manual');
+  assert.ok(!page.clicked.some(s => s.includes('button[type="submit"]')), `clicked: ${page.clicked.join(' | ')}`);
+});
+
+test('the OneTrust "Cookie Settings" link is not a Do Not Sell control', async () => {
+  const seen = [];
+  const page = { locator: (sel) => { seen.push(sel); return { first: () => ({ count: async () => 0 }) }; }, waitForTimeout: async () => {} };
+  await _clickDoNotSell(page);
+  assert.ok(seen.length > 0);
+  assert.ok(!seen.some(s => s.includes('optanon')), seen.join(' | '));
 });
 
 test('the Do Not Sell detail says what actually happened', async () => {

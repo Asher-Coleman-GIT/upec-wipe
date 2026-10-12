@@ -157,8 +157,8 @@ const DNS_SELECTORS = [
   // ID / class patterns
   '[id*="donotsell" i]', '[id*="do-not-sell" i]',
   '[class*="donotsell" i]', '[class*="do-not-sell" i]',
-  // OneTrust opt-out link
-  '.optanon-toggle-display',
+  // Not '.optanon-toggle-display': that is OneTrust's "Cookie Settings" link,
+  // a cookie manager, never an opt-out.
 ];
 
 const DNS_LOCATOR = `${DNS_SELECTORS.join(', ')} >> visible=true`;
@@ -356,9 +356,12 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
       // follow-up page. This branch used to ignore both return values below and
       // report success unconditionally, which earned a recordSuccess() and a
       // 90-day cooldown for a broker that received nothing.
-      await fillGenericForm(page, person);
-      const submitted = await submitForm(page);
-      if (submitted) return finalize('Do Not Sell clicked, form submitted');
+      // Submit only what was filled: a bare submit button after the click could
+      // be anything (a newsletter, a search, a cookie dialog).
+      if (await fillGenericForm(page, person)) {
+        const submitted = await submitForm(page);
+        if (submitted) return finalize('Do Not Sell clicked, form submitted');
+      }
       // The click may still have flipped a preference with no form at all, so a
       // confirmation page counts. Otherwise a human has to finish it.
       const confirmed = await detectConfirmationRequired(page);
