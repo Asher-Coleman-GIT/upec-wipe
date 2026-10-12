@@ -101,3 +101,11 @@ test('a resend cut by the cap stays unknown for the next run', async () => {
   assert.equal(state.emailSent.Beta.status, 'unknown');
   assert.equal(state.emailSent.Beta.assumed, undefined);
 });
+
+test('a logged bounce moves a sent email to manual', async () => {
+  const state = { optOuts: {}, emailSent: { Alpha: { to: 'p@alpha.com', at: 't', messageId: 'm' } }, emailReplies: { Alpha: { outcome: 'bounced', at: 't' } } };
+  const { d, out } = deps({ state });
+  assert.equal(await runEmailStep(d), 0);
+  assert.equal(out.sent.length, 0);
+  assert.match(out.lines.join('\n'), /manual Alpha: email to p@alpha\.com failed or bounced/);
+});

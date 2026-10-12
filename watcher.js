@@ -24,7 +24,7 @@ const brokerRunner = require('./lib/broker-runner');
 const { isGenericEnabled, buildSubmissionPlan, submissionOptions, withSubmissionEmail } = require('./lib/submission-plan');
 const { PREVIEW_ALIAS } = require('./lib/relay');
 // Printed once when a preview/dry-run person has no cached alias yet.
-const PREVIEW_ALIAS_NOTE = `Note: no SimpleLogin alias exists yet, so this preview uses ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
+const PREVIEW_ALIAS_NOTE = `Note: no SimpleLogin alias exists yet, so this preview or dry run uses ${PREVIEW_ALIAS} as a stand-in. A real run creates the alias.`;
 const lock = require('./lib/lock');
 const { applyFilter, loadLastLog, extractFailedBrokers } = require('./lib/filter');
 const { addToAllowlist, removeFromAllowlist, parseAllowlistArgs } = require('./lib/allowlist-edit');
@@ -287,26 +287,33 @@ if (process.argv.includes('--reply')) {
   const { loadCatalog, catalogEmailTargets } = require('./lib/catalog');
   const brokersList = require('./brokers');
   if (!REPLY_OUTCOMES.includes(outcome)) {
-    console.error(`Usage: upec-wipe reply <broker> ${REPLY_OUTCOMES.join('|')}`);
+    console.error(`Usage: upec-wipe reply <broker> ${REPLY_OUTCOMES.join('|')} [--right-to-know]`);
     process.exit(2);
   }
-  const names = [
-    ...catalogEmailTargets(loadCatalog(undefined, () => {}), { explicitNames: new Set(brokersList.map(b => b.name.toLowerCase())) }).map(t => t.name),
-    ...brokersList.filter(b => b.method === 'email').map(b => b.name),
-  ];
+  // --right-to-know: the reply answers a right-to-know request ("know:" keys),
+  // which only the email brokers in brokers.js receive.
+  const forKnow = process.argv.includes('--right-to-know');
+  const prefix = forKnow ? require('./lib/right-to-know-runner').KNOW_PREFIX : '';
+  const names = forKnow
+    ? brokersList.filter(b => b.method === 'email' && b.emailTo).map(b => b.name)
+    : [
+      ...catalogEmailTargets(loadCatalog(undefined, () => {}), { explicitNames: new Set(brokersList.map(b => b.name.toLowerCase())) }).map(t => t.name),
+      ...brokersList.filter(b => b.method === 'email').map(b => b.name),
+    ];
   const found = findEmailTarget(names, query);
   if (found.error) { console.error(found.error); process.exit(2); }
   const replyLock = acquireStateLockOrExit();
   try {
     // Reload under the lock: a run may have written state since this process started.
     const st = require('./lib/config').resetState();
-    const keys = Object.keys(st.emailSent || {}).filter(k => k === found.name || k.startsWith(`${found.name}|`));
-    for (const key of (keys.length ? keys : [found.name])) recordReply(st, key, outcome);
+    const base = prefix + found.name;
+    const keys = Object.keys(st.emailSent || {}).filter(k => k === base || k.startsWith(`${base}|`));
+    for (const key of (keys.length ? keys : [base])) recordReply(st, key, outcome);
     saveState();
   } finally {
     lock.release(replyLock);
   }
-  console.log(`${found.name}: reply logged as ${outcome}.`);
+  console.log(`${found.name}: ${forKnow ? 'right-to-know ' : ''}reply logged as ${outcome}.`);
   process.exit(0);
 }
 

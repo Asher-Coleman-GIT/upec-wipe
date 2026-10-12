@@ -150,3 +150,14 @@ test('a failing egress gate sends nothing', async () => {
   assert.equal(out.sent.length, 0);
   assert.equal(out.transports, 0);
 });
+
+test('a logged bounce moves a sent know request to manual', () => {
+  const manual = [];
+  const state = {
+    emailSent: { [`${KNOW_PREFIX}Pipl`]: { to: 'privacy@pipl.com', at: 't', messageId: 'm' } },
+    emailReplies: { [`${KNOW_PREFIX}Pipl`]: { outcome: 'bounced', at: 't' } },
+  };
+  const items = buildKnowPlan({ brokers: BROKERS, persons: [P], state, submissionEmailFor: () => ALIAS, blockedPersons: new Set(), maxPerRun: 100, manual });
+  assert.deepEqual(items, []);
+  assert.deepEqual(manual, [{ name: 'Pipl', to: 'privacy@pipl.com' }]);
+});
