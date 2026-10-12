@@ -27,10 +27,10 @@ email-based opt-outs. Without `config.relay`, behavior is unchanged.
    `https://app.simplelogin.io/api/alias/random/new?mode=word` (header
    `Authentication: <apiKey>`) and caches the returned alias in `state.json`.
    **If the API call fails, that person gets no submissions this run** - no
-   forms, no emails, no generic pass. With `"required": true` and no usable
+   forms, no emails, no generic pass. With no usable
    relay configured (or the placeholder key still in place), every person is
-   blocked and the run exits non-zero with no submissions. Your real email is
-   never used as a fallback.
+   blocked and the run exits non-zero with no submissions. This is the default;
+   only `"required": false` sends your real email instead.
 5. Email-method brokers: they are sent only by `upec-wipe run --email` (see the
    manual, "Email requests"). A broker that receives an email can see the SMTP
    account it came from (`email.smtp.user`), not just `from`, so use a separate

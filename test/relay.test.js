@@ -5,8 +5,8 @@
  * No live network. No real config.json / state.json.
  *
  * Tested behaviours:
- *  1. getSubmissionEmail - no relay configured -> returns person.email unchanged
- *  2. getSubmissionEmail - relay configured but no apiKey -> returns person.email
+ *  1. getSubmissionEmail - no relay -> RelayUnavailableError unless relay.required is false
+ *  2. getSubmissionEmail - relay.required false -> returns person.email
  *  3. getSubmissionEmail - relay configured -> calls createImpl, caches alias
  *  4. getSubmissionEmail - second call reuses cached alias (createImpl not called again)
  *  5. getSubmissionEmail - distinct persons get distinct cache slots
@@ -56,25 +56,33 @@ const RELAY_CFG = { relay: { provider: 'simplelogin', apiKey: 'sl-test-key' } };
 
 // -- Tests --------------------------------------------------------------------
 
-test('no relay configured returns person.email unchanged', async () => {
+test('no relay block blocks the person instead of using the real email', async () => {
+  let createCalls = 0;
+  const createImpl = async () => { createCalls += 1; return 'x@aliases.test'; };
+  await assert.rejects(
+    () => getSubmissionEmail({ config: {}, person: PERSON_A, state: makeState(), createImpl }),
+    (err) => err instanceof RelayUnavailableError && /relay\.required to false/.test(err.message)
+  );
+  assert.equal(createCalls, 0);
+});
+
+test('relay.required false with no relay returns person.email unchanged', async () => {
   const state = makeState();
   let createCalls = 0;
   const createImpl = async () => { createCalls += 1; return 'should-not-be-used@aliases.test'; };
-
-  const out = await getSubmissionEmail({ config: {}, person: PERSON_A, state, createImpl });
-
+  const out = await getSubmissionEmail({ config: { relay: { required: false } }, person: PERSON_A, state, createImpl });
   assert.equal(out, 'jane.doe@example.com');
-  assert.equal(createCalls, 0, 'createImpl must not be called when relay is absent');
-  assert.equal(state.relayAliases, undefined, 'state must not be mutated when relay is absent');
+  assert.equal(createCalls, 0);
+  assert.equal(state.relayAliases, undefined);
 });
 
-test('relay configured but missing apiKey falls back to person.email', async () => {
+test('relay.required false and no apiKey falls back to person.email', async () => {
   const state = makeState();
   let createCalls = 0;
   const createImpl = async () => { createCalls += 1; return 'x@aliases.test'; };
 
   const out = await getSubmissionEmail({
-    config: { relay: { provider: 'simplelogin' } },
+    config: { relay: { provider: 'simplelogin', required: false } },
     person: PERSON_A,
     state,
     createImpl,
@@ -82,6 +90,13 @@ test('relay configured but missing apiKey falls back to person.email', async () 
 
   assert.equal(out, 'jane.doe@example.com');
   assert.equal(createCalls, 0, 'createImpl must not be called without an apiKey');
+});
+
+test('relay with no apiKey and no required key blocks the person', async () => {
+  await assert.rejects(
+    () => getSubmissionEmail({ config: { relay: { provider: 'simplelogin' } }, person: PERSON_A, state: makeState() }),
+    RelayUnavailableError
+  );
 });
 
 test('relay configured creates an alias via createImpl and caches it', async () => {
@@ -230,8 +245,10 @@ test('relayConfigured / relayRequired', () => {
   assert.equal(relayConfigured({ relay: { provider: 'simplelogin', apiKey: 'YOUR_SIMPLELOGIN_API_KEY' } }), false);
   assert.equal(relayConfigured({ relay: { provider: 'firefox', apiKey: 'k' } }), false);
   assert.equal(relayRequired({ relay: { required: true } }), true);
-  assert.equal(relayRequired({ relay: { required: 'yes' } }), false);
-  assert.equal(relayRequired({}), false);
+  assert.equal(relayRequired({ relay: { required: 'yes' } }), true);
+  assert.equal(relayRequired({}), true);
+  assert.equal(relayRequired(undefined), true);
+  assert.equal(relayRequired({ relay: { required: false } }), false);
 });
 
 test('smtpFromLeakReason flags missing, equal, display-name and mixed-case from addresses', () => {

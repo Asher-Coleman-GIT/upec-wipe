@@ -26,10 +26,16 @@ test('generic pass turns on with --generic or generic.enabled === true', () => {
   assert.equal(isGenericEnabled(['node', 'watcher.js'], { generic: { enabled: true } }), true);
 });
 
-test('no relay: everyone allowed with real email, masked=false', async () => {
-  const plan = await buildSubmissionPlan({ config: {}, persons: [A, B], state: {} });
+test('relay.required false: everyone allowed with real email, masked=false', async () => {
+  const plan = await buildSubmissionPlan({ config: { relay: { required: false } }, persons: [A, B], state: {} });
   assert.deepEqual(plan.allowed.map(x => [x.email, x.masked]), [['jane@example.com', false], ['john@example.com', false]]);
   assert.equal(plan.blocked.length, 0);
+});
+
+test('no relay block: everyone blocked, nobody gets the real email', async () => {
+  const plan = await buildSubmissionPlan({ config: {}, persons: [A, B], state: {} });
+  assert.equal(plan.allowed.length, 0);
+  assert.equal(plan.blocked.length, 2);
 });
 
 test('one alias failure blocks only that person', async () => {

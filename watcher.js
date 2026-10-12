@@ -1025,7 +1025,7 @@ async function _mainBody() {
       console.log('='.repeat(54));
     }
     if (masked) console.log(`   Using masked email for submissions: ${submissionEmail}`);
-    else console.log('   Warning: No relay configured: brokers will receive your real email.');
+    else console.log('   Warning: relay.required is false: brokers will receive your real email.');
 
     brokerRunner.configure({ dryRun: DRY_RUN, preview: PREVIEW, assist: ASSIST, person, capsolver: config.capsolver, noCapsolver: NO_CAPSOLVER, snapshot: SNAPSHOT, personCount: persons.length, config, submissionEmail });
 

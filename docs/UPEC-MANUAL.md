@@ -354,7 +354,7 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 | --- | --- |
 | `Network check failed - nothing was submitted. ...` | Connect Mullvad and check https://am.i.mullvad.net says you are using it. Then run again. |
 | `Skipping person #N: Relay alias creation failed: ...` | Check the SimpleLogin API key in `config.json` and that your SimpleLogin account is verified. |
-| `config.relay.required is true but no usable relay is configured (provider "simplelogin" + apiKey)` | Add your SimpleLogin key as `apiKey` in the `relay` block. |
+| `no usable relay is configured (provider "simplelogin" + apiKey) ...` | Add your SimpleLogin key as `apiKey` in the `relay` block. Without it nothing is submitted for you. Only `"required": false` sends your real email instead. |
 | `... relay.apiKey is still the placeholder. ...` | Setup wrote `YOUR_SIMPLELOGIN_API_KEY` as a placeholder. Replace it with your SimpleLogin API key in the `relay` block. Until then nothing is submitted. |
 | `Refusing to run as root. ...` | Do not use `sudo` or a root account for the tool. Use your own user (Part B). |
 | `chmod has no effect on ... (mode came back ...)` | You are on `/mnt/c`. Move the install to your Linux home folder (Part A step 2). |
