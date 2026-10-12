@@ -325,13 +325,7 @@ if (SCORE_MODE) {
   } = require('./lib/exposure');
 
   // Reconstruct the SERP signal from persisted history (no live scan).
-  let serpRows = [];
-  const serpHistoryPath = path.join(__dirname, 'data', 'serp-history.json');
-  try {
-    serpRows = JSON.parse(fs.readFileSync(serpHistoryPath, 'utf8'));
-    if (!Array.isArray(serpRows)) serpRows = [];
-  } catch (_) { serpRows = []; }
-  const serpResults = serpResultsFromHistory(serpRows);
+  const serpResults = serpResultsFromHistory(require('./lib/serp-scan').readHistory());
 
   // breachCount defaults to 0 until HIBP integration lands.
   const summary = computeExposureScore({ state, serpResults, breachCount: 0, brokers });
@@ -638,13 +632,7 @@ acquireStateLockOrExit();
   const state = loadState();
 
   // Compute current exposure so the report can show a real trend.
-  let serpRowsForReport = [];
-  try {
-    const serpHistoryPathForReport = path.join(__dirname, 'data', 'serp-history.json');
-    serpRowsForReport = JSON.parse(fs.readFileSync(serpHistoryPathForReport, 'utf8'));
-    if (!Array.isArray(serpRowsForReport)) serpRowsForReport = [];
-  } catch (_) { serpRowsForReport = []; }
-  const serpResultsForReport = serpResultsFromHistory(serpRowsForReport);
+  const serpResultsForReport = serpResultsFromHistory(require('./lib/serp-scan').readHistory());
   const exposureSummary = computeExposureScore({ state, serpResults: serpResultsForReport, breachCount: 0, brokers });
   const priorHistory = loadExposureHistory();
   const exposure = exposureToReportAdapter(exposureSummary, priorHistory);
