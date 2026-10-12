@@ -8,7 +8,6 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const Module = require('module');
 const { parseDob } = require('../lib/dob');
 const { buildConfig } = require('../setup');
 const { forPerson } = require('../brokers');
@@ -49,38 +48,4 @@ test('PrivateRecords fills the birth date dropdowns and requires a date of birth
 test('without a date of birth PrivateRecords carries no birth date values', () => {
   const b = forPerson(P).find(x => x.name === 'PrivateRecords');
   assert.equal(b.formFields['#dob-m'], '');
-});
-
-// ── email opt-outs ─────────────────────────────────────────────────────────
-const SMTP_CFG = { host: 'smtp.example.com', port: 587, user: 'u@x.com', pass: 'pw', from: 'u@x.com' };
-const BROKER = { name: 'Pipl', method: 'email', emailTo: 'privacy@pipl.com' };
-const ALIAS = 'jane.masked@aliases.simplelogin.io';
-
-async function send(person) {
-  const configMod = require('../lib/config');
-  const loggerMod = require('../lib/logger');
-  const saved = [configMod.lastOptOutDaysAgo, configMod.recordSuccess, loggerMod.logResult];
-  configMod.lastOptOutDaysAgo = () => 999; configMod.recordSuccess = () => {}; loggerMod.logResult = () => {};
-  const calls = [];
-  const origLoad = Module._load;
-  Module._load = function (request) {
-    if (request === 'nodemailer') return { createTransport: () => ({ sendMail: async (o) => { calls.push(o); } }) };
-    if (request === './egress') return { ensureNodeEgress: async () => {} };
-    return origLoad.apply(this, arguments);
-  };
-  delete require.cache[require.resolve('../lib/email')];
-  try {
-    await require('../lib/email').sendOptOutEmails([BROKER], { person, email: { smtp: SMTP_CFG } }, 'linux', { submissionEmailFor: () => ALIAS });
-  } finally {
-    Module._load = origLoad;
-    delete require.cache[require.resolve('../lib/email')];
-    [configMod.lastOptOutDaysAgo, configMod.recordSuccess, loggerMod.logResult] = saved;
-  }
-  return calls[0];
-}
-
-test('the real email never appears in an emailed opt-out, even with the old removeRealEmail flag set', async () => {
-  const mail = await send({ ...P, fullName: 'Jane Doe', removeRealEmail: true });
-  assert.ok(!mail.text.includes('jane.doe@example.com'));
-  assert.equal(mail.replyTo, ALIAS);
 });

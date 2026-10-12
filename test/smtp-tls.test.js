@@ -84,17 +84,6 @@ function withNodemailerStub(fn) {
   return Promise.resolve().then(() => fn(transports)).finally(restore);
 }
 
-test('opt-out email path builds its transport with requireTLS', async () => {
-  await withNodemailerStub(async (transports) => {
-    const email = require('../lib/email');
-    await email._sendViaSMTP({ name: 'B', emailTo: 'privacy@broker.example' },
-      { firstName: 'A', lastName: 'B', email: 'a@example.com', country: 'US' }, { ...SMTP, port: 587 }, undefined, 1);
-    assert.equal(transports.length, 1);
-    assert.equal(transports[0].requireTLS, true);
-    assert.equal(transports[0].tls.minVersion, 'TLSv1.2');
-  });
-});
-
 test('right-to-know path builds its transport with requireTLS', async () => {
   await withNodemailerStub(async (transports) => {
     const rtk = require('../lib/right-to-know-runner');

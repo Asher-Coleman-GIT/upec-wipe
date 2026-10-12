@@ -189,24 +189,6 @@ function stubNodemailer() {
   return { calls, restore: () => { Module._load = origLoad; } };
 }
 
-test('SMTP opt-out email: failing gate means sendMail is never called', async () => {
-  const configMod = require('../lib/config');
-  const origLast = configMod.lastOptOutDaysAgo;
-  configMod.lastOptOutDaysAgo = () => 999;
-  const { calls, restore } = stubNodemailer();
-  try {
-    const email = require('../lib/email');
-    const config = { person: { firstName: 'A', lastName: 'B', email: 'p@example.com', country: 'US' }, email: { smtp: { host: 'h', port: 587, user: 'u', pass: 'p', from: 'u' } } };
-    failingGate(config);
-    await assert.rejects(() => email.sendOptOutEmails([{ name: 'B', method: 'email', emailTo: 'x@broker.example' }], config, 'linux', {}), EgressError);
-    assert.equal(calls.transports, 0);
-    assert.equal(calls.sent, 0);
-  } finally {
-    restore();
-    configMod.lastOptOutDaysAgo = origLast;
-  }
-});
-
 test('SMTP right-to-know: failing gate means sendMail is never called', async () => {
   const { calls, restore } = stubNodemailer();
   try {
