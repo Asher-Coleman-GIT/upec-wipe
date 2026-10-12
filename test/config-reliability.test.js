@@ -229,3 +229,68 @@ test('saveState: dry-run does not write .bak', () => {
     cleanup(dir);
   }
 });
+
+test('saveState: the .bak is a hard link to the saved file, not a second write', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-bak-link-'));
+  const statePath = path.join(dir, 'state.json');
+  const bakPath = statePath + '.bak';
+  cfg.setTestStatePath(statePath);
+  const realWriteFileSync = fs.writeFileSync;
+  let writeFileCalls = 0;
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__link_test__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    fs.writeFileSync = (...a) => { writeFileCalls++; return realWriteFileSync(...a); };
+    cfg.saveState();
+    fs.writeFileSync = realWriteFileSync;
+    assert.equal(writeFileCalls, 0, 'no second data write for the .bak');
+    assert.equal(fs.statSync(bakPath).ino, fs.statSync(statePath).ino, '.bak shares the inode of state.json');
+    assert.equal(fs.readFileSync(bakPath, 'utf8'), fs.readFileSync(statePath, 'utf8'));
+  } finally {
+    fs.writeFileSync = realWriteFileSync;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('saveState: an in-place fallback never writes through a .bak that shares the inode', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-bak-detach-'));
+  const statePath = path.join(dir, 'state.json');
+  const bakPath = statePath + '.bak';
+  cfg.setTestStatePath(statePath);
+  const realRename = fs.renameSync;
+  const realWriteFileSync = fs.writeFileSync;
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    cfg.saveState(); // linked .bak
+    const linkedIno = fs.statSync(statePath).ino;
+    let bakDuringRewrite = null;
+    // Make the primary rename fail like a bind-mounted file, and look at the
+    // .bak at the moment the in-place write happens.
+    fs.renameSync = (from, to) => {
+      if (to === statePath) { const e = new Error('EBUSY'); e.code = 'EBUSY'; throw e; }
+      return realRename(from, to);
+    };
+    fs.writeFileSync = (file, ...rest) => {
+      if (file === statePath) {
+        bakDuringRewrite = { ino: fs.statSync(bakPath).ino, text: fs.readFileSync(bakPath, 'utf8') };
+      }
+      return realWriteFileSync(file, ...rest);
+    };
+    cfg.loadState().optOuts.__b__ = { lastSuccess: '2026-01-02T00:00:00.000Z' };
+    cfg.saveState();
+    fs.renameSync = realRename;
+    fs.writeFileSync = realWriteFileSync;
+    assert.ok(bakDuringRewrite, 'the fallback ran');
+    assert.notEqual(bakDuringRewrite.ino, linkedIno, '.bak was detached before the in-place write');
+    assert.ok(bakDuringRewrite.text.includes('__a__') && !bakDuringRewrite.text.includes('__b__'), '.bak held the old state during the write');
+    assert.ok(fs.readFileSync(statePath, 'utf8').includes('__b__'));
+    assert.ok(fs.readFileSync(bakPath, 'utf8').includes('__b__'));
+  } finally {
+    fs.renameSync = realRename;
+    fs.writeFileSync = realWriteFileSync;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
