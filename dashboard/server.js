@@ -480,11 +480,21 @@ app.get('/api/brokers', (_req, res) => {
   }));
   // Reviewed and manual catalog sites (data/catalog/); unreviewed ones do not run.
   try {
-    const { loadCatalog, catalogSummary } = require('../lib/catalog');
-    for (const c of catalogSummary(loadCatalog(undefined, () => {}))) {
+    const { loadCatalog, catalogSummary, catalogEmailTargets } = require('../lib/catalog');
+    const records = loadCatalog(undefined, () => {});
+    const st = readJsonSafe(STATE, { optOuts: {} }) || {};
+    const emailName = new Map(catalogEmailTargets(records).map(t => [t.domain, t.name]));
+    for (const c of catalogSummary(records)) {
       if (c.state === 'unreviewed' || c.state === 'excluded') continue;
+      let note = null;
+      if (c.state === 'email') {
+        const n = emailName.get(c.domain);
+        const sent = (st.emailSent || {})[n];
+        const reply = (st.emailReplies || {})[n];
+        note = sent ? `email sent ${String(sent.at).slice(0, 10)}${reply ? `, reply: ${reply.outcome}` : ''}` : 'email not sent yet';
+      }
       list.push({ name: c.name, method: `catalog (${c.state})`, priority: 5, usOnly: true, captchaLikely: false,
-        confidence: c.reviewedAt ? `reviewed ${c.reviewedAt}` : null, optOutUrl: c.optOutUrl, note: null, source: 'catalog' });
+        confidence: c.reviewedAt ? `reviewed ${c.reviewedAt}` : null, optOutUrl: c.optOutUrl, note, source: 'catalog' });
     }
   } catch (_) { /* the catalog is optional */ }
   res.json(list);

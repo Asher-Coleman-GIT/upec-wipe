@@ -149,3 +149,11 @@ test('L9: report and serp-watch descriptions no longer promise email or alerts',
   assert.equal(COMMANDS['serp-watch'].desc, 'Scan and list domains where your name newly appears');
   assert.doesNotMatch(buildHelp(), /alert|email report/i);
 });
+
+test('reply maps to watcher --reply and passes the arguments through', () => {
+  const { resolveCommand } = require('../lib/cli-map');
+  const r = resolveCommand(['reply', 'Claritas', 'honored']);
+  assert.equal(r.ok, true);
+  assert.equal(r.file, 'watcher.js');
+  assert.deepEqual(r.args.slice(-3), ['--reply', 'Claritas', 'honored']);
+});

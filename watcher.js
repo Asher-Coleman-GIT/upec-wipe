@@ -231,7 +231,48 @@ if (LIST_MODE) {
       console.log(pad(c.name, 40) + pad(c.state + (c.reviewedAt ? ` ${c.reviewedAt}` : ''), 28) + last);
     }
   }
+  const { catalogEmailTargets } = require('./lib/catalog');
+  const emailNames = [
+    ...catalogEmailTargets(loadCatalog(), { explicitNames: new Set(brokers.map(b => b.name.toLowerCase())) }).map(t => t.name),
+    ...brokers.filter(b => b.method === 'email').map(b => b.name),
+  ];
+  if (emailNames.length) {
+    console.log(`\nEmail requests (${emailNames.length})`);
+    console.log('-'.repeat(80));
+    for (const n of emailNames) {
+      const sent = (state.emailSent || {})[n];
+      const reply = (state.emailReplies || {})[n];
+      const status = !sent ? 'not sent' : sent.status === 'unknown' ? 'unknown' : `sent ${String(sent.at).slice(0, 10)}`;
+      console.log(pad(n, 40) + pad(status, 18) + (reply ? `${reply.outcome} ${String(reply.at).slice(0, 10)}` : '-'));
+    }
+  }
   console.log('');
+  process.exit(0);
+}
+
+// ── --reply <broker> <outcome>: log a reply to an email request, then exit ───
+if (process.argv.includes('--reply')) {
+  const i = process.argv.indexOf('--reply');
+  const query = process.argv[i + 1] || '';
+  const outcome = process.argv[i + 2] || '';
+  const { recordReply, findEmailTarget, REPLY_OUTCOMES } = require('./lib/email-step');
+  const { loadCatalog, catalogEmailTargets } = require('./lib/catalog');
+  const brokersList = require('./brokers');
+  if (!REPLY_OUTCOMES.includes(outcome)) {
+    console.error(`Usage: aidr reply <broker> ${REPLY_OUTCOMES.join('|')}`);
+    process.exit(2);
+  }
+  const names = [
+    ...catalogEmailTargets(loadCatalog(undefined, () => {}), { explicitNames: new Set(brokersList.map(b => b.name.toLowerCase())) }).map(t => t.name),
+    ...brokersList.filter(b => b.method === 'email').map(b => b.name),
+  ];
+  const found = findEmailTarget(names, query);
+  if (found.error) { console.error(found.error); process.exit(2); }
+  const st = loadState();
+  const keys = Object.keys(st.emailSent || {}).filter(k => k === found.name || k.startsWith(`${found.name}|`));
+  for (const key of (keys.length ? keys : [found.name])) recordReply(st, key, outcome);
+  saveState();
+  console.log(`${found.name}: reply logged as ${outcome}.`);
   process.exit(0);
 }
 
