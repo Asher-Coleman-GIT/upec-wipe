@@ -21,7 +21,6 @@ const { results, logResult, buildSummary, setDefunctBrokers } = require('./lib/l
 const { findDefunct, DEFUNCT_THRESHOLD } = require('./lib/defunct');
 const { openInBrowser } = require('./lib/notify');
 const brokerRunner = require('./lib/broker-runner');
-const { sendOptOutEmails } = require('./lib/email');
 const { isGenericEnabled, buildSubmissionPlan, submissionOptions, withSubmissionEmail } = require('./lib/submission-plan');
 const { PREVIEW_ALIAS } = require('./lib/relay');
 // Printed once when a preview/dry-run person has no cached alias yet.
@@ -36,7 +35,7 @@ const { resolveHeadless, isLowMemory } = require('./lib/browser');
 const { openBrowserSession, EgressError } = require('./lib/browser-session');
 // Node-direct calls (SimpleLogin, CapSolver, HIBP, SMTP, registries) are gated
 // by lib/egress ensureNodeEgress, which reads the config given here (audit M7).
-const { setEgressConfig } = require('./lib/egress');
+const { setEgressConfig, ensureNodeEgress } = require('./lib/egress');
 const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
@@ -56,6 +55,14 @@ if (process.argv.includes('--install-scheduler')) {
 }
 
 const PREVIEW           = process.argv.includes('--preview');
+// Phase 2: --email sends the email requests, --forms fills web forms. A plain
+// run is --forms only, so a scheduled run can never send email.
+const EMAIL             = process.argv.includes('--email');
+const FORMS             = process.argv.includes('--forms') || !EMAIL;
+if (EMAIL && process.argv.includes('--verify')) {
+  console.error('--email cannot be combined with --verify.');
+  process.exit(1);
+}
 // --assist: pause on bot-protection checks so the member can clear them in the
 // browser window (lib/assist.js). Needs a visible window; refuse before any work.
 const ASSIST            = process.argv.includes('--assist');
@@ -785,6 +792,33 @@ async function _mainBody() {
     explicitHosts: explicitHostsOf(brokers),
     explicitNames: new Set(brokers.map(b => b.name.toLowerCase())),
   };
+  if (EMAIL) {
+    const { runEmailStep } = require('./lib/email-step');
+    const { catalogEmailTargets } = require('./lib/catalog');
+    const nodemailer = require('nodemailer');
+    const { smtpTransportOptions } = require('./lib/email');
+    const askLine = (q) => new Promise(resolve => {
+      const rl = require('readline').createInterface({ input: process.stdin, output: process.stdout });
+      rl.question(q, a => { rl.close(); resolve(a); });
+    });
+    let code;
+    try {
+      code = await runEmailStep({
+        config, persons, state, save: saveState,
+        targets: catalogEmailTargets(catalogRecords, { explicitNames: explicitCatalogOpts.explicitNames }),
+        brokers, preview: DRY_RUN, isTTY: !!process.stdin.isTTY, ask: askLine, log: (l) => console.log(l),
+        makeTransport: (smtp) => nodemailer.createTransport(smtpTransportOptions(smtp)),
+        ensureEgress: ensureNodeEgress, sleep: (ms) => new Promise(r => setTimeout(r, ms)),
+      });
+    } catch (err) {
+      // Off the VPN: nothing was sent (the gate runs before the transport).
+      if (!(err instanceof EgressError)) throw err;
+      console.error(`${err.message}`);
+      code = 1;
+    }
+    if (code) process.exitCode = code;
+    if (!FORMS) return;
+  }
   const { runGenericBrokers } = require('./generic-runner');
 
   console.log('\nauto-identity-remove - starting run');
@@ -943,22 +977,6 @@ async function _mainBody() {
     return;
   }
 
-  // Email opt-outs (no browser needed - skipped in verify mode). Once per run,
-  // not per person: sendOptOutEmails loops over every person itself, so the
-  // plan's resolver and blocked set must cover all of them at once.
-  if (!VERIFY) {
-    console.log('── Email opt-outs ─────────────────────────────────────────');
-    try {
-      await sendOptOutEmails(brokers, config, undefined, { dryRun: DRY_RUN, ...submissionOptions(plan) });
-    } catch (err) {
-      if (!(err instanceof EgressError)) throw err;
-      console.error(`${err.message}`);
-      saveState();
-      await session.close();
-      process.exitCode = 1;
-      return;
-    }
-  }
 
   for (const { person, email: submissionEmail, masked } of plan.allowed) {
     if (persons.length > 1) {
