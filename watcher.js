@@ -436,6 +436,7 @@ if (BREACH_CHECK) {
     missingKeyMessage,
     runBreachCheck,
     formatBreachReport,
+    confirmBreachCheck,
   } = require('./lib/hibp');
 
   const cfg     = loadConfig();
@@ -455,6 +456,8 @@ if (BREACH_CHECK) {
   }
 
   (async () => {
+    const ok = await confirmBreachCheck({ emails, isTTY: !!process.stdin.isTTY, ask: askLine, log: (l) => console.log(l) });
+    if (!ok) process.exit(1);
     console.log(`\nChecking ${emails.length} email(s) against Have I Been Pwned...`);
     const result = await runBreachCheck({ emails, apiKey, brokers, config: cfg });
     console.log('\n' + formatBreachReport(result) + '\n');
