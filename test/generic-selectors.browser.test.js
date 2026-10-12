@@ -11,6 +11,10 @@ describe('generic-runner combined locators (real browser)', { skip: !ENABLED }, 
     const { chromium } = require('playwright');
     browser = await chromium.launch();
     page = await browser.newPage();
+    // Warm-up: the first click on a cold browser can exceed the 2000 ms click
+    // timeout in clickDoNotSell, so pay that cost here, not in a real test.
+    await page.setContent('<button onclick="window.warm=1">warm up</button>');
+    await page.click('button');
   });
   after(async () => { if (browser) await browser.close(); });
 
