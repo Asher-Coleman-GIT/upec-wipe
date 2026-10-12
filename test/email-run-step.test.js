@@ -69,3 +69,13 @@ test('nothing pending is a clean no-op', async () => {
   assert.equal(out.transports, 0);
   assert.match(out.lines.join('\n'), /No email requests pending/);
 });
+
+test('resends count toward maxPerRun and go first', async () => {
+  const state = { optOuts: {}, emailSent: { Alpha: { to: 'p@alpha.com', at: 't', status: 'unknown' } } };
+  const two = [...targets, { name: 'Beta', domain: 'beta.com', to: 'p@beta.com', basis: null }];
+  const cfg = { email: { ...config.email, maxPerRun: 1 } };
+  const { d, out } = deps({ config: cfg, state, targets: two, ask: async q => (/Resend/.test(q) ? 'y' : 'SEND') });
+  assert.equal(await runEmailStep(d), 0);
+  assert.equal(out.sent.length, 1);
+  assert.equal(out.sent[0].to, 'p@alpha.com');
+});
