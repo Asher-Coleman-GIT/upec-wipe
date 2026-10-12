@@ -782,6 +782,8 @@ const logFile = path.join(LOG_DIR, `run-${timestampForFilename(new Date().toISOS
 const stamp = () => new Date().toLocaleTimeString();
 
 const LOCK_PATH = STATE_PATH + '.lock';
+// Brokers between browser egress re-checks (about 2-3 minutes with jitter).
+const EGRESS_RECHECK_EVERY = 10;
 
 // Set by _mainBody once the browser opens; main()'s finally closes it so the
 // throwaway profile is deleted even when the run throws.
@@ -1074,10 +1076,12 @@ async function _mainBody() {
     }
 
     console.log('\n── Explicit broker opt-outs ───────────────────────────────');
+    let sinceCheck = 0;
     for (const broker of sorted) {
       if (!brokerRunner.appliesToPerson(broker, person)) continue;
       process.stdout.write(`\n[${stamp()}] ${broker.name}… `);
       try {
+        if (++sinceCheck % EGRESS_RECHECK_EVERY === 0) await session.recheckEgress();
         await brokerRunner.processBroker(context, broker);
       } catch (err) {
         if (!(err instanceof EgressError)) throw err;
@@ -1125,6 +1129,7 @@ async function _mainBody() {
         dryRun: DRY_RUN,
         person: withSubmissionEmail(person, email),
         personCount: persons.length,
+        recheckEgress: session.recheckEgress,
       });
       if (genericResult && genericResult.genericStats) {
         for (const [k, v] of Object.entries(genericResult.genericStats)) {

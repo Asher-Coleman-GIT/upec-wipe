@@ -95,3 +95,18 @@ test('close() is idempotent: a second call is safe and the profile stays removed
   await s.close();
   assert.equal(fs.existsSync(dir), false);
 });
+
+test('recheckEgress passes while on the VPN and throws EgressError once it drops', async () => {
+  const json = { mullvad_exit_ip: true, country: 'X' };
+  const s = await openBrowserSession({ chromium: fakeChromium(json), config: {}, headless: true });
+  await s.recheckEgress();
+  json.mullvad_exit_ip = false;
+  await assert.rejects(() => s.recheckEgress(), EgressError);
+  await s.close();
+});
+
+test('recheckEgress is a no-op for a session that needs no network', async () => {
+  const s = await openBrowserSession({ chromium: fakeChromium({ mullvad_exit_ip: false }), config: {}, headless: true, needsNetwork: false });
+  await s.recheckEgress();
+  await s.close();
+});

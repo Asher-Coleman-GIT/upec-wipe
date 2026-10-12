@@ -32,6 +32,7 @@ const DEAD_URLS_PATH  = path.join(__dirname, 'data', 'dead-urls.json');
 const { detectConfirmationRequired } = require('./lib/confirm');
 const { CONFIRM_RECHECK_DAYS, loadConfig } = require('./lib/config');
 const { withRetry } = require('./lib/retry');
+const { EgressError } = require('./lib/egress');
 const { isAllowlisted } = require('./lib/filter');
 const { registrableDomain } = require('./lib/serp-scan');
 
@@ -569,6 +570,7 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
     }
   };
 
+  const EGRESS_RECHECK_EVERY = 10; // brokers between browser egress re-checks
   const RECYCLE_EVERY = 25; // periodically replace the working page to bound renderer growth
   let processed = 0;
 
@@ -578,8 +580,13 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
 
       let result;
       try {
+        if (opts.recheckEgress && stats.attempted > 0 && stats.attempted % EGRESS_RECHECK_EVERY === 0) {
+          await opts.recheckEgress();
+        }
         result = await processFn(page, broker, state, dryRun, opts.injectedDeadSet, { person, stateKey: keyFor(broker.name) });
       } catch (err) {
+        // Off the VPN: stop the pass (finally still closes the page).
+        if (err instanceof EgressError) throw err;
         // One broker must never abort the whole run or skip the cleanup below.
         result = { status: 'error', detail: (err && err.message ? require('./lib/redact').redactUrlsInText(err.message).slice(0, 80) : 'error') };
         // If the working page itself crashed, replace it so the run can continue.
