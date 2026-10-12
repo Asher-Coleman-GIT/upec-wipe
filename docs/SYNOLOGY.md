@@ -67,7 +67,7 @@ SSH in (Control Panel → Terminal & SNMP → Enable SSH):
 
 ```bash
 cd /volume1/docker
-git clone https://github.com/Asher-Coleman-GIT/auto-identity-remover-upec.git upec-wipe
+git clone https://github.com/Asher-Coleman-GIT/upec-wipe.git upec-wipe
 cd upec-wipe
 ```
 

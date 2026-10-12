@@ -2,7 +2,7 @@
 
 **Web Identity Purge Engine** - a privacy-first tool that asks data brokers and people-search sites to stop selling your personal information and delete it.
 
-![CI](https://github.com/Asher-Coleman-GIT/auto-identity-remover-upec/actions/workflows/test.yml/badge.svg)
+![CI](https://github.com/Asher-Coleman-GIT/upec-wipe/actions/workflows/test.yml/badge.svg)
 
 UPEC-WIPE sends requests; it cannot erase anything itself. Each broker decides how fully it complies, and some will refuse, especially where your state's law gives you few rights. What the tool does is make every request you are entitled to send, with as little extra exposure as possible.
 
@@ -53,7 +53,7 @@ npx playwright install chromium
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/Asher-Coleman-GIT/auto-identity-remover-upec.git upec-wipe
+git clone https://github.com/Asher-Coleman-GIT/upec-wipe.git upec-wipe
 cd upec-wipe
 
 # 2. One-command install (checks Node, installs deps + the Chromium browser)
