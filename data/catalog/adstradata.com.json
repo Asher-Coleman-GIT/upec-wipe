@@ -23,6 +23,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy.officer@adstradata.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "For Colorado, Connecticut, Nevada, Utah and Virginia Residents: We may make personal information available to third parties for their marketing purposes.",
+   "url": "https://www.adstradata.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

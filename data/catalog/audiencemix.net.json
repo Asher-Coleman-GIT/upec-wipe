@@ -68,6 +68,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@audiencemix.net",
+  "basis": {
+   "kind": "utah",
+   "quote": "residents protected by applicable federal and state privacy laws, including but not limited to the California Consumer Privacy Act (CCPA/CPRA), the Virginia Consumer Data Protection Act (VCDPA), and comparable legislation in Colorado, Connecticut, Utah, Texas, Oregon, and other states with comprehen",
+   "url": "https://www.audiencemix.net/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

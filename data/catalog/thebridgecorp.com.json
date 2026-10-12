@@ -143,6 +143,14 @@
   "fingerprint": "b8b9db0f9df1c21175f4082e004aea3689192942a69b9a525bbc88fce2d9dba9"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@thebridgecorp.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "STATE PRIVACY DISCLOSURES This Privacy Policy (“Policy”) supplements the information contained in the BRIDGE Privacy Policy and applies specifically to individuals residing in California, Colorado, Connecticut, Montana, Oregon, Texas, Utah, and Virginia (collectively, the “Covered States”).",
+   "url": "https://www.thebridgecorp.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

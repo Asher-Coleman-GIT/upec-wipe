@@ -24,6 +24,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@postpilot.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "STATE PRIVACY DISCLOSURES For residents of the States of California, Colorado, Connecticut, Nevada, Utah, and Virginia: These Additional U.S.",
+   "url": "https://www.postpilot.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

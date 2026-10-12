@@ -23,6 +23,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "legal@roundsky.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "AFFILIATES LENDERS CLICKS ABOUT US CONTACT SIGNUP > LOGIN Click here to go to our general Privacy Policy US State Supplemental Privacy Notice to Residents of California, Colorado, Connecticut, Minnesota, Virginia, and Utah Separate Supplemental Privacy Notice for residents of MN is located here Last",
+   "url": "https://www.roundsky.com/supplemental-privacy-notice/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

@@ -35,6 +35,14 @@
   "fingerprint": "b11855acdb40b5a2c2ca2bb1e3e4baa07d12fbd167579dba249d4a98b676b513"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "tburnell@completemedicallists.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Utah Residents: Right of access or delete personal information, right to opt out of sale of personal information and targeted advertising, no discrimination.",
+   "url": "https://completemedicallists.com/privacy.php"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

@@ -88,6 +88,8 @@
   "fingerprint": "a882afe8b82363ed82310a55a7fdcb99b6f80bdca2ba60ccca1ca4961ae88d9e"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "ad and web intelligence panel"
  }
 }

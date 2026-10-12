@@ -54,6 +54,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "legal@webbula.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Some states, like California and Utah, provide their residents (upon the applicable effective dates), have the right to opt-out of certain uses of their sensitive personal data.",
+   "url": "https://webbula.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

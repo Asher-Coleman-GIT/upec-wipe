@@ -23,6 +23,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@simiocloud.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "The rights conferred to Utah consumers include: the right to request that SimioCloud disclose what personal information we have collect about the consumer; the right to correct and delete personal information about the consumer that SimioCloud has collected or maintained; the right to data portabili",
+   "url": "https://simiocloud.com/simiocloud-products-services-privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

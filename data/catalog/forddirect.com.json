@@ -24,6 +24,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "dprivacy@forddirect.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "If you are resident of Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Iowa, Delaware, New Hampshire, Nebraska, New Jersey, Minnesota, Maryland, Indiana, Rhode Island, Kentucky or Tennessee, please see “Your Other State Rights” section below section below for additional disclosures.",
+   "url": "https://www.forddirect.com/privacy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

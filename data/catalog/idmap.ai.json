@@ -38,6 +38,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "michael.belsky@idmap.ai",
+  "basis": {
+   "kind": "utah",
+   "quote": "For more details, please visit official website Utah: Utah Consumer Privacy Act (UCPA) The UCPA, effective from December 31, 2023, provides Utah consumers with rights to access, delete, and opt out of the sale of their personal data or the processing of personal data for targeted advertising.",
+   "url": "https://idmap.ai/privacy-policy.html"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

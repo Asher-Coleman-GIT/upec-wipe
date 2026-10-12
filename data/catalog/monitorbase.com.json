@@ -157,6 +157,14 @@
   "fingerprint": "8841e679096b5a3c6ae042f0a255b34b2ef7cfe98192f2cf8fe0f0b3e5927968"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@monitorbase.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "To learn more about Colorado, Connecticut, Nevada, Virginia, and Utah residents’ privacy rights, see our additional Your State Privacy Rights section below.",
+   "url": "https://my.monitorbase.com/privacypolicy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

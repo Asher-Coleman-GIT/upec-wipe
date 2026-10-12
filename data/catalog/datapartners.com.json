@@ -288,6 +288,14 @@
   "fingerprint": "81a83b55bd40b2bce235881b3fe44313b56ad7168a4b9d385f128a68027d0d97"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "info@datapartners.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Utah Residents should click HERE (opens in a new tab) .",
+   "url": "https://www.datapartners.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

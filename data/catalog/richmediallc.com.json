@@ -74,6 +74,14 @@
   "fingerprint": "ac5c753e74c482357e9311efe43cb8209dce7f16a20939e2baa509995060f36c"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "jeff@richmediallc.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "State-Specific Privacy Notices The following notices supplement the information in this Privacy Policy and apply to residents of the listed states: California, Colorado, Connecticut, Virginia, Utah, Iowa, Texas, Oregon, Delaware, Montana, Nebraska, New Hampshire, New Jersey, Minnesota, Tennessee, an",
+   "url": "https://richmediallc.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

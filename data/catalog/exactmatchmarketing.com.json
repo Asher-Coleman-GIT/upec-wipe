@@ -22,6 +22,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "datarequest@exactmatch.io",
+  "basis": {
+   "kind": "utah",
+   "quote": "Other State Privacy Laws Residents of other states with comprehensive privacy laws, including Utah, Texas, Oregon, Montana, Delaware, Iowa, Tennessee, and Indiana, may have similar rights to access, correct, delete, and opt out of certain processing activities.",
+   "url": "https://exactmatchmarketing.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

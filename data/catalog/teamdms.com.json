@@ -84,6 +84,9 @@
   "fingerprint": "3aedd941f2802c44026960e5140b810159d3dba8708e19c5bbf60719d8889dbf"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://teamdms.com/optout",
+  "notes": "Lead and consumer data; no privacy address listed - use the opt-out page"
  }
 }

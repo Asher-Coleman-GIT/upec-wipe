@@ -131,6 +131,14 @@
   "fingerprint": "a7d4839873873b174bfc61f672fb8f8f0e387ab09349185c6548392baf87a57f"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy_support@atdata.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "State Privacy Notice Under California, Colorado, Connecticut, Nevada, Utah, Virginia, New Hampshire, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Jersey, Oregon, Rhode Island, Tennessee, and Texas privacy laws, AtData is required to inform residents about the catego",
+   "url": "https://atdata.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

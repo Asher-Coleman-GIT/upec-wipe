@@ -52,6 +52,8 @@
   "fingerprint": "1abf1940792fdc542b19c897bf0886854e98650ddaa1fd5dc557002f16b3db34"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "B2B contact data"
  }
 }

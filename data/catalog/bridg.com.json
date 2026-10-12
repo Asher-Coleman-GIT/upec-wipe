@@ -52,6 +52,9 @@
   "fingerprint": "8f3ae95fce576ce260124f3f4c4fd37ac488752c53822e8093dbfde8e90dc8fb"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://datagrail.bridg.com/",
+  "notes": "Retail customer data (Cardlytics); privacy requests through its DataGrail portal"
  }
 }

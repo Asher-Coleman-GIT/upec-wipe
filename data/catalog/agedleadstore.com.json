@@ -49,6 +49,9 @@
   "fingerprint": "43ba8318087b0ee4593c265d1ea4a08031a4e39ee1ffc64d0f78d3f3e483e8d0"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://store.agedleadstore.com/opt-out-share-sale-info-form/",
+  "notes": "Lead seller; no privacy address listed - use the opt-out form (UCPA rights for Utah residents)"
  }
 }

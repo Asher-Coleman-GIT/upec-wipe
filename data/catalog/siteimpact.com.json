@@ -68,6 +68,14 @@
   "fingerprint": "c1d2b491523d4f4f47b64f2ea25a89bf8f83aa26c7abbfecd851d64889c9db57"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "dataprivacy@siteimpact.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "State privacy rights If you are a resident of California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana or another state with a similar comprehensive consumer privacy law (collectively, “Covered States”), you may have specific rights regarding your personal information (sometimes cal",
+   "url": "https://siteimpact.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

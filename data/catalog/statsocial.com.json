@@ -145,6 +145,14 @@
   "fingerprint": "47c9628231e9c9b73f3d6073d8fd9813597b654047c585ece1ff5d1afa1a927c"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@statsocial.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "These states include California (as to which a separate “Addendum” is provided below), as well as Colorado, Connecticut, Delaware, Iowa, Minnesota, Montana, New Hampshire, New Jersey, Oregon, Texas, Utah, and Virginia.",
+   "url": "https://www.statsocial.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

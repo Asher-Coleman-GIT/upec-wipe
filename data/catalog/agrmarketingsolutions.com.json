@@ -56,6 +56,14 @@
   "fingerprint": "a2eafa7e6b42e39f11f233bc780d665b98fa2b89ca1abfd6001142414bd5e5f8"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "stephen@agrmarketingsolutions.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "state data privacy laws, including those of Colorado, Connecticut, Delaware, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, Vermont, and Virginia.",
+   "url": "https://agrmarketingsolutions.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

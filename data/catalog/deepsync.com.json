@@ -288,6 +288,14 @@
   "fingerprint": "c36e3f4dadde0393bbab4d42ac2a7c357dd134185dcdaf7066064348d834d9be"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy.compliance@deepsync.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "You have the right not to be discriminated against (as provided for in applicable law) for exercising your rights under some local laws including, without limitation, California, Colorado, Connecticut, Nevada, Oregon, Utah, and Virginia, and all other states that have laws that provide similar consu",
+   "url": "https://deepsync.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

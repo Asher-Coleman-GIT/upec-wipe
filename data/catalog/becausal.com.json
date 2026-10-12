@@ -114,6 +114,14 @@
   "fingerprint": "77895bb8519eebedbcad812093ea5d82a3ca2762340a3bf00f7277082740d362"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@becausal.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "If you are a resident of certain jurisdictions, including California, Colorado, Connecticut, Delaware, Iowa, Minnesota,Maryland, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Tennessee, Texas,Utah, Virginia, and other U.S.",
+   "url": "https://www.becausal.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

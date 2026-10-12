@@ -5,7 +5,7 @@
   "ca-registry"
  ],
  "formHosts": [],
- "group": "business",
+ "group": "people-search",
  "survey": {
   "checkedAt": "2026-10-11T22:26:04.648Z",
   "status": 200,
@@ -54,6 +54,10 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://recordsfinder.com/optout/",
+  "notes": "People-search site; search for your record and remove it",
+  "groupOverride": "people-search"
  }
 }

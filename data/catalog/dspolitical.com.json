@@ -160,6 +160,14 @@
   "fingerprint": "5dcdca9e4d4033a56b19b84f43f20ccda2f72c6918a001b80cb4067a1e943633"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@dspolitical.com",
+  "basis": {
+   "kind": "all-us",
+   "quote": "We are committed to protecting your privacy and extend these rights to all eligible consumers, regardless of your state of residence.",
+   "url": "https://www.dspolitical.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

@@ -84,6 +84,14 @@
   "fingerprint": "a882afe8b82363ed82310a55a7fdcb99b6f80bdca2ba60ccca1ca4961ae88d9e"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@appscience.inc",
+  "basis": {
+   "kind": "utah",
+   "quote": "States (e.g., California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, and Virginia) provide specific rights to data subjects located in those States.",
+   "url": "https://www.appscience.ai/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

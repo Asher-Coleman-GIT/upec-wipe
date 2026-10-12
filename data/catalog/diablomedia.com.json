@@ -26,6 +26,9 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://www.diablomedia.com/privacy-request",
+  "notes": "Consumer data; no privacy address listed - use the privacy request page"
  }
 }

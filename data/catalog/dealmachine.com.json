@@ -22,6 +22,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "support@dealmachine.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Utah’s law does not provide a right to correct inaccurate personal data, does not require opt-in consent before processing sensitive data (notice and an opportunity to opt out applies instead), and does not require us to offer an internal appeal process for denied requests.",
+   "url": "https://dealmachine.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

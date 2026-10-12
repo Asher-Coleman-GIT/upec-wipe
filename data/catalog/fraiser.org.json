@@ -23,6 +23,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@fraiser.org",
+  "basis": {
+   "kind": "utah",
+   "quote": "COLORADO, CONNECTICUT, DELAWARE, INDIANA, IOWA, KENTUCKY, MARYLAND, MINNESOTA, MONTANA, NEBRASKA, NEW HAMPSHIRE, NEW JERSEY, OREGON, RHODE ISLAND, TENNESSEE, TEXAS, UTAH, OR VIRGINIA I.",
+   "url": "https://www.fraiser.org/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

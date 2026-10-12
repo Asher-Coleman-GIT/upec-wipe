@@ -26,6 +26,9 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://giantpartners.com/do-not-sell-my-personal-info-all-other-states/",
+  "notes": "Consumer data append; opt-out page for all states other than California"
  }
 }

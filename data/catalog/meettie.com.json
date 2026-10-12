@@ -193,6 +193,14 @@
   "fingerprint": "b394a24fdeb5d6a0305843bac98dcaaef1fe72cc7b129b8013f0f2a36fe69af2"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "info@meettie.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "In Short: If you are a resident of California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about",
+   "url": "https://meettie.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

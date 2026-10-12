@@ -304,6 +304,14 @@
   "fingerprint": "95b156620df45ad45567c0eb75529da788c64cc5bf85ec7dc94c0f917365e0a5"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "statebasedprivacy@ididata.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Importantly, if you are a resident of California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, Iowa, Delaware, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, Maryland, Indiana, Kentucky, or Rhode Island and you are seeking to submit a request to opt-out under the Califo",
+   "url": "https://www.ididata.com/opt-out-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

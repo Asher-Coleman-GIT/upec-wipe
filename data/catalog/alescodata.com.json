@@ -151,6 +151,14 @@
   "fingerprint": "26cd4de5e5d96d4de62c1bb14adaa27e9ef6a7b6d5137c1ee256a28d5de9972b"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "legal@alescodata.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Utah Resident Privacy Rights Under Utah’s Consumer Privacy Act (effective as of December 31, 2023), Utah residents have certain rights regarding their personal information.",
+   "url": "https://alescodata.com/privacy-center/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

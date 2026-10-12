@@ -35,6 +35,14 @@
   "fingerprint": "d3bc3949ca700c8510ded5b59cb0f0b169382bf69748932043508c6538dbb22d"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "snichols@firstorion.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "state privacy laws, including but not limited to, the California Consumer Privacy Act, the Colorado Privacy Act, the Virginia Consumer Data Protection Act, the Connecticut Data Privacy Act, and the Utah Consumer Privacy Act, (collectively, “State Privacy Laws”) you may have the right to know and und",
+   "url": "https://firstorion.com/legal"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

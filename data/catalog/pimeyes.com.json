@@ -118,6 +118,9 @@
   "fingerprint": "47d0e0b53a3fa593e0da7f429090747d24ec1971ae814daac485695f7519bf9a"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://pimeyes.com/en/opt-out",
+  "notes": "Face search engine; the opt-out asks for a photo of your face - decide whether that trade is worth it"
  }
 }

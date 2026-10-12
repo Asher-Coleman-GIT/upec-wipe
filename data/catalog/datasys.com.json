@@ -59,6 +59,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "seth.lubin@datasys.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Utah (UCPA - Utah Consumer Privacy Act) Effective Date: December 31, 2023 Utah residents may: - Access and delete personal data.",
+   "url": "https://datasys.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

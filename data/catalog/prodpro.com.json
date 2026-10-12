@@ -137,6 +137,8 @@
   "fingerprint": "15f4e727efb03bc01bd39520065e96b75f64262ef226694ec21d3836f66b39fe"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "B2B data; says it is not subject to state privacy laws"
  }
 }

@@ -72,6 +72,14 @@
   "fingerprint": "aba0bf17cb82a6c01c368c6f7a2a844ee946c27caa756934da6a29480dc7fb63"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@mediawallah.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Information for Residents of California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, Nevada, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, Virginia and Other U.S.",
+   "url": "https://mediawallah.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

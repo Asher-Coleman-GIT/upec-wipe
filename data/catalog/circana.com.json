@@ -56,6 +56,14 @@
   "fingerprint": "95dae927e76bc0b07ca2960931e1f050219c90d2aeffeab462f2e749aa4f1453"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@circana.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Residents of other certain other US states, including Colorado, Connecticut, Utah, and Virginia, have additional rights under applicable privacy laws, subject to certain limitations, which may include: Correction.",
+   "url": "https://www.circana.com/the-circana-group-global-privacy-policy-and-notice"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

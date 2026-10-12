@@ -215,6 +215,14 @@
   "fingerprint": "07f9559e935059b47c8a2505675e9c3f2b04745c2689afdaec7281cf002de5ad"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacyteam@anchorcomputer.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Utah: The Utah Consumer Privacy Act (“UCPA”), effective December 31, 2023.",
+   "url": "https://www.anchorcomputer.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

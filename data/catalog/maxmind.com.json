@@ -86,6 +86,8 @@
   "fingerprint": "713e55ae87f6baf341ec8017f1d7e8db714b5f37c870cac68666f5a8bc6687f0"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "IP geolocation, no name-level data"
  }
 }

@@ -83,6 +83,8 @@
   "fingerprint": "192cf8860d4cabba83e47727607205a460d618cb5b4f28fb98d76e6fcecce020"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "no Utah or all-US basis found in its privacy policy (phase 2 rule)"
  }
 }

@@ -85,6 +85,8 @@
   "fingerprint": "d7f936ff3d4c1c34a0a2c66c0eacb138769c57fa2995823aa7673d691661fd58"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "B2B sales email tool; no consumer profiles"
  }
 }

@@ -90,8 +90,8 @@
   "fingerprint": "4d8a020b6ac35d4b9a315d15a046f18d81fb8675b9e3ce6884dd34d6a6713bbb"
  },
  "review": {
-  "state": "unreviewed",
-  "groupOverride": "business",
-  "note": "B2B company/contact data."
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "no Utah or all-US basis found in its privacy policy (phase 2 rule)"
  }
 }

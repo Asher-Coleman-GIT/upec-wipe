@@ -118,6 +118,14 @@
   "fingerprint": "78503bdb5a884feff2649d0246944d56f502422e8dab8e8135d0c27aaad04bf2"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "support@decisionlinks.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "‍ Utah Resident Privacy Rights Under Utah’s Consumer Privacy Act, (effective as of December 31, 2023), Utah residents have certain rights regarding their personal information.",
+   "url": "https://www.decisionlinks.com/legal-pages/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

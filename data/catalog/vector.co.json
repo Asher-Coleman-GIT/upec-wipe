@@ -61,6 +61,14 @@
   "fingerprint": "8f502a83c86aabe7efeb9dd7972914f5a8f5c13c978cbd9d9358e813c9a7c87a"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "joshua@vector.co",
+  "basis": {
+   "kind": "utah",
+   "quote": "States Privacy Law Compliance The following section includes provisions that comply with the privacy laws of these states (California, Colorado, Delaware, Florida, Virginia, and Utah) and is applicable only to the residents of those states.",
+   "url": "https://www.vector.co/legal/privacy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

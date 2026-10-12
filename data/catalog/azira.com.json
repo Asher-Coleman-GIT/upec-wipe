@@ -95,6 +95,8 @@
   "fingerprint": "9d0d3fe3d596287b940688ad1c328d0c2516498058c51a0be193148f7eb67c50"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "ad-tech data, no name-level consumer profiles (phase 2 rule)"
  }
 }

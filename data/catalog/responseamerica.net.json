@@ -22,6 +22,9 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://responseamerica.net/privacy_dec.html",
+  "notes": "Consumer data and NCOA; use the privacy request link on this page"
  }
 }

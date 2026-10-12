@@ -143,6 +143,9 @@
   "fingerprint": "0485bf83c136d1cd0e3aa9f110719eff31663cde2354257368f846e4e7cff3f3"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://sg360.com/privacy-policy/",
+  "notes": "Direct mail data; requests through the TrustArc form linked on this page"
  }
 }

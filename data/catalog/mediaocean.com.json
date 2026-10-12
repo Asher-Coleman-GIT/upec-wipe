@@ -166,6 +166,8 @@
   "fingerprint": "23ba1976add247c85b42873a9186b023559cf9bbff3dfbf2750fffa8c8be5455"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "ad-tech platform"
  }
 }

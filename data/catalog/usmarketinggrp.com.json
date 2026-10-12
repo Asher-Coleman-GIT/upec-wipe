@@ -107,6 +107,14 @@
   "fingerprint": "f0b1f12e7411d0bdbd4931bf602a123dd10f0c32fec4c69715c3706c34fb1948"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@usmarketinggrp.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "These states include Alabama, California, Colorado, Connecticut, Delaware, District of Columbia, Indiana, Iowa, Kentucky, Maryland, Minnesota, Nebraska, New Hampshire, New Jersey, Oklahoma, Oregon, Rhode Island, Tennessee, Texas, Utah and Virginia.",
+   "url": "https://usmarketinggrp.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

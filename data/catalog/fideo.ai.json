@@ -30,6 +30,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@fideo.ai",
+  "basis": {
+   "kind": "utah",
+   "quote": "Despite higher privacy protections afforded in certain jurisdictions (e.g., California, Colorado, Connecticut, Utah, Virginia, and the European Economic Area and United Kingdom), Fideo strives to provide the same privacy rights and transparency to all Users and Consumers regardless of their location",
+   "url": "https://www.fideo.ai/privacy/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

@@ -192,6 +192,9 @@
   "fingerprint": "8758fc9f278d74af72ca005ea7755c6c5da50e00a8839e208307093d8ebf9ced"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://www.fourthwall.tv/donotsellorshare-fourthwall",
+  "notes": "TV viewing data; only a California Delete Act address is listed - use the do-not-sell page"
  }
 }

@@ -50,6 +50,14 @@
   "fingerprint": "f00fd33705fe28f221d33a4664bf36b2592a6155c714adea24908c9166e6ae1a"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@penlink.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Depending on your jurisdiction of residence (including the EU, UK, California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah and Virginia and other U.S.",
+   "url": "https://www.penlink.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

@@ -88,6 +88,14 @@
   "fingerprint": "25847da3a41d363b656f853a06c1fe4d153abdbbda7a50d15836b33bd6e2fba8"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "dataprivacy@affinityanswers.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Amended December, 2023 to include Colorado, Connecticut, Utah, and Oregon consumers privacy rights and other required disclosures under the Colorado Privacy Act, the Connecticut Data Privacy Act, Utah Consumer Privacy Act, and the Oregon Consumer Privacy Act.",
+   "url": "https://www.affinityanswers.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

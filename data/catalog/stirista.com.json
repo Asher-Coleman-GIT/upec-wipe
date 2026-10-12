@@ -73,6 +73,14 @@
   "fingerprint": "47bcf3ac26239808e44b5aaf0fe2eea7a23d398b9f4e17fa5f09c9453c8f0dbe"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@stirista.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "To the extent you believe you may have opted in to the collection of such personal information/data, you can opt out at any time so by providing your email here https://unsubscribe.stirista.com/ Some states, like California and Utah, provide their residents (upon the applicable effective dates), hav",
+   "url": "https://www.stirista.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

@@ -145,8 +145,8 @@
   "fingerprint": "2678a54b2d670f23be8f3abeb9f757dc4905ea44af47dd3b0c04f7fa1ce16c22"
  },
  "review": {
-  "state": "unreviewed",
-  "groupOverride": "business",
-  "note": "AI web search API, not a people-search site."
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "no Utah or all-US basis found in its privacy policy (phase 2 rule)"
  }
 }

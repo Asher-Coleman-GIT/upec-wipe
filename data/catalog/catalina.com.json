@@ -59,6 +59,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacyteam@catalina.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "This section of our Privacy Policy explains your rights and our obligations under various state laws, including the California Consumer Privacy Act (CCPA), Virginia Consumer Data Protection Act (CDPA), Colorado Privacy Act (CPA), Connecticut Data Privacy Act (CTDPA), Utah Consumer Privacy Act (UCPA)",
+   "url": "https://www.catalina.com/legal"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

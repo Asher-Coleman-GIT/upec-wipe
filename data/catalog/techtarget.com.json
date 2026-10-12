@@ -47,6 +47,8 @@
   "fingerprint": "6d0f66d3b873e0c9b56c4b8d4e44b2dea9030d8d63e887c2717067574d1745e8"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "excluded",
+  "reviewedAt": "2026-10-12",
+  "note": "B2B contact data (phase 2 rule)"
  }
 }

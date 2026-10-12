@@ -23,6 +23,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy@fourleafdata.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "As of the “Last Updated” date above, for example, these rights apply to residents of California, Colorado, Connecticut, Delaware, Indiana, Iowa, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Texas, Utah, and Virginia.",
+   "url": "https://www.fourleafdata.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

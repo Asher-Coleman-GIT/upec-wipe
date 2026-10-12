@@ -140,6 +140,14 @@
   "fingerprint": "056869c561ef51718bc79a37b6ea487b90c18894882055a702d30a6f8ad99319"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "compliancedept@dmsgroup.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Please see our \"Privacy Provisions for Covered Users\" below for a more complete description of your rights under the UCPA as a Utah State resident.",
+   "url": "https://digitalmediasolutions.com/privacy-policy"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

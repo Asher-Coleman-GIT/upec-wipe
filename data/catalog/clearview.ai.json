@@ -44,6 +44,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "privacy-requests@clearview.ai",
+  "basis": {
+   "kind": "utah",
+   "quote": "ACCESS DELETE DO NOT SELL CORRECT OPT-OUT OF PROFILING APPEAL For Utah Residents: Click below to Access My Information, Delete/Opt-Out My Information, or Do Not Sell My Information.",
+   "url": "https://www.clearview.ai/privacy-and-requests"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }

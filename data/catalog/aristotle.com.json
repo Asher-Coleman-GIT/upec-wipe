@@ -255,6 +255,9 @@
   "fingerprint": "ae082b77487ca737f4e16adfecd59f1f6321b1176f4941859f82828af328471f"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "manual",
+  "reviewedAt": "2026-10-12",
+  "optOutUrl": "https://www.aristotle.com/privacy/delete-my-personal-information/",
+  "notes": "Voter and consumer data; its delete form lists Utah, though an older FAQ says requests are California-only. The form asks for a date of birth"
  }
 }

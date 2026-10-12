@@ -72,6 +72,14 @@
   "fingerprint": "4cad6d7efd9da6c2b4d01b4a4d32f6cdcb6af2190aaa267c10974109bf0f1e00"
  },
  "review": {
-  "state": "unreviewed"
+  "state": "email",
+  "reviewedAt": "2026-10-12",
+  "to": "info@missionwired.com",
+  "basis": {
+   "kind": "utah",
+   "quote": "Opt Out of Sale, Share or Processing for Targeted Advertising California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, and Virginia residents may also opt out of the “sale” o",
+   "url": "https://missionwired.com/privacy-policy/"
+  },
+  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
  }
 }
