@@ -248,3 +248,46 @@ test('watcher wires the gate config once', () => {
   const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'watcher.js'), 'utf8');
   assert.match(src, /setEgressConfig\(/);
 });
+
+test('a passed check is re-run once the TTL has passed', async () => {
+  egress._resetNodeEgress();
+  let t = 1000;
+  let calls = 0;
+  egress.setEgressConfig({}, { fetchJson: async () => { calls++; return { mullvad_exit_ip: true }; }, now: () => t });
+  await egress.ensureNodeEgress();
+  t += egress.NODE_EGRESS_TTL_MS - 1;
+  await egress.ensureNodeEgress();
+  assert.equal(calls, 1);
+  t += 1;
+  await egress.ensureNodeEgress();
+  assert.equal(calls, 2);
+});
+
+test('a VPN that drops after the TTL is caught', async () => {
+  egress._resetNodeEgress();
+  let t = 0;
+  let on = true;
+  egress.setEgressConfig({}, { fetchJson: async () => ({ mullvad_exit_ip: on }), now: () => t });
+  await egress.ensureNodeEgress();
+  on = false;
+  t += egress.NODE_EGRESS_TTL_MS;
+  await assert.rejects(() => egress.ensureNodeEgress(), EgressError);
+});
+
+test('fresh: true checks now even inside the TTL', async () => {
+  egress._resetNodeEgress();
+  let calls = 0;
+  egress.setEgressConfig({}, { fetchJson: async () => { calls++; return { mullvad_exit_ip: true }; } });
+  await egress.ensureNodeEgress();
+  await egress.ensureNodeEgress(undefined, { fresh: true });
+  assert.equal(calls, 2);
+});
+
+test('the proxy note is printed once even when the check re-runs', async () => {
+  egress._resetNodeEgress();
+  const lines = await captureLog(async () => {
+    await egress.ensureNodeEgress({ network: { proxy: 'socks5://127.0.0.1:1080' } });
+    await egress.ensureNodeEgress({ network: { proxy: 'socks5://127.0.0.1:1080' } }, { fresh: true });
+  });
+  assert.equal(lines.filter(l => l === PROXY_NOTE).length, 1);
+});

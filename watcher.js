@@ -35,7 +35,7 @@ const { resolveHeadless, isLowMemory } = require('./lib/browser');
 const { openBrowserSession, EgressError } = require('./lib/browser-session');
 // Node-direct calls (SimpleLogin, CapSolver, HIBP, SMTP, registries) are gated
 // by lib/egress ensureNodeEgress, which reads the config given here (audit M7).
-const { setEgressConfig, ensureNodeEgress, _resetNodeEgress } = require('./lib/egress');
+const { setEgressConfig, ensureNodeEgress } = require('./lib/egress');
 const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
@@ -848,7 +848,8 @@ async function _mainBody() {
         targets: catalogEmailTargets(catalogRecords, { explicitNames: explicitCatalogOpts.explicitNames }),
         brokers, preview: DRY_RUN, isTTY: !!process.stdin.isTTY, ask: askLine, log: (l) => console.log(l),
         makeTransport: (smtp) => nodemailer.createTransport(smtpTransportOptions(smtp)),
-        ensureEgress: async (cfg) => { _resetNodeEgress(); return ensureNodeEgress(cfg); }, sleep: (ms) => new Promise(r => setTimeout(r, ms)),
+        ensureEgress: (cfg) => ensureNodeEgress(cfg, { fresh: true }),
+        sleep: (ms) => new Promise(r => setTimeout(r, ms)),
       });
     } catch (err) {
       // Off the VPN: nothing was sent (the gate runs before the transport).

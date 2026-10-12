@@ -22,7 +22,7 @@ test('--email alone returns before the browser opens', () => {
 });
 
 test('each send re-runs the egress check instead of reusing the cached result', () => {
-  assert.match(src, /ensureEgress: async \(cfg\) => \{ _resetNodeEgress\(\); return ensureNodeEgress\(cfg\); \}/);
+  assert.match(src, /ensureEgress: \(cfg\) => ensureNodeEgress\(cfg, \{ fresh: true \}\)/);
 });
 
 test('--list and the dashboard read email status through emailStatus (multi-person keys)', () => {
