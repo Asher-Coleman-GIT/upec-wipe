@@ -294,3 +294,40 @@ test('saveState: an in-place fallback never writes through a .bak that shares th
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('saveState: when the .bak cannot be detached, the save fails instead of writing through the shared inode', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-bak-nodetach-'));
+  const statePath = path.join(dir, 'state.json');
+  const bakPath = statePath + '.bak';
+  cfg.setTestStatePath(statePath);
+  const realRename = fs.renameSync;
+  const realWriteFileSync = fs.writeFileSync;
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    cfg.saveState(); // linked .bak
+    const first = fs.readFileSync(statePath, 'utf8');
+    assert.equal(fs.statSync(bakPath).ino, fs.statSync(statePath).ino);
+    const stateWrites = [];
+    fs.renameSync = (from, to) => {
+      if (to === statePath || to === bakPath) { const e = new Error('EPERM'); e.code = 'EPERM'; throw e; }
+      return realRename(from, to);
+    };
+    fs.writeFileSync = (file, ...rest) => {
+      if (file === statePath || file === bakPath) stateWrites.push(file);
+      return realWriteFileSync(file, ...rest);
+    };
+    cfg.loadState().optOuts.__b__ = { lastSuccess: '2026-01-02T00:00:00.000Z' };
+    assert.throws(() => cfg.saveState(), /EPERM/);
+    fs.renameSync = realRename;
+    fs.writeFileSync = realWriteFileSync;
+    assert.deepEqual(stateWrites, [], 'nothing was written in place through the shared inode');
+    assert.equal(fs.readFileSync(statePath, 'utf8'), first);
+    assert.equal(fs.readFileSync(bakPath, 'utf8'), first);
+  } finally {
+    fs.renameSync = realRename;
+    fs.writeFileSync = realWriteFileSync;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
