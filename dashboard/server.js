@@ -60,6 +60,8 @@ const BROKERS = path.join(ROOT, 'brokers.js');
 const SERP_HISTORY = path.join(ROOT, 'data', 'serp-history.json');
 const secrets = require('../lib/secrets');
 const { isConfigEncrypted, getPassphrase } = require('../lib/config');
+// The site catalog is 641 files (seconds on a slow disk): read it at most once a minute.
+const getCatalogRecords = require('../lib/catalog').cachedCatalogLoader();
 // getPassphrase() can throw (bad/missing/world-readable UPEC_WIPE_PASSPHRASE_FILE).
 // Caught here so a plain `require('./server')` never crashes with a raw stack;
 // the error is instead reported and the process exits cleanly at startup
@@ -480,8 +482,8 @@ app.get('/api/brokers', (_req, res) => {
   }));
   // Reviewed and manual catalog sites (data/catalog/); unreviewed ones do not run.
   try {
-    const { loadCatalog, catalogSummary, catalogEmailTargets } = require('../lib/catalog');
-    const records = loadCatalog(undefined, () => {});
+    const { catalogSummary, catalogEmailTargets } = require('../lib/catalog');
+    const records = getCatalogRecords();
     const st = readJsonSafe(STATE, { optOuts: {} }) || {};
     const { emailStatus } = require('../lib/email-step');
     const explicitNames = new Set(loadBrokers().map(b => String(b.name).toLowerCase()));
