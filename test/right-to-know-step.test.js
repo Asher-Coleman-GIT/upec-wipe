@@ -96,3 +96,20 @@ test('the per-run cap applies', () => {
   const items = buildKnowPlan({ brokers, persons: [P], state: {}, submissionEmailFor: () => ALIAS, blockedPersons: new Set(), maxPerRun: 1 });
   assert.equal(items.length, 1);
 });
+
+test('a request recorded by the old sender (knowRequestedAt, no know: key) is not sent again', async () => {
+  const state = { optOuts: { Pipl: { knowRequestedAt: '2026-01-01T00:00:00.000Z' } } };
+  const { d, out } = deps({ state });
+  assert.deepEqual(buildKnowPlan({ ...d, maxPerRun: 100 }), []);
+  assert.equal(await runKnowStep(d), 0);
+  assert.equal(out.sent.length, 0);
+});
+
+test('an interrupted send (status unknown) is noted once and not sent again', async () => {
+  const state = { optOuts: {}, emailSent: { [`${KNOW_PREFIX}Pipl|Jane Doe`]: { to: 'privacy@pipl.com', status: 'unknown' }, [`${KNOW_PREFIX}Other`]: { messageId: 'm' } } };
+  const { d, out } = deps({ state, brokers: [] });
+  assert.equal(await runKnowStep(d), 0);
+  const notes = out.lines.filter(l => l.includes('may or may not have been sent'));
+  assert.deepEqual(notes, ["  note: Pipl right-to-know request may or may not have been sent last time; it is not sent again. Check the dedicated mailbox's Sent folder."]);
+  assert.equal(out.sent.length, 0);
+});
