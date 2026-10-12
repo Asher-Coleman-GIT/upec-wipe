@@ -751,8 +751,11 @@ if (KNOW_MODE) {
     lock.release(KNOW_LOCK_PATH);
     process.exit(code);
   }).catch(err => {
+    // Keep an alias minted before the throw.
+    try { saveState(); } catch (saveErr) { console.error('could not save state:', saveErr.message); }
     lock.release(KNOW_LOCK_PATH);
-    console.error('know error:', err.message);
+    if (err instanceof EgressError) console.error(err.message);
+    else console.error('know error:', err.message);
     process.exit(1);
   });
 } else {
