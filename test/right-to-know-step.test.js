@@ -142,3 +142,11 @@ test('a stopped know run names the real command to re-run', async () => {
   assert.equal(await runKnowStep(d), 1);
   assert.match(out.lines.join('\n'), /run upec-wipe know again/);
 });
+
+test('a failing egress gate sends nothing', async () => {
+  const { EgressError } = require('../lib/egress');
+  const { d, out } = deps({ ensureEgress: async () => { throw new EgressError('off'); } });
+  await assert.rejects(() => runKnowStep(d), EgressError);
+  assert.equal(out.sent.length, 0);
+  assert.equal(out.transports, 0);
+});

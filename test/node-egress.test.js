@@ -266,3 +266,27 @@ test('the proxy note is printed once even when the check re-runs', async () => {
   });
   assert.equal(lines.filter(l => l === PROXY_NOTE).length, 1);
 });
+
+test('two calls while a check is pending share one fetch', async () => {
+  egress._resetNodeEgress();
+  let calls = 0;
+  let release;
+  const gate = new Promise(r => { release = r; });
+  egress.setEgressConfig({}, { fetchJson: async () => { calls++; await gate; return { mullvad_exit_ip: true }; } });
+  const a = egress.ensureNodeEgress();
+  const b = egress.ensureNodeEgress();
+  release();
+  await Promise.all([a, b]);
+  assert.equal(calls, 1);
+});
+
+test('a failure stays cached past the TTL', async () => {
+  egress._resetNodeEgress();
+  let t = 0;
+  let calls = 0;
+  egress.setEgressConfig({}, { fetchJson: async () => { calls++; return { mullvad_exit_ip: false }; }, now: () => t });
+  await assert.rejects(() => egress.ensureNodeEgress(), EgressError);
+  t += egress.NODE_EGRESS_TTL_MS * 2;
+  await assert.rejects(() => egress.ensureNodeEgress(), EgressError);
+  assert.equal(calls, 1);
+});

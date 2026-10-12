@@ -86,3 +86,18 @@ test('a stopped email run names the real command to re-run', async () => {
   assert.equal(await runEmailStep(d), 1);
   assert.match(out.lines.join('\n'), /run upec-wipe run --email again/);
 });
+
+test('a resend cut by the cap stays unknown for the next run', async () => {
+  const state = { optOuts: {}, emailSent: {
+    Alpha: { to: 'p@alpha.com', at: 't', status: 'unknown' },
+    Beta: { to: 'p@beta.com', at: 't', status: 'unknown' },
+  } };
+  const two = [...targets, { name: 'Beta', domain: 'beta.com', to: 'p@beta.com', basis: null }];
+  const cfg = { email: { ...config.email, maxPerRun: 1 } };
+  const { d, out } = deps({ config: cfg, state, targets: two, ask: async q => (/Resend/.test(q) ? 'y' : 'SEND') });
+  assert.equal(await runEmailStep(d), 0);
+  assert.equal(out.sent.length, 1);
+  assert.equal(state.emailSent.Alpha.messageId, 'x');
+  assert.equal(state.emailSent.Beta.status, 'unknown');
+  assert.equal(state.emailSent.Beta.assumed, undefined);
+});
