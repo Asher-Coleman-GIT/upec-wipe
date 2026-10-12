@@ -123,7 +123,7 @@
     "id": "captcha",
     "placeholder": "",
     "aria": "",
-    "label": "Security check — enter the code shown below*",
+    "label": "Security check - enter the code shown below*",
     "form": 0,
     "heading": "Data Subject Request"
    },
@@ -150,7 +150,7 @@
   "contacts": [
    "guy.hamawi@lsmapps.com"
   ],
-  "text": "Home\nMore Apps\nData Subject Request\n\nSubmit a request regarding your personal data\n\nPlease complete the form below to exercise your privacy rights. We may contact you to verify your identity before processing your request.\n\nFull name*\n\nThe name associated with the personal data your request relates to.\n\nEmail address*\n\nWe will send our response to this address, so please make sure it is correct.\n\nPhone number*\n\nThe phone number your request relates to. Enter it in international format, starting with your country code — for example +1 555 123 4567 (US) or +44 20 7123 4567 (UK). We cannot proces",
+  "text": "Home\nMore Apps\nData Subject Request\n\nSubmit a request regarding your personal data\n\nPlease complete the form below to exercise your privacy rights. We may contact you to verify your identity before processing your request.\n\nFull name*\n\nThe name associated with the personal data your request relates to.\n\nEmail address*\n\nWe will send our response to this address, so please make sure it is correct.\n\nPhone number*\n\nThe phone number your request relates to. Enter it in international format, starting with your country code - for example +1 555 123 4567 (US) or +44 20 7123 4567 (UK). We cannot proces",
   "fingerprint": "25299ab624c42cbf6159376c063b0b0c2d0184596c6b9ed4d13d6074bc084618"
  },
  "review": {

@@ -92,3 +92,13 @@ test('mergeSurvey keeps email addresses out of everything but contacts', () => {
   assert.equal(rest.controls[0].placeholder, '[email]');
   assert.equal(rest.controls[0].type, 'email');
 });
+
+test('mergeSurvey turns em and en dashes in site text into hyphens (house style)', () => {
+  const rec = core.mergeSurvey(null, { domain: 'x.com', name: 'X', contacts: [] }, {
+    group: 'business', title: 'Opt Out \u2014 X', text: 'Rights \u2013 opt-out',
+    controls: [C({ label: 'Name \u2014 first' })], contacts: [],
+  });
+  const s = JSON.stringify(rec);
+  assert.ok(!s.includes('\u2014') && !s.includes('\u2013'));
+  assert.equal(rec.survey.title, 'Opt Out - X');
+});
