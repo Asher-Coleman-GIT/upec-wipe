@@ -36,5 +36,5 @@ test('no catalog record holds personal values; email addresses only in survey.co
 test('the batch helper and the review guide exist', () => {
   assert.ok(fs.existsSync(path.join(__dirname, '..', 'scripts', 'catalog-batch.js')));
   const guide = fs.readFileSync(path.join(__dirname, '..', 'docs', 'CATALOG-REVIEW.md'), 'utf8');
-  for (const s of ['ASSIST=1', 'catalog-batch', 'preview --only', 'needs-review', '{firstName}']) assert.ok(guide.includes(s), s);
+  for (const s of ['ASSIST=1', 'catalog-batch', 'preview --only', 'needs-review', '{firstName}', '"state": "email"']) assert.ok(guide.includes(s), s);
 });

@@ -308,6 +308,18 @@ node bin/aidr.js dashboard
 
 It prints a web address and a login. Open that address in your browser and use that login. `127.0.0.1` or `localhost` with the printed port both work; any other name is refused with a `misdirected request` error, which protects against web pages that try to reach the dashboard. After 10 wrong logins in 15 minutes it locks for the rest of that window. New passwords set in the Admin tab must be at least 12 characters.
 
+## Email requests (phase 2)
+
+Some data brokers only take privacy requests by email. These are sent by a separate step, never by a normal run.
+
+1. Create a new Gmail account used only for this. Turn on 2-step verification and create an app password (myaccount.google.com/apppasswords).
+2. In `config.json`, set the `email` block: `smtp.host` `smtp.gmail.com`, `smtp.port` 587, `smtp.user` and `smtp.from` both the new address, `smtp.pass` the app password. Brokers see only this address.
+3. Connect Mullvad, then rehearse: `node bin/aidr.js preview --email`. It lists every broker, the sentence from its policy that gives the right, and the full email. Nothing is sent.
+4. Send: `node bin/aidr.js run --email`. Type `SEND` to confirm. Emails go out one every 45 seconds; leave it running. If it stops (the mailbox limit, Ctrl-C), run it again later; it never emails a broker twice.
+5. Replies arrive in the new Gmail. Log each one: `node bin/aidr.js reply <broker> honored|refused|verify|none|bounced`. `aidr list` shows each email broker's status.
+
+`aidr run` on its own (or `--forms`) fills web forms only. `--forms --email` does both.
+
 ## Command reference
 
 Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your computer; see [PRIVACY.md](PRIVACY.md) for details.
@@ -317,7 +329,9 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 | `setup` | Asks for your details and writes `config.json`. | Nothing. |
 | `doctor` | Checks your setup, including that SimpleLogin accepts your key. | After the network check passes: a connection to your SMTP host, one request to CapSolver, and one read-only request to SimpleLogin with your key (it creates no alias). |
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
-| `run` | The real opt-out pass. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. Your SMTP server: email opt-outs, only if you kept the `email` block. |
+| `run` | The real opt-out pass: fills web forms (the same as `run --forms`). Never sends email. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. |
+| `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
+| `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
 | `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers and their last status. | Nothing. |
@@ -347,6 +361,7 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 | `Passphrase file ... is readable by other users. Run: chmod 600 "..."` | Run the `chmod 600` command it prints. |
 | `... - not sent: email.smtp.from ... Set email.smtp.from to a non-real address.` | Your `"from"` is missing or is your real email. Set it to a non-real address. |
 | `... - not sent: email.smtp.user ... Use a separate SMTP mailbox that is not linked to you, or remove the email block ...` | Your SMTP login is your real email and brokers can see it. Switch to a separate mailbox not linked to you, or delete the `email` block and handle those brokers by hand. |
+| `Email step not run: ...` | The email step checks its setup before sending anything. Fix what it names: the `email.smtp` block, `user` and `from` must be the same dedicated address, and it must run in a terminal so you can type `SEND`. |
 | `aidr-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
 | `Network check failed for direct connections - nothing was sent. ...` | The tool was about to contact SimpleLogin, CapSolver, HIBP, your SMTP server or a registry, and Mullvad is off. Connect the Mullvad app and run again. |
 | `Note: network.proxy covers the browser only. ...` | You set `network.proxy`. Brokers see the proxy, but those services see your real IP. Use the Mullvad app instead if that matters to you. |
