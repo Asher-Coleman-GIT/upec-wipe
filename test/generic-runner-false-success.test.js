@@ -225,3 +225,33 @@ test('the Do Not Sell detail says what actually happened', async () => {
   assert.match(result.detail, /Do Not Sell/i, 'keep the diagnostic breadcrumb');
   assert.match(result.detail, /not|no /i, 'and say that nothing was submitted');
 });
+
+test('a cookie preference center is never an opt-out: no Allow All or Save click, status manual', async () => {
+  const clicked = [];
+  const locator = (sel) => {
+    const present = /accept-recommended-btn-handler|has-text\("Save"\)|has-text\("Confirm"\)|ot-tgl/.test(sel);
+    const self = {
+      first: () => self,
+      all: async () => [],
+      count: async () => (present ? 1 : 0),
+      isVisible: async () => present,
+      click: async () => { clicked.push(sel); },
+      evaluate: async (fn) => fn({ tagName: 'INPUT', type: 'text' }),
+      fill: async () => {},
+      selectOption: async () => {},
+      locator: () => self,
+      allTextContents: async () => [],
+      getAttribute: async () => null,
+    };
+    return self;
+  };
+  const page = { goto: async () => ({ status: () => 200 }), waitForTimeout: async () => {}, content: async () => '', url: () => BROKER.url, locator };
+  _setConfig({ person: { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', email: 'jane.doe@example.com', state: 'TX', zip: '73301' } });
+  try {
+    const result = await processGenericUrl(page, BROKER, { optOuts: {} }, false, new Set(), {});
+    assert.equal(result.status, 'manual');
+    assert.ok(!clicked.some(s => /accept-recommended|Save|Confirm/.test(s)), `clicked: ${clicked.join(' | ')}`);
+  } finally {
+    _setConfig(null);
+  }
+});

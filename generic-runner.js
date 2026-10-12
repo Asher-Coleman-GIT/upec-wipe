@@ -8,11 +8,13 @@
  *   1. Navigate to the opt-out URL
  *   2. Dismiss cookie banners
  *   3. Try these in order:
- *      a. "Do Not Sell My Personal Information" button → click it
- *      b. OneTrust / TrustArc / Osano preference manager → opt out all
- *      c. Form with email field only → fill + submit
- *      d. Form with name + email fields → fill + submit
- *      e. DSAR / data request form → fill + submit
+ *      a. "Do Not Sell My Personal Information" button → click it, then fill
+ *         and submit any form it opens
+ *      b. Form with email and/or name fields → fill + submit
+ *      c. DSAR / data request link → manual list
+ *   Cookie-consent managers are not used: a cookie choice made in the
+ *   throwaway browser profile is deleted with the profile, so it is never an
+ *   opt-out.
  *   4. If nothing automatable → manual list
  *
  * Returns: { succeeded, skipped, manual, errors }
@@ -169,31 +171,6 @@ async function clickDoNotSell(page) {
         return true;
       }
     } catch(_) {}
-  }
-  return false;
-}
-
-// ─── OneTrust / TrustArc / Osano preference opt-out ─────────────────────────
-
-async function handlePrivacyManager(page) {
-  // OneTrust toggle - turn off all non-essential categories
-  const toggles = await page.locator('.ot-tgl input[type="checkbox"]:checked').all();
-  for (const t of toggles) {
-    try { await t.click(); } catch(_) {}
-  }
-  // Confirm / save
-  const saveBtn = page.locator(
-    '#accept-recommended-btn-handler, .save-preference-btn-handler, button:has-text("Confirm"), button:has-text("Save")'
-  ).first();
-  if ((await saveBtn.count()) > 0) {
-    await saveBtn.click().catch(() => {});
-    return true;
-  }
-  // TrustArc - "Required Only" button
-  const reqOnly = page.locator('button:has-text("Required Only"), button:has-text("Reject All")').first();
-  if ((await reqOnly.count()) > 0) {
-    await reqOnly.click().catch(() => {});
-    return true;
   }
   return false;
 }
@@ -389,11 +366,7 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
       return { status: 'manual', detail: 'Do Not Sell clicked but nothing was submitted - finish this one by hand' };
     }
 
-    // Strategy 2: OneTrust / TrustArc privacy manager
-    const managed = await handlePrivacyManager(page);
-    if (managed) return finalize('Privacy manager opted out');
-
-    // Strategy 3: fill form
+    // Strategy 2: fill form
     const filled = await fillGenericForm(page, person);
     if (filled) {
       const submitted = await submitForm(page);
@@ -406,7 +379,7 @@ async function processGenericUrl(page, broker, state, dryRun = false, injectedDe
       return { status: 'manual', detail: 'Form filled but no submit control found - finish this one by hand' };
     }
 
-    // Strategy 4: look for a DSAR / privacy request link on privacy policy pages
+    // Strategy 3: look for a DSAR / privacy request link on privacy policy pages
     const dsarLink = page.locator('a:has-text("Submit a Request"), a:has-text("Privacy Request"), a:has-text("Data Request")').first();
     if ((await dsarLink.count()) > 0) {
       const href = await dsarLink.getAttribute('href');
