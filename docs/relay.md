@@ -1,13 +1,15 @@
 # Masked-Email Relay
 
-By default, upec-wipe submits opt-outs using `config.person.email`.
-That hands every broker a fresh real address. A masked/relay email lets each
-removal request go out under a per-person alias you control, which you can
-disable later if a broker abuses it.
+By default, upec-wipe submits nothing without a working relay: a person with
+no alias is blocked, never given `config.person.email`. A masked/relay email
+lets each removal request go out under a per-person alias you control, which
+you can disable later if a broker abuses it.
 
 When `config.relay` is set, the tool resolves one alias per person, caches it in
 `state.json` under `relayAliases`, and uses it for both form-based and
-email-based opt-outs. Without `config.relay`, behavior is unchanged.
+email-based opt-outs. Without a working relay, nothing is submitted. Only
+`"required": false` in the `relay` block lets forms and emails get your real
+email instead.
 
 ## SimpleLogin (automated, via API)
 

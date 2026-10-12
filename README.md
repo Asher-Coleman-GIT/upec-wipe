@@ -260,7 +260,7 @@ This tool covers 500+ data brokers in two tiers:
 | Tier | Count | Confidence |
 |---|---|---|
 | **Explicit brokers** ([STATUS.md](STATUS.md)) | 32 | Hand-mapped with specific selectors. **None are currently marked `verified`** - none has been tested end to end. A read-only survey on 2026-10-10 re-read the live forms (see STATUS.md); sites behind bot protection are listed for you to do by hand, and a form the tool cannot fill is never submitted. |
-| **Generic runner** | ~490 | Best-effort heuristic - tries 4 strategies (Do Not Sell click, OneTrust/TrustArc, generic form, DSAR link). Many succeed; some fail silently. |
+| **Generic runner** | ~490 | Best-effort heuristic - tries 3 strategies (Do Not Sell click, generic form, DSAR link); cookie managers such as OneTrust are never used to opt out. Many succeed; some fail silently. |
 
 Be skeptical of the counts this tool prints. Broker sites change their DOM
 constantly and a selector that no longer matches fails quietly. That is the
@@ -320,11 +320,12 @@ If you want to know exactly which brokers are hand-verified vs heuristic, see [S
 | [The Markup's data broker list](https://themarkup.org/privacy/2023/01/26/which-data-brokers-offer-opt-outs) | Journalism research, 494 opt-out URLs | ~494 |
 | [BADBOOL](https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List) | Community-maintained people-search list | ~27 extra |
 
-For each site it tries four strategies in order:
-1. Click a "Do Not Sell My Personal Information" button
-2. Opt out via OneTrust / TrustArc / Osano privacy manager
-3. Fill any generic opt-out form (email, name, state) and submit
-4. Find and record a DSAR / data request link for manual follow-up
+For each site it tries three strategies in order:
+1. Click a "Do Not Sell My Personal Information" button, then submit a follow-up form only if it filled one
+2. Fill any generic opt-out form (email, name, state) and submit
+3. Find and record a DSAR / data request link for manual follow-up
+
+Cookie managers (OneTrust, TrustArc, Osano) are not used: a cookie preference is not an opt-out.
 
 Sites requiring manual action are opened in your browser automatically.
 
