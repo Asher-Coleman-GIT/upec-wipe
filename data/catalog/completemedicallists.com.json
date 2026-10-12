@@ -1,0 +1,40 @@
+{
+ "domain": "completemedicallists.com",
+ "name": "Complete Medical Lists, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:51.620Z",
+  "status": 200,
+  "optOutUrl": "https://www.completemedicallists.com/ccpa.php",
+  "title": "About Complete Medical Lists",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "search",
+    "id": "search-box",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "tburnell@completemedicallists.com"
+  ],
+  "text": "SEARCH MAILING LISTS: \n\nCALL TO GET A QUOTE TODAY!\n\n(603) 823-8042\n\nHome\nMailing Lists\nServices\nFAQ\nAbout\nContact\nPrivacy Policy\n\nData Privacy, Security and Oversight Is Important To Us\n\nLast Updated: September 12, 2025\n\nComplete Medical Lists, LLC (\"we\" or \"us\") provides clients with business and consumer mailing lists for marketing purposes. Our services help our clients and the platforms and partners they work with to reach their target audiences and provide more relevant marketing and communications.\n\nWe operate the website located at the domain CompleteMedicalLists.com (the \"Website\") and",
+  "fingerprint": "b11855acdb40b5a2c2ca2bb1e3e4baa07d12fbd167579dba249d4a98b676b513"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

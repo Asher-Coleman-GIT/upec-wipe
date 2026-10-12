@@ -1,0 +1,45 @@
+{
+ "domain": "wunderkind.co",
+ "name": "Wunderkind Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:53.105Z",
+  "status": 200,
+  "optOutUrl": "https://www.wunderkind.co/privacy/opt-out-of-data-processing/",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customise",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@wunderkind.co",
+   "privacyrequests@wunderkind.co"
+  ],
+  "text": "We value your privacy\n\nWe value your privacy, we use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. We also share information about your use of our site with our social media, advertising and analytics partners, which may be deemed a sale of data. See our Privacy Policy and Do Not Sell or Share My Data link. By clicking \"Accept\", you consent to our use of cookies.\n\nCustomise\nReject All\nAccept All\nSkip to content\nWhy Wunderkind?\nPlatform\nPartners\nSolutions\nResources\nLog In\nTalk With Us\nPrivacy Policy\nWunderkind Corporation Effective Date",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

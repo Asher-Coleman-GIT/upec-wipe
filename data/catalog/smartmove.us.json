@@ -1,0 +1,44 @@
+{
+ "domain": "smartmove.us",
+ "name": "CTAM LeadShare Corp.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:18.115Z",
+  "status": 200,
+  "optOutUrl": "https://www.smartmove.us/company/privacy",
+  "title": "SmartMove Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@ctam.com"
+  ],
+  "text": "Español About Us\nINTERNET\n \nSTREAMING/TV\n \nMOBILE\n \nSMART HOME\n \nBUNDLES\n \nRESOURCES\nHome  Company  Privacy\nPrivacy Policy\n\nEffective February 25, 2025\n\nSmartMove.us (the “Website”) is offered by sponsoring cable companies as listed on our home page (the “Cable Providers”) and is powered by the CTAM MSO Marketing Corp. (\"we,\" \"our\" or \"us\"). We also work with third parties that provide services to you relating to moving and relocation, such as change of address, moving quotes, home improvement, and other related services (the “Service Providers”). This Website is specifically designed for pers",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

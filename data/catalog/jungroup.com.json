@@ -1,0 +1,77 @@
+{
+ "domain": "jungroup.com",
+ "name": "Jun Group Productions, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:07.208Z",
+  "status": 200,
+  "optOutUrl": "https://jungroup.com/optout",
+  "title": "Your privacy rights - Jun Group",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_1",
+    "id": "input_2_1",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email\n(Required)",
+    "form": 0,
+    "heading": "Get updates and insights delivered to your inbox"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_submit_button_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Get updates and insights delivered to your inbox"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_2",
+    "inForm": true
+   },
+   {
+    "text": "Preferences",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ccpa@jungroup.com"
+  ],
+  "text": "For Advertisers\nFor Publishers\nNews & Insights\nAbout\nCareers\nContact\nYour privacy rights\nCOMPANY\nSOLUTIONS FOR ADVERTISERS\nSOLUTIONS FOR PUBLISHERS\nAbout\nCareers\nNews & Insights\nContact\nBrands & agencies\nCPG & retail\nInfluencer marketing\nHealthcare\nContent amplification\nPodcast promotion\nGet updates and insights delivered to your inbox\nEmail\n(Required)\n© 2024 JUN GROUP\nPRIVACY POLICY\nTERMS OF USE\nCOOKIE STATEMENT\nYOUR PRIVACY CHOICES\nThis website uses cookies and other tracking technologies to enhance user experience and to analyze performance and traffic on our website. We also share informat",
+  "fingerprint": "9db7de239961169e763b3d6f300ec8a625e364939ea5046eb9a48d7e30fc5b77"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

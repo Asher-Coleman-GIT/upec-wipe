@@ -1,0 +1,28 @@
+{
+ "domain": "truedata.co",
+ "name": "TrueData Solutions, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:39.799Z",
+  "status": 404,
+  "optOutUrl": "https://www.truedata.co/home/privacy-policy/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@truedata.co"
+  ],
+  "text": "Not found",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

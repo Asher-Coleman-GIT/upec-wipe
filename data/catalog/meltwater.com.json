@@ -1,0 +1,166 @@
+{
+ "domain": "meltwater.com",
+ "name": "Meltwater News US Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:29.808Z",
+  "status": 200,
+  "optOutUrl": "https://www.meltwater.com/en/privacy",
+  "title": "Meltwater Privacy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "emailAddress",
+    "id": "email-address",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "privacy policy and subprocessor list."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Why Meltwater",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Defined Terms",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Media Relations and Creator Policies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Personal information in the media Meltwa",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater and Cookies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How do we use your information?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "When do we disclose your information?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater and the GDPR",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater and POPIA",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater and the APPI",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater and US State Laws",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater and Social Networks",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "International Data Transfers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Meltwater Data Privacy Framework Stateme",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Legal Basis for Processing",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data Retention",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Security",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Opting out of promotional or information",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Changes to the Policies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subprocessors",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@meltwater.com"
+  ],
+  "text": "Skip to content\nProducts\nSolutions\nWhy Meltwater\nResources\nCompany\nSign in\nPricing\nRequest a demo\nMeltwater Privacy\nLast updated March 26th 2025\nDefined Terms\nMedia Relations and Creator Policies\nPersonal information in the media Meltwater monitors\nMeltwater and Cookies\nHow do we use your information?\nWhen do we disclose your information?\nMeltwater and the GDPR\nMeltwater and POPIA\nMeltwater and the APPI\nMeltwater and US State Laws\nMeltwater and Social Networks\nInternational Data Transfers\nMeltwater Data Privacy Framework Statement\nLegal Basis for Processing\nData Retention\nSecurity\nOpting out o",
+  "fingerprint": "6f4abfa69170b507379b03d9f219cb715db5de7dd693bde48a3eba5d9d3af142"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

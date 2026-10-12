@@ -1,0 +1,138 @@
+{
+ "domain": "kindskiptracing.com",
+ "name": "Kind Skiptracing, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:40.108Z",
+  "status": 200,
+  "optOutUrl": "https://kindskiptracing.com/opt-out",
+  "title": "Opt-out | Kind Skiptracing",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "How we can find you"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "555-123-4567",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "How we can find you"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "First Name (optional)",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Last Name (or Full / Company Name)",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Street Address",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Apartment or Unit (optional)",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "City (optional)",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "CA",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "ZIP Code",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Your name and address"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "popupToggle",
+    "placeholder": "",
+    "aria": "",
+    "label": "Kind Feedback",
+    "form": -1,
+    "heading": "Your name and address"
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "compliance@kindskiptracing.com"
+  ],
+  "text": "Pricing\nAffiliate Program\nAbout Us\nContact Us\nLog In\nSign Up\nBack to  \nHome\nOpt-Out Request\nUse this form to tell us to stop selling or sharing your personal information. We'll act on it as soon as we can, and no later than 15 business days.\nHow we can find you\nTo locate your information we need at least one of: an email address, a phone number, or your last name with a street address and ZIP code.\nEmail Address\nPhone Number\nYour name and address\nFill in whatever you know. Anything you add here helps us act on your records and not somebody else's.\nFirst Name (optional)\nLast Name (or Full / Com",
+  "fingerprint": "5c07d831edee151dff649621b464f1e2e10fbfa08a07e68faf6bacf9bb714d24"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

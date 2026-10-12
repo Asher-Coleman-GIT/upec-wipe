@@ -1,0 +1,49 @@
+{
+ "domain": "clearview.ai",
+ "name": "Clearview AI, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:05.196Z",
+  "status": 200,
+  "optOutUrl": "https://www.clearview.ai/privacy-and-requests",
+  "title": "Privacy & Requests | Clearview AI",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Skip to main content",
+    "id": "uw-skip-to-main",
+    "inForm": false
+   },
+   {
+    "text": "Enable accessibility for low vision",
+    "id": "uw-enable-visibility",
+    "inForm": false
+   },
+   {
+    "text": "Open the accessibility menu",
+    "id": "uw-open-accessibility",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy-requests@clearview.ai"
+  ],
+  "text": "Skip to main content\nEnable accessibility for low vision\nOpen the accessibility menu\nSkip to Main Content\nGo to My Account\nCustomer Support\nProduct\nSolutions\nResources\nCompany\nREQUEST A DEMO\nPRIVACY & REQUESTS\nClearview AI’s revolutionary investigative platform enables quicker identifications and apprehensions to help solve and prevent crimes, helping to make our communities safer.\nLEGAL OVERVIEW\nPUBLIC INFORMATION ONLY\nSEARCH,\nNOT SURVEILLANCE\nLAWFUL\n& CONSTITUTIONAL\nPROTECTING THE INNOCENT\nLEGAL RESOURCES\nPrivacy\n\nWe will not sell advertisements in our product. We only collect publicly avail",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

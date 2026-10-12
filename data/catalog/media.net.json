@@ -1,0 +1,20 @@
+{
+ "domain": "media.net",
+ "name": "Media.net Advertising FZ, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:03.217Z",
+  "contacts": [
+   "privacy@media.net"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.media.net/privacy-policy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "domain": "simiocloud.com",
+ "name": "Simio Cloud, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:54.232Z",
+  "status": 200,
+  "optOutUrl": "https://simiocloud.com/simiocloud-products-services-privacy-policy/",
+  "title": "SimioCloud Privacy Notice / Products & Services Privacy Policy | SimioCloud",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@simiocloud.com"
+  ],
+  "text": "Skip to content\nSimioCloud Privacy Notice / Products & Services Privacy Policy\nScope\n\nSimio Cloud, LLC (“SimioCloud”) respects the privacy of every individual about whom we either process information or whose information we maintain for use in our product and data-driven marketing services. This privacy notice describes our service offerings and the practices we follow to show that respect.\n\nSimioCloud’s business is using data and technology to drive solutions that help our clients to identify and better market to their existing and prospective donors and customers.\n\nSimioCloud Products and Se",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "domain": "atdata.com",
+ "name": "AtData, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "onetrust.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:13.437Z",
+  "status": 200,
+  "optOutUrl": "https://privacyportal-cdn.onetrust.com/dsarwebform/b38ccfa3-c14a-451e-bf1d-974d1e278b7c/6214ac53-9059-474d-a847-800250556e9d.html",
+  "title": "Privacy Web Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstNameDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastNameDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "emailDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "addressDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "cityDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField17DSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "zipDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "requestDetailsDSARElement",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request Details",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   },
+   {
+    "tag": "input",
+    "type": "file",
+    "name": "",
+    "id": "dsar-webform-file-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "Select a File",
+    "form": 0,
+    "heading": "Welcome! You may use this form to submit a privacy request a"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "dsar-webform-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy_support@atdata.com"
+  ],
+  "text": "Welcome! You may use this form to submit a privacy request and we will respond as soon as possible.\n\n\n\n\nIf you wish to opt-out of AtData services, including cookies and mobile devices, please use our opt out page. Thank you.\n\n I am submitting this request on behalf of:\n(Required)\nMyself\nMy Household\n Select the right you wish to exercise:\n(Required)\nDo Not Sell My Information\nDelete My Information\nAccess My Information\n First Name\nEnter the first name of the data subject\n Last Name\nEnter the last name of the data subject\n Email\nEnter email for correspondence with the data request.\n Address\n Ci",
+  "fingerprint": "a7d4839873873b174bfc61f672fb8f8f0e387ab09349185c6548392baf87a57f"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

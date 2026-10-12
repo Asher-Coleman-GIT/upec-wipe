@@ -1,0 +1,25 @@
+{
+ "domain": "aidentified.com",
+ "name": "Aidentified, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:04.648Z",
+  "status": 200,
+  "contacts": [
+   "privacy@aidentified.com"
+  ],
+  "error": "page.waitForTimeout: Target page, context or browser has been closed"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "groupOverride": "people-search",
+  "optOutUrl": "https://www.aidentified.com/delete-my-data",
+  "notes": "Delete form requires phone, street address, job title and company, plus a CAPTCHA"
+ }
+}

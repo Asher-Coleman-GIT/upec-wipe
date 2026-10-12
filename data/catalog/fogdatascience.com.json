@@ -1,0 +1,225 @@
+{
+ "domain": "fogdatascience.com",
+ "name": "Fog Data science LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:44.816Z",
+  "status": 200,
+  "optOutUrl": "https://www.fogdatascience.com/opt-out",
+  "title": "Privacy Choices & Opt-Out | Fog Data Science — FOG DATA SCIENCE",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "text-471c630a-7cfc-4491-a8b6-3cbd62e41e7e-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Identifier",
+    "form": 0,
+    "heading": "Opt Your Device Out of Fog Data Science Data Services"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "message-yui_417cc3b7-1eb0-422b-a22b-67b21bcd0b72-field",
+    "id": "message-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Your Device Out of Fog Data Science Data Services"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fname",
+    "id": "name-70152dd3-e65c-4155-8105-8faaaff876b4-fname-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name\n(required)",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lname",
+    "id": "name-70152dd3-e65c-4155-8105-8faaaff876b4-lname-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name\n(required)",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "email-c8133bd6-41d7-45a2-a134-a58595c2f47a-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email\n(required)",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-e47cbdf5-c757-470b-b646-59ad8b2d8b8f-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-e47cbdf5-c757-470b-b646-59ad8b2d8b8f-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "textarea-f01c0ab9-6bb9-48dd-bb97-f71512d2160d-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Message\n(required)",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "textarea-2a4cf7b5-c8d3-40e4-96be-ead3ca4acd7e-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mobile Advertising ID\n(required)",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-14d675eb-0fae-4890-bd2d-f39c17755f56-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Know",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-14d675eb-0fae-4890-bd2d-f39c17755f56-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Access",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-14d675eb-0fae-4890-bd2d-f39c17755f56-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Delete",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-14d675eb-0fae-4890-bd2d-f39c17755f56-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Opt-out",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox-14d675eb-0fae-4890-bd2d-f39c17755f56-field",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Limit",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "message-yui_ac3bccef-9884-4170-aafb-2d10722b2045-field",
+    "id": "message-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Privacy Choices for California Residents"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "MANAGE COOKIES",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "ACCEPT ALL",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SUBMIT",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "SUBMIT",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "info@fogdatascience.com",
+   "privacy@fogdatascience.com"
+  ],
+  "text": "Select “Accept all” to agree to our use of cookies and similar technologies to enhance your browsing experience, security, analytics and customization. Select ”Manage cookies” to make more choices or opt out.\n\nMANAGE COOKIES\nACCEPT ALL\nSkip to Content\nHome\nReveal\nIndustries\nInternational\nResources\nContact Us\nFOG DATA SCIENCE\nREQUEST A DEMO\n\nYOUR PRIVACY CHOICES\n\nPrivacy Choices & Opt-Out\nFog Data Science is committed to providing consumers with clear ways to exercise their privacy choices regarding commercially available device location data.\n\nYou can use this page to opt your device identifie",
+  "fingerprint": "97dd198e18e73008178dbaabeb3035f56359e68ecd00c2b373c11d5b82952b4a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

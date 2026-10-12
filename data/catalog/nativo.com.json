@@ -1,0 +1,31 @@
+{
+ "domain": "nativo.com",
+ "name": "Nativo, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:19:06.238Z",
+  "status": 200,
+  "optOutUrl": "https://ads.life360.com/legal/interest-based-ads#your-rights",
+  "title": "Interest Based Ads — Life360 Ads featuring Nativo",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Opt out",
+    "id": "optInButton",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Life360 Completes Acquisition of Nativo and Surpasses 50 Million MAU\n\nRead the Article\nAdvertisers\nPublishers\nSolutions\nResources\nCompany\nLog in\nGet a demo\nLife360 Ads by Nativo Consumer Privacy Policy\nLAST UPDATED: APRIL 16, 2026\nWhat does our Consumer Privacy Policy Cover?\nInformation We Collect\nHow We Use Your Information\nDisclosure of Information\nWhat Your Rights Are (including your opt-out rights)\nAdditional Disclosures for California Users and Specific U.S. State Users\nAdditional Disclosures for EEA, UK and Switzerland Users\nHow Long We Store Your Information\nWhat does our Consumer Priva",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "domain": "clearcompany.com",
+ "name": "ClearCompany, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:59.863Z",
+  "status": 200,
+  "optOutUrl": "https://www.clearcompany.com/privacy-policy/",
+  "title": "Privacy Policy | ClearCo",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@clearcompany.com"
+  ],
+  "text": "ClearCo named a 2026 Talent Management Technology Leader by Nucleus Research - Read the report \n\nSKIP TO MAIN CONTENT\nPlatform\nAbout Us\nResources\nPricing\nSign In\nBook a Demo\nPrivacy Policy\n\nLast modified: June 23rd, 2026\n\nIntroduction:\n\nClearCompany, LLC, All Clear Screening LLC, and Brainier Solutions, Inc. (collectively, “ClearCompany,” “We,” Us,” or “Our”) respect your privacy and are committed to protecting it.\n\nThis Privacy Policy (“Policy”) describes our practices for collecting, using, disclosing, and otherwise processing Personal Information (i.e., information that relates to an indivi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

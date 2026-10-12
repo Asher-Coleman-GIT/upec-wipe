@@ -1,0 +1,181 @@
+{
+ "domain": "thinkdatagroup.com",
+ "name": "New Gold Ventures LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:58.201Z",
+  "status": 200,
+  "optOutUrl": "https://www.thinkdatagroup.com/opt-out-option",
+  "title": "Opt Out Option — Think Data Group",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fname",
+    "id": "name-yui_3_17_2_1_1726873443148_1779-fname-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lname",
+    "id": "name-yui_3_17_2_1_1726873443148_1779-lname-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "address-4fded531-33a4-4d82-be8c-54b41a219d38-country-field",
+    "placeholder": "",
+    "aria": "Country",
+    "label": "Country",
+    "form": 0,
+    "heading": "Opt Out Form",
+    "options": [
+     "AF=Afghanistan",
+     "AX=Åland Islands",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola",
+     "AI=Anguilla"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "address-4fded531-33a4-4d82-be8c-54b41a219d38-line1-field",
+    "placeholder": "",
+    "aria": "Address Line 1",
+    "label": "Address Line 1\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "address-4fded531-33a4-4d82-be8c-54b41a219d38-line2-field",
+    "placeholder": "",
+    "aria": "Address Line 2",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "address-4fded531-33a4-4d82-be8c-54b41a219d38-city-field",
+    "placeholder": "",
+    "aria": "City",
+    "label": "City\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "address-4fded531-33a4-4d82-be8c-54b41a219d38-state-field",
+    "placeholder": "",
+    "aria": "State",
+    "label": "State\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "address-4fded531-33a4-4d82-be8c-54b41a219d38-zip-field",
+    "placeholder": "",
+    "aria": "ZIP Code",
+    "label": "ZIP Code\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "phone-344db7bb-5b7a-4b63-8ffa-f7fc4aba7dea-input-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "email-yui_3_17_2_1_1726873443148_1780-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email\n(required)",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "message-yui_85a38573-31c4-49d4-ad05-5215bed2bea4-field",
+    "id": "message-field",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Data Sellers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Insights",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "barry.gold@thinkdatagroup.com"
+  ],
+  "text": "Discover our proprietary Periodic Table of Data Elements™\n\nSKIP TO CONTENT\nHome\nData Sellers\nDigital Audiences for Marketers\nData Buyers & Users\nInsights\nAbout\nGET IN TOUCH\nOpt Out Form\n\nUse the form below to “opt out” of having your personal information sold. We will then place the personal information you submit on our “suppression” list within 45 days.\n\nPlease note that when we receive a request to “opt out” a consumer’s personal information, we interpret these requests as “do not sell requests,” because that permits us to maintain a consumer’s information in a “suppression file,” which all",
+  "fingerprint": "f7090b7b3bbacbb9fc93e9c15320045e924f957ad9237613123afeeec705975f"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

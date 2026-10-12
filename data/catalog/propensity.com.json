@@ -1,0 +1,27 @@
+{
+ "domain": "propensity.com",
+ "name": "Addapptation, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:16.418Z",
+  "status": 200,
+  "optOutUrl": "https://www.propensity.com/",
+  "title": "Contact-Level Marketing Platform for B2B Growth Teams | Propensity",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "infosec@propensity.com"
+  ],
+  "text": "Propensity AI\nPlatform\nSolutions\nResources\nPricing\nLogin\nBook demo\n\nBig growth, even bigger ambitions. Propensity claims #70 on the Inc. 5000 list for 2026\n\nContact-level\nmarketing platform\nfor B2B growth teams\n\nRun ABM, contextual, and geofencing campaigns to generate contact-level insights. See exactly who’s engaging with your brand and send high-intent leads directly to sales.\n\nTry for free\nBook demo\nBooth #19\nFind us at The Global ABM Conference in London\n\nCome visit us to talk about the past, present, and future of ABM. And join our workshop with CEO Sumner Vanderhoof as he discusses buil",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

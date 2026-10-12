@@ -1,0 +1,65 @@
+{
+ "domain": "erepublic.com",
+ "name": "e.Republic, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:15.435Z",
+  "status": 200,
+  "optOutUrl": "https://www.erepublic.com/privacy/",
+  "title": "Privacy Policy | e.Republic",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "nav-toggle",
+    "placeholder": "",
+    "aria": "Open menu",
+    "label": "",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@erepublic.com"
+  ],
+  "text": "The 2027 e.Republic Events Tour is here. Explore 100+ events nationwide and find your next stop. View the Tour\nCareers\nCONTACT\nCompany\nFor Private Sector\nFor State and Local Government\nFor Education\nPrivacy Policy\n\nLast Updated April 28, 2026\n\nThis Privacy Policy explains how e.Republic collects and treats information online through erepublic.com and other websites or online channels we own or operate (collectively, the “Site”), as well as other services we offer. Here is an overview of our privacy practices:\n\nThis Privacy Policy explains how e.Republic processes “Personal Information,” meanin",
+  "fingerprint": "6124c5ad64e0069bb7657dce9849ae451270e2864bbae893113ae771f6aa9812"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

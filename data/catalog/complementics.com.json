@@ -1,0 +1,67 @@
+{
+ "domain": "complementics.com",
+ "name": "eContext.ai LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:40.863Z",
+  "status": 200,
+  "optOutUrl": "https://complementics.com/opt-out",
+  "title": "Complementics Network End-User Opt Out",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "MAID",
+    "id": "MAID",
+    "placeholder": "",
+    "aria": "",
+    "label": "Device ID (MAID)",
+    "form": 0,
+    "heading": "Complementics Network End-User Opt Out"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address",
+    "form": 0,
+    "heading": "Complementics Network End-User Opt Out"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Complementics Network End-User Opt Out"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "akatavic@econtext.ai"
+  ],
+  "text": "Data Feeds\nSolutions by Industry\nResources\nCompany\nTalk to our solutions team\nComplementics Network End-User Opt Out\n\n1. Opt out in your device settings\n\nIf end users do not want Complementics to identify their mobile device, they can: (a) delete the Customer app or adjust the in-app settings of the Customer app if the app makes that option available (this will limit data collection from this app alone); or (b) opt-out of sharing your mobile advertiser ID by limiting ad tracking on the device.\n\nFor iOS, navigate to your Settings > Select Privacy > Select Advertising > Enable the “Limit Ad Trac",
+  "fingerprint": "fe5592d9976befe3bfa0ec632b654d8ac149ce6cad447fd5c204ed2522ad8623"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

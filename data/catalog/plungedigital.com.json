@@ -1,0 +1,28 @@
+{
+ "domain": "plungedigital.com",
+ "name": "Plunge, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:48.920Z",
+  "status": 200,
+  "optOutUrl": "https://www.plungedigital.com/privacy-policy/",
+  "title": "Privacy Policy - Plunge Digital",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@plungedigital.com"
+  ],
+  "text": " Plunge, LLC Privacy Policy:\n\nPlunge Digital Privacy Policy\n\nEffective Date: Effective Date: August 1, 2021\n\nLast Updated: July 2, 2026\n\nThis Privacy Policy describes how Plunge, LLC (d/b/a Plunge Digital) and its affiliates (“Plunge”, “we”, “us”, or “our”) collect, use, disclose, and protect personal information in connection with our business as a data broker and provider of data services. This policy applies to information collected through our websites, online services, offline sources, partnerships, and third-party data suppliers.\n\nWe respect individuals’ privacy rights and comply with ap",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

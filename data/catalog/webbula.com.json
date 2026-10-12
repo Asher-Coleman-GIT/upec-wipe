@@ -1,0 +1,59 @@
+{
+ "domain": "webbula.com",
+ "name": "Webbula, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:12.118Z",
+  "status": 200,
+  "optOutUrl": "https://webbula.com/opt-out-request/",
+  "title": "Privacy Center - Webbula",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Skip to main content",
+    "id": "uw-skip-to-main",
+    "inForm": false
+   },
+   {
+    "text": "Enable accessibility for low vision",
+    "id": "uw-enable-visibility",
+    "inForm": false
+   },
+   {
+    "text": "Open the accessibility menu",
+    "id": "uw-open-accessibility",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@webbula.com"
+  ],
+  "text": "Skip to main content\nEnable accessibility for low vision\nOpen the accessibility menu\n\nWe use cookies to enhance your browsing experience and analyze our traffic. Privacy Center\n\nReject All\nAccept Cookies\nTry for Free\nChat Now\nSkip to content\nSolutions\nIndustries\nAbout Us\nResources\nContact\nTry for Free\nLogin\nHome\nPrivacy Center\nPrivacy center.\nPrivacy Center Overview\n\nWebbula is committed to the responsible use of the information we obtain through our online offline data resources.  Webbula strives to protect the data we maintain and process through the implementation of industry standard secur",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "domain": "bestpickreports.com",
+ "name": "Best Pick Reports, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:01.365Z",
+  "status": 200,
+  "optOutUrl": "https://www.bestpickreports.com/content/privacy-policy",
+  "title": "Privacy Policy | Best Pick Reports",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "",
+    "placeholder": "Enter your email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contacting Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "operations@ignitevisibility.com",
+   "privacy@bestpickreports.com"
+  ],
+  "text": "Find Certified Pros\nHome Services\nPOPULAR SERVICES\nHVAC\nPlumbers\nElectricians\nRoofers\nPainters\nPest & Termite Control\nFoundation Repair\nWindows & Doors\nINDOOR SERVICES\nBathroom Remodeling\nCarpet Cleaning\nFlooring\nKitchen Remodeling\nOUTDOOR SERVICES\nLandscaping\nDeck Builders\nGarage Doors\nGutter/Gutter Guard Installation\nView All Services\nMarkets We Serve\nFeatured Service Locations\nNORTHEAST\nBaltimore\nBoston\nLong Island\nMaryland/DC\nNew Jersey\nNorthern Virginia\nPhiladelphia\nSOUTHEAST\nAtlanta\nCharlotte\nFt. Myers/Naples\nJacksonville\nMiami/South Florida\nNashville\nOrlando\nSarasota/Bradenton\nSt. Peter",
+  "fingerprint": "7308ac425b4676c20b6e8d06424e45196db39ea78e440f15f972e6c5d88a550d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "domain": "intalytics.com",
+ "name": "Intalytics, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "kalibrate.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:04.711Z",
+  "status": 200,
+  "optOutUrl": "https://kalibrate.com/dsr-form/",
+  "title": "Data Subject Access Request Form | Kalibrate Global",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "ccc-icon",
+    "inForm": false
+   },
+   {
+    "text": "I Accept Cookies",
+    "id": "ccc-notify-accept",
+    "inForm": false
+   },
+   {
+    "text": "I Do Not Accept Cookies",
+    "id": "ccc-notify-reject",
+    "inForm": false
+   },
+   {
+    "text": "Settings",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@kalibrate.com"
+  ],
+  "text": "Your choice regarding cookies on this site\n\nWe use cookies to optimise site functionality and give you the best possible experience.\n\nI Accept CookiesI Do Not Accept CookiesSettings\nIndustries\nSoftware\nAnalytics Services\nAbout\nInsights & Events\nCONTACT US\nDSR Form\n\nSubscribe to the newsletter\n\nGet the latest insights from the Kalibrate team and products, and details of upcoming events straight to your inbox.\n\nINDUSTRIES\nRetail\nRestaurant\nFuel Pricing and Location Intelligence\nGrocery\nService Retail\nHealthcare\nEducation\nBank & Credit Union\nPrivate Equity\nFranchise\nSOFTWARE\nKalibrate Location In",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

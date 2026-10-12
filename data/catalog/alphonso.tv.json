@@ -1,0 +1,20 @@
+{
+ "domain": "alphonso.tv",
+ "name": "Alphonso Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:53.810Z",
+  "contacts": [
+   "tom.cushing@lgads.tv"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://alphonso.tv/privacy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

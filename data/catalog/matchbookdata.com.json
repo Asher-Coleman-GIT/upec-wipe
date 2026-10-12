@@ -1,0 +1,116 @@
+{
+ "domain": "matchbookdata.com",
+ "name": "Matchbook Data, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:50.255Z",
+  "status": 200,
+  "optOutUrl": "https://www.matchbookdata.com/your-privacy-choices/",
+  "title": "Your Privacy Choices - matchbook",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonNecessary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Necessary",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonPreferences",
+    "placeholder": "",
+    "aria": "",
+    "label": "Preferences",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonStatistics",
+    "placeholder": "",
+    "aria": "",
+    "label": "Statistics",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonMarketing",
+    "placeholder": "",
+    "aria": "",
+    "label": "Marketing",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[device_ID]",
+    "id": "form-field-device_ID",
+    "placeholder": "",
+    "aria": "",
+    "label": "Device ID",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[email]",
+    "id": "form-field-email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Allow All",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "inForm": false
+   },
+   {
+    "text": "Allow Selection",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@matchbookdata.com"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nConsent Selection\nNecessary\nPreferences\nStatistics\nMarketing\nShow details\nAllow All\nAllow Selection\nDeny\nSkip to content\nUse Cases\nResources\nBlog\nAbout Us\nTalk To An Expert\nYour Privacy Choices\nDo Not Sell My Personal Informa",
+  "fingerprint": "b7ef4646a0264f9208249ab0bacedfd5c0d9d6a6e7646c7de721be05f6d58193"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "domain": "onspotdata.com",
+ "name": "Mobile Technology Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:51.225Z",
+  "status": 200,
+  "optOutUrl": "https://www.onspotdata.com/privacy-policy/",
+  "title": "Site & Services Privacy Policy | OnSpot Data",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "accounting@onspotdata.com",
+   "optout@onspotdata.com",
+   "privacy@onspotdata.com"
+  ],
+  "text": "Solutions\nIndustries\nCase Studies\nResources\nAbout\nContact\nONSPOT PRIVACY POLICY\nPrivacy Policy Overview\n\nOnSpot respects the privacy of users, subscribers, publishers, and members who visit our Site or use our Services (as defined below, collectively or individually, “users”). This Privacy Policy explains how OnSpot collects, uses, and discloses information through our Services, as well as through our corporate website.\n\nScope of Services\n\nOnSpot provides a variety of location- and point-of-interest–based data services to our partners. Some offerings focus on analytics or geographic insights, ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

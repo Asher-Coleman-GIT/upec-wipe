@@ -1,0 +1,157 @@
+{
+ "domain": "rgrmarketing.com",
+ "name": "ReallyGreatRate, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:18.839Z",
+  "status": 200,
+  "optOutUrl": "https://www.rgrmarketing.com/",
+  "title": "RGR Marketing | Buy Quality Solar, Mortgage & Home Improvement Leads",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1",
+    "id": "input_1_1",
+    "placeholder": "First name",
+    "aria": "",
+    "label": "Name",
+    "form": 0,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_2",
+    "id": "input_1_2",
+    "placeholder": "Last name",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_10",
+    "id": "input_1_10",
+    "placeholder": "Email address",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_11",
+    "id": "input_1_11",
+    "placeholder": "Phone Number",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_5",
+    "id": "input_1_5",
+    "placeholder": "Company name",
+    "aria": "",
+    "label": "Company",
+    "form": 0,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_6",
+    "id": "input_1_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Lead Type",
+    "form": 0,
+    "heading": "Contact Us",
+    "options": [
+     "=Select Lead Type",
+     "Solar Leads=Solar Leads",
+     "Mortgage Leads=Mortgage Leads",
+     "Home Improvement Leads: Windows=Home Improvement Lea",
+     "Home Improvement Leads: Roofing=Home Improvement Lea",
+     "Home Improvement Leads: Siding=Home Improvement Lea",
+     "Home Improvement Leads: Bathroom=Home Improvement Lea",
+     "Home Seller Leads=Home Seller Leads"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_9",
+    "id": "input_1_9",
+    "placeholder": "Additional notes (if applicable)",
+    "aria": "",
+    "label": "Notes",
+    "form": 0,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_submit_button_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Previous",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Next",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "1",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "2",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "3",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get Started",
+    "id": "gform_submit_button_1",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "drop@rgrmarketing.com"
+  ],
+  "text": "RGRMarketing.com\nBuy Leads\nBuy Solar Leads\nBuy Mortgage Leads\nBuy Home Improvement Leads\nBuy Home Seller Leads\nRGR Process\nLead Validation Partners\nLead Management Systems\nAffiliates\nBlog\nAbout Us\nOur Company\nMeet the Founders\nPress Releases\nContact\n\t\n\t\nPrevious\nA better process delivers better leads\n\nPowerful systems and proven QA processes enable us to deliver consistently high quality leads.\n\nLearn more\nA partner with integrity\n\nGreat leads are just the beginning. We also help you improve your sales processes. Because when you succeed, we succeed.\n\nLearn more\n\n“RGR consistently goes above a",
+  "fingerprint": "471ff8e76bbaadfa81d36bb4fc251be65356fd4085412b0e4e03c129cb600836"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

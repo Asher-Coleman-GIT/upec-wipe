@@ -1,0 +1,90 @@
+{
+ "domain": "coasttechnology.com",
+ "name": "Coast Technology, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:17.532Z",
+  "status": 404,
+  "optOutUrl": "https://www.coasttechnology.com/;%20https:/coasttechnology.com/privacy-policy",
+  "title": "Coast Technology | AI-Driven Marketing Solutions",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Enter your email address",
+    "aria": "Email address",
+    "label": "",
+    "form": 0,
+    "heading": "Stay Updated"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "STEALTH",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Marketing",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Login",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@dealershiptoolkit.com"
+  ],
+  "text": "Join our upcoming webinar: \"Building the Connected Showroom\" on Oct 22nd REGISTER NOW\nSTEALTH\nMarketing\nADVERTISING\nCTV\nStreaming Audio\nDisplay + Rich Media\nOMNICHANNEL MARKETING\nSTEALTH Engage\nGoogle + Performance Max\nMeta + Social\nDisplay Retargeting\nSERVICES\nCampaign Management\nCreative Services\nReporting & Analytics\nVehicle Ads (VLAs)\nBetter inventory. Better listings. Better results.\n→\nIndustries\nCompany\nLogin\nSTEALTH Inventory\nSTEALTH CDXP\nGet a Demo\n404\nLost in the data?\n\nWe couldn't find the page you were looking for. It might have been moved, deleted, or perhaps it never existed at al",
+  "fingerprint": "278d3180c84001d88048f90f2c2e4ccbdcc8227ab223ad2502c06731beac68f3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

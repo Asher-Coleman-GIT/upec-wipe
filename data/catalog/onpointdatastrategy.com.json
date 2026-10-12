@@ -1,0 +1,217 @@
+{
+ "domain": "onpointdatastrategy.com",
+ "name": "OnPoint Data Strategy",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:47.208Z",
+  "status": 200,
+  "optOutUrl": "https://onpointdatastrategy.com/opt-out/",
+  "title": "Opt-Out - Onpoint Data Strategy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_1.2",
+    "id": "input_1_1_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Prefix",
+    "form": 0,
+    "heading": "Request Form:",
+    "options": [
+     "=",
+     "Dr.=Dr.",
+     "Miss=Miss",
+     "Mr.=Mr.",
+     "Mrs.=Mrs.",
+     "Ms.=Ms.",
+     "Mx.=Mx.",
+     "Prof.=Prof."
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1.3",
+    "id": "input_1_1_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "First",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1.4",
+    "id": "input_1_1_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Middle",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1.6",
+    "id": "input_1_1_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1.8",
+    "id": "input_1_1_8",
+    "placeholder": "",
+    "aria": "",
+    "label": "Suffix",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_1_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email\n(Required)",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4.1",
+    "id": "input_1_4_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4.2",
+    "id": "input_1_4_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4.3",
+    "id": "input_1_4_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4.4",
+    "id": "input_1_4_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "State / Province / Region",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4.5",
+    "id": "input_1_4_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP / Postal Code",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_4.6",
+    "id": "input_1_4_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country",
+    "form": 0,
+    "heading": "Request Form:",
+    "options": [
+     "=",
+     "Afghanistan=Afghanistan",
+     "Albania=Albania",
+     "Algeria=Algeria",
+     "American Samoa=American Samoa",
+     "Andorra=Andorra",
+     "Angola=Angola",
+     "Anguilla=Anguilla"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_6",
+    "id": "input_1_6",
+    "placeholder": "(Optional)",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request Form:"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_next_button_1_8",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request Form:"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Request",
+    "id": "gform_next_button_1_8",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "Skip to content\nNews: NOVA and Sunrise Data Services have now merged into \"OnPoint Data Strategy.\"\nonpoint\nLIST MANAGEMENT\nDATA STRATEGY\nSERVICE BUREAU\nCONTACT US\nOpt Out\n\nOnPoint Data Strategy values your privacy and preferences.\n\nRight To Be Forgotten\n\nSelecting “Remove my Data” will result in OnPoint providing best-effort to removing your data from our database. HOWEVER, once we remove your name from our system we have no way of identifying you in the future, and there is a possibility that your name may end up in our database once again. We would instead recommend that you select “Opt Out.",
+  "fingerprint": "85eceb405bcd2ec8e0ea828337ffa0f355ebd3c432bbe657dcc1cc3740a7b9c8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

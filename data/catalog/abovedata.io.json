@@ -1,0 +1,145 @@
+{
+ "domain": "abovedata.io",
+ "name": "Above Data, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:31.541Z",
+  "status": 200,
+  "optOutUrl": "https://www.abovedata.io/opt-out",
+  "title": "Opt Out of Targeted Advertising — Above Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "_gotcha",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": "dsr-first",
+    "placeholder": "",
+    "aria": "",
+    "label": "FIRST NAME",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastName",
+    "id": "dsr-last",
+    "placeholder": "",
+    "aria": "",
+    "label": "LAST NAME",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "dsr-company",
+    "placeholder": "",
+    "aria": "",
+    "label": "COMPANY (optional)",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "dsr-email",
+    "placeholder": "",
+    "aria": "",
+    "label": "EMAIL",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "country",
+    "id": "dsr-country",
+    "placeholder": "e.g. United States",
+    "aria": "",
+    "label": "COUNTRY",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "OPT OUT OF TARGETED ADVERTISING",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "REQUEST ACCESS TO INFORMATION ABOUT ME",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "REQUEST DELETION OF INFORMATION ABOUT ME",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "CORRECTION OF INFORMATION ABOUT ME",
+    "form": 0,
+    "heading": "Data Subject & Opt Out Request Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@abovedata.io"
+  ],
+  "text": "LEGAL\nData Subject & Opt Out Request Form\n\nSubmit a request to opt out of targeted advertising, access your information, request deletion, or correct inaccurate data.\n\nUse this form to exercise your privacy rights with respect to information processed by Above Data. We will verify your identity using the information you provide and respond to your request within 30 days.\n\nFIRST NAME\nLAST NAME\nCOMPANY (optional)\nEMAIL\nCOUNTRY\nREQUEST TYPE (select all that apply)\nOPT OUT OF TARGETED ADVERTISING\nREQUEST ACCESS TO INFORMATION ABOUT ME\nREQUEST DELETION OF INFORMATION ABOUT ME\nCORRECTION OF INFORMAT",
+  "fingerprint": "3ce045101c3e1056033edb29e3ccfe448a3250624c0f1f3eeb17a1aa41ae689c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

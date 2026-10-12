@@ -1,0 +1,77 @@
+{
+ "domain": "mediawallah.com",
+ "name": "MediaWallah Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:11.929Z",
+  "status": 200,
+  "optOutUrl": "https://mediawallah.com/privacy-policy/",
+  "title": "Privacy Policy | MediaWallah",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "EMAIL",
+    "id": "",
+    "placeholder": "Email address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Sign Up for Our Newsletter"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Sign Up for Our Newsletter"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Preference Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@mediawallah.com"
+  ],
+  "text": "Design your own identity\n\nRequest a meeting\nPrivacy Policy\n\nMediaWallah, Inc (hereinafter “MediaWallah,” “we,” “us,” “our”) respects each person’s right to privacy. Our Privacy Policy explains the ways in which we collect information and maintain and use that information.\n\nGuide to Content\n\n‍Data Collection and Use Practices for Our Company Website\nData Collection and Use Practices for our Services\nData Retention\nData Security\nLegal and Regulatory Compliance\nThird Parties\nChildren\nThird Party Service Providers\nBusiness Transfers\nAggregate Information\nInformation for European Union and Switzerl",
+  "fingerprint": "aba0bf17cb82a6c01c368c6f7a2a844ee946c27caa756934da6a29480dc7fb63"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

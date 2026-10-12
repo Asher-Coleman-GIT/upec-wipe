@@ -1,0 +1,92 @@
+{
+ "domain": "peoplewhiz.com",
+ "name": "PeopleWhiz",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T23:32:53.345Z",
+  "status": 403,
+  "optOutUrl": "https://www.peoplewhiz.com/remove-my-info",
+  "title": "Remove My Info - PeopleWhiz",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fn",
+    "id": ":R5klt:",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "ln",
+    "id": ":R9klt:",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": ":Rdklt:",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=",
+     "ALL=ALL",
+     "AL=AL",
+     "AK=AK",
+     "AZ=AZ",
+     "AR=AR",
+     "CA=CA",
+     "CO=CO"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Search Now",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "cyrus@peoplewhiz.com"
+  ],
+  "text": "Search Public Records\nFirst Name\nLast Name\nCity\nState\nALL\nAL\nAK\nAZ\nAR\nCA\nCO\nCT\nDE\nFL\nGA\nHI\nID\nIL\nIN\nIA\nKS\nKY\nLA\nME\nMD\nMA\nMI\nMN\nMS\nMO\nMT\nNE\nNV\nNH\nNJ\nNM\nNY\nNC\nND\nOH\nOK\nOR\nPA\nRI\nSC\nSD\nTN\nTX\nUT\nVT\nVA\nWA\nWV\nWI\nWY\nSearch Now\nCompany\nResources\nBlog\nLogin\nABOUT US\nWho We Are\nThe PeopleWhiz Difference\nRESOURCES\nBackground Report Errors\nCriminal Records Not Found\nCriminal History\nFCRA Overview\nWhat's a Public Record?\nCOMPANY\nParameters of Use\nFAQ\nRemove My Info\nBilling & Account\nContact Us\nREMOVE MY INFO\nWant To Opt Out From Our People Search?\nStart By Searching Your Public Records Here »\n\nIMPORTANT: ID",
+  "fingerprint": "eae3496b41c42a7fbf2d1adf8cceccaffb3f676806d8bbcfb92beb9b31905d47"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "optOutUrl": "https://www.peoplewhiz.com/remove-my-info",
+  "notes": "Search by name, city and state, then pick your record to remove"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "domain": "acronymix.com",
+ "name": "Acronymix LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:48.521Z",
+  "status": 200,
+  "optOutUrl": "https://acronymix.com/privacy-policy/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@acronymix.com"
+  ],
+  "text": "Privacy Policy\n\nEffective date: September 1st, 2026\n\n \n\nAcronymix LLC (“Acronymix,” “we,” “us,” or “our”) provides data marketing, consumer and business audience, data hygiene, address verification, and data-enhancement services. This Privacy Policy describes how we collect, use, disclose, sell, share, and retain personal information, and the rights available to residents of the United States, including California.\n\nThis policy applies to acronymix.com, related pages and forms, communications with us, and personal information we maintain in connection with our data products and services. It do",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

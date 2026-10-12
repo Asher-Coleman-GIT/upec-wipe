@@ -1,0 +1,27 @@
+{
+ "domain": "nordicdataresources.com",
+ "name": "Nordic Data Resources AS",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:08.082Z",
+  "status": 404,
+  "optOutUrl": "https://www.nordicdataresources.com/netprivacypolicy;%20https://optout.nordicdataresources.net/",
+  "title": "404 Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@nordicdataresources.com"
+  ],
+  "text": "404 Not Found\nnginx/1.27.5",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

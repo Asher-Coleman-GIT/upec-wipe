@@ -1,0 +1,73 @@
+{
+ "domain": "kindsight.io",
+ "name": "iWave",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:36.370Z",
+  "status": 200,
+  "optOutUrl": "https://kindsight.io/privacy-policy/",
+  "title": "Privacy Policies - Kindsight",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-7e7b2cd0-abf5-4f30-840c-fc2806ad6186",
+    "placeholder": "",
+    "aria": "",
+    "label": "Business Email*",
+    "form": 0,
+    "heading": "Looking for more?"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Looking for more?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy+california@iwave.com",
+   "privacy@kindsight.io"
+  ],
+  "text": "Skip to content\n\nNEW! 300+ fundraising practitioners judged AI vs. human advice, blind.\n\nKindsight\nProducts\n \nWho We Serve\n \nPricing\n \nResources\n \nCompany\nLogin Get a Demo\nPrivacy Policies\niWave Privacy Policy\nView Policy\nengage Privacy Policy\nView Policy\nAscend and Connect Privacy Policy\nView Policy\nAdvancementRM Privacy Policy\nView Policy\niWave Privacy Policy\n\nEffective August 4, 2026\n\nThis Privacy Policy will change periodically to comply with privacy law requirements. If the changes are significant, we will provide notice.\n\nWe at iWave Information Systems Inc. (“iWave”, “us,” “our”, or “we",
+  "fingerprint": "2b79fbb0146ac0235a686c29a415e8fe5342cf8cdbcf9846c52e222a877c2a78"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "domain": "sovrn.com",
+ "name": "Sovrn, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:48.715Z",
+  "contacts": [
+   "privacy@sovrn.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.sovrn.com/privacy-policy/policy-center/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

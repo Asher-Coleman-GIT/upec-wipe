@@ -1,0 +1,162 @@
+{
+ "domain": "monitorbase.com",
+ "name": "Ownco, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:25.030Z",
+  "status": 200,
+  "optOutUrl": "https://my.monitorbase.com/privacypolicy",
+  "title": "Privacy Notice - MonitorBase",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first_name",
+    "id": "first_name",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last_name",
+    "id": "last_name",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "Email *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "phone_number",
+    "id": "phone_number",
+    "placeholder": "Phone Number",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "address",
+    "placeholder": "Street Address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city",
+    "placeholder": "City",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state",
+    "placeholder": "State",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "zip",
+    "placeholder": "Postal Code",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "agreement",
+    "id": "agreement",
+    "placeholder": "",
+    "aria": "",
+    "label": "By clicking this checkbox, I certify under penalty of perjur",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "type",
+    "id": "type",
+    "placeholder": "",
+    "aria": "",
+    "label": "Select",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ",
+    "options": [
+     "=Select Request Type",
+     "1=What Information of ",
+     "2=Opt Me Out Of Having",
+     "3=Delete My Informatio"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "captcha",
+    "id": "",
+    "placeholder": "Please Insert Captcha",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request to Exercise your Privacy Rights, including your Righ"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@monitorbase.com"
+  ],
+  "text": "Privacy Policy\n\nHow we collect and protect your personal data.\n\nEffective date: Jan 15, 2025\n\nInbox Credit Innovations, LC dba MonitorBase (\"MonitorBase\", \"us\", \"we\", or \"our\") operates the www.monitorbase.com website and online platform (hereinafter referred to as the \"Service\"). This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance w",
+  "fingerprint": "8841e679096b5a3c6ae042f0a255b34b2ef7cfe98192f2cf8fe0f0b3e5927968"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

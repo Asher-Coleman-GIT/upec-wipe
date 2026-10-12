@@ -1,0 +1,71 @@
+{
+ "domain": "buyerlink.co",
+ "name": "Buyerlink Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:48.176Z",
+  "status": 200,
+  "optOutUrl": "https://www.buyerlink.co/",
+  "title": "Performance Marketing Solutions | Buyerlink",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Email",
+    "id": "Email",
+    "placeholder": "Email address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Ready to learn more about Buyerlink solutions?"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Ready to learn more about Buyerlink solutions?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@buyerlink.com"
+  ],
+  "text": "Solutions\nIndustries\nAbout\nMedia\nRequest a Demo\nLog In\nReach new customers in milliseconds\nEmpowering businesses of all sizes to gain access to in-market locally-targeted consumer demand at scale.\nJoin the Marketplace\nBusinesses across every industry trust Buyerlink.\nRESULTS THAT MATTER\nThe numbers behind the Buyerlink marketplace speak for themselves\n\nOur marketplace operates on a foundation of precision and scale, driving millions of real-time connections between consumers and service providers every day.\n\nWHAT IS BUYERLINK\nOur patented auction marketplace is at the heart of Buyerlink\nLevera",
+  "fingerprint": "d1b5cd81fc7f9eb29719ad60f4227771a9879623083945d34658b0cc267b7a46"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

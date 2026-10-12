@@ -1,0 +1,72 @@
+{
+ "domain": "alliantinsight.com",
+ "name": "Alliant Cooperative Data Solutions, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:44.250Z",
+  "status": 200,
+  "optOutUrl": "https://alliantinsight.com/alliant-privacy-policy/",
+  "title": "Alliant Privacy Policy - Alliant",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search...",
+    "aria": "",
+    "label": "Search for:",
+    "form": 0,
+    "heading": "FOLLOW US"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "Search",
+    "label": "",
+    "form": 0,
+    "heading": "FOLLOW US"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Do not share or sell my personal informa",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "OK",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@alliantdata.com"
+  ],
+  "text": "Skip to content\nSolutions\nMarket\nResources\nCompany\nContact\nAlliant Website Privacy Policy\nLast Updated: July 29, 2026\n\nThis Privacy Policy (the “Privacy Policy”) informs visitors to the website and business Customers that license our Data Products (“you”) about the collection, use, sharing, and selling (collectively referred to as “processing” or “process”) of your Personal Information collected from and processed in connection with the Alliant Cooperative Data Solutions, LLC website (https://alliantinsight.com/) and any website where this Privacy Policy is posted (collectively, the “Website”)",
+  "fingerprint": "10895c62667fa763f5e685c73c52f40295626073b94cf3199a328fa1408a9efc"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

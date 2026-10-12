@@ -1,0 +1,29 @@
+{
+ "domain": "www360mediadirect.com",
+ "name": "Subdirect LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "saymine.io"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:08.258Z",
+  "status": 200,
+  "optOutUrl": "https://360-media-direct.privacy.saymine.io/360_Media_Direct",
+  "title": "Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@360mediadirect.com"
+  ],
+  "text": "",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

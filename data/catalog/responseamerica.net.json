@@ -1,0 +1,27 @@
+{
+ "domain": "responseamerica.net",
+ "name": "Response America, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:50.536Z",
+  "status": 200,
+  "optOutUrl": "https://responseamerica.net/privacy_dec.html",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "ncoa@responseamerica.net"
+  ],
+  "text": "PRIVACY POLICY\nLast updated December 23, 2025\n\n\n\n\n\n\nThis Privacy Notice for response america inc (\"we,\" \"us,\" or \"our\"), describes how and why we might access, collect, store, use, and/or share (\"process\") your personal information when you use our services (\"Services\"), including when you:\nVisit our website at responseamerica.net or any website of ours that links to this Privacy Notice\nEngage with us in other related ways, including any marketing or events\nQuestions or concerns?Â Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for makin",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "domain": "faraday.ai",
+ "name": "Faraday, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:40.956Z",
+  "status": 200,
+  "optOutUrl": "https://faraday.ai/privacy-options",
+  "title": "Privacy options - Faraday",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "CybotCookiebotDialogBodyLevelButtonCustomize",
+    "inForm": false
+   },
+   {
+    "text": "Features",
+    "id": "radix-:R9mm:-trigger-features",
+    "inForm": false
+   },
+   {
+    "text": "Search...\n⌘K",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Log in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Log in",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ccpa@faraday.io"
+  ],
+  "text": "How Faraday uses cookies\nWe use cookies to improve site functionality, analyze usage, and assist in our marketing efforts. We share information about your use of our site with our marketing and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nShow details\nAllow all\nCustomize\nFeatures\nTemplates\nDocs\nCustomers\nBlog\nSecondary navigation\nSearch...\n⌘K\nLog in\nSign up free\nPrivacy options\nYour privacy options\nNotice of right to opt out\n\nMany states allow consumers to opt out of the \"sale\" of their pers",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

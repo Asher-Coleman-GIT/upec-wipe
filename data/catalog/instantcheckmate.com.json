@@ -1,0 +1,31 @@
+{
+ "domain": "instantcheckmate.com",
+ "name": "Instant Checkmate, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T23:30:22.302Z",
+  "status": 200,
+  "optOutUrl": "https://www.instantcheckmate.com/privacy-policy/",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "tara.buck@peopleconnect.us",
+   "privacy@instantcheckmate.com"
+  ],
+  "text": "People Search\n \nReverse Phone Lookup\n \nCriminal & Traffic Records\n \nInmate Search\n \nContact\n \nLOG IN\n\nNeed Help?\nVisit Our Help Center\n\nPRIVACY POLICY\nHome  Privacy Policy\nPRIVACY POLICY FOR INSTANT CHECKMATE\n\nDate of last revision: September 29, 2026\n\n1. Introduction\n2. Personal Information Collection Practices\nI. TYPES OF PERSONAL INFORMATION COLLECTED\nII. USES OF PERSONAL INFORMATION COLLECTED\nIII. COOKIES, PIXELS, WEB BEACONS, AND LOCAL STORAGE\nIV. SHARING OF PERSONAL INFORMATION\nV. INTEREST-BASED ADS\nVI. EMAIL MARKETING\nVII. CONTESTS, SWEEPSTAKES, SURVEYS, AND PROMOTIONS\nVIII. REFER-A-FRI",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "excluded",
+  "reviewedAt": "2026-10-11",
+  "note": "Covered by the PeopleConnect Suppression Center entry in brokers.js."
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "domain": "veeva.com",
+ "name": "Veeva Systems Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:45.829Z",
+  "status": 200,
+  "optOutUrl": "https://www.veeva.com/privacy/do-not-sell-share/",
+  "title": "Veeva and Privacy | Veeva",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "q",
+    "id": "nav-search-field",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": ""
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@veeva.com"
+  ],
+  "text": "Skip to content\nContact Sales 866-417-3024\nSupport Center\n\nRegions\n\nIndustries\n\nProducts\nServices\nCustomers\nResources\nEvents\nAbout Veeva\nVeeva and Privacy\n\nUpdated: May 12, 2026\n\nVeeva Systems is committed to maintaining a privacy program that is designed around trust, transparency and respecting your rights in your personal information. This privacy notice describes how we process personal information, including what information we collect, why we collect it, how we use it, how we may share it, and your controls over your personal information.\n\nScope\nInformation We Collect\nHow We Collect Info",
+  "fingerprint": "57ad2a3b6dc5f12b49e7fe34213e66b0836b29e3edc22c0b040d45973ccbb813"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

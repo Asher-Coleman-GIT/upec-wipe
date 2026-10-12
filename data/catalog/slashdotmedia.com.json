@@ -1,0 +1,34 @@
+{
+ "domain": "slashdotmedia.com",
+ "name": "Slashdot Media, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:10.890Z",
+  "status": 520,
+  "optOutUrl": "https://slashdotmedia.com/privacy-statement/",
+  "title": "slashdotmedia.com | 520: Web server is returning an unknown error",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Click to reveal",
+    "id": "cf-footer-ip-reveal",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "roger.abbott@slashdotmedia.com"
+  ],
+  "text": "Web server is returning an unknown error Error code 520\nVisit cloudflare.com for more information.\n2026-10-11 22:30:12 UTC\nYou\nBrowser\nWorking\nSeattle\nCloudflare\nWorking\nslashdotmedia.com\nHost\nError\nWhat happened?\n\nThere is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed.\n\nWhat can I do?\nIf you are a visitor of this website:\n\nPlease try again in a few minutes.\n\nIf you are the owner of this website:\n\nThere is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatica",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

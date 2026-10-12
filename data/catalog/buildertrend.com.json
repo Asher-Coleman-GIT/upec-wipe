@@ -1,0 +1,40 @@
+{
+ "domain": "buildertrend.com",
+ "name": "Buildertrend Solutions, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:26:32.242Z",
+  "status": 403,
+  "optOutUrl": "https://buildertrend.com/additional-state-disclosures/",
+  "title": "Additional U.S. State Privacy Disclosures - Buildertrend",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "legal@buildertrend.com",
+   "privacy@buildertrend.com"
+  ],
+  "text": "Skip to content\nAdditional U.S. State Privacy Disclosures\n\nThese Additional U.S. State Privacy Disclosures (“Disclosures”) supplement the information contained in our Privacy Notice by providing additional information about our personal information processing practices relating to individual residents of states with comprehensive privacy laws. For a detailed description of how we collect, use, disclose, and otherwise process personal information in connection with our Services, please visit our Privacy Notice. Unless otherwise expressly stated, all terms defined in our Privacy Notice retain th",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

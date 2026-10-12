@@ -1,0 +1,51 @@
+{
+ "domain": "brandwatch.com",
+ "name": "Crimson Hexagon",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "dporganizer.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:23.913Z",
+  "status": 200,
+  "optOutUrl": "https://www.brandwatch.com/confirmation/legal-data/",
+  "title": "Legal – Data Subject Access request (Request to know) | Brandwatch",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "View",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept all cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject non-essential cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Manage cookie settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dpo@cision.com"
+  ],
+  "text": "·\nFORRESTER WAVE 2024\n·\nBRANDWATCH ACADEMY\nCAREERS\nCONTACT\nSUPPORT\nREPORT\nDigital Marketing Trends 2025\n\nWe surveyed over 700 marketers and studied the social data to uncover the latest digital marketing trends that will elevate your marketing strategy.\n\nView\nThank you! We'll be in touch\n\nWe’ll be in touch soon. In the meantime, why not check out some of our latest content.\n\nContact Us\nUser Privacy Statement\nAuthor Privacy Statement\nTerms & Conditions\n\nCopyright © 2026 Brandwatch. All Rights Reserved.\n\nRuntime Collective Ltd, 7th Floor, 5 Churchill Place, Canary Wharf, London, E14 5HU\n\nCompany",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

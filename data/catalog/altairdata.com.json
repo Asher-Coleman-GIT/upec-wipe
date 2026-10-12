@@ -1,0 +1,69 @@
+{
+ "domain": "altairdata.com",
+ "name": "Altair Data Resources, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:53.906Z",
+  "status": 404,
+  "optOutUrl": "https://altairdata.com/altair-consumer-info/",
+  "title": "Page not found | Altair",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Open Solutions",
+    "id": "e-n-menu-dropdown-icon-6061",
+    "inForm": false
+   },
+   {
+    "text": "Open Industry Expertise",
+    "id": "e-n-menu-dropdown-icon-6062",
+    "inForm": false
+   },
+   {
+    "text": "Open Use Cases",
+    "id": "e-n-menu-dropdown-icon-6063",
+    "inForm": false
+   },
+   {
+    "text": "Open Resources",
+    "id": "e-n-menu-dropdown-icon-6064",
+    "inForm": false
+   },
+   {
+    "text": "Open Company",
+    "id": "e-n-menu-dropdown-icon-6065",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "cookieadmin_customize_button",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "cookieadmin_reject_button",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "cookieadmin_accept_button",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dpelland@altairci.com"
+  ],
+  "text": "Skip to content\nSolutions\nOpen Solutions\nIndustry Expertise\nOpen Industry Expertise\nUse Cases\nOpen Use Cases\nResources\nOpen Resources\nCompany\nOpen Company\n4\n0\n4\nOops! Page not found\n\nSorry! The page you’re looking for doesn’t exist or may have been removed. But don’t worry, you can still explore everything else on our website.\n\nLet’s Go to the Home\nWe are just one click away\nContact Us Now\n\nWe understand that smart data drives marketing success. We use powerful analytics and technology to reach your target audience faster, more effectively and with superior results.\n\nSolutions\nCreditReady\nData",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

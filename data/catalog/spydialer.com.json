@@ -1,0 +1,27 @@
+{
+ "domain": "spydialer.com",
+ "name": "Spy Labs AdCo, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:17.558Z",
+  "status": 200,
+  "optOutUrl": "https://spydialer.com/consumers/",
+  "title": "Privacy Notice | Spy Dialer",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "info@spydialer.com"
+  ],
+  "text": "     \nHome\nHow it Works\nAdvertisement\nPrivacy Notice\n\nLast Updated: January 1, 2025\n\n1. SCOPE\n\nThis Privacy Notice (\"Notice\") is designed to help you understand how we may collect, use, share or otherwise process information that relates to you (\"personal information\") and how you can exercise your privacy rights.\n\nThis Notice applies to information that we collect both online and offline. This includes information gathered on websites that expressly link to this Notice (\"Sites\"), including www.spydialer.com, in connection with our data offerings (\"Data Products\") and other services (collectiv",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

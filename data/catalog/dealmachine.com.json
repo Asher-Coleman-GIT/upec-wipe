@@ -1,0 +1,27 @@
+{
+ "domain": "dealmachine.com",
+ "name": "DealMachine Operations Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:08.630Z",
+  "status": 200,
+  "optOutUrl": "https://privacyrequest.dealmachine.com/remove;%2520https:/dealmachine.com/privacy-policy;%2520https:/help.dealmachine.com/en/articles/15298055-data-privacy-requests",
+  "title": "DealMachine Privacy Portal",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "support@dealmachine.com"
+  ],
+  "text": "404 Page Not Found\n\nDid you forget to add the page to the router?",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

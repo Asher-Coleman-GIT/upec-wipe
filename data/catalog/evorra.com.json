@@ -1,0 +1,177 @@
+{
+ "domain": "evorra.com",
+ "name": "Evorra Ltd",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:28:47.555Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.evorra.com/",
+  "title": "Evorra Privacy Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requester",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "This request is about my own data",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requester",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am an authorized agent filing for someone else",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": "first-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastName",
+    "id": "last-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "country",
+    "id": "country",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country of residence",
+    "form": 0,
+    "heading": "Exercise your data rights",
+    "options": [
+     "=Select…",
+     "AF=Afghanistan",
+     "AX=Åland Islands",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "right",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out / do not sell my data",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "right",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete my data",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "right",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Access my data",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "right",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Correct my data",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "details",
+    "id": "details",
+    "placeholder": "",
+    "aria": "",
+    "label": "Details (optional)",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "website",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Exercise your data rights"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit request",
+    "id": "btn",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@evorra.com"
+  ],
+  "text": "Exercise your data rights\n\nSubmit a privacy request: opt out, delete, access, or correct your data. If you ask to access or correct your own data, we email you a code to confirm you control the address.\n\nFields marked * are required.\n\nWho is this request for?\nThis request is about my own data\nI am an authorized agent filing for someone else\nYour details\nFirst name\nLast name\nEmail\nCountry of residence\nSelect…\nAfghanistan\nÅland Islands\nAlbania\nAlgeria\nAmerican Samoa\nAndorra\nAngola\nAnguilla\nAntarctica\nAntigua & Barbuda\nArgentina\nArmenia\nAruba\nAustralia\nAustria\nAzerbaijan\nBahamas\nBahrain\nBanglades",
+  "fingerprint": "53d704fddf113835860058dd4821389a2e2d3401f527ceb1f2e67989a64a7295"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

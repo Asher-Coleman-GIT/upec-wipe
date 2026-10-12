@@ -1,0 +1,28 @@
+{
+ "domain": "convergemarketing.com",
+ "name": "Converge Direct, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:44:47.605Z",
+  "status": 200,
+  "optOutUrl": "https://www.convergemarketing.com/privacy/",
+  "title": "Privacy Policy | Converge",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@convergemarketing.com"
+  ],
+  "text": "Who we are\n\nWhat we do\n\nOur work\n\nInsights & news\n\nGet in touch\n\nPrivacy Policy\n(Last Updated July 22, 2026)\nIntroduction\n\nThis Privacy Policy describes how Converge Marketing, LLC collects, shares, and uses personal data from and about you in a business-to-business capacity, such as when you visit our corporate website, receive marketing communications from us, submit an application for employment, or utilize any dashboards or internal tools that we may make available to our business users (collectively, our “Corporate Services”), and your rights and choices regarding your personal data.\n\nThi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

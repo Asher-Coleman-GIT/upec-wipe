@@ -1,0 +1,43 @@
+{
+ "domain": "rorpartners.com",
+ "name": "ROR Partners, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:48.156Z",
+  "status": 200,
+  "optOutUrl": "https://rorpartners.com/privacy-policy",
+  "title": "Privacy Policy Overview | ROR Partners, LLC",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Who We Are",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What We Do",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How We Do It",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@rorpartners.com"
+  ],
+  "text": "ROR Expands with Acquisition of Digital Marketing Agency Incline Marketing\nWho We Are\nWhat We Do\nHow We Do It\nGet Started\nROR Partners, LLC Privacy Policy\n\nLast Modified:  August 3rd, 2026\n\n \n\nIntroduction.\n\nThis Privacy Policy is designed to assist you in understanding how ROR Partners, LLC and its subsidiaries and affiliates (“ROR,” “we,” “our,” or “us”) collect, use, share, and safeguard your information. This Privacy Policy applies to individuals who access this website (“Site”) and any of our online and, where required, offline services (collectively, “Services”).\n\n\nFor clarity, this Priv",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

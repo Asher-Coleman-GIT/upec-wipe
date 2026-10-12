@@ -1,0 +1,46 @@
+{
+ "domain": "altrata.com",
+ "name": "Altrata, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:59.631Z",
+  "status": 200,
+  "optOutUrl": "https://altrata.com/online-privacy-notice",
+  "title": "Online Privacy Notice - Altrata",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@altrata.com",
+   "privacy@altrata.com",
+   "piprivacy@altrata.com"
+  ],
+  "text": "We value your privacy\n\nWe use cookies so that we can give you the best possible experience when browsing and visiting our websites.  We also use cookies to ensure content is relevant to you and to inform our marketing, content and research.  You can customise them yourself below or see our Cookies Policy and Privacy Policy for more information. You can clear cookies from your browser settings at anytime.\n\nCustomize\nAccept All\n\nLooking for your Altrata login? Sign in here to access your account\n\nAltrata Log In\nSkip to content\nSolutions\nPlatform\nResources\nCompany\nGet started\nOnline Privacy Notic",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "domain": "recordsfinder.com",
+ "name": "Globicom Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:04.648Z",
+  "status": 200,
+  "optOutUrl": "https://recordsfinder.com/do-not-sell-share-my-personal-information/",
+  "title": "Opt Out",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Skip to main content",
+    "id": "uw-skip-to-main",
+    "inForm": false
+   },
+   {
+    "text": "Enable accessibility for low vision",
+    "id": "uw-enable-visibility",
+    "inForm": false
+   },
+   {
+    "text": "Open the accessibility menu",
+    "id": "uw-open-accessibility",
+    "inForm": false
+   },
+   {
+    "text": "AGREE & PROCEED",
+    "id": "truste-consent-button",
+    "inForm": false
+   },
+   {
+    "text": "REJECT ALL",
+    "id": "truste-consent-required",
+    "inForm": false
+   },
+   {
+    "text": "Manage Settings",
+    "id": "truste-show-consent",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "aregsakanyan@gmail.com",
+   "privacy@recordsfinder.com"
+  ],
+  "text": "Skip to main content\nEnable accessibility for low vision\nOpen the accessibility menu\nHOME\nRECORDS\nCONTACT\nCUSTOMER SUPPORT\n800-433-0567\nLOGIN\nHome\nYour Privacy Choices\nYOUR PRIVACY CHOICES\n\nYou may have certain rights regarding our processing of your personal information under applicable law. If our processing of your personal information is governed by such laws, this page provides you with additional information regarding your rights related to your personal information under applicable local law.\n\nDo Not Sell or Share My Personal Information\n\nYou may have the right to opt out of the sale or",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

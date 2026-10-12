@@ -1,0 +1,28 @@
+{
+ "domain": "outwardmedia.com",
+ "name": "Outward Media, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:14.895Z",
+  "status": 200,
+  "optOutUrl": "https://outwardmedia.com/do-not-sell",
+  "title": "Outward Media Inc | B2B Email Marketing & Data Solutions",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@outwardmedia.com"
+  ],
+  "text": "404\n\nPage not found\n\nGO HOME",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

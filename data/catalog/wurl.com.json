@@ -1,0 +1,97 @@
+{
+ "domain": "wurl.com",
+ "name": "WURL, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:03.627Z",
+  "status": 404,
+  "optOutUrl": "https://www.wurl.com/;%20https:/www.wurl.com/wurl-advertising-and-media-services-privacy-notice/",
+  "title": "Page not found | Wurl",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "top-search",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-26f17dc8-d80b-4713-add3-cc7dba8b05ad",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email*",
+    "form": 2,
+    "heading": "From show to scene: Three perspectives on the future of CTV "
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "From show to scene: Three perspectives on the future of CTV "
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "solutionsTrigger",
+    "inForm": false
+   },
+   {
+    "text": "Go to Homepage",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dataprotection@wurl.com"
+  ],
+  "text": "Introducing Wurl’s Content Intelligence Platform: Context at scale \nSolutions\nResources\nCompany\nContact\nSupport\nSorry we can’t find that page\n\nCheck the URL and try again or explore how Wurl can help you with discoverability on streaming TV.\n\nWhat's new from Wurl\nSeptember 15th 2026\nIntroducing Wurl’s Content Intelligence Platform\nAugust 6th 2026\nWurl and Transmit: How in-stream advertising is creating new revenue opportunities for FAST\nJuly 21st 2026\nFrom show to scene: Three perspectives on the future of CTV contextual targeting\nGo to Homepage\nSolutions\nADVERTISING\nWurl Advertising\nSTREAMING",
+  "fingerprint": "d30d1ecb90bb27a3d3412abc7a6b1dc10327d1d332c86879e8e936a25824bd13"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

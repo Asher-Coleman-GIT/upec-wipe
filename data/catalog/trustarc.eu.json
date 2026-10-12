@@ -1,0 +1,339 @@
+{
+ "domain": "trustarc.eu",
+ "name": "Dun & Bradstreet, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:51.834Z",
+  "status": 200,
+  "optOutUrl": "https://submit-irm.trustarc.eu/services/validation/ba81b98f-997d-4216-b4cc-d64cf261b082",
+  "title": "Data Subject Request Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "00000000-0000-0000-0000-000000001001",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "00000000-0000-0000-0000-000000001004",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "00000000-0000-0000-0000-000000001005",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "bb2c6098-c9f1-41b6-9812-8779baa2a469",
+    "id": "bb2c6098-c9f1-41b6-9812-8779baa2a469checkbox",
+    "placeholder": "",
+    "aria": "Consumer Data",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "b8984796-ae55-4371-adaa-68b460b0ee86",
+    "id": "b8984796-ae55-4371-adaa-68b460b0ee86checkbox",
+    "placeholder": "",
+    "aria": "Business Data",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "361cf02f-408f-4de8-93e2-9c0486d52056",
+    "id": "361cf02f-408f-4de8-93e2-9c0486d52056checkbox",
+    "placeholder": "",
+    "aria": "Professional Contact Data",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "e5f12baa-3850-41da-9788-f3c4b4025be4",
+    "id": "e5f12baa-3850-41da-9788-f3c4b4025be4",
+    "placeholder": "",
+    "aria": "Enter Eyeota Cookie ID (optional, see details below)",
+    "label": "Eyeota Cookie ID (optional, see details below)",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "6df8cd8f-89cc-4e8d-a181-bac88ca9670b",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "00000000-0000-0000-0000-000000001002",
+    "id": "00000000-0000-0000-0000-000000001002fn",
+    "placeholder": "",
+    "aria": "Enter First / Middle Name(s)",
+    "label": "First / Middle Name(s)\n*",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "00000000-0000-0000-0000-000000001002",
+    "id": "00000000-0000-0000-0000-000000001002ln",
+    "placeholder": "",
+    "aria": "Enter Last Name",
+    "label": "Last Name\n*",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "00000000-0000-0000-0000-000000001003",
+    "id": "00000000-0000-0000-0000-000000001003",
+    "placeholder": "",
+    "aria": "Enter Email Address",
+    "label": "Email Address\n*",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "e38eb2ac-feff-4cc3-ac4d-7d7083147b75",
+    "id": "e38eb2ac-feff-4cc3-ac4d-7d7083147b75",
+    "placeholder": "",
+    "aria": "Enter Your Phone Number",
+    "label": "Your Phone Number",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "930aeb11-3a6c-43fc-b8d0-44a3a90eb9ae",
+    "id": "930aeb11-3a6c-43fc-b8d0-44a3a90eb9ae",
+    "placeholder": "",
+    "aria": "Enter Name of Company 1",
+    "label": "Name of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "a0ab26fd-f9f8-4a24-a532-46eabcebe2e8",
+    "id": "a0ab26fd-f9f8-4a24-a532-46eabcebe2e8",
+    "placeholder": "",
+    "aria": "Enter D-U-N-S Number of Company 1",
+    "label": "D-U-N-S Number of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "5701cbd9-543e-4778-ab0c-29626da175ef",
+    "id": "5701cbd9-543e-4778-ab0c-29626da175ef",
+    "placeholder": "",
+    "aria": "Enter Business Directory URL of Company 1",
+    "label": "Business Directory URL of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "e80a5caa-c42d-4a92-94cd-6fbd11706112",
+    "id": "e80a5caa-c42d-4a92-94cd-6fbd11706112",
+    "placeholder": "",
+    "aria": "Enter Your Name at Company 1",
+    "label": "Your Name at Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "b688350b-9980-4ee9-88ce-95f040ecc32c",
+    "id": "b688350b-9980-4ee9-88ce-95f040ecc32c",
+    "placeholder": "",
+    "aria": "Enter Position at Company 1",
+    "label": "Position at Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "7d9f33b8-e437-4194-9ba8-dd482afbd5e7",
+    "id": "7d9f33b8-e437-4194-9ba8-dd482afbd5e7",
+    "placeholder": "",
+    "aria": "Enter Email at Company 1",
+    "label": "Email at Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "b8d04429-eabf-435f-bac5-bc86c1baf1c7",
+    "id": "b8d04429-eabf-435f-bac5-bc86c1baf1c7",
+    "placeholder": "",
+    "aria": "Enter Phone Number at Company 1",
+    "label": "Phone Number at Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "adc89ba6-e609-4b57-933e-cf87cd0190a7",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "51f0c1ce-4a7b-4687-8812-fbfd9f8090ed",
+    "id": "51f0c1ce-4a7b-4687-8812-fbfd9f8090ed",
+    "placeholder": "",
+    "aria": "Enter Address of Company 1",
+    "label": "Address of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "237709cb-3de5-497b-8676-ddd6177e005b",
+    "id": "237709cb-3de5-497b-8676-ddd6177e005b",
+    "placeholder": "",
+    "aria": "Enter City of Company 1",
+    "label": "City of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "8f727611-ae09-4561-a64d-2ba9d597e275",
+    "id": "8f727611-ae09-4561-a64d-2ba9d597e275",
+    "placeholder": "",
+    "aria": "Enter State / Province of Company 1",
+    "label": "State / Province of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "12d111ff-621f-43a4-9d11-f77f1cd19b55",
+    "id": "12d111ff-621f-43a4-9d11-f77f1cd19b55",
+    "placeholder": "",
+    "aria": "Enter Zip / Postal Code of Company 1",
+    "label": "Zip / Postal Code of Company 1",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "417e2a98-86a8-421d-a6a3-950e853089ff",
+    "id": "417e2a98-86a8-421d-a6a3-950e853089ffcheckbox",
+    "placeholder": "",
+    "aria": "Add another company",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "d82bc180-6101-4e30-9ea9-5fd813bc5cde",
+    "id": "d82bc180-6101-4e30-9ea9-5fd813bc5cde",
+    "placeholder": "",
+    "aria": "Enter Any additional information / comments",
+    "label": "Any additional information / comments",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "598e5a26-317a-474f-863a-f822148b00da",
+    "id": "598e5a26-317a-474f-863a-f822148b00dacheckbox",
+    "placeholder": "",
+    "aria": "Disclaimer",
+    "label": "",
+    "form": 0,
+    "heading": "Data Subjects Requests (DSR) - Your Privacy Choices"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Add another Text",
+    "id": "add-more-single-line-btn",
+    "inForm": true
+   },
+   {
+    "text": "Reset",
+    "id": "ba81b98f-997d-4216-b4cc-d64cf261b082-reset",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "ba81b98f-997d-4216-b4cc-d64cf261b082-submit",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Data Subjects Requests (DSR) - Your Privacy Choices\n\nDun & Bradstreet (D&B) wishes to provide options for you to express your preferences for how we handle your personal information. Please use this form to indicate what you require. In order for us to manage your request, we need to gather certain limited information to accurately identify you in our systems. Below you will find a list of required and optional fields that will be used to initiate and process your request. More details about how and why Dun & Bradstreet processes your personal information can be found in our Privacy, Data Tran",
+  "fingerprint": "24a74bf3e9286ab09ff42721abbcb8f27a96680748849a75028e13cfc2caee2f"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

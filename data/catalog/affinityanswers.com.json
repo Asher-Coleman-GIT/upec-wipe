@@ -1,0 +1,93 @@
+{
+ "domain": "affinityanswers.com",
+ "name": "Affinity Answers Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:35.858Z",
+  "status": 200,
+  "optOutUrl": "https://www.affinityanswers.com/your-privacy-choices/",
+  "title": "Your Privacy Choices - Affinity Answers",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_4",
+    "id": "input_11_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Residency",
+    "form": 0,
+    "heading": "Your Privacy Choices",
+    "options": [
+     "--Select one--=--Select one--",
+     "European Union/European Economic Area=European Union/Europ",
+     "United Kingdom=United Kingdom",
+     "Alabama=Alabama",
+     "Alaska=Alaska",
+     "Arizona=Arizona",
+     "Arkansas=Arkansas",
+     "California=California"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_11_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email(Required)",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_submit_button_11",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_11",
+    "inForm": true
+   },
+   {
+    "text": "settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "dataprivacy@affinityanswers.com"
+  ],
+  "text": "Skip to content\nData\nResources\nAbout\nLET’S CHAT\nYour Privacy Choices\n\nCertain countries and U.S. states provide their residents with privacy rights, including the European Union/European Economic Area, the United Kingdom, California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Oregon, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Rhode Island, Tennessee, Texas, Utah, and Virginia. You can exercise these rights as detailed herein.\n\nCookies and other similar tracking technologies\n\nFor visitors to https://www.affinityanswers.com/, you may update your cookie pref",
+  "fingerprint": "25847da3a41d363b656f853a06c1fe4d153abdbbda7a50d15836b33bd6e2fba8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

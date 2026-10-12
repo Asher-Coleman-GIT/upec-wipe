@@ -1,0 +1,28 @@
+{
+ "domain": "salutarydata.com",
+ "name": "Salutary Data LLC.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:33.169Z",
+  "status": 200,
+  "optOutUrl": "https://salutarydata.com/privacy-opt-out-and-disclosure-form/",
+  "title": "Privacy Opt-Out and Disclosure Form - Salutary Data",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "privacy@salutarydata.com"
+  ],
+  "text": "\t\nHow We Do It\nDatabase\nProducts & Services\nOur Customers\nCompany\nResources\nContact Us\nSALUTARY DATA LLC.\nCalifornia Consumer Notice of Right to Opt-out of Sale/Sharing of Personal Information\n\nCalifornia residents have the right, at any time, to direct Salutary Data not to sell or share their Personal Information.\n\nIf you wish to exercise your right to opt-out of the sale and/or sharing of your Personal Information, please provide your name, work email address, current employer name, and employer address in the form below. We will use this information to search our systems and exclude your pe",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

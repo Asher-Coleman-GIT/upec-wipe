@@ -1,0 +1,149 @@
+{
+ "domain": "urbanscience.com",
+ "name": "Urban Science Applications, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:00.464Z",
+  "status": 200,
+  "optOutUrl": "https://www.urbanscience.com/opt-out/",
+  "title": "Opt-Out - Urban Science",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "address-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street address",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "State/Region",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "0-2/billing_zip_postal_code",
+    "id": "0-2/billing_zip_postal_code-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip/Postal Code",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "phone-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.subscription_type_364487719",
+    "id": "LEGAL_CONSENT.subscription_type_364487719-7f593409-acf6-4409-b38f-1926e3f2976b",
+    "placeholder": "",
+    "aria": "",
+    "label": "By submitting this form, you consent to receive communicatio",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY PERSONAL INFORMATION"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "hs_show_banner_button",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "usdatabroker@urbanscience.com"
+  ],
+  "text": "SKIP TO CONTENT\nSOLUTIONS RESOURCES NEWSROOM ABOUT US CAREERS EVENTS\nEN\nUSA\n \n    \n\nDO NOT SELL OR SHARE MY PERSONAL INFORMATION\n\nCalifornia provides residents with the right to opt out of the “selling” or “sharing” of their personal information.\n\n“Sell,” “selling,” “sale,” or “sold,” means selling, renting, releasing, disclosing, disseminating, making available, transferring, or otherwise communicating orally, in writing, or by electronic or other means, a consumer’s personal information by a business to a third party for monetary or other valuable consideration.\n“Share,” “shared,” or “sharin",
+  "fingerprint": "9be779e8ae7959661670a4027da13a6ab939980b2f0e08cacf4671d9d86d14ab"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

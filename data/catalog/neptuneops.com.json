@@ -1,0 +1,35 @@
+{
+ "domain": "neptuneops.com",
+ "name": "Neptune Ops LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "neptuneaii.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:19:40.116Z",
+  "status": 200,
+  "optOutUrl": "https://neptuneaii.com/legal/privacy-policy",
+  "title": "Neptune Ops Privacy and Data Policy | NeptuneOps AI-I",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Your Privacy Choices",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "miller@neptuneops.com"
+  ],
+  "text": "← Back to Home\nNeptune Ops Privacy and Data Policy\n\nUpdated April 27, 2026\n\nThis Privacy & Data Policy explains how Neptune Ops (\"Neptune Ops,\" \"we,\" \"us,\" or \"our\") collects, uses, discloses, and safeguards personal information when consumers use the Neptune Ops AI-I Advanced Influencer Intelligence™ platform (the \"proprietary platform\") or visit our websites including www.neptuneops.com and www.neptuneaii.com. It is intended to satisfy applicable laws, including the California Consumer Privacy Act as amended by the California Privacy Rights Act (\"CCPA/CPRA\") and, where relevant, the EU/UK GD",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

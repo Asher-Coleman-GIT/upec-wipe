@@ -1,0 +1,37 @@
+{
+ "domain": "mailinglists.com",
+ "name": "Infinite Media Concepts Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:12.562Z",
+  "status": 200,
+  "optOutUrl": "https://mailinglists.com/privacy-policy/privacy-metrics",
+  "title": "Privacy Policy | Mailinglists.com",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "hs-eu-confirmation-button",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "unsubscribe@mailinglists.com",
+   "privacy@mailinglists.com"
+  ],
+  "text": "Existing customer? Login here to run counts or place orders\n\nData\nIndustries\nData Solutions\nResources\nAbout\nContact Us\nData Cards\nPrivacy Policy\n\nInfinite Media Concepts, Inc. (d/b/a MailingLists.com) Privacy Policy \n\nEffective Date: November 4, 2025 | Last Updated: July 1, 2026 \n\n \n\nInfinite Media Concepts, Inc. (d/b/a MailingLists.com) and its domains and subsidiaries, including mailinglists.com, Infinite-Media.com, MailingListsXPRESS, and MailingListsXPRESS/UK, provide clients with a wide variety of data services. These services help our clients and partners reach their target audiences and",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed",
+  "groupOverride": "business",
+  "note": "Marketing list broker; privacy form is a HubSpot form."
+ }
+}

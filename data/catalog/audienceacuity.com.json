@@ -1,0 +1,155 @@
+{
+ "domain": "audienceacuity.com",
+ "name": "Audience Acuity LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:21.312Z",
+  "status": 200,
+  "optOutUrl": "https://optout.audienceacuity.com/",
+  "title": "- Audience Acuity Opt-Out",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "first_name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "last_name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email (Required)",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "street_address",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "address_line_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "city",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "Opt-Out of Sale",
+    "options": [
+     "=Select State",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "zip_code",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP Code",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "individual_level",
+    "placeholder": "",
+    "aria": "",
+    "label": "Individual Level",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "household_level",
+    "placeholder": "",
+    "aria": "",
+    "label": "Household Level",
+    "form": 0,
+    "heading": "Opt-Out of Sale"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@audienceacuity.com"
+  ],
+  "text": "Contact\nOpt-Out\n\nAudience Acuity Privacy and Data Opt-Out\n\nAudience Acuity provides the industry's most accurate data, aggregated and validated through a series of rigorous processes. We use only information acquired permissibly from reliable sources, and we comply with all applicable federal and state data privacy laws. Along with respecting your privacy, Audience Acuity respects your right to opt-out of receiving marketing messages from businesses.\n\nIf you are a resident from any state of the United States please fill out the form below.\n\nIf you are a California resident and you want to exer",
+  "fingerprint": "23f4159587c52622776ddb4886567b7285ed198e3a27bbafca125bc257fc1290"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

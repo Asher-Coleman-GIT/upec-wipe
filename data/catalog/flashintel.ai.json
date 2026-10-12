@@ -1,0 +1,36 @@
+{
+ "domain": "flashintel.ai",
+ "name": "FlashIntel",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:35.182Z",
+  "status": 200,
+  "optOutUrl": "https://www.flashlabs.ai/privacy-statement-us",
+  "title": "Privacy Statement (US) - FlashLabs",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Talk to Human",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Manage Cookie Consent\nTo provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.\nAccept\nOpt-out preferences\nPrivacy Statement\nImprint\nFlashLabs\nSolutions\nResources\nPricing\nLog in\nTalk to Human\n\nHomePrivacy Statement (US)\n\nPrivacy Statement (US)\n\nThis privacy statement was last changed on 2025-12-16, last checked on 2025-12-16, and applies ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

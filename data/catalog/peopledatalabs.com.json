@@ -1,0 +1,154 @@
+{
+ "domain": "peopledatalabs.com",
+ "name": "People Data Labs, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:47.412Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.peopledatalabs.com/policies?name=privacy-center#people-data-labs-privacy-center",
+  "title": "People Data Labs Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "View Past Requests",
+    "id": "request-history",
+    "inForm": false
+   },
+   {
+    "text": "Make a Privacy Request",
+    "id": "modal-select-requester",
+    "inForm": false
+   },
+   {
+    "text": "Policies & Terms",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Request Forms",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Other Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Questions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "1. Scope",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "2. Personal Information We Collect",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "3. Sensitive Personal Information and Sp",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "4. How We Use Personal Information",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "5. Disclosure of Personal Information & ",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "6. Sale, Sharing, and Targeted Advertisi",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "7. Cookies and Similar Technologies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "8. Security",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "9. Data Retention",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "10. Your Privacy Rights and Choices in C",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "11. California Privacy Notice",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "12. Information for Texas Residents",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "13. EU/UK Privacy Contacts, Representati",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "14. International Transfers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "15. Children's Privacy",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "16. Data Privacy Framework",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "17. Changes to this Privacy Policy",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "18. Our Contact Information",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "1. Ordering and Subscription Period",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@peopledatalabs.com"
+  ],
+  "text": "Skip to navigation\nSkip to sidebar\nSkip to main content\nOur Policies\nTracking Technologies\nView Past Requests\nMake a Privacy Request\nPrivacy Center\nPolicies & Terms\nRequest Forms\nOther Resources\nQuestions\nPrivacy Policy\n1. Scope\n2. Personal Information We Collect\n3. Sensitive Personal Information and Special Category Data\n4. How We Use Personal Information\n5. Disclosure of Personal Information & Recipients\n6. Sale, Sharing, and Targeted Advertising\n7. Cookies and Similar Technologies\n8. Security\n9. Data Retention\n10. Your Privacy Rights and Choices in Certain U.S. States and in Europe\n11. Cali",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

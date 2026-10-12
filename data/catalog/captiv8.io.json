@@ -1,0 +1,138 @@
+{
+ "domain": "captiv8.io",
+ "name": "Captiv8 Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:13.205Z",
+  "status": 200,
+  "optOutUrl": "https://captiv8.io/policy/opt-out/",
+  "title": "Your Privacy Rights - Captiv8",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "do_not_sell_or_share_my_personal_information",
+    "id": "do_not_sell_or_share_my_personal_information-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell or share my personal information",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "opt_out_of_sharing_or_processing_of_my_sensitive_personal_information",
+    "id": "opt_out_of_sharing_or_processing_of_my_sensitive_personal_information-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out of sharing or processing of my sensitive personal in",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "phone-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone number",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "",
+    "aria": "",
+    "label": "State/Region",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "social_media_platform",
+    "id": "social_media_platform-54f3a09e-1035-423e-af01-ec89cfe1bb2d",
+    "placeholder": "E.g. https://www.tiktok.com/@jane",
+    "aria": "",
+    "label": "Social Media Platform*",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Privacy\nRights"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Sign Up",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@captiv8.io"
+  ],
+  "text": "Products\nUnique Solutions\nResources\nSign In\nSign Up\nYour Privacy\nRights\nSeveral U.S. State Privacy Laws require Captiv8 to allow individuals to opt-out of future sales or sharing of their personal information by submitting a Do Not Sell or Share My Personal Information request. You can learn more about those specific laws and your rights in our Privacy Policy\nDo not sell or share my personal information\nIf we have collected your sensitive personal information and you are located in California, you may have the right to ask us not to share such information with certain third parties or to other",
+  "fingerprint": "db4297021b08950b031190475956c2e752a78719af10613fe8db394ca19db11e"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

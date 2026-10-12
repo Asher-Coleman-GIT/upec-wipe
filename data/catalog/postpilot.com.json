@@ -1,0 +1,29 @@
+{
+ "domain": "postpilot.com",
+ "name": "PostPilot, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:29.298Z",
+  "status": 200,
+  "optOutUrl": "https://www.postpilot.com/opt-out-of-mailings-form",
+  "title": "Privacy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "operations@postpilot.com",
+   "privacy@postpilot.com"
+  ],
+  "text": "THE EXPERIENCE\nPLATFORM\nSUCCESS STORIES\nRESOURCES\nPRICING\nBFCM PORTAL\nLOGIN\nBOOK A DEMO\nPrivacy Notice\nLast Modified: 5 June 2024\n\nThis Privacy Notice explains how PostPilot,Inc. and its affiliates (collectively, “PostPilot”, “we”, “us”or “our”)  collects, uses, shares, and otherwise processes personal information in connection with our websites, including https://www.postpilot.com or https://app.postpilot.com/signup and other websites we own and operate that link to this Privacy Notice (the “Sites”), and the related content, platforms, services, products, and other functionality offered on or",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "domain": "quorum.inc",
+ "name": "Quorum Data, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:22.296Z",
+  "status": 200,
+  "optOutUrl": "https://app.quorum.live/privacy",
+  "title": "Privacy Policy - Quorum",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "ezra@quorum.inc",
+   "privacy@quorum.inc"
+  ],
+  "text": "DOCS\nPRIVACY\nTERMS\nCONTACT\nPrivacy Policy\nEffective: March 27, 2026 · Quorum Data, Inc.\n\nQuorum Data, Inc. (\"Quorum,\" \"we,\" \"us,\" or \"our\") operates quorum.inc, quorum.works, and related services, APIs, and platforms (collectively, the \"Services\"). This Privacy Policy describes how we collect, use, disclose, retain, and protect information when you use our Services, advertising platform, and audience intelligence tools.\n\nBy using the Services, you agree to the collection and use of information as described in this policy. If you do not agree, please discontinue use of the Services.\n\n1. Informa",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

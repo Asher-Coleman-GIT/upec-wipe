@@ -1,0 +1,28 @@
+{
+ "domain": "captifytechnologies.com",
+ "name": "Captify Technologies",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:09.406Z",
+  "status": 200,
+  "optOutUrl": "https://captifytechnologies.com/data-subject-rights-request/",
+  "title": "Data Subject Rights Request - Captify Technologies",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal-captify@verve.com"
+  ],
+  "text": "Search Intelligence\nFor Advertisers\nFor Publishers\nResources\nAbout\nRequest a demo\n\nHome » Data Subject Rights Request\n\nData Subject Rights Request\n\nDATA SUBJECT RIGHTS/ DO NOT SELL OR SHARE MY PERSONAL INFORMATION\n\nCaptify is committed to ensuring that your privacy is protected.\n\nTo submit a request, e.g. in particular to receive a COPY of your personal information (i.e. to exercise your right of access) or to DELETE your information (i.e. to exercise your right to erasure), please send an email to [email] stating:\n\nwhich request you are making (such as COPY, DELETE or COPY",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

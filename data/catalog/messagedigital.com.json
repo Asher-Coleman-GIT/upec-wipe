@@ -1,0 +1,34 @@
+{
+ "domain": "messagedigital.com",
+ "name": "Message Digital LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:42.356Z",
+  "status": 200,
+  "optOutUrl": "https://www.messagedigital.com/my-data",
+  "title": "Your Privacy Choices | Message Digital",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "LEARN MORE",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@messagedigital.com"
+  ],
+  "text": "SKIP TO MAIN CONTENT\nOUR SOLUTIONS\nWHO WE ARE\nRESOURCES\nJOBS\nLEARN MORE\nYour Privacy Choices\nOur Solutions\n \nWho We Are\n \nJobs\n \nLearn More\n© 2026 Message Digital LLC  •  Privacy Policy  •  Data Protection  •  Your Privacy Choices",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

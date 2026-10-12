@@ -1,0 +1,21 @@
+{
+ "domain": "crosspixel.net",
+ "name": "Cross Pixel Media, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "crsspxl.com"
+ ],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:19.945Z",
+  "contacts": [
+   "privacy@rbarrel.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://privacy.crsspxl.com/;%20https://crosspixel.net/privacy-policy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

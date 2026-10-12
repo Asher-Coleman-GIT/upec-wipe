@@ -1,0 +1,66 @@
+{
+ "domain": "grin.co",
+ "name": "GRIN Technologies Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:10.742Z",
+  "status": 200,
+  "optOutUrl": "https://grin.co/privacy/",
+  "title": "Privacy Policy Landing Page - GRIN - Influencer Marketing Software",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-0713e698-2689-4e8a-9737-1e0dab734525_hs-form-0",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Work email*",
+    "form": 0,
+    "heading": "SUBSCRIBE TO GRIN'S NEWSLETTER"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "SUBSCRIBE TO GRIN'S NEWSLETTER"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyButtonAccept",
+    "inForm": false
+   },
+   {
+    "text": "All Legal\n▼",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@grin.co"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nShow details\nAllow all\nProducts\nCreator Discovery\nSocial Listening\nContent Management\nRelationship Management\nSoftware Integrations\nReporting & Analytics\nCreator Payments\nBuilt for Brands to automate their creator programs.\nG",
+  "fingerprint": "ac7c686ad206205128ca123531b1822692d5e5ee241147b548aadb1c6c1397be"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

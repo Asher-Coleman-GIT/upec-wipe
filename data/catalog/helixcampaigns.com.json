@@ -1,0 +1,28 @@
+{
+ "domain": "helixcampaigns.com",
+ "name": "Helix Campaigns LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:11.272Z",
+  "status": 200,
+  "optOutUrl": "https://www.helixcampaigns.com/privacy/",
+  "title": "Privacy Policy — Helix Campaigns",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "info@helixcampaigns.com"
+  ],
+  "text": "Privacy Policy\n\nLast modified: July 1, 2026\n\nIntroduction\n\nThis Privacy Policy (the “Policy”) describes how Helix Campaigns LLC (“Helix,” “we,” “our,” or “us”) collects, stores, uses, discloses, sells, or otherwise processes personal information, including when we: (1) operate our website at www.helixcampaigns.com (our “Website”) and (2) market, sell, and provide our fundraising and campaign services, products, donor databases, and tools (collectively, the “Services”). This Policy addresses specific disclosure requirements from various privacy laws and also serves as our ‘notice at collection.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

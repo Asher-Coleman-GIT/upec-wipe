@@ -1,0 +1,48 @@
+{
+ "domain": "podscribe.com",
+ "name": "Podible Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:57.052Z",
+  "status": 200,
+  "optOutUrl": "https://podscribe.com/privacy",
+  "title": "Privacy Policy — Podscribe",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industry Ranker",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@podscribe.com"
+  ],
+  "text": "By using this website, you agree to our use of cookies. We use cookies to provide you with a great experience and to help our website run effectively.\n\nAccept\n\nRequest our Q3 2026 PPB report to get the latest podcast & streaming ad trends. »\n\nSkip to Content\nIndustry Ranker\nBenchmark Report\nSolutions\nResources\nSign Up/Log In\nGet a Demo\n\nPrivacy Policy\n\nLast updated: April 14, 2025\n\nFor our Terms and Conditions, please click here. \n\nThis Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from podscribe.com (the “Site”).\n\nPerso",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

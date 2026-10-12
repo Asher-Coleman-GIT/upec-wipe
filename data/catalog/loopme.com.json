@@ -1,0 +1,58 @@
+{
+ "domain": "loopme.com",
+ "name": "LoopMe Limited",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "loopme.ai"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:24.606Z",
+  "status": 200,
+  "optOutUrl": "https://legal.loopme.com/privacy-center/loopme-opt-out",
+  "title": "LoopMe Privacy Notice for Advertising Technology Services",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "versionDropdown",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "",
+    "options": [
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice=Version 6.7 (Current",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.6=Version 6.6",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.5=Version 6.5",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.4=Version 6.4",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.3=Version 6.3",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.2=Version 6.2",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.1=Version 6.1",
+     "https://legal.loopme.com/privacy-center/loopme-privacy-notice?v=6.0=Version 6.0"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Download",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@loopme.com"
+  ],
+  "text": "Privacy Centre\nLoopMe Privacy Notice for Advertising Technology Services\nLoopMe Opt Out\nRecruitment Privacy Notice\nLoopMe Cookie Policy\nLoopMe Privacy Policy for Website Users and Customers\nVersion 6.7 (Current)\nVersion 6.6\nVersion 6.5\nVersion 6.4\nVersion 6.3\nVersion 6.2\nVersion 6.1\nVersion 6.0\nVersion 5.3\nVersion 5.2\nVersion 5.1\nVersion 5.0\nVersion 4.0\nVersion 3.0\nVersion 2.0\nVersion 1.0\nDownload\nLoopMe Privacy Notice \n\n \nUpdated on 17 September 2026\n\nLoopMe Privacy Notice\n\nLoopMe is committed to protecting consumer privacy and respecting your right to choice as it relates to advertising and ",
+  "fingerprint": "eab6e80a2d61ca17614368bc4b92db70339ef24add64ecfbd859f68a601e3c01"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

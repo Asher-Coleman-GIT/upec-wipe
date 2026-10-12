@@ -1,0 +1,17 @@
+{
+ "domain": "rooftopdigital.com",
+ "name": "Rooftop Digital, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:40.739Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.rooftopdigital.com/privacy-policy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

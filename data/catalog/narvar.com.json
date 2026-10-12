@@ -1,0 +1,28 @@
+{
+ "domain": "narvar.com",
+ "name": "Narvar, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:57.216Z",
+  "status": 200,
+  "optOutUrl": "https://corp.narvar.com/legal/privacy-policy",
+  "title": "Narvar Data Privacy | Policy & Practices",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@narvar.com"
+  ],
+  "text": "Narvar Agentic\nProducts\nPRODUCTS\nPromise\n\nAI-powered delivery date estimates to boost conversion\n\nSecure\n\nGive shoppers peace of mind and protect and grow your bottom line\n\nTrack\n\nPersonalized tracking experiences to build brand loyalty\n\nShield\n\nReturns and exchanges  management to mitigate fraud and reward best customers\n\nNotify\n\nProactive communication to drive customer lifetime value\n\nAssist\n\nDelivery claim management to tackle fraud and build trust\n\nIntelligent Retail Insights Service (IRIS™)\n\nTransform 74B+ interactions into insights that personalize, optimize, and protect.\n\nMeet IRIS™\nSo",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

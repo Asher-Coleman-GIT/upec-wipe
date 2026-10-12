@@ -1,0 +1,91 @@
+{
+ "domain": "dice.com",
+ "name": "Dice Career Solutions, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:05.489Z",
+  "status": 200,
+  "optOutUrl": "https://www.dice.com/about/ccpa",
+  "title": "CCPA",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "name",
+    "id": "name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Name (required)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email (required)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "description",
+    "id": "radio-description-access",
+    "placeholder": "",
+    "aria": "",
+    "label": "I wish to access any of my data you and your third-party pro",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "description",
+    "id": "radio-description-optout",
+    "placeholder": "",
+    "aria": "",
+    "label": "I wish to Opt-out of the sale of my personal information to ",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "description",
+    "id": "radio-description-delete",
+    "placeholder": "",
+    "aria": "",
+    "label": "I wish to have all of my personal information DELETED from y",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "support@dice.com",
+   "privacy@dice.com"
+  ],
+  "text": "Exercising Your Rights\n\nIn order to exercise your privacy rights as described in our Privacy Policy (including rights provided to residents of California, Colorado, Connecticut, Utah, Virginia, Montana, Delaware, Iowa, Nebraska, New Hampshire and New Jersey by applicable law), please complete and submit the form below.\n\nName (required)\nEmail (required)\nPlease indicate whether you wish to:\nI wish to access any of my data you and your third-party providers have in accordance with my rights as outlined in the Privacy Policy.\nI wish to Opt-out of the sale of my personal information to third-partie",
+  "fingerprint": "6a779dda7f6915635b84923f8704a97491796608eb7285dea45a3ae4a7e89728"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

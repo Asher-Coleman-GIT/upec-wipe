@@ -1,0 +1,135 @@
+{
+ "domain": "mydataprivacy.com",
+ "name": "The Alesco Group LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:41.218Z",
+  "status": 200,
+  "optOutUrl": "https://www.mydataprivacy.com/upload-csv",
+  "title": "My Data Privacy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "nest-messages_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address",
+    "form": 0,
+    "heading": "Are You in Our Database?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstName",
+    "placeholder": "First Name *",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Are You in Our Database?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastName",
+    "placeholder": "Last Name *",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Are You in Our Database?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "email",
+    "placeholder": "Email Address *",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Are You in Our Database?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Phone Number",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Are You in Our Database?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "company",
+    "placeholder": "Company Name",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Are You in Our Database?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "MY DATA PRIVACY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "LOGIN",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SEARCH",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "TRY IT FREE FOR 30 DAYS!",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SCHEDULE A DEMO",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "DOWNLOAD",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "LEARN MORE",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@mydataprivacy.com"
+  ],
+  "text": "MY DATA PRIVACY\n 866.652.5003\nLOGIN\n\nTURNKEY CCPA COMPLIANCE\n\nMy Data Privacy covers each compliance item of the CCPA and more.\n\nOur robust and effective solution is perfect for list owners, compilers and mailers.\n\nSCHEDULE DEMO\nAre You in Our Database?\nWhat do list owners know about me?\nFor what business purpose was my personal information sold?\nCan I opt-out or have my information deleted?\n\nmyDataPrivacy.com makes it safe to know what participating list owners know about you. Search our database by entering your email address or name and postal address. If your name is found in the database,",
+  "fingerprint": "e4b90e58e28a6b1da342f142f1205e679d00e3c4dcdffd1f3719b562fda3a103"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

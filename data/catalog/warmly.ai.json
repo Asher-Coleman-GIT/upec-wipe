@@ -1,0 +1,34 @@
+{
+ "domain": "warmly.ai",
+ "name": "Warmly, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:00.872Z",
+  "status": 200,
+  "optOutUrl": "https://www.warmly.ai/p/privacy-policy#your-choices",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@warmly.ai"
+  ],
+  "text": "Products\nSolutions\nWarmLegency\nResources\nCustomers\nPricing\nPartners\nLog In\nBook a Demo\nWarmly Privacy Policy\n\nLast updated: July 12, 2025\n\nWelcome to the Privacy Policy of Warmly, Inc. (together with its affiliates and subsidiaries, “Warmly”, “we”, “us”, or “our”).\n\nAs a data-driven company, we care deeply about privacy and data security. We may update this Privacy Policy from time to time. If we do, we will update the “last updated” date at the top of the page. In some cases, we may notify you about an update by sending an email to your registered email address, by prominently posting a notic",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

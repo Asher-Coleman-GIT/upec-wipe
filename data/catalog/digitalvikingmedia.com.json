@@ -1,0 +1,30 @@
+{
+ "domain": "digitalvikingmedia.com",
+ "name": "Digital Viking Media Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:14.921Z",
+  "status": 200,
+  "optOutUrl": "https://www.digitalvikingmedia.com/privacy-policy",
+  "title": "Privacy Policy | Digital Viking Media",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@digitalvikingmedia.com",
+   "optout@digitalvikingmedia.com",
+   "info@digitalvikingmedia.com"
+  ],
+  "text": "Skip to Main Content\n\nHome\n\nAbout Us\n\nOur Team\n\nContact\n\nPrivacy Policy\n\nPrivacy Policy\n\nLAST UPDATED: Oct 15, 2024\n\n \n\nThank you for visiting the Digital Viking Media Inc. website located at www.digitalvikingmedia.com (hereinafter the “Site“). The Site is an Internet property of Digital Viking Media Corp. (“Company,” “we,” “our” or “us“). This Digital Viking Media Inc. Privacy Policy (“Privacy Policy“) covers our treatment of personal information and other information that we collect when an end-user visitor to the Site (“User,\" “you\" or “your\"): (a) accesses or uses the Site; (b) accesses an",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

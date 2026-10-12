@@ -1,0 +1,19 @@
+{
+ "domain": "datadesk.io",
+ "name": "Datadesk Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:44.874Z",
+  "contacts": [
+   "privacy@datadesk.io"
+  ],
+  "error": "page.goto: Timeout 25000ms exceeded."
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

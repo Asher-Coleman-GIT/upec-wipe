@@ -1,0 +1,119 @@
+{
+ "domain": "eprodirect.com",
+ "name": "EproDirect LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:01.125Z",
+  "status": 200,
+  "optOutUrl": "https://www.eprodirect.com/do-not-sell-my-personal-information/",
+  "title": "CCPA | EproDirect",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "wpforms[fields][8][]",
+    "id": "wpforms-208196-field_8_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please do not sell my personal information, however, please ",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][2]",
+    "id": "wpforms-208196-field_2",
+    "placeholder": "Email (required)",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][7][address1]",
+    "id": "wpforms-208196-field_7",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 1",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][7][address2]",
+    "id": "wpforms-208196-field_7-address2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][7][city]",
+    "id": "wpforms-208196-field_7-city",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "wpforms[fields][7][state]",
+    "id": "wpforms-208196-field_7-state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION",
+    "options": [
+     "=--- Select state ---",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][7][postal]",
+    "id": "wpforms-208196-field_7-postal",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip Code",
+    "form": 0,
+    "heading": "DO NOT SELL MY INFORMATION"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "DO NOT SELL MY PERSONAL INFORMATION",
+    "id": "wpforms-submit-208196",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": " \nHome\n \nSolutions\n \nClient Showcase\n \nMeeting Planners\n \nContact Us\nDO NOT SELL MY INFORMATION\nDO NOT SELL MY INFORMATION\n\nCalifornia Residents may use this form to exercise their CCPA rights: opt-out of sale/rental; access your information; and delete your information.\nIf you are a resident of California, and you want to submit a request to EproDirect under the California Consumer Privacy Act (CCPA), please fill out the webform below.\n\nSale/Rent: California residents have the right to opt-out of the “Sale or Rental” of their personal information. California defines the term “Sale” broadly, a",
+  "fingerprint": "3959251cf9c8bdd2e95464849e915adbafcf3f1c2c6d924be333459c043aa112"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

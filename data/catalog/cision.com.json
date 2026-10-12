@@ -1,0 +1,29 @@
+{
+ "domain": "cision.com",
+ "name": "Cision",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "dporganizer.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:31.915Z",
+  "status": 200,
+  "optOutUrl": "https://portals.dporganizer.com/fa778b0e-817f-4c96-b13d-e2b614470033",
+  "title": "Portal - DPOrganizer",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "dpo@cision.com"
+  ],
+  "text": "This page is no longer available",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

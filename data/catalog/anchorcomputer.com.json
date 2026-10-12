@@ -1,0 +1,220 @@
+{
+ "domain": "anchorcomputer.com",
+ "name": "Anchor Computer Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:12.901Z",
+  "status": 200,
+  "optOutUrl": "https://ecom2.anchorcomputer.com/privacyrequest",
+  "title": "Anchor Computer, Inc. -",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "FirstName",
+    "id": "FirstName",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "LastName",
+    "id": "LastName",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Suffix",
+    "id": "Suffix",
+    "placeholder": "",
+    "aria": "",
+    "label": "Suffix",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address1",
+    "id": "Address1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 1 *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address2",
+    "id": "Address2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "City",
+    "id": "City",
+    "placeholder": "",
+    "aria": "",
+    "label": "City *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "State",
+    "id": "State",
+    "placeholder": "",
+    "aria": "",
+    "label": "State *",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=Choose a state",
+     "AL=AL - Alabama",
+     "AK=AK - Alaska",
+     "AB=AB - Alberta",
+     "AS=AS - American Samoa",
+     "AZ=AZ - Arizona",
+     "AR=AR - Arkansas",
+     "AA=AA - Armed Forces Am"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Zip",
+    "id": "Zip",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip Code *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "SsnLastFour",
+    "id": "SsnLastFour",
+    "placeholder": "",
+    "aria": "",
+    "label": "SSN (last 4 digits)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "date",
+    "name": "DateOfBirth",
+    "id": "DateOfBirth",
+    "placeholder": "MM/DD/YYYY",
+    "aria": "",
+    "label": "Date of Birth *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "PhoneNumber",
+    "id": "PhoneNumber",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone Number *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "Email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "RequestReport",
+    "id": "RequestReport",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request full report (CA residents only)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "RequestDelete",
+    "id": "RequestDelete",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete my data (Delete any data found)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "RequestDoNotSell",
+    "id": "RequestDoNotSell",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell my data (Keep data, but mark as do not sell)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacyteam@anchorcomputer.com"
+  ],
+  "text": "Individual Consumer Opt-Out Submission Form:\n\nThis page is intended to allow individual consumer opt-out submissions. We are committed to upholding the highest standards of data privacy and respecting the rights of individual consumers.\n\nYou can opt-out of the sale of your personal information by Anchor Computer, Inc, as defined by California (CCPA).\n\nAnchor Computer, Inc is registered as a data broker in the following required states: California, Vermont, Oregon and Texas. If you are a consumer and have questions or concerns about Anchor’s privacy efforts, please contact us at:\n\nEmail: privac",
+  "fingerprint": "07f9559e935059b47c8a2505675e9c3f2b04745c2689afdaec7281cf002de5ad"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

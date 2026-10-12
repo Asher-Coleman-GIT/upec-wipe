@@ -1,0 +1,103 @@
+{
+ "domain": "tl1mkt.com",
+ "name": "THE LINEA 1 MKT SL",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:11.375Z",
+  "status": 200,
+  "optOutUrl": "https://www.tl1mkt.com/",
+  "title": "TL1 — Audience data across markets, devices and channels",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "name",
+    "placeholder": "Jane Doe",
+    "aria": "",
+    "label": "NAME",
+    "form": 0,
+    "heading": "Let’s find the right audience for your campaign."
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "email",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "WORK EMAIL",
+    "form": 0,
+    "heading": "Let’s find the right audience for your campaign."
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "message",
+    "placeholder": "Target market, audience, campaign objective…",
+    "aria": "",
+    "label": "MESSAGE (OPTIONAL)",
+    "form": 0,
+    "heading": "Let’s find the right audience for your campaign."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "consent",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to the processing of my personal data by TL1MKT SL f",
+    "form": 0,
+    "heading": "Let’s find the right audience for your campaign."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "ccc-notify-accept",
+    "inForm": false
+   },
+   {
+    "text": "Reject",
+    "id": "ccc-notify-reject",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "ccc-notify-dismiss",
+    "inForm": false
+   },
+   {
+    "text": "Talk to us\n→",
+    "id": "cta-submit",
+    "inForm": true
+   },
+   {
+    "text": "Cookies",
+    "id": "cookie-btn",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "fran@tl1mkt.com"
+  ],
+  "text": "Your choice regarding cookies on this site\n\nWe use cookies to improve your experience. For full details see our Privacy Policy.\n\nAcceptRejectCookie Preferences\nAudiences\nSolutions\nUS Hispanic\nHow It Works\nAbout TL1\nContact\nGet Audience Data\n→\nGLOBAL COVERAGE · PROGRAMMATIC-READY AUDIENCES\nReach your audiences across markets, devices and channels\n\nFrom demographics and interests to specialist datasets such as US Hispanic audiences, we help brands, agencies and media platforms identify and activate the right audiences at scale.\n\nExplore Our Audiences\n→\n150+\nMarkets\n70+\nChannels\n24h\nAI custom aud",
+  "fingerprint": "e70ad87538a9f09487d644d44e536c4059a988a022a87b5ed01dffaf17c9f431"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

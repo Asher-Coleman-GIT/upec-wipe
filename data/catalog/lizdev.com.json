@@ -1,0 +1,28 @@
+{
+ "domain": "lizdev.com",
+ "name": "LIZDEV INC.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:12.588Z",
+  "status": 200,
+  "optOutUrl": "https://lizdev.com/",
+  "title": "LizDev, Inc – Digital Marketing",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacyanddatacompliancereview@lizdev.com"
+  ],
+  "text": "What We Do\n\nAt LizDev, we are a specialized digital advertising company providing end-to-end advertising services for businesses seeking measurable growth through paid digital media.\n\nOur core services include digital advertising campaign execution, paid media management, and performance optimization across major online platforms. We plan, launch, manage, and optimize advertising campaigns designed to increase brand visibility, drive targeted traffic, and generate customer acquisition opportunities for our clients. We support our advertising services with performance tracking and campaign anal",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

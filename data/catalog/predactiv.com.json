@@ -1,0 +1,39 @@
+{
+ "domain": "predactiv.com",
+ "name": "Predactiv",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:40.736Z",
+  "status": 200,
+  "optOutUrl": "https://predactiv.com/privacy-policy/",
+  "title": "Privacy Policy - Predactiv",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "search-input",
+    "placeholder": "Type and hit enter",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@predactiv.com"
+  ],
+  "text": "Platform\nThe Predactiv Data Platform\nPeople Model\nPredactiv Data\nPredactiv Technology\nPrivacy & Security\nIdentity Infrastructure\nMCP Server + API\nSolutions\nContextual Solutions\nPurchase-Based Solutions\nPredictors\nInterest & Intent Solutions\nDemographics\nReal-Time Data Feeds\nCompany\nCompany\nLeadership\nNews\nCareers\nResources\nBlog\nCase Studies\nEvents\nContact Us\nPrivacy Policy\n\nPredactiv, Inc. and its U.S. based affiliate ShareThis (“Predactiv”, “we”, “us” or “our”) takes privacy seriously. We’re dedicated to making digital data more valuable to all types of companies and organizations. We compile",
+  "fingerprint": "d66fe4f160b46a935e679d1a95259a4740097a0d05b82175e76e88679fc1c899"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

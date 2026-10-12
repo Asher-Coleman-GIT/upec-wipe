@@ -1,0 +1,104 @@
+{
+ "domain": "dtn.com",
+ "name": "DTN, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:13.714Z",
+  "status": 200,
+  "optOutUrl": "https://www.dtn.com/do-not-sell-my-information-form/",
+  "title": "Do Not Sell My Information Form - DTN",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "",
+    "placeholder": "",
+    "aria": "Search",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "s",
+    "placeholder": "Search …",
+    "aria": "",
+    "label": "Search",
+    "form": 1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "submit",
+    "id": "searchsubmit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "searchsubmit",
+    "inForm": true
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "legal@dtn.com"
+  ],
+  "text": "  \nIndustries\nProducts\nAgriculture\nAg Hub\nFarm IntelligenceNew\nGrain IntelligenceNew\nGrain DiscoveryNew\nAgribusiness\nEcoField™ data\nAgTarget\nClearAg®\nContent Services\nFarmMarket data\nGrain Portal\nMyDTN\nProgressive Farmer Advertising\nProphetX®\nProducer\nInstant Market®\nIQFeed®\nMyDTN\nProgressive Farmer Subscription\nProphetX®\nAviation\nAirlines\nAviationSentry Airline Edition\nEnhanced Flight Hazards\nFlight Route Alerting\nMet Consulting\nAirport Operations\nMetConsole ATIS\nMetConsole AWOS\nMetConsole LiWAS\nMetConsole LLWAS\nMetConsole RCIS\nMet Consulting\nRisk Communicator\nRunwayMaster\nWeatherSentry® Airp",
+  "fingerprint": "f06ad0597e78bcbb1eda1bed475ede0e39affb877cd46bbf9eac7fa25abed06b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

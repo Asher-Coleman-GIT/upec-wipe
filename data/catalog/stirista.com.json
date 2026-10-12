@@ -1,0 +1,78 @@
+{
+ "domain": "stirista.com",
+ "name": "Stirista, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:14.384Z",
+  "status": 200,
+  "optOutUrl": "https://www.stirista.com/privacy-policy/",
+  "title": "Privacy Policy | Stirista",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_1",
+    "id": "input_39_1",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "EMAIL*",
+    "form": 0,
+    "heading": "Stay up-to-date"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SOLUTIONS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "PLATFORM",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "COMPANY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "RESOURCES",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SUBMIT",
+    "id": "gform_submit_button_39",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Preferences",
+    "id": "cookie-preferences-link",
+    "inForm": false
+   },
+   {
+    "text": "learn more",
+    "id": "data-broker",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "info@stirista.com",
+   "privacy@stirista.com",
+   "privacyinfo@stirista.com"
+  ],
+  "text": "SKIP TO MAIN CONTENT\nSOLUTIONS\nPLATFORM\nCOMPANY\nRESOURCES\nGET STARTED\nSTIRISTA Data Services and Website Privacy Policy\nPAGE LAST UPDATED ON 01/15/2026\n\nStirista, LLC. (“We,” “Our,” “Stirista”) provides a variety of data marketing and consumer analytics products (the “Services”) designed to help for-profit and not-profit organizations, and companies that work with them, to market their goods and services in a relevant and efficient way.   Our solutions, many of which are described on this website, are used through direct mail, email, online, connected-TV and other marketing channels.\n\nWe take ",
+  "fingerprint": "47bcf3ac26239808e44b5aaf0fe2eea7a23d398b9f4e17fa5f09c9453c8f0dbe"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

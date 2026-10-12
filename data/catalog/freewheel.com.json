@@ -1,0 +1,39 @@
+{
+ "domain": "freewheel.com",
+ "name": "FreeWheel Media Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:54.186Z",
+  "status": 200,
+  "optOutUrl": "https://www.freewheel.com/privacy-policy#tab2_section2_6",
+  "title": "Privacy Policy | FreeWheel",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legalnotices@freewheel.com"
+  ],
+  "text": "Products\nInsights\nCompany\nContact\nLog In\nPRIVACY POLICY\n\nLast Updated: July 15, 2025\n\nThis is the Privacy and Cookie Policy (Privacy Policy) for FreeWheel Media, Inc. and (except where they have published their own separate privacy policy) its affiliates and their own subsidiaries (together, FreeWheel, we, us or our). We are committed to your privacy and ensuring that your personal information is protected.\n\nThis Privacy Policy applies to personal information, which is information that is linked or reasonably linkable to you or your household, such as your name, address, telephone number, devi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

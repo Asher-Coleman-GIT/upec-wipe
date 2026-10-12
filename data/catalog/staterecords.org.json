@@ -1,0 +1,62 @@
+{
+ "domain": "staterecords.org",
+ "name": "Intermedia Ventures, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:50.880Z",
+  "status": 404,
+  "optOutUrl": "https://staterecords.org/optout;%20https:/courtrecords.us/optout/;%20https:/californiacourtrecords.us/optout",
+  "title": "404: This page could not be found",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Skip to main content",
+    "id": "uw-skip-to-main",
+    "inForm": false
+   },
+   {
+    "text": "Enable accessibility for low vision",
+    "id": "uw-enable-visibility",
+    "inForm": false
+   },
+   {
+    "text": "Open the accessibility menu",
+    "id": "uw-open-accessibility",
+    "inForm": false
+   },
+   {
+    "text": "AGREE & PROCEED",
+    "id": "truste-consent-button",
+    "inForm": false
+   },
+   {
+    "text": "REJECT ALL",
+    "id": "truste-consent-required",
+    "inForm": false
+   },
+   {
+    "text": "Manage Settings",
+    "id": "truste-show-consent",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@intermedia.team"
+  ],
+  "text": "Skip to main content\nEnable accessibility for low vision\nOpen the accessibility menu\n404\nThis page could not be found.\nWe value your privacy. This site uses cookies to analyze traffic, personalize your experience, operate the site, and share data with advertising and analytics platforms. Privacy Policy\nAGREE & PROCEED\nREJECT ALL\nManage Settings",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "groupOverride": "people-search",
+  "optOutUrl": "https://staterecords.org/optout",
+  "notes": "Privacy choices page has no form; follow its request instructions"
+ }
+}

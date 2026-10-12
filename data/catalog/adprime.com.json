@@ -1,0 +1,19 @@
+{
+ "domain": "adprime.com",
+ "name": "Adprime Media LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:05.823Z",
+  "contacts": [
+   "privacy@adprime.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.adprime.com/privacy-policy"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

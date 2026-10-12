@@ -1,0 +1,39 @@
+{
+ "domain": "growbots.com",
+ "name": "Growbots Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:22.459Z",
+  "status": 200,
+  "optOutUrl": "https://www.growbots.com/do-not-sell-my-info/",
+  "title": "Do Not Sell My Info - Growbots",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Open Platform",
+    "id": "e-n-menu-dropdown-icon-2861",
+    "inForm": false
+   },
+   {
+    "text": "Open Resources",
+    "id": "e-n-menu-dropdown-icon-2862",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "operations@growbots.com"
+  ],
+  "text": "Skip to content\nPlatform\nOpen Platform\nResources\nOpen Resources\nLOGIN\nBOOK A DEMO\n\nFounded in 2014 with a simple mission: help small businesses grow through outbound done right. Over 10 years and 3,000+ customers later, we have built the systems, data, and expertise to make outbound predictable and affordable..\n\nSocial media\nFacebook\nLinkedin\nOur products\nPricing\nCustomer stories\nWarmbots\nResources\nProduct updates\nBlog\nEmail Time Optimizer\nHelp Page\nCustomer Acquisition Ebook\nAlternatives\nCompany\nAbout us\nCareers\nLegal\nTerms of Service\nPrivacy\nGDPR\nDo Not Sell My Info\nGoogle API disclosure\n\nGR",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

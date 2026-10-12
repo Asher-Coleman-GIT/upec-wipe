@@ -1,0 +1,51 @@
+{
+ "domain": "choreograph.com",
+ "name": "Choreograph LLP",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:02.582Z",
+  "status": 200,
+  "optOutUrl": "https://amer-cpp.choreograph.com/manage-your-data/opt-out-delete",
+  "title": "CCPA | Choreograph",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "accept all cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "reject all",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "cookies settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "datagovernance@choreograph.com",
+   "donotmail@choreograph.com",
+   "privacy@choreograph.com"
+  ],
+  "text": "What We Do\nResources\nAbout\nCareers\nSupport Login\nget in touch\nCCPA\nas data experts, we understand that the ability to use and process consumer data can only occur in an environment where we earn the trust of both the companies on whose behalf we process customer data and the individuals to whom such data relates in order to deliver mutual value to both brands and consumers\n\n\nDate Last Updated: 07/01/26\n\nTo comply with the California Consumer Privacy Act of 2018 (“CCPA”) and other California privacy laws this privacy policy is for California residents and supplements the information contained i",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

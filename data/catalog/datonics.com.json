@@ -1,0 +1,176 @@
+{
+ "domain": "datonics.com",
+ "name": "DATONICS LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:50.168Z",
+  "status": 200,
+  "optOutUrl": "https://www.datonics.com/privacy/privacy-choices",
+  "title": "Your Privacy Choices — Datonics",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "datonics-email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email (required)",
+    "form": 0,
+    "heading": "Ready to Get Started?"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "residentOf",
+    "id": "datonics-resident-of",
+    "placeholder": "",
+    "aria": "",
+    "label": "Resident of (required)",
+    "form": 0,
+    "heading": "Ready to Get Started?",
+    "options": [
+     "=Select an option",
+     "California=California",
+     "Colorado=Colorado",
+     "Connecticut=Connecticut",
+     "Delaware=Delaware",
+     "Indiana=Indiana",
+     "Iowa=Iowa",
+     "Kentucky=Kentucky"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "requestType",
+    "id": "datonics-request-type",
+    "placeholder": "",
+    "aria": "",
+    "label": "Type of Request (required)",
+    "form": 0,
+    "heading": "Ready to Get Started?",
+    "options": [
+     "=Select an option",
+     "Opt-out of Targeted Advertising / Do Not Sell or Share My Personal Information=Opt-out of Targeted ",
+     "Delete My Information=Delete My Informatio",
+     "Access/Obtain Copy of My Information=Access/Obtain Copy o",
+     "Correct or Update My Information=Correct or Update My",
+     "Limit the Use of My Sensitive Personal Information=Limit the Use of My "
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "maid",
+    "id": "datonics-maid",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mobile Advertising ID (IDFA / AAID)",
+    "form": 0,
+    "heading": "Ready to Get Started?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "certification",
+    "id": "datonics-certification-resident",
+    "placeholder": "",
+    "aria": "",
+    "label": "I certify that I am a resident of selected state / location ",
+    "form": 0,
+    "heading": "Ready to Get Started?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "certification",
+    "id": "datonics-certification-agent",
+    "placeholder": "",
+    "aria": "",
+    "label": "I certify that I am an authorized agent of the data subject ",
+    "form": 0,
+    "heading": "Ready to Get Started?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "website",
+    "id": "datonics-website",
+    "placeholder": "",
+    "aria": "",
+    "label": "Website",
+    "form": 0,
+    "heading": "Ready to Get Started?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject Non-essential",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Buyers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sellers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Library",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Privacy",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "datonics-submit",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "accounting@datonics.com",
+   "privacy@datonics.com"
+  ],
+  "text": "We value your privacy\n\nWe and our third party providers use cookies to collect data to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.\nOur website privacy policy can be found here.\n\nCustomize\nReject Non-essential\nAccept All\nSKIP TO CONTENT\nCompany\nSolutions\nBuyers\nSellers\nSustainability\nLibrary\nPrivacy\nYour Privacy Choices \n\nDepending on your residency location, you may have privacy rights by law in your jurisdiction that apply to Datonics regarding the personal information that we mainta",
+  "fingerprint": "146d34953bb1e2e3f6abd43e3b79f960e82d9a19f4e30746453e07c01bc8c6fd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

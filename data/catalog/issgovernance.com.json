@@ -1,0 +1,168 @@
+{
+ "domain": "issgovernance.com",
+ "name": "Asset International, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "blocked",
+ "survey": {
+  "checkedAt": "2026-10-11T23:30:55.780Z",
+  "status": 403,
+  "optOutUrl": "https://www.iss-stoxx.com/legal/ccpa/",
+  "title": "California Privacy Rights | ISS STOXX",
+  "block": "hard",
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cal_resident",
+    "id": "cal_resident",
+    "placeholder": "",
+    "aria": "",
+    "label": "By checking this box I confirm I am a California resident*",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cal_resident_agent",
+    "id": "cal_resident_agent",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please check here if you are an authorized agent submitting ",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first_name",
+    "id": "first_name",
+    "placeholder": "First name required",
+    "aria": "",
+    "label": "First Name*",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last_name",
+    "id": "last_name",
+    "placeholder": "Last name required",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email_address",
+    "id": "email_address",
+    "placeholder": "Enter a valid email address",
+    "aria": "",
+    "label": "Email Address*",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "ria_broker_dealer",
+    "id": "ria_broker_dealer",
+    "placeholder": "",
+    "aria": "",
+    "label": "If you are currently, or have been in the past, a registered",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "licenced_insurance_agent",
+    "id": "licenced_insurance_agent",
+    "placeholder": "",
+    "aria": "",
+    "label": "If you are currently, or have been in the past, a licensed i",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "right_to_limit",
+    "id": "right_to_limit",
+    "placeholder": "Please indicate the Rights you wish to exercise",
+    "aria": "",
+    "label": "Please specify if you wish to exercise your Right to Opt Out",
+    "form": 1,
+    "heading": "California Privacy Rights"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "CLIENT LOGIN\nCLIENT LOGIN",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SOLUTIONS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "INSIGHTS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "OUR COMPANY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SUBMIT",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject Optional Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Manage Cookies",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "dataprotectionofficer@issgovernance.com"
+  ],
+  "text": "SKIP TO CONTENT\nISS-CORPORATE\nISS-CORPORATE\nISS MARKET INTELLIGENCE\nISS MARKET INTELLIGENCE\nSTOXX & DAX INDICES\nSTOXX & DAX INDICES\nCLIENT LOGIN\nCLIENT LOGIN\nCONTACT US\nCONTACT US\nSOLUTIONS\nINSIGHTS\nOUR COMPANY\nCalifornia Privacy Rights\n\nCalifornia residents may have the following rights with respect to their personal information:\n\nRight to Opt Out of Selling or Sharing of Your Personal Information  \n\nCalifornia residents have the right to opt out of “sales” of their personal information or “sharing” of their personal information for targeted advertising, as “sales” and “sharing” are defined u",
+  "fingerprint": "551028c383e95b9e9d29884f0a80fc1f4d6dfa4c3cdf5bafe34c4a7a0c888c7f"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

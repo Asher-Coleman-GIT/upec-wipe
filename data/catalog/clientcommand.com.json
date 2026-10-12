@@ -1,0 +1,50 @@
+{
+ "domain": "clientcommand.com",
+ "name": "Summit Resources, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:08.966Z",
+  "status": 200,
+  "optOutUrl": "https://clientcommand.com/client-command-privacy-notice/",
+  "title": "Client Command Privacy Notice - Client Command",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Allow All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "legal@clientcommand.com",
+   "privacy@clientcommand.com"
+  ],
+  "text": "Skip to content\n\nCONTACT US TODAY: 888.786.6489 AFFILIATES LOGIN CUSTOMER LOGIN\n\nSOLUTIONS\nRESOURCES\nCOMPANY\nCONTACT\nREQUEST A DEMO\nClient Command Privacy Notice\n\nLast Updated: June 30, 2026\n\nSummit Resources, LLC doing business as Client Command (referred to herein as “Client Command”, “we”, “our”, or “us”) and its affiliates recognize the importance of protecting the personal information we collect from prospects, customers, and site visitors, and individuals whose information is processed in connection with our products and services (“Users”, “you”, or “your”). This Privacy Notice applies t",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

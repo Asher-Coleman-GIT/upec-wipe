@@ -1,0 +1,27 @@
+{
+ "domain": "ziffdavis.com",
+ "name": "Ziff Davis LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:33.403Z",
+  "status": 200,
+  "optOutUrl": "https://www.ziffdavis.com/",
+  "title": "Ziff Davis",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@ziffdavis.com"
+  ],
+  "text": "Skip to main content\nZD $56.52 ▲1.09%\nABOUT\nAbout Ziff Davis\nM&A Program\nLeadership\nRecent News\nContact Us\nOUR BRANDS\nTechnology\nShopping\nLifestyle\nGaming & Entertainment\nHealth & Wellness\nCybersecurity\nMartech\nRESPONSIBILITY\nDiversity, Equity & Inclusion\nEnvironmental Sustainability\nCommunity\nData Privacy & Security\nGovernance\nPolicies\nCAREERS\nWork With Us\nSearch Jobs\nEmployee Benefits\nLocations\nReStart\nINVESTORS\nCorporate Information\nFinancials\nPresentations & Reports\nGovernance\nNews\nStock Info\nM&A Program\n\nWith $3.3 billion of capital deployed on M&A, Ziff Davis’ M&A success stems from our ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

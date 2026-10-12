@@ -1,0 +1,55 @@
+{
+ "domain": "lusha.com",
+ "name": "Lusha Systems, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:45.457Z",
+  "status": 200,
+  "optOutUrl": "https://www.lusha.com/privacy_topic/control-your-profile/",
+  "title": "CCPA Privacy Notice for California Residents | Lusha",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Contact sales",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@lusha.com",
+   "privacy@lusha.com"
+  ],
+  "text": "New! Claude now connects directly to Lusha’s verified B2B data\n\n\nConnect now\n\nProduct\nSolutions\nOur Data\nResources\nPricing\nLogin\nContact sales\nStart for free\nHome Page\nLegal\nCCPA\nPrivacy Notice for California Residents\n\nLast Updated: April 4, 2024\n\nWho We Are\nTypes of Information We Collect From or About You\nSharing Personal Information\nSelling Personal Information\nRights Under the CCPA\nRight to Opt-Out\nExercising Your Rights\nResponse Timing and Format\nDesignating Agents\nNon-Discrimination\nStatistical Information\nChanges To This Policy\nContact Us\n\nThis Privacy Notice for California residents (",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

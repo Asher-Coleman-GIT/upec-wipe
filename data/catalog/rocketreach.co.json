@@ -1,0 +1,56 @@
+{
+ "domain": "rocketreach.co",
+ "name": "RocketReach LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:34:00.538Z",
+  "status": 200,
+  "optOutUrl": "https://rocketreach.co/remove-profile",
+  "title": "RocketReach Lead Intelligence: Phone and Email Finder",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "id_email",
+    "placeholder": "Enter Email",
+    "aria": "email",
+    "label": "Email Address (We’ll send a verification link here)",
+    "form": 0,
+    "heading": "Please help us locate your information."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Sign Up",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Preferences",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@rocketreach.co"
+  ],
+  "text": "Products\nSolutions\nCustomers\nPricing\nLogin\nSign Up\nOpt-Out of RocketReach\nYou are not creating an account. Provided data is only being used to authenticate you are the profile owner. Depending on your jurisdiction, you may use this option to opt-out of the “sale” of your personal data. You may exercise those rights by filling out the form on this page and following the instructions provided.\nHow did my data get on RocketReach?\nRemove Your Profile\nPlease help us locate your information.\nEmail Address (We’ll send a verification link here)\nSubmit Request\nDo not share my personal information\nUnder",
+  "fingerprint": "b47bddcf4685be4d1c77b37d9fda2922ceb93105c414442198ea924f6f6ce76b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

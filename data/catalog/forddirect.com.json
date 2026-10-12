@@ -1,0 +1,29 @@
+{
+ "domain": "forddirect.com",
+ "name": "DealerDirect LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "forddirectprivacy.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:00.711Z",
+  "status": 200,
+  "optOutUrl": "https://www.forddirect.com/privacy",
+  "title": "Privacy | FordDirect",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "dprivacy@forddirect.com"
+  ],
+  "text": "Skip to main content\nMain navigation\nHOME\nABOUT\nSOLUTIONS\nCAREERS\nCONTACT US\nLogin\n\nFordDirect\n\nPrivacy Statement\n\nPlease note our Privacy Statement is being updated effective July 1, 2026. Click here to view the previous privacy statement.\n\nCalifornia Privacy Rights\n\nNevada Privacy Rights\n\nOther State Rights\n\nUPDATED DATE: June 25, 2026\n\nEFFECTIVE DATE: July 1, 2026\n\nSUMMARY OF PRIVACY STATEMENT\n\nAt FordDirect, we care about privacy and believe in providing transparency to consumers about our information handling practices. This Privacy Statement applies to personal information – information ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

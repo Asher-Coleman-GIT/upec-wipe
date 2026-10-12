@@ -1,0 +1,29 @@
+{
+ "domain": "wealthfeed.com",
+ "name": "WealthFeed, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:05.155Z",
+  "status": 200,
+  "optOutUrl": "https://www.wealthfeed.com/privacy-choices/data-opt-out-metrics-2025/",
+  "title": "Privacy Choices · WealthFeed",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "sam@wealthfeed.com",
+   "privacy@wealthfeed.com"
+  ],
+  "text": "Data Intelligence\nMarketing Hub\nPricing\nBlog\nLogin\nGet Started\nPrivacy\nPrivacy Choices\n\nLast updated November 05, 2025\n\nPrivacy Rights for Residents of California, Virginia, Colorado, Connecticut, Texas, Montana, Oregon, and Utah\n\nResidents of California, as well as consumers in Virginia, Connecticut, Colorado, Texas, Montana, Oregon, and Utah, have specific rights regarding the handling of their personal information, as outlined in our Privacy Policy.\n\nPlease be aware that our database organizes records by name and address to account for common names. To process your opt-out request, we requi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

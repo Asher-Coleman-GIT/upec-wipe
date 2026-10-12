@@ -1,0 +1,28 @@
+{
+ "domain": "heartbeat.ai",
+ "name": "Heartbeat.AI Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:07.829Z",
+  "status": 200,
+  "optOutUrl": "https://heartbeat.ai/policy-ccpa",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "contact@heartbeat.ai"
+  ],
+  "text": "Checking for any bots …",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

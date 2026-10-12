@@ -1,0 +1,25 @@
+{
+ "domain": "evs7.com",
+ "name": "Electronic Voice Services, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:33.585Z",
+  "status": 200,
+  "optOutUrl": "https://www.evs7.com/privacy-notice-for-residents-of-california",
+  "title": "Privacy Notice for Residents of California - EVS7",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [],
+  "text": "Home\nProducts\n\nDolphin Cloud Power Dialer\n\nCricket Desktop Click Dialer\n\nAnswerBug Ai Receptionist\n\nFox Live Answering Service Software\n\nFrog FreePBX\n\nTelephone/Mailing/Email Lists\n\nPricing\nResources\nSupport\nVoIP and SMS Carriers and Email Hosts\nBlog\nProduct Summaries\nHelpful Resources\nLegal\nCase Studies\nIntegrations\nVoIP PBX Phones\nCricket CRM\nPre-Recorded Voicemail Drops\nClick to Call Cricket Click Dialer\nPhone & Email Lists & Sales Leads\nBuy\nBuy Dolphin Cloud Power Dialer\nBuy Cricket Desktop Click Dialer\nBuy AnswerBug AI Receptionist\nCall to Buy Fox TAS\nCall to Buy FrogFreePBX\nBuy Telephone",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

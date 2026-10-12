@@ -1,0 +1,25 @@
+{
+ "domain": "scanbuy.com",
+ "name": "Scanbuy, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "blocked",
+ "survey": {
+  "checkedAt": "2026-10-11T23:34:19.024Z",
+  "status": 403,
+  "optOutUrl": "https://www.scanbuy.com/rights/data",
+  "title": "403 Forbidden",
+  "block": "hard",
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "403 Forbidden",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

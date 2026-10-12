@@ -1,0 +1,100 @@
+{
+ "domain": "fourcornerhome.com",
+ "name": "Four Corner Media Corp",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:25.273Z",
+  "status": 200,
+  "optOutUrl": "https://fourcornerhome.com/data-privacy-form/",
+  "title": "Data Privacy -",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "wpforms[fields][11][]",
+    "id": "wpforms-566-field_11_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Myself",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "wpforms[fields][12][]",
+    "id": "wpforms-566-field_12_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Access My Information",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "wpforms[fields][12][]",
+    "id": "wpforms-566-field_12_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete My Information",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "wpforms[fields][12][]",
+    "id": "wpforms-566-field_12_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do Not Sell My Information",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][13]",
+    "id": "wpforms-566-field_13",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "wpforms[fields][14]",
+    "id": "wpforms-566-field_14",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request Details",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "wpforms-submit-566",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "john@fourcornerhome.com"
+  ],
+  "text": "Skip to content\nI am submitting this form on behalf of\nMyself\nSelect the right you want to exercise *\nAccess My Information\nDelete My Information\nDo Not Sell My Information\nEmail *\nRequest Details\nSubmit\nPrivacy Policy\nTerms and Conditions\nDo Not sell My Personal Information",
+  "fingerprint": "e38cb94f7260b6ffd0377649ec0e471a473c77f2a51db8eb636b6f1f0bfaffb2"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

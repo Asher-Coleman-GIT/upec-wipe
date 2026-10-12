@@ -1,0 +1,43 @@
+{
+ "domain": "winwithoptimal.com",
+ "name": "DSPolitical, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:44.571Z",
+  "status": 200,
+  "optOutUrl": "https://www.onemagnify.com/privacy-policy",
+  "title": "Privacy Policy | OneMagnify",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "0-1/email",
+    "id": "hs_form_target_module_793211054-3-input",
+    "placeholder": "Email Address*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "15. Contact Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "hs_form_target_module_793211054-15",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to main content\nSearch\nCareers\nServices\nPlatforms\nCase Studies\nResources\nAbout\nContact Us\nPRIVACY POLICY\nLast Updated: December 22, 2025\n1. Introduction\n\n \n\nWelcome to OneMagnify!\n\nOneMagnify (\"we,\" \"us,\" \"our\") is dedicated to protecting your privacy. We provide integrated marketing, data analytics, and technology solutions. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at www.onemagnify.com (“Site”), interact directly with us (for example, when you inquire about our services, subscribe to our newsletters, apply for ",
+  "fingerprint": "2f9323e69c14f4f3a4bf4df0f9c9e9fb6b6be504a93a14742f812390533c2275"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

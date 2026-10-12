@@ -1,0 +1,79 @@
+{
+ "domain": "taboola.com",
+ "name": "Taboola, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:39.090Z",
+  "status": 200,
+  "optOutUrl": "https://accessrequest.taboola.com/access",
+  "title": "Taboola Access Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "react-select-2-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "How to Access Your Taboola Data"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "checkBoxIOwnDevice",
+    "placeholder": "",
+    "aria": "",
+    "label": "I own or operate the device from which I am making this requ",
+    "form": 0,
+    "heading": "Taboola’s Data Subject Access Request Portal"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "checkBoxSoleUser",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am the sole user of this device",
+    "form": 0,
+    "heading": "Taboola’s Data Subject Access Request Portal"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "checkBoxNoFraud",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am not requesting this personal data for any fraudulent, c",
+    "form": 0,
+    "heading": "Taboola’s Data Subject Access Request Portal"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SHOW ME THE DATA",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@taboola.com"
+  ],
+  "text": "How to Access Your Taboola Data\nEnglish\n\n\nTaboola’s Data Subject Access Request Portal\n\nThis policy outlines what personal data and behavioural information Taboola holds about you and how you can access or delete your personal data.\n\nYour Rights — What You Can Request\n\nYou have the right to request that Taboola provide you with access to the personal data that we hold about you, correct your personal data, delete your personal data, and cease or restrict processing of your personal data. You have also the right to lodge a complaint with a data protection authority about our collection and use ",
+  "fingerprint": "488f963d93f12aeece8b4a6f1266652d87b5962836d4955ebe3a539405665ae3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

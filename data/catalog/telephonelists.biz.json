@@ -1,0 +1,27 @@
+{
+ "domain": "telephonelists.biz",
+ "name": "Electronic Voice Services, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:14.006Z",
+  "status": 404,
+  "optOutUrl": "https://www.telephonelists.biz/privacy-notice-for-residents-of-california;%20https://www.telephonelists.biz/privacy-policy-of-telephonelists-biz;%20https://www.evs7.com/docs/CPNI-PRIVACY-NOTICE-and-POLICY.pdf",
+  "title": "TelephoneList",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "richard@evs7.com"
+  ],
+  "text": "Phone Lists\n\nEmail Lists\n\nSales Lead Lists\n\nBulk Lists\nPricing\n\nResources\n\nGET STARTED\n\nError 404!\n\nSo sorry, we could't find what you were looking for...\n\nHome Page\n\nFRESH READS\nRecent Post\n\nStay updated with our most recent content.\n\nB2B Telemarketing: Cold Calls So Hot Your Leads Will Sizzle\nJul 23, 2024\nHow to Prospect for Life Insurance Clients\nJul 23, 2024\nHow to Avoid Getting Calls Flagged as Spam or Telemarketer\nJul 23, 2024\nFAQ: The Telemarketing Sales Rule\nJul 23, 2024\nTurn Your B2B Telemarketing to an Awesome Sales Tool\nJul 23, 2024\nTelephoneLists.biz\nSales & Support\n(888) 714-2844\n",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

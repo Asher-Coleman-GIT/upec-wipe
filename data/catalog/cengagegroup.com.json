@@ -1,0 +1,66 @@
+{
+ "domain": "cengagegroup.com",
+ "name": "Cengage Learning, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:50.198Z",
+  "status": 200,
+  "optOutUrl": "https://www.cengagegroup.com/privacy/",
+  "title": "Privacy Overview – Cengage",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Student/Educators",
+    "id": "0-tab-btn",
+    "inForm": false
+   },
+   {
+    "text": "Contact Us",
+    "id": "1-tab-btn",
+    "inForm": false
+   },
+   {
+    "text": "ABOUT",
+    "id": "ABOUT-tab-btn",
+    "inForm": false
+   },
+   {
+    "text": "NEWS",
+    "id": "NEWS-tab-btn",
+    "inForm": false
+   },
+   {
+    "text": "INVESTORS",
+    "id": "INVESTORS-tab-btn",
+    "inForm": false
+   },
+   {
+    "text": "CAREERS",
+    "id": "CAREERS-tab-btn",
+    "inForm": false
+   },
+   {
+    "text": "Manage Options",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "NEW! The Cengage brand now represents global businesses supporting learners from K-12 to Career. Learn more\n\nSkip to main content\nCengage\nStudent/Educators\nContact Us\nABOUT\nNEWS\nINVESTORS\nCAREERS\nHome\n Privacy Overview\nCengage Privacy Overview\n\nSimply put, your privacy is our priority.\n\nWe know you use Cengage products and services to learn—to build the knowledge, skills and confidence you need to succeed. You can trust that Cengage will always handle your personal information respectfully and responsibly so that you can interact with us in confidence.\n\nAll Cengage companies are bound by our G",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

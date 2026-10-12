@@ -1,0 +1,71 @@
+{
+ "domain": "smarte.pro",
+ "name": "SMARTe Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:14.531Z",
+  "status": 200,
+  "optOutUrl": "https://www.smarte.pro/",
+  "title": "SMARTe | B2B Sales Intelligence with Global Data Coverage",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "Work Email*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Global go-to-market data foundation"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Global go-to-market data foundation"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "I agree",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "I decline",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Change my preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Book a Demo",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@smarteprivacy.com"
+  ],
+  "text": "We use cookies\n\nThis website uses cookies and other tracking technologies to improve your browsing experience for the following purposes: to enable basic functionality of the website, to provide a better experience on the website, to measure your interest in our products and services and to personalize marketing interactions, to deliver ads that are more relevant to you.\n\nI agreeI declineChange my preferences\nPlatform\nOur Data\nPricing\nResources\nLogin\nGet a Demo\nGlobal go-to-market data foundation\nAI agents, APIs, and Seller apps delivering accurate, globally compliant contact data and real-tim",
+  "fingerprint": "e016a2b14790adb0996f43e3a6f6c271bcf87f929500e45bd71aa310555eb9b4"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

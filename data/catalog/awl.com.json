@@ -1,0 +1,25 @@
+{
+ "domain": "awl.com",
+ "name": "AWL Holdings, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:59.588Z",
+  "status": 200,
+  "optOutUrl": "https://awl.com/privacy/",
+  "title": "Privacy Policy - AWL",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "Looking for Coverage? Speak to a Licensed Agent Now! 1-855-753-1987\nSkip to content\nMain Navigation\nAuto\nHome\nHealth\nLife\nMedicare\nSmall Business\nCompany\nAgent Login\nAgent Signup\nPrivacy Policy\n\nCompany\n\nAbout Us\nPress Releases\nSmall Business Insurance\nMedicare\nLife Insurance\nHealth Insurance\nHome Insurance\nAuto Insurance\n\nLegal\n\nPrivacy Policy\nTerms of Use\nLimit/Do Not Sell/Do Not Share My Personal Information\nInterest-Based Advertising\nContact Us\n\nContact Information\n\n[email]\n\n1-888-522-7355\n\nAWL, Inc.\n9004 Anderson Mill Road\nUnit A\nAustin, TX 78729\n\nAWL is committed to improving our se",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

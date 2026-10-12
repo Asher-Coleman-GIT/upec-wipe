@@ -1,0 +1,28 @@
+{
+ "domain": "paramountdirectmarketing.com",
+ "name": "Paramount Lists, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:26.546Z",
+  "status": 200,
+  "optOutUrl": "https://www.paramountdirectmarketing.com/privacy-policy.php",
+  "title": "Paramount Direct Marketing",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "ccpa@paramountdirectmarketing.com"
+  ],
+  "text": "Browse Lists\nInsurance Data\nEmail Marketing\nSocial Marketing\nintentLINK™\nInquire Today\nParamount\nDirect Marketing\n\nYour trusted partner in direct marketing success. Delivering quality data and exceptional results.\n\n800-723-5478\n707 W. 38th St.\nErie, PA 16508 #321\nList Categories\nBusiness\nConsumer\nHealthcare\nTechnology\nEducation\nReal Estate\nFinance\nRetail\nCompany\nContact Us\nEmail Marketing Services\nintentLINK™\nInsurance Data\nLegal\nPrivacy Policy\nTerms & Conditions\nCA Residents - Do Not Sell My Info\nNon-CA Residents - Do Not Sell My Info\n\n© 2026 Paramount Direct Marketing. All rights reserved.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

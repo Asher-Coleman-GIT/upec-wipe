@@ -1,0 +1,19 @@
+{
+ "domain": "terminus.com",
+ "name": "Terminus Software, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [
+  "demandscience.com"
+ ],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:23.112Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://demandscience.com/privacy-policy?utm_campaign=terminus-redirect"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

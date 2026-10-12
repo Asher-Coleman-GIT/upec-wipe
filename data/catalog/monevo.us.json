@@ -1,0 +1,25 @@
+{
+ "domain": "monevo.us",
+ "name": "Monevo, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:32:01.245Z",
+  "status": 403,
+  "optOutUrl": "https://app.monevo.us/california-privacy-policy/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "Advertiser Disclosure\nPage Not Found\nPage not found\nBack to homepage",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

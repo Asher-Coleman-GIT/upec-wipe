@@ -1,0 +1,35 @@
+{
+ "domain": "porchgroupmedia.com",
+ "name": "Datamentors, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:10.298Z",
+  "status": 200,
+  "optOutUrl": "https://porchgroupmedia.com/privacy-policy/",
+  "title": "Privacy Policy | PGM Solutions",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "lchiodo@porchgroupmedia.com",
+   "privacy@porchgroupmedia.com"
+  ],
+  "text": "NEW! HOME FACTORS FOR INSURANCE\nMarketing Data\nData Hygiene\nActivation Solutions\nResources\nAbout Us\nPrivacy Policy\n\nLast Updated: January 23, 2026\n\nOverview\n\nThis Privacy Policy describes how DataMentors, LLC, dba PGM Solutions, a Porch.com, Inc. business (“PGM” or “we”), collects, uses, and shares personal information. This Privacy Policy applies to personal information we collect from you when you communicate with us by telephone, chat or SMS or through social media, access and use our website(s) or other platforms or properties (the “Properties”), or otherwise interact with us. This Privacy",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

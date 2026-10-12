@@ -1,0 +1,46 @@
+{
+ "domain": "cadent.tv",
+ "name": "Cadent, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "cadent.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:56.258Z",
+  "status": 200,
+  "optOutUrl": "https://www.cadent.com/your-privacy-choices",
+  "title": "Your Privacy Choices | Cadent",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customise",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@cadent.tv"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomise\nReject All\nAccept All\nPlatform\nTotal Video\nResources\nCareers\nLeadership\nLogin\nContact\nYour Privacy Choices\n\n\nWelcome! Using this page, you may submit certain “data rights requests” in relation to your personal information used on our advertising platform.\n\nSpecifically, in relation to our advertising platform, you may request the following in relation to our advertising technology platform:",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

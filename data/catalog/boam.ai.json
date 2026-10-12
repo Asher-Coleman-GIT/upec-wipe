@@ -1,0 +1,43 @@
+{
+ "domain": "boam.ai",
+ "name": "Gigabite Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:04.363Z",
+  "status": 200,
+  "optOutUrl": "https://boam.ai/",
+  "title": "Homepage | boam.ai",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Drive Growth\nMarket Intelligence",
+    "id": "mantine-gn4p0bbcc-control-growth",
+    "inForm": false
+   },
+   {
+    "text": "Eliminate Inefficiencies\nData Quality",
+    "id": "mantine-gn4p0bbcc-control-eliminate",
+    "inForm": false
+   },
+   {
+    "text": "Ensure Peace of Mind\nContinuous Monitori",
+    "id": "mantine-gn4p0bbcc-control-peace",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@boam.com"
+  ],
+  "text": "boam.ai\nCareers\nLog In\nRequest a Demo\nThe managed data layer for food & beverage leaders\n\nExperience verified, enriched, and always up-to-date F&B merchant data, tailored to fuel your company's momentum\n\nRequest a Demo\n\n50%+\n\nSales Conversion Uplift\n\n99%+\n\nMerchant Coverage\n\n25%+\n\nSales/Ops Time Saved\n\nTrusted by leaders across foodservice and restaurant technology\n\nWhy Boam AI\nAI-native CRM management customized to the goals of sales, data, and AI leaders\n\nA continuously maintained source of truth across F&B locations, groups, operators, and the market signals that drive growth\n\nBest-in-Class",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

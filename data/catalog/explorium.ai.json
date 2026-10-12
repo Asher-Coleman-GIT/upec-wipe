@@ -1,0 +1,50 @@
+{
+ "domain": "explorium.ai",
+ "name": "Explorium Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:27.855Z",
+  "status": 200,
+  "optOutUrl": "https://www.explorium.ai/platform-privacy-policy/",
+  "title": "Platform & Services Privacy Policy - Explorium",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Product",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Use Cases",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "contact@explorium.ai",
+   "privacy@explorium.ai"
+  ],
+  "text": "Product\nData\nUse Cases\nIntegrations\nPricing\nCompany\nGet a Demo\n|\nLogin\nSign Up\nPlatform & Services Privacy Policy\nLast Updated: January 2nd, 2025\n1. INTRODUCTION\n\nThis  Privacy Policy describes the privacy practices relating to the automated data discovery platform and other data services (“Platform & Services”) that Explorium Ltd (“Explorium”, “us,” or “we”) develops, operates, and offers to its customers (“Customers”). It describes the privacy practices for the information Explorium processes for a Customer which relates to the actual and prospective end users of our Customer’s business offe",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

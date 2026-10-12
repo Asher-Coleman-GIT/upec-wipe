@@ -1,0 +1,72 @@
+{
+ "domain": "adept-id.com",
+ "name": "Adept ID, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:02.033Z",
+  "status": 200,
+  "optOutUrl": "https://www.adept-id.com/privacy-policy/",
+  "title": "Privacy Policy - AdeptID",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "useremail",
+    "id": "",
+    "placeholder": "Subscribe",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Sign up for our newsletter"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Sign up for our newsletter"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "View preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@adept-id.com"
+  ],
+  "text": "Manage Consent\n\nTo provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.\n\nPrivacy Choices  |  Privacy Policy\n\nAccept\nDeny\nView preferences\nAdept ID\nTalent Matching\nHealthcare Staffing\nWhy AdeptID\nCompany\nResources\nSchedule a demo\nPrivacy Policy\n\nLast revised and effective as of: June 13, 2025\nThe CCPA Notice of Collection is found in Sec",
+  "fingerprint": "7388fa6b5cbbcf28fd159b1fa7d14f232d03b1f4fa690308c0c9f66ca57e5ec8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

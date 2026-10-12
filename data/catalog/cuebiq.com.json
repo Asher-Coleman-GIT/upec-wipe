@@ -1,0 +1,73 @@
+{
+ "domain": "cuebiq.com",
+ "name": "Cuebiq Group, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:23.956Z",
+  "status": 200,
+  "optOutUrl": "https://cuebiq.com/privacy-policy/",
+  "title": "Privacy Policy | Cuebiq Group, LLC",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_5",
+    "id": "input_6_5",
+    "placeholder": "Work Email:",
+    "aria": "",
+    "label": "Email(Required)",
+    "form": 1,
+    "heading": "Unlock Location Intelligence"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_submit_button_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Unlock Location Intelligence"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "MANAGE CHOICES",
+    "id": "truste-show-consent",
+    "inForm": false
+   },
+   {
+    "text": "AGREE & PROCEED",
+    "id": "truste-consent-button",
+    "inForm": false
+   },
+   {
+    "text": "REJECT ALL",
+    "id": "truste-consent-required",
+    "inForm": false
+   },
+   {
+    "text": "Request Live Demo",
+    "id": "gform_submit_button_6",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "legal@cuebiq.com",
+   "privacy@cuebiq.com"
+  ],
+  "text": "WE VALUE YOUR PRIVACY\nThis site uses cookies and related technologies, as described in our privacy policy, for purposes that may include site operation, analytics, enhanced user experience, or personalized advertising and measuring its effectiveness. By using this site, you consent to our and Google’s use of these technologies. For more information, please visit our Privacy Policy and Google Privacy Policy.\nMANAGE CHOICES AGREE & PROCEED REJECT ALL\nPrivacy Policy\nPowered by:\nCookie Preferences\nSkip to main content\nExisting clients: Log in and access your dashboard here.\nSolutions\nFootfall Meas",
+  "fingerprint": "9bf7f7e230ea47af9ab01e8c86074e08ed91092f98b6c5ba702701c0e06c9379"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

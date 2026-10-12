@@ -1,0 +1,182 @@
+{
+ "domain": "equifax.com",
+ "name": "Austin Consolidated Holdings, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:05.470Z",
+  "status": 200,
+  "optOutUrl": "https://myprivacy.equifax.com/opt-in-opt-out/personal-info",
+  "title": "myPrivacy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "firstname",
+    "placeholder": "",
+    "aria": "First name",
+    "label": "First name",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "lastname",
+    "placeholder": "",
+    "aria": "Last name",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "address1",
+    "placeholder": "",
+    "aria": "Address line 1",
+    "label": "Address line 1",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "address2",
+    "placeholder": "",
+    "aria": "Address line 2",
+    "label": "Address line 2",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "city",
+    "placeholder": "",
+    "aria": "City",
+    "label": "City",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "Let's get started",
+    "options": [
+     "0: AK=Alaska",
+     "1: AL=Alabama",
+     "2: AR=Arkansas",
+     "3: AZ=Arizona",
+     "4: CA=California",
+     "5: CO=Colorado",
+     "6: CT=Connecticut",
+     "7: DC=District of Columbia"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "zipCode",
+    "placeholder": "",
+    "aria": "Zip code",
+    "label": "Zip code",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "maskBasic",
+    "id": "dateOfBirth",
+    "placeholder": "",
+    "aria": "Date of birth (MM/DD/YYYY)",
+    "label": "Date of birth (MM/DD/YYYY)",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "SSN",
+    "id": "SSN",
+    "placeholder": "",
+    "aria": "SSN or ITIN (XXX-XX-XXXX)",
+    "label": "SSN or ITIN (XXX-XX-XXXX)",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basic",
+    "id": "email",
+    "placeholder": "",
+    "aria": "Email",
+    "label": "Email",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "mobileNumber",
+    "id": "mobileNumber",
+    "placeholder": "",
+    "aria": "Mobile number (XXX-XXX-XXXX)",
+    "label": "Mobile number (XXX-XXX-XXXX)",
+    "form": 0,
+    "heading": "Let's get started"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "touCheckbox-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let's get started"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "GO TO NEXT STEP",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "usprivacy@equifax.com"
+  ],
+  "text": "1\nInfo\n2\nVerify\nLet's get started\n\nWe'll need some information first\n\nMany US States have passed privacy legislation, giving you greater control over your personal information. Depending on your state of residence, you may or may not have certain rights related to the personal information Equifax maintains about you.\n\nYou have the Right to Limit the Use and disclosure of your sensitive personal information. To exercise this right and ask Equifax to limit the use and disclosure of your sensitive information, complete the form below.\nYou also have the Right to Opt-Out of the sharing and selling ",
+  "fingerprint": "f9ef1cc6433d077a8fc021028ca33181c8f791accce90aa9247b4fa3f5f2580b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

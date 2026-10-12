@@ -1,0 +1,54 @@
+{
+ "domain": "jdpower.com",
+ "name": "J.D. Power",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:31:14.157Z",
+  "status": 200,
+  "optOutUrl": "https://www.jdpower.com/privacy/california",
+  "title": "California Privacy Policy | Additional Information | JD Power",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Vehicles for Sale",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Pricing & Values",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Research",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Business",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Account",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jdpowerprivacy@jdpa.com"
+  ],
+  "text": "Vehicles for Sale\nPricing & Values\nResearch\nBusiness\nAccount\n\nBACK TO PRIVACY POLICY\nADDITIONAL INFORMATION FOR VISITORS WHO ARE CALIFORNIA RESIDENTS\n\nThis supplement is effective as of July 1, 2026.\n\nIf you are a California resident, our privacy policy and this supplement applies to your use of the Service. This supplement describes rights California privacy laws provide residents of the state. Terms have the meaning ascribed to them in the California Privacy Rights Act (\"CPRA\"), unless otherwise stated.\n\nNOTICE OF COLLECTION\n\nAt or before the time of collection of your personal information, ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

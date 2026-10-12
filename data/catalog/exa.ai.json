@@ -1,0 +1,152 @@
+{
+ "domain": "exa.ai",
+ "name": "Exa Labs Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:41.102Z",
+  "status": 200,
+  "optOutUrl": "https://exa.ai/",
+  "title": "Exa | Search API for AI Agents — Real-Time Web Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "q",
+    "id": "",
+    "placeholder": "Find anything...",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "The world's data for AI agents"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Agent",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Fast\n450ms",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Auto\n1s",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Deep\n~10s",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Full Web",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "News",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Companies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Research",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "People",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Financials",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Results",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Answer",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Structured",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accuracy\n\nExa leads across FRAMES, Tip-o",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Latency\n\nExa Instant returns results in ",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search Verticals\n\nBest-in-class across c",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Watch Video",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@exa.ai"
+  ],
+  "text": "Exa Site Index\n\nFetch the Exa site index at: https://exa.ai/llms.txt\n\nUse this file to discover Exa products, pricing, evaluations, comparisons, use cases, agent interfaces, and technical documentation before exploring further.\n\nIntroducing ATLAS: A new benchmark for agentic search\nLearn more\nProducts\nResources\nUse Cases\nBlog\nDocs\nPricing\nContact sales\nSign up\nThe world's data for AI agents\n\nSearch the largest index of public web and private information.\n\nTry API for free\nSearch\nAgent\nLATENCY\nFast\n450ms\nAuto\n1s\nDeep\n~10s\nCATEGORY\nFull Web\nNews\nCompanies\nResearch\nPeople\nFinancials\nAPI Playgroun",
+  "fingerprint": "2678a54b2d670f23be8f3abeb9f757dc4905ea44af47dd3b0c04f7fa1ce16c22"
+ },
+ "review": {
+  "state": "unreviewed",
+  "groupOverride": "business",
+  "note": "AI web search API, not a people-search site."
+ }
+}

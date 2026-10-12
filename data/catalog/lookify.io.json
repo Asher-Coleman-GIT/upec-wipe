@@ -1,0 +1,157 @@
+{
+ "domain": "lookify.io",
+ "name": "Lookify, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T23:31:46.341Z",
+  "status": 403,
+  "optOutUrl": "https://lookify.io/opt-out",
+  "title": "Privacy Rights Request — Lookify.io",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "requestType",
+    "id": "requestType",
+    "placeholder": "",
+    "aria": "",
+    "label": "Type of Request *",
+    "form": 0,
+    "heading": "Privacy Rights Request",
+    "options": [
+     "opt-out=Opt-Out of Sale/Shar",
+     "right-to-know=Right to Know",
+     "deletion=Delete My Personal I",
+     "correction=Correct Inaccurate I",
+     "daniels_law=NJ Covered Persons /"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": "firstName",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": "Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastName",
+    "id": "lastName",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name *",
+    "form": 0,
+    "heading": "Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address *",
+    "form": 0,
+    "heading": "Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "",
+    "id": "phoneNumber",
+    "placeholder": "(555) 123-4567",
+    "aria": "",
+    "label": "Phone Number *",
+    "form": 0,
+    "heading": "Privacy Rights Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "stateOfResidence",
+    "id": "stateOfResidence",
+    "placeholder": "",
+    "aria": "",
+    "label": "State of Residence *",
+    "form": 0,
+    "heading": "Privacy Rights Request",
+    "options": [
+     "=Select state or regi",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "verification",
+    "placeholder": "",
+    "aria": "",
+    "label": "I certify that I am the person whose personal information is",
+    "form": 0,
+    "heading": "Privacy Rights Request"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "radix-_R_cr5udb_-trigger-radix-_R_bcr5udb_",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "radix-_R_cr5udb_-trigger-radix-_R_jcr5udb_",
+    "inForm": false
+   },
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "support@lookify.io"
+  ],
+  "text": "Solutions\nResources\nPricing\nSign in\nSign up\nPrivacy Rights Request\nUnder the California Consumer Privacy Act (CCPA) and other state privacy laws, you have several rights regarding your personal information. Use this form to submit your privacy request. For more information about your privacy rights, please see our Privacy Policy and CCPA Privacy Statement.\nPrivacy Request Form\nType of Request *\nOpt-Out of Sale/Sharing\nRight to Know\nDelete My Personal Information\nCorrect Inaccurate Information\nNJ Covered Persons / Daniel's Law Request\nDelete Personal Information\n\nPermanently remove your persona",
+  "fingerprint": "3b89aa060e91d7ecd71ccbf643b4519fdde7969bc4c759f71a000ef582aff09b"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "optOutUrl": "https://lookify.io/opt-out",
+  "notes": "Privacy request form requires a phone number; choose \"Delete My Personal Information\""
+ }
+}

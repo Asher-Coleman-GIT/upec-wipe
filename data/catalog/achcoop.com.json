@@ -1,0 +1,28 @@
+{
+ "domain": "achcoop.com",
+ "name": "ACH, Address Clearing House",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:44.922Z",
+  "status": 200,
+  "optOutUrl": "https://www.achcoop.com/privacy-policy",
+  "title": "Privacy Policy | ACH, Address Clearing House",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@achcoop.com"
+  ],
+  "text": "Skip to Main Content\n\nACH, Address Clearing House\n\nHome\n\nAbout\n\nDNSMPI\n\nPrivacy Policy\n\nGet In Touch\nPrivacy Policy\n\nYour privacy is particularly important to us. This privacy policy will outline the types of information we may collect, how that information may be used, and with whom the information may be shared.\n\n \n\nThis privacy policy applies to all information gathered for and on behalf of ACH, whether in writing, verbally or electronically.\n\n​\n\nWhile visiting the ACH website, your visit will not be recorded and any personal information is not retained, other than the specific request to d",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

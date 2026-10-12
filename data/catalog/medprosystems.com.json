@@ -1,0 +1,69 @@
+{
+ "domain": "medprosystems.com",
+ "name": "MedPro Systems",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:17.115Z",
+  "status": 200,
+  "optOutUrl": "https://www.medprosystems.com/privacy-policy/",
+  "title": "Privacy Policy - MedPro Systems",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "kt-scroll-up-reader",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@medprosystems.com"
+  ],
+  "text": "We Value Your Privacy\n\nWe use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies. Privacy Policy\n\nCustomize\nReject All\nAccept All\nSkip to content\n\n(973) 398-7800 | Contact Us\n\nSOLUTIONS\nCOMPLIANCE AREAS\nWHY MEDPRO\nRESOURCE CENTER\nLOGIN\nPRIVACY POLICY\n\nLast Updated: May 15, 2026\n\nThis is the privacy policy (“Privacy Policy”) of MedPro Systems LLC (the “Company” or “we”). This Privacy Policy  discloses the data collection  practices for www.MedProSystems.com and www.medproid.com (col",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

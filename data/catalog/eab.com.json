@@ -1,0 +1,96 @@
+{
+ "domain": "eab.com",
+ "name": "EAB Global, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "box.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:18.066Z",
+  "status": 200,
+  "optOutUrl": "https://eab.app.box.com/s/ig1xoav1pag3q3af1k812bdthzfyhcwn",
+  "title": "EAB Privacy Policy v16 (1.8.26).pdf | Powered by Box",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Skip to main content",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "radix-:ra:",
+    "inForm": false
+   },
+   {
+    "text": "Download",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "1 / 6",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@eab.com"
+  ],
+  "text": "Skip to main content\nEAB Privacy Policy v16 (1.8.26).pdf\nDownload\nSign up\nLog in\n1\n2\n3\n4\n5\n6\n©2024 by EAB. All Rights Reserved.\n \n1\n \neab.com\n\n\nPrivacy Policy\n\n\nLast Updated: January 8, 2026\n\n\n1.\n \nEAB and Our Commitment to Your Privacy.\n\n\nWho Is EAB?\n \nEAB Global, Inc. (together with its subsidiaries and its affiliates, including Cappex.com, LLC d/b/a Appily,\n\n\n“EAB”, “us,” “we,” and “our”) drives transformative change through data-driven insights in five major areas: enrollment;\n\n\nstudent success; data & analytics; institutional strategy; and talent. We partner with education leaders, practi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

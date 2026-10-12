@@ -1,0 +1,48 @@
+{
+ "domain": "analytics-iq.com",
+ "name": "AnalyticsIQ Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:07.093Z",
+  "status": 200,
+  "optOutUrl": "https://analytics-iq.com/privacy-policy/",
+  "title": "Privacy Policy - AnalyticsIQ",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "x",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Do not share or sell my personal informa",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "OK",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@analyticsiq.com"
+  ],
+  "text": "Solutions\nWho We Help\nResources\nAbout Us\nPrivacy\nAnalyticsIQ Website Privacy Policy\nLast updated: July 29, 2026\n\nThis Privacy Policy (the “Privacy Policy”) informs visitors to the website and business Customers that license our Data Products (“you”) about the collection, use, sharing, and selling (collectively referred to as “processing” or “process”) of your Personal Information collected from and processed in connection with the Alliant Cooperative Data Solutions, LLC website (https://alliantinsight.com/) and any website where this Privacy Policy is posted (collectively, the “Website”), incl",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

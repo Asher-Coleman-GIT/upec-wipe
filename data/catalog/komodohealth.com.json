@@ -1,0 +1,138 @@
+{
+ "domain": "komodohealth.com",
+ "name": "Komodo Health, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:55.682Z",
+  "status": 200,
+  "optOutUrl": "https://www.komodohealth.com/privacy-notice/",
+  "title": "Privacy Notice | Komodo Health",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-4c0f47e8-81cb-4ade-af32-12e11dac182f",
+    "placeholder": "Business Email",
+    "aria": "",
+    "label": "Subscribe to Insights*",
+    "form": 1,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-23e6e85e-d9ae-4386-a091-90eb87066cce",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 2,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-23e6e85e-d9ae-4386-a091-90eb87066cce",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name*",
+    "form": 2,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-23e6e85e-d9ae-4386-a091-90eb87066cce",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name*",
+    "form": 2,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "company-23e6e85e-d9ae-4386-a091-90eb87066cce",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company name*",
+    "form": 2,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "consent_countries",
+    "id": "consent_countries-23e6e85e-d9ae-4386-a091-90eb87066cce",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country / Region*",
+    "form": 2,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox",
+    "options": [
+     "=Please Select",
+     "United States=United States",
+     "Afghanistan=Afghanistan",
+     "Aland Islands=Aland Islands",
+     "Albania=Albania",
+     "Algeria=Algeria",
+     "Andorra=Andorra",
+     "Angola=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "Get Komodo’s Latest Insights in Your Inbox"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "trust-and-safety@komodohealth.com"
+  ],
+  "text": "Skip to main content\nWhy Komodo\nProduct\nSolutions\nResources\nSupport\nGet Demo\nContact Us\nKomodo Health Privacy Notice\nKomodo Health Privacy Notice\n\nKomodo Health, Inc., and its affiliates (collectively, “we,” “our,” “us,” or “Komodo Health”) are committed to protecting your privacy and Personal Data about you. This Privacy Notice is intended to describe our practices regarding collection, use, and sharing of Personal Data relating to visitors to the Komodo Health website (www.komodohealth.com, the “Site”), product users, customers, prospective and former customers, business partners, and health",
+  "fingerprint": "5816ce41cf89437dffc36c8b1c8f1eef946383aa9e2407a13d7fc67f676748f2"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

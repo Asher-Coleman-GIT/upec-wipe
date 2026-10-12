@@ -1,0 +1,39 @@
+{
+ "domain": "sheerid.com",
+ "name": "SheerID, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:47.049Z",
+  "status": 200,
+  "optOutUrl": "https://www.sheerid.com/global-privacy-policy/",
+  "title": "Global Privacy Policy - SheerID",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@sheerid.com"
+  ],
+  "text": "Skip to main content\nProducts\nSolutions\nCustomers\nResources\nPricing\nLogin\nGet Started\nEnglish\nPortuguese\n \nSheerID Global Privacy Policy\nLast Updated: March 10, 2025\n \n\nThis Privacy Policy explains how SheerID, Inc. and its subsidiaries and affiliates (“SheerID”, “we”, or “us”) collect, use, and disclose information about you.  We strive to protect and respect your privacy.\n\nThis Privacy Policy applies when you use our websites and other online products and services that link to this Privacy Policy (collectively, the “Services”), contact our customer service team, engage with us on social medi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

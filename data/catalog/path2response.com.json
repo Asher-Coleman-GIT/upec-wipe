@@ -1,0 +1,172 @@
+{
+ "domain": "path2response.com",
+ "name": "Path2Response, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "onetrust.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:30.215Z",
+  "status": 200,
+  "optOutUrl": "https://privacyportal-cdn.onetrust.com/dsarwebform/2de26f06-de6f-45a7-8e1d-7d1148a3f301/draft/7a5dc7d1-cc7e-43a8-9f24-702807deb65b.html",
+  "title": "Privacy Web Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "emailDSARElement",
+    "placeholder": "",
+    "aria": "Email (to be used for correspondence)",
+    "label": "Email (to be used for correspondence)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField17DSARElement",
+    "placeholder": "",
+    "aria": "Are you submitting this request for yourself?",
+    "label": "Are you submitting this request for yourself?",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstNameDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject First Name",
+    "label": "Data Subject First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastNameDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject Last Name",
+    "label": "Data Subject Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "vt-input-5",
+    "placeholder": "",
+    "aria": "Country Code",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "phoneNumberDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject Phone Number",
+    "label": "Data Subject Phone Number",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "addressDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject Address",
+    "label": "Data Subject Address",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "cityDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject City",
+    "label": "Data Subject City",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "stateDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject State",
+    "label": "Data Subject State",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "zipDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject Zip",
+    "label": "Data Subject Zip",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "countryDSARElement",
+    "placeholder": "",
+    "aria": "Data Subject Country",
+    "label": "Data Subject Country",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "dsar-webform-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacyinfo@path2response.com"
+  ],
+  "text": "Welcome! Thank you for requesting information regarding the data maintained at Path2Response. Please complete this form so that we may process your request.\n\n Select request type\nRequired\nDo Not Sell or Share My Personal Information / Opt-Out\nDelete My Data\nAccess My Data\n Email (to be used for correspondence)\nEnter email for correspondence with the data request.\n Are you submitting this request for yourself?\nDATA SUBJECT INFORMATION\n\nProvide details of the person for whom this request is being submitted. This information is used only to identify the data subject within our records. Using “one",
+  "fingerprint": "a6a41c3fd5fd21e2daedcdf0ccdc535e10a7d15246a2c25212fed31ee6fb1b94"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

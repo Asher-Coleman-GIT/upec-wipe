@@ -1,0 +1,20 @@
+{
+ "domain": "sharethrough.com",
+ "name": "Sharethrough Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:46.937Z",
+  "contacts": [
+   "dataprotection@sharethrough.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://privacy-center.sharethrough.com/en/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

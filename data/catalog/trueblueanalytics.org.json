@@ -1,0 +1,39 @@
+{
+ "domain": "trueblueanalytics.org",
+ "name": "True Blue Analytics LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:35.415Z",
+  "status": 200,
+  "optOutUrl": "https://trueblueanalytics.org/privacy-policy",
+  "title": "Privacy Policy — True Blue Analytics",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Manage cookies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept all",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@trueblueanalytics.org"
+  ],
+  "text": "This website uses cookies to ensure you get the best experience on our website.\nAllow cookies\nDismiss\nCookie Preferences\n\nSelect “Accept all” to agree to our use of cookies and similar technologies to enhance your browsing experience, security, analytics and customization. Select ”Manage cookies” to make more choices or opt out.\n\nManage cookies\nAccept all\nSkip to Content\nour services\nwho we are\ncontact us\n\nTrue Blue Analytics \n\nPrivacy Policy\n\nLast Updated: June 23, 2025\n\nThis Privacy Policy (“Policy”) describes the information collected by or on behalf of True Blue Analytics, LLC (“True Blue,",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

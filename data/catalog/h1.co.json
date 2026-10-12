@@ -1,0 +1,27 @@
+{
+ "domain": "h1.co",
+ "name": "H1 Insights, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:43.241Z",
+  "status": 200,
+  "optOutUrl": "https://h1.com/",
+  "title": "Creating a Healthier Future | H1",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "inquiries@h1.co"
+  ],
+  "text": "H1\nRequest a DemoLogin\nConnecting the world with the right doctor.\n\nAn AI-powered platform for identifying and engaging the right doctor across life sciences, payers, providers, and patients.\n\nEnterprise Solutions\nFor Research Sites\n\n\nTrusted by leading organizations across healthcare:\n85\n\nof top 20 pharma partner with H1\n\n9 of 10\n\ntop payers partner with H1\n\n200\n\ncustomers across 6 continents\n\nCreating a healthier future by making healthcare information and evidence-based medicine accessible to everyone globally\n\nProducing insights to answer healthcare’s most critical questions.\n\nWho is the r",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

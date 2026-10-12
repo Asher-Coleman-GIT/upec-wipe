@@ -1,0 +1,29 @@
+{
+ "domain": "malvernmedia.com",
+ "name": "Malvern Media Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:21.536Z",
+  "status": 200,
+  "optOutUrl": "https://www.malvernmedia.com/privacy-policy",
+  "title": "Privacy Policy — Malvern Media",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "info@malvernmedia.com"
+  ],
+  "text": "\t\nHOME\n \nDATA LICENSING\n \nDATA LINKAGE\n \nLIST MANAGEMENT\n \nLISTS\n\nPRIVACY POLICY\n\nLast Update: June 30, 2025\n\nMalvern Media, Inc. provides its clients with consumer information including Personal Information for data management, distribution, analytics and their marketing services.  Through analysis of the data we provide our clients are able to provide more relevant marketing, determine security risks, and have a better understanding of what type or style of marketing appeals to their customers or customer basis they seek to attract.  We do not directly collect the consumer information, but r",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed",
+  "groupOverride": "business",
+  "note": "Consumer marketing data; DSAR form on privacyportal.privacypillar.com."
+ }
+}

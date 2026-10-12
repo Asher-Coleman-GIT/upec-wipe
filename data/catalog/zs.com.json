@@ -1,0 +1,69 @@
+{
+ "domain": "zs.com",
+ "name": "ZS Associates, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:37.400Z",
+  "status": 200,
+  "optOutUrl": "https://www.zs.com/compliance/california-privacy-notice",
+  "title": "ZS California Privacy Notice",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Capabilities",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industry Insights",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Careers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About ZS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "CLOSE",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dataprivacy@zs.com"
+  ],
+  "text": "Skip to main content\nConnect with an expert\nZS California Privacy Notice\n\nLast updated: June 5, 2026\n\nTo exercise your privacy rights or make inquiries about your personal data, please email us at [email]\n\nThis California Privacy Notice (“Notice”) applies to California residents (also called \"consumers\" or \"you\") and supplements the information contained in ZS's Privacy Notice, Opinion Leader Notice, and, if you are a current, former, or prospective employee, the ZSer Privacy Notice.\n\nSome terms in this Notice may have different meanings than they do in the Privacy Policy and ZSer ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

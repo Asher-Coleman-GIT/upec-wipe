@@ -1,0 +1,58 @@
+{
+ "domain": "growthcode.io",
+ "name": "GrowthCode, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:32.122Z",
+  "status": 404,
+  "optOutUrl": "https://www.growthcode.io/do-not-sell-or-share-my-personal-information",
+  "title": "GrowthCode — Independent signal infrastructure for publishers, platforms, and buyers",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "products-dropdown",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "solutions-dropdown",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "resources-dropdown",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jonathon@growthcode.io"
+  ],
+  "text": "Platform\nProducts\nSolutions\nAbout\nResources\nLOGIN\nREQUEST DEMO\nPlatform\nProducts\nSolutions\nAbout\nResources\nLOGIN\nREQUEST DEMO\n404\nThis page could not be found.\nSUBSCRIBE TO THE SIGNAL\nSTAY IN THE SIGNAL\n\nWeekly intelligence on addressability, identity infrastructure, and programmatic.\n\nSignal infrastructure you own.\n\nPRODUCT\nPlatform\nPublisher Cloud\nDemand Cloud\nSOLUTIONS\nFor Publishers\nFor SSPs\nFor DSPs\nFor Agencies\nRESOURCES\nBlog\nDocumentation\nDownloads\nCOMPANY\nAbout\nRequest Demo\n\n© 2026 GrowthCode. All rights reserved.\n\n|\nPrivacy Policy\n|\nPlatform Privacy Policy\n|\nDo Not Sell or Share My Pe",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

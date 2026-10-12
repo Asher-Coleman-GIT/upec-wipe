@@ -1,0 +1,34 @@
+{
+ "domain": "healthcare.com",
+ "name": "HealthCare, Inc., a Delaware corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:50.629Z",
+  "status": 200,
+  "optOutUrl": "https://www.healthcare.com/privacy-policy/",
+  "title": "Terms & Conditions",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "security@healthcare.com"
+  ],
+  "text": "Shop Insurance\nPartners\n\nCompany\nTerms & Conditions\n\nLast Updated: September 1st, 2026\n\nTable of Contents\n\n1.- Introduction\n\n2.- Your Consent\n\n3.- Information We Collect\n\n4.- How We Use Your Information\n\n5.- How We Protect Your Information\n\n6.- Our Sharing of Your Information\n\n7.- Additional Information About our Data Collection and Sharing Practices\n\n8.- How to Exercice Your Opt-Out Rights\n\n9.- State-Specific Consumer Privacy Rights\n\n10.- SMS/MMS and Telephone Communications\n\n11.- Changes to This Policy\n\n12.- Questions?\n\nINTRODUCTION\n\nThe HealthCare, Inc. family of companies (including Pivot ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

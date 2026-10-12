@@ -1,0 +1,28 @@
+{
+ "domain": "veraset.com",
+ "name": "Veraset",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:14.106Z",
+  "status": 404,
+  "optOutUrl": "https://www.veraset.com/ca-privacy-policy",
+  "title": "Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "tax@veraset.com"
+  ],
+  "text": "Page Not Found\nThe page you are looking for doesn't exist or has been moved\nGo Home",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

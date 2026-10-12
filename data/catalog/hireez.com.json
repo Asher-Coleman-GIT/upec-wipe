@@ -1,0 +1,105 @@
+{
+ "domain": "hireez.com",
+ "name": "HireTeamMate, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:29:42.810Z",
+  "status": 403,
+  "optOutUrl": "https://app.hireez.com/ownyourdata",
+  "title": "Own your data | Recruitment CRM Software | hireEZ",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstName",
+    "placeholder": "Enter your first name",
+    "aria": "",
+    "label": "First name *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastName",
+    "placeholder": "Enter your last name",
+    "aria": "",
+    "label": "Last name *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "residencePlace",
+    "placeholder": "Select place of residence",
+    "aria": "",
+    "label": "Country or Region *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "email",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "verification",
+    "placeholder": "Enter Verification Code",
+    "aria": "",
+    "label": "Verification code",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get code",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cancel",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@hireez.com"
+  ],
+  "text": "This website uses cookies to make the website work properly and to provide the most relevant products and services to our customers and site visitors. For more information, please check our Cookie Policy.\n\nAccept\nRequest to remove\nThis form allows you to remove your personal information from our service, and opt-out of the processing or sale of your personal information.\nFirst name *\nLast name *\nCountry or Region *\nEmail *\nGet code\nVerification code\nPlease note, once you submit your removal/opt-out request, you will no longer be able to View, Correct, or otherwise inquire about your Data.\nCanc",
+  "fingerprint": "44e498fe5238330739b906ff75cbe2231d33845f109e276634dd9178fed9cf90"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

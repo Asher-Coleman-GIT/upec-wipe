@@ -1,0 +1,120 @@
+{
+ "domain": "uplead.com",
+ "name": "Uplead LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:35:25.945Z",
+  "status": 200,
+  "optOutUrl": "https://www.uplead.com/opt-out/",
+  "title": "Opt-out - UpLead",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[full_name]",
+    "id": "form-field-full_name",
+    "placeholder": "Full Name",
+    "aria": "",
+    "label": "Contact Information",
+    "form": 0,
+    "heading": "Manage Your Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[contact_email_address]",
+    "id": "form-field-contact_email_address",
+    "placeholder": "Contact Email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Manage Your Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[email]",
+    "id": "form-field-email",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Requested data",
+    "form": 0,
+    "heading": "Manage Your Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "number",
+    "name": "form_fields[phone_number]",
+    "id": "form-field-phone_number",
+    "placeholder": "Phone Number",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Manage Your Personal Information"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "form_fields[jurisdiction]",
+    "id": "form-field-jurisdiction",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Manage Your Personal Information",
+    "options": [
+     "Data Privacy Jurisdiction options:=Data Privacy Jurisdi",
+     "CCPA=CCPA",
+     "VDPA=VDPA",
+     "OCPA=OCPA",
+     "TDPSA=TDPSA",
+     "GDPR=GDPR",
+     "Other=Other"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "form_fields[type]",
+    "id": "form-field-type",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Manage Your Personal Information",
+    "options": [
+     "Request Type=Request Type",
+     "Request my Information=Request my Informati",
+     "Delete my Information=Delete my Informatio"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "submit-form",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "techteam@uplead.com"
+  ],
+  "text": "Skip to content\nPlatform\nAPI\nResources\nPartner with us\nPricing\nRequest a Demo\nStart Free Trial\nManage Your Personal Information\nIn accordance with data privacy laws, such as GDPR, CCPA, or others, you have the right to request and receive a detailed report of the personal data UpLead has collected about you by selecting the type of your request to “Request information” from the dropdown in the form.\nYou also have the right to opt-out of the “sale” or “sharing” of your Personal Information on a going-forward basis and you may request to exercise this opt-out by filling out the webform on this p",
+  "fingerprint": "61e08f2d11377f73f2d79236dbd7c2a0e7eb4136d6fb3342351296851ecb4b21"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

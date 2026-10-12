@@ -1,0 +1,29 @@
+{
+ "domain": "clarivate.com",
+ "name": "DR Decision Resources, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "onetrust.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:51.898Z",
+  "status": 400,
+  "optOutUrl": "https://privacyportal.onetrust.com/webform/7636e208-dda4-4218-8026-e1bc155873fc/draft/c3eedb35-4568-4772-87fb-4d8ae17ac233;%20https://privacyportal.onetrust.com/webform/7636e208-dda4-4218-8026-e1bc155873fc/draft/8651c266-68d4-43a8-b7ca-7bd8398843d6",
+  "title": "Error",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "drgdsr@clarivate.com"
+  ],
+  "text": "Bad Request",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

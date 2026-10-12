@@ -1,0 +1,47 @@
+{
+ "domain": "finthrive.com",
+ "name": "FinThrive Healthcare, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:15.866Z",
+  "status": 200,
+  "optOutUrl": "https://finthrive.com/privacy-policy",
+  "title": "Privacy Policy | Resources",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "term",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "tsg@finthrive.com",
+   "privacy@finthrive.com"
+  ],
+  "text": "Skip to Content\nHow We Help \n \nOur Platform\n \nResources \n \nAbout Us \nContact Us\nCommunity Portal\n \nPartner Portal\n \nProduct Login\nFinThrive Privacy Resources\n\nFinThrive Privacy Policy\n\nFinThrive values the privacy of personal information. As a dedicated partner to our healthcare clients, protection of protected health information (PHI) has always been a priority. However, our protection of personal information extends beyond PHI to other personal information we may obtain or collect about individuals as part of our business operations. Please review our FinThrive Privacy Policy to gain an unde",
+  "fingerprint": "65542542e09ec5f4bafd9d5a2a22bca14607ac6eaf6084bf864aef657bc0d8bc"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

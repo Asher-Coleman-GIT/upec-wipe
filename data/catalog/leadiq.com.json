@@ -1,0 +1,28 @@
+{
+ "domain": "leadiq.com",
+ "name": "LeadIQ, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:34.269Z",
+  "status": 200,
+  "optOutUrl": "https://www.leadiq.com/privacy-center",
+  "title": "LeadIQ | Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@leadiq.com"
+  ],
+  "text": "New: Lando turns any data into one live table\nProducts\nResources\nPricing\nEnterprise\nLogin\nStart free\nContact us\nPrivacy Center\n\nThe one-stop for everything data privacy-related. Manage your LeadIQ profile, explore our library, and read about relevant privacy regulations.\n\nYour data\nResources\nYour privacy matters to us\n\nWhether you just signed up for LeadIQ or just found out that a company acquired your professional information from our profiles database, we want to make sure you understand how you can exercise your privacy rights.\n\nClaim My Profile\n\nIf you’ve become aware that LeadIQ has a pro",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

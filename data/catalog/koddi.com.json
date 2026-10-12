@@ -1,0 +1,44 @@
+{
+ "domain": "koddi.com",
+ "name": "Koddi Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:51.691Z",
+  "status": 200,
+  "optOutUrl": "https://koddi.com/privacy-policy/",
+  "title": "Privacy policy - Koddi | Ad Technology for Driving Revenue and Growth",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject Optional Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dataprivacy@koddi.com"
+  ],
+  "text": "Skip to content\nSolutions\nPartners\nDevelopers\nCompany\nInsights\nGet in touch\nPrivacy policy\n\nLast Updated on July 1, 2026\n\nKoddi, Inc. (“Koddi”, “us,” “we” or “our”) has created this Privacy Policy (“Policy”) in order to comprehensively inform individuals about our privacy practices and to demonstrate our firm commitment to privacy. This Privacy Policy along with our International Privacy Policy (collectively, this “Policy”) describes how we collect, use, disclose, transfer, store, retain or otherwise process your personal information in the course of performing our general business activities,",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

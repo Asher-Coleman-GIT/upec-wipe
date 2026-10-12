@@ -1,0 +1,148 @@
+{
+ "domain": "thebridgecorp.com",
+ "name": "OWMN, LTD.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:23.228Z",
+  "status": 200,
+  "optOutUrl": "https://www.thebridgecorp.com/california-residents-ccpa/",
+  "title": "California Residents: CCPA | BRIDGE",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "bcf_7e067cc7_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "please_select_the_type_of_request_or_requests_you_wish_to_submit_",
+    "id": "bcf_7e067cc7_please_select_the_type_of_request_or_requests_you_wish_to_submit__0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request Information",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "please_select_the_type_of_request_or_requests_you_wish_to_submit_",
+    "id": "bcf_7e067cc7_please_select_the_type_of_request_or_requests_you_wish_to_submit__1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete My Record",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "please_select_the_type_of_request_or_requests_you_wish_to_submit_",
+    "id": "bcf_7e067cc7_please_select_the_type_of_request_or_requests_you_wish_to_submit__2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt Out",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "by_checking_off_the_box_below_i_hereby_declare_that_the_information_submitted_in_this_request_is_tr",
+    "id": "bcf_7e067cc7_by_checking_off_the_box_below_i_hereby_declare_that_the_information_submitted_in_this_request_is_tr_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "By checking off this box, I hereby declare that the informat",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "write_your_name_below",
+    "id": "bcf_7e067cc7_write_your_name_below",
+    "placeholder": "",
+    "aria": "",
+    "label": "Write Your Full Name Below*",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "g-recaptcha-response",
+    "id": "bcf_7e067cc7_g-recaptcha-response",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Please enter a current email address. We will use this email"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "bcf_d6541a56_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 1,
+    "heading": "SUBSCRIBE TO OUR NEWSLETTER"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Yes",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "No",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "View preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Go Back",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@thebridgecorp.com"
+  ],
+  "text": "Manage Consent\n\nBesides the cookies needed to make this site work, we'd also like to use non-essential cookies to understand how you use the site and to improve your experience (for example, to remember your preferences or analyze browsing behavior).\n\nDo you want to accept these non-functional cookies?\n\nYes\nNo\nView preferences\nCookie preferences\nPrivacy Statement\nOur Approach to Data Privacy\nTrust Center\nWhy BRIDGE?\nAudience Solutions\nMedia Activation & Measurement\nInsights\nContact\nCookie preferences\nGet a Demo\n English\nGo Back\nCalifornia Consumer Privacy Act (CCPA)\n\nThe California Consumer Pr",
+  "fingerprint": "b8b9db0f9df1c21175f4082e004aea3689192942a69b9a525bbc88fce2d9dba9"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "domain": "infillion.com",
+ "name": "PaeDae, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:10.283Z",
+  "status": 404,
+  "optOutUrl": "https://infillion.com/legal/privacy-policy/",
+  "title": "Page not found - Infillion",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "search-input",
+    "placeholder": "Search ...",
+    "aria": "",
+    "label": "Search",
+    "form": 1,
+    "heading": "Whoops, that page is gone"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "Email",
+    "placeholder": "Email address",
+    "aria": "",
+    "label": "*Email",
+    "form": 2,
+    "heading": "Whoops, that page is gone"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Stay Informed",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "onetrust-cookie-btn",
+    "inForm": false
+   },
+   {
+    "text": "Accept Optional Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject Optional Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@infillion.com"
+  ],
+  "text": "Skip to main content\nSkip to footer\nINFILLION TO ACQUIRE FOURSQUARE, CLOSING THE LOOP BETWEEN ADVERTISING AND REAL-WORLD RESULTS\nLearn More\nPlatform\nProducts\nSolutions\nCustomers\nVerticals\nInsights\nCompany\nContact\nWhoops, that page is gone\nSearch\nStay sharp with our latest product insights and industry updates\nStay Informed\nBy subscribing, you agree to our privacy policy and consent to updates\nProducts\nSolutions\nCustomers\nVerticals\nInfillion Platform\nAbout Us\nCase Studies\nBlog\nNews\nResources\nContact Us\nSOCIAL\nASK AI ABOUT INFILLION\n© 2026 Infillion. All rights reserved\nPrivacy policy\nTerms\nAd C",
+  "fingerprint": "664a8b7d306c489cd0d72cc9d7b46c0c5748995ee69fdbacffea28811da437a8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

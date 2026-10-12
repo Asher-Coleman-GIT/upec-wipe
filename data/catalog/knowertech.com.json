@@ -1,0 +1,69 @@
+{
+ "domain": "knowertech.com",
+ "name": "Rainbarrel USA LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "rbarrel.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:47.970Z",
+  "status": 200,
+  "optOutUrl": "https://www.rbarrel.com/opt-out",
+  "title": "RainBarrel | Do Not Sell My Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Form-Email",
+    "id": "Form-Email",
+    "placeholder": "Advertising ID",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "How to Opt Out"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Form-Email-2",
+    "id": "Form-Email-2",
+    "placeholder": "Email *",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "How to Opt Out"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "How to Opt Out"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@rbarrel.com"
+  ],
+  "text": "Cookie Consent\n\nBy clicking “Accept”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. View our Privacy Policy for more information.\n\nDenyAccept\nAudiences\nData Services\nPlans\nResources\nDocs\nCompany\nContact\nLogin\nSign-up\nHow to Opt Out\n\nTo opt-out from our audiences without changing your device settings, you can use the following form to submit your Advertising ID or email to our platform. To find out your Advertising ID, use the following instructions\n\niOS users have to download a 3rd party app\n\nAndroid user",
+  "fingerprint": "70a3fedfcb295b9cd205c67e25ed6c2112de7f2f62a50150218d04fe84b349bd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

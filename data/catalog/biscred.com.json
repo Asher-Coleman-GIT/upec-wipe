@@ -1,0 +1,27 @@
+{
+ "domain": "biscred.com",
+ "name": "Biscred",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:22.543Z",
+  "status": 400,
+  "optOutUrl": "https://www.biscred.com/do-not-sell-my-information%3B-https%3A/www.biscred.com/privacy-policy",
+  "title": "400 Error: Bad Request",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@biscred.com"
+  ],
+  "text": "ERROR: BAD REQUEST\n400\nThere's an issue with your request.\nThis action can't be completed.\nRequest ID: 1791754763.783561832531461",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

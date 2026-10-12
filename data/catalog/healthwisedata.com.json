@@ -1,0 +1,192 @@
+{
+ "domain": "healthwisedata.com",
+ "name": "HealthWise Data",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:00.502Z",
+  "status": 200,
+  "optOutUrl": "https://healthwisedata.com/compliance-optout/",
+  "title": "Your Privacy Choices - HealthWise Data | AI-Powered Consumer Healthcare Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[name]",
+    "id": "form-field-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_a44035d]",
+    "id": "form-field-field_a44035d",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[email]",
+    "id": "form-field-email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_350789c]",
+    "id": "form-field-field_350789c",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 1",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_3859bbb]",
+    "id": "form-field-field_3859bbb",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_a5b1495]",
+    "id": "form-field-field_a5b1495",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_544f1bc]",
+    "id": "form-field-field_544f1bc",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_3914c15]",
+    "id": "form-field-field_3914c15",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP Code",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "form_fields[request_type]",
+    "id": "form-field-request_type",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request Type",
+    "form": 0,
+    "heading": "Your Privacy Choices",
+    "options": [
+     "access=Access My Data",
+     "delete=Delete My Data",
+     "correct=Correct My Data",
+     "opt_out=Opt Out of Sale/Shar",
+     "limit_sensitive=Limit Use of Sensiti",
+     "appeal=Appeal a Decision",
+     "other=Other"
+    ]
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "form_fields[field_13fe199]",
+    "id": "form-field-field_13fe199",
+    "placeholder": "",
+    "aria": "",
+    "label": "Additional Details (Optional)",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "form_fields[authorized_agent]",
+    "id": "form-field-authorized_agent-0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "form_fields[authorized_agent]",
+    "id": "form-field-authorized_agent-1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "hwd_otp_code",
+    "id": "hwd-code-b1f0752",
+    "placeholder": "6-digit code",
+    "aria": "",
+    "label": "Email verification code",
+    "form": 0,
+    "heading": "Your Privacy Choices"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Send verification code",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit for Review",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@healthwisedata.com"
+  ],
+  "text": "Skip to content\nSolutions\nUse Cases\nWhy Us\nResources\nContact\nBook a Demo\nYour Privacy Choices\n\nCertain U.S. states provide their residents with privacy rights, including California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Oregon, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Rhode Island, Tennessee, Texas, Utah, and Virginia. You can exercise these rights as detailed herein.\n\nWe will use the information entered through this form only to find your information in our systems. We will not retain or use this information for any other purpose.\n\nCookies and oth",
+  "fingerprint": "09dae6cb0a51747184310866bfc0ea30989177710e49a829dfc3a83d71b2f610"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "domain": "brooksim.com",
+ "name": "Brooks Integrated Marketing, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:36.530Z",
+  "status": 200,
+  "optOutUrl": "https://www.brooksim.com/privacy-form",
+  "title": "Privacy Form | BrooksIM",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@brooksim.com"
+  ],
+  "text": "Skip to Main Content\n\nAbout\n\nServices\n\nIndustries\n\nBlog\n\nSaaS Data Platform\n\nContact\n\nDo Not Sell My Personal Information\nOpt-Out or Request Information\nYour Privacy Matters to Us\nAt Brooks Integrated Marketing (BrooksIM), we are committed to respecting your privacy and complying with all applicable data protection laws.\n\nAs a registered data broker in California and other states, we do not engage directly with individual consumers, nor do we compile data independently. We recognize the importance of giving individuals control over their personal information and the right to delete, opt-out or",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

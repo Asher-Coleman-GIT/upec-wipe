@@ -1,0 +1,185 @@
+{
+ "domain": "visitiq.io",
+ "name": "VisitIQ.io",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:47.161Z",
+  "status": 200,
+  "optOutUrl": "https://visitiq.io/opt-out/",
+  "title": "| VisitIQ",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "names[first_name]",
+    "id": "ff_4_names_first_name_",
+    "placeholder": "Enter Your First Name",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "names_1[last_name]",
+    "id": "ff_4_names_1_last_name_",
+    "placeholder": "Enter Your Last Name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "ff_4_email",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "checkbox[]",
+    "id": "checkbox_fd93eb8b7a4ecde0f9e703d611c41bc4",
+    "placeholder": "",
+    "aria": "I confirm the name and email address I have submitted are my own or submitted on behalf of a person who has authorized me to submit the request. My IP address and other connection details have been logged.",
+    "label": "I confirm the name and email address I have submitted are my",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_8.3",
+    "id": "input_2_8_3",
+    "placeholder": "First Name (required)*",
+    "aria": "",
+    "label": "First",
+    "form": 1,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_8.6",
+    "id": "input_2_8_6",
+    "placeholder": "Last Name (required)*",
+    "aria": "",
+    "label": "Last",
+    "form": 1,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_9",
+    "id": "input_2_9",
+    "placeholder": "Enter your email (required)*",
+    "aria": "",
+    "label": "Email*",
+    "form": 1,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_13",
+    "id": "input_2_13",
+    "placeholder": "Enter your phone number",
+    "aria": "",
+    "label": "Phone",
+    "form": 1,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_6",
+    "id": "input_2_6",
+    "placeholder": "Enter your company name",
+    "aria": "",
+    "label": "Company*",
+    "form": 1,
+    "heading": "Contact Us"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_submit_button_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Contact Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Book a Demo",
+    "id": "gform_submit_button_2",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "embeddedMessagingConversationButton",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "james.dunay@visitiq.io"
+  ],
+  "text": "Skip to content\nWhy VisitIQ\nPlatform\nSolutions\nVerticals\nResources\nAbout\nView Pricing\nApp Login\nOpt-Out Form\nOPT OUT FORM\nFirst Name\nLast Name\nEmail\nCheckbox Field\n I confirm the name and email address I have submitted are my own or submitted on behalf of a person who has authorized me to submit the request. My IP address and other connection details have been logged.\nSubmit\n\n\n\nData Privacy & Enterprise-Level Secured Data matters. We are a Privacy-First Organization, governance, and compliance.\n\nOur customers depend on VisitIQ™ to store, collect, and unify customer data that is legal and conse",
+  "fingerprint": "e8484fa9c7d20319a9b6a6c60be23be1fb0433564570581e8d3857279153a251"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

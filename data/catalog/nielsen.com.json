@@ -1,0 +1,51 @@
+{
+ "domain": "nielsen.com",
+ "name": "The Nielsen Company",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:00.302Z",
+  "status": 200,
+  "optOutUrl": "https://sites.nielsen.com/legal/privacy-statement/exelate-privacy-policy/opt-in-opt-out/",
+  "title": "NIELSEN MARKETING CLOUD OPT-IN/OPT-OUT",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Enter email address or MAID",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Nielsen Marketing Cloud\nOpt-Out"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Opt me out",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Opt out my browser",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy.department@nielsen.com"
+  ],
+  "text": "Nielsen Marketing Cloud\nOpt-Out\n\nNielsen Marketing Cloud (NMC) is committed to providing you with choices regarding the processing of your personal data. This page enables you to opt out of the collection and use of personal data in connection with our services.\n\nIf you'd like to opt-out, please enter your email address or MAID.\nOpt me out\nOpt me out anonymously\nOpt out my browser\n\nWe use your email address for opt-out purposes only. If we have your email address in our internal records, we will remove all information associated with it and will retain it in order to refrain from collecting fu",
+  "fingerprint": "4749dda4c997f1e7687497a1f55075bdfd174350c53a6154aa809e97fb9d7248"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

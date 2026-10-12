@@ -1,0 +1,44 @@
+{
+ "domain": "usdatacorporation.com",
+ "name": "US Data Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:22.883Z",
+  "status": 200,
+  "optOutUrl": "https://www.usdatacorporation.com/opt-out",
+  "title": "Opt-Out | US Data Corporation",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "reopenCookieSettings",
+    "inForm": false
+   },
+   {
+    "text": "COOKIE SETTINGS",
+    "id": "adjustCookies",
+    "inForm": false
+   },
+   {
+    "text": "ACCEPT",
+    "id": "acceptAllCookiesPopup",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@usdatacorporation.com"
+  ],
+  "text": "MARKETING LISTS & SOLUTIONS\nRESOURCES\nABOUT US\nGET A QUOTE\nDON’T SELL MY INFO\n(888) 578-3282\nOPT-OUT\nPlease provide the information requested below so that we may locate your record in our database. None of the information you enter into the form will be retained or sold. It is strictly being used to locate your record in our database so you may choose to opt-out of selected marketing channels and to exercise your rights under the CCPA.\n\n\n\n\nMENU\nHOME\nMARKETING LISTS & SOLUTIONS\nABOUT US\nRESOURCES\nGET A QUOTE\nPRIVACY POLICY\nREFUND POLICY\nSITE MAP\nDO NOT SELL MY INFO\nTERMS AND CONDITIONS\nCONNECT",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

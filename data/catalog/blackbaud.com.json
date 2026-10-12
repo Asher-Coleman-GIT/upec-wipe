@@ -1,0 +1,52 @@
+{
+ "domain": "blackbaud.com",
+ "name": "Blackbaud, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:27.274Z",
+  "status": 200,
+  "optOutUrl": "https://www.blackbaud.com/company/data-subject-rights-request",
+  "title": "Data Subject Rights Request - Blackbaud",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "footer-region-select",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "",
+    "options": [
+     "https://www.blackbaud.com=United States",
+     "https://www.blackbaud.ca=Canada",
+     "https://www.blackbaud.co.uk=Europe",
+     "https://www.blackbaud.com.au=Pacific"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "privacy_pref_optin",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@blackbaud.com"
+  ],
+  "text": "Skip to content\nPartners\nTraining & Support\nSign In\nProducts\nSolutions\nWhy Blackbaud\nResources\nBlackbaud AI\nSchedule with Sales Request a Demo\n Company Data Subject Rights Request\n\nData Subject Rights Request\n\nThe forms below allow you to submit data subject rights requests, including:\n\nDeletion of your personal information\n\nCorrection of your personal information\n\nAccess to your personal information\n\nOpt out of the sale of your personal information or the sharing of your personal information for targeted advertising\n\nSome of these rights aren’t absolute—for example, we may not be able to dele",
+  "fingerprint": "3ffd56d3eb286fc428f4aac7859979d55f8ea1212d1ffe55633ecfc98ff643f3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

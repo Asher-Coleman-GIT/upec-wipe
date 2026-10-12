@@ -1,0 +1,79 @@
+{
+ "domain": "richmediallc.com",
+ "name": "Rich Media LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:28.401Z",
+  "status": 200,
+  "optOutUrl": "https://richmediallc.com/do-not-sell-my-personal-information/",
+  "title": "Do Not Sell My Personal Information – Rich Media",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][0]",
+    "id": "wpforms-276-field_0",
+    "placeholder": "First name",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "To initiate a request to Opt-Out of Rich Media, LLC sharing "
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][1]",
+    "id": "wpforms-276-field_1",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "To initiate a request to Opt-Out of Rich Media, LLC sharing "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][4]",
+    "id": "wpforms-276-field_4",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "To initiate a request to Opt-Out of Rich Media, LLC sharing "
+   },
+   {
+    "tag": "input",
+    "type": "number",
+    "name": "wpforms[fields][5]",
+    "id": "wpforms-276-field_5",
+    "placeholder": "Zip Code",
+    "aria": "",
+    "label": "Zip Code",
+    "form": 0,
+    "heading": "To initiate a request to Opt-Out of Rich Media, LLC sharing "
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "wpforms-submit-276",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jeff@richmediallc.com"
+  ],
+  "text": "Skip to content\n[email]\nHome\nWho We Are\nServices\nContact Us\n888-735-0392\nDo Not Sell My Personal Information\nRich Media, LLC Privacy Notice Supplement for California Residents Services\n\nUnder the California Consumer Privacy Act of 2018 (CCPA), beginning January 1, 2020, California residents have the right to opt-out of the sale of personal information about them or their household, such as (though not limited to) their name, postal or email address, and other personally identifying information. You need not be physically present in California to exercise this right provided that ",
+  "fingerprint": "ac5c753e74c482357e9311efe43cb8209dce7f16a20939e2baa509995060f36c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

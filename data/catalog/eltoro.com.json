@@ -1,0 +1,44 @@
+{
+ "domain": "eltoro.com",
+ "name": "EL TORO.COM, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:41.781Z",
+  "status": 200,
+  "optOutUrl": "https://eltoro.com/your-privacy-choices/",
+  "title": "Your Privacy Choices and Opt-Out Rights | El Toro",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Open Solutions",
+    "id": "e-n-menu-dropdown-icon-1751",
+    "inForm": false
+   },
+   {
+    "text": "Open Resources",
+    "id": "e-n-menu-dropdown-icon-1753",
+    "inForm": false
+   },
+   {
+    "text": "Open Company",
+    "id": "e-n-menu-dropdown-icon-1754",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@eltoro.com"
+  ],
+  "text": "Solutions\nOpen Solutions\nCase Studies\nResources\nOpen Resources\nCompany\nOpen Company\nPolitical Advertising\nLOGIN\nTALK TO THE TEAM\nYour Privacy Choices and Opt-Out Rights\nPRIVACY RIGHTS ADDENDUM\n\nLast Modified: October 2, 2026\n\n\nABOUT THIS ADDENDUM\n\nThis EL TORO Privacy Rights Addendum (“Addendum”) is intended to set forth the rights available to consumers (and the methods for exercising such rights) provided under the California Consumer Privacy Act of 2018 as amended by the California Privacy Rights Act of 2020 (“CCPA”); the Colorado Privacy Act (“CPA”); the Connecticut Data Privacy Act (“CTDP",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

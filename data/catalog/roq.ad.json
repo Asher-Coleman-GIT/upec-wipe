@@ -1,0 +1,74 @@
+{
+ "domain": "roq.ad",
+ "name": "Roq.ad Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:40.896Z",
+  "status": 200,
+  "optOutUrl": "https://roq.ad/privacy-policy-roqad",
+  "title": "Privacy Policy — ROQAD",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "id-tracker-dark-email",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email address",
+    "form": 0,
+    "heading": "Get the Global ID Tracker"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "id-tracker-dark-company",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company",
+    "form": 0,
+    "heading": "Get the Global ID Tracker"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "id-tracker-dark-consent",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to ROQAD storing my email address to send me the Glo",
+    "form": 0,
+    "heading": "Get the Global ID Tracker"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Sign me up",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "contact@roq.ad",
+   "privacy@roq.ad"
+  ],
+  "text": "Identity Solutions\nAudience Solutions\nDistribution\nAbout\nResources\nContact\nGet in Touch\nLEGAL\nRoqad Privacy Notice\n\nLast updated: 29th June 2026\n\nON THIS PAGE\n\nIntroduction\nAbout Roqad\nHow We Protect Your Personal Data\nData Protection Officer\nName and Address of the Controller\nOverview\nI. Personal Information We Collect\nII. How We Collect Information\nIII. How We Use Information We Collect\nIV. Who We Share Information With\nV. Your Rights and Choices\nVI. Information for EU Users\nVII. Additional Information\nX. California Privacy Addendum\nConsumer Requests Metrics\nZeotap Data Services Privacy Poli",
+  "fingerprint": "6b8f470040f7828c1a00a64c68847b88b0a6f845a25c47b24df05f3031fa78dd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

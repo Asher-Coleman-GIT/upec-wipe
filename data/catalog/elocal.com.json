@@ -1,0 +1,45 @@
+{
+ "domain": "elocal.com",
+ "name": "eLocal USA, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:34.678Z",
+  "status": 200,
+  "optOutUrl": "https://www.elocal.com/privacy-california/",
+  "title": "eLocal | Leaders in Pay-Per-Call",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Play",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Mute",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Fullscreen",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@elocal.com"
+  ],
+  "text": "ABOUT\nRESOURCES\nFIND A SERVICE\nJOIN OUR PRO NETWORK\nSIGN IN\nFIND A SERVICE\nRESOURCES\nHome Improvement\nLegal\nResource Center\nABOUT\nWho We Are\nCareers\nContact Us\nJOIN OUR NETWORK\nPro Sign Up\nReviews\nAffiliates\nSign In\n\nIn a hurry to find a local provider?\n\n(877) 834-3312\nQUALITY LEADS. REAL RESULTS.\nGet more local calls for your business\n\neLocal makes it simple, user-friendly, and affordable to get your business on the other end of customer phone calls.\n\nExclusive inbound calls\nJust answer your phone to book jobs\nConvert at a higher rate than form leads\nGet Started\nOr call (833) 854-1932 to lear",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed",
+  "groupOverride": "business",
+  "note": "Home-services lead marketplace, not people search."
+ }
+}

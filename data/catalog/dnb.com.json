@@ -1,0 +1,27 @@
+{
+ "domain": "dnb.com",
+ "name": "Dun and Bradstreet Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T23:28:20.142Z",
+  "status": 404,
+  "optOutUrl": "https://www.dnb.com/en-us/why-dnb/data-transparency.html;%20https://submit-irm.trustarc.eu/services/validation/ba81b98f-997d-4216-b4cc-d64cf261b082",
+  "title": "404 Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacyofficer@dnb.com"
+  ],
+  "text": "Not Found\n\nThe requested URL was not found on this server.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

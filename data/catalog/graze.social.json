@@ -1,0 +1,34 @@
+{
+ "domain": "graze.social",
+ "name": "Graze Social PBC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:54.191Z",
+  "status": 200,
+  "optOutUrl": "https://www.graze.social/privacy-policy",
+  "title": "Privacy Policy | Graze · Graze",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Request Data Removal",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "devin@graze.social"
+  ],
+  "text": "Graze\nMarketplace\nHelp\nBlog\nAbout\nLogin\nPrivacy Policy\n\nThis Privacy Notice explains how Graze Social PBC (“Graze”) collects and treats information through the Graze platform, our website graze.social, and the products and services we offer (collectively, our “Services”). This Privacy Notice is governed by and part of our Terms of Service. Any terms defined in the Terms of Service have the same meaning when used in this Privacy Notice.\n\nYou consent to our privacy practices described in this Privacy Notice by accessing the Services or allowing us to process Personal Data following receipt of a ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

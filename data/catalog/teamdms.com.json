@@ -1,0 +1,89 @@
+{
+ "domain": "teamdms.com",
+ "name": "Direct Marketing Solutions, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:02.611Z",
+  "status": 200,
+  "optOutUrl": "https://teamdms.com/optout",
+  "title": "Opt Out | Direct Marketing Solutions",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "category",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "DMS provides consumers with the ability to know what data we",
+    "options": [
+     "=Select category...",
+     "mailing=Mailing address",
+     "phone=Phone number",
+     "email=Email address"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "salutation",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "DMS provides consumers with the ability to know what data we",
+    "options": [
+     "ME=Me",
+     "POA=A person for whom I ",
+     "AA=Third party or autho",
+     "DEC=A person who has die",
+     "AACA=Authorized agent on "
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstName",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "DMS provides consumers with the ability to know what data we"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastName",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "DMS provides consumers with the ability to know what data we"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Solutions\nAbout\nCareers\nNews\nContact\nDo not sell or share my personal information\n\nConsumers should have a choice in how businesses use their information.\n\nDMS provides consumers with the ability to know what data we are handling, the option to request we delete their data file, and the choice to opt out from utilization of that information. To submit an opt-out request, please fill in the form below or send an email to [email]\nOpt-out form\nSelect category...\nMailing address\nPhone number\nEmail address\nMe\nA person for whom I am a parent, legal guardian, or legal power of attorney\nTh",
+  "fingerprint": "3aedd941f2802c44026960e5140b810159d3dba8708e19c5bbf60719d8889dbf"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

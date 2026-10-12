@@ -1,0 +1,27 @@
+{
+ "domain": "proxima.ai",
+ "name": "Innovation Brands Corp",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:31.115Z",
+  "status": 200,
+  "optOutUrl": "https://www.proxima.ai/",
+  "title": "Proxima | Predictive Data Intelligence",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@proxima.ai"
+  ],
+  "text": "Product\nResources\nPricing\nAbout\nLog In\nGet a Demo\nFind the buyers who actually convert\n\nProxima Audiences put real ecommerce purchase data to work inside your own ad accounts, so you reach net-new, high-value buyers instead of platform guesses. Better targeting, better efficiency, more revenue from the same budget. For teams spending $50k+/month on paid media. Built on the Proxima Commerce graph\n\nGet a Demo\n\nSee how it works\n\nCUSTOMER RESULTS\n\nValentine’s Day\n\n+\n2\n%\n\nROAS\n\n+\n1\n%\n\nAverage order value\n\nGenerate Quality Ads for your Ideal Customers.\n\nAI slop is what happens when models learn from",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

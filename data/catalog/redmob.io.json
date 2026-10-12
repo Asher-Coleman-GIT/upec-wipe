@@ -1,0 +1,28 @@
+{
+ "domain": "redmob.io",
+ "name": "Redmob LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:22.830Z",
+  "status": 200,
+  "optOutUrl": "https://redmob.io/privacy-policy",
+  "title": "Privacy policy — Redmob",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@redmob.io"
+  ],
+  "text": "redmob.\n← Back to homepage\nPrivacy policy\n\nThis Policy was last modified on 17 July, 2026.\n\nThis Privacy Policy (‘Policy’) explains the privacy rules applicable to personal information collected by Redmob (‘we’, ‘our’, ‘us’) and your rights under the data protection laws. If you have any questions or comments about this Policy or any other privacy matters please contact our data protection officers at: [email]\n\nWe reserve the right to update this policy at any time. Any changes will take effect immediately upon publication. Check the latest version regularly at www.redmob.io.\n\n1.Pur",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

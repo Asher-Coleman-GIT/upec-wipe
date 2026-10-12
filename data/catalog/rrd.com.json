@@ -1,0 +1,49 @@
+{
+ "domain": "rrd.com",
+ "name": "Valassis Communications, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:55.941Z",
+  "status": 200,
+  "optOutUrl": "https://www.rrd.com/privacy-policy/valassis",
+  "title": "Valassis Privacy Policy - Protecting Your Privacy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept all",
+    "id": "ketch-banner-button-primary",
+    "inForm": false
+   },
+   {
+    "text": "Customize settings",
+    "id": "ketch-banner-button-secondary",
+    "inForm": false
+   },
+   {
+    "text": "Reject all",
+    "id": "ketch-banner-button-tertiary",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "valassisprivacy.request@rrd.com"
+  ],
+  "text": "Cookie Policy\n\nWe use essential cookies to ensure our website functions properly. With your consent, we'll use additional cookies to measure and improve performance, personalize content and ads, enable social media features, and analyze traffic. Information about your use of our site may be shared with our social media, advertising, and analytics partners. If you do not consent, we will only use the cookies that are strictly necessary for this site to function. You can choose which cookies to accept by clicking the Customize settings link to the right. To learn more and change your preferences",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "domain": "maxmind.com",
+ "name": "MaxMind, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:58.654Z",
+  "status": 200,
+  "optOutUrl": "https://www.maxmind.com/en/privacy-policy",
+  "title": "Privacy Policy | MaxMind",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-3e92e169-496d-4be7-95f2-44052278f132",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name*",
+    "form": 0,
+    "heading": "INSIGHTS IN YOUR INBOX"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-3e92e169-496d-4be7-95f2-44052278f132",
+    "placeholder": "",
+    "aria": "",
+    "label": "Business email*",
+    "form": 0,
+    "heading": "INSIGHTS IN YOUR INBOX"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "INSIGHTS IN YOUR INBOX"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Products & solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "searchWidgetTrigger",
+    "inForm": false
+   },
+   {
+    "text": "Yes, subscribe me!",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "tgonzalez@maxmind.com",
+   "privacy@maxmind.com",
+   "california-privacy@maxmind.com",
+   "nevada-privacy@maxmind.com"
+  ],
+  "text": "Products & solutions\nResources\nAbout us\nSign In\nPrivacy Policy\n\nUpdated on: August 11, 2026\n\nThis Privacy Policy describes the privacy practices of MaxMind, Inc. (sometimes referred to in this Privacy Policy as \"MaxMind\", \"we\", or \"us\"), in connection with the MaxMind.com website (the \"Website\") and the geoip-js.com website, any online features and services provided by MaxMind that post a link to this Privacy Policy, and any communications with us (such as phone calls, emails, and webform submissions) (collectively, the \"Services\").\n\nPlease read this Privacy Policy carefully. By visiting and u",
+  "fingerprint": "713e55ae87f6baf341ec8017f1d7e8db714b5f37c870cac68666f5a8bc6687f0"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

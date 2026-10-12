@@ -1,0 +1,33 @@
+{
+ "domain": "bluefireleads.com",
+ "name": "Solar Connect, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:55.089Z",
+  "status": 200,
+  "optOutUrl": "https://www.bluefireleads.com/privacy-policy.php",
+  "title": "Privacy Policy | Blue Fire Leads",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "contactBtn",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dev@bluefireleads.com"
+  ],
+  "text": "SOLUTIONS\nSCIENCE\nINDUSTRIES\nPARTNERS\nCONTACT\n\nWe use cookies to enhance your browsing experience, serve personalized content or ads, and analyze our traffic to improve website functionality. By continuing to use our website, you consent to our use of cookies and agree to our Privacy Policy and Terms & Conditions, including binding arbitration.\n\nPRIVACY POLICY\nWE ARE COMMITTED TO PROTECTING YOUR PRIVACY\n\nAny information we collect will be kept under technological lock and key, and used only to help you find the right insurance. Below you'll find our official privacy policy. If you have any add",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

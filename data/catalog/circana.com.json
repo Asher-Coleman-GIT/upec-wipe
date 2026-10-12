@@ -1,0 +1,61 @@
+{
+ "domain": "circana.com",
+ "name": "Circana, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:28.009Z",
+  "status": 200,
+  "optOutUrl": "https://www.circana.com/the-circana-group-global-privacy-policy-and-notice",
+  "title": "Circana's Global Privacy Policy: Safeguarding Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "search",
+    "id": "input_comp-m2kzjzwz_r_comp-mhez11wu",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@circana.com",
+   "atprivacy@circana.com"
+  ],
+  "text": "Skip to Main Content\nResources\nIndustries\nSolutions\nCompany\nContact Us\nThe Circana Group Global Policy and Notice\nEnglish\nDeutsch\nEspañol\nFrançais\nGreco\nItaliano\n\n23 October 2025\n\nThe Circana Group (“Circana”, “the Group”, “we” or “us”) refers to Circana, LLC ( registered in Delaware, United States) as well as its subsidiaries and affiliates. Circana is the leading advisor on the complexity of consumer behavior. Through unparalleled technology, advanced analytics, cross-industry data and deep expertise, we provide clarity that helps almost 7,000 of the world’s leading brands and retailers tak",
+  "fingerprint": "95dae927e76bc0b07ca2960931e1f050219c90d2aeffeab462f2e749aa4f1453"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "domain": "theswarm.com",
+ "name": "Swarm Holdings, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:46.621Z",
+  "status": 200,
+  "optOutUrl": "https://www.theswarm.com/privacy",
+  "title": "Privacy Policy - The Swarm",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privcy@theswarm.com",
+   "privacy@theswarm.com"
+  ],
+  "text": "Data\nProducts\nIntegrations\nCompany\nPricing\nDemo\nLog in\nGet started →\nPrivacy Policy\n\nLast updated: Sept 3, 2026\n\nThis Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.\n\nWe use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.\n\nInterpretation and Definitions\n\nInterpretation\n\nThe words of which the initial letter is capitalize",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

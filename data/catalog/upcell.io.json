@@ -1,0 +1,206 @@
+{
+ "domain": "upcell.io",
+ "name": "Upcell, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:35:21.201Z",
+  "status": 200,
+  "optOutUrl": "https://www.upcell.io/data-claim",
+  "title": "Data Rights & Removal Request | upcell",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "First Name",
+    "id": "",
+    "placeholder": "Jane",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Request Removal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Last Name",
+    "id": "",
+    "placeholder": "Smith",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Request Removal"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Business Email",
+    "form": 0,
+    "heading": "Request Removal"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone number",
+    "id": "",
+    "placeholder": "(215) 555 4568",
+    "aria": "",
+    "label": "Phone Number",
+    "form": 0,
+    "heading": "Request Removal"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Request Type",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request Type\n\nSelect…\nOpt-Out / Delete My Information\nData A",
+    "form": 0,
+    "heading": "Request Removal",
+    "options": [
+     "=Select…",
+     "opt-out=Opt-Out / Delete My ",
+     "data-access=Data Access",
+     "other=Other Privacy Reques"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "COMPARE",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "PRICING",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "LOG IN",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "BOOK A DEMO",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "VS ZOOMINFO",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "VS APOLLO",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "VS COGNISM",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "VS LUSHA",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "VS ROCKETREACH",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "BLOG",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "FAQ",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "PRICING",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "ABOUT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "PRICING CALCULATOR",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "LOG IN",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "BOOK A DEMO",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "TALK TO A FOUNDER",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SUBMIT",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "BOOK A DEMO",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "LOG IN",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "policy@upcell.io"
+  ],
+  "text": "We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience and analyze website traffic. By clicking “Accept,” you agree to our website's cookie use as described in our Cookie Policy. You can change your cookie settings at any time by clicking “Preferences.”\nAccept\n\nCOMPARE\n\nPRICING\n\nLOG IN\n\nBOOK A DEMO\n\nMenu\n\nCompare\n\nVS ZOOMINFO\n\nVS APOLLO\n\nVS COGNISM\n\nVS LUSHA\n\nVS ROCKETREACH\n\nResources\n\nBLOG\n\nFAQ\n\nCompany\n\nPRICING\n\nABOUT\n\nFree tool\n\nPRICING CALCULATOR\n\nLOG IN\n\nBOOK A DEMO\n\nTALK TO A FOUNDER\n\nRequest Removal\n\nWe believe",
+  "fingerprint": "b5d63f4f4e74309f5171dea3fd85e2663235826d8f507f4a3fe1e6c83490b63e"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

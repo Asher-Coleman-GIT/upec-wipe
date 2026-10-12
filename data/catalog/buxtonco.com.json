@@ -1,0 +1,109 @@
+{
+ "domain": "buxtonco.com",
+ "name": "Buxton Company, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:43.863Z",
+  "status": 200,
+  "optOutUrl": "https://www.audiense.com/legal/privacy/",
+  "title": "Privacy Policy | Audiense",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "Search",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-b819cde3-c872-41ec-9b64-e231d7daf403",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email*",
+    "form": 1,
+    "heading": "Audiense Data Privacy Notice"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "audiense_forms_gdpr_optin_consent_marketing",
+    "id": "audiense_forms_gdpr_optin_consent_marketing-b819cde3-c872-41ec-9b64-e231d7daf403",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt in to receive Audiense updates and marketing emails. Uns",
+    "form": 1,
+    "heading": "Audiense Data Privacy Notice"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Audiense Data Privacy Notice"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Our products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How we help",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Who we help",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "consumerprivacy@buxtonco.com"
+  ],
+  "text": "Skip to main content\nAudiense\nOur products \nAudiense Action\nAI campaign companion for marketers\nAudiense Discover\nDeep audience research & campaign design\nAudiense In-Person (Buxton)\nLocation & experience strategies\nAudiense Online (Elevar)\nWebsite performance & conversion tracking\nAudiense Data Services\nOur data in your ecosystem\nAudiense Action\nAI campaign companion — get input, test ideas, verify channels and designs with the right consumer audiences\nHow we help \nAI campaign planning\nTest concepts against your best customers\nAudience knowledge building\nMove beyond demographic data\nConsumer ",
+  "fingerprint": "11a7cfe28e27c0c6a46f3d848e2ea8a6966b5d4552f448d45b0aec60afc7b6e5"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

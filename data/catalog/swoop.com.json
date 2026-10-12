@@ -1,0 +1,20 @@
+{
+ "domain": "swoop.com",
+ "name": "Swoop.com, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:31.051Z",
+  "contacts": [
+   "privacyrights@swoop.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://swoop.com/privacy-notice/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

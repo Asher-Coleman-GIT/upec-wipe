@@ -1,0 +1,45 @@
+{
+ "domain": "endgame.io",
+ "name": "Endgame Labs, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:45.342Z",
+  "status": 200,
+  "optOutUrl": "https://www.endgame.io/privacy",
+  "title": "Data Privacy Policy | Endgame",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@endgame.io",
+   "privacy@endgame.io"
+  ],
+  "text": "Solutions\nCustomers\nResources\nCompany\nGo to app\nGet a demo\nData Privacy Policy\n\nLast Updated: September 11, 2026\n\nThis Privacy Policy describes how Endgame Labs, Inc. (\"Endgame,\" \"we,\" or \"us\") collects, uses, discloses, and otherwise processes information. This Privacy Policy applies to information we collect when you access or use our website (the \"Website\"), and when organizations and their users (\"Customers\") use our AI-enabled revenue intelligence and deal-preparation platform and related applications, integrations, and support services (collectively with the Website, the \"Services\").\n\nWh",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

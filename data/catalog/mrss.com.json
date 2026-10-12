@@ -1,0 +1,104 @@
+{
+ "domain": "mrss.com",
+ "name": "M&R Strategic Services",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:33.361Z",
+  "status": 200,
+  "optOutUrl": "https://www.mrss.com/privacy-policy/",
+  "title": "Privacy Policy - M+R",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "footer_first_name",
+    "id": "footer_first_name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "Want to grow, change, and win?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "footer_last_name",
+    "id": "footer_last_name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Want to grow, change, and win?"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "footer_email",
+    "id": "footer_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email address",
+    "form": 0,
+    "heading": "Want to grow, change, and win?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "footer_org",
+    "id": "footer_org",
+    "placeholder": "",
+    "aria": "",
+    "label": "Organization name",
+    "form": 0,
+    "heading": "Want to grow, change, and win?"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "footer_submit",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Want to grow, change, and win?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@mrss.com"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies. Please read our privacy policy for additional details.\n\nCustomize\nReject All\nAccept All\nSkip to content\nWHO WE ARE WHAT WE DO CAREERS INSIGHTS GET IN TOUCH\nPrivacy Policy\n\nEffective Date: July 22, 2025\n\nThis Privacy Policy describes the data protection practices of M+R and its related websites and initiatives that link to this document (“Websites”) (collectively, “M+R,” “we,” “us,” or “our”). This Pri",
+  "fingerprint": "8ffb967414ead69a961a8619bd052ea34b4a2164217442d3a8418fba2627ae0d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "domain": "speedeondata.com",
+ "name": "Speedeon Data LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:48.828Z",
+  "status": 200,
+  "optOutUrl": "https://optout.speedeondata.com/",
+  "title": "Speedeon Data Opt Out",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "deletion",
+    "id": "deletion",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "optOut",
+    "id": "optOut",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "sensitiveData",
+    "id": "sensitiveData",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastName",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "phone",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address1",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address2",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   },
+   {
+    "tag": "input",
+    "type": "number",
+    "name": "zip",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT-OUT / Deletion Request"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Your State of Residence",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "SUBMIT",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "accounting@speedeondata.com"
+  ],
+  "text": "OPT-OUT / Deletion Request\n\nYour privacy is very important to us and we want to make sure you are in control of your data. By forwarding this completed form to Speedeon Data, you are asking either to OPT-OUT of Speedeon Data selling your data to third parties or you are asking Speedeon Data to have your data deleted from Speedeon Data’s database. To be transparent, the process is largely the same whether you have asked to OPT-OUT or have your information deleted. We will have your name and address added to a suppression file that will ensure, going forward, that your data will not be sold.\n\nSp",
+  "fingerprint": "29773be6e4e51641fc81688f98e1f8d3c21abf40d2250f3e237c6fe05b50cea5"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

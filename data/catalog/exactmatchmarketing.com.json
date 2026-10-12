@@ -1,0 +1,27 @@
+{
+ "domain": "exactmatchmarketing.com",
+ "name": "Exact Match Marketing Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:54.490Z",
+  "status": 200,
+  "optOutUrl": "https://exactmatchmarketing.com/privacy-policy",
+  "title": "Privacy Policy | Exact Match Marketing",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "datarequest@exactmatch.io"
+  ],
+  "text": "Privacy Policy | Exact Match Marketing\nAbout\nPricing\nSolutions\nContact Us\nBook A Demo\n\nPrivacy Policy\n\nLAST UPDATED: FEB. 4, 2026\n\nThis Privacy Policy describes our policies and procedures on the collection and usages of your\n\npersonal information data when you visit our website\n\n1. Introduction\n\nThis Privacy Policy describes how Exact Match Marketing Inc. (\"Exact Match,\" \"we,\" \"us,\" or \"our\") collects, uses, discloses, and otherwise processes personal information in connection with our website located at https://exactmatchmarketing.com (the \"Website\"), our software-as-a-service platform (the ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

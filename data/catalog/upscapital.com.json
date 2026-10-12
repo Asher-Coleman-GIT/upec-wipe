@@ -1,0 +1,17 @@
+{
+ "domain": "upscapital.com",
+ "name": "UPS Capital Corporation",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T22:35:35.380Z",
+  "contacts": [],
+  "error": "page.goto: Timeout 25000ms exceeded."
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

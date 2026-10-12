@@ -1,0 +1,311 @@
+{
+ "domain": "forewarn.com",
+ "name": "FOREWARN, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:11.388Z",
+  "status": 200,
+  "optOutUrl": "https://www.forewarn.com/opt-out-policy/",
+  "title": "Opt-Out Policy | FOREWARN",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "First Name",
+    "id": "firstName",
+    "placeholder": "First",
+    "aria": "",
+    "label": "Name*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Middle Name",
+    "id": "middleName",
+    "placeholder": "Middle",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Last Name",
+    "id": "lastName",
+    "placeholder": "Last",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address Line 1",
+    "id": "addressLine1",
+    "placeholder": "Address Line 1",
+    "aria": "",
+    "label": "Address*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address Line 2",
+    "id": "addressLine2",
+    "placeholder": "Address Line 2",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "City",
+    "id": "city",
+    "placeholder": "City",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "State",
+    "id": "State",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "=Select a State",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "California=California",
+     "Colorado=Colorado",
+     "Connecticut=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Zip",
+    "id": "zip",
+    "placeholder": "Zip Code",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Lived Here 6 Months",
+    "id": "lived6Months",
+    "placeholder": "",
+    "aria": "",
+    "label": "Have you lived here for more than 6 months?*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "Yes=Yes",
+     "No=No"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "Phone",
+    "id": "phone",
+    "placeholder": "Mobile Phone Number",
+    "aria": "",
+    "label": "Mobile Phone Number*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "email",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "Email Address*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "legalRight",
+    "id": "legalRight",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am an individual afforded a legal right to non-disclosure/",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "personlRisk",
+    "id": "personlRisk",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am an individual otherwise subject to a serious risk of ph",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Lived Here 6 Months",
+    "id": "hplived6Months",
+    "placeholder": "",
+    "aria": "",
+    "label": "Have you lived here for more than 6 months?*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "=Select One",
+     "Yes=Yes",
+     "No=No"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "password",
+    "name": "Last 4 Social Security",
+    "id": "hplast4ss",
+    "placeholder": "Last 4 of Social Security #",
+    "aria": "",
+    "label": "Last 4 Digits of Social Security Number*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Best of Contact",
+    "id": "hpformofcontact",
+    "placeholder": "",
+    "aria": "",
+    "label": "Best form of Contact*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "=Select One",
+     "email=email",
+     "phone=phone"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Birth Month",
+    "id": "hpdobmonth",
+    "placeholder": "",
+    "aria": "",
+    "label": "Date of Birth*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "=Select Month",
+     "1=1",
+     "2=2",
+     "3=3",
+     "4=4",
+     "5=5",
+     "6=6",
+     "7=7"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Birth Day",
+    "id": "hpdobday",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "=Select Day",
+     "1=1",
+     "2=2",
+     "3=3",
+     "4=4",
+     "5=5",
+     "6=6",
+     "7=7"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Birth Year",
+    "id": "hpdobyear",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request",
+    "options": [
+     "=Select Year",
+     "2024=2024",
+     "2023=2023",
+     "2022=2022",
+     "2021=2021",
+     "2020=2020",
+     "2019=2019",
+     "2018=2018"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "hplegalAgree",
+    "id": "hplegalAgree",
+    "placeholder": "",
+    "aria": "",
+    "label": "I have read and agree to Privacy Policy Terms*",
+    "form": 0,
+    "heading": "Non-Disclosure/Opt-Out Request"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "Skip to content\nMain Navigation\nOPT-OUT POLICY\nFOREWARN Non-Disclosure/Opt-Out Policy\n\nFOREWARN is committed to maintaining a robust privacy compliance program that aligns with federal and state laws. This includes comprehensive policies and procedures designed to address non-disclosure/opt-out requests. FOREWARN will consider your request if you meet one of the following requirements:\n\nThis webform is specifically intended for those individuals seeking to restrict the disclosure of their information due to a risk of harm or similar threat.\n\nImportantly, FOREWARN’s products and services contai",
+  "fingerprint": "175fc7c00195caf84c92c5078472aed9944a5d2f53a8a3c17f5468ca78c68fd8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

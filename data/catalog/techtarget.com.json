@@ -1,0 +1,52 @@
+{
+ "domain": "techtarget.com",
+ "name": "TechTarget, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [
+  "informatechtarget.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:09.516Z",
+  "status": 200,
+  "optOutUrl": "https://www.informatechtarget.com/ccpa-privacy-notice/",
+  "title": "CCPA Privacy Notice | Informa TechTarget",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "s-header",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "searchsubmit-header",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@techtarget.com"
+  ],
+  "text": "Here’s Why\nBack\nHERE’S WHY\nOur Audiences\nGlobal Execution\nWhy Informa TechTarget \nSolutions\nBack\nSOLUTIONS\nProduct Teams\nMarketing Teams\nSales Teams\nView Our Solutions \nProducts\nBack\nPRODUCTS\nStrategy\nBuyer Intelligence\nContent\nAwareness\nDemand\nSales\nPlatforms\nIntegrations\nView Our Products \nCustomers\nBack\nCUSTOMERS\nCase Studies\nCustomers by Category\nReviews\nAward Programs\nResources\nBack\nRESOURCES\nResource Library\nBlog\nCompany\nBack\nCOMPANY\nAbout Informa TechTarget\nPress Room\nCareers\nEditorial\nOur Brands\nOur Partners\nContact Us\nInvestor Relations\nProduct Demo\nEditorial\nPortal Login\nGlobal\nBack\n",
+  "fingerprint": "6d0f66d3b873e0c9b56c4b8d4e44b2dea9030d8d63e887c2717067574d1745e8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

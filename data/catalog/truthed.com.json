@@ -1,0 +1,118 @@
+{
+ "domain": "truthed.com",
+ "name": "Truthed, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T23:36:48.983Z",
+  "status": 403,
+  "optOutUrl": "https://www.truthed.com/optout/search",
+  "title": "",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fn",
+    "id": "_r_0_",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "mn",
+    "id": "_r_1_",
+    "placeholder": "",
+    "aria": "",
+    "label": "Middle Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "ln",
+    "id": "_r_2_",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "_r_3_",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=",
+     "AL=AL",
+     "AK=AK",
+     "AR=AR",
+     "AZ=AZ",
+     "CA=CA",
+     "CO=CO",
+     "CT=CT"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "age",
+    "id": "_r_4_",
+    "placeholder": "",
+    "aria": "",
+    "label": "Age",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Login",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search Records",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "anita@truthed.com"
+  ],
+  "text": "Resources\nContact\nLogin\nOk, First Let’s Find Your Report\nFirst Name\nFirst Name\nMiddle Name\nMiddle Name\nLast Name\nLast Name\nCity\nCity\nState\nAL\nAK\nAR\nAZ\nCA\nCO\nCT\nDC\nDE\nFL\nGA\nHI\nIA\nID\nIL\nIN\nKS\nKY\nLA\nMA\nMD\nME\nMI\nMN\nMO\nMS\nMT\nNC\nNE\nND\nNH\nNJ\nNM\nNV\nNY\nOH\nOK\nOR\nPA\nRI\nSC\nSD\nTN\nTX\nUT\nVA\nVT\nWA\nWI\nWV\nWY\nState\n\nAge\nAge\nSearch Records\nPrivacy Policy\nTerms & Conditions\n\nTruthed is a modern people search and background check platform designed to help you make informed decisions with confidence. From reconnecting with long-lost relatives to verifying online dates or checking public records, we give you fast, se",
+  "fingerprint": "f15ab98e45e4817ef9742328fc334d45f52ad5c423d0479063c81daf59af9f25"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "optOutUrl": "https://www.truthed.com/optout/search",
+  "notes": "Search by name, city and state, then pick your record to remove"
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "domain": "deloitte.com",
+ "name": "Deloitte Consulting LLP",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:36.638Z",
+  "status": 200,
+  "optOutUrl": "https://www.deloitte.com/us/en/legal/privacy/do-not-sell-my-personal-information.html?icid=bn_do-not-sell-my-personal-information",
+  "title": "Data Analytics Privacy Notice | Deloitte US",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Search location",
+    "id": "",
+    "placeholder": "Type location",
+    "aria": "search_location",
+    "label": "",
+    "form": -1,
+    "heading": "Blockchain & Digital Assets"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Search",
+    "id": "search-button",
+    "inForm": false
+   },
+   {
+    "text": "US - EN",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept all optional cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Decline all optional cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Tailor your cookie preferences",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "usprivacyquestions@deloitte.com"
+  ],
+  "text": "Skip to main content\nWho we are \nWhat we do \nOur Thinking \nCareers \nSearch\nUS - EN\n\nSelect your location\n\nWelcome to Deloitte\n\nIf we have selected the wrong experience for you, please change it above.\n\nData Analytics Privacy Notice\n\nLast updated: 20 May 2026\n\nDownload the PDF \nIntroduction\nInformation collection\nInformation use\nSelling of information\nInformation retention\nDisclosure of information to third parties\nYour personal information rights\nVerification of personal information requests\nThird party requests\nSpecial notices to California residents\nWashington State Consumer Health Data Priv",
+  "fingerprint": "4983b6ecd0602a24ef2a459c49205f9be8dcc1f1a70aa66acc4fde0d5f67e9aa"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "domain": "hunter.io",
+ "name": "Hunter Web Services, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:38.382Z",
+  "status": 200,
+  "optOutUrl": "https://hunter.io/privacy-policy",
+  "title": "Privacy Policy • Hunter",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Product",
+    "id": "product-submenu-link",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "resources-submenu-link",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "company-submenu-link",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Hunter Walkthrough\n\n~ 2min",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "matt@hunter.io",
+   "privacy@hunter.io"
+  ],
+  "text": "Connect Hunter to your favorite AI application →\nProduct\nPricing\nResources\nCompany\nLog in\nCreate an account\nPrivacy Policy\n\nHunter helps businesses connect with each other by providing web applications, browser extensions, and other online services.\n\nThis Privacy Policy describes how we use personal data, how we share it, and your rights and choices. At Hunter, being transparent on the data we collect and process is part of our mission. We aim to make this Privacy Policy as clear and easy to read as possible. If you have any questions related to privacy, please get in touch with us at privacy@",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

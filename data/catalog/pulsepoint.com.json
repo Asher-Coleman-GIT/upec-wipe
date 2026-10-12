@@ -1,0 +1,28 @@
+{
+ "domain": "pulsepoint.com",
+ "name": "PulsePoint, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:55.032Z",
+  "status": 200,
+  "optOutUrl": "https://www.pulsepoint.com/legal/customer-opt-out",
+  "title": "Platform Privacy Policy | PulsePoint",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "dataprivacy@pulsepoint.com"
+  ],
+  "text": "SKIP TO MAIN CONTENT\nPlatform\nPartnerships\nResources\nCompany\nContact Us\nLog In\nBack to All Policies & Terms\nTable of Contents\nWHO WE ARE\nWHAT WE DO\n‍INFORMATION THAT WE COLLECT\nHOW WE USE COLLECTED INFORMATION\nHOW WE SHARE INFORMATION\nUSE OF COOKIES AND TRACKING TECHNOLOGIES\nOPT OUTS AND YOUR CHOICES OVER INFORMATION WE SHARE\nPRIVACY RIGHTS\nACCESS, CORRECTION, AND DELETION REQUESTS\nCOLLECTION, USE, AND DISCLOSURE OF INFORMATION BY OTHERS\nSECURITY\nDATA RETENTION\nCHILDREN’S PRIVACY\nCROSS-BORDER DATA TRANSFERS\nGLOBAL PRIVACY CONTROL (“GPC”)\nRESIDENTS OF CALIFORNIA\n‍CALIFORNIA DELETE ACT\nCHANGES T",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

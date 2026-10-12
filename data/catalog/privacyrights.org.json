@@ -1,0 +1,25 @@
+{
+ "domain": "privacyrights.org",
+ "name": "privacyrights.org",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:54.696Z",
+  "status": 404,
+  "optOutUrl": "https://privacyrights.org/data-brokers](https:/www.privacyrights.org/data-brokers",
+  "title": "Page not found | Privacy Rights Clearinghouse",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to main content\nUPDATES\nTOPICS\nEducation\nEmployment\nFinancial\nHealth\nHousing\nSecurity\nRESOURCES & TOOLS\nLaw Overviews\nReports\nData Breach Chronology\nData Brokers\nQ&A\nADVOCACY\nABOUT\nHistory\nTeam\nPartners & Funders\nOpportunities\nContact\nCy Pres Awards\nSearch Menu\nSEARCH\nDONATE\nBreadcrumb\nHome\nPage not found\nPage not found\nThe requested page could not be found.\n\nDOWNLOAD SEARCH RESULTS\n\n \n \n \n\nPrivacy Policy\n\nFOOTER MENU\nABOUT\nRESOURCES & TOOLS\nUPDATES\nCY PRES AWARDS\nOPPORTUNITIES\nTOPICS\nHealth\nFinancial\nEmployment\nSecurity\nHousing\nEducation\nCONTACT\n\n3245 University Ave. #1101\nSan Diego, CA ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

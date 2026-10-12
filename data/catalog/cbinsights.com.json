@@ -1,0 +1,56 @@
+{
+ "domain": "cbinsights.com",
+ "name": "CB Information Services, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:26:49.749Z",
+  "status": 200,
+  "optOutUrl": "https://www.cbinsights.com/privacy-policy/",
+  "title": "Privacy Policy | CB Insights",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-1a455111-3b81-48ca-becb-bc851b933c64",
+    "placeholder": "Work email address*",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Policy"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Policy"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe for Updates",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@cbinsights.com"
+  ],
+  "text": "Skip to content\nAI & Agents\nData\nMCP & Integrations\nSolutions\nResearch\nPricing\nSchedule a demo\nLog in\nStart free trial\nPrivacy Policy\n\nSubscribe here to be notified when these terms are updated.\n\nCB Insights Privacy Statement\n\nLast Updated: July 31, 2026\n\nCB Information Services, Inc. (“CB Insights,” “CBI,” “we,” “us,” or “our”) believes in the importance of earning and maintaining your trust. As such, we are committed to protecting your privacy rights.  This Privacy Statement (“Statement”) provides notice of how CBI collects, uses, shares, or otherwise processes information relating to natura",
+  "fingerprint": "92ca70e840c393b4555b9a9618fc51cf960d0d34090be951a1c91df2f4c9b015"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

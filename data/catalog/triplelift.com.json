@@ -1,0 +1,20 @@
+{
+ "domain": "triplelift.com",
+ "name": "TripleLift, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:35.303Z",
+  "contacts": [
+   "privacy@triplelift.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://triplelift.com/user-rights-policy-and-opt-out/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "domain": "bigdbm.com",
+ "name": "PublicNSA LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:08.501Z",
+  "status": 200,
+  "optOutUrl": "https://optout.bigdbm.com/",
+  "title": "Do Not Sell or Share My Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "OptOutOption[0]",
+    "id": "formCheckAll",
+    "placeholder": "",
+    "aria": "",
+    "label": "All",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "OptOutOption[1]",
+    "id": "formCheckAddress",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Only",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "OptOutOption[2]",
+    "id": "formCheckPhone",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone Only",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "OptOutOption[3]",
+    "id": "formCheckEmail",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Only",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "FirstName",
+    "id": "horizontal-firstname-input",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "LastName",
+    "id": "horizontal-lastname-input",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "horizontal-email-input",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Phone",
+    "id": "horizontal-phone-input",
+    "placeholder": "Phone",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address1",
+    "id": "horizontal-address1-input",
+    "placeholder": "Address1",
+    "aria": "",
+    "label": "Address",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address2",
+    "id": "horizontal-address2-input",
+    "placeholder": "Address2",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "City",
+    "id": "horizontal-city-input",
+    "placeholder": "City",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "State",
+    "id": "horizontal-state-input",
+    "placeholder": "",
+    "aria": "example",
+    "label": "State",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information",
+    "options": [
+     "Select State=Select State",
+     "AA=AA",
+     "AE=AE",
+     "AK=AK",
+     "AL=AL",
+     "AP=AP",
+     "AR=AR",
+     "AS=AS"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "ZipCode",
+    "id": "horizontal-zip-input",
+    "placeholder": "Zip Code",
+    "aria": "",
+    "label": "Zip Code",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "file",
+    "name": "additionalFiles",
+    "id": "additionalFiles",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "TermsAccepted",
+    "id": "inlineFormCheck",
+    "placeholder": "",
+    "aria": "",
+    "label": "By submitting this form, I confirm that:\nThe above informati",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "main-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@bigdbm.com"
+  ],
+  "text": "Home\nPrivacy\nDo Not Sell or Share My Personal Information\n\nTo request that your Personal Information be removed from our Products, please complete the form below. We require this information for the sole purpose of prohibiting the sale and/or sharing of the personal data that we have collected about you. We will only use this information to process your opt out request.\nPlease note that submitting requests to be removed from our Products will not prevent other companies from retaining your Personal Information, sending you direct marketing materials, or making telemarketing calls. Please conta",
+  "fingerprint": "c6ac06c6567ac5852461ecd503c2749d11056d35fffc22e5caf40ded9f9005fd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

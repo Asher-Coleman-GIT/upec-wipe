@@ -1,0 +1,55 @@
+{
+ "domain": "reklaimyours.com",
+ "name": "Reklaim Ltd.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:26.270Z",
+  "status": 200,
+  "optOutUrl": "https://reklaimyou.com/privacy",
+  "title": "Privacy Policy | Reklaim | Reklaim",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Login",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "finance@reklaimyours.com",
+   "privacy@reklaimyours.com"
+  ],
+  "text": "How It Works\nSimple & Transparent\nProtect\nYour Data\nLearn\nNews & Insights\nLogin\nPrivacy Policy\n\nLast updated: June 3, 2026\n\nTABLE OF CONTENTS\nIntroduction\n1. Sources of Personal Information\n2. Categories of Personal Information We Collect\n3. Business Purposes for Collecting Personal Information\n4. How We Disclose Your Personal Information\n5. Your Privacy Choices\n6. Use of Cookies and Tracking Technologies\n7. Health Information\n8. Security\n9. Retention\n10. U.S. State-Specific Disclosure\n11. Children's Privacy\n12. Third-Party Links on Our Website\n13. Changes to This Privacy Policy\n14. Contact Us",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "domain": "liveramp.com",
+ "name": "LiveRamp, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:58.752Z",
+  "status": 200,
+  "optOutUrl": "https://optout.liveramp.com/opt_out",
+  "title": "OptOuts",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "optout_email",
+    "id": "optout_email",
+    "placeholder": "Enter Email Address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Opt Out",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "consumercare@liveramp.com"
+  ],
+  "text": "Permanent Opt-out\nNote: After submitting your email, we will opt you out of LiveRamp.",
+  "fingerprint": "1c5baaa9bfac10ded01532286ccabdedf0b6faa4f66207689aaf4749e4317e5e"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

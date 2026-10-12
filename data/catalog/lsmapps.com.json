@@ -1,0 +1,159 @@
+{
+ "domain": "lsmapps.com",
+ "name": "L.S Mobile Apps Holdings Ltd",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:37.190Z",
+  "status": 200,
+  "optOutUrl": "https://lsmapps.com/opt-out",
+  "title": "LSM Apps | Data Subject Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fullName",
+    "id": "fullName",
+    "placeholder": "e.g., Jane Smith",
+    "aria": "",
+    "label": "Full name*",
+    "form": 0,
+    "heading": "Data Subject Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "e.g., [email]",
+    "aria": "",
+    "label": "Email address*",
+    "form": 0,
+    "heading": "Data Subject Request"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phoneNumber",
+    "id": "phoneNumber",
+    "placeholder": "e.g., +1 555 123 4567",
+    "aria": "",
+    "label": "Phone number*",
+    "form": 0,
+    "heading": "Data Subject Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "appUser",
+    "id": "appUser",
+    "placeholder": "",
+    "aria": "",
+    "label": "Are you a user of our App?*",
+    "form": 0,
+    "heading": "Data Subject Request",
+    "options": [
+     "=Select",
+     "yes=Yes",
+     "no=No"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "territory",
+    "id": "territory",
+    "placeholder": "",
+    "aria": "",
+    "label": "Territory*",
+    "form": 0,
+    "heading": "Data Subject Request",
+    "options": [
+     "=Select your territor",
+     "eu=EU",
+     "us=US",
+     "other=Other"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "privacyRight",
+    "id": "privacyRight",
+    "placeholder": "",
+    "aria": "",
+    "label": "Which right do you wish to exercise?*",
+    "form": 0,
+    "heading": "Data Subject Request",
+    "options": [
+     "=Select your territor"
+    ]
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "details",
+    "id": "details",
+    "placeholder": "Please provide any details that may help us process your request.",
+    "aria": "",
+    "label": "Additional details (optional)",
+    "form": 0,
+    "heading": "Data Subject Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "confirmation",
+    "id": "confirmation",
+    "placeholder": "",
+    "aria": "",
+    "label": "I confirm that the information provided above is accurate an",
+    "form": 0,
+    "heading": "Data Subject Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "captcha",
+    "placeholder": "",
+    "aria": "",
+    "label": "Security check — enter the code shown below*",
+    "form": 0,
+    "heading": "Data Subject Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "website",
+    "id": "website",
+    "placeholder": "",
+    "aria": "",
+    "label": "Website",
+    "form": 0,
+    "heading": "Data Subject Request"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "guy.hamawi@lsmapps.com"
+  ],
+  "text": "Home\nMore Apps\nData Subject Request\n\nSubmit a request regarding your personal data\n\nPlease complete the form below to exercise your privacy rights. We may contact you to verify your identity before processing your request.\n\nFull name*\n\nThe name associated with the personal data your request relates to.\n\nEmail address*\n\nWe will send our response to this address, so please make sure it is correct.\n\nPhone number*\n\nThe phone number your request relates to. Enter it in international format, starting with your country code — for example +1 555 123 4567 (US) or +44 20 7123 4567 (UK). We cannot proces",
+  "fingerprint": "25299ab624c42cbf6159376c063b0b0c2d0184596c6b9ed4d13d6074bc084618"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

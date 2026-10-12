@@ -1,0 +1,55 @@
+{
+ "domain": "penlink.com",
+ "name": "Pen-Link, Ltd.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:39.858Z",
+  "status": 200,
+  "optOutUrl": "https://www.penlink.com/privacy-policy/",
+  "title": "Privacy Policy - Penlink",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "menu",
+    "id": "wg6acc08256b6d10.081464161791756325449",
+    "placeholder": "",
+    "aria": "",
+    "label": "EN",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Do Not Sell or Share My Personal Informa",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "navSearchBtn",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@penlink.com"
+  ],
+  "text": "We value your privacy\n\nThis website or its third-party tools process personal data. You can opt out of the sale of your personal information by clicking on the “Do Not Sell or Share My Personal Information” link.\n\nDo Not Sell or Share My Personal Information\nPowered by\n\nIt’s time! Register now for Penlink’s 2027 Training Summit\n\n\nBlog\nEN\nPT\nFR\nES\nDE\nLogin\nCoAnalyst360\nPlatform\n\nPlatform Overview\n\nSee why Penlink is the global leader in AI-powered digital intelligence and investigations\n\nLearn more >\nDigital EvidenceFind the Answers You’re Looking For\nOpen-Source IntelligenceAI Powered Open-Sou",
+  "fingerprint": "f00fd33705fe28f221d33a4664bf36b2592a6155c714adea24908c9166e6ae1a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

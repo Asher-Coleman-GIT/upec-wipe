@@ -1,0 +1,28 @@
+{
+ "domain": "sbfe.org",
+ "name": "SBFE, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:45.614Z",
+  "status": 200,
+  "optOutUrl": "https://www.sbfe.org/connect/ccpa",
+  "title": "Questions for CCPA Inquiries | SBFE",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "info@sbfe.org"
+  ],
+  "text": "Explore Membership\nSBFE Partners\nAbout Us\nFAQs\nContact\nData Inquiries\nData Requests (CCPA)\n\nIf you have a request that is permissible under the CCPA or other state statute, please contact your lending institution. Your lending institution will be responsible for removing your data from SBFE’s records. SBFE has no direct relationship with individuals or small businesses. All information that SBFE receives is provided to SBFE by small business lenders that directly collect the information from individuals or small businesses. To learn more, view SBFE’s Privacy Policy.\n\nAbout Us\nExplore Membershi",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "domain": "healthlinkdimensions.com",
+ "name": "HealthLink Dimensions, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:55.305Z",
+  "status": 200,
+  "optOutUrl": "https://healthlinkdimensions.com/consumerprivacyrights",
+  "title": "Consumer Data Privacy Rights | HealthlinkDimensions",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Agree & Proceed",
+    "id": "truste-consent-button",
+    "inForm": false
+   },
+   {
+    "text": "Decline All",
+    "id": "truste-consent-required",
+    "inForm": false
+   },
+   {
+    "text": "Manage Choices",
+    "id": "truste-show-consent",
+    "inForm": false
+   },
+   {
+    "text": "Close",
+    "id": "truste-consent-close",
+    "inForm": false
+   },
+   {
+    "text": "×",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@healthlinkdimensions.com"
+  ],
+  "text": "About Us\nSolutions\nWho We Work With\nNews & Views\nContact\n\nExercise Your Consumer Data Privacy Rights\n\nIn order to exercise your rights under your state's applicable privacy law, please follow the link below to submit a Right to Opt-Out request or a Right to Know Request. Some exclusions apply based on the restrictions set forth within your own state's privacy law or regulation. Some requests may be denied if eligibility cannot be verified.\n\n1001 Summit Blvd NE\n\nSuite 1125\nAtlanta, GA 30319\n\n\n404.250.3900 \n\nWe're glad you found us!\n\nWant to see how other healthcare leading brands found us? \n\nTo",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

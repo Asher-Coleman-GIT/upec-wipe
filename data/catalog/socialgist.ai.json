@@ -1,0 +1,50 @@
+{
+ "domain": "socialgist.ai",
+ "name": "Effyis, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:31.204Z",
+  "status": 200,
+  "optOutUrl": "https://www.socialgist.ai/privacy-and-terms",
+  "title": "Privacy Policy | Socialgist",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "nav-toggle",
+    "placeholder": "",
+    "aria": "Open menu",
+    "label": "",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Decline",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "cwolfe@socialgist.com"
+  ],
+  "text": "platform\nsolutions\npartners\nabout\ninsights\nCONTACT\n\nLEGAL\n\nSocialgist privacy policy\n\nThis Privacy Policy (“Privacy Policy”) describes how Effyis, Inc. d/b/a Socialgist and its subsidiaries and affiliates (collectively, “Socialgist,” “us,” “we,” or “our”) may collect, use, and share your personal information and the rights and choices you have with respect to your personal information.\n\nThis Privacy Policy applies to individuals (“Users”) whose personal information is processed by Socialgist in connection with (i) our website located at socialgist.ai and any other website or platform that link",
+  "fingerprint": "6124c5ad64e0069bb7657dce9849ae451270e2864bbae893113ae771f6aa9812"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

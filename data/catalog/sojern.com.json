@@ -1,0 +1,81 @@
+{
+ "domain": "sojern.com",
+ "name": "Sojern, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:38.512Z",
+  "status": 404,
+  "optOutUrl": "https://www.sojern.com/privacy/privacy-policy;%20https://www.sojern.com/privacy/privacy-policy#opting-out",
+  "title": "Not Found",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "newsletter-sign-up",
+    "placeholder": "Your Email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Find and Convert Travelers Everywhere Online"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "subscribe",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Find and Convert Travelers Everywhere Online"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe",
+    "id": "subscribe",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "embeddedMessagingConversationButton",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "sojernlegal@sojern.com"
+  ],
+  "text": "Skip to main content\n.\nLanguage\nAbout\nLogin\nSolutions\nTravel Segments\nWhy Sojern\nResources\nLet's Talk\nOops!\nWe’ve lost you\n\nYou've somehow ended up in the middle of nowhere. Head back home.\n\nTake Me There Safely\nFind and Convert Travelers Everywhere Online\n\nWe’re ready to help you take the guesswork out of your digital marketing.\n\nGet Started Today\nLet’s take this to your inbox.\nSign up for the latest updates on travel news, insights, and all things Sojern.\nPLATFORM\nTravel Advertising Solutions\nGuest Experience Solutions\nOur Approach to Data\nTRAVEL SEGMENTS\nHotels\nDestinations\nAttractions\nAirl",
+  "fingerprint": "9ff045f058c4b939c1df32b58e10c3ae0067405786ea19e55a24dd1d9062cbb1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

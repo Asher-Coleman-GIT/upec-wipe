@@ -1,0 +1,133 @@
+{
+ "domain": "fushiamedia.com",
+ "name": "Fushia Media, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:06.239Z",
+  "status": 200,
+  "optOutUrl": "https://www.fushiamedia.com/request-delete",
+  "title": "Fuchsia Media - Smarter Data Solutions",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "nameFirst",
+    "id": "",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "nameLast",
+    "id": "",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email Address*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "",
+    "placeholder": "Phone Number",
+    "aria": "",
+    "label": "Phone Number*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "",
+    "placeholder": "Street Address",
+    "aria": "",
+    "label": "Street Address*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address2",
+    "id": "",
+    "placeholder": "Apartment, suite, etc. (optional)",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "",
+    "placeholder": "City",
+    "aria": "",
+    "label": "City*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "",
+    "placeholder": "State",
+    "aria": "",
+    "label": "State*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "",
+    "placeholder": "ZIP Code",
+    "aria": "",
+    "label": "ZIP Code*",
+    "form": 0,
+    "heading": "DO NOT SELL OR SHARE MY DATA"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "lgold@fushiamedia.com"
+  ],
+  "text": "Home\nAbout\nContact\nHome\nRequest Deletion\nDO NOT SELL OR SHARE MY DATA\n\nYou have the right to opt out of the \"sale\" or \"sharing\" of your Personal Information. Please review our Privacy Policy for a more detailed description of how we collect, use, and share Personal Information.\n\nIn order for us to search for your information and suppress it from our database, please provide your first and last name, email address, address, and phone number in the form below. Without this information, we will be unable to identify whether your information is present in our database and will not be able to proce",
+  "fingerprint": "2e443938fa673492f25dbc6fdc9b7e336948ab629ac4ddb3f7865fb2903681c3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

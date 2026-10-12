@@ -1,0 +1,39 @@
+{
+ "domain": "juicebox.ai",
+ "name": "Juicebox App, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:01.963Z",
+  "status": 200,
+  "optOutUrl": "https://juicebox.ai/",
+  "title": "Juicebox (PeopleGPT) - The Leading AI Recruiting Platform",
+  "block": null,
+  "controls": [
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "Name",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Agents that source for you"
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@juicebox.work"
+  ],
+  "text": "FEATURES\n\nAGENTS\n\nPRICING\n\nRESOURCES\n\nCOMPANY\n\nSIGN IN\n\nBOOK A DEMO\n\nTRY FOR FREE\n\nTRY OUR ALL-NEW JUICEBOX AGENTS →\n\nAgents that source for you\n\nLanding the right hire is harder than ever. Juicebox Agents learn how you search, then source around the clock, so you find better talent, faster.\n\nTRY FOR FREE\n\nBOOK A DEMO\n\n60% OF THE FORBES AI 50\n\n80+ PUBLIC ENTERPRISES\n\n500+ STAFFING AGENCIES\n\nTRY IT OUT OR SCROLL DOWN\n\nTell me who you’re looking for and I’ll map the market, calibrate, and source leads for you...\n\nSearch\n\nAgent\n\nAgents learn from your connected apps\n\n[01] FEATURES\n\nSourcing from ",
+  "fingerprint": "c0ae7782f8feaffd82ea96012bdf1144f2599eb72bfe7a31b4e42548e9a98ed3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

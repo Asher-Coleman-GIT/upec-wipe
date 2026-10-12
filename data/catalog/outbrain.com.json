@@ -1,0 +1,59 @@
+{
+ "domain": "outbrain.com",
+ "name": "Teads Holding Co.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:59.125Z",
+  "status": 200,
+  "optOutUrl": "https://dsr.outbrain.com/recommendations-settings/home/en",
+  "title": "Outbrain",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "My Outbrain Interest Profile",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "My Data Rights",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "My Ads",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@teads.com"
+  ],
+  "text": "OUTBRAIN INTEREST PROFILE\nChange language\nEnglish\n\nAlthough Outbrain is operating under the Teads brand following the merger of Outbrain and Teads, the ads you are seeing may still be powered by legacy Outbrain technology which is being used by our media partners and advertisers. Your Outbrain Interest Profile provides an overview of the personal data that Outbrain may collect and process via legacy Outbrain technology and gives you the ability to manage such personal data. For more information on how Outbrain may use your data please see our User Privacy Policy.\n\nYou may also interact with ad",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

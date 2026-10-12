@@ -1,0 +1,147 @@
+{
+ "domain": "peoplefindersdaas.com",
+ "name": "PeoplefindersDaaS",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:52.334Z",
+  "status": 200,
+  "optOutUrl": "https://peoplefindersdaas.com/",
+  "title": "Home - PeoplefindersDaaS",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][1]",
+    "id": "wpforms-577-field_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][5]",
+    "id": "wpforms-577-field_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name *",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][2]",
+    "id": "wpforms-577-field_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "wpforms[fields][3]",
+    "id": "wpforms-577-field_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Comment or Message",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "activelayer_env_signals",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "activelayer_behavioral_signals",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "al_hp_email",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Work Together"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "B2B Marketing",
+    "id": "kt-accordion-header-452241",
+    "inForm": false
+   },
+   {
+    "text": "Comprehensive Data Solutions",
+    "id": "kt-accordion-header-192193",
+    "inForm": false
+   },
+   {
+    "text": "B2B + Consumer Cross-Dimension",
+    "id": "kt-accordion-header-716777",
+    "inForm": false
+   },
+   {
+    "text": "Strategic Advisory Services",
+    "id": "kt-accordion-header-496478",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "wpforms-submit-577",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "bryce@peoplefindersdaas.com"
+  ],
+  "text": "Skip to content\n\nPeoplefindersDaaS\n\nABOUT\nSERVICES\nWORK\nPROCESS\nCONTACT\nAMPLIFYING YOUR CONNECTIONS THROUGH STRATEGIC ADVISORY + TARGETING SERVICES\n\nWe are PeoplefindersDaaS — a B2B-focused data solutions advisory firm that delivers strategic guidance and precise targeting execution to executives, management teams, and marketing professionals navigating the complex data ecosystem.\n\nWhen your data needs are mission-critical and time-sensitive, we deliver deterministic solutions with VIP urgency and support.\n\nLet’s Connect\nDATA YOU CAN MEASURE.\n30+\n0+\nYears of Experience\n\n500+\n0+\nProjects Delive",
+  "fingerprint": "4ce0a33795455a1086f1919dcd2567227885d180c07cf5c2c546ffe7f5af1c53"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

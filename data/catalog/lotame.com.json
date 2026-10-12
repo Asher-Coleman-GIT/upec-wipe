@@ -1,0 +1,80 @@
+{
+ "domain": "lotame.com",
+ "name": "Lotame Solutions, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:33.401Z",
+  "status": 200,
+  "optOutUrl": "https://www.lotame.com/privacy/information-privacy-choices-services/",
+  "title": "Information about your Privacy Rights and Choices | Lotame",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-d227b10a-9246-4379-9c6d-2f8dcc0c1be8",
+    "placeholder": "Enter a business email*",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form (applies to email addresses)"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.subscription_type_893459",
+    "id": "LEGAL_CONSENT.subscription_type_893459-d227b10a-9246-4379-9c6d-2f8dcc0c1be8",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to receive other communications from Lotame.",
+    "form": 0,
+    "heading": "Privacy Request Form (applies to email addresses)"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form (applies to email addresses)"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "ketch-banner-button-secondary",
+    "inForm": false
+   },
+   {
+    "text": "Opt-Out",
+    "id": "ketch-banner-button-primary",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe Now",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "About our use of cookies on this site\n\nWe use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits, and we collect personal data about you to help us promote our business using ads. By clicking “Accept” you agree to our use of cookies and your personal data as described in our Corporate Privacy Notice and our Cookie Notice.\n\n\n\n\nYou may opt-out of our selling, sharing, or disclosure of your personal data (called \"Do Not Sell or Share\" in California) and opt-out of profiling and targeted advertising by clicking \"Opt-Out\", which will al",
+  "fingerprint": "70ca4c3fe84342d436f8725925e31c448867f4a9d1a1bb94eaff7021ea218137"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

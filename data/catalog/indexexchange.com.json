@@ -1,0 +1,43 @@
+{
+ "domain": "indexexchange.com",
+ "name": "Index Exchange Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:04.662Z",
+  "status": 200,
+  "optOutUrl": "https://www.indexexchange.com/privacy/rights-exercising-rights/",
+  "title": "Rights and exercising rights - Index Exchange",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Close",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Your Privacy Choices",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@indexexchange.com"
+  ],
+  "text": "Index Exchange Home page\nPlatform\nSolutions\nResources\nAbout\nCareers\nContact\nLOGIN\nEN\nLEGAL\nYour Privacy Rights and How to Exercise Them\nLast Updated: 30 January 2026\n\nYou can make choices about how your personal information, personal data, or the equivalent terminology in your region (collectively, Personal Data) is collected, used, and shared (Processed). To learn more about how we Process Personal Data for our Platform Services, please visit our Exchange Platform Privacy Policy. To learn more about how we Process Personal Data in relation to your interactions with us in a business capacity, ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

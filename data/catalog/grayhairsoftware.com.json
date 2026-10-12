@@ -1,0 +1,39 @@
+{
+ "domain": "grayhairsoftware.com",
+ "name": "GrayHair Software LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:48.148Z",
+  "status": 200,
+  "optOutUrl": "https://grayhairsoftware.com/privacy-policy/",
+  "title": "Privacy Policy - GrayHair Software",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Do Not Sell or Share My Personal Informa",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@grayhairsoftware.com"
+  ],
+  "text": "Accessibility\n\nWe value your privacy\n\nThis website or its third-party tools process personal data. You can opt out of these cookies by checking \"Do Not Sell or Share My Personal Information\" and clicking the \"Save My Preferences\" button. Privacy Policy\n\nDo Not Sell or Share My Personal Information\nNEW\n\nLATEST NEWS\n\nGrayHair Solves Direct Mail Attribution Problem for OmniChannel Marketers\nRead More\nLOGIN\nOUTCOMES\nPRODUCTS\nINTEGRATIONS\nRESOURCES\nABOUT US\nTALK TO AN EXPERT\nPrivacy Policy\n\nGrayHair Software, LLC (“GrayHair”, “we”, “our”, or “us”) provides this privacy policy to describe how we col",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

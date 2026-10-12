@@ -1,0 +1,49 @@
+{
+ "domain": "eyeota.com",
+ "name": "Eyeota Pte Ltd",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:33.220Z",
+  "status": 200,
+  "optOutUrl": "https://www.eyeota.com/how-to-opt-out",
+  "title": "How to Opt-Out of Data Processing by Eyeota | Eyeota",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "ea-tw-s-btn",
+    "inForm": false
+   },
+   {
+    "text": "Manage Choices",
+    "id": "truste-show-consent",
+    "inForm": false
+   },
+   {
+    "text": "Agree & Proceed",
+    "id": "truste-consent-button",
+    "inForm": false
+   },
+   {
+    "text": "Required Only",
+    "id": "truste-consent-required",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@eyeota.com"
+  ],
+  "text": "DATA DESK \nSOLUTIONS\n \nPRODUCTS\n \nRESOURCES\n \nABOUT\n \nPRIVACY\n  \nHow to Opt-Out\nYour Opt-Out Status:\n< OVERVIEW\nOpt-Out Information / Do Not Sell / Share\nOther Ways to Opt-Out\nOpting Out of Eyeota Website and Communications\nOpt-Out Information / Do Not Sell / Share\n\nEyeota honors your privacy choices in accordance with applicable law. California data subject may call the following toll-free number 1-866-I-OPT-OUT. Eyeota Service Code: 714\n\nDifferent jurisdictions provide you with different rights. For example, in cases where the GDPR applies, EU/UK data subjects have the right to object to cer",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

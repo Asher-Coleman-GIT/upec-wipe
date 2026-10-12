@@ -1,0 +1,83 @@
+{
+ "domain": "datadecisionsgroup.com",
+ "name": "Data Decisions Group, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:34.557Z",
+  "status": 200,
+  "optOutUrl": "https://datadecisionsgroup.com/privacy-policy/",
+  "title": "Consumer Data Privacy Policy | Comprehensive Protection",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1.3",
+    "id": "input_3_1_3",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "First",
+    "form": 0,
+    "heading": "SIGN UP FOR THE LATEST DATA-DRIVEN MARKETING NEWS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1.6",
+    "id": "input_3_1_6",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last",
+    "form": 0,
+    "heading": "SIGN UP FOR THE LATEST DATA-DRIVEN MARKETING NEWS"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_3_3",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email(Required)",
+    "form": 0,
+    "heading": "SIGN UP FOR THE LATEST DATA-DRIVEN MARKETING NEWS"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "ketch-banner-button-secondary",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "ketch-banner-button-primary",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "gform_submit_button_3",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@datadecisionsgroup.com"
+  ],
+  "text": "Your Privacy Choices\n\nWe use cookies on our website. By clicking Accept, you consent to the use of ALL cookies. You may select \"Cookie Settings\" to manage your preferences about which cookies may be used on our site. For more information, please see our Privacy Policy.\n\nCookie Settings\nAccept\nABOUT\nSERVICES\nSOLUTIONS\nBLOG\nCLIENT LOGIN\nCONTACT US\nPRIVACY POLICY\n\nLast updated: 1/13/2026\n\nThis Privacy Policy (the “Policy”) explains how and why Data Decisions Group, LLC (“DDG”, “we”, “us” or “our”) processes your personal information. This includes, but is not limited to, information processed in ",
+  "fingerprint": "2c83304e931dc0d1c127cda618c10a334df8fa1a17da8128b4bf53f188d06434"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

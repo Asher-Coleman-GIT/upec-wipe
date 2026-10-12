@@ -1,0 +1,109 @@
+{
+ "domain": "forager.ai",
+ "name": "Forager.ai, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:53.132Z",
+  "status": 200,
+  "optOutUrl": "https://app.forager.ai/privacy/data-removal",
+  "title": "Forager | Data Removal",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fullName",
+    "id": "react-aria8981367078-:r6:",
+    "placeholder": "Enter your full name",
+    "aria": "Full Name",
+    "label": "Full Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "react-aria8981367078-:rb:",
+    "placeholder": "Enter your email",
+    "aria": "Email",
+    "label": "Email",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "Phone number country",
+    "label": "",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "ZZ=International",
+     "AF=Afghanistan",
+     "AX=Åland Islands",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "",
+    "id": "",
+    "placeholder": "Enter your phone number",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Sign up",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get Code",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Reject Non-Essential",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@forager.ai"
+  ],
+  "text": "Sign up\nSign in\nRequest to Remove Your Information from Forager\n\nTo delete your information, please enter your Email or Phone below and we will send you a verification code.\n\nFull Name\nEmail\nPhone\nInternational\nAfghanistan\nÅland Islands\nAlbania\nAlgeria\nAmerican Samoa\nAndorra\nAngola\nAnguilla\nAntigua and Barbuda\nArgentina\nArmenia\nAruba\nAscension Island\nAustralia\nAustria\nAzerbaijan\nBahamas\nBahrain\nBangladesh\nBarbados\nBelarus\nBelgium\nBelize\nBenin\nBermuda\nBhutan\nBolivia\nBonaire, Sint Eustatius and Saba\nBosnia and Herzegovina\nBotswana\nBrazil\nBritish Indian Ocean Territory\nBrunei Darussalam\nBulgaria\n",
+  "fingerprint": "8542218a2e0817c8198e5dc80e0e62b73f2a1a727c51a11a358805d956f762cd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

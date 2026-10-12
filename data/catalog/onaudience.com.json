@@ -1,0 +1,20 @@
+{
+ "domain": "onaudience.com",
+ "name": "OnAudience LTD",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:38.664Z",
+  "contacts": [
+   "privacy@onaudience.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://onaudience.com/internet-advertising-privacy-policy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

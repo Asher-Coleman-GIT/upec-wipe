@@ -1,0 +1,145 @@
+{
+ "domain": "digitalmediasolutions.com",
+ "name": "Digital Media Solutions, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "dmsunsub.io"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:28:09.751Z",
+  "status": 403,
+  "optOutUrl": "https://dms-privacy.my.onetrust.com/webform/506f8b15-11ff-4f18-95fa-48ff903e623f/345b3cd9-d30a-4ef2-9ec9-360d143f486b",
+  "title": "Privacy Web Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "DSARWebformLanguageDropdown",
+    "placeholder": "Select or search",
+    "aria": "Select language",
+    "label": "Language",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstNameDSARElement",
+    "placeholder": "",
+    "aria": "First Name",
+    "label": "First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastNameDSARElement",
+    "placeholder": "",
+    "aria": "Last Name",
+    "label": "Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "emailDSARElement",
+    "placeholder": "",
+    "aria": "Email",
+    "label": "Email",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "countryDSARElement",
+    "placeholder": "",
+    "aria": "Country",
+    "label": "Country",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "stateDSARElement",
+    "placeholder": "",
+    "aria": "State",
+    "label": "State",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField79DSARElement",
+    "placeholder": "",
+    "aria": " 10 Digit Mobile Phone Number (No spaces or dashes, please)",
+    "label": "10 Digit Mobile Phone Number (No spaces or dashes, please)",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "requestDetailsDSARElement",
+    "placeholder": "",
+    "aria": "Additional Request Details",
+    "label": "Additional Request Details",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "file",
+    "name": "",
+    "id": "vt-file-select-input-1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Select File",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "dsar-webform-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "compliancedept@dmsgroup.com"
+  ],
+  "text": "DMS respects your privacy and consumer rights. If you’d like to exercise any of your rights as a consumer, please select from the options below and provide the following information so that we can verify your request. We will use the information you provide to process your request and to maintain a record of your request and our response.\n\n\n\n\nWe will aim to complete your request as soon as reasonably practicable and consistent with any applicable laws. You will receive a response to the email address entered into the form below. Please add [email] to your email address b",
+  "fingerprint": "056869c561ef51718bc79a37b6ea487b90c18894882055a702d30a6f8ad99319"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

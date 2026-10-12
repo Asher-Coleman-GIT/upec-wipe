@@ -1,0 +1,59 @@
+{
+ "domain": "quad.com",
+ "name": "Quad/Graphics, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:10.793Z",
+  "status": 200,
+  "optOutUrl": "https://www.quad.com/legal/privacy-policy",
+  "title": "Legal | Privacy policy | Quad marketing solutions",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept and close",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "databroker@quad.com"
+  ],
+  "text": "Skip to content\nCareers\nInvestors\nEmployees\nEspañol\nSolutions\nIndustries\nOur Work\nResearch & Insights\nAbout Us\nContact us\nHome / Legal / Privacy policy\nPrivacy Policy\n\nUpdated: August 6, 2026\n\nTable of contents\nIntroduction\nInformation we collect\nHow we collect your personal information\nHow we use your personal information\nFor California residents\nCookies and other automated collection practices\nHow we disclose information\nYour rights regarding your personal information\nSubmitting a request and verifying your identity\nDo not track signals\nChildren under the age of 18\nData security\nIndividuals ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

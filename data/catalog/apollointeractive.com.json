@@ -1,0 +1,39 @@
+{
+ "domain": "apollointeractive.com",
+ "name": "Apollo Interactive, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:44.255Z",
+  "status": 200,
+  "optOutUrl": "https://www.apollointeractive.com/privacy-policy.php",
+  "title": "Privacy Policy | Apollo Interactive",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "contactBtn",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "deatherage@apollointeractive.com"
+  ],
+  "text": "Skip To Main Content\n\nThis website is AudioEye enabled and is being optimized for accessibility. To open the AudioEye Toolbar, press \"shift + =\". Some assistive technologies may require the use of a passthrough function before this keystroke. For more information, activate the button labeled \"Explore your accessibility options\".\n\nSOLUTIONS\nSCIENCE\nVERTICALS\nCOMPANY\nCONTACT\n\nWe use cookies to enhance your browsing experience, serve personalized content or ads, and analyze our traffic to improve website functionality. By continuing to use our website, you consent to our use of cookies and agree ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

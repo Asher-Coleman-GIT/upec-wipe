@@ -1,0 +1,150 @@
+{
+ "domain": "statsocial.com",
+ "name": "StatSocial, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:55.126Z",
+  "status": 200,
+  "optOutUrl": "https://www.statsocial.com/optout/",
+  "title": "Optout - StatSocial",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "item_meta[64][first]",
+    "id": "field_optout_name_first",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Optout Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "item_meta[64][last]",
+    "id": "field_optout_name_last",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Optout Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "item_meta[65]",
+    "id": "field_optout_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "Optout Form"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "item_meta[66]",
+    "id": "field_optout_country",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country *",
+    "form": 0,
+    "heading": "Optout Form",
+    "options": [
+     "=",
+     "Afghanistan=Afghanistan",
+     "Aland=Aland",
+     "Albania=Albania",
+     "Algeria=Algeria",
+     "American Samoa=American Samoa",
+     "Andorra=Andorra",
+     "Angola=Angola"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "item_meta[67]",
+    "id": "field_optout_state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State/Province *",
+    "form": 0,
+    "heading": "Optout Form",
+    "options": [
+     "="
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "item_meta[68][]",
+    "id": "field_2m4qs-0",
+    "placeholder": "",
+    "aria": "",
+    "label": "I want to delete any personal data you have about me.",
+    "form": 0,
+    "heading": "Optout Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "item_meta[68][]",
+    "id": "field_2m4qs-1",
+    "placeholder": "",
+    "aria": "",
+    "label": "I want you to stop selling or sharing my information. (Opt o",
+    "form": 0,
+    "heading": "Optout Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Product",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "By role",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@statsocial.com"
+  ],
+  "text": "Product\nSolutions\nBy role\nResources\nCompany\nLog in\nRequest a demo\nOptout Form\n\nUse this form to request specific privacy actions regarding your personal information.\n\nOpt-out Form\nName\nFirst Name\nFirst Name\nLast Name\nLast Name\nEmail *\nCountry *\nAfghanistan\nAland\nAlbania\nAlgeria\nAmerican Samoa\nAndorra\nAngola\nAnguilla\nAntarctica\nAntigua and Barbuda\nArgentina\nArmenia\nAruba\nAscension\nAustralia\nAustria\nAzerbaijan\nBahamas\nBahrain\nBangladesh\nBarbados\nBelarus\nBelgium\nBelize\nBenin\nBermuda\nBhutan\nBolivia\nBosnia and Herzegovina\nBotswana\nBouvet Island\nBrazil\nBritish Indian Ocean Territory\nBritish Virgin I",
+  "fingerprint": "47c9628231e9c9b73f3d6073d8fd9813597b654047c585ece1ff5d1afa1a927c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

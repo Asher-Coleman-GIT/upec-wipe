@@ -1,0 +1,33 @@
+{
+ "domain": "aviato.co",
+ "name": "Bachmanity, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:55.904Z",
+  "status": 200,
+  "optOutUrl": "https://www.aviato.co/legal/privacy",
+  "title": "Aviato",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Book a demo",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@aviato.co"
+  ],
+  "text": "Login\nRegister\nPrivacy Policy\n1. Introduction\n\nBachmanity, Inc. (\"Company\" or \"We\") respect your privacy and are committed to protecting it through our compliance with this policy.\n\nThis policy describes the types of information we may collect from you or that you may provide when you visit the website www.aviato.co (our \"Website\") and our practices for collecting, using, maintaining, protecting, and disclosing that information.\n\nThis policy applies to information we collect:\n\nOn this Website.\nIn email, text, and other electronic messages between you and this Website.\nThrough mobile and deskto",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

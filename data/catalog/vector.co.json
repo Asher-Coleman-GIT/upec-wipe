@@ -1,0 +1,66 @@
+{
+ "domain": "vector.co",
+ "name": "GetVector, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:41.818Z",
+  "status": 200,
+  "optOutUrl": "https://www.vector.co/legal/privacy",
+  "title": "Privacy | Vector",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "footer-news-email",
+    "placeholder": "Enter your email*",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "The ABM platform\nthat shows its work"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Platform",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Vector vs.",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "joshua@vector.co"
+  ],
+  "text": "Platform\nSolutions\nVector vs.\nResources\nPricing\nAbout\nLog in\nBook a demo\n\nLEGAL\n\nPrivacy\nVector Privacy Policy\n\nYour privacy is important to us. It is Vector's policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, https://vector.co, and other sites we own and operate.\n\nPersonal information is any information about you which can be used to identify you. This includes information about you as a person (such as name, address, and date of birth), your devices, payment details, and ",
+  "fingerprint": "8f502a83c86aabe7efeb9dd7972914f5a8f5c13c978cbd9d9358e813c9a7c87a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

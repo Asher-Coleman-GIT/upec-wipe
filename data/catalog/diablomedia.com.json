@@ -1,0 +1,31 @@
+{
+ "domain": "diablomedia.com",
+ "name": "Diablo Media",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:01.810Z",
+  "status": 200,
+  "optOutUrl": "https://www.diablomedia.com/privacy-request/",
+  "title": "Privacy Request | Opt Out of Diablo Media Emails",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "burger-menu",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Privacy Request\nLooking to Opt-Out?\n\nWould you like to opt-out of future mailings? Please use this form…\n\nHave Another Request?\n\nPlease visit our contact page and reach out via our form.\n\n© 2026 Diablo Media. All rights reserved.\n\nPrivacy Policy\nAnti-Spam\nDo Not Sell My Personal Information",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

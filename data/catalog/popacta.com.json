@@ -1,0 +1,79 @@
+{
+ "domain": "popacta.com",
+ "name": "Pop Acta Media, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:02.819Z",
+  "status": 200,
+  "optOutUrl": "https://optout.popacta.com/contact-us",
+  "title": "Contact popacta.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact popacta.com"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fname",
+    "id": "fname",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact popacta.com"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lname",
+    "id": "lname",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact popacta.com"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "form_message",
+    "id": "form_message",
+    "placeholder": "Enter your message here",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact popacta.com"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "submit-btn",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "legal@popacta.com"
+  ],
+  "text": "\n\nContact popacta.com\n\n\n \n\n\n0/250\n\nSubmit",
+  "fingerprint": "89bc305715568e20e70ec005da5f3c2a4b3631ca310e371a8c19572ec66bec3c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

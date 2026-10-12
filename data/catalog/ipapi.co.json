@@ -1,0 +1,96 @@
+{
+ "domain": "ipapi.co",
+ "name": "Kloudend, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:30:40.867Z",
+  "status": 403,
+  "optOutUrl": "https://ipapi.co/donotsell/",
+  "title": "Do Not Sell My Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "subject",
+    "id": "id_subject",
+    "placeholder": "",
+    "aria": "",
+    "label": "Type of Request",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "RightToKnow=Right to Know",
+     "DoNotSell=Do Not Sell",
+     "RightToDelete=Right to Delete",
+     "Misc=Other"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "ip_address",
+    "id": "id_ip_address",
+    "placeholder": "",
+    "aria": "",
+    "label": "Information to Identify Your Data *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "id_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Contact Email *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "basis",
+    "id": "id_basis",
+    "placeholder": "",
+    "aria": "",
+    "label": "Privacy Law",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "authorize",
+    "id": "id_authorize",
+    "placeholder": "",
+    "aria": "",
+    "label": "I confirm that I am the individual to whom this data pertain",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Send",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@kloudend.com"
+  ],
+  "text": "ipapi\nQuick Start\nDocs\nPricing\nContact\nAccount\nSubmit a Request to\n\nType of Request\nRight to Know\nDo Not Sell\nRight to Delete\nOther\nInformation to Identify Your Data *\nPlease provide information to help us locate your data, such as your IP address, name, email, or other details.\nContact Email *\nWe will use this to contact you regarding your request.\nPrivacy Law\nIf you know which privacy law applies to you (e.g. GDPR, CCPA/CPRA, etc.), selecting it can help us process your request more efficiently. You may leave this blank.\n  I confirm that I am the individual to whom this data pertains, or tha",
+  "fingerprint": "7ad54dbf4cb807b12fd274be28c07975e35f59a5ed213cfdc6dd235b80c506d1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

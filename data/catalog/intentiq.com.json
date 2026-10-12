@@ -1,0 +1,20 @@
+{
+ "domain": "intentiq.com",
+ "name": "Intent IQ LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:13.569Z",
+  "contacts": [
+   "privacy@intentiq.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.intentiq.com/opt-out/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

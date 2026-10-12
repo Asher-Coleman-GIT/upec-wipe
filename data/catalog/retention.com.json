@@ -1,0 +1,53 @@
+{
+ "domain": "retention.com",
+ "name": "GetEmails LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:54.119Z",
+  "status": 200,
+  "optOutUrl": "https://app.retention.com/optout",
+  "title": "Do I need to update my privacy policy? | Retention.com Help Center",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "q",
+    "id": "search-input",
+    "placeholder": "Search for articles...",
+    "aria": "Search for articles...",
+    "label": "Search for articles...",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Disappointed Reaction\n😞",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Neutral Reaction\n😐",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Smiley Reaction\n😃",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to main content\nDashboard\nSearch for articles...\nAll Collections\nFAQs\nCompliance and Data Governance\nDo I need to update my privacy policy?\nDo I need to update my privacy policy?\nJune 6, 2025\n\nYes! You should update your privacy policies when you start using Retention.com. To ensure best practices, Retention.com recommends you work with your legal team before making changes to your privacy policy.\n\n \n\nPlease ensure that these changes are also reflected with a cookie compliance tool, such as CookiePro, to provide clear and transparent information to your website visitors. Here is the langu",
+  "fingerprint": "63cf556ede6dfc8b3a8839a1019946d879a7aa3eeb7768129add0b281ee253a0"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

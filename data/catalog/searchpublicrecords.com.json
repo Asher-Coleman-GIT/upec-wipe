@@ -1,0 +1,173 @@
+{
+ "domain": "searchpublicrecords.com",
+ "name": "Civil Data Research, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:03.370Z",
+  "status": 200,
+  "optOutUrl": "https://www.searchpublicrecords.com/help-center/privacy-requests",
+  "title": "Personal Information Privacy Requests",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "requestType",
+    "id": "requestType",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request Type*",
+    "form": 0,
+    "heading": "Privacy Requests",
+    "options": [
+     "doNotSell=Do Not Sell My Info",
+     "delete=Delete My Info",
+     "copy=Request a Copy"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": "firstName",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "Privacy Requests"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "D67512be0a8841236",
+    "id": "D67512be0a8841236",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "Privacy Requests"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city",
+    "placeholder": "City",
+    "aria": "",
+    "label": "City*",
+    "form": 0,
+    "heading": "Privacy Requests"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "States",
+    "id": "states",
+    "placeholder": "",
+    "aria": "",
+    "label": "State*",
+    "form": 0,
+    "heading": "Privacy Requests",
+    "options": [
+     "=Select State",
+     "Alabama=Alabama",
+     "Alaska=Alaska",
+     "Arizona=Arizona",
+     "Arkansas=Arkansas",
+     "California=California",
+     "Colorado=Colorado",
+     "Connecticut=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "zip",
+    "placeholder": "Zip Code",
+    "aria": "",
+    "label": "ZIP*",
+    "form": 0,
+    "heading": "Privacy Requests"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "age",
+    "id": "age",
+    "placeholder": "",
+    "aria": "",
+    "label": "Age*",
+    "form": 0,
+    "heading": "Privacy Requests",
+    "options": [
+     "=Select Age",
+     "18=18",
+     "19=19",
+     "20=20",
+     "21=21",
+     "22=22",
+     "23=23",
+     "24=24"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "customerStatus",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 1,
+    "heading": "ARE YOU A CUSTOMER?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "customerStatus",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 1,
+    "heading": "ARE YOU A CUSTOMER?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "customerStatus",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "3rd Party",
+    "form": 1,
+    "heading": "ARE YOU A CUSTOMER?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Continue",
+    "id": "submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacyinfo@searchpublicrecords.com"
+  ],
+  "text": "Sample Report\nLog In\nHome\nHelp Center\nPrivacy Requests\nHelp Center\nPrivacy Requests\n\nWe will use the information you provide to locate matching information in our systems. The information you provide will only be used to process your request. We will not sell the information you provide. Please see our Privacy Policy for more information.\n\nRequest Type*\nDo Not Sell My Info\nDelete My Info\nRequest a Copy\nFirst Name*\nLast Name*\nCity*\nState*\nSelect State\nAlabama\nAlaska\nArizona\nArkansas\nCalifornia\nColorado\nConnecticut\nDelaware\nDistrict Of Columbia\nFlorida\nGeorgia\nHawaii\nIdaho\nIllinois\nIndiana\nIowa\n",
+  "fingerprint": "4e02f9d17da92882c6eab9db73fe0a92a726e4f5341098ff5cabd9f7dc6c815d"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "optOutUrl": "https://www.searchpublicrecords.com/help-center/privacy-requests",
+  "notes": "Form requires your age and a CAPTCHA; choose \"Delete My Info\""
+ }
+}

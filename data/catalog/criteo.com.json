@@ -1,0 +1,19 @@
+{
+ "domain": "criteo.com",
+ "name": "Criteo Corp.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:19.847Z",
+  "contacts": [
+   "dpo@criteo.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.criteo.com/privacy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

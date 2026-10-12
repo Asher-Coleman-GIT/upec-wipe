@@ -1,0 +1,49 @@
+{
+ "domain": "semcasting.com",
+ "name": "Semcasting, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "privacychoice.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:23.790Z",
+  "status": 200,
+  "optOutUrl": "https://www.semcasting.com/privacy_policy_v1",
+  "title": "Privacy Policy Overview | Data Collection and Usage | Semcasting",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "term",
+    "id": "main-search",
+    "placeholder": "Search...",
+    "aria": "Search this site",
+    "label": "Search",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jgreer@semcasting.com",
+   "privacychoice@semcasting.com"
+  ],
+  "text": "Skip to the main content.\nHome\nSolutions\nProducts\nIndustries\nAbout Us\nResources\nContact Us\n \nFacebook\n \nInstagram\n \nLinkedin\n \nX\n \nYouTube\nMedium\nYOUR PRIVACY CHOICE\nControl How Your Data Is Used in Marketing\n \nManage your preferences for advertising, identity resolution, and analytics. Your choices are honored across every Semcasting service.\n \n \nETHICAL USE OF DATA\nEthical Use of Data Is Important to Us\n\nThe ethical use of data is important to consumers and the overall economy. Internet commerce is one of the fastest growing industries in history. However, bad actors, online fraud and digita",
+  "fingerprint": "319b9e9bfc2dcf303ef3a386bd77f9aa2c5059c4c7306aa3c94bcaf71f83c389"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

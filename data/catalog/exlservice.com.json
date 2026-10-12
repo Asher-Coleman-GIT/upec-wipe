@@ -1,0 +1,91 @@
+{
+ "domain": "exlservice.com",
+ "name": "ExlService.com LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:58.174Z",
+  "status": 200,
+  "optOutUrl": "https://www.exlservice.com/privacy-notice",
+  "title": "Privacy Notice and Data Protection Policy | EXL",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "keys",
+    "id": "edit-keys--2",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "8. Contact Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "US",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "OUR OFFERINGS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "EXPLORE INDUSTRIES",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "RESOURCES",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "OTHER LINKS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Do Not Sell or Share My Personal Informa",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "ABOUT EXL",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Set Cookie Preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@exlservice.com"
+  ],
+  "text": "Skip to main content\nOUR OFFERINGS\nEXPLORE INDUSTRIES\nRESOURCES\nABOUT EXL\nCareers\nInvestors\nUS\nGET IN TOUCH\nPrivacy Notice\n\nLast Updated:  October 2025\n\nExlService Holdings, Inc. and its affiliates/ subsidiaries (collectively, “EXL”, “we”, “our”, or “us”) worldwide, are committed to respecting your online privacy and recognizing your need for appropriate protection and management of any personal data you share with us.\n \n\nThis privacy notice (referred to herein as the “Privacy Policy” or “Policy”) sets out how we collect and process your personal data when we act as “data controllers”. This Po",
+  "fingerprint": "93f66ce6e45647b6da5241332cb032c8b32635343869b5f311e78d922f5b6962"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

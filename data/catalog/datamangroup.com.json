@@ -1,0 +1,165 @@
+{
+ "domain": "datamangroup.com",
+ "name": "Dataman Group Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:21.856Z",
+  "status": 200,
+  "optOutUrl": "https://www.datamangroup.com/privacy-request-form/",
+  "title": "Dataman Group Privacy Center - Privacy Request Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][1][first]",
+    "id": "wpforms-43847-field_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "First",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][1][last]",
+    "id": "wpforms-43847-field_1-last",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][2]",
+    "id": "wpforms-43847-field_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][4]",
+    "id": "wpforms-43847-field_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address *",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][5]",
+    "id": "wpforms-43847-field_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "City *",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][6]",
+    "id": "wpforms-43847-field_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "State *",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][7]",
+    "id": "wpforms-43847-field_7",
+    "placeholder": "",
+    "aria": "",
+    "label": "Postal Code *",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "wpforms[fields][12]",
+    "id": "wpforms-43847-field_12",
+    "placeholder": "",
+    "aria": "",
+    "label": "Additional Information",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "wpforms[fields][8]",
+    "id": "wpforms-43847-field_8_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "wpforms[fields][8]",
+    "id": "wpforms-43847-field_8_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 2,
+    "heading": "Questions?"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "wpforms[fields][10]",
+    "id": "wpforms-43847-field_10_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Agree",
+    "form": 2,
+    "heading": "Questions?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Privacy Request",
+    "id": "wpforms-submit-43847",
+    "inForm": true
+   },
+   {
+    "text": "settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "dale@datamangroup.com"
+  ],
+  "text": "Skip to content\nRun Your Own Counts & Order Now!\nConsumer Lists\nBusiness Lists\nPostcard Print & Mail\nBlog\nResources\nOur Team\nCall Us At\n\n(800) 771-3282\n\nHome » Do Not Share My Info\nPrivacy Request Form\n\nDataman Group is committed to protecting consumer privacy and responding to privacy requests promptly and professionally.\n\nIf you would like us to review information associated with you, please complete the form below. We will conduct a reasonable search of our records and respond within the timeframe required by applicable law.\n\nPlease provide enough information for us to reasonably identify y",
+  "fingerprint": "84aaf8c00d67b20151ecac254afacbad29c7083770b8665b607bbf8b10b44f02"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

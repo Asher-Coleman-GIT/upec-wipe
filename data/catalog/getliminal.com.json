@@ -1,0 +1,33 @@
+{
+ "domain": "getliminal.com",
+ "name": "Nachal Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:18.543Z",
+  "status": 200,
+  "optOutUrl": "https://getliminal.com/privacypolicy;%20https://getliminal.com/ccpaprivacynotice",
+  "title": "Ccpaprivacynotice | Liminal",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Go Home",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@getliminal.com"
+  ],
+  "text": "404\nPage Not Found\n\nThe page \"privacypolicy;%20https://getliminal.com/ccpaprivacynotice\" could not be found in this application.\n\nGo Home",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

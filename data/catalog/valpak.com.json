@@ -1,0 +1,168 @@
+{
+ "domain": "valpak.com",
+ "name": "valpak.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:34.994Z",
+  "status": 200,
+  "optOutUrl": "https://www.valpak.com/remove-address",
+  "title": "Valpak Unsubscribe Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-23",
+    "placeholder": "",
+    "aria": "",
+    "label": "Find your savings",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-35",
+    "placeholder": "",
+    "aria": "",
+    "label": "Find your savings",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-68",
+    "placeholder": "",
+    "aria": "",
+    "label": "Full Name*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-71",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-74",
+    "placeholder": "",
+    "aria": "",
+    "label": "Apt/Suite",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-77",
+    "placeholder": "",
+    "aria": "",
+    "label": "City*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-80",
+    "placeholder": "",
+    "aria": "",
+    "label": "State*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-85",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip Code*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-88",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "input-93",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "input-98",
+    "placeholder": "",
+    "aria": "",
+    "label": "I'm the authority for the address provided and understand re",
+    "form": 0,
+    "heading": "Fill out the form below to request to be removed from our ma"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Local Coupons",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Deals",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Special Offers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "Local Coupons\nDeals\nCoupon Codes\nGrocery\nSpecial Offers\nCareers\nAdvertise With Us\nsearch\nFind your savings\nhome remove address\nsearch\nFind your savings\nLocal Coupons\nLocal Deals\nCoupon Codes Grocery Coupons\nAdvertise With Us\nValpak Unsubscribe Request\nFill out the form below to request to be removed from our mailing list\n​\nFull Name*\n​\nStreet Address*\n​\nApt/Suite\n​\nCity*\n​\nState*\n​\nZip Code*\n​\nPhone*\nhelp\n​\nEmail*\nhelp\nI'm the authority for the address provided and understand removing it from the mailing list may take several weeks.\nSubmit\n\nIn order to process your request quickly and accurate",
+  "fingerprint": "b5d67cab3d6d78ea2162366b1780dcf119b30d642eedd0d1863f729da8038c91"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

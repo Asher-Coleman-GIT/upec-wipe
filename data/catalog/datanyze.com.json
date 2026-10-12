@@ -1,0 +1,40 @@
+{
+ "domain": "datanyze.com",
+ "name": "Datanyze LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:28:00.482Z",
+  "status": 200,
+  "optOutUrl": "https://www.datanyze.com/privacy-center",
+  "title": "Privacy Center | Datanyze",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Allow All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@datanyze.com",
+   "stateremoval@datanyze.com"
+  ],
+  "text": "Features\nPricing\nBlog\nAbout\nLog In\nTry It for Free\nDATANYZE PRIVACY CENTER\nAt Datanyze, privacy is paramount.\n\nDatanyze users can rest assured that strict, protective policies are followed to safeguard stored data and user activity. Below you’ll find resources around correcting or removing user profiles, as well as requesting data access.\n\nPrivacy Policy\nTerms & Conditions\nRequest Access to Collected Data\n\nIf you’re looking to retrieve the information that Datanyze has collected about you, simply click on the link below. After we’ve verified your identity, you’ll be able to select the data tha",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

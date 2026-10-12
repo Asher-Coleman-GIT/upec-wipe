@@ -1,0 +1,33 @@
+{
+ "domain": "blueprintaudiences.com",
+ "name": "Blueprint Audiences",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:00.827Z",
+  "status": 200,
+  "optOutUrl": "https://blueprintaudiences.com/",
+  "title": "Privacy-First Healthcare Audience Data | Blueprint Audiences",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@blueprintaudiences.com"
+  ],
+  "text": "Skip to main content\nSign in\nSpecialty and rare disease audiences that outperform\n\nBuilt differently for low-prevalence, high-value patient populations\n\nTest Blueprint Audiences\nLearn How It Works\nWhy specialty and rare disease targeting breaks\n\nTraditional healthcare audiences rely on predictive models and lookalikes.\nIn low-prevalence populations, those approaches break down.\n\nModels guess who looks like a patient\n\nLow prevalence amplifies error\n\nMissed patients mean wasted impressions\n\nBuilt differently for specialty and rare disease\n\nBlueprint takes a fundamentally different approach to he",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

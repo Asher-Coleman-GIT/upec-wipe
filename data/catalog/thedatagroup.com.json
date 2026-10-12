@@ -1,0 +1,46 @@
+{
+ "domain": "thedatagroup.com",
+ "name": "The Data Group",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:34.569Z",
+  "status": 200,
+  "optOutUrl": "https://thedatagroup.com/privacy/california-consumer-privacy-act/",
+  "title": "California Consumer Privacy Act - The Data Group",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[email]",
+    "id": "form-field-email",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Exercising Your CCPA Rights"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Send",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jhenson@thedatagroup.com"
+  ],
+  "text": "Services\nAPI\nPricing\nContact Us\nSelf-Service Login\nCalifornia Consumer Privacy Act\n\nExercising Your CCPA Rights\n\nIf you are a California resident, you are entitled to specific rights under the California Consumer Privacy Act (CCPA), which include the ability to access, correct, delete, or limit the use of your personal information. Additionally, you have the right to opt out of the sale or sharing of your personal information, if applicable. To exercise your rights, please follow the instructions outlined below:\n\nComplete a Consumer Privacy Request Form: Please complete the opt-out request for",
+  "fingerprint": "ab2eeb615776b4b5c95346e4b4f7955d8a8b760b32c03ae62c0f23c3d3bead57"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "domain": "visualvisitor.com",
+ "name": "Visual Visitor L.L.C.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:56.426Z",
+  "status": 200,
+  "optOutUrl": "https://www.visualvisitor.com/opt-out/",
+  "title": "Do Not Sell My Personal Information",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Try the live AI demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@visualvisitor.com"
+  ],
+  "text": "Skip to content\nProducts\nAgencies\nPricing\nResources\nAbout Us\n\nLogin\nFree Trial\n\nSchedule A Demo\n\nDo Not Sell My Personal Information\nMain Menu\nHome\nMarketing Product\nSales Product\nPricing & Plans\nLegal\nPrivacy Policy\nUser Guidelines\nTerms of Service\nDo Not Sell My Info\nSupport\nLogin\nSupport\nContact Us\nAbout Us\nContact Us\n\n888-586-7730\n\nCompany Directory\n\nResearch Any Franchise\n\n© 2026 Visual Visitor\n\nTry the live AI demo",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "domain": "lightcast.io",
+ "name": "Economic Modeling, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:38.077Z",
+  "status": 200,
+  "optOutUrl": "https://lightcast.io/legal/privacy-policy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-9cf26c34-8d61-4629-b44c-1eab54210f8a",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "EMAIL*",
+    "form": 0,
+    "heading": "Sign up for our newsletter and insights"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "lightcast_market_vertical_selfselected",
+    "id": "lightcast_market_vertical_selfselected-9cf26c34-8d61-4629-b44c-1eab54210f8a",
+    "placeholder": "",
+    "aria": "",
+    "label": "INDUSTRY*",
+    "form": 0,
+    "heading": "Sign up for our newsletter and insights",
+    "options": [
+     "=Please Select",
+     "Private Sector=Private Sector",
+     "Government & Non-profit=Government",
+     "Education=Education",
+     "Marketing & Sales=Marketing & Sales",
+     "Non-profit Org.=Non-profit Org.",
+     "Other=Other"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Sign up for our newsletter and insights"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Our Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Use Cases",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign In",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@lightcast.io"
+  ],
+  "text": "Our Data\nSolutions\nUse Cases\nResources\nCompany\nSign In\nSpeak with a Data Pro\nANALYST PLATFORM\n(OPENS IN A NEW TAB)\n- Alumni Pathways\n(opens in a new tab)\n- Analyst\n(opens in a new tab)\n- Developer\n(opens in a new tab)\n- Talent Analyst\n(opens in a new tab)\nCAREER COACH\n(OPENS IN A NEW TAB)\nGAZELLE\n(OPENS IN A NEW TAB)\nLABOUR INSIGHT\n(OPENS IN A NEW TAB)\nSTRATIGENS\n(OPENS IN A NEW TAB)\nTALENT TRANSFORM\n(OPENS IN A NEW TAB)\nPRIVACY POLICY\n\nIntroduction\n\nThis Privacy Policy (the “Policy”) covers the processing of personal information by Obsidian BG Holdings LP and its group companies doing busines",
+  "fingerprint": "918ceb426d0d117613dec4906917eb910f3c64421aaeb0398c49f07143b28b59"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

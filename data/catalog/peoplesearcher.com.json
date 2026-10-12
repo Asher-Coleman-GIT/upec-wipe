@@ -1,0 +1,104 @@
+{
+ "domain": "peoplesearcher.com",
+ "name": "The People Searchers LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:01.893Z",
+  "status": 200,
+  "optOutUrl": "https://www.peoplesearcher.com/name/landing",
+  "title": "Peoplesearcher",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstName",
+    "placeholder": "Enter person's First Name",
+    "aria": "",
+    "label": "First name",
+    "form": -1,
+    "heading": "Find Criminal Records, Bankruptcies, Social Media, Photos, C"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastName",
+    "placeholder": "Enter person's Last Name",
+    "aria": "",
+    "label": "Last name",
+    "form": -1,
+    "heading": "Find Criminal Records, Bankruptcies, Social Media, Photos, C"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Find Criminal Records, Bankruptcies, Social Media, Photos, C",
+    "options": [
+     "all=All States",
+     "AL=Alabama",
+     "AK=Alaska",
+     "all=All States",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "I AGREE",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "FREE SEARCH",
+    "id": "perform-search",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "LOG IN\n Notice\nLearning the truth about the history of your family and friends can be shocking, so please be cautious when using this tool.\nPeopleSearcher does not provide consumer reports and is not a consumer reporting agency under the Fair Credit Reporting Act. We provide information (criminal record, address, phone number, property, civil judgment, and more) that can be used to satisfy your curiosity, protect your family, and find the truth about people in your life. To use our site you must certify below by selecting \"I Agree\" that you agree to our Privacy Policy and Terms of Use and will",
+  "fingerprint": "78b5201ff39d7984bab3398311207458601540792f87b7ca4ef26df6934ed357"
+ },
+ "review": {
+  "state": "reviewed",
+  "reviewedAt": "2026-10-11",
+  "note": "Shared privacy-request page (same operator as checksecrets, peoplesearcher, privatereports, weinform). \"Remove My Information\" radio reveals the subject fields; a confirmation link follows by email.",
+  "definition": {
+   "method": "direct-form",
+   "optOutUrl": "https://www.peoplesearcher.com/api/helper/optOutLight/search",
+   "formFields": {
+    "#r-removal": "on",
+    "#first": "{firstName}",
+    "#last": "{lastName}",
+    "#dob-m": "{dobMonthName}",
+    "#dob-d": "{dobDay}",
+    "#dob-y": "{dobYear}",
+    "#city": "{city}",
+    "#zip": "{zip}",
+    "#state": "{state}",
+    "#contact-email": "{email}"
+   },
+   "submitSelector": "#submit-btn",
+   "captchaLikely": false,
+   "requires": [
+    "dob"
+   ],
+   "usOnly": true
+  }
+ }
+}

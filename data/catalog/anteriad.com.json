@@ -1,0 +1,67 @@
+{
+ "domain": "anteriad.com",
+ "name": "Anteriad, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:36.143Z",
+  "status": 404,
+  "optOutUrl": "https://anteriad.com/;%20https://anteriad.com/privacy-portal",
+  "title": "404 - Page not found",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "term",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "Search",
+    "label": "",
+    "form": 2,
+    "heading": "PAGE NOT FOUND."
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-c4bde3d3-6b8e-48ef-a8a3-4014772c213d_8183",
+    "placeholder": "Email Address*",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": "Free full-funnel insights sent straight to your inbox."
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": "Free full-funnel insights sent straight to your inbox."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@anteriad.com"
+  ],
+  "text": "Skip to content\nClose\nSolutions\nUse Cases\nResources\nAbout Us\nCareers\n SEARCH\nContact Us\nSolutions\nUse Cases\nResources\nAbout Us\nCareers\n Contact Us\nPAGE NOT FOUND.\n\nSorry about that! The page you are trying to access is currently unavailable.\nInstead, you may want to visit our homepage or resource center to find up-to-date B2B marketing solutions and insights.\n\nYou can also try the search bar below to find exactly what you’re looking for:\n\nHomepage\n\n441 Lexington Avenue\nSuite 1404\nNew York, NY 10017\n914-368-1000\n\nContact Us\nFree full-funnel insights sent straight to your inbox.\nSolutions\nAnteri",
+  "fingerprint": "2e140d46d5625a7ec1aca231cb835db79bd58d8fa14cc9c16a4a9b26201be8bd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

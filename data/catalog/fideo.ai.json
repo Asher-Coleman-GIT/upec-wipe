@@ -1,0 +1,35 @@
+{
+ "domain": "fideo.ai",
+ "name": "Fideo Intelligence, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:52.118Z",
+  "status": 200,
+  "optOutUrl": "https://app.fideo.ai/your-privacy-choices",
+  "title": "Fideo",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "CONTINUE",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dpo@fideo.ai",
+   "privacy@fideo.ai"
+  ],
+  "text": "Your privacy choices\nFideo processes the following privacy rights in accordance with applicable privacy laws for all individuals, regardless of where the individual is located. For example, if we sell your personal data for monetary or other valuable consideration or share your personal data for cross-context behavioral advertising, you have the right to opt-out of such “sale” or “sharing/targeted advertising.” If we collect or process your sensitive personal data for the purpose of inferring characteristics about you, you have the right to request that we limit the use or disclosure of such i",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

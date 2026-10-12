@@ -1,0 +1,28 @@
+{
+ "domain": "experian.com",
+ "name": "Experian Marketing Solutions, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:29:05.650Z",
+  "status": 200,
+  "optOutUrl": "https://www.experian.com/privacy/opt-out-targeted-advertising",
+  "title": "Privacy Policy at Experian.com",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "ca_drop_fsd@experian.com"
+  ],
+  "text": "Skip to main navigation\nConsumer\nSmall Business\nBusiness\nAbout Experian\nConsumer Support\nCredit Advice\nGlobal Sites\nPrivacy\n U.S. Consumer Data Privacy Notice\nU.S. Consumer Data Privacy Notice\nPrivacy Menu\nApproach to Privacy\nPrivacy Notices\nAutoCheck\nU.S. Consumer Data Privacy Notice\nConsumerInfo.com, Inc. Policy\nCSID Privacy Policy\nExperian Background Data, Inc.\nEU-U.S. Data Privacy Framework Privacy Notice\nExperian Marketing Solutions - Data Practices Notice\nExperian Employer Services Privacy Policy\nOnline Business Credit Reports\nOnline Credit Reports\nVoicesHub Privacy Notice\nExperian Rewar",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

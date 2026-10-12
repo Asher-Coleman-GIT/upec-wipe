@@ -1,0 +1,44 @@
+{
+ "domain": "civisanalytics.com",
+ "name": "Civis Analytics, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:40.280Z",
+  "status": 200,
+  "optOutUrl": "https://www.civisanalytics.com/legal-pages/supplemental-privacy-notice",
+  "title": "Privacy Policy | Civis Analytics",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Allow All",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "CybotCookiebotDialogBodyLevelButtonCustomize",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "CybotCookiebotBannerCloseButtonE2E",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dataprotectionmail@civisanalytics.com"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nShow Details\nAllow All\nCustomize\nWhy Civis\nProduct\nCompany\nResources\nLogin\nBook a demo\nPrivacy Policy\n\nThis Privacy Policy describes how Civis Analytics, Inc. (“Civis” or “we”) processes, collects, and uses personal informa",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

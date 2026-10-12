@@ -1,0 +1,28 @@
+{
+ "domain": "deeprootanalytics.com",
+ "name": "Deep Root Analytics, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:20.149Z",
+  "status": 200,
+  "optOutUrl": "https://www.deeprootanalytics.com/privacy-policy",
+  "title": "Privacy Policy - Deep Root Analytics",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "notice@deeprootanalytics.com"
+  ],
+  "text": "ABOUT US\nRESOURCES\nPRODUCTS\nLOGIN\nSchedule a Call\nPRIVACY POLICY\n\nEffective as of March 2023.\n\nLast Updated June 2026.\n\n \n\nIntroduction\n\nDeep Root Analytics, LLC (\"Deep Root\", \"DRA\", “we,” “our,” or “us”) respects the privacy of your information. This Privacy Policy is designed to assist you in understanding how we collect, use, share, and safeguard your information. This Privacy Policy applies to individuals who access this website (“Site”) and any of our online and, where required, offline products and services (collectively, \"Services\"), as well as the individuals with whom we do not have a",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

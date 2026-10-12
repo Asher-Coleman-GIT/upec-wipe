@@ -1,0 +1,40 @@
+{
+ "domain": "fusion92.com",
+ "name": "Virtual Marketing LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:10.350Z",
+  "status": 200,
+  "optOutUrl": "https://www.fusion92.com/privacy-policy",
+  "title": "Fusion92 | Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept and Close",
+    "id": "CybotCookiebotDialogBodyButtonAccept",
+    "inForm": false
+   },
+   {
+    "text": "Do not sell or share my personal informa",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "databroker@fusion92.com",
+   "privacy@fusion92.com"
+  ],
+  "text": "This website uses cookies\n\nWe use cookies to personalize content and ads, to provide social media features and to analyze our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\n\nShow details\nAccept and Close\nDo not sell or share my personal information\nFusion92 Home\nSTORY\nAPPROACH\nPRODUCTS\nDATA SCIENCE & STRATEGY\nFUSION92 HEALTH\nRESULTS\nNEWS & POVs\nCAREERS\nLET'S TALK\nFUSION92 PRIVACY POLICY\n\nLast U",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

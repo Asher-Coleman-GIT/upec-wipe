@@ -1,0 +1,34 @@
+{
+ "domain": "disqus.com",
+ "name": "Disqus, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:25.672Z",
+  "status": 200,
+  "optOutUrl": "https://help.disqus.com/en/articles/1717233-delete-account-or-access-account-data",
+  "title": "Disqus Data Sharing Settings",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "OPT OUT",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@disqus.com"
+  ],
+  "text": "The new Disqus Games Hub is live! Come play daily puzzles and games.Visit the Games Hub\nComments\nOverview\nEngagement\nModeration & Safety\nAudience\nMonetization\nBoards\nNEW\nPolls\nPricing\nResources\nBlog\nSupport\nKnowledge Base\nDisqus 101\nDiscuss Disqus\nCase Studies\nAbout\nContact Us\nLogin\nPublishers\nCommenters\nGet Started\nPRIVACY CHOICES\nAt this page you can exercise your privacy rights and make choices about our collection and use of your data.\nYour Account. All registered users may review, update or correct the Identity, Contact and Profile data by changing their “user preferences” in their accoun",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

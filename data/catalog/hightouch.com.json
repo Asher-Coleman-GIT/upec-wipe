@@ -1,0 +1,59 @@
+{
+ "domain": "hightouch.com",
+ "name": "Carry Technologies Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:15.975Z",
+  "status": 200,
+  "optOutUrl": "https://preferences.hightouch.com/",
+  "title": "Privacy Request Center | DataGrail",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "privacy-request-center-country-picker",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country of residence",
+    "form": -1,
+    "heading": "Take control of your personal data."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "privacy-request-center-region-picker",
+    "placeholder": "",
+    "aria": "",
+    "label": "State of residence",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "keyboard_arrow_down",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "keyboard_arrow_down",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Privacy Request Center\nData Privacy at Hightouch\n\nAt Hightouch, we believe in building trust through transparency. We comply with applicable federal, state, and international privacy laws and regulations to keep your information safe. Residents of some countries may opt out of the sale or distribution of personal information, request that this information be deleted, or request to have a copy sent to them.\n\nTake control of your personal data.\n\nUtilize the tools below to make a request regarding your data as required by our privacy policy and applicable privacy laws. Select your country of resi",
+  "fingerprint": "641a84e142805c23cdbcc15563ef5e964b3dc1935b8667474635db2830b6b8d7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

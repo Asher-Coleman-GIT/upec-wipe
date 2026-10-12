@@ -1,0 +1,49 @@
+{
+ "domain": "pitchbook.com",
+ "name": "PitchBook Data, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:33:06.545Z",
+  "status": 403,
+  "optOutUrl": "https://pitchbook.com/privacy-policy",
+  "title": "Privacy Policy - PitchBook",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@pitchbook.com"
+  ],
+  "text": "Deal-level benchmarks are here\n\nClose the transparency gap with PitchBook's deal-level benchmarking, powered by SPI by StepStone. Sharpen diligence, pricing, and client conversations with unrivaled analytics.\n\nLearn more\n×\nPRODUCTS\nINSIGHTS\nPRODUCTS\nUse Cases\nData\nPlatform\nGetting Started\nAbout PitchBook\nUSE CASES\nExplore what PitchBook can do for you\nMarket Intelligence\nFollow capital flows across investors, deals, and industry trends \nDeal Sourcing\nFind investment opportunities and active investors faster \nDeal Execution\nAct on timely transactions to manage pipelines efficiently  \nNetworking",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

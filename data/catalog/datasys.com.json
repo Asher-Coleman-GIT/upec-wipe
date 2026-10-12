@@ -1,0 +1,64 @@
+{
+ "domain": "datasys.com",
+ "name": "Datasys Group, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:46.037Z",
+  "status": 200,
+  "optOutUrl": "https://datasys.com/privacy-policy",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Talk to an Expert",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Talk to an Expert",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Close",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Decline",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "seth.lubin@datasys.com"
+  ],
+  "text": "Platforms\nChannels\nDigital Display\nCreative\nSEO\nEmail Plus\nSocial media\nPostal\nConnected TV\nVideo\nNative\nAudio\nData\nAnalytics\nAbout Us\nContact Us\nTalk to an Expert\nPlatform\nDatasys360\nDatamart\nSearched\nChannels\nDisplay\nSEO\nSocial media\nConnected TV\nNative\nCreative\nEmail\nPostal\nVideo\nAudio\nDataAnalyticsAbout UsContact Us\nTalk to an Expert\nSearchedDatamartDatasys360\nPRIVACY POLICY\nUPDATED ON APRIL 9, 2026.\n\nPLEASE READ THIS DOCUMENT CAREFULLY. IT CONTAINS IMPORTANT INFORMATION THAT YOU SHOULD KNOW BEFORE CONTINUING TO USE OUR WEBSITE OR SERVICES (AS SUCH TERM DEFINED IN THE TERMS OF SERVICES). B",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

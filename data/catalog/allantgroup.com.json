@@ -1,0 +1,92 @@
+{
+ "domain": "allantgroup.com",
+ "name": "Allant Group, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:40.095Z",
+  "status": 200,
+  "optOutUrl": "https://allantgroup.com/privacy-policy",
+  "title": "Privacy Policy – Allant Group",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][1]",
+    "id": "wpforms-4413-field_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": "Sign up for our newsletter!"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][7]",
+    "id": "wpforms-4413-field_7",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Sign up for our newsletter!"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][6]",
+    "id": "wpforms-4413-field_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Work Email *",
+    "form": 0,
+    "heading": "Sign up for our newsletter!"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "wpforms-submit-4413",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@allantgroup.com"
+  ],
+  "text": "Skip to content\nAMP+\nAUDIENCES\nPARTNERS\nABOUT\nRESOURCES\nCONTACT\nREQUEST A DEMO\nPrivacy policy\n\nThis policy is effective from June 17th, 2026.\n\nAllant Group, LLC (\"Allant\") is a data, data strategy, analytic insights, campaign management, and marketing technology company. We work directly with businesses to help them market, measure, and improve marketing campaigns across direct mail, email, websites, and social media channels.\n\nThis privacy policy (\"Policy\") provides notice of how we acquire, store, and use personal information on behalf of our clients and your rights and choices regarding you",
+  "fingerprint": "b7810b91b301f637be83e5270870e6569b21f9b31837b48960d8018ff29e9c02"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

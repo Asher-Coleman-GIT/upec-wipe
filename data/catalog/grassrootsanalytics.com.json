@@ -1,0 +1,209 @@
+{
+ "domain": "grassrootsanalytics.com",
+ "name": "Grassroots Analytics",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:44.307Z",
+  "status": 200,
+  "optOutUrl": "https://www.grassrootsanalytics.com/california-consumer-privacy-act-ccpa",
+  "title": "California Consumer Privacy Act (CCPA) | Grassroots Analytics",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first-name",
+    "id": "input_comp-lu8kq90f3",
+    "placeholder": " ",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last-name",
+    "id": "input_comp-lu8kq90g2",
+    "placeholder": " ",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "input_comp-lu8kq90h1",
+    "placeholder": " ",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "phone-number",
+    "id": "input_comp-lu8kq90m5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone Number",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "input_comp-lu8kv3wk",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "street-address",
+    "id": "input_comp-lu8ktkoy",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "input_comp-lu8kv7u3",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "textarea_comp-lu8kyb0e",
+    "placeholder": "",
+    "aria": "",
+    "label": "Additional Information",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Access My Personal Information",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete My Personal Information",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do Not Sell My Personal Informatio",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "input_comp-m2atz5og",
+    "placeholder": "",
+    "aria": "",
+    "label": "Enter your email here",
+    "form": 1,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "California Consumer Privacy Act (CCPA)"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "operations@grassrootsanalytics.com"
+  ],
+  "text": "Skip to Main Content\n\nHome\n\nAbout\n\nServices\n\nResources\n\nBlog\n\nContact Us\n\nCalifornia Consumer Privacy Act (CCPA)\n\nData privacy legislation including the California Consumer Privacy Act (CCPA) gives you certain rights regarding your personal information.\n\n Your CCPA rights include:\n\n​\n\nAccess: you can request access to personal information we’ve collected about you\n\n​\n\nDeletion: you can ask us to delete personal information we’ve collected from you\n\n​\n\nOpt-out from sales: you can opt out of “sales” of personal information about you\n\n​\n\nView the  CCPA request and deletion metrics collected by Gr",
+  "fingerprint": "1d6a6ce05c3beb7c2c498d8863939f60324952a53c91561cd0eced312218721d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

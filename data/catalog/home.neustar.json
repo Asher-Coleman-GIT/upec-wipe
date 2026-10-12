@@ -1,0 +1,31 @@
+{
+ "domain": "home.neustar",
+ "name": "NeuStar, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:29:59.224Z",
+  "status": 403,
+  "optOutUrl": "https://privacychoices.home.neustar/?t=#/login",
+  "title": "Data Subject Choice Portal",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Proceed",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": " ® // Privacy Choices Portal \n\nNeustar is now a TransUnion company. To exercise your consumer privacy rights with TransUnion, please click here\n\nYou are entering the Neustar Privacy Choices Portal. Please verify that you are not a robot.\n\n\nProceed\nCopyright © 2026 TransUnion LLC. All Rights Reserved. PRIVACY",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

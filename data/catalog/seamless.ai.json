@@ -1,0 +1,67 @@
+{
+ "domain": "seamless.ai",
+ "name": "Seamless Contacts, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:34:27.454Z",
+  "status": 403,
+  "optOutUrl": "https://preferences.seamless.ai/?locale=en",
+  "title": "Privacy Request Center | DataGrail",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "privacy-request-center-country-picker",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country of residence",
+    "form": -1,
+    "heading": "Take control of your personal data."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "privacy-request-center-region-picker",
+    "placeholder": "",
+    "aria": "",
+    "label": "State of residence",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "translate\nEnglish\nkeyboard_arrow_down",
+    "id": "preview-translations-list",
+    "inForm": false
+   },
+   {
+    "text": "keyboard_arrow_down",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "keyboard_arrow_down",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@seamlessleads.com"
+  ],
+  "text": "Privacy Request Center\ntranslate\nEnglish\nkeyboard_arrow_down\nData Privacy at Seamless.AI\n\nAt Seamless.AI, we believe in building trust through transparency. We comply with applicable federal, state, and international privacy laws and regulations to keep your information safe. Residents of some countries may opt-out of the sale or share of their personal information, request that their personal information be deleted, or request to have a copy of their personal information sent to them.\n\nTake control of your personal data.\n\nUtilize the tools below to make a request regarding your data as requir",
+  "fingerprint": "641a84e142805c23cdbcc15563ef5e964b3dc1935b8667474635db2830b6b8d7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

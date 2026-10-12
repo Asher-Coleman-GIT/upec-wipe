@@ -1,0 +1,112 @@
+{
+ "domain": "usmarketinggrp.com",
+ "name": "BH MARKETING GROUP LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:27.697Z",
+  "status": 200,
+  "optOutUrl": "https://usmarketinggrp.com/privacy-policy/#CCPA",
+  "title": "Privacy Policy - US MARKETING GROUP",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[name]",
+    "id": "form-field-name",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_2a4f259]",
+    "id": "form-field-field_2a4f259",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[field_192408f]",
+    "id": "form-field-field_192408f",
+    "placeholder": "Full Address",
+    "aria": "",
+    "label": "Full Address",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "form_fields[email]",
+    "id": "form-field-email",
+    "placeholder": "Phone",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[field_29e0ac1]",
+    "id": "form-field-field_29e0ac1",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "form_fields[message]",
+    "id": "form-field-message",
+    "placeholder": "Message",
+    "aria": "",
+    "label": "Message",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "form_fields[liveperson]",
+    "id": "form-field-liveperson",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am the person above",
+    "form": 0,
+    "heading": "Opt-Out Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@usmarketinggrp.com"
+  ],
+  "text": "Skip to content\nHome\nLive Leads\nAged Leads\nTop Sellers\nContact Us\n+1-866-581-4810\nPrivacy Policy\nUS MARKETING GROUP PRIVACY POLICY\nLast Updated and Effective as of June 18, 2026\n\nWE RESPECT YOUR PRIVACY AND WE WILL NOT SELL OR SHARE YOUR INFORMATION EXCEPT AS AUTHORIZED BY YOU OR OTHERWISE ALLOWED OR REQUIRED BY LAW. WE UPDATE THIS POLICY AT LEAST ANNUALLY.\n\n \n\nThis Privacy Policy expands upon and supersedes all prior versions and sets forth the data privacy practices of BH Marketing Group, LLC d/b/a US Marketing Group (“we,” “us,” or “our”) and applies solely to visitors and users (“consumers",
+  "fingerprint": "f0b1f12e7411d0bdbd4931bf602a123dd10f0c32fec4c69715c3706c34fb1948"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

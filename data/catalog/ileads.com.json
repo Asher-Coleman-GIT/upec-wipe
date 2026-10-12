@@ -1,0 +1,54 @@
+{
+ "domain": "ileads.com",
+ "name": "iLeads.com, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:09:47.189Z",
+  "status": 200,
+  "optOutUrl": "https://ileads.com/privacy#9",
+  "title": "Privacy Policy | iLeads",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "remove@ileads.com"
+  ],
+  "text": "Skip to content\nProducts\nSolutions\nIndustries\nResources\nCompany\n877.245.3237\nTalk to us\nPrivacy Policy\n\nHow iLeads handles data across our sites and products, and your privacy rights and choices.\n\nLAST UPDATED: October 1, 2026\n\nWelcome to iLeads.com®\n\nWe’ll help you find the product or service that’s right for you!\n\nSkip the section index\n1. Introduction and Scope\n2. Personal Information We Collect\n3. Chat Features\n4. How We Use Personal Information\n5. How We Disclose Personal Information\n6. Cookies and Tracking Technologies\n7. Interest-Based Advertising\n8. Your Rights and Choices\n9. Anti-Spam",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "domain": "big-village.com",
+ "name": "BV Insights LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:05.112Z",
+  "status": 200,
+  "optOutUrl": "https://big-village.com/do-not-sell-or-share-my-personal-information/",
+  "title": "Do Not Sell Or Share My Personal Information - Big Village",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jp.sardi@brightmountainmedia.com"
+  ],
+  "text": "SKIP TO MAIN CONTENT\nSKIP TO FOOTER\nOpens in a new tab\nWhat We Do\nHow We Help\nPlatform\nAbout\nWho We Serve\nResources\nContact\nDo Not Sell Or Share My Personal Information\n\nIf you do not want your information sold or shared in connection with our audience products (described in our privacy policy located at https://big-village.com/privacy-policy-insights/ in the section titled “AUDIENCE PRODUCT”), then please submit your mobile advertising identifier to us using the form below. If you submit your information, we will exclude you from any audiences that we create and your data will not be sold to ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

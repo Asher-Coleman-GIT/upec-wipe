@@ -1,0 +1,60 @@
+{
+ "domain": "amplemarket.com",
+ "name": "Tagis, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "usepylon.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:03.408Z",
+  "status": 200,
+  "optOutUrl": "https://www.amplemarket.com/legal/privacy",
+  "title": "Amplemarket: Privacy Policy & Data Protection",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Enter your company email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "UNLOCK YOUR AI SALES SUPERPOWERS"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "UNLOCK YOUR AI SALES SUPERPOWERS"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Get free trial",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@amplemarket.com",
+   "privacy@amplemarket.com"
+  ],
+  "text": "Product\nWhy us\nResources\nCustomers\nPricing\nOpen app\nGet free trial\n🚀\nAmplemarket Business Services Privacy Policy\n\nLast updated: April 1st, 2025\n\nThank you for taking the time to read our privacy policy. At Amplemarket (“Amplemarket”, “we”, or “us”), your privacy is of the utmost importance. We want you to be fully informed about the information we collect, how it is used, shared, and protected, and the choices you have with it and explain the privacy and data practices at Amplemarket.\n\nWe provide two distinct types of services, and have separated these services in order to make it easier for",
+  "fingerprint": "b6e76d16b8d6a8e2d10a4090a9dc39a107b54b65e5dffde6a1a342fea7979a8a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

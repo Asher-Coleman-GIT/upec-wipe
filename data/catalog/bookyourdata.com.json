@@ -1,0 +1,101 @@
+{
+ "domain": "bookyourdata.com",
+ "name": "A Direct Marketing Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:26:08.145Z",
+  "status": 200,
+  "optOutUrl": "https://optout.bookyourdata.com/",
+  "title": "Do Not Sell or Share My Personal Information | Bookyourdata",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email address *",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "name",
+    "id": "name",
+    "placeholder": "Optional, but helps us match your record",
+    "aria": "",
+    "label": "Full name",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state",
+    "placeholder": "Optional (e.g. California)",
+    "aria": "",
+    "label": "State / region",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "rt",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell or share my personal information\nWe add you to o",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "rt",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete my personal information\nWe remove your information fr",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "website",
+    "id": "website",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit my request",
+    "id": "submit",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "data@bookyourdata.com"
+  ],
+  "text": "Do Not Sell or Share My Personal Information\n\nUse this form to opt out of the sale or sharing of your personal information, or to request its deletion. An opt-out is honoured without asking you to confirm it by email; a deletion request gets an email with a link to confirm it. We do not discriminate against you for exercising your privacy rights. We honor opt-out of sale or sharing requests within 15 business days of receipt.\n\nEmail address *\nFull name\nState / region\nWhat would you like us to do? *\nSelect one or both\nDo not sell or share my personal information\nWe add you to our do-not-sell / ",
+  "fingerprint": "e84c19b008bf2f03167b6efa637e3d8831f0fe227b39148ddd51faea5d5caa24"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

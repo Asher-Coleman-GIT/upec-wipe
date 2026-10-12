@@ -1,0 +1,39 @@
+{
+ "domain": "realsourcedata.com",
+ "name": "RealSource, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:59.081Z",
+  "status": 200,
+  "optOutUrl": "https://www.realsourcedata.com/do-not-sell-my-personal-information",
+  "title": "Do Not Sell My Personal Information — RealSource Data",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "TARGETED MARKETING LISTS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "DATA ENHANCEMENT SERVICES",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@realsourcedata.com"
+  ],
+  "text": "SKIP TO CONTENT\nHOME\nTARGETED MARKETING LISTS\nDATA ENHANCEMENT SERVICES\nABOUT US\nCONTACT US\nDO NOT SELL MY PERSONAL INFORMATION\nHOME / DO NOT SELL MY PERSONAL INFORMATION\n[email] \n1-888-340-5479\nCONTACT US\nTARGETED MARKETING LISTS\n\nAUTO DEALER LEADS\n\n AUTO WARRANTY LEADS\n\nCONSUMER DEMO LEADS\n\n HOME WARRANTY LEADS\n\nINSURANCE LEADS \n\nNEW HOMEOWNERS\n\nTIMESHARE OWNER LEADS\n\nTRAVEL LEADS\n\nDATA ENHANCEMENT SERVICES\n\nDATA ENHANCEMENTS & APPENDS\n\nDATA MODELING & ANALYTICS\n\nDIGITAL MARKETING SERVICES\n\nREAL IDENTIFY\n\nCONTACT US\n\nEMAIL US\n\n(888) 340-5479\n\nPRIVACY POLICY\n\nDO NOT SELL MY I",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

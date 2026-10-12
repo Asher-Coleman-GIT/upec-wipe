@@ -1,0 +1,20 @@
+{
+ "domain": "revcontent.com",
+ "name": "RevContent",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:01.132Z",
+  "contacts": [
+   "privacy@revcontent.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.revcontent.com/policy/privacy-policy#residents-of-the-state-of-california"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "domain": "comscore.com",
+ "name": "Comscore, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:58.903Z",
+  "contacts": [
+   "privacy@comscore.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.comscore.com/About/Privacy-Policy"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

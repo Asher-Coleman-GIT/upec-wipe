@@ -1,0 +1,28 @@
+{
+ "domain": "collectivedata.io",
+ "name": "Collective Data Solutions",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:28.184Z",
+  "status": 200,
+  "optOutUrl": "https://www.collectivedata.io/opt-out-do-not-sell-request-process/",
+  "title": "Privacy Policy - The Collective Data Solutions The Collective Data Solutions",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "legal@collectivedata.io"
+  ],
+  "text": "Get Started\nPrivacy Policy\n\nHow do I remove my data from Collective Data Solutions LLC (“CDS”)?\nVisit the OPT OUT & DO NOT SELL page.\n\nIs the Collectivedata.io website intended for persons under thirteen years of age?\nNo. The Collectivedata.io website is not intended for the use of persons under thirteen years of age. CDS does not knowingly solicit or collect personally identifying information (“PII”) from or about children, nor does CDS knowingly market its products or services to children.\n\nWhat is CCPA and how does it apply to me?\nVisit CDS’s CCPA FAQ page for answers to your CCPA questions",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

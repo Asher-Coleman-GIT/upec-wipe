@@ -1,0 +1,28 @@
+{
+ "domain": "omginc.xyz",
+ "name": "ONLINE MEDIA GROUP INC.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:34.911Z",
+  "status": 200,
+  "optOutUrl": "https://omginc.xyz/privacy",
+  "title": "Privacy Policy | Online Media Group",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@omginc.xyz"
+  ],
+  "text": "Home Privacy Policy Contact Us\nPrivacy policy\nLast updated: Jan 6, 2025\nIntroduction\n\nOnline Media Group is a management company overseeing a suite of innovative products designed to help businesses develop world-class, data-enabled solutions. Our partners utilize these products to enhance decision-making in private and public equity investments, identify promising sales opportunities in high-growth markets, recruit top-tier talent, and more. Our focus remains on providing actionable insights primarily concerning companies and their current and prospective employees.\n\nAt Online Media Group, we",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

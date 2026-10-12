@@ -1,0 +1,81 @@
+{
+ "domain": "autoweb.com",
+ "name": "AutoWeb, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:51.580Z",
+  "status": 200,
+  "optOutUrl": "https://www.autoweb.com/privacy",
+  "title": "Privacy Policy | Autoweb",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": ":R15kqr6m:",
+    "placeholder": "Search by Make, Model or Keyword",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Reviews",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Research",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "More",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Clear",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "autolegal@autoweb.com"
+  ],
+  "text": "New\nUsed\nReviews\nResearch\nMore\nSearch\nClear\n\nRecent Articles\n\n2026 Kia K4 Road Test and Review\n\n2025 Kia Sportage Road Test and Review\n\n2024 Subaru Solterra vs. 2024 Volkswagen ID.4\n\nPopular Makes\n\nChevrolet\nFord\nHonda\nHyundai\nToyota\n\nBody Types\n\nSedan\nSUV\nCoupe\nElectric\nHybrid\n\n AutoWeb, Inc.\n\nPrivacy Policy\n\nLast Updated: September 16, 2026\n\n\n\n\nAutoWeb, Inc. and its subsidiaries and affiliated entities (collectively “AutoWeb,” “Company,” “we”, “us” or “our”) is primarily engaged in the business of digital marketing for the automotive industry that assists automotive retail dealers, automotiv",
+  "fingerprint": "66501c648b672d52ebd95620792ecf7682f063d3a61452b7cca38cbe22cf6885"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "domain": "wiza.com",
+ "name": "Wiza, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "wiza.co"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:48.681Z",
+  "status": 200,
+  "optOutUrl": "https://wiza.co/",
+  "title": "Wiza | The Most Accurate B2B Prospecting Tool",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Work email",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "You're in good company"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Create account",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "harrison@wiza.com"
+  ],
+  "text": "Solutions\nResources\nEnterprise\nPricing\nLog in\nLog in\nSign up\nSign up\nFind verified emails and phone numbers in seconds\n\nEvery other tool pre-loads a database and hopes it hasn’t gone stale. Wiza verifies contact data the moment you request it. 850M+ contacts, unlimited data, transparent pricing.\n\nGet started for free\nGet started for free\nGet a demo\nGet a demo\n4.6\n5\nRating by G2 users\n4.8\n5\non Chrome Web Store\n\nThe problem\n\nYou're paying a fortune for data that's wrong\n\nLegacy B2B database systems have outdated info.\nData sources that provide up-to-date info don't allow for easy (or affordable)",
+  "fingerprint": "1abf1940792fdc542b19c897bf0886854e98650ddaa1fd5dc557002f16b3db34"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

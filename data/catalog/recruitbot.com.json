@@ -1,0 +1,35 @@
+{
+ "domain": "recruitbot.com",
+ "name": "RecruitBot, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:12.249Z",
+  "status": 200,
+  "optOutUrl": "https://recruitbot.com/privacy-policy/",
+  "title": "Privacy - RecruitBot",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@salesbot.io",
+   "privacy@recruitbot.com"
+  ],
+  "text": "Manage Consent\nTo provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.\nAccept\nCookie Policy\nPrivacy Policy\nSkip to content\nHow it Works\nSolutions\nResources\nCompany\nContact Us\nOur Privacy Policy\nLast updated June 28, 2025\n\nThank you for choosing to be part of our community at RecruitBot Inc. (“RecruitBot”, Company”, “we”, “us”, or “our”)",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

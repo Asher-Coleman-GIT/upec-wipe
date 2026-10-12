@@ -1,0 +1,19 @@
+{
+ "domain": "hivestack.com",
+ "name": "Hivestack Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [
+  "perion.com"
+ ],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:23.339Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://perion.com/ccpa/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

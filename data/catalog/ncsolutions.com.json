@@ -1,0 +1,63 @@
+{
+ "domain": "ncsolutions.com",
+ "name": "NC Vnetures, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:19:10.739Z",
+  "status": 200,
+  "optOutUrl": "https://www.circana.com/post/circana-completes-acquisition-of-ncsolutions",
+  "title": "Circana Officially Acquires NCSolutions | Circana",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "search",
+    "id": "input_comp-lvo3teaf_r_comp-mhez11wu",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "dataItem-mifd3w05",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to Main Content\nResources\nIndustries\nSolutions\nCompany\nContact Us\nCircana Insights\nCircana Completes Acquisition of NCSolutions\n\nBy\n\nCircana\n\nJun 2, 2025\n\nWe are thrilled to welcome the talented NCS team to Circana and meaningfully enhance our media capabilities. Allocating finite marketing resources is one of the most critical and challenging decisions organizations face today – and there is no substitute for comprehensive, real-time data and actionable insights to optimize outcomes.\n\nEst. Read Time:\n\n3\n\nmins\n\nYou're reading:\n\nCircana Completes Acquisition of NCSolutions\n\nLike it? Share ",
+  "fingerprint": "57d9b9b64e8156e831823a6a7fe8b9b6295c479c8fcbc52f3703148a32087a99"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

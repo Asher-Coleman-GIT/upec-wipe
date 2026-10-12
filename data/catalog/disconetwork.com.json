@@ -1,0 +1,34 @@
+{
+ "domain": "disconetwork.com",
+ "name": "Disco Technology Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:18.537Z",
+  "status": 200,
+  "optOutUrl": "https://support.disconetwork.com/hc/en-us/articles/4418121857819-Notice-of-Right-to-Opt-Out-of-Sale-and-Sharing-Targeted-Advertising",
+  "title": "Privacy Policy | Disco",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Monetize",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@disconetwork.com"
+  ],
+  "text": "Monetize\nAdvertise\nOffersAI\nDevelopers\nAbout\nLog in / Sign up\nInstall on Shopify\nBook a Demo\nPrivacy Policy\n\nLast updated: 8/14/2025\n\nThis privacy policy (\"Privacy Policy\") explains how Disco Technology Inc. (\"Disco\" or \"we\") collects, uses, and discloses information about you when you access or use our website at www.disconetwork.com (the \"Site\"), and the online marketing services and applications listed on the Site that we make available to you (collectively, the \"Services\"). We may provide different or additional notices of our privacy practices with respect to certain products or services,",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

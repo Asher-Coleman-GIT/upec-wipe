@@ -1,0 +1,43 @@
+{
+ "domain": "audiencepoint.com",
+ "name": "AudiencePoint Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:37.065Z",
+  "status": 404,
+  "optOutUrl": "https://audiencepoint.com/cpra/",
+  "title": "Page not found - Audience Point",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "your-email",
+    "id": "",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Newsletter"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Platform\nSolutions\nResources\nNet Marketability Score Audit\nLogin\n404\nOops! Page not found.\n\nThe page you are looking for is not available or doesn’t belong to this website!\n\nBack to Home\nSee What Your Audience Is Really Worth\nGet My Net Marketability Score\nEmail us:\n\n[email]\n\nYour trusted partner in omnichannel engagement intelligence\n\nFollow Us\nLinkedin-in\nLinks\n Home\n Platform\n Solutions\n Net Marketability Score Audit\nContact\nEmail\n\n[email]\n\nAddress\n\n1100 Market St, Chattanooga, TN 37402\n\nNewsletter\n\nThe latest news, articles, sent to your inbox weekly.\n\nCopyrig",
+  "fingerprint": "f5966c496601c54d391fa28a2be30f01e00dcf7dec34d93a9e598724ff57cac0"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

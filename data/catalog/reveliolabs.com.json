@@ -1,0 +1,60 @@
+{
+ "domain": "reveliolabs.com",
+ "name": "Revelio Labs, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:04.613Z",
+  "status": 200,
+  "optOutUrl": "https://www.reveliolabs.com/notice-to-california-residents",
+  "title": "California Privacy Rights Act Notice to California Residents | Revelio Labs",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "radix-_R_1acnnb_-trigger-Solutions",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "radix-_R_1acnnb_-trigger-Products",
+    "inForm": false
+   },
+   {
+    "text": "Newsroom",
+    "id": "radix-_R_1acnnb_-trigger-Newsroom",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "radix-_R_1acnnb_-trigger-Company",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "radix-_R_1acnnb_-trigger-Resources",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "hannah@reveliolabs.com",
+   "privacy@reveliolabs.com"
+  ],
+  "text": "Solutions\nProducts\nNewsroom\nCompany\nResources\n\nINTELLIGENCE PLATFORM\n\nData\nCompany Benchmarking\nCompensation Data\nLocation Strategy\nTalent Intelligence\nCompany Discovery\n\nTALENT SOLUTIONS\n\nData Enrichment\nTalent Acquisition\n\nEXPLORE PRODUCTS\n\nTerminal\nNEW\nCOSMOS\nConsulting\nData Builder\nJob Architecture\nReports\nAcademic Research\n\nEXPLORE NEWSROOM\n\nLatest Articles\nRevelio Public Labor Statistics\nAI Labor Market Tracker\nNEW\nAcademic Publications\n\nEXPLORE COMPANY\n\nAbout Us\nCareers\nEvents\nPodcast\nTalk to an Expert\n\nEXPLORE RESOURCES\n\nData Dictionary\nCompany Directory\nPress\nBlog\nFAQ\nSign In\nTalk to ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

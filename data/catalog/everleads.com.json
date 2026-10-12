@@ -1,0 +1,27 @@
+{
+ "domain": "everleads.com",
+ "name": "ListsOnline.com, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:20.838Z",
+  "status": 200,
+  "optOutUrl": "https://everleads.com/privacy",
+  "title": "Privacy Policy — Everleads",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@everleads.com"
+  ],
+  "text": "DATA & AUDIENCES\nHOW WE WORK\nABOUT\nCONTACT\nLEGAL\nPrivacy Policy\n1. Introduction to Everleads’ Services\n\nEverleads is a trade name registered as a DBA (Doing Business As) under the Colorado corporation ListsOnline.com, Inc. (ListsOnline). ListsOnline is currently transitioning its database business to operate under the Everleads trade name. We may also conduct business as described on this website under the ListsOnline name/brand.\n\nEverleads offers a range of data marketing and analytic services and products primarily focused on businesses, business contacts and professionals. These solutions h",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

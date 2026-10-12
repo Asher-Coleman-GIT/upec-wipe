@@ -1,0 +1,28 @@
+{
+ "domain": "cashmereai.com",
+ "name": "Pludo Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:28.635Z",
+  "status": 404,
+  "optOutUrl": "https://www.cashmereai.com/policy/privacy-policy",
+  "title": "Page not found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "farbod@cashmereai.com"
+  ],
+  "text": "Platform\nSolutions\nAbout Us\nSecurity\nBlog\nRequest a Demo\n404\nThis page wandered off the trail.\n\nEven our best data can't resolve this one. The page you're looking for doesn't exist, or has moved.\n\nBack to the homepage\n\nThe client intelligence layer for financial services.\n\nPlatform\nSolutions\nAbout Us\nSecurity\nBlog\nContact Us\nTerms of Use\nPrivacy Policy\nAcceptable Use Policy\nDo Not Sell or Share My Personal Information\n© 2026 Cashmere. All rights reserved.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

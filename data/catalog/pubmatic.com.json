@@ -1,0 +1,20 @@
+{
+ "domain": "pubmatic.com",
+ "name": "PubMatic. Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:54.898Z",
+  "contacts": [
+   "privacy@pubmatic.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://pubmatic.com/legal/ccpa-privacy-policy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

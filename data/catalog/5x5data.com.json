@@ -1,0 +1,50 @@
+{
+ "domain": "5x5data.com",
+ "name": "5x5 US, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:23.222Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.5x5data.com/auth/login",
+  "title": "Intentsify",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "field-_r_2_",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Sign In"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Next",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "accordion-button-_r_0_",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "contact@join5x5.com"
+  ],
+  "text": "Sign In\nEmail*\nNext",
+  "fingerprint": "3d65de1c413d1a01e601411a48bc6e7e3feadf736997e6915623777f623459be"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

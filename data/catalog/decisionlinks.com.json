@@ -1,0 +1,123 @@
+{
+ "domain": "decisionlinks.com",
+ "name": "DecisionLinks",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:16.469Z",
+  "status": 200,
+  "optOutUrl": "https://www.decisionlinks.com/get-in-touch",
+  "title": "Get in touch with our data experts",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Contact-First-Name",
+    "id": "Contact-First-Name",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Contact-Last-Name",
+    "id": "Contact-Last-Name",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Contact-Email",
+    "id": "Contact-Email-2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "Contact-Phone",
+    "id": "Contact-Phone",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone Number*",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Contact-Company-Name",
+    "id": "Contact-Company-Name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company Name*",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Contact-Website",
+    "id": "Contact-Website",
+    "placeholder": "",
+    "aria": "",
+    "label": "Website",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "Contact-Message",
+    "id": "Contact-Message",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Get Started Today"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "w-node-c1643caa-ae11-b1d8-fdea-30374e7a9d08-b6ea6ac5",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Get Started Today"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "w-node-c1643caa-ae11-b1d8-fdea-30374e7a9d08-b6ea6ac5",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "support@decisionlinks.com"
+  ],
+  "text": "Platforms\n\nData Products\n\nCredit Services\n\nIndustries\nCompany\n\nLogin\nBook a demo\nCONTACT US\nGet in Touch\n\nWe're here to assist with your data needs.\n\nHear from us\nGet Started Today\n\nGet actionable insights based on a 360 degree view of your customers.\n\nFirst Name*\nLast Name*\nEmail*\nPhone Number*\nCompany Name*\nWebsite\nMessage*\nTell me more. Sign up for marketing communications from DecisionLinks.\nI would like a like consultation/walkthrough.\nSales Inquiries\nContact Sales\nCustomer Support\n+1 (800) 343-2955\n[email]\nOffice\n823 Congress Ave. STE 300, Austin, TX 78701\nTalk to an Ex",
+  "fingerprint": "78503bdb5a884feff2649d0246944d56f502422e8dab8e8135d0c27aaad04bf2"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

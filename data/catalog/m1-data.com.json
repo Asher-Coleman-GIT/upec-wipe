@@ -1,0 +1,28 @@
+{
+ "domain": "m1-data.com",
+ "name": "M1 Data & Analytics, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:57.019Z",
+  "status": 200,
+  "optOutUrl": "https://m1-data.com/disclosures/",
+  "title": "Disclosures - Data as Service - M1 Data & Analytics",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "service@m1-data.com"
+  ],
+  "text": "Skip to content\nWe exist to solve problems in partnership with our clients\nData Solutions\nInsight\nAbout M1\nConnect\nGet Demo\nLogin\nDisclosures\nInformation Collected\n \nThis policy applies to information we may collect through the following sources:\nDirectly from you.\nIndirectly from you when you interact with our Site.\nInformation received about you from other sources, such as third parties from whom we obtain data.\nThrough email, text or other electronic messages between you and our Site.\n \nOpt-Out from M1 Data’s Marketing Products: M1 Data gives consumers the opportunity to opt-out of our mark",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "domain": "4-eyes.ai",
+ "name": "4Eyes.ai, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:15.683Z",
+  "status": 404,
+  "optOutUrl": "https://4-eyes.ai/privacy-policy/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

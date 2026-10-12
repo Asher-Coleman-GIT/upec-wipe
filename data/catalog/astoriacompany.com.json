@@ -1,0 +1,734 @@
+{
+ "domain": "astoriacompany.com",
+ "name": "Astoria Company Marketing LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:06.138Z",
+  "status": 200,
+  "optOutUrl": "https://astoriacompany.com/privacy-request",
+  "title": "Privacy Request · Astoria Company",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "companyWebsite",
+    "id": "companyWebsite",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company website",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-access-know",
+    "placeholder": "",
+    "aria": "",
+    "label": "Access / Know",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-categories-of-personal-information",
+    "placeholder": "",
+    "aria": "",
+    "label": "Categories of personal information",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-specific-pieces-of-personal-information",
+    "placeholder": "",
+    "aria": "",
+    "label": "Specific pieces of personal information",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-delete",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-correct",
+    "placeholder": "",
+    "aria": "",
+    "label": "Correct",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-portability-copy",
+    "placeholder": "",
+    "aria": "",
+    "label": "Portability / Copy",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-opt-out-of-sale-share",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out of sale / share",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-opt-out-of-targeted-advertising",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out of targeted advertising",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-opt-out-of-profiling",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out of profiling",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-limit-sensitive-personal-information",
+    "placeholder": "",
+    "aria": "",
+    "label": "Limit sensitive personal information",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requestTypes",
+    "id": "requestTypes-other",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstName",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name *",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastName",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name *",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email address *",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "confirmEmail",
+    "placeholder": "",
+    "aria": "",
+    "label": "Confirm email address *",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "",
+    "id": "phone",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mobile phone number",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "",
+    "id": "alternatePhone",
+    "placeholder": "",
+    "aria": "",
+    "label": "Alternate phone number",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State of residence *",
+    "form": 0,
+    "heading": "Privacy Request",
+    "options": [
+     "=Select a state",
+     "Alabama=Alabama",
+     "Alaska=Alaska",
+     "Arizona=Arizona",
+     "Arkansas=Arkansas",
+     "California=California",
+     "Colorado=Colorado",
+     "Connecticut=Connecticut"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "country",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country *",
+    "form": 0,
+    "heading": "Privacy Request",
+    "options": [
+     "United States=United States",
+     "Canada=Canada",
+     "Mexico=Mexico",
+     "United Kingdom=United Kingdom",
+     "Other=Other"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "relationshipToAstoria",
+    "placeholder": "",
+    "aria": "",
+    "label": "Relationship to Astoria *",
+    "form": 0,
+    "heading": "Privacy Request",
+    "options": [
+     "=Select relationship",
+     "I submitted an inquiry on an Astoria website=I submitted an inqui",
+     "I was contacted after submitting an inquiry=I was contacted afte",
+     "I have a business or vendor relationship with Astoria=I have a business or",
+     "I am exercising rights on behalf of a family member=I am exercising righ",
+     "I am an authorized agent=I am an authorized a",
+     "Other / Unknown=Other / Unknown"
+    ]
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-astoriacompany-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "AstoriaCompany.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-mortgageleads-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "MortgageLeads.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-medicareleads-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "MedicareLeads.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-attorneyleads-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "AttorneyLeads.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-bestinsuranceleads-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "BestInsuranceLeads.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-homeremodelingleads-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "HomeRemodelingLeads.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-paypercallmarketing-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "PayPerCallMarketing.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-repairmen-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "Repairmen.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-newmedicare-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "NewMedicare.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-newhealthinsurance-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "NewHealthInsurance.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-insuranceshopping-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "InsuranceShopping.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-legalcasereview-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "LegalCaseReview.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-collegedegree-education",
+    "placeholder": "",
+    "aria": "",
+    "label": "CollegeDegree.Education",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-expresscash-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "ExpressCash.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-mortgagezone-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "MortgageZone.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-organicstack-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "OrganicStack.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-pingpost-exchange",
+    "placeholder": "",
+    "aria": "",
+    "label": "PingPost.Exchange",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-consentcompliance-com",
+    "placeholder": "",
+    "aria": "",
+    "label": "ConsentCompliance.com",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "websitesUsed",
+    "id": "websitesUsed-other-unknown",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other / Unknown",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-mortgage",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mortgage",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-medicare",
+    "placeholder": "",
+    "aria": "",
+    "label": "Medicare",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-health-insurance",
+    "placeholder": "",
+    "aria": "",
+    "label": "Health Insurance",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-legal",
+    "placeholder": "",
+    "aria": "",
+    "label": "Legal",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-home-services",
+    "placeholder": "",
+    "aria": "",
+    "label": "Home Services",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-education",
+    "placeholder": "",
+    "aria": "",
+    "label": "Education",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-financial-cash",
+    "placeholder": "",
+    "aria": "",
+    "label": "Financial / Cash",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-b2b-leads-calls",
+    "placeholder": "",
+    "aria": "",
+    "label": "B2B leads / calls",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-saas",
+    "placeholder": "",
+    "aria": "",
+    "label": "SaaS",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "verticals",
+    "id": "verticals-other",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "interactionDate",
+    "placeholder": "e.g. March 2025",
+    "aria": "",
+    "label": "Approximate date of interaction",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "responseMethod",
+    "placeholder": "",
+    "aria": "",
+    "label": "Preferred response method *",
+    "form": 0,
+    "heading": "Privacy Request",
+    "options": [
+     "=Select a method",
+     "Email=Email",
+     "Phone=Phone",
+     "Postal mail=Postal mail"
+    ]
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "I understand Astoria may request additional information to v",
+    "form": 0,
+    "heading": "Privacy Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "I certify the information provided is accurate and that I am",
+    "form": 0,
+    "heading": "Privacy Request"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Advertisers",
+    "id": "radix-_R_clb_-trigger-radix-_R_1bclb_",
+    "inForm": false
+   },
+   {
+    "text": "Publishers",
+    "id": "radix-_R_clb_-trigger-radix-_R_2bclb_",
+    "inForm": false
+   },
+   {
+    "text": "Pay Per Call",
+    "id": "radix-_R_clb_-trigger-radix-_R_3bclb_",
+    "inForm": false
+   },
+   {
+    "text": "Leads",
+    "id": "radix-_R_clb_-trigger-radix-_R_4bclb_",
+    "inForm": false
+   },
+   {
+    "text": "Submit Privacy Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Manage cookies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "bizdev@astoriacompany.com"
+  ],
+  "text": "Advertisers\nPublishers\nPay Per Call\nLeads\nActive Offers\nAbout Us\nSell Leads\nBuy Leads\nPrivacy Request\n\nUse this form to submit access, know, correction, deletion, portability, and other state privacy requests.\n\nAstoria will not discriminate against individuals for exercising their privacy rights.\n\nCompany website\nRequest type *\nAccess / Know\nCategories of personal information\nSpecific pieces of personal information\nDelete\nCorrect\nPortability / Copy\nOpt out of sale / share\nOpt out of targeted advertising\nOpt out of profiling\nLimit sensitive personal information\nOther\nFirst name *\nLast name *\nEm",
+  "fingerprint": "38196976304dfa5efcf1b9d43e7070e310be86d0746c7a07978bc80672630068"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

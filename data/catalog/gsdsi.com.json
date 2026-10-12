@@ -1,0 +1,85 @@
+{
+ "domain": "gsdsi.com",
+ "name": "Global Source Data Solutions Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:39.369Z",
+  "status": 200,
+  "optOutUrl": "https://www.gsdsi.com/privacy-policy",
+  "title": "Privacy Policy: CCPA, CPRA, and GDPR Compliance | GSDSI",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "q",
+    "id": ":Rhdf:",
+    "placeholder": "Search GSDSI…",
+    "aria": "",
+    "label": "Sitewide search",
+    "form": 0,
+    "heading": "Changes to This Notice"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Schedule a Consultation",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@gsdsi.com"
+  ],
+  "text": "Skip to content\nGSDSI\nProducts\nSolutions\nIndustries\nResources\nCompany\nPricing\nSchedule a Consultation\nContact Us\nPrivacy Policy\n\nUpdated on July 21, 2026\n\nTable of Contents\nIntroduction\nPersonal Information We Collect from You\nPersonal Information We Receive from Other Sources\nSale and Sharing of Personal Information (CCPA/CPRA)\nCategories, Purposes, and Retention (Notice at Collection)\nUse of Personal Information\nHow We Share Personal Information\nSensitive Personal Information\nConsumer Health Data (State Laws)\nGramm-Leach-Bliley Act (Financial Data)\nGlobal Privacy Control and Do Not Track\nCoo",
+  "fingerprint": "9003d7c8a5cdb4f7b738a0c0ee36c73aed39c2bd247850103912888cf5299b5b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

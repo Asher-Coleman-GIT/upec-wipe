@@ -1,0 +1,38 @@
+{
+ "domain": "connectionholdings.com",
+ "name": "Connection Holdings",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:44:04.008Z",
+  "status": 200,
+  "optOutUrl": "https://connectionholdings.com/",
+  "title": "Connection Holdings",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Legal Information",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "amanda@connectionholdings.com"
+  ],
+  "text": "Brand\nAbout Us\nNewsroom\nContact Us\nConnection\nHoldings, LLC\n\nThe managing entity for several brands operating in the performance marketing and lead generation business sectors\n\nOur\nMission\nConnection Holdings, LLC is the managing entity for several brands operating in the performance marketing and lead generation business sectors with holdings in technology, lead generation, live leads, marketing, agency business and Call Centers. It operates globally. Our mission is to: Provide comprehensive lead generation services that positively impact our people, partners, and families.\nThese shared value",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

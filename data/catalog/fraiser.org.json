@@ -1,0 +1,28 @@
+{
+ "domain": "fraiser.org",
+ "name": "Fraiser LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:47.088Z",
+  "status": 200,
+  "optOutUrl": "https://www.fraiser.org/ccpa",
+  "title": "CCPA",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@fraiser.org"
+  ],
+  "text": "Our Platform\nDiscover Blackbox\nFor Campaigns\nFor NPOs\nSign Up\nLog In\nFraiser Additional California Privacy Disclosures\nLast Updated: February 19, 2026\nScope of Disclosures\n\n\nThese Additional California Privacy Disclosures (the “CA Disclosures”) supplement the information contained in our Privacy Notice and apply solely to individual residents of the State of California (“consumers” or “you”).\n\n\nThese CA Disclosures provide additional information about how we collect, use, disclose and otherwise process personal information of individual residents of the State of California within the scope of ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

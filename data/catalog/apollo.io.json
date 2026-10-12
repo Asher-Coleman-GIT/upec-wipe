@@ -1,0 +1,166 @@
+{
+ "domain": "apollo.io",
+ "name": "ZenLeads Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:40.493Z",
+  "status": 200,
+  "optOutUrl": "https://www.apollo.io/company/privacy-center",
+  "title": "Apollo Privacy Center | Manage Your Data Privacy Rights",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "_R_35alalbsnpfhlb_",
+    "placeholder": "Enter your work email",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Crush your sales number with Apollo"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Log in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get a demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign up for free",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign up for free",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign up with Google",
+    "id": "google-oauth-button",
+    "inForm": false
+   },
+   {
+    "text": "Sign up with Microsoft",
+    "id": "microsoft-oauth-button",
+    "inForm": false
+   },
+   {
+    "text": "Privacy Policy",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Terms",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Don't Sell My Info",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get started",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Pricing",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Watch demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Request a demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Execution",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Apollo Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Workspace",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Apollo Anywhere",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Builder Studio",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Integrations",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Waterfall Enrichment",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dpo@apollo.io"
+  ],
+  "text": "Products\n\nSolutions\n\nResources\n\nCustomers\n\nPricing\n\nLog in\n\nGet a demo\n\nSign up for free\n\nManage Your Privacy and Control Your Personal Data\nApollo cares about your data privacy. Under data privacy or protection laws like the GDPR or CCPA, you have certain privacy rights. You can exercise some of those rights by following the instructions below.\nOpt out of Apollo - object to our processing, opt out of sales, and request deletion of your profile\n\nWant to opt out of Apollo by removing your existing individual profile from Apollo's services and opting out of our use and sharing of it? Click the b",
+  "fingerprint": "8ced9c78bbacf5741dc3faf214144f6692d0459cd60ab1f354f327a06e4975e7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

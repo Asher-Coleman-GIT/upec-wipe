@@ -1,0 +1,28 @@
+{
+ "domain": "samba.tv",
+ "name": "Samba TV, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:37.452Z",
+  "status": 200,
+  "optOutUrl": "https://samba.com/privacy-center/privacy-policy",
+  "title": "Samba",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "jagdip.sekhon@samba.tv"
+  ],
+  "text": "Solutions\n\nInsights\n\nAbout\n\nI own a Samba TV\n\nContact Us\n\nPrivacy Policy\nLearn more about how Samba can help your organization\n\nContact Us\n\nCustomers\n\nAdvertisers\n\nPublishers\n\nPlatforms\n\nTechnology\n\nSamba Tech Platform\n\nProducts\n\nAnalytics\n\nAudiences\n\nInsights\n\nAll Insights\n\nReport\n\nBlog\n\nVideo\n\nAbout\n\nCompany\n\nNews Center\n\nCareers\n\nI own a Samba TV\n\nContact Us\n\nPrivacy Center\n\nYour Privacy Choices\n\nCCPA Opt-out Tool\n\nPrivacy Policy\n\nSamba Terms of Service\n\nCookie Policy\n\nLinkedIn\n\nTwitter\n\nInstagram\n\nFacebook\n\nCopyright © 2026 Samba. All Rights Reserved\n\n×\nBy clicking “Accept All”, you agree ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

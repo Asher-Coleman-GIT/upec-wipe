@@ -1,0 +1,61 @@
+{
+ "domain": "rhetorik.com",
+ "name": "Rhetorik Limited",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:22.899Z",
+  "status": 200,
+  "optOutUrl": "https://rhetorik.com/do-not-sell-my-info/",
+  "title": "Do Not Sell My Info | Rhetorik",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Open Products",
+    "id": "e-n-menu-dropdown-icon-1711",
+    "inForm": false
+   },
+   {
+    "text": "Open Data & Analytics",
+    "id": "e-n-menu-dropdown-icon-1712",
+    "inForm": false
+   },
+   {
+    "text": "Open Company",
+    "id": "e-n-menu-dropdown-icon-1713",
+    "inForm": false
+   },
+   {
+    "text": "Open Resources",
+    "id": "e-n-menu-dropdown-icon-1714",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomize\nReject All\nAccept All\nSkip to content\nProducts\nOpen Products\nData & Analytics\nOpen Data & Analytics\nCompany\nOpen Company\nResources\nOpen Resources\nBook a Demo\nLog In\n\nExciting News: Rhetorik is now part of Lightcast. Together, we’re enabling a 360-degree view of companies and professionals worldwide–fueling precision in every decision, from targeting to enrichment.\n\nPrivacy Request Center\nCaliforni",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

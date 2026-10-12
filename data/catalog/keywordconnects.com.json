@@ -1,0 +1,29 @@
+{
+ "domain": "keywordconnects.com",
+ "name": "Keyword Connects LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:26.965Z",
+  "status": 200,
+  "optOutUrl": "https://keywordconnects.com/privacy-policy/",
+  "title": "Privacy Policy - Keyword Connects",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "operations@ignitevisibility.com",
+   "privacy@keywordconnects.com"
+  ],
+  "text": "Skip to main content\nSkip to footer\n\nKEYWORD CONNECTS\n\nHomeowner Connections Through Performance Online Advertising\n\nApproach\n \nTechnology\n \nSuccess Stories\n \nBlog\n \nPartners\n \nAbout Us\n \nContact Us\nPrivacy Policy\n\nLast Updated: July 30, 2026\n\nIgnite Visibility and its affiliates (EverConnect, 33 Mile Radius LLC, Keyword Connects LLC, Remodeling.com LLC, Best Pick Reports LLC, Five Star Rated LLC, Socius Marketing LLC, Qiigo Inc., Brighter Vision Web Solutions, Inc.) (“Ignite Visibility,” “Company,” “we,” “us,” or “our”) want you to be familiar with how we collect, use, and disclose Personal I",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

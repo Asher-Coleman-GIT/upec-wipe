@@ -1,0 +1,94 @@
+{
+ "domain": "zetaglobal.com",
+ "name": "Zeta Global Corp.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:29.701Z",
+  "status": 200,
+  "optOutUrl": "https://www.zetaglobal.com/privacy-choices/",
+  "title": "Your Privacy Choices - Zeta Global",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "AthenaOS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Zeta Live",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Request A Demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "US",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@zetaglobal.com"
+  ],
+  "text": "Zeta Global Teams Up with Fireworks to Unveil New Specialized Athena Inference Models Using NVIDIA Nemotron\nRead News\n\nAthenaOS\nProducts\nSolutions\nIndustries\nResources\nPartners\nAbout\nPress & News\nZeta Live\nZMP Login\nRequest A Demo\nPrivacy Choices\n\nZeta sells and shares data only in limited ways, as described in the Zeta Privacy Policy. To request that we do not sell or share data associated with your email address, or to exercise your other privacy rights in regard to that data, please submit a request here. California residents may also call 1.866.709.0840 to exercise their rights.\n\n\nYou have",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

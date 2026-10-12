@@ -1,0 +1,156 @@
+{
+ "domain": "alescodata.com",
+ "name": "The Alesco Group LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:23.204Z",
+  "status": 200,
+  "optOutUrl": "https://alescodata.com/privacy-center/",
+  "title": "Alesco Data - Because Data Matters",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "skip-content-select",
+    "placeholder": "",
+    "aria": "",
+    "label": "Skip To Content",
+    "form": -1,
+    "heading": "Hide Toolbar Duration",
+    "options": [
+     "=Choose...",
+     "main=Main Content",
+     "navigation=Navigation",
+     "footer=Footer"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "English",
+    "id": "onetap-language-list",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Hide Toolbar",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Readable Font",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cursor",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Letter Spacing",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Align Text",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Font Weight",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Light Contrast",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "High Contrast",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Monochrome",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reading Line",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reading Mask",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Hide Images",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Highlight Content",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Stop Animations",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Highlight Links",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reset Settings",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@alescodata.com"
+  ],
+  "text": "Skip to content\nDevelop Highly Responsive Audiences\n\nBringing you the broadest range of proprietary and partner data solutions under one roof.\n\nPremier Data\nPredict Behavior with\nAnalytics & Insights\n\nAI-based analytics to target the right audiences and gain deeper insights into your customers.\n\nAnalytics\nImprove Your Current Data & Optimize Marketing Spend\n\nUnlock greater marketing intelligence, develop enhanced targeting capabilities, and improve campaign reach.\n\nSolutions\nReady to Get Started?\n\nBy submitting this form, you agree to Alesco Data’s privacy policy\n\nSolutions\nData Licensing\nAudi",
+  "fingerprint": "26cd4de5e5d96d4de62c1bb14adaa27e9ef6a7b6d5137c1ee256a28d5de9972b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

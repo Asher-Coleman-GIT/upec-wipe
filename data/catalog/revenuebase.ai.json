@@ -1,0 +1,27 @@
+{
+ "domain": "revenuebase.ai",
+ "name": "RevenueBase, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:08.497Z",
+  "status": 200,
+  "optOutUrl": "https://revenuebase.ai/privacy-policy",
+  "title": "Privacy Policy | RevenueBase",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@revenuebase.ai"
+  ],
+  "text": "Skip to main content\nData\nTools\nSolutions\nPricing\nCompany\nBlog\nDocs\nLog in\nGet a demo\n\nPRIVACY POLICY\n\nHow we work together.\nRevenueBase Privacy Policy\n\nEffective: July 27, 2026\n\nAbout This Policy\n\nRevenueBase, Inc. (“RevenueBase,” “we,” “us,” or “our”) is a B2B data infrastructure company based in Newton, Massachusetts, USA. This Privacy Policy explains how we collect, use, share, and protect personal information, and describes your rights with respect to that information.\n\nThis Policy covers two distinct groups of people, and your rights differ depending on which group you belong to:\n\nGroup ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

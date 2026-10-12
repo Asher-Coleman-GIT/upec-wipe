@@ -1,0 +1,93 @@
+{
+ "domain": "salesassistiq.ai",
+ "name": "Aniline, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:13.670Z",
+  "status": 200,
+  "optOutUrl": "https://salesassistiq.ai/about/",
+  "title": "About Us | SAIQ",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Product",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "See SAIQ in Action",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Book a Live Demo →",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Got it",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Opt out",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jen@aniline.io"
+  ],
+  "text": "AWARD\nSAIQ Wins ServiceNow AI Innovation Award for CRM!\n→\nProduct\nCompany\nResources\nROI & Pricing\nData & Trust Center\nGet a Free Trial\nSee SAIQ in Action\nABOUT ANILINE\nTransforming how businesses harness intelligence to drive revenue growth.\n\nFounded in 2019, we believe that the greatest competitive advantage lies not just in collecting data, but in deploying sophisticated AI systems that deliver actionable insights exactly where teams need them most.\n\nCOMPANY OVERVIEW\nFrom data to deal intelligence.\n\nOur flagship product, SalesAssistIQ (SAIQ), represents a breakthrough in enterprise sales int",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "domain": "usa-official.com",
+ "name": "usa-official.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:15.713Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://usa-official.com/optout"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

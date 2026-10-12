@@ -1,0 +1,198 @@
+{
+ "domain": "meettie.com",
+ "name": "Revenue Roll Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:20.879Z",
+  "status": 200,
+  "optOutUrl": "https://meettie.com/",
+  "title": "Tie | The AI Shopper Intelligence Platform",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Ask Kyle, Tie’s AI agent, about the account, or pick a starting point below…",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Good morning, Grace"
+   },
+   {
+    "tag": "input",
+    "type": "range",
+    "name": "",
+    "id": "t5k-v",
+    "placeholder": "",
+    "aria": "",
+    "label": "Unique monthly visitors\n400K",
+    "form": -1,
+    "heading": "See what Tie would find on your site."
+   },
+   {
+    "tag": "input",
+    "type": "range",
+    "name": "",
+    "id": "t5k-a",
+    "placeholder": "",
+    "aria": "",
+    "label": "Average order value\n$85",
+    "form": -1,
+    "heading": "See what Tie would find on your site."
+   },
+   {
+    "tag": "input",
+    "type": "range",
+    "name": "",
+    "id": "t5k-c",
+    "placeholder": "",
+    "aria": "",
+    "label": "Conversion rate on identified traffic\n2.0%",
+    "form": -1,
+    "heading": "See what Tie would find on your site."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Product",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "30d",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "QTD",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "12mo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Custom…",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "vs prior",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "vs last year",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "IDENTIFIED VISITORS\n128,400\n▲ 12.4%\nvs p",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "ATTRIBUTED REVENUE\n$486K\n▲ 18.2%\n·\n194.4",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "DELIVERABILITY HEALTH\nMedium\n▲ from Low\n",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How did we do last month?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What should I fix first?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Revenue by flow",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Recommend a segment",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Which flows are slipping?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Check it out\nID",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Check it out\nPREDICT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Check it out\nPRIORITY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Kyle: apply change\nID",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Review first",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Kyle: build segment\nPREDICT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Review first",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@meettie.com"
+  ],
+  "text": "We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience, personalize content, customize advertisements, and analyze website traffic. For these reasons, we may share your site usage data with our social media, advertising, and analytics partners. By clicking ”Accept,” you agree to our website's cookie use as described in our Cookie Policy. You can change your cookie settings at any time by clicking “Preferences.”\nAccept\nProduct\nCustomers\nPricing\nResources\nSign in\nBook a demo\n\nSHOPPER INTELLIGENCE FOR DTC & ECOMMERCE\n\nKn",
+  "fingerprint": "b394a24fdeb5d6a0305843bac98dcaaef1fe72cc7b129b8013f0f2a36fe69af2"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

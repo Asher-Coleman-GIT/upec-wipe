@@ -1,0 +1,20 @@
+{
+ "domain": "nuwber.com",
+ "name": "Nuwber Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:22.812Z",
+  "contacts": [
+   "support@nuwber.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://nuwber.com/policy"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

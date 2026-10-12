@@ -1,0 +1,27 @@
+{
+ "domain": "keymarketingadvantage.com",
+ "name": "Key Marketing Advantage",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:20.069Z",
+  "status": 404,
+  "optOutUrl": "https://keymarketingadvantage.com/do_not_use_my_personal_information;%20https://keymarketingadvantage.com/privacy_policy",
+  "title": "404 Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "lbridson@keymarketingadvantage.com"
+  ],
+  "text": "Not Found\n\nThe requested URL was not found on this server.\n\nAdditionally, a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "domain": "thedatatrust.com",
+ "name": "DT Client Services, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:38.260Z",
+  "status": 200,
+  "optOutUrl": "https://thedatatrust.com/privacy-policy/",
+  "title": "Data Trust Privacy Notice - Data Trust",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1",
+    "id": "input_5_1",
+    "placeholder": "Enter Email Address",
+    "aria": "",
+    "label": "Email Address(Required)",
+    "form": 1,
+    "heading": "Stay up-to-date with Data Trust happenings"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "gform_submit_button_5",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "info@thedatatrust.com",
+   "privacy@thedatatrust.com"
+  ],
+  "text": "Skip to main content\nVoter file updates posted. View Now »\nData Platform\nSolutions\nAbout Us\nNews\nLogin\nPortal\nAccess our Numinar portal to securely create & export advanced queries.\nAPI\nLog into our API to grab individual records from our National Voter File, ABEV, and Consumer data.\nCritical Data Updates\nAB/EV Data\nView our interactive dashboard detailing exactly where and how many absentee and early vote data updates Data Trust has processed.\nVoter File Updates\nOur recent changelog of voter files and other data products we’ve updated throughout the county.\nTalk To An Expert\nPrivacy Policy\n\nL",
+  "fingerprint": "0f002c1d2c0d5398635e91c14dbab91d4d97aa34843150586a08a3aefe88b0db"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

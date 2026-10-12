@@ -1,0 +1,27 @@
+{
+ "domain": "activimpact.ai",
+ "name": "ActivImpact, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:52.178Z",
+  "status": 200,
+  "optOutUrl": "https://activimpact.ai/privacy-policy",
+  "title": "ActivImpact | Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@activimpact.ai"
+  ],
+  "text": "×\nOur Approach\nWhy We Impact\nOur Platform\nAccomplishments\nTrends & Insight\nBook a Demo\nGet started\nActivImpact Partners, LLC Privacy Policy \n\nLast Modified:  August 3rd, 2026\n\nIntroduction.\n\nThis Privacy Policy is designed to assist you in understanding how ActivImpact, LLC and its subsidiaries and affiliates (“AI,” “we,” “our,” or “us”) collect, use, share, and safeguard your information.  This Privacy Policy applies to individuals who access this website (“Site”) and any of our online and, where required, offline services (collectively, “Services”).\n\nFor clarity, this Privacy Policy only app",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

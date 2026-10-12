@@ -1,0 +1,197 @@
+{
+ "domain": "fourthwall.tv",
+ "name": "FourthWall Media, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:43.211Z",
+  "status": 200,
+  "optOutUrl": "https://www.fourthwall.tv/donotsellorshare-fourthwall",
+  "title": "DO NOT SELL OR SHARE | FourthWall",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first-name",
+    "id": "input_comp-lddc37rb",
+    "placeholder": "Enter your first name",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last-name",
+    "id": "input_comp-lddc37rf",
+    "placeholder": "Enter your last name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "input_comp-lddc37rh1",
+    "placeholder": "Enter your email",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "input_comp-lddc99yx",
+    "placeholder": "xxx.xxx.xxxx",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "street-address",
+    "id": "input_comp-lddcb7321",
+    "placeholder": "Street Address",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "street-address line 2",
+    "id": "input_comp-lddcb7353",
+    "placeholder": "Street Address Line 2",
+    "aria": "",
+    "label": "Street Address Line 2",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "input_comp-lddcb7382",
+    "placeholder": "City",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "region/state/province",
+    "id": "input_comp-lddcb73b",
+    "placeholder": "Region/State/Province",
+    "aria": "",
+    "label": "Region/State/Province",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "postal-/ zip code",
+    "id": "input_comp-lddcb73e",
+    "placeholder": "Postal / Zip code",
+    "aria": "",
+    "label": "Postal / Zip code",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "collection_comp-lddcb73h1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=Country",
+     "AFG=Afghanistan",
+     "ALA=Aland Islands",
+     "ALB=Albania",
+     "DZA=Algeria",
+     "ASM=American Samoa",
+     "AND=Andorra",
+     "AGO=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "input_comp-ll42ihd6",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Stay Updated on Trending Audiences and Analytics Insights.",
+    "form": 1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "californiadrop@fourthwall.tv"
+  ],
+  "text": "Skip to Main Content\n\nABOUT FOURTHWALL\n\nOUR PRODUCTS\n\nNEWS\n\nLET'S TALK\nTo opt out of the sale or sharing of your personal information, please complete and submit the form below\nFirst Name\nLast Name\nEmail\nPhone\nStreet Address\nStreet Address Line 2\nCity\nRegion/State/Province\nPostal / Zip code\nCountry\nCountry\nAfghanistan\nAland Islands\nAlbania\nAlgeria\nAmerican Samoa\nAndorra\nAngola\nAnguilla\nAntarctica\nAntigua and Barbuda\nArgentina\nArmenia\nAruba\nAustralia\nAustria\nAzerbaijan\nBahamas\nBahrain\nBangladesh\nBarbados\nBelarus\nBelgium\nBelize\nBenin\nBermuda\nBhutan\nBolivia\nBonaire\nBosnia and Herzegovina\nBotswana",
+  "fingerprint": "8758fc9f278d74af72ca005ea7755c6c5da50e00a8839e208307093d8ebf9ced"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

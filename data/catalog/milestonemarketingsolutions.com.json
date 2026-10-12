@@ -1,0 +1,148 @@
+{
+ "domain": "milestonemarketingsolutions.com",
+ "name": "Milestone Marketing Solutions",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:46.358Z",
+  "status": 200,
+  "optOutUrl": "https://www.milestonemarketingsolutions.com/",
+  "title": "Milestone Marketing Solutions | Direct Mail Marketing and Data Solutions",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first-name",
+    "id": "input_comp-lgqplgcw",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last-name",
+    "id": "input_comp-lgqpi9t2",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "input_comp-lgqpmy88",
+    "placeholder": "Company",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "input_comp-lgqpn9zw",
+    "placeholder": "Phone",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "input_comp-lgqppabe",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "subject",
+    "id": "input_comp-jhri04vj",
+    "placeholder": "Subject",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "textarea_comp-jhri0h6x",
+    "placeholder": "Type your message here...",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CONTACT US"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "accounting@milestonemarketingsolutions.com"
+  ],
+  "text": "Skip to Main Content\nABOUT\nServices\nAbout Us\nIndustries\nBlog\nContact\nAbout Us\n\nWelcome to Milestone Marketing Solutions, where innovation meets excellence in data analysis, direct mail, and digital marketing. Our journey began with a simple yet powerful foundation: empowering businesses to surpass their milestones and exceed their\nmarketing objectives.\n\n\nWe are a team of passionate and dedicated marketing professionals with over forty years of experience in data services and direct mail management. We provide our clients with performance driven marketing through innovative data modeling, optim",
+  "fingerprint": "bf68ebbba7bc3585c9bcf57bcae97a3d0477fde4e7fabeae589d368e896721aa"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

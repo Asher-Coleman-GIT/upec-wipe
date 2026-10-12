@@ -1,0 +1,91 @@
+{
+ "domain": "lead-enhance.com",
+ "name": "LEAD ENHANCE LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "bathroom-remodel-today.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:12.543Z",
+  "status": 200,
+  "optOutUrl": "https://bathroom-remodel-today.com/privacy/",
+  "title": "bathroom-remodel-today.com - Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first_name",
+    "id": "first_name",
+    "placeholder": "",
+    "aria": "",
+    "label": "FIRST NAME*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last_name",
+    "id": "last_name",
+    "placeholder": "",
+    "aria": "",
+    "label": "LAST NAME*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "phone_number",
+    "id": "phone_number",
+    "placeholder": "",
+    "aria": "",
+    "label": "PHONE NUMBER*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email_address",
+    "id": "email_address",
+    "placeholder": "",
+    "aria": "",
+    "label": "EMAIL ADDRESS*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "company",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SUBMIT REQUEST",
+    "id": "submit_revocation",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "josh@lead-enhance.com"
+  ],
+  "text": "bathroom-remodel-today.com PRIVACY POLICY\n\nCurrent as of January 20, 2025\n\nWEBFORM OPT-OUT\n\nProtecting Your Privacy. This privacy policy (this “Privacy Policy”) is provided by bathroom-remodel-today.com (“Company”, “us”, “we”, “our”, or words of like meaning). This Privacy Policy explains how we collect, use, process, and share personal information. We appreciate the trust you (“you”, “your”, “yourself”, and words of like meaning) place in us when you choose to access, visit, and use this website or the websites of our third-party trading partners and service providers (each, a “Third-Party Pr",
+  "fingerprint": "2307231b1d91d1e25bc518f4a337e15d0e70a1a4a62b569c66b7932adf7a6cdb"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

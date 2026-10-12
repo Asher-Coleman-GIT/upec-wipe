@@ -1,0 +1,20 @@
+{
+ "domain": "liveintent.com",
+ "name": "LiveIntent",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:58.635Z",
+  "contacts": [
+   "privacy@zetaglobal.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://privacy.liveintent.com/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

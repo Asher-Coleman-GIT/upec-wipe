@@ -1,0 +1,34 @@
+{
+ "domain": "listkit.io",
+ "name": "ListKit LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:51.224Z",
+  "status": 200,
+  "optOutUrl": "https://www.listkit.io/privacy",
+  "title": "ListKit Privacy Policy | Your Data Security",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Checkout Directly Now",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "andre@listkit.io"
+  ],
+  "text": "Log In\nBook a Demo\nPrivacy Policy\n\nLast updated: October 8, 2025\n\nListKit, LLC (\"Company\", \"we\", \"our\", or \"us\") respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes how we collect, process, retain, and disclose personal data about you when providing services to you or our users (“User” or “Users”) through our websites, applications, products, and services that link to this policy (our \"Services\") and our practices for using, maintaining, protecting, and disclosing that information.\n\nThis policy applies only to information we co",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

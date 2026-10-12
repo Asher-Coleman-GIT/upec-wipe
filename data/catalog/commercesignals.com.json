@@ -1,0 +1,55 @@
+{
+ "domain": "commercesignals.com",
+ "name": "Commerce Signals, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:27:00.309Z",
+  "status": 403,
+  "optOutUrl": "https://www.commercesignals.com/",
+  "title": "Home - Commerce Signals",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search …",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Ok",
+    "id": "cn-accept-cookie",
+    "inForm": false
+   },
+   {
+    "text": "Privacy notice",
+    "id": "cn-more-info",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "cn-close-notice",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@commercesignals.com"
+  ],
+  "text": " \nProducts\n \nPlatform\n \nNews\n \nResources\n \nCareers\n \nContact\nTHE SOURCE FOR\nConsumer Purchase Signals\nTry Our Transaction-Based Audiences\n26% Sales Lift – A Retail Case Study\nRead The Case\nThe Largest Credit and Debit Datasets Power Our Solutions\n\nAudiences\nMeasurement\nInsights\nEnrichment\nTransUnion Acquires Commerce Signals And Verisk Financial\nLearn More\nSome of our Partners include:\nOur Latest Updates\nRetail Spending Trends and Marketing Thoughts\n\nData\n\nSpending trends Consumer spending on credit and debit cards accelerated 6.8% in August 2023 over August 2022. At a macro level, that’s heal",
+  "fingerprint": "4ec0a916af96ab3d62ccefe036f6f482ae9ba32454f937c53fef1f955aa266b1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

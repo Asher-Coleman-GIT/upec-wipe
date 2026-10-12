@@ -1,0 +1,101 @@
+{
+ "domain": "experience.com",
+ "name": "BuyersRoad, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:19.657Z",
+  "status": 200,
+  "optOutUrl": "https://www.experience.com/privacy-notice",
+  "title": "Privacy Notice - Experience.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "desk-search",
+    "placeholder": "",
+    "aria": "Search Agents",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "desk-search-location",
+    "placeholder": "",
+    "aria": "Search Location",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "header-compact-search-button",
+    "inForm": true
+   },
+   {
+    "text": "Professionals",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Enterprises",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accessibility",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject all",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept all",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@experience.com"
+  ],
+  "text": "Login\n|\nContact Us\nFind a professional, service or business\nLocation\nProfessionals\nEnterprises\nProducts\nResources\nBook Demo\nSign up\nHome\n/\nPrivacy Notice\nPrivacy Notice\nExperience.com Privacy Notice (2026 Edition)\n\nEffective Upon Publication\n\nEntity: BuyersRoad, Inc. d/b/a Experience.com\n\nAddress: 2010 Crow Canyon Place, Suite 100, San Ramon, CA 94583-1344 USA\n\nWhat's New in 2026\n\nWe've updated this Privacy Notice to:\n\nAdd language describing identification pixels that operate when visitors click \"Allow.\"\nClarify that review authors retain ownership of their original works while granting Exper",
+  "fingerprint": "ab7cc926b5011e764a2b62be6b0aa438788f54bda566634a25df5f8e9ee14dd9"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

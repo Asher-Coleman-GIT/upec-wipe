@@ -1,0 +1,20 @@
+{
+ "domain": "date-detective.app",
+ "name": "Date Detective Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:49.843Z",
+  "contacts": [
+   "info@date-detective.app"
+  ],
+  "error": "page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.date-detective.app/agreements/privacy-policy"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

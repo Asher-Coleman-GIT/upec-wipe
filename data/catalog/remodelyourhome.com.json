@@ -1,0 +1,191 @@
+{
+ "domain": "remodelyourhome.com",
+ "name": "Exact Opco, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:39.195Z",
+  "status": 200,
+  "optOutUrl": "https://remodelyourhome.com/PrivacyRequest.aspx",
+  "title": "Privacy Request | Remodel Your Home",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "rblRequestType",
+    "id": "rblRequestType_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request to opt out of sale or sharing of Personal Informatio",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "rblRequestType",
+    "id": "rblRequestType_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request to limit the use of Sensitive Personal Information",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "rblRelationship",
+    "id": "rblRelationship_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Self",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "rblRelationship",
+    "id": "rblRelationship_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Parent/Guardian",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "rblRelationship",
+    "id": "rblRelationship_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Authorized Agent",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtConsumerFullName",
+    "id": "txtConsumerFullName",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s full name*:",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtConsumerAddress",
+    "id": "txtConsumerAddress",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s physical address*:",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtConsumerEmailPrimary",
+    "id": "txtConsumerEmailPrimary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s primary email address*:",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtConsumerEmailSecondary",
+    "id": "txtConsumerEmailSecondary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s secondary email addresses used to interact with R",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtConsumerPhonePrimary",
+    "id": "txtConsumerPhonePrimary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s primary phone number*:",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtConsumerPhoneSecondary",
+    "id": "txtConsumerPhoneSecondary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s secondary phone number used to interact with Remo",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtRequestorName",
+    "id": "txtRequestorName",
+    "placeholder": "",
+    "aria": "",
+    "label": "Requestor’s full name:",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtRequestorEmail",
+    "id": "txtRequestorEmail",
+    "placeholder": "",
+    "aria": "",
+    "label": "Requestor’s email address:",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "txtRequestorPhone",
+    "id": "txtRequestorPhone",
+    "placeholder": "",
+    "aria": "",
+    "label": "Consumer’s phone number (as known to requestor):",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   },
+   {
+    "tag": "input",
+    "type": "button",
+    "name": "btnSubmit",
+    "id": "btnSubmit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Consumer Request Web Form"
+   }
+  ],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [],
+  "text": "Consumer Request Web Form\n\nIf you would like to submit a privacy request under the California Consumer Privacy Act (CCPA), please fill out and submit the below web form. Required fields are marked with an asterisk*. If we require more information from you, or need clarification of the nature of your request, we will contact you at the email address you provide below. We require correct and accurate responses on the form to confirm your identity as the requester and to identify the types of data associated with you that we have retained in our records. Please provide correct and accurate identi",
+  "fingerprint": "bafbc060707c6831b7cf1e5a68a97a1cfd49ac08fc991401c84e1268ccad4de1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

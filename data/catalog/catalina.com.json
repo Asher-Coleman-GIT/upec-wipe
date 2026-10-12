@@ -1,0 +1,64 @@
+{
+ "domain": "catalina.com",
+ "name": "Catalina Marketing Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:35.472Z",
+  "status": 200,
+  "optOutUrl": "https://www.catalina.com/legal",
+  "title": "Catalina | Legal",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "BACK TO TOP",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "onetrust-cookie-btn",
+    "inForm": false
+   },
+   {
+    "text": "Accept Optional Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject Optional Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacyteam@catalina.com"
+  ],
+  "text": "SOLUTIONS\nCUSTOMERS\nSUCCESS STORIES\nRESOURCES\nCONTACT\nCOMPANY\nLegal\nFor more than 40 years we have employed the highest standards of protection for the personal information we collect or maintain across the globe.\nTerms of Service\nPrivacy Notice\nPrivacy Notice\n\nLast Updated: August 11th, 2026.\n\nExercise Your Rights\n\nYour Privacy Rights - U.S.\n\nYour Privacy Rights - GDPR\n\n\n\n\nTexas Data Broker Registration\n\n\n\n\nApplicant Privacy Policies\n\nCalifornia Applicant Privacy Policy\n\nCandidate Policy (Italy)\n\nCandidate Policy (France)\n\nCandidate Policy (United Kingdom)\n\n\n\n\nTable of Contents\n\n1. Informatio",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

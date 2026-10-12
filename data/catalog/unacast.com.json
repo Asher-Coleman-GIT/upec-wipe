@@ -1,0 +1,124 @@
+{
+ "domain": "unacast.com",
+ "name": "Unacast, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:35:10.131Z",
+  "status": 200,
+  "optOutUrl": "https://www.unacast.com/privacy-policy",
+  "title": "Privacy Policy and Retention Schedule",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-16fd22fb-d9bb-40f5-a66d-9311338ac0f8",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name*",
+    "form": 1,
+    "heading": "Book a Meeting"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-16fd22fb-d9bb-40f5-a66d-9311338ac0f8",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name*",
+    "form": 1,
+    "heading": "Book a Meeting"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-16fd22fb-d9bb-40f5-a66d-9311338ac0f8",
+    "placeholder": "@companyname.com",
+    "aria": "",
+    "label": "Work email*",
+    "form": 1,
+    "heading": "Book a Meeting"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "what_are_you_looking_for",
+    "id": "what_are_you_looking_for-16fd22fb-d9bb-40f5-a66d-9311338ac0f8",
+    "placeholder": "",
+    "aria": "",
+    "label": "What are you looking for?*",
+    "form": 1,
+    "heading": "Book a Meeting",
+    "options": [
+     "=Please Select",
+     "I have a product team and want to integrate Unacast data into my product=I have a product tea",
+     "I have a data team and want to work with Unacast data=I have a data team a",
+     "I want an easy-to-use location insights platform=I need an easy-to-us",
+     "Something else=Something else"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Book a Meeting"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-f0bde8a8-398e-41a8-a7e1-8cd6e400143c",
+    "placeholder": "Business Email*",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "Sign up for Unacast's Newsletter"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "Sign up for Unacast's Newsletter"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Book a Meeting",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@unacast.com"
+  ],
+  "text": "Products\nSolutions\nPricing\nResources\nAbout\nBook a Meeting\nHome\nAbout\nPrivacy Policy and Retention Schedule\nPrivacy Policy and Retention Schedule\nPrivacy Policy and Retention Schedule\nRequest Your Information\nPrivacy Request Statistics\nTerms of  Service\nOpt Out & Delete Request\n\nLast Updated: September 2026\n\nIntroduction\n\n\nGravy Analytics, Inc. dba ‘Unacast (“Unacast,” “we,” “us,” or “our”) values individuals’ (“you” or “your”) privacy. In this Privacy Policy (“Policy”), we describe how we and our corporate affiliates may collect use, store, and disclose your information as it relates to:\n\nOur ",
+  "fingerprint": "000b7f1adf2f71a3c4791f017b0298701cc7d48c7675dc692741a5bdcc6df61c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

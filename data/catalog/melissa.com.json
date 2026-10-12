@@ -1,0 +1,79 @@
+{
+ "domain": "melissa.com",
+ "name": "Melissa Data Corpoation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:25.488Z",
+  "status": 200,
+  "optOutUrl": "https://www.melissa.com/california-privacy-notice",
+  "title": "Privacy Notice for Residents of California",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-68896f87-52c4-46f4-baa6-523405109d1f_5209",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email\n*",
+    "form": 0,
+    "heading": "Subscribe to Our Newsletters"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.subscription_type_8192056",
+    "id": "LEGAL_CONSENT.subscription_type_8192056-68896f87-52c4-46f4-baa6-523405109d1f_5209",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to receive communications from Melissa.\n\n*",
+    "form": 0,
+    "heading": "Subscribe to Our Newsletters"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.processing",
+    "id": "LEGAL_CONSENT.processing-68896f87-52c4-46f4-baa6-523405109d1f_5209",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to allow Melissa to store & process my info.\n\n*",
+    "form": 0,
+    "heading": "Subscribe to Our Newsletters"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Subscribe to Our Newsletters"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe Now",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@melissa.com"
+  ],
+  "text": "Enterprise\nDirect Marketing\nDeveloper\nEducation\nMarketplace\nLookups\nSearch \nMy Account\n \n\nUnited States\n\nOur Solutions\nOur Services\nOur Data\nPricing\nSupport\nMore\nRequest Demo\n1-800-MELISSA\nPrivacy Notice for Residents of California\nHow to Contact Us About Your Privacy\nFill out form\nCall us: 1-800-635-4772(MELISSA) ext. 4\n\nUpdated August 2026\n\n1. CCPA Notice – Personal Information of California Residents\n\nThe California Consumer Protection Act of 2018 (“CCPA”) was enacted to enhance privacy rights for residents of the state of California. In November 2020, California voters passed Proposition 2",
+  "fingerprint": "98057b919b61693848aa0d16d6f06fbdd373ab77c40adc9c05d46ece000bd297"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

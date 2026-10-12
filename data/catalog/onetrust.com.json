@@ -1,0 +1,198 @@
+{
+ "domain": "onetrust.com",
+ "name": "AnalyticsIQ, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "anteriad.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:42.906Z",
+  "status": 200,
+  "optOutUrl": "https://privacyportal.onetrust.com/webform/f6a59500-f900-4652-b030-0cd51afe15a5/87ca07e4-e06c-4ad8-9aa6-ccbbaa8750c1",
+  "title": "Privacy Web Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstNameDSARElement",
+    "placeholder": "",
+    "aria": "First Name",
+    "label": "First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastNameDSARElement",
+    "placeholder": "",
+    "aria": "Last Name",
+    "label": "Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "countryDSARElement",
+    "placeholder": "",
+    "aria": "Country",
+    "label": "Country",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "addressDSARElement",
+    "placeholder": "",
+    "aria": "Address",
+    "label": "Address",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "cityDSARElement",
+    "placeholder": "",
+    "aria": "City",
+    "label": "City",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "stateDSARElement",
+    "placeholder": "",
+    "aria": "State",
+    "label": "State",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "zipDSARElement",
+    "placeholder": "",
+    "aria": "Zip",
+    "label": "Zip",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "emailDSARElement",
+    "placeholder": "",
+    "aria": "Email",
+    "label": "Email",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "vt-input-10",
+    "placeholder": "",
+    "aria": "Country code",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "phoneNumberDSARElement",
+    "placeholder": "",
+    "aria": "Phone Number",
+    "label": "Phone Number",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField17DSARElement",
+    "placeholder": "",
+    "aria": "Authorized Agent",
+    "label": "Authorized Agent",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField18DSARElement",
+    "placeholder": "",
+    "aria": "Authorized Agent Legal Name (Only Required for Authorized Agent)",
+    "label": "Authorized Agent Legal Name (Only Required for Authorized Ag",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "captchaCode",
+    "id": "captchaCode",
+    "placeholder": "",
+    "aria": "Captcha",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "dsar-webform-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "onlineops@awl.com",
+   "privacyofficer@iqvia.com",
+   "privacy@vizio.com",
+   "privacy@lightcast.io"
+  ],
+  "text": "Welcome! Please complete this form to submit a request or call (833) 533-1388. Thank you.\n\n Select request type(s)\nRequired\nData Access and Information Request CA, CO, CT, OR, TX, UT, VA, MT, NJ, NH, NE, IA, DE, MN, MD Residents Only\nData Deletion Request (CCPA) California Residents Only\nData Deletion Request Non-California Residents Only\nDo Not Sell or Share My Information\nLimit the Use of My Sensitive Personal Information\nOpt-Out of Personal Data Use\nOpt-Out of Targeted Advertising\nCorrect Inaccurate Data\n First Name\nEnter the first name of the data subject\n Last Name\nEnter the last name of ",
+  "fingerprint": "f5c36979d407ca6a9580ee08ae439b7dcf07d112c8ddaf4807eeb325f66f882d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

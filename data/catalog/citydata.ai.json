@@ -1,0 +1,28 @@
+{
+ "domain": "citydata.ai",
+ "name": "CITYDATA Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:36.526Z",
+  "status": 404,
+  "optOutUrl": "https://www.citydata.ai/privacy/do_not_sell_personal_information/",
+  "title": "Page Not Found | CityData.AI",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "business@citydata.ai"
+  ],
+  "text": "Skip to Content\nPRODUCTS\nSOLUTIONS\nDOCS\nPRIVACY\nCOMPANY\nBLOG\nLOGIN\nSIGN UP FREE\nPage Not Found\n\nThe page you are looking for doesn’t exist or has moved. Head back to the home page, explore our products, or ask Cici anything about CityData.\n\nCalifornian soul with a global pulse.\n\nFOLLOW US\nMENU\nHome\nProducts\nSolutions\nPrivacy\nCompany\nBlog\nUS HEADQUARTERS\n548 Market Street\nSan Francisco\nCalifornia 94104\nUSA\nGLOBAL OFFICES\nArgentina\nBrazil\nColombia\nIndia\nMexico\nSingapore\n\n© 2026 CityData Inc. | All rights reserved.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

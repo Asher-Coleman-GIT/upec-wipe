@@ -1,0 +1,31 @@
+{
+ "domain": "kalibrate.com",
+ "name": "Intalytics, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:11.004Z",
+  "status": 200,
+  "optOutUrl": "https://kalibrate.com/dsr-form/",
+  "title": "Data Subject Access Request Form | Kalibrate Global",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "ccc-icon",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "Industries\nSoftware\nAnalytics Services\nAbout\nInsights & Events\nCONTACT US\nDSR Form\n\nSubscribe to the newsletter\n\nGet the latest insights from the Kalibrate team and products, and details of upcoming events straight to your inbox.\n\nINDUSTRIES\nRetail\nRestaurant\nFuel Pricing and Location Intelligence\nGrocery\nService Retail\nHealthcare\nEducation\nBank & Credit Union\nPrivate Equity\nFranchise\nSOFTWARE\nKalibrate Location Intelligence\nKalibrate Fuel Pricing\nKalibrate Fuel Planning\nKalibrate EV Charger Pricing\nCompetitive Insights\nANALYTICS SERVICES\nPredictive modeling\nWhitespace analysis\nSite evaluation",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

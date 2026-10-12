@@ -1,0 +1,148 @@
+{
+ "domain": "findem.ai",
+ "name": "Findem, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:07.716Z",
+  "status": 200,
+  "optOutUrl": "https://www.findem.ai/privacy-rights",
+  "title": "Privacy Rights | Findem",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "First-Name",
+    "id": "First-Name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Last-Name",
+    "id": "Last-Name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name:",
+    "form": 0,
+    "heading": "Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email-Address",
+    "id": "Email-Address",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address:",
+    "form": 0,
+    "heading": "Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company-website",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Other-comments",
+    "id": "Other-comments",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other comments",
+    "form": 0,
+    "heading": "Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Rights"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-80e8cd96-0771-4348-ae69-a83fbaf74022",
+    "placeholder": "Enter your email*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Subscribe to the shortlist"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Subscribe to the shortlist"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@findem.ai"
+  ],
+  "text": "We use cookies\n\nWe collect information on our website using cookies, pixel tags, or other tracking technologies to operate our site, as further described in our Privacy Policy.\n\nWith your consent, we may also share information about your website visit through these technologies with third parties for analytics and advertising purposes.\n\nClick “Accept” to agree to the sharing of your data with third parties or “Decline” to decline and dismiss this notice. You can change or customize your choice at any time by clicking on “Preferences.\"\n\nCustomize\nReject All\nAccept All\nProducts\nSolutions\nWhy Fin",
+  "fingerprint": "b3b55ddc92daf71b987bc00715e86381a77852d8c8715ec49cf67faa6629ee47"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

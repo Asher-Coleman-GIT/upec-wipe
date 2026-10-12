@@ -1,0 +1,38 @@
+{
+ "domain": "fi-navigator.com",
+ "name": "FI Navigator Corporation",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:48.036Z",
+  "status": 200,
+  "optOutUrl": "https://www.fi-navigator.com/remove/",
+  "title": "Request to Remove Your Information | FI Navigator",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Do Not Sell or Share My Personal Informa",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@fi-navigator.com"
+  ],
+  "text": "We value your privacy\n\nThis website or its third-party tools process personal data. You can opt out of the sale of your personal information by visiting the Opt-out Center.\n\nClose this window or click here for privacy options:\n\nDo Not Sell or Share My Personal Information\nHome\nClient Segments\nSolutions\nUse Cases\nAbout\nMedia\nSearch\nLogin\nSupport\nRequest Demo\nRequest to Remove Your Information\nHow our process works:\nHelp us find your information\nSubmit request to remove profile\nReceive notification that your request is being processed\n\nBetter Data. Better Decisions. Bank on it.\n\nHelp us find you",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

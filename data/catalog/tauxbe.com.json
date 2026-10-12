@@ -1,0 +1,27 @@
+{
+ "domain": "tauxbe.com",
+ "name": "Tauxbe Data Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:54.439Z",
+  "status": 200,
+  "optOutUrl": "https://www.tauxbe.com/privacy-policy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "sourcing@tauxbe.com"
+  ],
+  "text": "Services\nAbout\nContact\n\nPRIVACY STATEMENT\n\n‍At Tauxbe Data, Inc. (“TXB”), we are committed to protecting your privacy. This Privacy Policy is meant to help you understand what personal information we collect, why we collect it, and the rights you may have to manage your personal information. This Privacy Policy applies to our online and offline collection, processing, use, disclosure, sharing and sale of personal information.\n‍\n‍Personal Information We Collect\n‍Within the last12months, we have collected, used, disclosed, shared, and sold the following types of personal information, from or abo",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

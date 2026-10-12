@@ -1,0 +1,46 @@
+{
+ "domain": "ispot.tv",
+ "name": "iSpot.tv, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:35.370Z",
+  "status": 200,
+  "optOutUrl": "https://www.ispot.tv/hub/agreements/privacy/",
+  "title": "iSpot.tv, Inc Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "ftr-work-email",
+    "placeholder": "Enter Your Email",
+    "aria": "",
+    "label": "Work Email Address",
+    "form": 0,
+    "heading": "9. CONTACT INFORMATION"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Get A Demo",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@ispot.tv"
+  ],
+  "text": "10 Ways iSpot SAGE Speeds Up TV & Video Campaign Analysis. Get the Guide>\niSpot Logo\nSearch iSpot\nLogin to iSpot\nGet A Demo\nNavigation\nSolutions\nProducts\nAd Center\nResources\nAbout\nSuper Bowl\nHome\nAgreements\niSpot.tv, Inc Privacy Policy\nModified: April 3, 2026\n1. YOUR RIGHTS AS A CONSUMER\n\nAt iSpot.tv, Inc. (the “Company”) we respect your privacy rights as a consumer (“Consumer”) under the data privacy and security laws including, but not limited to, the California Consumer Privacy Act of 2018, as revised by the California Privacy Rights Act of 2020, and the associated regulations effective Mar",
+  "fingerprint": "e99e742f6592ce4223b35a96e1f7b1b7914eccd2be980b31968215d68e8da8ba"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

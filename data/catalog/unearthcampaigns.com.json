@@ -1,0 +1,39 @@
+{
+ "domain": "unearthcampaigns.com",
+ "name": "Unearth Campaigns, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:35:14.018Z",
+  "status": 200,
+  "optOutUrl": "https://www.unearthcampaigns.com/privacy-policy/",
+  "title": "Privacy Policy - Unearth Campaigns",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "I understand",
+    "id": "ketch-banner-button-primary",
+    "inForm": false
+   },
+   {
+    "text": "x",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@unearthcampaigns.com"
+  ],
+  "text": "Your Privacy Choices\n\nWe and our vendors use technology that collects data about your use of our site so we can improve and personalize our products and services, for analytics and marketing, and to fulfill your requests. We may also share this information with marketing vendors, social media companies, and analytics partners. By using our website, you acknowledge and agree to our Terms of Use. To learn more about our privacy practices review our Privacy Policy.\n\nI understand\nSkip to Content\nPRODUCTS\nCUSTOMERS\nCOMPANY\nGET STARTED\nHOME\nPrivacy Policy\n\nUnearth Campaigns LLC (“Unearth,” “we,” “ou",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

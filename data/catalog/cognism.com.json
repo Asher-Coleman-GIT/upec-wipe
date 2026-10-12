@@ -1,0 +1,30 @@
+{
+ "domain": "cognism.com",
+ "name": "Cognism, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "saymine.io"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:24.004Z",
+  "status": 200,
+  "optOutUrl": "https://cognism.privacy.saymine.io/cognism",
+  "title": "Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@cognism.com"
+  ],
+  "text": "Review our Privacy Policy",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

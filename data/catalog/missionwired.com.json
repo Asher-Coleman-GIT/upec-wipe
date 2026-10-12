@@ -1,0 +1,77 @@
+{
+ "domain": "missionwired.com",
+ "name": "Anne Lewis Strategies, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:57.882Z",
+  "status": 200,
+  "optOutUrl": "https://missionwired.com/privacy-policy/#caprivacy",
+  "title": "Privacy Policy - MissionWired",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-93285087-d10b-40b0-a33b-22a74afb34d5",
+    "placeholder": "Email*",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact Information"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Contact Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Sign up now!",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Your Privacy Choices",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "info@missionwired.com"
+  ],
+  "text": "Skip to navigation [n]\nSkip to content [c]\nSkip to footer [f]\nOur Services\nOur Tools\nCase Studies\nNonprofit Trends\nAbout\nInsights\nCareers\nAdvisory Board\nPartner With Us\nPrivacy Policy\n\nLast modified: September 2026\n\nInformation We Collect About You and How We Collect It\nHow We Use Your Information\nDisclosure of Your Information\nData Security\nYour Rights and Choices\nCalifornia Privacy\nChildren’s Privacy\nChanges to Our Privacy Policy\nContact Information\nIntroduction\n\nMissionWired, a trade name of Anne Lewis Strategies, LLC (“MissionWired” or “We” or “Us” or “Our”) respects your privacy and is co",
+  "fingerprint": "4cad6d7efd9da6c2b4d01b4a4d32f6cdcb6af2190aaa267c10974109bf0f1e00"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

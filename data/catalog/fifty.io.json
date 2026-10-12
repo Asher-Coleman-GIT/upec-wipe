@@ -1,0 +1,89 @@
+{
+ "domain": "fifty.io",
+ "name": "Fifty Technology Limited",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:59.061Z",
+  "status": 200,
+  "optOutUrl": "https://fifty.io/opt-out",
+  "title": "Fifty Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonNecessary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Necessary",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonPreferences",
+    "placeholder": "",
+    "aria": "",
+    "label": "Preferences",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonStatistics",
+    "placeholder": "",
+    "aria": "",
+    "label": "Statistics",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonMarketing",
+    "placeholder": "",
+    "aria": "",
+    "label": "Marketing",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "inForm": false
+   },
+   {
+    "text": "Allow selection",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@fifty.io"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nConsent Selection\nNecessary\nPreferences\nStatistics\nMarketing\nShow details\nAllow all\nAllow selection\nDeny\nPlatform\nSolutions\nInsights\nContact Us\nLOGIN\nPRIVACY POLICY\nLast updated February 2026\n1. Introduction\n\nFifty Technology",
+  "fingerprint": "a882afe8b82363ed82310a55a7fdcb99b6f80bdca2ba60ccca1ca4961ae88d9e"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "domain": "minervadata.xyz",
+ "name": "Minerva BI Inc",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [
+  "minerva.io"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:54.371Z",
+  "status": 200,
+  "optOutUrl": "https://pages.minerva.io/privacy-policy",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "Minerva Privacy Policy\n\nLast Updated: June 24, 2025\n\nThis Privacy Policy is designed to help you understand how Minerva BI Inc. (“Minerva”, “we”, “us”, or “our”) collects, uses, processes, and shares your personal information and to help you understand and exercise your privacy rights.\n\nNotice at Collection\n\nAt or before the time of collection, California residents have a right to receive notice of Minerva’s privacy practices, including the categories of personal information to be collected, the purposes for which such information is collected or used, whether such information is “sold” or “sh",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

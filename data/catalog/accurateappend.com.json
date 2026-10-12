@@ -1,0 +1,148 @@
+{
+ "domain": "accurateappend.com",
+ "name": "Accurate Append Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:25:25.428Z",
+  "status": 403,
+  "optOutUrl": "https://clients.accurateappend.com/public/optout/capture",
+  "title": "",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Name.FirstName",
+    "id": "Name_FirstName",
+    "placeholder": "Please enter your legal name",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Data Removal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Name.LastName",
+    "id": "Name_LastName",
+    "placeholder": "Last name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Data Removal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address",
+    "id": "Address",
+    "placeholder": "Address",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Data Removal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "City",
+    "id": "City",
+    "placeholder": "City name",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Data Removal"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "State",
+    "id": "State",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "Data Removal",
+    "options": [
+     "=-Select----",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AS=American Samoa",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "PostalCode",
+    "id": "PostalCode",
+    "placeholder": "12345 or 12345-6789",
+    "aria": "",
+    "label": "PostalCode",
+    "form": 0,
+    "heading": "Data Removal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Phone.Number",
+    "id": "Phone_Number",
+    "placeholder": "Phone number",
+    "aria": "",
+    "label": "Number",
+    "form": 0,
+    "heading": "Data Removal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Email.Address",
+    "id": "Email_Address",
+    "placeholder": "Email address",
+    "aria": "",
+    "label": "Email address",
+    "form": 0,
+    "heading": "Data Removal"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "ADD OTHER NAMES",
+    "id": "addOtherNameBtn",
+    "inForm": true
+   },
+   {
+    "text": "ADD ANOTHER PHONE",
+    "id": "addOtherPhoneBtn",
+    "inForm": true
+   },
+   {
+    "text": "ADD ANOTHER EMAIL",
+    "id": "addOtherEmailBtn",
+    "inForm": true
+   },
+   {
+    "text": "SUBMIT",
+    "id": "submitBtn",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "shawn@accurateappend.com"
+  ],
+  "text": "Log In\nREGISTER NOW!\nAPI\nServices\nContact Us\nData Removal\n\nAccurate Append respects your privacy and facilitate exercising your right to opt-out of the sale of your personal information.\n\nBeginning on January 1, 2020, the California Consumer Privacy Act (CCPA) provides consumers with certain rights related to personal information collected about them. California residents instead should use the state Delete Request and Opt-out Platform (DROP) system here in a single, streamlined process. To view more information about these rights, please see our Privacy Policy.\n\nThis form is also to be used b",
+  "fingerprint": "af81656af6d09772331bea85926da46874410f1503d91a1b86990bfe41d9cc0a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

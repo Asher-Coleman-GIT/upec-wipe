@@ -1,0 +1,49 @@
+{
+ "domain": "subgraph.tech",
+ "name": "Subgraph, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:23.446Z",
+  "status": 200,
+  "optOutUrl": "https://subgraph.tech/privacy-rights",
+  "title": "Privacy Rights Request | Subgraph",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Pricing",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About Us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Log in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get Access",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@subgraph.tech",
+   "team@subgraph.tech"
+  ],
+  "text": "Pricing\nAbout Us\nLog in\nGet Access\nPrivacy Rights Request\n\nSubgraph Inc respects your privacy rights. Under the California Consumer Privacy Act (CCPA) and other applicable privacy laws, you may have the right to:\n\nDelete your personal information\nCorrect inaccurate personal information\nKnow what personal information is being collected and access that information\nKnow what personal information is being sold or shared and to whom\nOpt out of the sale or sharing of personal information\nLimit the use and disclosure of sensitive personal information\nSubmit a Request\n\nUse our self-serve form to delet",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

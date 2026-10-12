@@ -1,0 +1,40 @@
+{
+ "domain": "i-360.com",
+ "name": "i360, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:49.721Z",
+  "status": 200,
+  "optOutUrl": "https://www.i-360.com/ccpa/",
+  "title": "CCPA | i360",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "s",
+    "placeholder": "What are you looking for?",
+    "aria": "Search",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@i-360.com"
+  ],
+  "text": "Skip to main content\nClose Search\nWhy i360\nPolitical Products\nAll Political Products\ni360 Platform TourNew\nPlans & Pricing\nUnderstand your audience\ni360 Voter & Consumer Data\ni360 Portal\ni360 Models\nSurvey Research\niKE: AI Audience Builder\nGrassroot tools\ni360 Call\ni360 Grassroots\ni360 Text\nVisualize your data\nPolitical Analytics\nExpand your reach\nDigital Segments\ni360 Site Builder\ni360 Action\ni360 Events\ni360 Contact Officials\ni360 Vote\nCommercial Products\nIndustries\nAdvocacy\nPaid Media\nCampaigns\nConsultancies\nFinancial Services\nOfficial Offices\nNonprofits\nResources\nCase Studies\nInsights\nTrai",
+  "fingerprint": "147407cb7baf937e7d6827f3c9a62cce0d6340977250b1fbd00618c5acdf25a0"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

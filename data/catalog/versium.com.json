@@ -1,0 +1,45 @@
+{
+ "domain": "versium.com",
+ "name": "Versium Analytics Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:25.991Z",
+  "status": 200,
+  "optOutUrl": "https://versium.com/ccpa-opt-out/",
+  "title": "California Privacy Policy | Versium",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customise",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@versium.com",
+   "optout@versium.com"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomise\nReject All\nAccept All\nSkip to content\nContact Us\nAbout\nLog In\nPlatform\nSolutions\nResources\nDevelopers\nPricing\nRequest Demo\nGet Started\nVersium\nPrivacy Notice for California Residents\nVERSAR DATA SOLUTIONS INC , A DELAWARE CORPORATION, (“VERSAR”), DBA AS VERSAR, VERSIUM ANALYTICS AND DATAFINDER\n \nPrivacy Notice for California Residents\n\nREVISED 06/25/2026\n\nThis PRIVACY POLICY FOR CALIFORNIA ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

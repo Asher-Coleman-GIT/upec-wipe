@@ -1,0 +1,19 @@
+{
+ "domain": "yieldmo.com",
+ "name": "Yieldmo, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:18.065Z",
+  "contacts": [
+   "privacy@yieldmo.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://yieldmo.com/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

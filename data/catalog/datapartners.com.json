@@ -1,0 +1,293 @@
+{
+ "domain": "datapartners.com",
+ "name": "Data Partners Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:33.361Z",
+  "status": 200,
+  "optOutUrl": "https://www.datapartners.com/opt-out-request/",
+  "title": "Opt‑Out Request | Control Your Personal Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Subject",
+    "id": "Subject",
+    "placeholder": "",
+    "aria": "Subject",
+    "label": "Subject*",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "CASECF17",
+    "id": "CASECF17",
+    "placeholder": "",
+    "aria": "CASECF17",
+    "label": "Privacy Submitter*",
+    "form": 0,
+    "heading": "OPT OUT REQUEST",
+    "options": [
+     "-None-=-None-",
+     "Submitted by the Individual Requesting=Submitted by the Ind",
+     "Submitted by Authorized Agent=Submitted by Authori"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF1",
+    "id": "CASECF1",
+    "placeholder": "",
+    "aria": "CASECF1",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF2",
+    "id": "CASECF2",
+    "placeholder": "",
+    "aria": "CASECF2",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Email",
+    "id": "Email",
+    "placeholder": "",
+    "aria": "Email",
+    "label": "Email*",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF9",
+    "id": "CASECF9",
+    "placeholder": "",
+    "aria": "CASECF9",
+    "label": "2nd Email",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF12",
+    "id": "CASECF12",
+    "placeholder": "",
+    "aria": "CASECF12",
+    "label": "3rd Email",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Phone",
+    "id": "Phone",
+    "placeholder": "",
+    "aria": "Phone",
+    "label": "Phone",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF15",
+    "id": "CASECF15",
+    "placeholder": "",
+    "aria": "CASECF15",
+    "label": "2nd Phone",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF16",
+    "id": "CASECF16",
+    "placeholder": "",
+    "aria": "CASECF16",
+    "label": "3rd Phone",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF3",
+    "id": "CASECF3",
+    "placeholder": "",
+    "aria": "CASECF3",
+    "label": "Address1",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF4",
+    "id": "CASECF4",
+    "placeholder": "",
+    "aria": "CASECF4",
+    "label": "Address2",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF5",
+    "id": "CASECF5",
+    "placeholder": "",
+    "aria": "CASECF5",
+    "label": "City",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF7",
+    "id": "CASECF7",
+    "placeholder": "",
+    "aria": "CASECF7",
+    "label": "State*",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF6",
+    "id": "CASECF6",
+    "placeholder": "",
+    "aria": "CASECF6",
+    "label": "Zip Code",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF8",
+    "id": "CASECF8",
+    "placeholder": "",
+    "aria": "CASECF8",
+    "label": "2nd Address2",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF10",
+    "id": "CASECF10",
+    "placeholder": "",
+    "aria": "CASECF10",
+    "label": "2nd Address1",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF13",
+    "id": "CASECF13",
+    "placeholder": "",
+    "aria": "CASECF13",
+    "label": "2nd City",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF11",
+    "id": "CASECF11",
+    "placeholder": "",
+    "aria": "CASECF11",
+    "label": "2nd State",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CASECF14",
+    "id": "CASECF14",
+    "placeholder": "",
+    "aria": "CASECF14",
+    "label": "2nd Zip Code",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "enterdigest",
+    "id": "captchaField6942060000003282001",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "formsubmit",
+    "placeholder": "",
+    "aria": "Submit",
+    "label": "",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   },
+   {
+    "tag": "input",
+    "type": "reset",
+    "name": "reset",
+    "id": "",
+    "placeholder": "",
+    "aria": "Reset",
+    "label": "",
+    "form": 0,
+    "heading": "OPT OUT REQUEST"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "formsubmit",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@datapartners.com"
+  ],
+  "text": "Skip to content\nHome\nOur Difference\nAbout Us\nOur Clients\nSolutions\nBroadband\nAgency\nRetail\nMovers\nB2C\nB2B\nTestimonials\nCase Studies\nAgency Case Study\nBroadband Case Study\nRetail Case Study\nBlog\n\nBOOK A FREE CONSULT\nOPT OUT REQUEST\n\nPlease fill out the form below to submit your opt out request. We will acknowledge receipt of your request within 10 days. However, full processing of your request may take up to 45 days from the date of submission. Your request may be subject to verification of your identity prior to completion. You may also submit your request by calling 866.423.1818 and speaking ",
+  "fingerprint": "81a83b55bd40b2bce235881b3fe44313b56ad7168a4b9d385f128a68027d0d97"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "domain": "optable.co",
+ "name": "Optable Technologies US Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:59.011Z",
+  "contacts": [
+   "legal@optable.co"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://terms.optable.co/privacy/privacy-policies/products-and-services"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

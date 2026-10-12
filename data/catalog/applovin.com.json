@@ -1,0 +1,19 @@
+{
+ "domain": "applovin.com",
+ "name": "AppLovin Corporation",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:48.242Z",
+  "contacts": [
+   "datarequests@applovin.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://legal.applovin.com/privacy/;%20https://legal.applovin.com/multistate-privacy-notice/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

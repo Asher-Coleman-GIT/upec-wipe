@@ -1,0 +1,34 @@
+{
+ "domain": "leadpost.com",
+ "name": "LeadPost LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:42.047Z",
+  "status": 200,
+  "optOutUrl": "https://leadpost.com/PrivacyRequest",
+  "title": "Privacy Policy | LeadPost",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "menu-toggle-close",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "amanda@leadpost.com"
+  ],
+  "text": "Skip to content\nProducts\nPricing\nSolutions\nAgencies\nResources\nLogin\nLogin\nLeadPost Privacy Policy\n\nLast Updated 11.24.2025\n\nSECTION 1.      INTRODUCTION.\n\nThis Comprehensive Notice and Regulatory Addendum (“Notice”) describes in detail how LeadPost, LLC (“Company,” “we,” “us,” or “our”) collects, acquires, uses, sells, shares, discloses, retains, and protects personal data on their own behalf and as a registered data broker operating across multiple U.S. jurisdictions. Because we process personal data obtained both directly from consumers and indirectly from commercial providers, public source",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

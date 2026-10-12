@@ -1,0 +1,89 @@
+{
+ "domain": "cdkglobal.com",
+ "name": "CDK Global, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:46.684Z",
+  "status": 200,
+  "optOutUrl": "https://www.cdkglobal.com/privacy-policy",
+  "title": "CDK Global Privacy Statement | CDK Global",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Who We Serve",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What We Offer",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Who We Are",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Allow All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "james.kinzer@cdk.com"
+  ],
+  "text": "Who We Serve\nDealership Xperience Platform\nWhat We Offer\nWho We Are\nResources\nSupport Services\nLogin\nCDK Global Privacy Statement\n\nCDK Global, Inc. and its affiliates (individually or collectively, “CDK”, “we”, “us” or “our”) recognize the importance of protecting the privacy of our customers and online visitors. This Privacy Statement discloses how we collect, use, disclose and store your information when you interact with us, including when you use the websites CDK owns and operates, such as https://www.cdkglobal.com/, https://www.cdkglobalheavytruck.com/, https://fortellis.io/, https://www.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

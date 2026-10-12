@@ -1,0 +1,57 @@
+{
+ "domain": "blis.com",
+ "name": "Blis Global Ltd",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:25:47.607Z",
+  "status": 403,
+  "optOutUrl": "https://blis.com/privacy-centre/",
+  "title": "Blis | Privacy Centre",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "CONTACT_EMAIL",
+    "id": "EMBED_FORM_EMAIL_LABEL",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email address",
+    "form": 0,
+    "heading": "Subscribe for our insights, news & event updates"
+   },
+   {
+    "tag": "input",
+    "type": "button",
+    "name": "SIGNUP_SUBMIT_BUTTON",
+    "id": "zcWebOptin",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Subscribe for our insights, news & event updates"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@blis.com"
+  ],
+  "text": "Skip to content\nSkip to content\nOur Technology\nAbout us\nCareers\nBook a demo\nHome\nPrivacy Centre\nPrivacy Centre\n\nWelcome to the Blis Privacy Centre. We are committed to protecting the privacy of your personal data. Our Privacy Centre provides you with information on privacy, how we collect, use and protect your personal data, as well as general advice about your rights and some helpful FAQs (frequently asked questions).\n\nBlis Privacy Policies\nBlis Cookie Policy and Declaration\nYour data protection rights\nYour internet user choices\nPrivacy FAQs\nBlis third parties and partners\nBlis official tradi",
+  "fingerprint": "f60cbef2595b5c94b726baf9081c8f06ee40713382e56569adaf292e8c1f0f39"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "domain": "sportsilab.com",
+ "name": "Sports Innovation Lab, inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:02.643Z",
+  "status": 200,
+  "optOutUrl": "https://www.sportsilab.com/privacy-choices",
+  "title": "Privacy Choices — Sports Innovation Lab",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "ACCEPT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SOLUTIONS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "RESOURCES",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@sportsilab.com"
+  ],
+  "text": "By using this website, you agree to our use of cookies. We use cookies to provide you with a great experience and to help our website run effectively.\n\nACCEPT\nSkip to Content\nHOME\nSOLUTIONS\nTECHNOLOGY\nRESOURCES\nWOMEN'S SPORTS\n\nIf you are unable to view the form above, please click HERE to go directly to the form.\n\nMEET WITH US\n\nTo take a tour of our Fluid Fan Graph™, chat with our Audience Desk, or learn more about how we can help you find your future fans, drop us a line!\n\n[email]\nSUBSCRIBE TO OUR NEWSLETTER!\n\nSign up with your email address to get a sneak peek into Sports Innovat",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

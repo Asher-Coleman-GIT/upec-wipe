@@ -1,0 +1,293 @@
+{
+ "domain": "deepsync.com",
+ "name": "Compact Information Systems, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:23.695Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.deepsync.com/",
+  "title": "Do Not Sell My Personal Information, Deep Sync",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "request_type",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Myself",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "request_type",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "A deceased individual",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "request_type",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Someone I'm authorized to represent",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first_name",
+    "id": "first_name",
+    "placeholder": "First name",
+    "aria": "",
+    "label": "FIRST NAME",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last_name",
+    "id": "last_name",
+    "placeholder": "Last name",
+    "aria": "",
+    "label": "LAST NAME",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "emails[]",
+    "id": "email_ctx1",
+    "placeholder": "[email]",
+    "aria": "Email address",
+    "label": "",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone_numbers[]",
+    "id": "phone_ctx1",
+    "placeholder": "(800) 000-0000",
+    "aria": "Phone number",
+    "label": "",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address[]",
+    "id": "who_address_ctx1",
+    "placeholder": "Address line 1",
+    "aria": "Address line 1",
+    "label": "",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address2[]",
+    "id": "who_address2_ctx1",
+    "placeholder": "Address line 2 (optional)",
+    "aria": "Address line 2",
+    "label": "",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city[]",
+    "id": "who_city_ctx1",
+    "placeholder": "City",
+    "aria": "City",
+    "label": "",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state[]",
+    "id": "who_state_ctx1",
+    "placeholder": "",
+    "aria": "State",
+    "label": "State\nAlabama\nAlaska\nArizona\nArkansas\nCalifornia\nColorado\nCo",
+    "form": 0,
+    "heading": "Do not sell my personal information.",
+    "options": [
+     "=State",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip[]",
+    "id": "who_zip_ctx1",
+    "placeholder": "ZIP code",
+    "aria": "ZIP code",
+    "label": "",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests[]",
+    "id": "request_type_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell or share my personal information.",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests[]",
+    "id": "request_type_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not use my personal information for targeted or cross-con",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests[]",
+    "id": "request_type_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not use my personal information for profiling or automate",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests[]",
+    "id": "request_type_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Limit the use of my sensitive personal information.",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "requests[]",
+    "id": "request_type_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please delete my personal information.\nDeletion is permanent",
+    "form": 0,
+    "heading": "Do not sell my personal information."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "nav-search-open",
+    "inForm": false
+   },
+   {
+    "text": "+ Add another email",
+    "id": "add-email-btn",
+    "inForm": true
+   },
+   {
+    "text": "+ Add another phone",
+    "id": "add-phone-btn",
+    "inForm": true
+   },
+   {
+    "text": "+ Add additional address",
+    "id": "cta_add_address",
+    "inForm": true
+   },
+   {
+    "text": "Submit request",
+    "id": "submit_button",
+    "inForm": true
+   },
+   {
+    "text": "COMPANY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SOLUTIONS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "RESOURCES",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "HEADQUARTERS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "GET IN TOUCH",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "legal@deepsync.com",
+   "privacy.compliance@deepsync.com"
+  ],
+  "text": "Company\nSolutions\nIndustries\nResults\nTalk with an Expert\nSign in\nData Ethics & Privacy\n/\nPrivacy Request\nYOUR PRIVACY CHOICES\nDo not sell my personal information.\nWho is this request for?\nMyself\nA deceased individual\nSomeone I'm authorized to represent\nFIRST NAME\nLAST NAME\nEMAIL ADDRESS\n+ Add another email\nPHONE NUMBER\n+ Add another phone\nPRIMARY ADDRESS\nState\nAlabama\nAlaska\nArizona\nArkansas\nCalifornia\nColorado\nConnecticut\nDelaware\nDistrict of Columbia\nFlorida\nGeorgia\nHawaii\nIdaho\nIllinois\nIndiana\nIowa\nKansas\nKentucky\nLouisiana\nMaine\nMaryland\nMassachusetts\nMichigan\nMinnesota\nMississippi\nMissou",
+  "fingerprint": "c36e3f4dadde0393bbab4d42ac2a7c357dd134185dcdaf7066064348d834d9be"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

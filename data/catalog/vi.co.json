@@ -1,0 +1,48 @@
+{
+ "domain": "vi.co",
+ "name": "Vi Technologies, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:34.296Z",
+  "status": 200,
+  "optOutUrl": "https://vi.co/",
+  "title": "Homepage | Vi Labs",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "inForm": false
+   },
+   {
+    "text": "Customize",
+    "id": "CybotCookiebotDialogBodyLevelButtonCustomize",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@vi.co"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nShow details\nAllow all\nCustomize\nDeny\nView our State of AI Reports 2026\nENTERPRISE AI PLATFORM\nVERTICALS\nLEARN\nABOUT VI\nCAREERS\nCONTACT VI\nScroll\nProductized AI for Health Enterprises.\nWe turn data science into patient & oper",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

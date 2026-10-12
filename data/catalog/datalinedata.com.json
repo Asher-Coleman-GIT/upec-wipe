@@ -1,0 +1,28 @@
+{
+ "domain": "datalinedata.com",
+ "name": "Dataline, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:17.003Z",
+  "status": 404,
+  "optOutUrl": "https://datalinedata.com/privacy-portal/",
+  "title": "Page not found - Dataline",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "privacy.officer@datalinedata.com"
+  ],
+  "text": "Skip to content\nApproach\nOur Data\nSolutions\nInsights\nRequest a Demo\n404\nPlease check the url or go back to the home page.\nBack to home\nBetter data isn’t more data, it’s targeted data\n\nReal insight comes from deeper visibility, better thinking, and the discipline to keep going until it works. We test, challenge, and rebuild—until performance is proven.\n\nGive us a call at 609.452.6014\nRequest a demo\n\nCopyright ©2026 Dataline, Inc. All Rights Reserved\n\nPrivacy Policy\nCCPA\nDo Not Sell My Information\nTexas SOS",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

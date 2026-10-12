@@ -1,0 +1,79 @@
+{
+ "domain": "opensend.com",
+ "name": "Opensend Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:55.182Z",
+  "status": 202,
+  "optOutUrl": "https://www.opensend.com/privacy-policy",
+  "title": "Privacy Policy | Opensend",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Decline",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@opensend.com"
+  ],
+  "text": "Opensend has acquired Fueled. Activate stronger first-party signals across your marketing.\nLearn More\nSolutions\nResources\nSuccess stories\nPricing\nPartner\nLog In\nGet Started\nPrivacy Policy\n\nThis Privacy Policy was last revised on July 22, 2026.\n\nOpensend Inc., a Delaware corporation (\"Opensend,\" \"us,\" or \"we\") is dedicated to protecting your privacy and handling any personally identifiable information we obtain from you with care and respect.\n\nThis Privacy Policy sets forth our policy with respect to information, including personally identifiable information collected from users of and/or visit",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

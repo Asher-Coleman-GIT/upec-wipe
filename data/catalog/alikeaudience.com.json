@@ -1,0 +1,64 @@
+{
+ "domain": "alikeaudience.com",
+ "name": "AlikeAudience, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:35:35.671Z",
+  "status": 200,
+  "optOutUrl": "https://www.alikeaudience.com/privacy-policy/",
+  "title": "Privacy Policy - AlikeAudience",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Opt Out",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@alikeaudience.com"
+  ],
+  "text": "We use cookies\n\nWe use cookies and similar technologies to improve your browsing experience, analyze site traffic, and personalize content. By clicking \"Accept All\", you consent to our use of cookies. You can manage your preferences or learn more in our Cookie Policy.\n\nOpt Out\nAccept All\nSkip to content\nSolutions\nIndustries\nResources\nCompany\nContact Us\nPrivacy Policy\n\nOverview\n\nOur Services\n\nMembership\n\nData Collection and Use\n\nData Sharing\n\nData Transfer, Security & Protection\n\nProtecting Children\n\nOpt-Out\n\nLegal Basis for Processing Data of a Data Subject in California\n\nLegal Basis for Proce",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

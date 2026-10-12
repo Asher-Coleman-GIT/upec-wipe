@@ -1,0 +1,105 @@
+{
+ "domain": "tunnldata.com",
+ "name": "Tunnl, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:35:06.479Z",
+  "status": 200,
+  "optOutUrl": "https://www.tunnldata.com/privacy-policy",
+  "title": "Privacy Policy | Tunnl",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "0-1/firstname",
+    "id": "hs_form_target_footer_cta_-6-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "0-1/lastname",
+    "id": "hs_form_target_footer_cta_-5-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "0-1/email",
+    "id": "hs_form_target_footer_cta_-3-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "0-1/company",
+    "id": "hs_form_target_footer_cta_-2430648402231-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company Name*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "0-1/subscribe_to_tunnl_product_updates_2",
+    "id": "hs_form_target_footer_cta_-2977764140995-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "Subscribe to Tunnl emails for the latest research and audien",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Show submenu for Product",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get Your Demo",
+    "id": "hs_form_target_footer_cta_-15",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "notice@tunnldata.com"
+  ],
+  "text": "Skip to content\nProduct\nShow submenu for Product\nSolutions\nShow submenu for Solutions\nResources\nCompany\nShow submenu for Company\nLogin\n Book a Demo\nPrivacy Policy\n\nLast modified July 21, 2026\n\nEffective as of June 2026\n\nIntroduction\n\nThis Privacy Policy is designed to assist you in understanding how  Tunnl, LLC  (“Tunnl,” “we,” “our,” or “us”)  collects, uses, shares, and safeguards your information. This Privacy Policy applies to individuals who access this website (“Site”) and any of our online and, where required, offline products and services (collectively, “Services”), as well as the indi",
+  "fingerprint": "7ec663bc3a78803b12943bd960ded1c859483e6d2cb18736a5980576f34f2a17"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

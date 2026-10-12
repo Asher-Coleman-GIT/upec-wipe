@@ -1,0 +1,19 @@
+{
+ "domain": "perion.com",
+ "name": "Hivestack Technologies Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T23:33:05.790Z",
+  "contacts": [
+   "privacy@hivestack.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.perion.com/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

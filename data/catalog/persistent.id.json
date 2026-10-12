@@ -1,0 +1,39 @@
+{
+ "domain": "persistent.id",
+ "name": "Command Precision, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:14.255Z",
+  "status": 200,
+  "optOutUrl": "https://persistent.id/opt-out",
+  "title": "Privacy Policy | Persistent",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Talk to an expert",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@persistent.id"
+  ],
+  "text": "How it works\nData\nUse cases\nProducts\nAbout\nTalk to an expert\n\nLegal\n\nPRIVACY POLICY\n\nLast updated March 24, 2026\n\nThis Privacy Notice for Command Precision Inc. d/b/a/ Persistent.id (doing business as Persistent.id) (\"we,\" \"us,\" or \"our\"), describes how and why we might access, collect, store, use, and/or share (\"process\") your personal information when you use our services (\"Services\"), including when you:\n\nVisit our website at https://persistent.id/, https://www.intentwave.com/, https://consentwave.com/, https://ghlroas.com/, https://adcellerate.com/ or any website of ours that links to this",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

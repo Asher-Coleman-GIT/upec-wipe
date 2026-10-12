@@ -1,0 +1,111 @@
+{
+ "domain": "hubspot.com",
+ "name": "HubSpot, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:26.938Z",
+  "status": 200,
+  "optOutUrl": "https://preferences.hubspot.com/?locale=en",
+  "title": "HubSpot Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "q",
+    "id": "",
+    "placeholder": "Search HubSpot",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Select a language",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "High Contrast",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show Submenu",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show Submenu",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show Submenu",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Popular Features",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Free Tools",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Customers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Partners",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@hubspot.com"
+  ],
+  "text": "Skip to content\nEnglish\nSelect a language\nHigh Contrast\nCustomer Support\nContact Sales\nLog in\nAbout\nAbout\nProducts\nProducts\nSolutions\nSolutions\nPricing\nResources\nResources\nStart free or get a demo\nLegal Center\nHUBSPOT PRIVACY POLICY\nReturn to Legal Center Homepage\nFor Customers\nShow Submenu\nFor Partners\nShow Submenu\nFor Everyone\nShow Submenu\n\nLast Modified: September 16, 2026\n\nHubSpot Privacy Policy\n\nHubSpot is committed to protecting your privacy. This Privacy Policy applies to the personal data we collect and process in the course of our business. HubSpot acts in different ways when processi",
+  "fingerprint": "863bf6651447ecfaaf9cf6b1bb0cdfea8d58f951424ac8c44c6724eaed8a7c61"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

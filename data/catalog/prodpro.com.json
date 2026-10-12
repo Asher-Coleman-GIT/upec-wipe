@@ -1,0 +1,142 @@
+{
+ "domain": "prodpro.com",
+ "name": "ProdPro Inc",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:06.295Z",
+  "status": 200,
+  "optOutUrl": "https://app.prodpro.com/privacy-policy-opt-out-form",
+  "title": "ProdPro Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "fieldPErydoOjOn",
+    "id": "fieldPErydoOjOn",
+    "placeholder": "",
+    "aria": "",
+    "label": "Primary Email *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fieldblNe81Orxw",
+    "id": "fieldblNe81Orxw",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone Number *",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Please enter Address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Please enter City",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Please enter State",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Please enter Zip",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Please enter Country",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "ProdPro Intro\n\n California Consumer Privacy Act (CCPA) Opt-Out Icon\n\nProdPro honors consumer privacy and choice.  This form is used to submit data subject Opt-Out and Delete requests. Requests to correct inaccurate information or to opt-out of processing of personal data defined as “sensitive” under applicable law (where allowed) should be submitted as DELETE requests.\n\nName *\nFirst Name\t\nMiddle Name\t\nLast Name\nPrimary Email *\nPhone Number *\nAddress *\nCity\nState\nZip\nCountry\n\nCONFIRMATION\n\nPlease use the following control to authorize your request, and in so doing attest that:\n\nYou are the indi",
+  "fingerprint": "15f4e727efb03bc01bd39520065e96b75f64262ef226694ec21d3836f66b39fe"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

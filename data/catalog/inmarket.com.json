@@ -1,0 +1,141 @@
+{
+ "domain": "inmarket.com",
+ "name": "InMarket Media, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:44.488Z",
+  "status": 200,
+  "optOutUrl": "https://preferences.inmarket.com/form/opt_out?locationCode=US-WA",
+  "title": "Privacy Request Center | DataGrail",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "submission_by",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Myself",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "submission_by",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Someone else - I'm an authorized agent",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first_name",
+    "id": ":r1:",
+    "placeholder": "",
+    "aria": "Your first name",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last_name",
+    "id": ":r2:",
+    "placeholder": "",
+    "aria": "Your last name",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "email_address",
+    "id": ":r3:",
+    "placeholder": "",
+    "aria": "Your email",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "data_subject_relationship",
+    "id": "",
+    "placeholder": "Data subject's relationship with InMarket",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "9f93b56e-1347-4c88-9988-97aa65e859a9",
+    "id": ":r4:",
+    "placeholder": "",
+    "aria": "Your Mobile Advertising ID (MAID)",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "additional_info",
+    "id": ":r5:",
+    "placeholder": "",
+    "aria": "additional_info",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "bdad9948-21a8-44a7-8038-0c83db60c09e",
+    "id": "",
+    "placeholder": "Indicate what type(s) of request you wish to make.",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Opt Out Requests and Limit the Use of Sensitive Personal Inf"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "← Back to Privacy Request Center",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Review Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cancel",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Privacy Request Center\n← Back to Privacy Request Center\nOpt Out Requests and Limit the Use of Sensitive Personal Information Requests\n\n🇺🇸 Washington, United States\n\nWe need more information in order to process your request. The data gathered here will only be used to process your request and for record-keeping as required by our privacy policy and applicable privacy laws.\n\nI'm making this request on behalf of\nMyself\nSomeone else - I'm an authorized agent\ninfo\nYour first name\n\n(optional)\n\n​\nYour last name\n\n(optional)\n\n​\nYour email\n​\nData subject's relationship with InMarket\n\n(optional)\n\n​\nkey",
+  "fingerprint": "c9271cec9449860e7f1e5ce9991b51995734f4ed4836b9168c85524ce57da23c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

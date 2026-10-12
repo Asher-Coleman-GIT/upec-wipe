@@ -1,0 +1,59 @@
+{
+ "domain": "realintent.co",
+ "name": "Real Intent Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:55.300Z",
+  "status": 200,
+  "optOutUrl": "https://www.realintent.co/",
+  "title": "Real Intent — Lead Gen & Growth Marketing on Autopilot",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Contact us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "aaron@realintent.co"
+  ],
+  "text": "Home\nBlog\nOur Zipcodes\nAutomatic Listings\nPricing\nHow It Works\nWatch Webinar\nContact us\nBecome a member\n\nPRESS RELEASE: Real Intent Launches Superagent at NAR’s 2025 National Conference. Live Webinar Today at 4pm EST\n\nLead gen and growth marketing on autopilot\nBuilt with love for real estate agents. ❤️\nYou're good at selling homes - let us do the rest.\n\nBespoke client portals + personal email nurturing, handing off to you\n\nBranded social videos, YouTube Shorts, Meta Reels, TikTok on autopilot\n\nAlways-on Meta and Google ads to stay in front of sellers\n\nLocal newsletters, market updates, and aut",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

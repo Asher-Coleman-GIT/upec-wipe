@@ -1,0 +1,66 @@
+{
+ "domain": "convex.com",
+ "name": "Convex Labs, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:44:51.190Z",
+  "status": 200,
+  "optOutUrl": "https://www.convex.com/privacy-policy",
+  "title": "Privacy Policy: Commercial Lead Gen Software | Convex",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "email",
+    "id": "email",
+    "placeholder": "Email Address:",
+    "aria": "",
+    "label": "Email Address:",
+    "form": 0,
+    "heading": "Privacy Policy"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Get Demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Manage Cookies",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Close",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "support@convexlabs.io"
+  ],
+  "text": "Convex is now part of ServiceTitan: Learn More\n\nLogin\nWhy Convex\nProducts\nSolutions\nResources\nAbout Convex\nGet Demo\nHome\n/\nPrivacy Policy\nPrivacy Policy\n\nLAST UPDATED:  January 30 2026\n\nThis privacy policy (this “Privacy Policy”) explains how Convex Labs LLC (“Convex”, “we”, “our” or “us”) collects, uses and discloses information related to the Convex website currently located at https://www.convex.com/ and https://atlas.convexlabs.io (the “Website”), applications, products, services, tools and features, including our Atlas product (collectively, the “Services”). Please note that Convex is a d",
+  "fingerprint": "9bc1c3dbb689290e46240af7a3402d241f0bfb7461f5ce61f221ee5c2c1f2bf8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "domain": "spglobal.com",
+ "name": "S&P Global Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "blocked",
+ "survey": {
+  "checkedAt": "2026-10-11T23:35:37.825Z",
+  "status": 403,
+  "optOutUrl": "https://www.spglobal.com/en",
+  "title": "Access Denied",
+  "block": "hard",
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@spglobal.com"
+  ],
+  "text": "Access Denied\nYou don't have permission to access \"http://www.spglobal.com/en\" on this server.\n\nReference #18.ad623017.1791761738.140f9af0\n\nhttps://errors.edgesuite.net/18.ad623017.1791761738.140f9af0",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

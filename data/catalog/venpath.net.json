@@ -1,0 +1,17 @@
+{
+ "domain": "venpath.net",
+ "name": "Venpath, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:09.808Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.venpath.net/legal/privacy-notice"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

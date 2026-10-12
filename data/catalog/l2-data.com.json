@@ -1,0 +1,257 @@
+{
+ "domain": "l2-data.com",
+ "name": "Labels & Lists, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:06.825Z",
+  "status": 200,
+  "optOutUrl": "https://l2-data.com/california-privacy-rights-for-california-residents-only/",
+  "title": "Privacy Rights California",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4",
+    "id": "input_4_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "User Name:",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_5",
+    "id": "input_4_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Password:",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_7",
+    "id": "input_4_7",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email:",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_12.3",
+    "id": "input_4_12_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "First",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_12.6",
+    "id": "input_4_12_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_11",
+    "id": "input_4_11",
+    "placeholder": "(999) 999-9999",
+    "aria": "",
+    "label": "Telephone Number:",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.1",
+    "id": "input_4_13_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.2",
+    "id": "input_4_13_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.3",
+    "id": "input_4_13_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_13.4",
+    "id": "input_4_13_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS",
+    "options": [
+     "=",
+     "Alabama=Alabama",
+     "Alaska=Alaska",
+     "American Samoa=American Samoa",
+     "Arizona=Arizona",
+     "Arkansas=Arkansas",
+     "California=California",
+     "Colorado=Colorado"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.5",
+    "id": "input_4_13_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP Code",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "input_15.1",
+    "id": "choice_4_15_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Short Report of PI Collection: Report will describe",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "input_15.2",
+    "id": "choice_4_15_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Expanded Report of PI Collection: (Does not require",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "input_15.3",
+    "id": "choice_4_15_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Know Data Sold or Disclosed for a Business: (Does n",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "input_15.4",
+    "id": "choice_4_15_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Access: (Requires identity verification) You can re",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "input_15.5",
+    "id": "choice_4_15_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Delete Your Data: (Requires identity verification) ",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "input_15.6",
+    "id": "choice_4_15_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Opt-Out of Sale of Your Data: (Does not require ide",
+    "form": 1,
+    "heading": "OVERVIEW 1: BASICS"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit Your Request",
+    "id": "gform_submit_button_4",
+    "inForm": true
+   },
+   {
+    "text": "Your Privacy Rights",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "Your Privacy Rights",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "lauren.pembo@l2political.com"
+  ],
+  "text": "CHECK OUT L2 INTEGRATIONS\n [email]\n [email]\nL2 TRAINING CENTER\nPRODUCTS\nDATA QUALITY\nSTATE VOTER RECORDS\nABOUT US\nBLOG\nCONTACT\nLOGIN\nDataMapping Free Trial\nCALIFORNIA PRIVACY RIGHTS\nOVERVIEW 1: BASICS\n\nAs of January 1, 2020, the California Consumer Privacy Act (“CCPA”) provides California consumers (California residents) with certain rights regarding their personal information (“PI”). This page describes your CCPA rights and explains how to exercise those rights subject to our verification process. Note that this law applies only to California residents.\n\nL2 Political (“L2",
+  "fingerprint": "92122edab9943b87a27f465837602b8de9774fd09501a8ec6c3ebed49616e819"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "domain": "livedatatechnologies.com",
+ "name": "Live Data Technologies, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:54.700Z",
+  "status": 200,
+  "optOutUrl": "https://www.livedatatech.com/opt-out",
+  "title": "Optout — Live Data Technologies",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Full-Name",
+    "id": "full-name",
+    "placeholder": "Your full name *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Info"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Work-Email",
+    "id": "work-email",
+    "placeholder": "Your work email *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Info"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Postal-Address",
+    "id": "postal-address",
+    "placeholder": "Your postal address *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Info"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "Message",
+    "id": "message",
+    "placeholder": "I'd like to request an opt-out according to CCPA",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Info"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Info"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "remove@livedatatechnologies.com"
+  ],
+  "text": "Resources\nPricing\nLog in\nContact sales\nCalifornia “Do Not Sell My Info” Opt-Out\n\nIf you are a California consumer (as that term is defined in the CCPA), you have the right to opt-out of the “sale” of your Personal Information on a going-forward basis, as “sale” is defined in the CCPA.You may request to exercise this opt-out by filling out the webform on the right.\n\nYou may also exercise this opt-out by emailing us at [email] and providing sufficient information to us so that we may process your opt-out request, in particular the information requested below.\n\nWe may requ",
+  "fingerprint": "cb4e6d843307a132f681f9847456a6c013fbeaa92f436eb0ec54b533cec7b1f1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

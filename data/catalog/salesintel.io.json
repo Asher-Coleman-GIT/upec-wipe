@@ -1,0 +1,83 @@
+{
+ "domain": "salesintel.io",
+ "name": "SalesIntel Research, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:22.082Z",
+  "status": 200,
+  "optOutUrl": "https://salesintel.io/data-gathering-privacy/",
+  "title": "SalesIntel | B2B Buying Signals | Pipeline Generation Platform",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What is a pipeline generation platform?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What is the difference between predictiv",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How accurate is SalesIntel's B2B contact",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What is an ICP fit score and how is it c",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What is a buying committee, and why does",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How does SalesIntel compare to ZoomInfo,",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "support@salesintel.io"
+  ],
+  "text": "Skip to content\nContact Us\nSupport\nProducts\nSolutions\nSignals & Data\nPricing\nResources\nBook a Meeting\nLogin\nPIPELINE GROWTH, DECODED.\nSalesIntel is a pipeline generation platform for GTM teams\n\nDecode your best customers’ DNA, find and score lookalike accounts that are in-market, and engage the buying committee before your competitors do. Built on a foundation of AI automation & human-verified B2B data.\n\nGet a Demo Free Trial\nTrusted By Revenue Teams At\nHOW IT WORKS\nIdentify and engage in-market accounts that look like your best customers\n\nIt starts with ICP Intelligence, decoding your best cu",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

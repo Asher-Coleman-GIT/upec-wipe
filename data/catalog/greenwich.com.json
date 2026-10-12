@@ -1,0 +1,65 @@
+{
+ "domain": "greenwich.com",
+ "name": "Crisil Irvena US LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "crisil.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:03.835Z",
+  "status": 200,
+  "optOutUrl": "https://www.crisil.com/en/home/crisil-privacy-notice.html",
+  "title": "Crisil Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Who we are",
+    "id": "navbarDropdown",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Explore Crisil",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy1@crisil.com"
+  ],
+  "text": "Skip to main content\nWho we are\nLatest thinking\nCareers\nEvents\nLogin\nHome\nCrisil Global Corporate\nPrivacy Policy\nLast Updated: October 17, 2025\nView Previous Version\nIntroduction\nThe data we collect about you\nHow we collect your personal data\nHow we use your personal data\nSharing of your personal data\nInternational transfers of your information\nData security\nData retention\nYour legal rights\nAppendix\nINTRODUCTION\n\nCrisil Limited and its subsidiaries (collectively or individually, as applicable, referred to as “Crisil” or “our” or “we” or “us”) respect your privacy and are committed to protectin",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

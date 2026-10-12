@@ -1,0 +1,105 @@
+{
+ "domain": "intentsify.io",
+ "name": "Intentsify, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:13.696Z",
+  "status": 200,
+  "optOutUrl": "https://intentsify.io/privacy-policy/",
+  "title": "Privacy Policy - Intentsify",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "s",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "Search for:",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "searchsubmit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-0c805edf-51f9-41b8-a422-982fe8f6387b",
+    "placeholder": "Enter your email address*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Ready to get started?"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Ready to get started?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "searchsubmit",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "search-close",
+    "inForm": true
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@intentsify.io",
+   "privacy@intentsify.io"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomize\nReject All\nAccept All\nIntroducing Intentsify MCP: intent data built directly into Claude, ChatGPT, and the AI tools you already use. LEARN MORE\nWhy Intentsify?\nSolutions\nCustomers\nResources\nAbout\nLOG IN\nLET'S TALK\nSearch for:\nPrivacy Policy\n\nPlease view Intentsify’s applicable privacy policies below.\n\nCONSUMER DATA PRIVACY POLICY\nWEBSITE DATA PRIVACY POLICY\n\nView the policy applicable to ac",
+  "fingerprint": "9eedc4936f7e95c91261b8f7c11ba666562ee64ce2f4587d57df9ab52af856b9"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

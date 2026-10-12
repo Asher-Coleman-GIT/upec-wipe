@@ -1,0 +1,82 @@
+{
+ "domain": "scileads.com",
+ "name": "SciLeads Ltd",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:52.844Z",
+  "status": 200,
+  "optOutUrl": "https://scileads.com/opt-out/",
+  "title": "Control Your Data | SciLeads",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "Control Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "Control Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Control Your Data"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Our Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@scileads.com"
+  ],
+  "text": "Solutions\nOur Data\nAI Partner Program\nPricing\nEvents\nResources\nCompany\nLogin\nFree Trial\nOPT OUT\nControl Your Data\n\nIn the form below you can request your data to be deleted from our system.\n\nFirst Name*\nLast Name*\nEmail*\n\nBy submitting your information, you agree that SciLeads may collect and further process your personal data in accordance with its Privacy Policy.\n\nSubmit request\n\n“SciLeads has been critical to the success of our sales and marketing efforts. I don't know where we would be without its data and insights.”\n\nPaul Wright\nCommerical Marketing Director\n\n5x\n\nyour pipeline\n\nwith SciLe",
+  "fingerprint": "2c7aa282045d751815f1dce6f3ee5ff2d8a54fad5b1321b0b01875c172c42107"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

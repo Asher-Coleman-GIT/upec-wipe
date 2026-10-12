@@ -1,0 +1,33 @@
+{
+ "domain": "marketingarchitects.com",
+ "name": "Marketing Architects, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:29.714Z",
+  "status": 200,
+  "optOutUrl": "https://www.marketingarchitects.com/privacy-policy-ProductAndService",
+  "title": "Product And Service Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Talk to a TV specialist",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@markarch.com"
+  ],
+  "text": "ALL INCLUSIVE TV \nCASE STUDIES\nABOUT \nLEARN \nCAREERS\nCLIENT LOGIN\nLET'S TALK\n← back\nMARKETING ARCHITECTS, INC. PRODUCT AND SERVICE PRIVACY POLICY\n\nHow we handle certain Personal Information we collect for the products and services we provide including executing connected television campaigns.\n\nEffective Date: July 1, 2026\n\nMarketing Architects, Inc. (referred to as “MA” “our”, “us” and “we” in this Privacy Policy) is an advertising agency that creates television commercials and other advertising content, purchases media, provides analytics, strategy services, and conversion solutions to our cl",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

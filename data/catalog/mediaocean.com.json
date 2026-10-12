@@ -1,0 +1,171 @@
+{
+ "domain": "mediaocean.com",
+ "name": "4C Insights Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:03.329Z",
+  "status": 200,
+  "optOutUrl": "https://www.mediaocean.com/your-privacy-rights",
+  "title": "Privacy request | Mediaocean",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "keys",
+    "id": "search",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "FirstName",
+    "id": "FirstName",
+    "placeholder": "",
+    "aria": "",
+    "label": "FIRST NAME*",
+    "form": 2,
+    "heading": "Welcome to the Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "LastName",
+    "id": "LastName",
+    "placeholder": "",
+    "aria": "",
+    "label": "LAST NAME*",
+    "form": 2,
+    "heading": "Welcome to the Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "Email",
+    "placeholder": "",
+    "aria": "",
+    "label": "EMAIL*",
+    "form": 2,
+    "heading": "Welcome to the Privacy Request Form"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Country",
+    "id": "Country",
+    "placeholder": "",
+    "aria": "",
+    "label": "COUNTRY:",
+    "form": 2,
+    "heading": "Welcome to the Privacy Request Form",
+    "options": [
+     "=Select...",
+     "United States=United States",
+     "Afghanistan=Afghanistan",
+     "Åland Islands=Åland Islands",
+     "Albania=Albania",
+     "Algeria=Algeria",
+     "American Samoa=American Samoa",
+     "Andorra=Andorra"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "areYoutheConsumer",
+    "id": "areYoutheConsumer",
+    "placeholder": "",
+    "aria": "",
+    "label": "ARE YOU THE CONSUMER?*",
+    "form": 2,
+    "heading": "Welcome to the Privacy Request Form",
+    "options": [
+     "=Select one",
+     "Yes=Yes",
+     "No=No",
+     "Authorized agent=Authorized agent"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "cCPARequestType",
+    "id": "cCPARequestType",
+    "placeholder": "",
+    "aria": "",
+    "label": "SPECIFY THE REQUEST TYPE*",
+    "form": 2,
+    "heading": "Welcome to the Privacy Request Form",
+    "options": [
+     "=Select...",
+     "I am with an advertiser, agency, publisher or other entity that is a Customer of Mediaocean’s Hosted Systems=I am with an adverti",
+     "I am a consumer=I am a consumer"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "ccc-icon",
+    "inForm": false
+   },
+   {
+    "text": "Accept all cookies",
+    "id": "ccc-notify-accept",
+    "inForm": false
+   },
+   {
+    "text": "Reject all cookies",
+    "id": "ccc-notify-reject",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "By clicking \"Accept all cookies\", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and for marketing and advertising purposes.\n\nPrivacy policy  | Cookies policy  | Do not sell or share my personal information \n\nAccept all cookiesReject all cookiesCookie Preferences\nSkip to main content\nSkip to main content\nSEARCH\nCompany\nCompany\nMediaocean AI Ventures\nDiversity, equity, and inclusion\nCareers\nNewsroom\nContact\nProducts\nProducts\nNIVO AI\nPrisma\nInnovid\nProtected\nResources\nResources\nEvents\nArticles\nInsights\nReports\nPress coverage\nSupport\nSupport\nEdu",
+  "fingerprint": "23ba1976add247c85b42873a9186b023559cf9bbff3dfbf2750fffa8c8be5455"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

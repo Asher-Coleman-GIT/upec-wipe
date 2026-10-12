@@ -1,0 +1,55 @@
+{
+ "domain": "decide.co",
+ "name": "Decide Technologies, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:12.761Z",
+  "status": 200,
+  "optOutUrl": "https://decide.co/privacy",
+  "title": "Decide Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request Form",
+    "options": [
+     "delete=Request Account Dele",
+     "information=Request Account Info"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Email *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Request Form"
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@decide.co"
+  ],
+  "text": "Advertisers\nPublishers\nDecision Marketplace\nCompany \nCareers\nSIGN IN\nPrivacy Policy\nEffective as of February 7, 2022\nLast revised on February 2, 2026\nIntroduction\n\nDecide Technologies Inc. (fka LockerDome, Inc.), its subsidiaries and affiliated companies (collectively, “Decide,” “we,” “our,” or “us”) respects the privacy of your information. This Privacy Policy is designed to assist you in understanding how we collect, use, share, and safeguard your information. This Privacy Policy applies to data we collect through our websites, monetization widgets, and advertising platforms (“Sites”) and an",
+  "fingerprint": "381184880e33f7e7068f765191bc46de8e33276287707672c4247e2208483b67"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

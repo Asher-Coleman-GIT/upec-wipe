@@ -1,0 +1,19 @@
+{
+ "domain": "mobilefuse.com",
+ "name": "MobileFuse LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:01.789Z",
+  "contacts": [
+   "danb@mobilefuse.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://mobilefuse.com/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

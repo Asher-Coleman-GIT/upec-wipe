@@ -1,0 +1,27 @@
+{
+ "domain": "semantiqhealth.com",
+ "name": "SEMANTIQ INC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:15.287Z",
+  "status": 200,
+  "optOutUrl": "https://www.semantiqhealth.com/privacy-policy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "ops@semantiqhealth.com"
+  ],
+  "text": "Skip to main content\nPlatform\nWho We Serve\nResources\nCompany\nLogin\nLogin\nContact Us\nContact Us\nPrivacy Policy\nUsers of Platform Services\n\nLast updated: May 26, 2026\n\nINTRODUCTION\n\nWelcome to SemantIQ.  SemantIQ, Inc. (“SemantIQ”, “we”, “our”, or “us”) provides an AI-native web application and agentic workflows that allow authorized users to build healthcare provider and direct to consumer segmentation, generate audience planning briefs, conduct target list profiling, and analyze healthcare claims-derived insights. This Privacy Policy explains how we collect, use, store, and disclose informatio",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

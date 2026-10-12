@@ -1,0 +1,17 @@
+{
+ "domain": "publicdatausa.com",
+ "name": "publicdatausa.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:39.814Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://publicdatausa.com/optout"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

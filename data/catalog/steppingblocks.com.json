@@ -1,0 +1,28 @@
+{
+ "domain": "steppingblocks.com",
+ "name": "Steppingblocks, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:05.004Z",
+  "status": 200,
+  "optOutUrl": "https://www.steppingblocks.com/privacy-ccpa",
+  "title": "Privacy Statement – California and Applicable State Law",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@steppingblocks.com"
+  ],
+  "text": "SOLUTIONS\nABOUT\nRESOURCES\nINSTITUTIONS\nSTUDENT LOGIN\n \nPrivacy Statement\n\nCalifornia and Other Applicable State Laws\n\n \n\nLast Updated: 7/30/2025\n\n\nThis section provides additional information for residents of certain states regarding their privacy rights under the consumer privacy laws enacted in those states that grant their residents certain rights and require additional disclosures (“State Laws”). If you are a resident of one of these states, this section applies to you.\n\n\nAs required by certain State Laws, below explains this same information, including the categories of personal informati",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

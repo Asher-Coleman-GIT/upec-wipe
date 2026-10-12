@@ -1,0 +1,206 @@
+{
+ "domain": "salesforce-sites.com",
+ "name": "e.Republic, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:28:18.049Z",
+  "status": 200,
+  "optOutUrl": "https://erepublic.my.salesforce-sites.com/PrivacyRequest/",
+  "title": "Privacy Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "j_id0:j_id2:j_id3:j_id31:type",
+    "id": "j_id0:j_id2:j_id3:j_id31:type",
+    "placeholder": "",
+    "aria": "",
+    "label": "*What would you like to do?",
+    "form": 0,
+    "heading": "Your Digital Privacy",
+    "options": [
+     "=-- Please Select --",
+     "Opt-out of the sale of my information=Opt-out of the sale ",
+     "Request a copy of my personal information=Request a copy of my",
+     "Erase my personal information=Erase my personal in",
+     "Correct my personal information=Correct my personal ",
+     "Limit the use of my sensitive personal information=Limit the use of my "
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id36",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id38",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id40",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id42",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id44",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id46",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id48",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id50",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "j_id0:j_id2:j_id3:j_id31:state",
+    "id": "j_id0:j_id2:j_id3:j_id31:state",
+    "placeholder": "",
+    "aria": "",
+    "label": "*State",
+    "form": 0,
+    "heading": "Your Digital Privacy",
+    "options": [
+     "=-- Please Select --",
+     "AK=Alaska",
+     "AL=Alabama",
+     "AR=Arkansas",
+     "AS=American Samoa",
+     "AZ=Arizona",
+     "CA=California",
+     "CO=Colorado"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id54",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "j_id0:j_id2:j_id3:j_id31:j_id56",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "j_id0:j_id2:j_id3:j_id31:checkbox",
+    "id": "j_id0:j_id2:j_id3:j_id31:checkbox",
+    "placeholder": "",
+    "aria": "",
+    "label": "I declare under penalty of perjury that I am the consumer wh",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "j_id0:j_id2:j_id3:j_id61:submit_form",
+    "id": "j_id0:j_id2:j_id3:j_id61:submit_form",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Your Digital Privacy"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "j_id0:j_id2:j_id3:j_id61:submit_form",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@erepublic.com"
+  ],
+  "text": "Your Digital Privacy\n\nAt e.Republic we take data privacy seriously and are committed to abiding by governing privacy laws. As an individual you have rights pertaining to the personal data that is collected and held about you, including the right to opt-out of the sale of personal information, request a copy of personal information, or delete certain personal information.\n\nThis request is governed by e.Republic‘s Privacy Policy available at www.erepublic.com/privacy. If you have questions or would like additional information, please contact us at [email]\n\nTo exercise these rights",
+  "fingerprint": "b876fa94c902cffe112e1c4def6f53b42be17d04240255a974d415243f97dc9d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

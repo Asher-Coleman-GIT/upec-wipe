@@ -1,0 +1,39 @@
+{
+ "domain": "xcelerated.com",
+ "name": "Xcelerated Data LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:12.505Z",
+  "status": 404,
+  "optOutUrl": "https://xcelerated.com/general-5",
+  "title": "Page Not Found - Xcelerated",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@xcelerated.com"
+  ],
+  "text": "Skip to main content\nSkip to footer\nOpens in a new tab\nHOMEPAGE\nDATA SOLUTIONS\nINDUSTRIES\nABOUT US\nCONTACT US\n877.236.9155\nERROR 404\nThat page isn't here\n\nThe link may be outdated, or the page has moved. Head back to the homepage, or get in touch and we will point you to the right place.\n\nBack to homepage\nTalk to us\n\nXcelerated Data helps businesses cut through the noise and get their marketing and operations working like they should. If you keep a customer list, we make sure it’s clean, accurate, and actually useful.\n\nDATA SOLUTIONS\nAutomotive Consumer Data\nData Cleaning and Hygiene\nData Appe",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

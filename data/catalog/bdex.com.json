@@ -1,0 +1,84 @@
+{
+ "domain": "bdex.com",
+ "name": "BDEX, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:29.863Z",
+  "status": 200,
+  "optOutUrl": "https://www.bdex.com/privacy-policy/data-sharing-opt-out/",
+  "title": "Data Sharing : BDEX",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "form_fields[email]",
+    "id": "form-field-email",
+    "placeholder": "Email*",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "form_fields[opt_out_bdex]",
+    "id": "form-field-opt_out_bdex-0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out of sharing my information on the BDEX platform",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "form_fields[show_info]",
+    "id": "form-field-show_info-0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Show me what information you have on file about me",
+    "form": 0,
+    "heading": "Opt Out Form"
+   },
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "elementor-search-form-2fa93bf",
+    "placeholder": "Search our site...",
+    "aria": "",
+    "label": "Search",
+    "form": 1,
+    "heading": "Opt Out Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@bdex.com"
+  ],
+  "text": "Skip to content\nData\nSolutions\nIndustries\nAbout\nTry for Free\nData Sharing\nOpt Out Form\nEmail\nOpt out BDEX\n Opt out of sharing my information on the BDEX platform\nshow-info\n Show me what information you have on file about me\nSubmit\nSearch\nLinkedin\n \nTwitter\n \nInstagram\n \nYoutube\n \nFacebook\nBDEX Reviews\n\nCopyright 2026 BDEX – All rights reserved. Privacy Policy\n Do Not Sell My Info",
+  "fingerprint": "ca50321cd82ab00955971d8a2e59a70e1be471f90f3582d18ce93d9d407d0da2"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

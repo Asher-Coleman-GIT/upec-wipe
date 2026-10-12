@@ -1,0 +1,51 @@
+{
+ "domain": "telesign.com",
+ "name": "Telesign Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:18.215Z",
+  "status": 200,
+  "optOutUrl": "https://www.telesign.com/privacy-requests",
+  "title": "Privacy Request - Telesign",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "search",
+    "placeholder": "Search...",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Manage cookie consent settings",
+    "id": "showDialog",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "california-opt-out@telesign.com"
+  ],
+  "text": "Skip to content\nSupport\nEN\nSign in\nSolutions\nProducts\nDevelopers\nLearn\nCompany\nTalk to sales\nPrivacy Request\n\nTelesign is committed to protecting the privacy of individuals whose personal data we process. You have rights about the personal data we process about you, which may include the right to access a copy of your personal data, to request deletion or rectification of your personal data, and to object to further processing of your personal data.\n\nTo opt-out of the sharing of your personal data for cross-contextual behavioral advertising (i.e., targeted advertising) on our website, please c",
+  "fingerprint": "77dc671ca3287234bb5e097f6f3a95b8c8079a3be37ae28297fe84cef108711d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

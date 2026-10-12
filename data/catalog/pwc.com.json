@@ -1,0 +1,91 @@
+{
+ "domain": "pwc.com",
+ "name": "PwC Product Sales LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:02.059Z",
+  "status": 200,
+  "optOutUrl": "https://www.pwc.com/us/en/site/notice-of-right-to-opt-out.html",
+  "title": "Privacy Statement for California Residents: PwC",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Insights & Research",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Services",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Tech & AI",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About PwC",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Careers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "United States",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Customize cookie settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Necessary cookies only",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept all cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to content\nSkip to footer\nIndex\nIntroduction\nOur processing activities\nYour California privacy rights\nContact us\nInsights & Research\nServices\nIndustries\nTech & AI\nAbout PwC\nCareers\nUnited States\nSearch\nHome\nSite map\nPrivacy Statement for California Residents\nPrivacy Statement Supplement for California Residents\nLast updated: January 6, 2026\n\nDownload PDF\n\nThis privacy statement for California residents supplements the information contained in our main privacy statement and applies solely to individuals who reside in the State of California. If you have any questions about the information ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

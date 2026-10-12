@@ -1,0 +1,27 @@
+{
+ "domain": "mogean.com",
+ "name": "Mogean, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:15.154Z",
+  "status": 200,
+  "optOutUrl": "https://www.mogean.com/opt-out",
+  "title": "Privacy Policy | Mogean",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@mogean.com"
+  ],
+  "text": "Skip to content\nGeospatial Analytics\nAI / NLQ Solutions\nPOI Data Store\nSolutions\nMethodology\nCompany\nTalk to us\n\nLEGAL\n\nPrivacy Policy\n\nHow Mogean handles information from visitors to this site, from the POI dataset, and from the location data behind the Exposure Measurement services.\n\nMogean, Inc. (\"Mogean\", \"we\", \"us\") builds location data products: a dataset of United States places, and measurement services for out-of-home advertising.\n\nThis policy covers www.mogean.com and Mogean's Exposure Measurement services. It is in three parts: the website,the POI dataset, andlocation data and the Ex",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

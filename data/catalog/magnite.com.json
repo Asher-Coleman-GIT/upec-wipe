@@ -1,0 +1,91 @@
+{
+ "domain": "magnite.com",
+ "name": "Magnite Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:08.816Z",
+  "status": 200,
+  "optOutUrl": "https://www.magnite.com/legal/user-choice-portal/",
+  "title": "User Choice Portal | Manage Your Privacy Preferences with Magnite",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Your email address",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "User Choice Portal"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Login",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Language",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign Up",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Other Magnite Sites",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Follow Us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Your Privacy Choices",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@magnite.com"
+  ],
+  "text": "Search\nLogin\nDV+\nClearline\nSpringServe\nLanguage\nEnglish\nSellers\nBuyers\nInsights\nBlog\n\nFrom Supply Discovery to Activation: Inside Magnite Showcase\n\nFrom Supply Discovery to Activation: Inside Magnite Showcase\n\nBridging the Gap Between Data and Supply: Inside ClearLine’s Self-Serve Audience Capabilities\n\nBridging the Gap Between Data and Supply: Inside ClearLine’s Self-Serve Audience Capabilities\nCase Studies\n\nMagnite, Google & Quarter Media: Open Bidding Direct Pay delivers 270%+ revenue uplift for Kicker\n\nMagnite, Google & Quarter Media: Open Bidding Direct Pay delivers 270%+ revenue uplift f",
+  "fingerprint": "05e0dffe8c2d64e54228d39fba4c4673b0b48c3e9d8236d0ac8318f519549402"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

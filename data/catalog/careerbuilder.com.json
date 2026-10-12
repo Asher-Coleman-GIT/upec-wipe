@@ -1,0 +1,54 @@
+{
+ "domain": "careerbuilder.com",
+ "name": "CareerBuilder, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:17.241Z",
+  "status": 404,
+  "optOutUrl": "https://www.careerbuilder.com/privacy_policy",
+  "title": "Page Not Found | CareerBuilder.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "q",
+    "id": "horizontal-input-one-undefined",
+    "placeholder": "Search jobs, keywords, companies",
+    "aria": "Search jobs, keywords, companies",
+    "label": "Search jobs, keywords, companies",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "where",
+    "id": "horizontal-input-two-undefined",
+    "placeholder": "Enter location or \"remote\"",
+    "aria": "Enter location or \"remote\"",
+    "label": "Enter location or \"remote\"",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SEARCH",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to content\nSEARCH\nSign up\nLog in\nFind Jobs\nSalary Estimate\nCareer Advice\nUpload Resume\nEmployers / Post Job\nSorry, this page isn’t available\n\nIt may have been moved or deleted. Let's get you back on track.\n\nBrowse Jobs\nResume Templates\nSalary Estimate\nCareer Advice\nHelp\nProducts\nSolutions\nPricing\nResources\nTerms of Use\nPrivacy Center - UPDATED!\nSecurity Center\nAccessibility Center\nPersonal Data Request\nAdChoices\n© 2026 MCB Bermuda Ltd",
+  "fingerprint": "69f6ca4865217f9abe00065c268563db7636bec2bda56316d721ad8e455b86a3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

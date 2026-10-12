@@ -1,0 +1,34 @@
+{
+ "domain": "trestleiq.com",
+ "name": "Trestle Solutions, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:29.983Z",
+  "status": 200,
+  "optOutUrl": "https://trestleiq.com/privacy-policy/",
+  "title": "Privacy Policy - Trestle",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@trestleiq.com"
+  ],
+  "text": "Products\nSolutions\nPricing\nResources\nCompany\nLog In\nStart for Free\nPrivacy Policy\n\nLast updated: December 10, 2025\n\nThis Privacy Notice applies to Trestle APIs, Trestle identity verification products and services, the website https://trestleiq.com/, and any features or online services provided by Trestle that post or include a link to this Privacy Notice (collectively, the “Services”).\n\nThis Privacy Notice describes the types of Personal Information Trestle Solutions, Inc. (“Trestle,” “we,” or “us”) collect in connection with the Services, the purposes for which we process that Personal Inform",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "domain": "rampedup.io",
+ "name": "RampedUp, LLC.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:29.257Z",
+  "status": 200,
+  "optOutUrl": "https://basic.rampedup.io/app/donotsell",
+  "title": "RampedUp.io",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email (required)",
+    "form": 0,
+    "heading": "RampedUp Privacy Center"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phoneNumber",
+    "id": "doNotSellPhoneNumber",
+    "placeholder": "201-555-0123",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "RampedUp Privacy Center"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "country",
+    "id": "country",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country (required)",
+    "form": 0,
+    "heading": "RampedUp Privacy Center",
+    "options": [
+     "? object:null ?=",
+     "US=United States",
+     "CA=Canada",
+     "GB=United Kingdom",
+     "IE=Ireland",
+     "DE=Germany",
+     "FR=France",
+     "NL=Netherlands"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "first_name",
+    "id": "first",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name (optional)",
+    "form": 0,
+    "heading": "RampedUp Privacy Center"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "last_name",
+    "id": "last",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name (optional)",
+    "form": 0,
+    "heading": "RampedUp Privacy Center"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Our Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Counts",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Services",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Support",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Opt Out Request",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data Subject Access Request",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "+1",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@rampedup.io"
+  ],
+  "text": "(888) 278-3433\n[email]\nCOUNT BUILD — AUGUST 2026\nOPT OUT\nLOG IN\nOur Data\nCounts\nServices\nCompany\nSupport\nSign Up for Free\n\nPrivacy\n\nRampedUp Privacy Center\n \n\nRampedUp provides business-to-business information services using professional and company information. Our privacy program is designed to support responsible use of business contact data, data accuracy, transparency, and meaningful privacy rights. Where the GDPR applies to a particular processing activity, RampedUp relies principally on legitimate interests under Article 6(1)(f), subject to the safeguards described below.\n\nO",
+  "fingerprint": "bc7f208046655851d0e475dc0e6ab55aafc48f5005ba9bcd6218a8244d36112a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "domain": "tapad.com",
+ "name": "Tapad, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:45.490Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://crportal.tapad.com/#/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

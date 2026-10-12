@@ -1,0 +1,27 @@
+{
+ "domain": "aggknowledge.ai",
+ "name": "AggKnowledge Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:43.706Z",
+  "status": 200,
+  "optOutUrl": "https://www.aggknowledge.ai/ca-opt-out",
+  "title": "Privacy Policy | AggKnowledge",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@aggknowledge.ai"
+  ],
+  "text": "Skip to Main Content\nAGGKNOWLEDGE\nHome\nOur Approach\nData\nAbout\nContact\n\nPrivacy Policy\n\nLast Updated and Effective Date:  June 18, 2026\n\n \n\nAggKnowledge, Inc. (“AggKnowledge”, “we”, “us”, and “our”) is committed to respecting the privacy and confidentiality of personal information. Please read this Privacy Policy (“Privacy Policy”) carefully. It provides information about how AggKnowledge collects, uses, discloses, and otherwise processes personal information.\n\n\nFrom time to time, we may update this Privacy Policy as described in the Changes to this Privacy Policy section below.\n\n​\n\nIf you are",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "domain": "crunchbase.com",
+ "name": "Crunchbase, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:20.136Z",
+  "status": 200,
+  "optOutUrl": "https://preferences.crunchbase.com/form/opt_out?locationCode=US-WA",
+  "title": "Privacy Request Center | DataGrail",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Return to Privacy Request Center",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@crunchbase.com"
+  ],
+  "text": "Privacy Request Center\nUnsupported Location Detected\n\nThe location we have detected does not support the current legislative right you are trying to submit a request for. To manually update your location, please return to the privacy request center.\n\nReturn to Privacy Request Center\n\nPowered by",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

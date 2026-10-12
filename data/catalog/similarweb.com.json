@@ -1,0 +1,150 @@
+{
+ "domain": "similarweb.com",
+ "name": "Similarweb Ltd.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:35:28.326Z",
+  "status": 200,
+  "optOutUrl": "https://www.similarweb.com/corp/legal/privacy-policy/",
+  "title": "Similarweb's Privacy Policy | Similarweb",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Free Tools",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "AI Search Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Web Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "App Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sales Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Retail Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Stock Intelligence",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "By Team",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "By Industry",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Similarweb AI",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data as a Service",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Advisory Services & Reporting",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Rankings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Free Tools",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "See all Similarweb offices",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Manage Cookies",
+    "id": "manage-cookies",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@similarweb.com",
+   "privacy@similarweb.com"
+  ],
+  "text": "Products\nSolutions\nResources\nEnterprise\nPricing\nGet a demo\nGet started\nLogin\nFree Tools\nAI Search Intelligence\nWeb Intelligence\nApp Intelligence\nSales Intelligence\nRetail Intelligence\nStock Intelligence\nSimilarweb AI Search Intelligence\n\nTurn AI search from a blind spot into a growth channel, with the competitive intelligence to see where you stand and how to win\n\nLearn more\nAI Brand Visibility\nAI Citation Analysis\nAI Prompt Analysis\nAI Sentiment Analysis\nAI Traffic Tracker\nChatGPT Traffic Tracker\nPerplexity Traffic Tracker\nClaude Traffic Tracker\nGrok Traffic Tracker\nGemini Traffic Tracker\nDee",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

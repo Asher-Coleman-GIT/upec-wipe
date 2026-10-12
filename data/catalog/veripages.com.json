@@ -1,0 +1,59 @@
+{
+ "domain": "veripages.com",
+ "name": "veripages.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T23:37:39.219Z",
+  "status": 403,
+  "optOutUrl": "https://veripages.com/inner/removal-service?s=footer",
+  "title": "Veripages Privacy Control: How to Control And Remove Your Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "name",
+    "id": "topsearch",
+    "placeholder": "First and Last Name",
+    "aria": "First and Last Name",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city_state",
+    "id": "city_state",
+    "placeholder": "City, State",
+    "aria": "State or City",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SEARCH",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "removal@veripages.com"
+  ],
+  "text": "People\nPhone\nAddress\nSEARCH\nLOG IN\nMain \nControl Privacy\nDo Not Sell or Share My Personal Information\n\nVeripages grants all users the following rights about their user data in accordance with applicable state data privacy laws\n\nTo remove your information from Veripages, you need to initiate an opt-out process, which involves verifying your email address and confirming your identity.\n\nTo proceed with removal, each individual is required to complete a reasonable verification by following the process below.\n\nSTART REMOVAL PROCESS\nCONTROL PERSONAL DATA\nSelect your case\nAmend Information\nAccount De",
+  "fingerprint": "3f7f6fcab6f951368458965fc19d0ca32c62595fb550a3e053bf6ecb0c451f6e"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "optOutUrl": "https://veripages.com/inner/removal-service",
+  "notes": "Search by name and city/state, then pick your record to remove"
+ }
+}

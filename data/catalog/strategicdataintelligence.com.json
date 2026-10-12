@@ -1,0 +1,38 @@
+{
+ "domain": "strategicdataintelligence.com",
+ "name": "Strategic Data Intelligence, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:18.246Z",
+  "status": 200,
+  "optOutUrl": "https://www.strategicdataintelligence.com/",
+  "title": "Strategic Data Intelligence | Data that moves marketing forward | SDI",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Essential only",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Allow optional",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "m.curtis@sdintelligence.com"
+  ],
+  "text": "Skip to content\nSolutions\nHow it works\nResources\nAbout\nTrust\nStart a conversation\nKnow the audience. Build the signal. Move the market.\n\nSDI helps broker teams, agencies, and brands turn customer data, digital interest, and marketing goals into practical, multi-channel programs.\n\nExplore solutions\nTalk to SDI\nSOURCES\nPREPARE\nUNDERSTAND\nACTIVATE\n\nThe four stages described in How it works. The marked path is one audience file moving through all of them.\n\nMore than 30 years of data-driven marketing work, from database development through campaign delivery.\n\nThree connected lanes. Data preparation",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

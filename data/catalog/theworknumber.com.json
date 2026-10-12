@@ -1,0 +1,60 @@
+{
+ "domain": "theworknumber.com",
+ "name": "Equifax Workforce Solutions LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [
+  "equifax.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:33:52.491Z",
+  "status": 200,
+  "optOutUrl": "https://www.equifax.com/personal/my-privacy/",
+  "title": "Privacy Preference Center | Equifax®",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Credit Report Help",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Credit Education",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "For Businesses",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Who We Are",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Support",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "usprivacy@equifax.com"
+  ],
+  "text": "Skip to main content\nPersonal\nBusiness\nCredit Report Help\nSupport\nUSA\nProducts & Services\nLearn\nAbout Us\nSearch\nCredit Offers & More\nLog In\nHome\n Privacy Preference Center\nTake Control of Your Personal Information\n\nEquifax collects personal information to help protect your identity from fraud, misuse, and to detect suspicious activity on your credit reports. However, it's your personal information so you decide if and how it's used. Review and explore your options below and we'll guide you through each one.\n\n \nExercise your Right to Know/Access, Right to Delete, and Right to Correct\nCONTINUE\nR",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

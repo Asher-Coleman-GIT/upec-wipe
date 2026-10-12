@@ -1,0 +1,27 @@
+{
+ "domain": "teads.com",
+ "name": "Teads Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:58.125Z",
+  "status": 200,
+  "optOutUrl": "https://privacy-policy.teads.com/",
+  "title": "Teads Advertising Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "dpo@teads.com"
+  ],
+  "text": "Opens in a new tab\nUser Privacy Policy\nUser Cookie Table\nBusiness Partner Policy\nTrusted Partners\nTeads.com\nTeads User Privacy Policy\nFrançais\nDeutsch\nItaliano\nSlovenščina\nEspañol\n日本語\nLast updated: April 2026\nExpand All\n1. Introduction\n\nWelcome to the Teads User Privacy Policy. This policy governs our use of User Personal Data. We use your Personal Data in line with all applicable laws to ensure compliance and trust.\nTeads is committed to protecting your Personal Data. For purposes of this Privacy Policy, “Personal Data” means information that identifies, relates to, describes, is reasonably c",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "domain": "leadspace.com",
+ "name": "Leadspace Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:14.305Z",
+  "status": 200,
+  "optOutUrl": "https://www.leadspace.com/do-not-sell-form",
+  "title": "Do Not Sell or Share My Personal Info | Leadspace",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "First Name",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Last Name",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Business Email",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Company name",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company Name",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Address",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "City",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "State",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "State",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "number",
+    "name": "Postal Code",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Postal Code",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Location",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Relationship to Leadspace\n\nSelect…\nEmployee\nIndependent Cont",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information",
+    "options": [
+     "=Select…",
+     "Employee=Employee",
+     "Independent Contractor=Independent Contract",
+     "Customer=Customer",
+     "Supplier=Supplier",
+     "Job Applicant=Job Applicant",
+     "Other=Other"
+    ]
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "Extra info",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "If you request to exercise any right OTHER than to opt-out o",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance_privacy@leadspace.com"
+  ],
+  "text": "PLATFORM\n\nSOLUTIONS\n\nUSE CASES\n\nRESOURCES\n\nLOG IN\n\nCONTACT US\n\nDo Not Sell My Personal Information\n\nFor more information about Leadspace’s use of personal information, please refer to our Privacy Policy.\n\nIf you would like to exercise the right to opt out of the sale or share of personal information related to you, or any of the following other rights:\n\n\n\n\nDeleting personal information.\n\nCorrecting inaccurate personal information.\n\nLearning what personal information is being collected and how to access that personal information.\n\nLearning what personal information is being sold or shared and t",
+  "fingerprint": "a90980a92c64bac27fd125fa83c25ee1017bf41ec7e90c973aa6ea9e5a1aeb52"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

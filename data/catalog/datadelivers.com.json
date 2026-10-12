@@ -1,0 +1,39 @@
+{
+ "domain": "datadelivers.com",
+ "name": "DataDelivers LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:40.239Z",
+  "status": 200,
+  "optOutUrl": "https://datadelivers.com/privacy-policy/",
+  "title": "DataDelivers Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyButtonAccept",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@datadelivers.com"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nShow details\nAllow all\nDeny\nHome\nSolutions\nResources\nContact Us\nData Delivers Notice of Privacy Practices and Policy\n\nLast updated and effective as of June 12, 2026\n\n \n\nDataDelivers, LLC (“DataDelivers”, “us”, “we”, or “our”)",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

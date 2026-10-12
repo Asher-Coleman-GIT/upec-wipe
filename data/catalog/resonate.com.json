@@ -1,0 +1,28 @@
+{
+ "domain": "resonate.com",
+ "name": "Resonate",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:43.194Z",
+  "status": 200,
+  "optOutUrl": "https://www.resonate.com/privacy-policy/opt-out-success/",
+  "title": "Privacy Policy - Resonate",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "techleads@resonate.com"
+  ],
+  "text": "Meet us at ANA Masters of Marketing and see the results predictive consumer data drives. Book a time!\nExplore Data\nSolutions\nResources\nAbout\nLogin\nBook a Meeting\nPrivacy Policy\nWebsite Privacy Policy\n\n\nThis Website Privacy Policy was last updated: July 5, 2024\n\nResonate.com Website Privacy Practices\n\nThis website privacy policy describes our privacy practices for information we collect about you when you visit the https://www.resonate.com website (the “Website”). \n\nAbout Resonate \n\nResonate is the leader in AI-powered consumer data & intelligence providing marketers a way to identify and conne",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,276 @@
+{
+ "domain": "privacypillar.com",
+ "name": "Malvern Media Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:50.276Z",
+  "status": 200,
+  "optOutUrl": "https://privacyportal.privacypillar.com/dsar/form?orgid=369c8ff9-8ffb-4308-8362-f01691e77db8&propid=64c8904f-8bac-4dd9-8e6c-d052be1918a2&formid=6e6ff4b8-2296-4589-ae7f-563fa743ec2d&status=publish",
+  "title": "Privacy Portal",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "preferedlanguages",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Privacy Portal",
+    "options": [
+     "EN=English (US)"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "subjecttype",
+    "id": "California Resident",
+    "placeholder": "",
+    "aria": "",
+    "label": "California Resident",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "subjecttype",
+    "id": "Other US State Resident",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other US State Resident",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "subjecttype",
+    "id": "Agency",
+    "placeholder": "",
+    "aria": "",
+    "label": "Agency",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requesttype",
+    "id": "Right to Delete",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Delete",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requesttype",
+    "id": "Right to Know",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Know",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requesttype",
+    "id": "Right to Correct",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Correct",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requesttype",
+    "id": "Right to Opt-Out of the Sale or Sharing of Personal Information",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Opt-Out of the Sale or Sharing of Personal Informat",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requesttype",
+    "id": "Right to Opt-Out of Cross-Behavioral Sale or Sharing",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Opt-Out of Cross-Behavioral Sale or Sharing",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requesttype",
+    "id": "Right to Limit Use and Disclosure of Sensitive Personal Information",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Limit Use and Disclosure of Sensitive Personal Info",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "country",
+    "id": "",
+    "placeholder": "type and select country",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "file",
+    "name": "",
+    "id": "fileupload",
+    "placeholder": "",
+    "aria": "",
+    "label": "Choose file",
+    "form": 0,
+    "heading": "Privacy Portal"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "captchacode",
+    "id": "",
+    "placeholder": "Enter the prominently displayed 6-digit CAPTCHA code",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Portal"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Verify Email",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Privacy Portal\n\nWelcome! Please complete this form to submit a request and we will respond as soon as possible. Thank you.\n\nPreferred languages\nEnglish (US)\n* I am a (an)\nCalifornia Resident\nOther US State Resident\nAgency\n* Select request type(s)\nRight to Delete\nRight to Know\nRight to Correct\nRight to Opt-Out of the Sale or Sharing of Personal Information\nRight to Opt-Out of Cross-Behavioral Sale or Sharing\nRight to Limit Use and Disclosure of Sensitive Personal Information\n* Email\nVerify Email\nEmail of the requestor (if Agency is submitting)\n* First Name\n* Last Name\n* Country\n* Address\n* City",
+  "fingerprint": "cf4c92aa825b5b750e30e3581e8ec663fd5319e2674ef8f642b0913f3c110870"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

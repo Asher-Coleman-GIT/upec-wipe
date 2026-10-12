@@ -1,0 +1,105 @@
+{
+ "domain": "inboundinsight.com",
+ "name": "Inbound Insight, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:01.007Z",
+  "status": 200,
+  "optOutUrl": "https://inboundinsight.com/ccpa/",
+  "title": "CCPA Notice & Your California Privacy Rights | Inbound Insight",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "name",
+    "id": "",
+    "placeholder": "Name *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "How Can We Help?"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Email *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "How Can We Help?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "phone",
+    "id": "",
+    "placeholder": "Phone",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "How Can We Help?"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "message",
+    "id": "",
+    "placeholder": "Message *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "How Can We Help?"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "honeypot",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "How Can We Help?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "radix-:r0:-trigger-radix-:r1:",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "radix-:r0:-trigger-radix-:r2:",
+    "inForm": false
+   },
+   {
+    "text": "Who We Serve",
+    "id": "radix-:r0:-trigger-radix-:r3:",
+    "inForm": false
+   },
+   {
+    "text": "Send Message",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@inboundinsight.com"
+  ],
+  "text": "Click Here to Register for the Next Webinar - October 28th @ 2 pm Eastern\nProducts\nSolutions\nWho We Serve\nResources\nAbout Us\nSign In\nSchedule Demo\nHome\nCcpa\nCalifornia Privacy Policy\n\nLast Update: August 12, 2026\n\nINBOUND INSIGHT, LLC (\"Company,\" \"us,\" or \"we\") values your trust and is committed to the responsible management, use, and protection of personal information. This California Privacy Policy (\"Policy\") supplements and amends the information contained in our Privacy Policy and Terms of Use and applies solely to visitors, users, and others who reside in the State of California (\"consume",
+  "fingerprint": "20889c93d24ff3fd7381914c9ac465d7b3665dc6c1fc154d819b37f6d9f0ec2d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

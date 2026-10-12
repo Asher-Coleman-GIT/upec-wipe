@@ -1,0 +1,67 @@
+{
+ "domain": "claritas.com",
+ "name": "Claritas LLC.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:47.384Z",
+  "status": 200,
+  "optOutUrl": "https://claritas.com/privacy-legal/",
+  "title": "Privacy Policy & Legal Resources | Claritas LLC",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "claritas-terms-checkbox",
+    "placeholder": "",
+    "aria": "",
+    "label": "I acknowledge and accept the updated terms as of October 11,",
+    "form": -1,
+    "heading": "Claritas Privacy Notice"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept and Continue",
+    "id": "claritas-terms-submit",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "rhonda.rich@claritas.com",
+   "privacyinfo@claritas.com"
+  ],
+  "text": "We may use tracking pixels, cookies, and other similar tools, which are provided by third parties, to improve our website, enhance your browsing experience, serve personalized ads or content, market our services, and analyze our traffic. By clicking “Accept”, you consent to our Privacy Policy and our use of these technologies. By clicking “Accept”, you also recognize and accept that your data and other information you share with us on our website may be transmitted to third parties for the purposes we have identified in our Privacy Policy. You can manage your preferences or withdraw consent at",
+  "fingerprint": "2217784781a3c4b3a819a0d05bb7e9141092b3bf4fe87e69dfeb44ad5d070b6c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

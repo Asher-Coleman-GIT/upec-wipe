@@ -1,0 +1,102 @@
+{
+ "domain": "viantinc.com",
+ "name": "Viant US LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "onetrust.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:38.274Z",
+  "status": 200,
+  "optOutUrl": "https://privacyportal.onetrust.com/webform/18c06089-a9ec-473c-a6d8-23d20fea46af/43201dea-88d7-44cd-9142-e5b4f485e428",
+  "title": "Privacy Web Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "countryDSARElement",
+    "placeholder": "",
+    "aria": "Country of Residence",
+    "label": "Country of Residence",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "stateDSARElement",
+    "placeholder": "",
+    "aria": "State of Residence",
+    "label": "State of Residence",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstNameDSARElement",
+    "placeholder": "",
+    "aria": "First Name",
+    "label": "First Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "lastNameDSARElement",
+    "placeholder": "",
+    "aria": "Last Name",
+    "label": "Last Name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "emailDSARElement",
+    "placeholder": "",
+    "aria": "Email",
+    "label": "Email",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "dsar-webform-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@viantinc.com"
+  ],
+  "text": "Request to Delete, Correct, or Access Personal Information\n\nUSA: You have the right to request that we delete, correct, or provide you access to your personal information, If you live in a state that provides you the right to make such a request. Please use this webform if you would like to exercise any of these rights. See our Privacy Center for more information about our privacy practices.\n\nRest of world: Individuals outside of the United States may also have the right make certain requests. If you live outside of the United States, please make your request using the form below. \n\nFor more i",
+  "fingerprint": "a70091adcd6c24ee529df4460485bfc0b90500dee3254824e061cbd9485f75b1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

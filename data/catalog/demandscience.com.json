@@ -1,0 +1,20 @@
+{
+ "domain": "demandscience.com",
+ "name": "Demand Science US, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:59:57.136Z",
+  "contacts": [
+   "legal@demandscience.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://demandscience.com/privacy-policy/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

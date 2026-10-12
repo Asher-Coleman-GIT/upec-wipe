@@ -1,0 +1,84 @@
+{
+ "domain": "transunion.com",
+ "name": "Trans Union LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:36:09.167Z",
+  "status": 200,
+  "optOutUrl": "https://ciam.tui.transunion.com/realms/TransUnion/protocol/openid-connect/auth?response_type=code&redirect_uri=https%3A%2F%2Fservice.transunion.com%2Fdss%2Flanding.page&state=OcqWM5NSG2Az-I9xdFFcH88PVdkEcY0f4_ASK3FhPt8&client_id=Phoenix&scope=openid&dest=cpa/tuData&redirectedFromSite=DSS:Sun%20Oct%2011%202026%2017:36:39%20GMT-0600%20(Mountain%20Daylight%20Time)",
+  "title": "TransUnion - Login",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "username",
+    "id": "username",
+    "placeholder": "Enter username",
+    "aria": "",
+    "label": "Username (may be your email)",
+    "form": 0,
+    "heading": "Log in to your account"
+   },
+   {
+    "tag": "input",
+    "type": "password",
+    "name": "password",
+    "id": "password",
+    "placeholder": "Enter password",
+    "aria": "",
+    "label": "Password",
+    "form": 0,
+    "heading": "Log in to your account"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "rememberMe",
+    "id": "rememberMe",
+    "placeholder": "",
+    "aria": "",
+    "label": "Remember my info",
+    "form": 0,
+    "heading": "Log in to your account"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "login",
+    "id": "kc-login",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Log in to your account"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "show/hide",
+    "id": "show/hide",
+    "inForm": true
+   },
+   {
+    "text": "Log in",
+    "id": "kc-login",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@transunion.com"
+  ],
+  "text": "Skip to main content\nChat Now \nLog in to your account\nUsername (may be your email) \nPassword\nRemember my info\nLog in a different way\nLogin help\n\nBy logging in through our centralized log in, you agree to the TransUnion's Terms of Service applicable to your account(s) and expressly authorize TransUnion to obtain your credit report information in connection with the following:\n\nTransUnion Credit Membership\nService Center\nNeed additional support?\nDon't have an account?\nExplore our available products:\n\nTransUnion Service Center:\n\nDispute\nManage a Freeze\nAdd a Fraud Alert\n\nFree Credit Membership: M",
+  "fingerprint": "0fef132cf207955adec3ef5aa063b834f73deb5de599d663dd9ca68e282e99dc"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

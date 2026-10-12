@@ -1,0 +1,17 @@
+{
+ "domain": "neighbor.report",
+ "name": "neighbor.report",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T22:19:15.053Z",
+  "contacts": [],
+  "error": "page.goto: Timeout 25000ms exceeded."
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

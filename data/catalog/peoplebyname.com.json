@@ -1,0 +1,134 @@
+{
+ "domain": "peoplebyname.com",
+ "name": "peoplebyname.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T23:32:40.563Z",
+  "status": 403,
+  "optOutUrl": "https://www.peoplebyname.com/remove.php",
+  "title": "Remove Your Information - PeopleByName.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "email",
+    "id": "email",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "recordid1",
+    "id": "recordid",
+    "placeholder": "Example: 123456789",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "recordid2",
+    "id": "recordid",
+    "placeholder": "Optional",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "recordid3",
+    "id": "recordid",
+    "placeholder": "Optional",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "recordid4",
+    "id": "recordid",
+    "placeholder": "Optional",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "recordid5",
+    "id": "recordid",
+    "placeholder": "Optional",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "reason",
+    "id": "reason",
+    "placeholder": "Describe in a few words the reason for removal...",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PeopleByName gathers publicly available data for its People "
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Request Removal",
+    "id": "button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "\t\nContact\nLogin\nHome\nInformation Removal\n\n\nRemove your name from our People Directory\nPeopleByName gathers publicly available data for its People Directory. We get data from whitepages, social networks, real estate listings and other public sources. Removing your information from our directory will not remove it from its original source.\n\nIf you'd like to remove your name from our People Directory please fill out the Removal Form below:\n\n\nRemoval Form\n \nFirst name:\t\t \nLast name:\t\t \nEmail address:\t\t \n \tWe'll send you a notification email when we have this record removed.\t \nRecord ID:\t\t\nRecord I",
+  "fingerprint": "ecf93c3e7723d80019b3db0188f33922fcd00530abafcae82b6865a13b4fc299"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "optOutUrl": "https://www.peoplebyname.com/remove.php",
+  "notes": "Needs the record ID from your listing (search the site first) and a CAPTCHA"
+ }
+}

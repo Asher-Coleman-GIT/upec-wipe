@@ -1,0 +1,67 @@
+{
+ "domain": "blackpearl.com",
+ "name": "Black Pearl Group Limited",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:43.719Z",
+  "status": 200,
+  "optOutUrl": "https://www.blackpearl.com/privacy-policy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email-2",
+    "id": "email-2",
+    "placeholder": "ENTER EMAIL HERE",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Policy"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Policy"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyButtonAccept",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   },
+   {
+    "text": "[ SUBSCRIBE ]",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "richard.doone@blackpearl.com"
+  ],
+  "text": "This website uses cookies\n\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic.\n\nShow details\nAllow all\nDeny\nABOUT\nOUR TECHNOLOGY\nPRODUCTS\nINVESTORS\nNEWS\nINVEST\nPrivacy Policy\n\nUPDATED JUNE 2026\n‍\n1 – INTRODUCTION\n\n1.1 – This privacy policy (Policy) sets out how Black Pearl Group Limited and its subsidiaries and related companies (Black Pearl Group (“we”, “us”, and “our”)) will collect, use, store, and disclose your personal information that we collect through our products and services (products and services), websites (websites), social m",
+  "fingerprint": "500f69b964b5ac51c145a964c83510fa37b94da4e2e9ea79ac9c97984b74ed38"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

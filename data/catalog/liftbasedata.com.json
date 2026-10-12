@@ -1,0 +1,51 @@
+{
+ "domain": "liftbasedata.com",
+ "name": "Blue Hill Marketing Solutions, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:29.449Z",
+  "status": 200,
+  "optOutUrl": "https://www.liftbasedata.com/your-privacy-choices/",
+  "title": "Your Privacy Choices - About LiftBase Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_16",
+    "id": "input_1_16",
+    "placeholder": "",
+    "aria": "",
+    "label": "Are you acting as an agency on behalf of a consumer?*",
+    "form": 0,
+    "heading": "Privacy Request",
+    "options": [
+     "=",
+     "Yes=Yes",
+     "No=No"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_1",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "dataprivacy@liftbasedata.com"
+  ],
+  "text": " \n\nLiftBase Data\n\nYour Privacy Choices\n\nYour request will be applied to all personal information Blue Hill Marketing Solutions, Inc. (BHMS) holds across its brands and data products, including those operated under the LiftEngine and LaunchPad names. Our records are organized by U.S. residential address. If you have never had a residential address in the United States, we do not hold information about you. Additionally, we do not hold information on minors.\n\nWhat Deletion Can and Can’t Do\n\nDeleting your information stops us from sharing it from now on. Deleting does not affect what’s been share",
+  "fingerprint": "84b4deb1bd29c6f19a5328369ec5477848f922541bca5b321bfb38d8eb7084d1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

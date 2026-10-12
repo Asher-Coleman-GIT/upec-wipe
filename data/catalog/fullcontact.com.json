@@ -1,0 +1,49 @@
+{
+ "domain": "fullcontact.com",
+ "name": "J2 Global Canada, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:58.710Z",
+  "status": 200,
+  "optOutUrl": "https://www.fullcontact.com/privacy/privacy-policy/",
+  "title": "Privacy Policy | FullContact",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Open Solutions",
+    "id": "e-n-menu-dropdown-icon-1501",
+    "inForm": false
+   },
+   {
+    "text": "Open Products",
+    "id": "e-n-menu-dropdown-icon-1502",
+    "inForm": false
+   },
+   {
+    "text": "Open Resources",
+    "id": "e-n-menu-dropdown-icon-1503",
+    "inForm": false
+   },
+   {
+    "text": "Open Company",
+    "id": "e-n-menu-dropdown-icon-1504",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@fullcontact.com"
+  ],
+  "text": "Skip to content\n\nGive your AI agents access to accurate, real-time customer profiles with FullContact MCP.  No complex setups.\n\nGET STARTED\nSolutions\nOpen Solutions\nProducts\nOpen Products\nResources\nOpen Resources\nCompany\nOpen Company\nLOGIN\nLET'S TALK\nSERVICES AGREEMENT\nDATA PROCESSING ADDENDUM\nWEBSITE TERMS OF USE\nPRIVACY POLICY\nCOOKIE POLICY\nYOUR PRIVACY CHOICES\nPrivacy Policy\n\nLast Updated: October 1, 2026\nPrevious version here\n\nFullContact, and its parent company Ziff Davis,Inc., and its affiliates, (“FullContact“, “we”, “us”, “our”) are committed to protecting your privacy. FullContact pro",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

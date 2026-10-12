@@ -1,0 +1,44 @@
+{
+ "domain": "information.com",
+ "name": "Information.com, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "blocked",
+ "survey": {
+  "checkedAt": "2026-10-11T23:30:13.961Z",
+  "status": 403,
+  "optOutUrl": "https://information.com/remove-my-info/",
+  "title": "Access denied | information.com used Cloudflare to restrict access | information.com | Cloudflare",
+  "block": "hard",
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Yes",
+    "id": "feedback-button-yes",
+    "inForm": false
+   },
+   {
+    "text": "No",
+    "id": "feedback-button-no",
+    "inForm": false
+   },
+   {
+    "text": "Click to reveal",
+    "id": "cf-footer-ip-reveal",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@information.com"
+  ],
+  "text": "Error 1005 Ray ID: a491a6cbe996629c • 2026-10-11 23:30:15 UTC\nAccess denied\nWhat happened?\n\nThe owner of this website (information.com) has banned the autonomous system number (ASN) your IP address is in (11878) from accessing this website.\n\nPlease see https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1005/ for more details.\n\nWas this page helpful? Yes No\n\nCloudflare Ray ID: a491a6cbe996629c • Your IP: Click to reveal • Performance & security by Cloudflare",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

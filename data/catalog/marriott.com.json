@@ -1,0 +1,66 @@
+{
+ "domain": "marriott.com",
+ "name": "Marriott International, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:43.275Z",
+  "status": 200,
+  "optOutUrl": "https://www.marriott.com/about/your-privacy-rights.mi",
+  "title": "Your Privacy Choices",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "states",
+    "id": "states",
+    "placeholder": "",
+    "aria": "",
+    "label": "Select State",
+    "form": -1,
+    "heading": "Select your Choice",
+    "options": [
+     "NONE=Select from options",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut",
+     "DE=Delaware",
+     "IN=Indiana",
+     "IA=Iowa",
+     "KY=Kentucky"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Top Destinations",
+    "id": "default-destination-accordion_heading",
+    "inForm": false
+   },
+   {
+    "text": "English",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "×",
+    "id": "close-btn-notice",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@marriott.com"
+  ],
+  "text": "Skip to Content\nMarriott Bonvoy\nHelp\nEnglish\nMy Trips\nSign In Or Join\nFind & Reserve\nSpecial Offers\nVacations\nOur Brands\nOur Credit Cards\nAbout Marriott Bonvoy\nMeetings & Events\nYour Privacy Choices\n\nChoices allow individuals to have control over how their information is used.\n\nThe Prestige Hotel, a Member of Design Hotels™\nSelect your Choice\nU.S. Residents\nNon U.S Residents\n\nIf you live outside of the U.S., please visit the Individual Rights Portal for information about how to exercise your Individual Rights.\n\n \n\nSome regional, national, and state laws confer certain rights relating to person",
+  "fingerprint": "e3cb5178a131a95454e9c7c304e4c9465de2b1e00d00d83348ed1e85dabfbd79"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

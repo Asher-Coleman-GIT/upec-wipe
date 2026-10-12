@@ -1,0 +1,31 @@
+{
+ "domain": "giantpartners.com",
+ "name": "Giant Partners, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:29.834Z",
+  "status": 200,
+  "optOutUrl": "https://giantpartners.com/privacy-policy/",
+  "title": "Giant Partners Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Your Privacy Choices",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "LIVE CHAT WITH EXPERT\n \n(800) 547-8080\n \nAgency Services\n \nPaid Advertising\n \nEmail Marketing\n \nFree Resources\n \nAbout\n \nPricing\nPRIVACY POLICY\n\nLast revised: July 1, 2026\n\nGiant Partners, Inc. respects your privacy and is committed to handling personal information in accordance with applicable law. This Policy explains how we collect, use, disclose, sell, share, retain, and protect personal information.\n\nNothing in this Policy may be construed to create any obligations for the Company beyond what is required by applicable law.\n\nCalifornia residents CLICK HERE to access our California Consumer",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

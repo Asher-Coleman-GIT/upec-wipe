@@ -1,0 +1,45 @@
+{
+ "domain": "infopay.com",
+ "name": "InfoPay, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:23.849Z",
+  "status": 200,
+  "optOutUrl": "https://www.infopay.com/privacy",
+  "title": "Privacy Policy - Infopay.com",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Skip to main content",
+    "id": "uw-skip-to-main",
+    "inForm": false
+   },
+   {
+    "text": "Enable accessibility for low vision",
+    "id": "uw-enable-visibility",
+    "inForm": false
+   },
+   {
+    "text": "Open the accessibility menu",
+    "id": "uw-open-accessibility",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@infopay.com",
+   "privacy@infopay.com"
+  ],
+  "text": "Skip to main content\nEnable accessibility for low vision\nOpen the accessibility menu\nInfoPay.com\nInfoPay Privacy Policy\n\nLast updated: January 23, 2026\n\nThis policy (“Privacy Policy”) has been compiled to assist you (“you,” “your,” or “User”) to understand how InfoPay, Inc. (“we”, “our,” “us,” or \"InfoPay\"), and our affiliates, parents, and subsidiaries, collect, use, and disclose information that we collect through your use of the InfoPay website, available at https://www.infopay.com/ (the “Website”). This Privacy Policy is part of and supplements the Website Terms of Service (the “Terms”), a",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

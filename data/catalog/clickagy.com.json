@@ -1,0 +1,20 @@
+{
+ "domain": "clickagy.com",
+ "name": "Clickagy LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:08.870Z",
+  "contacts": [
+   "privacy@clickagy.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clickagy.com/privacy-center/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

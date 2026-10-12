@@ -1,0 +1,109 @@
+{
+ "domain": "informa.com",
+ "name": "Informa USA Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:28.023Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.informa.com/policies/en/",
+  "title": "Informa Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "View Past Requests",
+    "id": "request-history",
+    "inForm": false
+   },
+   {
+    "text": "Make a Privacy Request",
+    "id": "modal-select-subject",
+    "inForm": false
+   },
+   {
+    "text": "Introduction and who we are",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "What we collect",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How and why personal data is used",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How we protect personal data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "International transfer of personal data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Third party links",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Who personal data is shared with",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How long your information is kept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Your rights",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Updating your information and marketing ",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Contact us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Changes to this Privacy Notice",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "English",
+    "id": "locale-toggle",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "groupdpo@informa.com"
+  ],
+  "text": "Skip to navigation\nSkip to sidebar\nSkip to main content\nThe data we collect, how it's used, and who we share it with\nWe care about your privacy and want to help you understand how we collect, use, and share your personal information.\nOur Policies\nTracking Technologies\nView Past Requests\nMake a Privacy Request\nInforma Group Privacy Notice\nIntroduction and who we are\nWhat we collect\nHow and why personal data is used\nHow we protect personal data\nInternational transfer of personal data\nCookies\nThird party links\nWho personal data is shared with\nHow long your information is kept\nYour rights\nUpdating",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

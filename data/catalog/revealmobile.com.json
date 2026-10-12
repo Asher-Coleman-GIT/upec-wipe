@@ -1,0 +1,49 @@
+{
+ "domain": "revealmobile.com",
+ "name": "Reveal Mobile, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:01.240Z",
+  "status": 404,
+  "optOutUrl": "https://revealmobile.com/ccpa",
+  "title": "Reveal | The OOH Measurement Platform | Reveal",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Who We Help",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@revealmobile.com"
+  ],
+  "text": "THE OUT-OF-HOME MEASUREMENT PLATFORM\nSolutions\nProducts\nWho We Help\nResources\nAbout\nLog In\nRequest a Meeting\nOops!\nPage not found\n\nThe page you're looking for doesn't exist. We suggest you go back to the homepage.\n\nBack to home page\nReveal\n\n919-573-9701\n\n[email]\n\n5540 Centerview Dr,\nSuite 200 #229\nRaleigh, NC 27606\n\nSolutions\nPerformance Measurement\nImpressions & Audiences\nOmni-Channel Strategies\nProducts\nSelf-Serve\nManaged Service\nEnterprise (API)\nWho We Help\nBuyers\nSellers\nPlatforms\nResources\nBlog\nPress\nCase Studies\nEvents & Webinars\nBenchmarks\nGeofencing\nCompany\nAbout\nAwards &",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

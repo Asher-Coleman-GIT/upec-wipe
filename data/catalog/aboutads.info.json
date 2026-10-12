@@ -1,0 +1,17 @@
+{
+ "domain": "aboutads.info",
+ "name": "optout.aboutads.info.",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:31.201Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://optout.aboutads.info./"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "domain": "firstdirectmarketing.com",
+ "name": "First Direct, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:19.327Z",
+  "status": 200,
+  "optOutUrl": "https://compliance.firstdirectmarketing.com/",
+  "title": "Governance portal",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Legal",
+    "id": "legal-menu",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "company-menu",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@firstdirectmarketing.com"
+  ],
+  "text": "Legal\nCompany\nGovernance Portal\n\nEmpowering you through absolute transparency. Discover our approach to privacy, security, accessibility, and responsible digital stewardship\n\nPrivacy\n\nTransparent management of personal data collection, usage, and protection practices\n\nConsent receipts\n\nTrack and review your previous consent preferences\n\nManage cookies\n\nControl and customize your website tracking preferences\n\nAccessibility\n\nCommitted to equal digital access and inclusive user experiences for all\n\nAccessibility settings\n\nPersonalize your website experience with custom display options\n\nAccessibil",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

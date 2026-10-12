@@ -1,0 +1,35 @@
+{
+ "domain": "focus-usa.com",
+ "name": "Focus USA, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:40.244Z",
+  "status": 200,
+  "optOutUrl": "https://www.focus-usa.com/privacy-policy/",
+  "title": "Focus USA Business Services Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "michaelu@focus-usa.com",
+   "privacy@focus-usa.com"
+  ],
+  "text": "Manage Consent\nTo provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.\nAccept\nCookie Policy\nBusiness Services Privacy Policy\nSkip to content\nServices\nData\nAbout\nEvents\nSpotlight\nContact\nBusiness Services Privacy Policy\n\nLast Updated: July 9, 2025\n\nThank you for taking the time to read our privacy policy. At Focus USA (“Focus USA”, “we”,",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

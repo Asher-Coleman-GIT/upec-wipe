@@ -1,0 +1,28 @@
+{
+ "domain": "fourleafdata.com",
+ "name": "FourLeaf LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:34.979Z",
+  "status": 200,
+  "optOutUrl": "https://www.fourleafdata.com/privacy-policy/",
+  "title": "Privacy Policy – FourLeaf",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@fourleafdata.com"
+  ],
+  "text": "CONTACT\n\nPrivacy Policy\n\nLast Updated: July 1, 2026\n\nThis Privacy Policy (the “Privacy Policy“) applies to information FourLeaf LLC (“FourLeaf“, “we” or “us“) may collect from you and through services we provide for various clients, as described below (the “Services“). This Privacy Policy describes the types of information we collect and store and how we use and share that information, and the choices you have regarding such use and sharing.\n\nThis Privacy Policy does not apply to the collection, storage, destruction, disclosure, and/or use of any data or information by third parties.  In such ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

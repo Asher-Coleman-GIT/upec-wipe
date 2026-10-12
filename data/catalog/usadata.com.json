@@ -1,0 +1,92 @@
+{
+ "domain": "usadata.com",
+ "name": "USADATA, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:18.118Z",
+  "status": 200,
+  "optOutUrl": "https://www.usadata.com/ccpa",
+  "title": "CCPA | Ensure Data Privacy Today - Learn More | USADATA Intelligence",
+  "block": null,
+  "controls": [
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "novaInput",
+    "placeholder": "Ask Nova anything...",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Nova"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "novaTrigger",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "novaClose",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "novaSend",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "support@usadata.com",
+   "privacy@usadata.com"
+  ],
+  "text": "SKIP TO CONTENT \nSolutions\nData\nProducts\nIndustries\nResources\nCompany\nFREE ANALYSIS \nCalifornia Privacy Policy\n\nUSADATA, Inc. and its subsidiaries (\"Company,\" \"us,\" or \"we\") value your trust and are committed to the responsible management, use, and protection of personal information. This California Privacy Policy (\"Policy\") supplements and amends the information contained in our Privacy Policy and Terms of Use and applies solely to visitors, users, and others who reside in the State of California (\"consumers\" or \"you\"). We adopt this Policy, which describes our policies and practices regardin",
+  "fingerprint": "ee9b6030b21e876d45d35b47bce78e3e2ff94db211ee4751db120f6730d31060"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

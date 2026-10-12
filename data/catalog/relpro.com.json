@@ -1,0 +1,71 @@
+{
+ "domain": "relpro.com",
+ "name": "RelPro, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:31.013Z",
+  "status": 200,
+  "optOutUrl": "https://relpro.com/privacy-policy",
+  "title": "Privacy Policy | RelPro",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Contacting Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Why RelPro?",
+    "id": "whyRelProBaseDropdown",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "solutionsBaseDropdown",
+    "inForm": false
+   },
+   {
+    "text": "Technology",
+    "id": "technologyBaseDropdown",
+    "inForm": false
+   },
+   {
+    "text": "Customers",
+    "id": "customersBaseDropdown",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "resourcesBaseDropdown",
+    "inForm": false
+   },
+   {
+    "text": "Schedule a Demo",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "info@relpro.com",
+   "opt-out@relpro.com"
+  ],
+  "text": "Why RelPro? \nSolutions \nTechnology \nCustomers \nPricing\nResources \nLogin\nSchedule a Demo\n\nThis site uses cookies to provide you with a great user experience. By visiting RelPro, you accept our use of cookies.\n\nPrivacy Policy\nEffective Date: August 19, 2025\n\nRelationship Capital Partners, Inc. (“Relcapp”) and it’s 100%-owned affiliate, RelPro, Inc. (“RelPro”) are dedicated to providing our customers with outstanding customer service and uncompromising privacy protection. For this reason, we believe you should understand the privacy policy (the “Policy”) that we have adopted to help us provide yo",
+  "fingerprint": "bc9bc61a1b3e68c14288691bf834ab34a4cc73d0368c6e9b963fd1a23c7017ae"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

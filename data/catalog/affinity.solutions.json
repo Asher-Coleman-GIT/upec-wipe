@@ -1,0 +1,175 @@
+{
+ "domain": "affinity.solutions",
+ "name": "Affinity Solutions",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "onetrust.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:31.734Z",
+  "status": 200,
+  "optOutUrl": "https://www.affinity.solutions/data-privacy-notice/",
+  "title": "Data Privacy Notice - Affinity Solutions",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13",
+    "id": "input_10_13",
+    "placeholder": "First Name *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_14",
+    "id": "input_10_14",
+    "placeholder": "Last Name *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_10_3",
+    "placeholder": "Email Address *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4",
+    "id": "input_10_4",
+    "placeholder": "Company *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_17",
+    "id": "input_10_17",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=Industry *",
+     "Agency=Agency",
+     "AI=AI",
+     "Automotive=Automotive",
+     "Consulting / Market Research=Consulting / Market ",
+     "Consumer Electronics=Consumer Electronics",
+     "Entertainment=Entertainment",
+     "Finance=Finance"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_5",
+    "id": "input_10_5",
+    "placeholder": "Job Title *",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "input_6",
+    "id": "input_10_6",
+    "placeholder": "Comments",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_1",
+    "id": "input_1_1",
+    "placeholder": "Enter Your Email Address",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "mega-menu-1-button",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "mega-menu-2-button",
+    "inForm": false
+   },
+   {
+    "text": "Newsroom",
+    "id": "mega-menu-3-button",
+    "inForm": false
+   },
+   {
+    "text": "About Us",
+    "id": "mega-menu-4-button",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "gform_submit_button_10",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "gform_submit_button_1",
+    "inForm": true
+   },
+   {
+    "text": "Your Privacy Rights",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Necessary Only",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@affinitysolutions.com"
+  ],
+  "text": "Solutions\nIndustries\nOur Data\nOur Technology\nNewsroom\nAbout Us\nTalk to us\nData Privacy Notice\nAFFINITY SOLUTIONS DATA PRIVACY POLICY\nIntroduction\n\nAffinity Solutions, Inc. (“Affinity”, “we”, “us”, “our”) is a provider of technology, analytics, data-processing, and business services for our customers (“Customers”). We run reward programs (i.e., point-accrual or cash-back programs) that bring value, like card-linked offers, to the relationship between a payment-card holder and their issuing financial institution (“FI”) (such as a bank or credit union). \n\nWe take the protection of personal inform",
+  "fingerprint": "90c1d9276182093f45ad1ac8be7598627e1274f5cfa9f9b206b23ef451983e94"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

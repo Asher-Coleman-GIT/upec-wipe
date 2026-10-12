@@ -1,0 +1,71 @@
+{
+ "domain": "leadfeeder.com",
+ "name": "Dealfront Finland Oy",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:24.275Z",
+  "status": 200,
+  "optOutUrl": "https://privacycockpit.leadfeeder.com/",
+  "title": "Leadfeeder - PrivacyCockpit",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "",
+    "options": [
+     "en-US=English",
+     "de-DE=Deutsch"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "data_subject[email]",
+    "id": "data_subject_email",
+    "placeholder": "Type your email",
+    "aria": "",
+    "label": "Your email address",
+    "form": 0,
+    "heading": "PrivacyCockpit"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "commit",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "PrivacyCockpit"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Send access link",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "dpo@leadfeeder.com"
+  ],
+  "text": "Login\nEnglish\nDeutsch\nEnglish\nEnglish\nDeutsch\nPrivacyCockpit\n\nWhat is Leadfeeder?\n\nLeadfeeder is a provider of cloud software for Sales & Marketing Intelligence. We operate different tools tailored to meet the specific needs of our B2B customers, enabling them to access vital information concerning their current and future business partners. In order to be able to provide our business solutions, Leadfeeder operates web crawlers that automatically collects and process publicly available data on the Internet.\n\nWhat is PrivacyCockpit?\n\nLeadfeeder cares about your privacy! That is why we developed",
+  "fingerprint": "51e0c795144268d5b21986635a4f956a902a2ec22291d736ff6e72c41635847c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

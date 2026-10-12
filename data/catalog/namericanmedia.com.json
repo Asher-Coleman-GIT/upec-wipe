@@ -1,0 +1,98 @@
+{
+ "domain": "namericanmedia.com",
+ "name": "North American Media LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:51.031Z",
+  "status": 200,
+  "optOutUrl": "https://namericanmedia.com/",
+  "title": "Direct Mail Marketing, Newspaper, Magazine Advertisement Agency",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search …",
+    "aria": "s",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "your-name",
+    "id": "",
+    "placeholder": "",
+    "aria": "your-name",
+    "label": "Name",
+    "form": 1,
+    "heading": "Contact us today and let us help you with your next media ca"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "your-email",
+    "id": "",
+    "placeholder": "",
+    "aria": "your-email",
+    "label": "Email",
+    "form": 1,
+    "heading": "Contact us today and let us help you with your next media ca"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "your-subject",
+    "id": "",
+    "placeholder": "",
+    "aria": "your-subject",
+    "label": "Subject",
+    "form": 1,
+    "heading": "Contact us today and let us help you with your next media ca"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "your-message",
+    "id": "",
+    "placeholder": "Please enter your message here",
+    "aria": "your-message",
+    "label": "Message",
+    "form": 1,
+    "heading": "Contact us today and let us help you with your next media ca"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Contact us today and let us help you with your next media ca"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "+1 475-256-0303 [email]\nABOUT US\n \nSERVICES\n \nBLOG\n \nVIDEOS\n \nCONTACT US\nDirect Response Marketing\nMedia and Consulting\n\n \n\n“We Get Your Message Directly to Your Audience”\n\n \n\nLearn More\nLet’s Get Started!\n\n \n\nAre you getting the best return on investment from your advertising spends? \n\nThe media landscape is vast and the marketing opportunities are varied with endless potential and possibilities.\n\nDifferent media now compete for your advertising dollars. Knowing which media will work and why, is critical in determining where to deploy your advertising and marketing dollars.",
+  "fingerprint": "0069feb61a341c3a312284737117e2e52ba5a0395090a99ba855d4d5e41dca57"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

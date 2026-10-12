@@ -1,0 +1,25 @@
+{
+ "domain": "jigyasaanalytics.com",
+ "name": "Jigyasa Analytics LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:53.950Z",
+  "status": 200,
+  "optOutUrl": "https://jigyasaanalytics.com/contact-us",
+  "title": "Contact Us",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "HOME\nSYNTHETIC DATA\nPUBLISHING\nFINANCIAL SERVICES\nTHRIFT\nBLOG\nCONTACT US\nSOCIAL\nGET IN TOUCH\n\nFor inquiries about our service  please fill out this form\n\nPlease note that Jigyasa Analytics LLC no longer operates as a data broker\n\nTo submit data deletion requests please fill out our Opt Out Form(California -CCPA, Texas, Vermont and all other states)\n\nHere is a link to our data privacy policy\n\nHere is the CCPA Annual Reporting Requirement\n\n\n\n\nCOPYRIGHT © 2026 JIGYASA ANALYTICS - ALL RIGHTS RESERVED.\n\nCONTACT US\n\nPOWERED BY",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

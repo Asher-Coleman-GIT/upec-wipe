@@ -1,0 +1,21 @@
+{
+ "domain": "locatesmarter.com",
+ "name": "LocateSmarter LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:21.156Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.locatesmarter.com/privacy-policy/"
+ },
+ "review": {
+  "state": "manual",
+  "reviewedAt": "2026-10-11",
+  "groupOverride": "people-search",
+  "optOutUrl": "https://forms.locatesmarter.com/ccpaform",
+  "notes": "Skip-tracing data vendor; form is worded for California residents and asks for a street address; tick Delete. Mullvad DNS content blocking hides this site"
+ }
+}

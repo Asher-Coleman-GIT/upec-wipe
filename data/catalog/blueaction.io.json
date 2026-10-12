@@ -1,0 +1,48 @@
+{
+ "domain": "blueaction.io",
+ "name": "Blue Action Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:50.846Z",
+  "status": 200,
+  "optOutUrl": "https://blueaction.io/do-not-sell/",
+  "title": "Data Requests",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Exit",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Understand what data we collect",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Delete your data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Opt out of the sale and sharing of your ",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "info@blueaction.io"
+  ],
+  "text": "Privacy Center\nExit\nExercise your rights\n\nApplicable privacy laws give you certain rights to our collection, use, sharing, and storage of your information. We welcome your exercise of those rights. For more details, please read our Privacy Policy.\n\nView My Requests\n\nAlready submitted a request? Click here to view its status.\n\nSelect a Request Type\nUnderstand what data we collect\nDelete your data\nOpt out of the sale and sharing of your data\nSkip to main\nSERVICES\nWORK\nABOUT\nLET'S TALK\nBACK TO HOME →\n\nBuilt by campaigners. Trusted by campaigns. We help Democratic campaigns and organizations gener",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

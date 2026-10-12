@@ -1,0 +1,58 @@
+{
+ "domain": "enrichlayer.com",
+ "name": "Vertical Int, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:57.441Z",
+  "status": 200,
+  "optOutUrl": "https://enrichlayer.com/privacy-policy",
+  "title": "Privacy Policy - Enrich Layer | Enrich Layer",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "PRODUCT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign up",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Contact us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@enrichlayer.com"
+  ],
+  "text": "PRODUCT\nPRICING\nINTEGRATIONS\nDOCUMENTATION\nBLOG\nCOMPANY\nSign in\nSign up\nEnrich Layer acquires HR-data startup HR Signal\nLet's go\nPrivacy Policy\n\nUpdated 06/09/2025\n\nPrivacy Policy\n\nPrivacy Policy for enrichlayer.com\n\nEffective Date: June 9, 2025\n\nLast Updated: June 9, 2025\n\n1. Introduction\n\nThis Privacy Policy (\"Policy\") explains how enrichlayer.com (\"enrichlayer.com,\" \"we,\" \"us,\" or \"our\") collects, uses, shares, and protects information obtained from and about individuals and companies (\"you,\" \"your\") when you visit our website (the \"Site\"), use our data enrichment services, application prog",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

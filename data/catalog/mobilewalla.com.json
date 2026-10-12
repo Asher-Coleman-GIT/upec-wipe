@@ -1,0 +1,57 @@
+{
+ "domain": "mobilewalla.com",
+ "name": "Mobilewalla, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:01.901Z",
+  "status": 200,
+  "optOutUrl": "https://www.mobilewalla.com/california-residents-do-not-sell-my-personal-information",
+  "title": "California Residents - Do Not Sell My Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-35dea6a7-b16b-42cb-a688-1ba43bc4e2d3_8240",
+    "placeholder": "Email Address*",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "California Residents – Do Not Sell or Share My Personal Info"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "California Residents – Do Not Sell or Share My Personal Info"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "jclark@mobilewalla.com"
+  ],
+  "text": "WHO WE SERVE\nSOLUTIONS\nINDUSTRIES\nRESOURCES\nABOUT US\nTALK TO A DATA EXPERT\nCalifornia Residents – Do Not Sell or Share My Personal Information and Limit the Use of My Sensitive Personal Information - Notices\n\nAs a California resident you have certain rights under the California Privacy Rights Act (CPRA), which gives California residents the right to access, port, correct, delete,  or stop the “sale” or \"sharing\" of their personal information and limit the use of their sensitive information through a mechanism called “Do Not Sell My Personal Information” as more fully described in our Privacy N",
+  "fingerprint": "7f857915bc9c5115eb71df999d24a02ce15d52b8e950bd7b999f4cc6625e1ca3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

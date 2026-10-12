@@ -1,0 +1,98 @@
+{
+ "domain": "evertrue.com",
+ "name": "EverView HoldCo, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:24.804Z",
+  "status": 404,
+  "optOutUrl": "https://www.evertrue.com/privacy-policy/;%20https://www.donorsearch.net/privacy-policy/",
+  "title": "Page not found - Evertrue",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "elementor-search-form-e101aa0",
+    "placeholder": "Search...",
+    "aria": "",
+    "label": "Search",
+    "form": 0,
+    "heading": "Hmm... we can't find that page."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "FirstName",
+    "id": "FirstName",
+    "placeholder": "First Name*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Subscribe to the EverTrue Blog"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "LastName",
+    "id": "LastName",
+    "placeholder": "Last Name*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Subscribe to the EverTrue Blog"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Email",
+    "id": "Email",
+    "placeholder": "Work Email*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Subscribe to the EverTrue Blog"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@evertrue.com"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomize\nReject All\nAccept All\nHow We Help\nProducts\nCustomers\nLearning Center\nSign In\nDemo\nHmm... we can't find that page.\n\nThat’s our bad. Why not search for what you’re looking for. Or use the back button to return to the previous page.\n\nSearch\nFollow Us\nFacebook\n \nTwitter\n \nInstagram\n \nYoutube\n \nLinkedin\nHow it Works\nDiscover Prospects\nEmpower Gift Officers\nMake Asks\nSteward Donors\nEverTrue for N",
+  "fingerprint": "74066ededb83eb7b921df4a85efdf8fb1fcb492ea888fd311ce2489a3d89372a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

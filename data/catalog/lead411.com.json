@@ -1,0 +1,118 @@
+{
+ "domain": "lead411.com",
+ "name": "Lead411 Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:16.177Z",
+  "status": 200,
+  "optOutUrl": "https://www.lead411.com/your-privacy-choices/",
+  "title": "Your Privacy Choices - Lead411",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search …",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "user_option_request_for_profile",
+    "id": "select_option_for_profile",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "By law, we must verify your identity as part of the removal ",
+    "options": [
+     "access=Access My Personal I",
+     "opt-out-sale-of-my-personal_info=Opt-out of the Sale ",
+     "know_what_personal_information_about_me=Know What Personal I",
+     "correct_personal_information=Correct My Personal ",
+     "delete=Delete My Personal I",
+     "port-my-personal-information-third-party=Port My Personal Inf"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "country",
+    "id": "countries",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "By law, we must verify your identity as part of the removal ",
+    "options": [
+     "=Select country",
+     "AF=Afghanistan",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola",
+     "AI=Anguilla"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "email",
+    "id": "employee_email",
+    "placeholder": "Enter email address",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "By law, we must verify your identity as part of the removal "
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "getcodebtn",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "By law, we must verify your identity as part of the removal "
+   }
+  ],
+  "buttons": [
+   {
+    "text": "OK",
+    "id": "CybotCookiebotDialogBodyButtonAccept",
+    "inForm": false
+   },
+   {
+    "text": "Do not sell or share my personal informa",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   },
+   {
+    "text": "Get Code",
+    "id": "getcodebtn",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "tom@lead411.io"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nShow details\nOK\nDo not sell or share my personal information\nFree Trial (50 Free B2B Leads)\n \nProduct Tour\n \nContact Us\n \nLogin\n \nPricing\n \nData Solutions | Lead411 B2B Data Provider\n \nResources\n \nWho We Serve\nYour Privacy Ch",
+  "fingerprint": "2e2a07545cead3af1d311fc3aae2bbaa4524dc486251342b4815687301845524"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

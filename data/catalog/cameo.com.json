@@ -1,0 +1,43 @@
+{
+ "domain": "cameo.com",
+ "name": "Baron App, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:59.650Z",
+  "status": 200,
+  "optOutUrl": "https://legal.cameo.com/privacypolicy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Manage Preferences",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "Accept all cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Manage Preferences",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "safety@cameo.com"
+  ],
+  "text": "•  Legal\nLegal CenterTerms of ServicePrivacyCommunity GuidelinesAffiliates\nPrivacy Policy\n\nLast Updated: July 2, 2025\n\nEffective Date: July 2, 2025 (see Section 1 for further details on when this Privacy Policy takes effect).\n\nWe appreciate your trust in our products and services. In order to provide the Site and continue to make it better, Baron App, Inc. collects information from you. This Privacy Policy explains how we collect, store, use, transfer, and disclose your personal information (as defined in Section 2 below). All terms defined in the Site Terms of Service and used in this Privacy",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

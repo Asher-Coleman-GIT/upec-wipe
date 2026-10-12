@@ -1,0 +1,30 @@
+{
+ "domain": "exploreatlas.io",
+ "name": "Hunt Club Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "huntclub.com"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:24.016Z",
+  "status": 200,
+  "optOutUrl": "https://www.exploreatlas.io/privacy",
+  "title": "Notion",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "scott@huntclub.com"
+  ],
+  "text": "Skip to content\n\nThis page couldn’t be found\n\nYou may not have access, or it might have been deleted or moved. Check the link and try again.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

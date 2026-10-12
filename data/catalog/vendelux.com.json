@@ -1,0 +1,64 @@
+{
+ "domain": "vendelux.com",
+ "name": "Vendelux",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:37:29.857Z",
+  "status": 200,
+  "optOutUrl": "https://vendelux.com/privacy",
+  "title": "Privacy Policy | Vendelux",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Product",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "COMPANY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SOLUTIONS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "PRODUCT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "EVENT DIRECTORIES",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ben@vendelux.com"
+  ],
+  "text": "New: Our free Lead Scanner works at every event, with unlimited seats and no per-scan fees. Get the App\n\nProduct\nSolutions\nCustomer Stories\nPricing\nResources\nFor Organizers\nLog In\nFree Trial\nRequest a Demo\nPRIVACY POLICY\nPrivacy Policy\n\nVendelux Privacy Policy \n\nEffective: May 4, 2026 \n\nThis Privacy Policy (the “Policy”) explains how Vendelux Inc. (“Vendelux” or “we”) collects information about businesses and business people (“Business Information”) and all other types of information, including personal information, through our online services (the “Services”), website, and mobile applications",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

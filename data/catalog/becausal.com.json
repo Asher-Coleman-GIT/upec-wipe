@@ -1,0 +1,119 @@
+{
+ "domain": "becausal.com",
+ "name": "BECAUSAL, INC.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:42.621Z",
+  "status": 200,
+  "optOutUrl": "https://www.becausal.com/personal-information",
+  "title": "Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "Opt-Out-State",
+    "id": "Opt-Out-State",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please select the state in which you currently reside (requi",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information",
+    "options": [
+     "=Select your state",
+     "California=California",
+     "Colorado=Colorado",
+     "Connecticut=Connecticut",
+     "Delaware=Delaware",
+     "Indiana=Indiana",
+     "Iowa=Iowa",
+     "Kentucky=Kentucky"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Opt-Out-First-name",
+    "id": "Opt-Out-First-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Opt-Out-Last-name",
+    "id": "Opt-Out-Last-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "Opt-Out-Email",
+    "id": "Opt-Out-Email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "w-node-_84ce120d-506c-056b-65a9-87e7b693d5f2-0b0554d6",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell or Share My Personal Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "w-node-_84ce120d-506c-056b-65a9-87e7b693d5f2-0b0554d6",
+    "inForm": true
+   },
+   {
+    "text": "Opt out of sale of personal data and Tar",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@becausal.com"
+  ],
+  "text": "About usProducts & ServicesUse CasesInsightsCareersGet in Touch\nDATA STORE\nBecausal\nDo Not Sell or Share My Personal Information\n\n‍\n\n\nIf you are a resident of California, Colorado, Connecticut, Delaware, Iowa, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Tennessee, Texas, Utah, Indiana, Kentucky, Rhode Island or Virginia, you have the right to opt-out of targeted advertising, including our “sale” and/or “sharing” of your personal information. We and our third-party business partners use personal information in accordance with our Consumer Privacy Policy and Produc",
+  "fingerprint": "77895bb8519eebedbcad812093ea5d82a3ca2762340a3bf00f7277082740d362"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

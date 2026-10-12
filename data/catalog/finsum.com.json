@@ -1,0 +1,51 @@
+{
+ "domain": "finsum.com",
+ "name": "AdvisorTarget, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:11.908Z",
+  "status": 404,
+  "optOutUrl": "https://www.finsum.com/index.php/what-we-do/privacy-policy",
+  "title": "404 | Finsum",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "",
+    "placeholder": "Enter your email",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Subscribe to Our Newsletter"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Contact us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "subscribeButton",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@broadridge.com"
+  ],
+  "text": "Home\nMarkets \nEquities\nBonds\nWealth Management\nCommodities and Currencies\nAlternatives\nCorporate News\nEconomy \nMacro\nPolitics\nEurope\nEmerging Markets\nTech\nUS\nAbout Us\nContact us\n404\n\nPage not found\n\nSubscribe to Our Newsletter\n\nStay informed with our newsletter and get the latest news, updates, and exclusive offers delivered to your inbox. Join our community!\n\nSubscribe\nFINSUM is the market leader in financial news summaries. We save investors time and money by getting them the info they need quickly and efficiently, delivering concise summaries and hard-hitting analysis of the day's top marke",
+  "fingerprint": "7308ac425b4676c20b6e8d06424e45196db39ea78e440f15f972e6c5d88a550d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

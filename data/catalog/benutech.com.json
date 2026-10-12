@@ -1,0 +1,48 @@
+{
+ "domain": "benutech.com",
+ "name": "Voxtur Data Services",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:56.978Z",
+  "status": 200,
+  "optOutUrl": "https://www.benutech.com/",
+  "title": "Home | Benutech - Brilliant real estate solutions",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Previous slide",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Next slide",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Previous slide",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Next slide",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "chad.brown@benutech.com"
+  ],
+  "text": "Home\nProducts\nPress\nData Insights\nContact\nBuilding Advanced Business Systems for Today’s Real Estate Professionals\nBenu: Related to the verb weben (wbn), meaning \"to rise\", \"rise in brilliance\" or \"shine\" as well as ben-ben, the upthrust sacred stone of Heliopolis, benu (bennu) describes a bird that was an important avian deity.\nVIEW OUR PRODUCTS\nThe opportunities are endless\n\nSeeing is believing, take a look at the opportunities that await within the Benutech suite of tools\n\nView all Products\nTitle ToolBox\nTitle Toolbox now offers instant farm generation, empowering users to take full control",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

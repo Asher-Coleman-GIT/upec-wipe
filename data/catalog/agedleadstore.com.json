@@ -1,0 +1,54 @@
+{
+ "domain": "agedleadstore.com",
+ "name": "Next Wave Marketing Strategies, Inc",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:39.619Z",
+  "status": 200,
+  "optOutUrl": "https://agedleadstore.com/privacy-policy/",
+  "title": "Aged Lead Store - Protecting Your Privacy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_3",
+    "id": "input_10_3",
+    "placeholder": "First Last",
+    "aria": "",
+    "label": "Name",
+    "form": 2,
+    "heading": "SIGN UP FOR OUR NEWSLETTER"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_2",
+    "id": "input_10_2",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "E-Mail Address",
+    "form": 2,
+    "heading": "SIGN UP FOR OUR NEWSLETTER"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_10",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "Buy Aged Leads\nHome Improvement Leads\nBuy Intent Data\nSales Resource Center\nAbout\n(888) 238-9283\nSign up\nLogin\nPrivacy Policy\n\nPrivacy Policy\n\nLast Updated: July 22, 2026\n\nNWMS Privacy Policy\n\nThe Aged Lead Store™ and Next Wave Marketing Strategies websites located at www.agedleadstore.com and www.nextwavemarketingstrategies.com, respectively (collectively, the “Site”), are owned and operated by Next Wave Marketing Strategies, Inc. (“NWMS,” “we,” “our” or “us”).  This NWMS Privacy Policy (“Privacy Policy”) covers our treatment of personal information and other information that we collect when ",
+  "fingerprint": "43ba8318087b0ee4593c265d1ea4a08031a4e39ee1ffc64d0f78d3f3e483e8d0"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

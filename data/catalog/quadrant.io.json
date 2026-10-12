@@ -1,0 +1,103 @@
+{
+ "domain": "quadrant.io",
+ "name": "Quadrant Global Pte. Ltd.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:14.863Z",
+  "status": 200,
+  "optOutUrl": "https://www.quadrant.io/",
+  "title": "Quadrant | Location Data and POI Data Solutions",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-9d3a9c62-96d7-49a8-9d72-7eafe63b17fc_5643",
+    "placeholder": "Enter a business email",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Receive latest updates from the location data industry strai"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.subscription_type_459685260",
+    "id": "LEGAL_CONSENT.subscription_type_459685260-9d3a9c62-96d7-49a8-9d72-7eafe63b17fc_5643",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to receive marketing communications from Quadrant (A",
+    "form": 0,
+    "heading": "Receive latest updates from the location data industry strai"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Receive latest updates from the location data industry strai"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Show submenu for Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Tools",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Use Cases",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for About Us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "←",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "→",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@quadrant.io"
+  ],
+  "text": "Skip to content\nProducts\nShow submenu for Products\n \nTools\nShow submenu for Tools\n \nResources\nShow submenu for Resources\n \nUse Cases\nShow submenu for Use Cases\n \nAbout Us\nShow submenu for About Us\nContact us\n \nAI ready mobility data for real world decision making\n\nQuadrant provides privacy first, global mobile location and POI data that help enterprises understand how people and places interact.\n\nUse our validated datasets to better train AI models, improve business intelligence, and build trusted location based products.\n\nSee a Data Sample\nView Case Studies\n\nReady to discuss details? Talk to ",
+  "fingerprint": "21c601658863d6d39df50d3b50b60b0b3dc1da46921de2c92ca1e2fbf37eb6dc"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

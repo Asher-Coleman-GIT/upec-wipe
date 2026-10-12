@@ -1,0 +1,133 @@
+{
+ "domain": "lionsharemarketing.com",
+ "name": "Lionshare Marketing, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:42.754Z",
+  "status": 200,
+  "optOutUrl": "https://www.lionsharemarketing.com/opt-out/",
+  "title": "Opt-Out",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name (Required)",
+    "form": 0,
+    "heading": "Opt-Out"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name (Required)",
+    "form": 0,
+    "heading": "Opt-Out"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address1",
+    "id": "address1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address (Required)",
+    "form": 0,
+    "heading": "Opt-Out"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city",
+    "placeholder": "",
+    "aria": "",
+    "label": "City (Required)",
+    "form": 0,
+    "heading": "Opt-Out"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State (Required)",
+    "form": 0,
+    "heading": "Opt-Out",
+    "options": [
+     "=Select One",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "zip",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip (Required)",
+    "form": 0,
+    "heading": "Opt-Out"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address (Optional)",
+    "form": 0,
+    "heading": "Opt-Out"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "Submit",
+    "id": "submit-btn",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Opt-Out"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SUBMIT",
+    "id": "submit-btn",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ap@lionsharemarketing.com"
+  ],
+  "text": " Opt-Out\nIn accordance with the LionShare privacy policy, you can opt-out by submitting the information below:\nFirst Name (Required)\nLast Name (Required)\nStreet Address (Required)\nCity (Required)\nState (Required)\nSelect One\nAlabama\nAlaska\nArizona\nArkansas\nCalifornia\nColorado\nConnecticut\nDelaware\nDistrict of Columbia\nFlorida\nGeorgia\nHawaii\nIdaho\nIllinois\nIndiana\nIowa\nKansas\nKentucky\nLouisiana\nMaine\nMaryland\nMassachusetts\nMichigan\nMinnesota\nMississippi\nMissouri\nMontana\nNebraska\nNevada\nNew Hampshire\nNew Jersey\nNew Mexico\nNew York\nNorth Carolina\nNorth Dakota\nOhio\nOklahoma\nOregon\nPennsylvania\nRhode",
+  "fingerprint": "d78ef6f684e8d12b90dcc57cf65008b7f6fc539c616cdf07c86b57291fdcadd7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "domain": "numlookup.com",
+ "name": "NumLookup LLC.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:11.536Z",
+  "status": 200,
+  "optOutUrl": "https://www.numlookup.com/about-us",
+  "title": "Privacy Policy | NumLookup",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "hello@numlookup.com"
+  ],
+  "text": "Sign in\nSign Up\nPrivacy Policy\n\nUpdated September 22nd, 2025\n\nNumLookup LLC. (NumLookup) provides the website NumLookup.com to you (“You” or “Your”) subject to this Privacy Policy, its Terms of Use, and its other policies.\n\nThis Privacy Policy describes the way in which NumLookup collects, uses, or shares any information You provide to NumLookup.com or information about Your use of NumLookup.com (“Personal Information”).\n\nNumLookup may change this Privacy Policy at any time. The most current version of this policy can be accessed at https://www.numlookup.com/privacy-policy. By continuing to ac",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

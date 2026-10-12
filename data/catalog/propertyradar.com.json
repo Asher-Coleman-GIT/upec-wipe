@@ -1,0 +1,59 @@
+{
+ "domain": "propertyradar.com",
+ "name": "PropertyRadar, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:20.729Z",
+  "status": 200,
+  "optOutUrl": "https://www.propertyradar.com/privacy-policy",
+  "title": "Privacy Policy Overview | Personal Information Collection and Use | PropertyRadar",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Show submenu for Who We Serve\nWho We Ser",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Lead Gen Plays\nLead Gen",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Features\nFeatures",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Try it Free",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Watch Demo",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Start Free Trial",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@propertyradar.com"
+  ],
+  "text": "Skip to main content\nShow submenu for Who We Serve\nWho We Serve\n \nShow submenu for Lead Gen Plays\nLead Gen Plays\nPreforeclosure\n \nProbate\n \nAbsentee Owners\n \nVacant\n \nTax Delinquent\n \nView All Plays \nLikely to Sell\n \nExpired Listings\n \nDivorce\n \nStrategic Geofarm\n \nBankruptcy\n \nView All Plays\nSubmarket Farming\n \nDistressed Commercial\n \nOwner-User Exits\n \nBuyer Needs\n \nPortfolio Owners\n \nView All Plays\nBetter Rate Refis\n \nCash Out Refis\n \nFHA Streamline\n \nVA Streamline\n \nHard Money\n \nView All Plays\nNew Owners\n \nAging Systems\n \nEquity Upgrades\n \nRemote Landlords\n \nHome Sellers\n \nView All Plays\n ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

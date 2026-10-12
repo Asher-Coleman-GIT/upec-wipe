@@ -1,0 +1,33 @@
+{
+ "domain": "cinqdi.com",
+ "name": "MV Digital Group, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:19.895Z",
+  "status": 200,
+  "optOutUrl": "https://www.cinqdi.com/privacy-policy/#section-rights",
+  "title": "Privacy Policy - CINQ DI",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Your Privacy Choices",
+    "id": "fides-modal-link",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "support@cinqdi.com"
+  ],
+  "text": "After the body tag (Desktop)\n \nLOGIN\n \nAUDIENCES\n \nABOUT\n \nCONTACT\n\nPRODUCTS PRIVACY POLICY\n\nLast Updated and Effective: 1/31/2026\n\nThis Products Privacy Policy explains how MV Digital Group LLC (and its subsidiaries and affiliates) through its CinqDI product (collectively, “CinqDI,” “we,” “us,” and “our”) obtains, utilizes, processes, and discloses Personal Information in connection with our readership and electorate persona datasets and audience insights solutions, associated products, and online tools that facilitate use of these products (collectively, “Services”). For purposes of this Pro",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "domain": "merkle.com",
+ "name": "Merkle Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:17:34.665Z",
+  "status": 200,
+  "optOutUrl": "https://www.merkle.com/en/privacy-policy/data-product-privacy-notice/control-your-personal-information.html",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "1. Personal Data we may collect",
+    "id": "accordion-25c1fa3cdf-item-f8dc35b6c3-button",
+    "inForm": false
+   },
+   {
+    "text": "2. How we use this Personal Data",
+    "id": "accordion-25c1fa3cdf-item-40248e000d-button",
+    "inForm": false
+   },
+   {
+    "text": "3. How long will we keep your Personal D",
+    "id": "accordion-25c1fa3cdf-item-1b46776aa9-button",
+    "inForm": false
+   },
+   {
+    "text": "4. How we secure your Personal Data",
+    "id": "accordion-25c1fa3cdf-item-35b82ba8f7-button",
+    "inForm": false
+   },
+   {
+    "text": "5. Information Sharing and Disclosure",
+    "id": "accordion-25c1fa3cdf-item-b2c20a6cb9-button",
+    "inForm": false
+   },
+   {
+    "text": "6. Your rights",
+    "id": "accordion-25c1fa3cdf-item-9ac766473e-button",
+    "inForm": false
+   },
+   {
+    "text": "7. Use of Artificial Intelligence and Em",
+    "id": "accordion-25c1fa3cdf-item-49224fa09e-button",
+    "inForm": false
+   },
+   {
+    "text": "8. Third Party Websites, Links, Plugins,",
+    "id": "accordion-25c1fa3cdf-item-1a022b3ae3-button",
+    "inForm": false
+   },
+   {
+    "text": "9. Updates",
+    "id": "accordion-25c1fa3cdf-item-20d9f6d2d6-button",
+    "inForm": false
+   },
+   {
+    "text": "10. Contact us",
+    "id": "accordion-25c1fa3cdf-item-bbfeea744e-button",
+    "inForm": false
+   },
+   {
+    "text": "Australia",
+    "id": "accordion-694db701fe-item-23540b21ab-button",
+    "inForm": false
+   },
+   {
+    "text": "Belgium",
+    "id": "accordion-694db701fe-item-de61a48df8-button",
+    "inForm": false
+   },
+   {
+    "text": "Brazil",
+    "id": "accordion-694db701fe-item-e421f534b6-button",
+    "inForm": false
+   },
+   {
+    "text": "Canada",
+    "id": "accordion-694db701fe-item-737f8fb889-button",
+    "inForm": false
+   },
+   {
+    "text": "Denmark",
+    "id": "accordion-694db701fe-item-dbc26275e5-button",
+    "inForm": false
+   },
+   {
+    "text": "Germany",
+    "id": "accordion-694db701fe-item-7ca1ad68b9-button",
+    "inForm": false
+   },
+   {
+    "text": "Greece",
+    "id": "accordion-694db701fe-item-016de7a8ea-button",
+    "inForm": false
+   },
+   {
+    "text": "Hungary",
+    "id": "accordion-694db701fe-item-f32467bf8d-button",
+    "inForm": false
+   },
+   {
+    "text": "Israel",
+    "id": "accordion-694db701fe-item-eee1047ba5-button",
+    "inForm": false
+   },
+   {
+    "text": "Italy",
+    "id": "accordion-694db701fe-item-1c1c0274b2-button",
+    "inForm": false
+   },
+   {
+    "text": "México",
+    "id": "accordion-694db701fe-item-c5975df158-button",
+    "inForm": false
+   },
+   {
+    "text": "Netherlands",
+    "id": "accordion-694db701fe-item-7555018dd0-button",
+    "inForm": false
+   },
+   {
+    "text": "New Zealand",
+    "id": "accordion-694db701fe-item-f2e563e4bb-button",
+    "inForm": false
+   },
+   {
+    "text": "Norway",
+    "id": "accordion-694db701fe-item-8c250b3afd-button",
+    "inForm": false
+   },
+   {
+    "text": "Philippines",
+    "id": "accordion-694db701fe-item-c05591ee94-button",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "americas.dpo@dentsu.com"
+  ],
+  "text": "OUR WORK CAPABILITIES AI EXPERTISE MERKLE NOW ABOUT CAREERS\nEN\nCONTACT US\nPrivacy Policy\n\nLast Updated: September 28, 2026\n\ndentsu is a global media, creative and customer experience management group made up of several brands. We help our clients to improve how they advertise and market, whether by print, post, email or in the digital world. We believe that the responsible use of data supports business growth and builds strong relationships between brand and consumer. As a business, we are committed to respecting and protecting the privacy of all individuals we interact with. We are committed ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

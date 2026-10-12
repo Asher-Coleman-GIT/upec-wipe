@@ -1,0 +1,72 @@
+{
+ "domain": "oan.pl",
+ "name": "Online Advertising Network sp. z o.o.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:22.922Z",
+  "status": 200,
+  "optOutUrl": "https://oan.pl/",
+  "title": "OAN - Global Gaming Audiences",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "mainPageContactFormEmail",
+    "placeholder": "Enter your e-mail",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "SELECT PLAYERS FROM OUR\nUNIQUE GAMING TAXONOMY"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "mainPageContactFormPrivacyDisclaimer",
+    "placeholder": "",
+    "aria": "",
+    "label": "I hereby agree to the processing of my personal data by Onli",
+    "form": 0,
+    "heading": "SELECT PLAYERS FROM OUR\nUNIQUE GAMING TAXONOMY"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "ccc-notify-accept",
+    "inForm": false
+   },
+   {
+    "text": "Reject",
+    "id": "ccc-notify-reject",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Preferences",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "GET GAMING TAXONOMY",
+    "id": "mainPageContactFormSubmit",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@oan.pl"
+  ],
+  "text": "Your choice regarding cookies on this site\n\nWe use cookies to optimise site functionality and give you the best possible experience.\n\nAcceptRejectCookie Preferences\nOAN \nPRODUCTS\nABOUT US\nBLOG\nCONTACT\nGET DATA SAMPLE\nGLOBAL GAMING AUDIENCES\n\nStart reaching gamers globally.\nChoose from over 600 gaming segments worldwide.\n\nLET'S TALK\nWE ARE A DATA PROVIDER\nFOCUSED ON HIGHLY ENGAGED\nGAMING AUDIENCES\n\nGaming industry is growing fast and players are an attractive group for advertisers across the world. As OAN we provide gaming audiences to enable brands and marketers to reach gamers with personaliz",
+  "fingerprint": "1131810dfc368f5dbe9eca76eacd5b593db38d196825f3f9e2344831b48549ad"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

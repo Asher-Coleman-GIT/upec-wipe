@@ -1,0 +1,30 @@
+{
+ "domain": "kbsynergy.com",
+ "name": "KB Synergy Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [
+  "mybluehost.me"
+ ],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:15.944Z",
+  "status": 200,
+  "optOutUrl": "https://kbsynergy.com/privacy-policy-ccpa-do-not-sell-my-information/",
+  "title": "Privacy Policy — KB Synergy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "info@kbsynergy.com"
+  ],
+  "text": "Privacy Policy\n\nLast updated and effective as of June 18, 2026\n\nDo Not Sell or Share My Personal Information\n\nUse the form below to opt out of the sale or sharing of your personal information, or to request access to or deletion of your data. You can also email [email] or call 800-545-8388.\n\nWE RESPECT YOUR PRIVACY AND WE WILL NOT SELL OR SHARE YOUR INFORMATION EXCEPT AS AUTHORIZED BY YOU OR OTHERWISE ALLOWED OR REQUIRED BY LAW. WE UPDATE THIS POLICY AT LEAST ANNUALLY.\n\n This Privacy Policy expands upon and supersedes all prior versions and sets forth the data privacy practice",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "domain": "keymarketingcorp.com",
+ "name": "Key Marketing Advantage, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:23.482Z",
+  "status": 404,
+  "optOutUrl": "https://www.keymarketingcorp.com/do_not_use_my_personal_information",
+  "title": "404 Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "Not Found\n\nThe requested URL was not found on this server.\n\nAdditionally, a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

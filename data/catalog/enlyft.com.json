@@ -1,0 +1,19 @@
+{
+ "domain": "enlyft.com",
+ "name": "Enlyft Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:56.945Z",
+  "contacts": [
+   "chirag@enlyft.com"
+  ],
+  "error": "page.goto: net::ERR_TOO_MANY_REDIRECTS at https://enlyft.com/tech/check-email;%20https://enlyft.com/privacy-policy"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

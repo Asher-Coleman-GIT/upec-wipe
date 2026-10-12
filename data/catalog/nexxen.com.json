@@ -1,0 +1,20 @@
+{
+ "domain": "nexxen.com",
+ "name": "Nexxen Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:00.167Z",
+  "contacts": [
+   "compliance@nexxen.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://yourdata.nexxen.com/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

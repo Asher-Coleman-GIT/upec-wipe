@@ -1,0 +1,27 @@
+{
+ "domain": "plug-industries.com",
+ "name": "Plug Chargers LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:45.000Z",
+  "status": 200,
+  "optOutUrl": "https://www.plug-industries.com/",
+  "title": "Plug Industries — Enterprise Data Solutions for Accurate Business Intelligence",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "blakehogan@plug-industries.com"
+  ],
+  "text": "Skip to content\nPlug Industries\nDATA SOLUTIONS\nData Assets\nChannels\nServices\nHow It Works\nAbout\nContact\n\nPLUG INDUSTRIES DATA SOLUTIONS\n\nEnterprise Data Solutions for Accurate\n Business Intelligence\n\nPlug Industries Data Solutions provides access to a broad set of U.S. consumer and business data along with the tools to put that data to work. Whether you need lists for a direct mail campaign, verified emails for acquisition outreach, or audiences ready for digital and connected TV, we can support the full path from data selection to activation.\n\nRequest counts & pricing\nBrowse all ten assets\n\nC",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

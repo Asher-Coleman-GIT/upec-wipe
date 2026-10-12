@@ -1,0 +1,44 @@
+{
+ "domain": "beeswax.com",
+ "name": "Beeswax",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:47.310Z",
+  "status": 200,
+  "optOutUrl": "https://www.beeswax.com/privacy/#what-information",
+  "title": "Services Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Cookies Settings",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@beeswax.com"
+  ],
+  "text": "PRODUCTS\nHELP\nAPI\nABOUT\nCONTACT\nServices Privacy Policy\n\nLast Updated: May 04, 2023\n\nBeeswax Inc. (“Beeswax”, “we”, “us”, or “our”) is an advertising technology platform headquartered in New York City. We respect your right to privacy. We are providing this services privacy policy (“Privacy Policy”) to inform you about how our technology platform and related services (collectively, “Services”) uses, stores, collects, shares and otherwise processes your Personal Information on behalf of online advertisers, website owners, data providers and other businesses that use our Services.\n\nBeeswax runs ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

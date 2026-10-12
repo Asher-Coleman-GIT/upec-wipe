@@ -1,0 +1,74 @@
+{
+ "domain": "groundtruth.com",
+ "name": "xAd, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:15.060Z",
+  "status": 200,
+  "optOutUrl": "https://www.groundtruth.com/privacy-rights/",
+  "title": "Privacy Policy - GroundTruth - GroundTruth",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search...",
+    "aria": "Search for...",
+    "label": "",
+    "form": 0,
+    "heading": "Contact Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@groundtruth.com",
+   "privacyrights@groundtruth.com",
+   "privacyrightsappeals@groundtruth.com",
+   "privacy@groundtruth.com"
+  ],
+  "text": "Skip to content\n\nGroundTruth is now part of ZeroToOne.AI. See what’s next.\n\nSOLUTIONS\nWORK WITH US\nINDUSTRIES\nRESOURCES\nCOMPANY\nSign In\nRequest a demo\nGroundTruth – Website & Ad Platform Privacy Policy\nThe details of GroundTruth’s Privacy Policy are below. If you have questions about our mobile and website security or our Privacy Policy online, please email [email]\n\nThis Privacy Policy applies to our corporate website www.groundtruth.com, or “Website”, as well as to our mobile advertising product and mobile advertising landing pages. This Privacy Policy describes how GroundTr",
+  "fingerprint": "bec311db10bf46b13447c3949aec62a58f19c58712e88e790071987d25fb573b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

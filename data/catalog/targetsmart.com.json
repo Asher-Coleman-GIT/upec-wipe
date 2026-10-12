@@ -1,0 +1,68 @@
+{
+ "domain": "targetsmart.com",
+ "name": "TargetSmart Communications LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:45.614Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.targetsmart.com/US/email/verify/form/",
+  "title": "Email Verification Form",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "* Email",
+    "form": 0,
+    "heading": "US Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "email_confirm",
+    "id": "email_confirm",
+    "placeholder": "",
+    "aria": "",
+    "label": "* Confirm email",
+    "form": 0,
+    "heading": "US Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "submit",
+    "id": "submit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "US Privacy Request Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "submit",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@targetsmart.com"
+  ],
+  "text": "Privacy Center\nConsumer Privacy Webform\nContact\nUS Privacy Request Form\nEmail\n* Email:\n\n* Confirm email:\n\n\n\n© 2026 TargetSmart ®",
+  "fingerprint": "b2ef4562c4fbf73ffa1332dfb3d165b643cd37f29911ade0578cfc6b0bcbfd46"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

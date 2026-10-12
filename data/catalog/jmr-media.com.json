@@ -1,0 +1,28 @@
+{
+ "domain": "jmr-media.com",
+ "name": "JMR Media Consulting, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:58.009Z",
+  "status": 200,
+  "optOutUrl": "https://jmr-media.com/privacy",
+  "title": "JMR Media | Data-Driven Email & Direct Mail Partner",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "jon@jmr-media.com"
+  ],
+  "text": "404\n\nOops! Page not found\n\nReturn to Home",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

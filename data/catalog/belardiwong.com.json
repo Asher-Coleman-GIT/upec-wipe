@@ -1,0 +1,28 @@
+{
+ "domain": "belardiwong.com",
+ "name": "Belardi Ostroy",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:52.090Z",
+  "status": 200,
+  "optOutUrl": "https://belardiwong.com/privacy-policy/",
+  "title": "Privacy Policy - Belardi Wong",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "privacy.officer@belardiwong.com"
+  ],
+  "text": "SWIFT\nSERVICES\nINSIGHTS\nWHO WE ARE\nCONTACT\n+ OUR CLIENTS\nBelardi Wong Privacy Policy\n\nEffective Date: 27 January 2026\n\nThis privacy policy (“Policy”) describes our practices for information collected through the Belardi Wong (“BW,” “we,” “our,” or “us”) website, www.belardiwong.com  (the “Site”). Other than the “State Privacy Rights” section of this Policy, this Policy does not apply to information collected by BW offline or through our services.   \n\nINFORMATION COLLECTION\n\nWhen you use or visit our Site, we collect the following types of information:\n\nPersonal information you choose to provid",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

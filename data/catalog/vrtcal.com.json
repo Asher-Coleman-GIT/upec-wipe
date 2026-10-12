@@ -1,0 +1,20 @@
+{
+ "domain": "vrtcal.com",
+ "name": "VRTCAL Markets Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:00.752Z",
+  "contacts": [
+   "privacy@vrtcal.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.vrtcal.com/docs/PrivacyPolicy-Advertising.pdf"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

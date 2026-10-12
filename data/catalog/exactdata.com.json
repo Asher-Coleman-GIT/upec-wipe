@@ -1,0 +1,146 @@
+{
+ "domain": "exactdata.com",
+ "name": "Consumerbase, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:49.134Z",
+  "status": 200,
+  "optOutUrl": "https://www.exactdata.com/",
+  "title": "Exact Data: Mailing Lists and Leads",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-2bf3c23d-0ffd-40c2-a822-97307ce32a31",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "Connect with Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-2bf3c23d-0ffd-40c2-a822-97307ce32a31",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Connect with Us"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "company-2bf3c23d-0ffd-40c2-a822-97307ce32a31",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company name",
+    "form": 0,
+    "heading": "Connect with Us"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-2bf3c23d-0ffd-40c2-a822-97307ce32a31",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Connect with Us"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "phone-2bf3c23d-0ffd-40c2-a822-97307ce32a31",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone number",
+    "form": 0,
+    "heading": "Connect with Us"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "who_is_your_ideal_audience_",
+    "id": "who_is_your_ideal_audience_-2bf3c23d-0ffd-40c2-a822-97307ce32a31",
+    "placeholder": "How can we help you?",
+    "aria": "",
+    "label": "Who is your ideal audience?",
+    "form": 0,
+    "heading": "Connect with Us"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Connect with Us"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "CONSUMER LISTS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "BUSINESS LISTS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "READY-MADE LISTS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "SOLUTIONS",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "COMPANY",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Connect with an Expert",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Learn More",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@exactdata.com"
+  ],
+  "text": "CONSUMER LISTS\nBUSINESS LISTS\nREADY-MADE LISTS\nSOLUTIONS\nCOMPANY\n877.440.3282\nLOGIN\nFREE QUOTE\nBuild Smarter\nCampaigns with High-Precision Data\n\nWe help small and midsize businesses connect with the right people using accurate, verified data that drives real results.\n\nAccess millions of business and consumer records, updated constantly to keep your sales and marketing accurate, efficient, and effective.\n\nConnect with an Expert\nYour Perfect List Starts Here\n\nWe make finding the right data simple. Whether you’re targeting businesses or consumers, our experts will help you choose from millions of",
+  "fingerprint": "b827496823fc9f481b06322ae85af598b171d082cfe31db4d86f40e37f4aae3b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

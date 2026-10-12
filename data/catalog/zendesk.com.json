@@ -1,0 +1,94 @@
+{
+ "domain": "zendesk.com",
+ "name": "TechTarget, Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:38:00.156Z",
+  "status": 403,
+  "optOutUrl": "https://techtarget.zendesk.com/hc/en-us/requests/new?ticket_form_id=360004852434",
+  "title": "Submit a request – TechTarget",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "request[anonymous_requester_email]",
+    "id": "request_anonymous_requester_email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Your email address",
+    "form": 0,
+    "heading": "CCPA Rights Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "request[custom_fields][360055089353]",
+    "id": "request_custom_fields_360055089353",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "CCPA Rights Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "request[custom_fields][360055089373]",
+    "id": "request_custom_fields_360055089373",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "CCPA Rights Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "file",
+    "name": "",
+    "id": "request-attachments",
+    "placeholder": "",
+    "aria": "",
+    "label": "Attachments(optional)",
+    "form": 0,
+    "heading": "CCPA Rights Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "commit",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "CCPA Rights Request Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@techtarget.com"
+  ],
+  "text": "Skip to main content\n\t\nCCPA Rights Request Form\n\nWe take privacy seriously. If you are a resident of California, you may use this form to make a request to exercise certain rights which you may have under the California Consumer Privacy Act.\n\nAfter you submit this form, you will receive a notification email from us to verify that you submitted this form and to allow us to complete your request. By submitting an opt-out of the sale/sharing using this form, this will only opt you out of the sale/sharing as it relates to the sharing of your personal data to third parties, including our Partners. ",
+  "fingerprint": "feba3ac6d5b8e4daeb43b39b6be56070779213389ce0d635aa3ce1e6c786faf3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

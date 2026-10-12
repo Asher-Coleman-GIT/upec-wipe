@@ -1,0 +1,34 @@
+{
+ "domain": "censia.com",
+ "name": "Censia, In.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:54.350Z",
+  "status": 200,
+  "optOutUrl": "https://www.censia.com/ccpa/",
+  "title": "CCPA | Censia",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "support@censia.com"
+  ],
+  "text": "Manage Consent\nTo provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.\nAccept\nPrivacy Policy\nSkip to content\nWork Intelligence\nExecutive Intelligence\nPlatform\nCompany\nContact\nCCPA\n\nIf you are a California resident, the California Consumer Privacy Act (CCPA) gives you certain rights regarding your personal information. Your CCPA rights i",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

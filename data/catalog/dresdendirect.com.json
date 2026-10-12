@@ -1,0 +1,92 @@
+{
+ "domain": "dresdendirect.com",
+ "name": "Dresden Direct, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:55.664Z",
+  "status": 200,
+  "optOutUrl": "https://dresdendirect.com/",
+  "title": "DresdenDirect.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][4]",
+    "id": "wpforms-83-field_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Name *",
+    "form": 0,
+    "heading": "CONTACT US FOR ANY QUESTIONS"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "wpforms[fields][2]",
+    "id": "wpforms-83-field_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "CONTACT US FOR ANY QUESTIONS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][5]",
+    "id": "wpforms-83-field_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone *",
+    "form": 0,
+    "heading": "CONTACT US FOR ANY QUESTIONS"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "wpforms[fields][6]",
+    "id": "wpforms-83-field_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Subject *",
+    "form": 0,
+    "heading": "CONTACT US FOR ANY QUESTIONS"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "wpforms[fields][3]",
+    "id": "wpforms-83-field_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Your Message",
+    "form": 0,
+    "heading": "CONTACT US FOR ANY QUESTIONS"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "ACCEPT",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "ASK A QUESTION",
+    "id": "wpforms-submit-83",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Manage Consent\nTo provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.\nACCEPT\nCookie Policy\nPrivacy Statement\nImprint\nSKIP TO NAVIGATION\nSKIP TO MAIN CONTENT\nGENERAL\nCONTACT\nSUBMIT A PRIVACY REQUEST\n2026 Privacy Policies and General Information\n\nDresden Direct, At Its Website, Does Not Collect Personal Information Whatsoever.\n\n2026 Priv",
+  "fingerprint": "a1c182705787e5fd455caf5fba61ca919462f83a16f7e5257d064b93a16e2279"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "domain": "lightboxre.com",
+ "name": "LightBox Parent, L.P.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:34.301Z",
+  "status": 200,
+  "optOutUrl": "https://www.lightboxre.com/lightbox-individual-data-rights-request/",
+  "title": "LightBox Individual Data Rights Request | LightBox",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "jfranks@lightboxre.com"
+  ],
+  "text": "Customer Support\nDeveloper Portal\nContact Us\nLightBox Live\nData & Analytics\nSolutions by Industry\nCompany\nInsights\nLogin\nLightBox Individual Data Rights Request\n\nData Subject Access Request (DSAR) has become the industry shorthand for any request regarding personal information made by an individual exercising a consumer right provided by a privacy law. DSARs can include requests for a summary of personal data collected, requests to anonymize or delete personal data, or requests to correct incorrect personal data currently stored.\n\nDATA & ANALYTICS\nData Products\nCore Datasets\nCanadian Data\nView",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "domain": "propertyreach.com",
+ "name": "Property Reach LP",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:33:20.900Z",
+  "status": 403,
+  "optOutUrl": "https://www.propertyreach.com/do-not-sell/",
+  "title": "Privacy Policy | PropertyReach",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "compliance@propertyreach.com"
+  ],
+  "text": "Skip to content\nSearch Features\nProperty Data\n \nProperty Search\n \nProperty Owner Lookup\n \nReal Estate Lead Lists\n \nSkip Tracing\n \nSMS Texting\n \nDirect Mail\n \nDeal Calculator\n Property API Who We Help\nReal Estate Investors\n \nResidential Real Estate Agents\n \nCommercial Agents & Brokers\n \nMortgage Professionals\n \nHome Service Professionals\n Resources\nBlog\n \nHelp Documentation\n \nAPI Documentation\n Pricing\nLOGIN\n \nSTART YOUR TRIAL\nPrivacy Policy.\n\nLast Updated: January 1, 2025\n\n1.SCOPE\n\nThis Privacy Notice (“Notice“) is designed to help you understand how PropertyReach, LP (“PropertyReach“) may col",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

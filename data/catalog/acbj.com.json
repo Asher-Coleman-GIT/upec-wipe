@@ -1,0 +1,25 @@
+{
+ "domain": "acbj.com",
+ "name": "American City Business Journals. Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:25:08.285Z",
+  "status": 403,
+  "optOutUrl": "https://www.acbj.com/privacy",
+  "title": "ACBJ - Privacy Policy and Cookie Statement",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "WHO WE ARE \nOUR BRANDS \nCAREERS \nCONTACT\nACBJ Privacy Notice Overview\n\nLast Updated: December 16, 2025\n\nWhen you access, use, subscribe to, sign-up for, or register to use any of the websites, mobile apps, products, services, publications, or other  Products and Services  owned or operated by ACBJ, we and third parties may collect, process, and retain  Personal Information  about you. In this section we provide an overview of our privacy practices. You’ll find the full  ACBJ Privacy Policy  (the “Privacy Policy”)  below. We encourage you to read the full Privacy Policy in addition to this over",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

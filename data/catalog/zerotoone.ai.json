@@ -1,0 +1,44 @@
+{
+ "domain": "zerotoone.ai",
+ "name": "ZeroToOne.AI Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:25.205Z",
+  "status": 200,
+  "optOutUrl": "https://www.zerotoone.ai/privacy-policy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Manage Cookies",
+    "id": "zto-manage-from-banner",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "zto-reject-all",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "zto-accept-all",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@zerotoone.ai",
+   "privacy@zerotoone.ai"
+  ],
+  "text": "Platform\nSolutions\nResources\nRequest a Demo\nPrivacy Policy\n\nATTENTION:  PLEASE READ CAREFULLY THIS ZEROTOONE PRIVACY POLICY (“PRIVACY POLICY”), BEFORE YOU ACCESS, DOWNLOAD, OR OTHERWISE USE THE WEBSITE OR OTHER RELATED ZEROTOONE ONLINE SERVICES (COLLECTIVELY, THE \"SERVICE\").\n\n‍\n\nThe Service is operated by ZeroToOne.AI Inc., 1050 30th NW, Washington, D.C. 20007 (“We” or “ZeroToOne”). This Privacy Policy describes the information collected through Your use of the Service, how We use it, how We share it, how We protect it, and the choices You can make about Your information.\n\nATTENTION: PLEASE RE",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

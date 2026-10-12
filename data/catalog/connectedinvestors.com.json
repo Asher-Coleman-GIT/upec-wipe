@@ -1,0 +1,79 @@
+{
+ "domain": "connectedinvestors.com",
+ "name": "Connected Investors, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:59.008Z",
+  "status": 200,
+  "optOutUrl": "https://connectedinvestors.com/privacy-policy",
+  "title": "Our Privacy Policy: Protecting Your Information | Connected Investors",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Features",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Build Your Portfolio",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Other",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "_evidon-accept-button",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "embeddedMessagingConversationButton",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dataprivacy@connectedinvestors.com"
+  ],
+  "text": "Features\nBuild Your Portfolio\nResources\nPricing\nTry for Free\nLogin\nFeatures  Build Your Portfolio  Resources  Pricing Other \nTry for Free\n Login\nPrivacy\n\nUnderstand how Connected Investors protects your data. Learn what information we collect, how we use it, and your choices regarding privacy. Review our Privacy Policy today.\n\nLast Updated and Effective Date: July 1, 2026\n\nThis Privacy Notice (“Notice”) describes how Connected Investors, LLC, and its subsidiaries. (“Connected Investors”, “we”, “us”, or “our”) collects, uses, stores, sells or shares your personal information when you: (1) acces",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

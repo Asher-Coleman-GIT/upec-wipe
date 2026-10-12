@@ -1,0 +1,51 @@
+{
+ "domain": "leidosiq.com",
+ "name": "Leidos Digital Solutions, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:14:21.711Z",
+  "status": 200,
+  "optOutUrl": "https://leidosiq.com/privacy-statement/",
+  "title": "Leidos IQ | Making Smart Smarter",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search …",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Set your cookie preferences",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@leidos.com"
+  ],
+  "text": "Products\n3\n2\nMarkets\n3\n2\nAbout\n3\n2\nInsights\nSupport\n3\n2\nContact\n\nVideo Player\nOUTSMART. OUTDO.\nRequest A Demo\nFacebook\nTwitter\nYouTube\nExplore\nSmarter\nSolutions\nThe IQ CRM Solution\n\nIntranet Quorum (IQ) is the most trusted CRM in the public sector. Learn what it can do for you.\n\nCommunications Solutions\n\nLeidos offers numerous supplemental comms tools that empower meaningful dialogs with the public.\n\nBest-in-class Support\n\nWhen you work with Leidos, you’re choosing the best support team in the business – many of whom have worked in government offices themselves.\n\nOur\nLatest\nInsights\nMore Upda",
+  "fingerprint": "4ec0a916af96ab3d62ccefe036f6f482ae9ba32454f937c53fef1f955aa266b1"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

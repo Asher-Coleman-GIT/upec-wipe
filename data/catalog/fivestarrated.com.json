@@ -1,0 +1,52 @@
+{
+ "domain": "fivestarrated.com",
+ "name": "Home Contractors Review, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:04:29.622Z",
+  "status": 200,
+  "optOutUrl": "https://www.fivestarrated.com/privacy-policy",
+  "title": "Five Star Rated | Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "newsletterEmail",
+    "id": "",
+    "placeholder": "Enter email address",
+    "aria": "",
+    "label": "",
+    "form": 5,
+    "heading": "CONTACTING US"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign Up",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "operations@ignitevisibility.com",
+   "privacy@fivestarrated.com"
+  ],
+  "text": "We may earn a fee for some placements. Learn more about our process.\nFIVE STAR RATED PRIVACY POLICY\n(last modified: July 30, 2026)\n\n\n\nIgnite Visibility and its affiliates (EverConnect, 33 Mile Radius LLC, Keyword Connects LLC, Remodeling.com LLC, Best Pick Reports LLC, Five Star Rated LLC, Socius Marketing LLC, Qiigo Inc., Brighter Vision Web Solutions, Inc.) (\"Ignite Visibility,\" \"Company,\" \"we,\" \"us,\" or \"our\") want you to be familiar with how we collect, use, and disclose Personal Information. This Privacy Policy describes our practices in connection with Personal Information that we collec",
+  "fingerprint": "b561af02d5b23f101e22e6da820fb42edd1980a08ffeff4da12eab5b2a455566"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

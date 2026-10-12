@@ -1,0 +1,28 @@
+{
+ "domain": "nationalopinioninstitute.com",
+ "name": "National Opinion Institute, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:19:01.226Z",
+  "status": 200,
+  "optOutUrl": "https://nationalopinioninstitute.com/ca-privacy/",
+  "title": "California Consumer Privacy Notice – National Opinion Institute",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@nationalopinioninstitute.com"
+  ],
+  "text": "National Opinion Institute\nHome Participate\nCalifornia Consumer Privacy Notice\n\nEffective date: January 2025\n\nLast updated: June 2026\n\nThis California Consumer Privacy Notice (“Notice”) supplements National Opinion Institute’s (“National Opinion Institute”) Privacy Policy and applies solely to the personal information collected online and offline of California consumers.\n\nThis Notice  uses certain terms that have the meaning given to them in the California Consumer Privacy Act of 2018 (as amended by the California Privacy Rights Act of 2020), and its implementing regulations (collectively, the",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

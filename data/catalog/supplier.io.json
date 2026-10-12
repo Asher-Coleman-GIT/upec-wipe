@@ -1,0 +1,29 @@
+{
+ "domain": "supplier.io",
+ "name": "Qurium Solutions, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:27.395Z",
+  "status": 200,
+  "optOutUrl": "https://supplier.io/privacy-policy",
+  "title": "Privacy Policy - Supplier.io",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "dj.merino@supplier.io",
+   "privacy@supplier.io"
+  ],
+  "text": "For procurement\nFor suppliers\nProducts\nSolutions\nCompany\nResources\nSign in\nBook a demo\nPrivacy Policy\nEffective Date: August 19, 2025\n\nThis policy explains how Qurium Solutions, Inc. dba Supplier.io (including “CVM” and “CVM Solutions”; collectively, “Qurium Solutions”, “Supplier.io”, “we”, “us”, or “our”) process and protect personal information and data collected via our websites (“Sites”), products, and services (“Services”), collectively referred to as “Online Services.”\n\nThis policy applies to the entire global organization of Supplier.io and complies with applicable privacy laws and othe",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

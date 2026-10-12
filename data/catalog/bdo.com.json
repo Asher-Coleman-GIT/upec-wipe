@@ -1,0 +1,93 @@
+{
+ "domain": "bdo.com",
+ "name": "BDO GCI, LLC (f.k.a. BDO USA, P.C., Global Corporate Intelligence group)",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:37.663Z",
+  "status": 200,
+  "optOutUrl": "https://www.bdo.com/privacy-policy",
+  "title": "BDO USA's Privacy Policy | BDO",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Services\nexpand_more",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries\nexpand_more",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Insights\nexpand_more",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About Us\nexpand_more",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "search",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Customize Cookies",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept Only Mandatory Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@bdo-gci.com",
+   "privacyrequests@bdo.com"
+  ],
+  "text": "Careers\nLocations\nClient Center\nperson\nLogin / Register\nCONTACT\nServices\nexpand_more\nIndustries\nexpand_more\nInsights\nexpand_more\nAbout Us\nexpand_more\nsearch\nHome\nBDO USA Privacy Policy\n\nLegal Navigation\nWebsite Terms and Conditions\nPrivacy Policy\nAccessibility Statement\nData Privacy Framework Statement\nMD State Board Requirements\nNC State Board Requirements\nOR State Board Requirements\nBinding Corporate Rules\nFASB Terms and Conditions\n\nLast Reviewed: September 23, 2026\n\nThis Privacy Policy (\"Privacy Policy\") describes how BDO USA1 and its subsidiaries (except as described below) (together, \"BDO",
+  "fingerprint": "3000a13a5facb92cb74b42092282a41dea4dadeb4467c39e795f049c989677ba"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

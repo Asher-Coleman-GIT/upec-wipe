@@ -1,0 +1,44 @@
+{
+ "domain": "enigma.com",
+ "name": "Enigma Technologies, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:52.465Z",
+  "status": 200,
+  "optOutUrl": "https://www.enigma.com/legal/privacy-policy",
+  "title": "Privacy Policy | Enigma",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Developers",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@enigma.com"
+  ],
+  "text": "Skip to content\nData\nSolutions\nDevelopers\nResources\nPartners\nPricing\nContact Us\nSign In\n\nPRIVACY POLICY\n\nPrivacy at Enigma\n\nDate of Last Update: July 1, 2024\n\nWe at Enigma (“we,” “us,” or “our”) understand that you care about protecting your information. This privacy policy (“Privacy Policy”) explains how Enigma collects, shares, and protects information about companies and individuals that may include your information. This includes the information we collect when you visit our website, www.enigma.com, or purchase and/or use our services (“Services”), as well as the information we collect to ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

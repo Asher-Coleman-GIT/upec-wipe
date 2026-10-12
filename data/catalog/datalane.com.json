@@ -1,0 +1,27 @@
+{
+ "domain": "datalane.com",
+ "name": "Task Genie, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:27:49.453Z",
+  "status": 200,
+  "optOutUrl": "https://www.datalane.com/",
+  "title": "DataLane: Go-to-Market Data for Local Business Sales",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "admin@datalane.com"
+  ],
+  "text": "Introducing DataLane Foundations\nREAD THE LAUNCH POST →\nCompany\nResources\nProduct\nIndustries\nBook a demo\nDataLane raises $22.5M Series A - covered by Axios and WSJ\nReach buyers who spend their\ndays on-site, not on LinkedIn\nThe go-to-market data foundations for selling to local businesses. Supporting enterprise teams with signals, TAM intelligence, and contact info.\nEnabling 5000+ sales reps at\nindustry-leading companies\nGeoffrey Lin, VP Revenue Operations\nIdentify Market Opportunities\n“This is the first time in my career I've found someone who can actually give me the TAM. Here's a list. Which",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

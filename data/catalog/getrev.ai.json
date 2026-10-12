@@ -1,0 +1,313 @@
+{
+ "domain": "getrev.ai",
+ "name": "LeadCrunch",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:06:22.449Z",
+  "status": 200,
+  "optOutUrl": "https://getrev.ai/privacy-request",
+  "title": "Privacy Request | GetRev",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "privacyRequestHoneypot",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": ":r8:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastName",
+    "id": ":r9:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name *",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "country",
+    "id": ":ra:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country *",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": ":rb:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "State/Province *",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "jobTitle",
+    "id": ":rc:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Job Title",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": ":rd:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "workEmail",
+    "id": ":re:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Work Email",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "otherEmail",
+    "id": ":rf:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other Email",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "workAddress",
+    "id": ":rg:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Work Address",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "otherAddress",
+    "id": ":rh:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Other Address",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "phone",
+    "id": ":ri:-form-item",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone Number",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Privacy Request Form"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "on",
+    "id": ":r1:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":r2:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":r3:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":r4:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":r5:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":r6:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":r7:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":rj:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "on",
+    "id": ":rk:-form-item",
+    "inForm": true
+   },
+   {
+    "text": "Submit Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Home\nAI Demand\nAbout\nSolutions\nResources\nPartners\nCareers\nGet Started\nPrivacy Request Form\n\nExercise your privacy rights under applicable data protection laws.\n\nSelect the request(s) that you would like to submit with respect to your personal data. See our Privacy Policy for details.\n\nInformation/Know\nAccess\nDeletion\nCorrection\nOpt-out of Sale/Sharing\nTransfer/Data Portability\nOther Request (specify):\nPersonal Information\nFirst Name *\nLast Name *\nCountry *\nState/Province *\nJob Title\nCompany\nContact Information\n\nPlease provide at least one email address *\n\nWork Email\nOther Email\nWork Address\nOt",
+  "fingerprint": "77660ad97d7fae5270d1e14bdef29914fbe6eaf7d43ce465214f95b7ae49332b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

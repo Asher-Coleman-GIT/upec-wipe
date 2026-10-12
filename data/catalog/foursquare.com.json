@@ -1,0 +1,79 @@
+{
+ "domain": "foursquare.com",
+ "name": "Foursquare Labs, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:39.366Z",
+  "status": 200,
+  "optOutUrl": "https://foursquare.com/legal/privacy-center/#media_and_text-v1-a322121e-92c0-497b-85ae-e6c4672842ed",
+  "title": "Privacy Center | Foursquare",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-71cea14a-e9f8-4b6e-92c1-ecc26d2999af_fsq_hs_form_newsletter-e926ccad-5cae-4dce-8aa6-378464d7e2ff71cea14a-e9f8-4b6e-92c1-ecc26d2999af",
+    "placeholder": "Enter email address...*",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Limited internet-based advertising"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.subscription_type_356123413",
+    "id": "LEGAL_CONSENT.subscription_type_356123413-71cea14a-e9f8-4b6e-92c1-ecc26d2999af_fsq_hs_form_newsletter-e926ccad-5cae-4dce-8aa6-378464d7e2ff71cea14a-e9f8-4b6e-92c1-ecc26d2999af",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to receive communications from Foursquare.",
+    "form": 1,
+    "heading": "Limited internet-based advertising"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "LEGAL_CONSENT.processing",
+    "id": "LEGAL_CONSENT.processing-71cea14a-e9f8-4b6e-92c1-ecc26d2999af_fsq_hs_form_newsletter-e926ccad-5cae-4dce-8aa6-378464d7e2ff71cea14a-e9f8-4b6e-92c1-ecc26d2999af",
+    "placeholder": "",
+    "aria": "",
+    "label": "I agree to allow Foursquare to store and process my personal",
+    "form": 1,
+    "heading": "Limited internet-based advertising"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Limited internet-based advertising"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacyteam@foursquare.com"
+  ],
+  "text": "Skip to content\n\nProducts\n\nMarketers\n\nGeospatial Intelligence Platform\n\nDevelopers\n\nPlaces Data\n\nApps\n\nView all products\n\nMarketers Overview\n\nTransform your advertising with location data\n\nAttribution\n\nMeasure the impact of ads\n\nAudience\n\nReach in-market consumers\n\nProximity\n\nCustom, real-time geofencing\n\nLearn more\nabout our tech\n\nCase studies\n\nSolutions\n\nBy Role\n\nFor marketers\n\nImprove campaigns with location intelligence\n\nFor spatial analysts\n\nTurn location data into actionable insights\n\nFor developers\n\n\nEmpower your builds with location tools\n\nProduct overview\n\nDevelopers\n\nGet started\n\nDev",
+  "fingerprint": "3744e75e21c717ad17214d93f8b66ae0af3e489449e9a68dfceddbe60f7c92cd"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

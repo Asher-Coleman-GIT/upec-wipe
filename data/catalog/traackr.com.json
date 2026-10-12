@@ -1,0 +1,39 @@
+{
+ "domain": "traackr.com",
+ "name": "Traackr, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:15.428Z",
+  "status": 200,
+  "optOutUrl": "https://www.traackr.com/legal/data-opt-out",
+  "title": "Influencer Privacy Policy | Traackr",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Decline",
+    "id": "ez-cookie-notification__decline",
+    "inForm": false
+   },
+   {
+    "text": "Allow All",
+    "id": "ez-cookie-notification__accept",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@traackr.com"
+  ],
+  "text": "Skip to Content\nEnter\nSkip to Menu\nEnter\nSkip to Footer\nEnter\nPlatform\nSolutions\nClients\nConnect\nLog in\nContact\nInfluencer Privacy Policy\nJune 22, 2026\n\nWelcome to Traackr, Inc.’s (along with each of Traackr, Inc.’s Corporate Affiliates (as defined below), collectively, “Traackr”, “we”, “us” or “our” in this privacy notice) privacy notice for influencers.\n\nAs of the Effective Date, Traackr, Inc.'s Corporate Affiliates include:\n\nTraackr UK Limited\n39 Berwyn Rd,\nRichmond, Surrey TW105BU\nTraackr FR Sarl\n4 rue Jules Lefebvre\n75009 Paris\n\nWe collate publicly available information about influential ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "domain": "us.com",
+ "name": "Integrated Direct Marketing, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:36:11.557Z",
+  "status": 200,
+  "optOutUrl": "https://www.idm.us.com/do-not-sell-my-personal-information/",
+  "title": "",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_7",
+    "id": "input_2_7",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1",
+    "id": "input_2_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_2",
+    "id": "input_2_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_3",
+    "id": "input_2_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4",
+    "id": "input_2_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "City*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_5",
+    "id": "input_2_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "State*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_6",
+    "id": "input_2_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip*",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "gform_submit_button_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_2",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "ccpa@idm.us.com"
+  ],
+  "text": "What We Do Who We Advise Who We Are What Do You Need\nCONTACT US\nDo not sell my info\n\nIf you would like to exercise your right to opt out of the sale of personal information related to you, please complete the form below.\n\nEmail*\nFirst Name*\nLast Name*\nAddress*\nCity*\nState*\nZip*\nCAPTCHA\nSite Map Contact Privacy Policy Do Not Sell My Personal Information\n\nCopyright ©2025 IDM. All rights reserved.",
+  "fingerprint": "7cf97c6c966e610cb510327226d4b1bb66ee9989b5b030e9a5c5f78e96856ff4"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

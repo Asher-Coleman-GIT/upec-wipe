@@ -1,0 +1,200 @@
+{
+ "domain": "leadmemedia.com",
+ "name": "Lead Me Media, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:13:38.457Z",
+  "status": 200,
+  "optOutUrl": "https://policy.leadmemedia.com/States/privacyrequestform.html",
+  "title": "Consumer Privacy Rights Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstName",
+    "id": "first-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastName",
+    "id": "last-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address1",
+    "id": "address",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city",
+    "placeholder": "",
+    "aria": "",
+    "label": "City:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "zip",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip Code:",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "DeleteInfo",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please delete my personal information",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "NotSell",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please do not sell or share my information",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "Access",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please provide me access to my personal information",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "Correct",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please correct my personal information",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "Limit",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please limit the use of my personal information",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "NoTarget",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please do not target me with ads",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "ThirdParty",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Please do not share my information with third parties",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Consumer Privacy Rights Request"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit_",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "californiaregistry@leadmemedia.com"
+  ],
+  "text": "Consumer Privacy Rights Request\n\nIf you would like to make a State Rights Request, please complete the form below. By submitting this form, you attest that you are either the person to whom the information relates, or you are authorized to make this request on their behalf and can provide evidence upon request. In all cases, we will verify the resident making the request is the same resident from whom the business has collected personal information.\n\nEmail Address:\nFirst Name:\nLast Name:\nAddress:\nCity:\nState:\nZip Code:\n\nPlease select your request(s):\n\n Please delete my personal information\n Pl",
+  "fingerprint": "9dfa8af196b395d5425299076ddbe5a3e15c00639c6d137907b9731fc1fd2cef"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

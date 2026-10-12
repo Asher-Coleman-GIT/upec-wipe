@@ -1,0 +1,79 @@
+{
+ "domain": "sproutsocial.com",
+ "name": "Sprout Social, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:07.840Z",
+  "status": 200,
+  "optOutUrl": "https://sproutsocial.com/legal/privacy-policy/",
+  "title": "Privacy Policy | Sprout Social",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Platform",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Log in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Print page",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Industries",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Free social media tools",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Social media topics",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "English",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dpo@sproutsocial.com",
+   "privacy@sproutsocial.com"
+  ],
+  "text": "Platform\nSolutions\nPricing\nResources\nLog in\nSchedule a demo\nTry for free\nPrivacy Policy\nTerms of Service\nTerms of Use (Website)\nDisclosure Policy\nCookie Notice\nDo Not Sell or Share My Personal Information\nAccessibility Statement\nModern Slavery Statement\nSupplier Code of Conduct\nHuman Rights Policy\nTransparency in Coverage\nEU Digital Services Act\nPrint page\nSprout Social, Inc. Privacy Policy\n\nLast updated: September 16, 2026\n\nSprout Social respects your right to privacy. This privacy policy (“Privacy Policy”) explains who we are, how we collect, share and use information about you and how you c",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

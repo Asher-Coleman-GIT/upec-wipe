@@ -1,0 +1,198 @@
+{
+ "domain": "growinglibraries.com",
+ "name": "Growing Libraries, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:28.254Z",
+  "status": 200,
+  "optOutUrl": "https://growinglibraries.com/do-not-sell",
+  "title": "Growing Libraries | Opt-Out",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "address-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "street_address_2",
+    "id": "street_address_2-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address 2",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state_",
+    "id": "state_-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Shipping State",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=Please Select",
+     "Alabama=Alabama",
+     "Alaska=Alaska",
+     "American Samoa=American Samoa",
+     "Arizona=Arizona",
+     "Arkansas=Arkansas",
+     "California=California",
+     "Colorado=Colorado"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "country",
+    "id": "country-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country/Region",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "zip-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP code",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "phone_ext-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "",
+    "options": [
+     "=*",
+     "AF=Afghanistan (‫افغانس",
+     "AL=Albania (Shqipëri)",
+     "DZ=Algeria (‫الجزائر‬‎)",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola",
+     "AI=Anguilla"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "",
+    "id": "phone-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "i_am_requesting_that_my_data_be_removed_from_databases_for_resale_or_licensing_i_authorize_growing_",
+    "id": "i_am_requesting_that_my_data_be_removed_from_databases_for_resale_or_licensing_i_authorize_growing_-9adf795f-6531-4f79-a888-b96c8f0a9e95_6134",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am requesting that my data be removed from databases for r",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "ian@growinglibraries.com"
+  ],
+  "text": "Do not sell or share my data\n\nYou have the right to opt out of the “sale” or “sharing” of your Personal Information. Please review our Privacy Policy for a more detailed description of how we collect, use, and share Personal Information.\n\nIn order for us to search for your information and suppress it from our database, please provide your first and last name, email address, address, and phone number in the form below. Without this information, we will be unable to identify whether your information is present in our database and will not be able to process your request.\n\nFirst name\nLast name\nAd",
+  "fingerprint": "d274d3ae1eb899be16298ccc375d4fcc801b0e3d57946f4c146749fca48743f7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

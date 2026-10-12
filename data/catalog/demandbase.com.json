@@ -1,0 +1,20 @@
+{
+ "domain": "demandbase.com",
+ "name": "Demandbase, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:59:57.034Z",
+  "contacts": [
+   "privacy@demandbase.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.demandbase.com/privacy-center.html?ketch_preferences_tab=rightsTab"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

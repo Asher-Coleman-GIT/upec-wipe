@@ -1,0 +1,17 @@
+{
+ "domain": "clustrmaps.com",
+ "name": "clustrmaps.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:17.228Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_CONNECTION_REFUSED at https://clustrmaps.com/bl/opt-out"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

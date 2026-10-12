@@ -1,0 +1,254 @@
+{
+ "domain": "yobi.ai",
+ "name": "Yobi Ventures, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:39:18.186Z",
+  "status": 200,
+  "optOutUrl": "https://www.yobi.ai/opt-out",
+  "title": "Yobi | Do Not Sell or Share My Personal Information",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "phone",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "address",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street address *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "city",
+    "placeholder": "",
+    "aria": "",
+    "label": "City *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "State / Province *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "zip",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP / Postal code *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "country",
+    "id": "country",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "date",
+    "name": "date_of_birth__do_not_sell_",
+    "id": "date_of_birth__do_not_sell_",
+    "placeholder": "",
+    "aria": "",
+    "label": "Date of birth *",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "i_am_submitting_on_behalf_of",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Myself",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "i_am_submitting_on_behalf_of",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "My household",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "i_am_submitting_on_behalf_of",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Someone else",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "select_the_right_s__you_want_to_exercise_",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Access My Information",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "select_the_right_s__you_want_to_exercise_",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete My Information",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "select_the_right_s__you_want_to_exercise_",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do Not Sell My Information",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "select_the_right_s__you_want_to_exercise_",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Correct My Data",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "select_the_right_s__you_want_to_exercise_",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Object or Restrict the Processing of My Data",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "select_the_right_s__you_want_to_exercise_",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Move My Data",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "message",
+    "id": "message",
+    "placeholder": "",
+    "aria": "",
+    "label": "Additional details",
+    "form": 0,
+    "heading": "Do not sell or share my personal information."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit request\n→",
+    "id": "optout-submit",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@yobi.ai"
+  ],
+  "text": "Solutions\nProduct\nTechnology\nResources\nLearn More\n→\nPRIVACY\nDo not sell or share my personal information.\n\nUse this form to exercise your privacy rights. We use the details below only to locate your information and verify the request. See our privacy notice for how we handle it.\n\nFirst name *\nLast name *\nEmail *\nPhone *\nStreet address *\nCity *\nState / Province *\nZIP / Postal code *\nCountry *\nDate of birth *\nI am submitting on behalf of *\nMyself\nMy household\nSomeone else\nSelect the right(s) you want to exercise *\nAccess My Information\nDelete My Information\nDo Not Sell My Information\nCorrect My ",
+  "fingerprint": "436e65ddc685ff050f504a309217ffa7a4436120e416475a0663bcbf02b1666f"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

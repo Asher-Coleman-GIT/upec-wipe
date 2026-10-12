@@ -1,0 +1,28 @@
+{
+ "domain": "sharelocalmedia.com",
+ "name": "Share Local Media, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:36.530Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.sharelocalmedia.com/",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy-team@sharelocalmedia.com"
+  ],
+  "text": "Use Cases\nSolutions\nResources\nCompany\nPoplar Platform\nGet in Touch\nPrivacy Policy\nSHARE LOCAL MEDIA PRIVACY POLICY\n\nEffective January 1, 2026\n\n‍\n\nShare Local Media is committed to protecting your privacy.  This Privacy Policy explains how Share Local Media, Inc. (“Share Local Media”, “we”, “us” or “our”)  collects,  uses, shares, and otherwise processes personal information in connection with our websites, including https://heypoplar.com or https://www.sharelocalmedia.com  and other websites we own and operate that link to this Privacy Policy (the “Sites”), and the related content, platforms, ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "domain": "id5.io",
+ "name": "ID5 Technology Ltd",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "unknown",
+ "survey": {
+  "checkedAt": "2026-10-11T22:08:53.997Z",
+  "contacts": [
+   "privacy@id5.io"
+  ],
+  "error": "page.goto: Timeout 25000ms exceeded."
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

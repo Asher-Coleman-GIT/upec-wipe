@@ -1,0 +1,28 @@
+{
+ "domain": "adstradata.com",
+ "name": "Adstra LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:14.217Z",
+  "status": 200,
+  "optOutUrl": "https://www.adstradata.com/privacy-policy/",
+  "title": "Privacy Policy - Adstra",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy.officer@adstradata.com"
+  ],
+  "text": "Skip to content\n\n2026 AdExchanger Awards Winner: Best Identity Technology\n\nPlatform\nSolutions\nOpen Solutions\nCustomers\nOpen Customers\nResources\nCompany\nOpen Company\nContact Us\n\nLast updated: September 15, 2026\n\nThis privacy policy (“Policy”) applies to information collected through Adstra, LLC (“Adstra,” “we,” “our,” or “us”) www.adstradata.com (the “Site”).\n\nIntroduction\n\nWelcome to the Adstra Privacy Policy.  By visiting our Privacy Policy, you’ve taken the first step in educating yourself about advertising businesses, which contribute to the economy’s ability to remain a place where large a",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "domain": "sg360.com",
+ "name": "The Segerdahl LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:31.551Z",
+  "status": 200,
+  "optOutUrl": "https://sg360.com/do-not-sell-my-info/",
+  "title": "Do Not Sell My Info - Direct Mail | sg360° | Direct Marketing",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_11.3",
+    "id": "input_1_11_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_11.6",
+    "id": "input_1_11_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.1",
+    "id": "input_1_13_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.2",
+    "id": "input_1_13_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.3",
+    "id": "input_1_13_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.4",
+    "id": "input_1_13_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "State / Province / Region",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_13.5",
+    "id": "input_1_13_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP / Postal Code",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_13.6",
+    "id": "input_1_13_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country",
+    "form": 0,
+    "heading": "Opt-Out of the Sale of Personal Information",
+    "options": [
+     "=",
+     "AF=Afghanistan",
+     "AX=Åland Islands",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "search-form-6acc0dcd40d6b",
+    "placeholder": "",
+    "aria": "",
+    "label": "Search for:",
+    "form": 1,
+    "heading": "Legal Stuff"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_1",
+    "inForm": true
+   },
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "charlesg@sg360.com"
+  ],
+  "text": "Skip to content\nSG360° DIRECT MARKETING\nABOUT SG360°\nDIRECT MAIL CASE STUDIES\nARTICLES AND RESOURCES\nDATA SECURITY\nSUSTAINABILITY\nCAREERS\nINSIGHTS & IDEATION\nAUDIENCE INSIGHTS\nCREATIVE CONCEPTING\nINSIGHTS & IDEATION ARTICLES & RESOURCES\nCAMPAIGN ARCHITECTURE\nSTRUCTURAL DESIGN\nDIRECT MAIL TEST DESIGN\nCREATIVE DESIGN\nCAMPAIGN ARCHITECTURE ARTICLES & RESOURCES\nINTELLIGENT DELIVERY\nDIRECT MAIL PRODUCTION & DISTRIBUTION\nINTELLIGENT DELIVERY ARTICLES & RESOURCES\nPERFORMANCE ANALYTICS\nRESULTS TRACKER DASHBOARDS\n \nOpt-Out of the Sale of Personal Information\n\nIf you are a California resident, the Calif",
+  "fingerprint": "0485bf83c136d1cd0e3aa9f110719eff31663cde2354257368f846e4e7cff3f3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

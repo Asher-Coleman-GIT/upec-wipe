@@ -1,0 +1,86 @@
+{
+ "domain": "searchquarry.com",
+ "name": "members.searchquarry.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:35:07.199Z",
+  "status": 200,
+  "optOutUrl": "https://members.searchquarry.com/removeMyData",
+  "title": "SearchQuarry.com - Data Removal process",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DataRemovalServiceModel[fname]",
+    "id": "DataRemovalServiceModel_fname",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Remove Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DataRemovalServiceModel[lname]",
+    "id": "DataRemovalServiceModel_lname",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Remove Your Data"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "DataRemovalServiceModel[state]",
+    "id": "DataRemovalServiceModel_state",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Remove Your Data",
+    "options": [
+     "=Select a State",
+     "all=Nationwide",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DataRemovalServiceModel[city]",
+    "id": "DataRemovalServiceModel_city",
+    "placeholder": "City",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Remove Your Data"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Remove Your Data\n\nDon't want your data in our databases? Please enter your information\nin the form below to find the data to remove.\n\nSelect a State\nNationwide\nAlabama\nAlaska\nArizona\nArkansas\nCalifornia\nColorado\nConnecticut\nDelaware\nDistrict of Columbia\nFlorida\nGeorgia\nHawaii\nIdaho\nIllinois\nIndiana\nIowa\nKansas\nKentucky\nLouisiana\nMaine\nMaryland\nMassachusetts\nMichigan\nMinnesota\nMississippi\nMissouri\nMontana\nNebraska\nNevada\nNew Hampshire\nNew Jersey\nNew Mexico\nNew York\nNorth Carolina\nNorth Dakota\nOhio\nOklahoma\nOregon\nPennsylvania\nRhode Island\nSouth Carolina\nSouth Dakota\nTennessee\nTexas\nUtah\nVermont",
+  "fingerprint": "d48c3372b01ef7a058324da0e580ab1f6160154bb408946fe38d763032adda36"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

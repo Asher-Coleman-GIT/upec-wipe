@@ -1,0 +1,172 @@
+{
+ "domain": "carneydirect.com",
+ "name": "Guidestar Direct, Corp.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:21.038Z",
+  "status": 200,
+  "optOutUrl": "https://www.carneydirect.com/opt-out-preferences/",
+  "title": "Opt-out preferences – Carney Direct",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "s",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "cmplz_datarequest_firstname",
+    "id": "cmplz_datarequest_firstname",
+    "placeholder": "your first name",
+    "aria": "",
+    "label": "Name",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "cmplz_datarequest_name",
+    "id": "cmplz_datarequest_name",
+    "placeholder": "Your name",
+    "aria": "",
+    "label": "Name",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "cmplz_datarequest_email",
+    "id": "cmplz_datarequest_email",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "Email",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cmplz_datarequest_global_optout",
+    "id": "cmplz_datarequest_global_optout",
+    "placeholder": "",
+    "aria": "",
+    "label": "Global opt-out from selling and sharing my personal informat",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cmplz_datarequest_cross_context",
+    "id": "cmplz_datarequest_cross_context",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell my personal information for cross-context behavi",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cmplz_datarequest_limit_sensitive",
+    "id": "cmplz_datarequest_limit_sensitive",
+    "placeholder": "",
+    "aria": "",
+    "label": "Limit the use of my sensitive personal information",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cmplz_datarequest_request_for_access",
+    "id": "cmplz_datarequest_request_for_access",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request for access",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cmplz_datarequest_right_to_be_forgotten",
+    "id": "cmplz_datarequest_right_to_be_forgotten",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to be Forgotten",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "cmplz_datarequest_right_to_data_portability",
+    "id": "cmplz_datarequest_right_to_data_portability",
+    "placeholder": "",
+    "aria": "",
+    "label": "Right to Data Portability",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "button",
+    "name": "cmplz-datarequest-submit",
+    "id": "cmplz-datarequest-submit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "1. Introduction"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "cmplz-marketing-optout",
+    "placeholder": "",
+    "aria": "",
+    "label": "Marketing",
+    "form": -1,
+    "heading": "4.1 Manage your opt-out preferences"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@carneydirect.com"
+  ],
+  "text": "Hit enter to search or ESC to close\nCarney Direct\nABOUT\nSERVICES\nDatabase Management\nHygiene & Data Processing\nAnalytics, Intelligence Gathering & Modeling\nData & Asset Monetization\nEnrichment & Enhancement\nAcquisition\nRe-Engagement & Retention\nDATACARDS\nBLOG\nNEW MOVERS\nCONTACT\nCAREERS\n(800) 240-3349\nFREE CONSULTATION\nOPT-OUT PREFERENCES\n\nThis page was last changed on June 10, 2026, last checked on June 10, 2026 and applies to citizens and legal permanent residents of the United States.\n\n\n1. Introduction\n\nOur website, https://www.carneydirect.com (hereinafter: \"the website\") uses cookies and o",
+  "fingerprint": "fb5d8625f3a1c489b5eea7706b1acd7b8940c09e3824e427f152aea587c58032"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "domain": "iqvia.com",
+ "name": "IQVIA Digital Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:24.771Z",
+  "status": 200,
+  "optOutUrl": "https://privacyportal.onetrust.com/webform/07e8dc4d-6686-403e-9b11-39fe7347d2f4/2f999bd2-c826-498c-a504-894eaf543b6f",
+  "title": "Your Privacy Choices - IQVIA",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "requestTypesDSARElement",
+    "placeholder": "",
+    "aria": "CHOOSE YOUR RIGHTS HERE:",
+    "label": "CHOOSE YOUR RIGHTS HERE:",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "subjectTypesDSARElement",
+    "placeholder": "",
+    "aria": "RELATIONSHIP WITH IQVIA",
+    "label": "RELATIONSHIP WITH IQVIA",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField87DSARElement",
+    "placeholder": "",
+    "aria": "YOUR INTERACTION WITH IQVIA",
+    "label": "YOUR INTERACTION WITH IQVIA",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "firstNameDSARElement",
+    "placeholder": "",
+    "aria": "YOUR NAME",
+    "label": "YOUR NAME",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField83DSARElement",
+    "placeholder": "",
+    "aria": "TELEPHONE NUMBER",
+    "label": "TELEPHONE NUMBER",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "emailDSARElement",
+    "placeholder": "",
+    "aria": " EMAIL ADDRESS USED WITH IQVIA",
+    "label": "EMAIL ADDRESS USED WITH IQVIA",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "countryDSARElement",
+    "placeholder": "",
+    "aria": "COUNTRY",
+    "label": "COUNTRY",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField79DSARElement",
+    "placeholder": "",
+    "aria": "FULL ADDRESS",
+    "label": "FULL ADDRESS",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField81DSARElement",
+    "placeholder": "",
+    "aria": "CITY",
+    "label": "CITY",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "formField82DSARElement",
+    "placeholder": "",
+    "aria": "ZIP CODE",
+    "label": "ZIP CODE",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "dsar-webform-submit-button",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacyofficer@iqvia.com"
+  ],
+  "text": "Back to IQVIA.com\n\nYour Privacy Choices\n\n\n\n\nDepending on your jurisdiction, you may have certain rights in relation to the processing of your personal data or personal information. These rights may include:\n\n\n\n\nThe right to access your personal information (including a data portability request);\nThe right to correct or amend any personal information we have on file about you;\nThe right to delete your personal information;\nThe right to limit the use of your “sensitive” personal information;\nThe right to opt-out of the sale or “sharing” of your personal information;\nThe right to opt-out of the u",
+  "fingerprint": "d72ec2eac167a5f024a175bbcfd2a91a7fab16d366ef946b468d7d68acc976d7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

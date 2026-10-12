@@ -1,0 +1,54 @@
+{
+ "domain": "t-mobile.com",
+ "name": "T-Mobile USA, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:32:34.534Z",
+  "status": 200,
+  "optOutUrl": "https://www.t-mobile.com/privacy-center",
+  "title": "T-Mobile Privacy Center | Privacy Policies & Data Controls",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Need help?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "mmp-privacy@t-mobile.com"
+  ],
+  "text": "Privacy notices\nPrivacy dashboard\nEducation\nFAQs\nContact us\nPrivacy Center\n\nWe respect your privacy and appreciate your trust. We’re here to make it easy to understand what information we collect, how we use and protect it, and the choices you can make. Our privacy principles are:\n\nTransparency\n\nWe’re open and honest about our privacy practices.\n\nControl\n\n​You’re in charge. And we give you clear, simple choices.​\n\nTrust\n\nWe help you understand your choices so you can make the right decision.\n\nProtection\n\nWe provide tools to help keep you protected.\n\nPRIVACY DASHBOARD\nSet your privacy preferenc",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

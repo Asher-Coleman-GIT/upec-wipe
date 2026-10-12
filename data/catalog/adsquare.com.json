@@ -1,0 +1,192 @@
+{
+ "domain": "adsquare.com",
+ "name": "adsquare GmbH",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:34:05.952Z",
+  "status": 200,
+  "optOutUrl": "https://adsquare.com/privacy",
+  "title": "Privacy Center — GDPR, CCPA & Privacy by Design | Adsquare",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "website",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Website",
+    "form": 0,
+    "heading": "Reply within the legal timeframe"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "country",
+    "id": "dsr-country",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country",
+    "form": 0,
+    "heading": "Reply within the legal timeframe",
+    "options": [
+     "=Select a country",
+     "DE=Germany",
+     "GB=United Kingdom",
+     "FR=France",
+     "IT=Italy",
+     "ES=Spain",
+     "US=United States",
+     "AF=Afghanistan"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "dsr-firstname",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name",
+    "form": 0,
+    "heading": "Reply within the legal timeframe"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "dsr-lastname",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name",
+    "form": 0,
+    "heading": "Reply within the legal timeframe"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "dsr-email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "Reply within the legal timeframe"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "requestDetails",
+    "id": "dsr-details",
+    "placeholder": "",
+    "aria": "",
+    "label": "Request details *",
+    "form": 0,
+    "heading": "Reply within the legal timeframe"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "maid",
+    "id": "dsr-maid",
+    "placeholder": "Mobile Advertising ID",
+    "aria": "",
+    "label": "MAID",
+    "form": 0,
+    "heading": "Reply within the legal timeframe"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Do Not Sell or Share My Personal Informa",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "The Outcomes Loop ↓",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions ↓",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources ↓",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company ↓",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Object or Opt-out from Processing",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Access Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Deletion Request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Data Portability",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Limit Use and Disclosure of Sensitive Da",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Non-Discrimination (US)",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Rectification",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Submit request",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Subscribe to the newsletter →",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@adsquare.com"
+  ],
+  "text": "We value your privacy\n\nOur website stores necessary cookies to make the site work. With your consent we will also store additional cookies (analytics, performance, and advertisement) that are used to:\n\nMeasure website performance\nImprove website functionality\nUnderstand analytics of our own marketing campaigns\n\nYou can customize your preferences below or click “Accept All” to consent to the use of the additional cookies including those processed in the U.S.\n\nTo withdraw consent you can open the consent banner at any time by clicking on the cookie icon on the website and selecting the “reject a",
+  "fingerprint": "75717d753a798a5b1c14d6bcc7ca4df12760658b983bb28cbeb6cde581f18b5d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

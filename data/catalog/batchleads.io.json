@@ -1,0 +1,65 @@
+{
+ "domain": "batchleads.io",
+ "name": "EquiMine Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:15.178Z",
+  "status": 200,
+  "optOutUrl": "https://batchleads.io/",
+  "title": "Real Estate Investing Software Made Simple | BatchLeads",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "emailInput",
+    "placeholder": "Enter your email address",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "UNLOCK THE BEST DEALS WITH AI-POWERED PROPERTY SEARCH"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "START FREE TRIAL",
+    "id": "startTrialBtn",
+    "inForm": true
+   },
+   {
+    "text": "Cookies Preferences",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ops@equimine.com"
+  ],
+  "text": "Skip to content\nSolutions\nAI Tools\nResources\nBatchDialer\nPricing\nLog In\nFREE TRIAL\nUNLOCK THE BEST DEALS WITH AI-POWERED PROPERTY SEARCH\n\nFree skip tracing, one-click lead lists, outbound campaigns, and CRM features – all from one award-winning platform.\n\n1,195 reviews on\n\n START FREE TRIAL\n\nBuilt-in dialer with built-in confidence — real-time AI guidance while you talk.\n\nTRUSTED BY 10,000+ REAL ESTATE PROFESSIONALS\nCREATE LEAD LISTS IN SECONDS\n\nTake advantage of 1-click lead lists, BatchRankAI, 130+ filters, and APN parcel insights to zero in on high-potential prospects faster than ever.\n\nDIS",
+  "fingerprint": "5d12489d756740d782a3eb559b7aaf960c8eb77e93da80067732e548c2121ba7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

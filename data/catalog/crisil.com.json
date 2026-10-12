@@ -1,0 +1,183 @@
+{
+ "domain": "crisil.com",
+ "name": "CRISIL Irevna US LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:08.280Z",
+  "status": 200,
+  "optOutUrl": "https://www.crisil.com/en/home/crisil-privacy-notice/do-not-sell-my-personal-information.html",
+  "title": "Do Not Sell My Personal Information Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Enter your email Id",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "",
+    "placeholder": "Enter your first name",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "",
+    "placeholder": "Enter your last name",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "companyname",
+    "id": "",
+    "placeholder": "Enter your company name",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "designation",
+    "id": "",
+    "placeholder": "Enter your designation",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "streetaddress",
+    "id": "",
+    "placeholder": "Enter your address",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "",
+    "placeholder": "Enter your city",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "country",
+    "id": "",
+    "placeholder": "Select anyone",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "",
+    "placeholder": "Enter your state/province",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "postalcode",
+    "id": "",
+    "placeholder": "Enter your postal code",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "button",
+    "name": "submit",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Who we are",
+    "id": "navbarDropdown",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Explore Crisil",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "ot-sdk-btn",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [],
+  "text": "Skip to main content\nWho we are\nLatest thinking\nCareers\nEvents\nLogin\nHome > \nCrisil Privacy Policy\nDo not sell my\npersonal information\n\nOur organization supports requests to opt-out of the sale of your personal information to the extent required by law. Information about Crisil’s collection, use, storage, sale, and sharing of personal information and your rights are provided in the Crisil Global Corporate Privacy Policy.\n\nTo accommodate your opt-out request, we need you to provide us with some personal information. Please provide as much information as possible below so that we can quickly and",
+  "fingerprint": "ec6779991da1f3747255a8ddb2d0383399afcc5e3ed6c2d8ee58b3a4104014ea"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

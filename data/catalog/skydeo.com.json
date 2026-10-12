@@ -1,0 +1,92 @@
+{
+ "domain": "skydeo.com",
+ "name": "Skydeo Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:04.454Z",
+  "status": 200,
+  "optOutUrl": "https://skydeo.com/",
+  "title": "Skydeo — Predictive Audiences to Fuel Your Campaigns",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "q",
+    "id": "",
+    "placeholder": "Search audience segments...",
+    "aria": "Search segments",
+    "label": "",
+    "form": 0,
+    "heading": "Get Predictive Audiences\nto Fuel Your Campaigns."
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Enter your email",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Subscribe to our newsletter"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "newsletter-email-d5d8a844-c371-49a6-98c0-ee95aa6c1812",
+    "placeholder": "[email]",
+    "aria": "",
+    "label": "YOUR EMAIL",
+    "form": 2,
+    "heading": "Fuel your campaigns\nwith Skydeo segments.\nGet started for fr"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "News",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@skydeo.com"
+  ],
+  "text": "Skip to main content\nSolutions\nData\nNews\nAbout\nContact\nGet Started\nGet Predictive Audiences\nto Fuel Your Campaigns.\n\nTake the guesswork out of finding ideal customers with\nSkydeo Audience Marketplace (SAM)TM\n\nSearch\nTrending Searches:\nPolitical\n|\nHealth\n|\nBMW\n|\nTechnology\n|\nTV Data\n|\nConsumer\nFeatured Categories\nAccountsGraph.com™\nExplore\nAppGraph.com™\nExplore\nCTVGraph.com™\nExplore\nConditionGraph.com™\nExplore\nContextualGraph.com™\nExplore\nHealth\nExplore\nHouseholdGraph.com™\nExplore\nInsurance\nExplore\nPlacesGraph.com™\nExplore\nPolitical\nExplore\nShoppingGraph.com™\nExplore\nTravel\nExplore\nSpotlight\nIN",
+  "fingerprint": "86eae624d189254d7d1a874d43371a1c36ace1da4dd986107be868d55da37d4b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

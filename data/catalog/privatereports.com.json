@@ -1,0 +1,152 @@
+{
+ "domain": "privatereports.com",
+ "name": "Infomatics LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "people-search",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:58.224Z",
+  "status": 200,
+  "optOutUrl": "https://www.privatereports.com/nameSearch/landingPage",
+  "title": "Privatereports",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "First-Name",
+    "id": "First-Name",
+    "placeholder": "Enter First Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Instant Background Checks"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Last-Name",
+    "id": "Last-Name",
+    "placeholder": "Enter Last Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Instant Background Checks"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Instant Background Checks",
+    "options": [
+     "all=Select States",
+     "AL=Alabama",
+     "AK=Alaska",
+     "all=All States",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "First-Name",
+    "id": "First-Name",
+    "placeholder": "Enter First Name",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "Last-Name",
+    "id": "Last-Name",
+    "placeholder": "Enter Last Name",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": ""
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "state",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "",
+    "options": [
+     "all=Select States",
+     "AL=Alabama",
+     "AK=Alaska",
+     "all=All States",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "I AGREE",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "FREE SEARCH",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "FREE SEARCH",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "LOGIN\n Notice\nLearning the truth about the history of your family and friends can be shocking, so please be cautious when using this tool.\nPrivateReports does not provide consumer reports and is not a consumer reporting agency under the Fair Credit Reporting Act. We provide information (criminal record, address, phone number, property, civil judgment, and more) that can be used to satisfy your curiosity, protect your family, and find the truth about people in your life. To use our site you must certify below by selecting \"I Agree\" that you agree to our Privacy Policy and Terms of Use and will ",
+  "fingerprint": "49cfcaf6a1266f167f41db2c4035c904483ea83dac567270559681ffdd00af6b"
+ },
+ "review": {
+  "state": "reviewed",
+  "reviewedAt": "2026-10-11",
+  "note": "Shared privacy-request page (same operator as checksecrets, peoplesearcher, privatereports, weinform). \"Remove My Information\" radio reveals the subject fields; a confirmation link follows by email.",
+  "definition": {
+   "method": "direct-form",
+   "optOutUrl": "https://www.privatereports.com/api/helper/optOutLight/search",
+   "formFields": {
+    "#r-removal": "on",
+    "#first": "{firstName}",
+    "#last": "{lastName}",
+    "#dob-m": "{dobMonthName}",
+    "#dob-d": "{dobDay}",
+    "#dob-y": "{dobYear}",
+    "#city": "{city}",
+    "#zip": "{zip}",
+    "#state": "{state}",
+    "#contact-email": "{email}"
+   },
+   "submitSelector": "#submit-btn",
+   "captchaLikely": false,
+   "requires": [
+    "dob"
+   ],
+   "usOnly": true
+  }
+ }
+}

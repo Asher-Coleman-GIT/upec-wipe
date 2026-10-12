@@ -1,0 +1,64 @@
+{
+ "domain": "preqin.com",
+ "name": "Preqin Limited",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:46.364Z",
+  "status": 200,
+  "optOutUrl": "https://www.preqin.com/policies/privacy-policy",
+  "title": "Privacy Policy | Preqin | BlackRock",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "News & Research",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Data",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "About",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Launch",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Manage cookies",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "preqin.dp@blackrock.com"
+  ],
+  "text": "Skip to main content\nProducts\nSolutions\nNews & Research\nData\nAbout\nLaunch\nBook a demo\nPrivacy Policy\n\nBlackRock Privacy Notice\n\nLast revised: 1 March 2025\n\nIntroduction\n\nBlackRock is committed to safeguarding and processing personal information (“PI”), including sensitive personal information (“SPI”)1, in line with all applicable privacy and data protection laws. Many of our offices are located in countries with laws governing the processing of PI. “BlackRock”, “we”, “us” or “our” means BlackRock, Inc., each of the direct or indirect subsidiaries of BlackRock, Inc. (the “BlackRock Group”) and ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

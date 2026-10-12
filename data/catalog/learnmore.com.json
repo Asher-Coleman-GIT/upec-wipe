@@ -1,0 +1,43 @@
+{
+ "domain": "learnmore.com",
+ "name": "LearnMore, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "blocked",
+ "survey": {
+  "checkedAt": "2026-10-11T23:31:37.957Z",
+  "status": 403,
+  "optOutUrl": "https://learnmore.com/privacy-rights/",
+  "title": "Access denied | learnmore.com used Cloudflare to restrict access | learnmore.com | Cloudflare",
+  "block": "hard",
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Yes",
+    "id": "feedback-button-yes",
+    "inForm": false
+   },
+   {
+    "text": "No",
+    "id": "feedback-button-no",
+    "inForm": false
+   },
+   {
+    "text": "Click to reveal",
+    "id": "cf-footer-ip-reveal",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@learnmore.com"
+  ],
+  "text": "Error 1005 Ray ID: a491a8d8ceacc078 • 2026-10-11 23:31:39 UTC\nAccess denied\nWhat happened?\n\nThe owner of this website (learnmore.com) has banned the autonomous system number (ASN) your IP address is in (11878) from accessing this website.\n\nPlease see https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1005/ for more details.\n\nWas this page helpful? Yes No\n\nCloudflare Ray ID: a491a8d8ceacc078 • Your IP: Click to reveal • Performance & security by Cloudflare",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "domain": "n-focus.com",
+ "name": "NFocus Consulting, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:45.508Z",
+  "status": 200,
+  "optOutUrl": "https://www.n-focus.com/privacy-policy/",
+  "title": "Privacy Policy |",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4",
+    "id": "input_3_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Name",
+    "form": 0,
+    "heading": "Let’s get\nstarted!"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_16",
+    "id": "input_3_16",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company",
+    "form": 0,
+    "heading": "Let’s get\nstarted!"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_3_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Let’s get\nstarted!"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_8",
+    "id": "input_3_8",
+    "placeholder": "(999) 999-9999",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Let’s get\nstarted!"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "input_5",
+    "id": "input_3_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Tell Us About Your Project",
+    "form": 0,
+    "heading": "Let’s get\nstarted!"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Get My Quote",
+    "id": "gform_submit_button_3",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "consumer@n-focus.com"
+  ],
+  "text": "Skip to Content\nSkip to navigation\nNFocus\nWHO WE ARE\nPRODUCTS & SERVICES\nMARKETING\nBUILD YOUR LIST\nPARTNER\n\nSearch\n | (800) 675-5809 | Contact\n\nPrivacy Policy\n\nLast Updated: 6/24/2026\n\nNFocus Consulting Inc. (“we,” “us,” “our”) works hard to build and maintain a relationship of trust with you. This Privacy Policy (the “Privacy Policy”) governs our collection, use, and disclosure of your Personal Information (as defined below) in connection with your use of our website(s) (“Site”), such as www.n-focus.com, and any services, transactions, engagements, or other interactions you might have with us",
+  "fingerprint": "c6ee98337520dc8829ac87c0d959f9c76dbd15ed834087cfbb44ebf5fd9f2dd9"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

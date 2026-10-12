@@ -1,0 +1,35 @@
+{
+ "domain": "possiblenow.com",
+ "name": "PossibleNOW, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:23:16.284Z",
+  "status": 200,
+  "optOutUrl": "https://www.possiblenow.com/privacy-statement",
+  "title": "Privacy Statement | PossibleNOW",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "FEEDBACK",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "californiadrop@possiblenowmarketing.com",
+   "privacy@possiblenow.com"
+  ],
+  "text": "PossibleNOW Privacy Statement was Last Modified on March 11, 2026     View Policy\n\nProducts\nServices\nCompany\nPartners\nResources\nTrust Center\nLogins\nREQUEST DEMO\nFEEDBACK\nPRIVACY\n\n\nPrivacy Statement\n\n\n\nThis Privacy Policy and the Terms of Use for the Site detail our policies with respect to the handling of personal information submitted by you or otherwise collected by PossibleNOW via the Site.\n\n\n\n\n\n\n\n\nCustomer feedback, survey and opinion data offer deep insights into your customers and positions you to provide relevant customer experiences.\nPRIVACY\nOur Privacy Policy\nEffective date of the pol",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

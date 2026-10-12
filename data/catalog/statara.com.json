@@ -1,0 +1,29 @@
+{
+ "domain": "statara.com",
+ "name": "Statara Solutions LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:39.002Z",
+  "status": 200,
+  "optOutUrl": "https://statara.com/opt-in-opt-out",
+  "title": "Privacy Policy - Statara Solutions",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "privacy@statara.com",
+   "privacyinfo@statara.com"
+  ],
+  "text": "Skip to content\nServices\nAbout Us\nCONTACT\n\nTable of Contents\n\nStatara Privacy Center\nExercising your Consumer Privacy Rights\nContacting Statara\nRequest on Behalf of Minors\nRequest for Incapacitated Adults\nRequest by Authorized Agents\nAdditional privacy rights\nStatara Privacy Center\n\nStatara provides in-depth descriptions of our policies surrounding data use and privacy. Additional detailed information regarding consumer data privacy rights can be found here:\n\nStatara Privacy Policy – https://statara.com/privacy-policy/\nStatara Cookie Policy – https://statara.com/cookie-policy/\n\nBack to top\n\nEx",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

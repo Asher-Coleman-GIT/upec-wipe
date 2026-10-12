@@ -1,0 +1,41 @@
+{
+ "domain": "verisk.com",
+ "name": "Lead Intelligence, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:21.076Z",
+  "status": 404,
+  "optOutUrl": "https://www.verisk.com/privacy-center/",
+  "title": "404 Page | Verisk",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept All",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All Optional",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Manage Cookies",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to main content\nUnited States (EN)\nShow submenu for language selector\nOur Focus\nOUR FOCUS\nP&C Insurance\nLife and Annuities\nReinsurance\nSpecialty Markets\n\nInsurance Overview\n\nInnovative insurance solutions powered by advanced data analytics, technology, scientific research, and deep industry knowledge. \n\nLearn more\n\nOur Solutions\nOUR SOLUTIONS\nUnderwriting and Rating\nClaims\nLife Solutions\nCatastrophe and Risk Solutions\nADDITIONAL SOLUTIONS\nConstruction\nSustainability and Resilience\nGovernment and Municipalities\nReal Estate and Mortgage Servicing\nTransportation\nView All Products\n\nSolutions ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

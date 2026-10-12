@@ -1,0 +1,38 @@
+{
+ "domain": "ripple-roi.com",
+ "name": "Ripple Effect Strategies",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:33.123Z",
+  "status": 200,
+  "optOutUrl": "https://www.ripple-roi.com/privacy-policy",
+  "title": "Privacy Policy — Ripple On Impact",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Manage cookies",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept all",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dylan@ripple-fx.com"
+  ],
+  "text": "Select “Accept all” to agree to our use of cookies and similar technologies to enhance your browsing experience, security, analytics and customization. Select ”Manage cookies” to make more choices or opt out.\n\nManage cookies\nAccept all\nSkip to Content\nOur Story\nOur Products\nCase Studies\nFAQs\nRIPPLE ON IMPACT PRIVACY NOTICE \n\nEffective Date\n\nThis Privacy Policy is effective as of, and was last updated on, June 3, 2026.\n\nScope\n\nThis Privacy Policy describes Ripple Strategies, LLC d/b/a ROI’s (“Ripple,” “our,” “us,” or “we”) policies regarding the treatment of Personal Information we collect abou",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

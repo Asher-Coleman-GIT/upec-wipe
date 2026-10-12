@@ -1,0 +1,78 @@
+{
+ "domain": "babelstreet.com",
+ "name": "Babel Street, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:10.803Z",
+  "status": 200,
+  "optOutUrl": "https://www.babelstreet.com/privacy",
+  "title": "Privacy | Babel Street",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Platform",
+    "id": "radix-_R_96cnnb_-trigger-radix-_R_5p6cnnb_",
+    "inForm": false
+   },
+   {
+    "text": "Solutions",
+    "id": "radix-_R_96cnnb_-trigger-radix-_R_9p6cnnb_",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "radix-_R_96cnnb_-trigger-radix-_R_dp6cnnb_",
+    "inForm": false
+   },
+   {
+    "text": "About Us",
+    "id": "radix-_R_96cnnb_-trigger-radix-_R_lp6cnnb_",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Login",
+    "id": "radix-_R_2a6cnnb_",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@babelstreet.com"
+  ],
+  "text": "Skip to main content\nPlatform\nSolutions\nResources\nPartners\nAbout Us\nEN\nLanguage: English\nLogin\nBook a Demo\nPrivacy Policy\n\nLast Updated: January 31, 2026\n\nBabel Street® was founded on the importance of understanding data, and we value the trust our customers, our partners and our website visitors place in us. The responsible use and protection of personal and confidential information under our care is a core value of Babel Street, Inc. (“Babel Street”). Therefore, we want you to be familiar with how we handle information relating to you as an individual, known as personal information.\n\nThis Pr",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "domain": "attribits.com",
+ "name": "All Good Media, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:17.139Z",
+  "status": 200,
+  "optOutUrl": "https://www.attribits.com/do-not-sell",
+  "title": "Do Not Sell My Personal Information — attribits",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "compliance@allgoodmediagroup.com"
+  ],
+  "text": "By using this website, you agree to our use of cookies. We use cookies to provide you with a great experience and to help our website run effectively.\n\nAccept\nSkip to Content\nHome\nServices\nWhy Us\nContact Us\nPrivacy Policy\nDo Not Sell My Personal Information\nDO NOT SELL MY PERSONAL INFORMATION\n\nPlease enter your email address below to request that we remove it from our databases and stop selling your email address and all associated personal information. \n\nIf you have more than one email address, please submit a separate request for each one. \n\nFor all other inquiries, please contact us at comp",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

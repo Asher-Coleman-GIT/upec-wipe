@@ -1,0 +1,165 @@
+{
+ "domain": "dspolitical.com",
+ "name": "DSPolitical, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:06.941Z",
+  "status": 200,
+  "optOutUrl": "https://www.dspolitical.com/privacy-policy/",
+  "title": "Privacy Policy - DSPolitical",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_2",
+    "id": "input_2_2",
+    "placeholder": "First Name",
+    "aria": "",
+    "label": "First Name",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_3",
+    "id": "input_2_3",
+    "placeholder": "Last Name",
+    "aria": "",
+    "label": "Last Name",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_5",
+    "id": "input_2_5",
+    "placeholder": "Organization/Campaign",
+    "aria": "",
+    "label": "Organization/Campaign",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_6",
+    "id": "input_2_6",
+    "placeholder": "Title",
+    "aria": "",
+    "label": "Title",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_4",
+    "id": "input_2_4",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "Email Address*",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_7",
+    "id": "input_2_7",
+    "placeholder": "Phone Number",
+    "aria": "",
+    "label": "Phone Number",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "input_8",
+    "id": "input_2_8",
+    "placeholder": "Your Comment",
+    "aria": "",
+    "label": "Your Comment",
+    "form": 0,
+    "heading": "CONTACT US TODAY"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "EMAIL",
+    "id": "mce-EMAIL",
+    "placeholder": "Email Address",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "digital targeting perfected"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "subscribe",
+    "id": "mc-embedded-subscribe",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "digital targeting perfected"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "b_ad28aebe25fbc5603f5370159_4d542e28a9",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "digital targeting perfected"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "GET IN TOUCH",
+    "id": "gform_submit_button_2",
+    "inForm": true
+   },
+   {
+    "text": "Join Our List",
+    "id": "mc-embedded-subscribe",
+    "inForm": true
+   },
+   {
+    "text": "I agree",
+    "id": "cn-accept-cookie",
+    "inForm": false
+   },
+   {
+    "text": "Privacy Policy",
+    "id": "cn-more-info",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "cn-close-notice",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "andy@mstreetlegal.com",
+   "privacy@dspolitical.com"
+  ],
+  "text": "Celebrating 15 years of trusted, tested, and proven results | Explore our story here\n\nCLIENT LOGINS\nWORK WITH US\nPRODUCTS\nSERVICES\nABOUT US\nCAREERS\nRESOURCES\nprivacy & cookie policy\n\nThis policy was last updated on August 1, 2026.\n\nDSPolitical, LLC, owner and operator of the Website and the Service, is a limited liability company formed under the laws of the District of Columbia, United States (“DSPolitical”, “we”, “us”, or “our”), and is committed to respecting your privacy rights. Our targeted digital advertising network and digital advertising offerings and ad targeting technology deliver t",
+  "fingerprint": "5dcdca9e4d4033a56b19b84f43f20ccda2f72c6918a001b80cb4067a1e943633"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

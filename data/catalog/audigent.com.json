@@ -1,0 +1,34 @@
+{
+ "domain": "audigent.com",
+ "name": "Predictive Pop, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:37:41.503Z",
+  "status": 200,
+  "optOutUrl": "https://audigent.com/?optout=1",
+  "title": "Privacy Center | Audigent | The Leading Data Activation, Curation and Identity Platform",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ca_drop_audigent@experian.com"
+  ],
+  "text": "Skip to main content\nFOR PUBLISHERS\n1st Party Data Platform\nFuture-proof your business\nHadron ID™\nCookieless identifier solution\nFOR ADVERTISERS\nSmartPMP™\nThe future of media buying\nContextualPMP™\nCookieless & futureproofed PMPs\nCognitivePMP™\nComscore Predictive Audiences\nContextualPMP™ Marketplace\nCreate your own ContextualPMP™\nComscore CognitivePMP™ Marketplace\nSearch 1000+ Comscore CognitivePMPs™\n1st Party Data Platform\nInvest in owning your data\nData Agency\nData-driven strategy & creative\n1st Unit\nInteractive Rich Media Units\nINSIGHTS\nCase Studies\nContent Library\nBlog\nCONTACT US\nREQUEST DE",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

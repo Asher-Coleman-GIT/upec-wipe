@@ -1,0 +1,94 @@
+{
+ "domain": "exactcustomer.com",
+ "name": "Exact Opco, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:02:44.780Z",
+  "status": 200,
+  "optOutUrl": "https://exactcustomer.com/",
+  "title": "Exact Customer",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "text-476",
+    "id": "",
+    "placeholder": "Name",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Put Some\nNumbers on the Board.\nReach Out"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email-445",
+    "id": "",
+    "placeholder": "E-mail",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Put Some\nNumbers on the Board.\nReach Out"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "tel-573",
+    "id": "",
+    "placeholder": "+1 (234)-567-8900",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Put Some\nNumbers on the Board.\nReach Out"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Let’s Put Some\nNumbers on the Board.\nReach Out"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email-325",
+    "id": "",
+    "placeholder": "E-mail",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Thank You"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Send",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "info@exactcustomer.com"
+  ],
+  "text": "Home\nAbout\nFAQ\nBlog\nContact\nDe-risk Your Demand Gen\nWe don't just sell leads.... we put sales on the board\nContact Us\nOur Statistics\nIntelligent Matching with Advanced Machine Learning Technology\n$3 Billion+\nRevenue Generated for Clients at Below-target Cost of Marketing\n142+\nSuccessful Partnerships\n98%\nClient Retention Rate\nExact Customer specializes in accelerating business growth by providing high-quality leads at scale.\nOur de-risked commercial models ensure you only pay for performance, and our advanced Machine Learning technology means you get the most relevant and high-intent inquiries.",
+  "fingerprint": "da3df040ca358737246d48ce492dd226a0eb65b3a8ddbf915f79a826560ac7fc"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

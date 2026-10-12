@@ -1,0 +1,90 @@
+{
+ "domain": "instantly.ai",
+ "name": "Foo Monk LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:55.913Z",
+  "status": 200,
+  "optOutUrl": "https://app.instantly.ai/privacy/opt-out?comet_token_override=29780924463665871126302078492114918103951159006722",
+  "title": "Opt Out of Our Data Processing | Instantly.ai",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": ":r2:",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name",
+    "form": -1,
+    "heading": "Opt Out of Our Data Processing / Remove Your Profile"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": ":r3:",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name",
+    "form": -1,
+    "heading": "First Name"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": ":r4:",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company Name (optional)",
+    "form": -1,
+    "heading": "Last Name"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": ":r5:",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": -1,
+    "heading": "Company Name (optional)"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "react-select-2-input",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": "Email"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Affirm & Submit",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@instantly.ai"
+  ],
+  "text": "Instantly\nOpt Out of Our Data Processing / Remove Your Profile\nPlease note: we do not store personal email addresses. If you only provide your name and a personal email, we may not be able to identify whether we process any of your personal data. Please include your company name or your business email address to help us locate any data we hold about you.\nFirst Name\nFirst Name\nLast Name\nLast Name\nCompany Name (optional)\nCompany Name (optional)\nEmail\nEmail\nSelect Country\nPlease complete the security check.\n\nBy submitting this form, I confirm that I am the individual identified above (or an autho",
+  "fingerprint": "d7f936ff3d4c1c34a0a2c66c0eacb138769c57fa2995823aa7673d691661fd58"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

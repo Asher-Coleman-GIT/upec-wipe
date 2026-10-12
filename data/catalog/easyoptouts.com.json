@@ -1,0 +1,36 @@
+{
+ "domain": "easyoptouts.com",
+ "name": "easyoptouts.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:22.764Z",
+  "status": 200,
+  "optOutUrl": "https://easyoptouts.com/",
+  "title": "EasyOptOuts - Personal Data Removal Service | Just $19.99/year",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Get Started",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Get Started for $19.99/year",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Pricing Ratings & Reviews For Business\nLog In Sign Up\nYour personal data is all over the internet.\nWe'll help you opt out.\n\nRemove your personal information from Google searches and data brokers. It's just $19.99/year for our top-rated service.\n\nGet Started\nOr protect your business →\nSIGN UP IN 5 MINUTES. WE'LL OPT YOU OUT OF ALL THESE SITES:\n411.com\nacxiom.com\nadvancedbackgroundchecks.com\namericaphonebook.com\narchives.com\nbackgroundcheckers.net\nbeenverified.com\nbumper.com\ncheckpeople.com\nchecksecrets.com\ncourtcasefinder.com\ncyberbackgroundchecks.com\ndonotcall.gov\nfamilytreenow.com\nfastbackgro",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

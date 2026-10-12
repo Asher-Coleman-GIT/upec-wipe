@@ -1,0 +1,136 @@
+{
+ "domain": "edvisors.com",
+ "name": "Edvisors Network, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:01:26.266Z",
+  "status": 200,
+  "optOutUrl": "https://www.edvisors.com/delete-request/",
+  "title": "Delete My Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "DeleteDataRequestForm.ConsumerState",
+    "id": "DeleteDataRequestForm_ConsumerState",
+    "placeholder": "",
+    "aria": "",
+    "label": "Select a state",
+    "form": 3,
+    "heading": "Delete My Data",
+    "options": [
+     "=Select a State",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut",
+     "DE=Delaware",
+     "IN=Indiana",
+     "IA=Iowa",
+     "KY=Kentucky"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DeleteDataRequestForm.ConsumerFirstName",
+    "id": "DeleteDataRequestForm_ConsumerFirstName",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name:",
+    "form": 3,
+    "heading": "Delete My Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DeleteDataRequestForm.ConsumerLastName",
+    "id": "DeleteDataRequestForm_ConsumerLastName",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name:",
+    "form": 3,
+    "heading": "Delete My Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DeleteDataRequestForm.ConsumerEmail",
+    "id": "DeleteDataRequestForm_ConsumerEmail",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address:",
+    "form": 3,
+    "heading": "Delete My Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "DeleteDataRequestForm.ConsumerDateOfBirth",
+    "id": "DeleteDataRequestForm_ConsumerDateOfBirth",
+    "placeholder": "MM/DD/YYYY",
+    "aria": "",
+    "label": "Date of Birth",
+    "form": 3,
+    "heading": "Delete My Data"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 3,
+    "heading": "Delete My Data"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Advertiser Disclosure",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "×",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept Cookies",
+    "id": "accept",
+    "inForm": true
+   },
+   {
+    "text": "Deny Cookies",
+    "id": "deny",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "customerservice@edvisors.com"
+  ],
+  "text": "Skip Navigation\nScholarships\nCOLLEGE GRANTS\nCOLLEGE SCHOLARSHIPS\nEMPLOYER\nMILITARY\n\nFEATURED ARTICLES\n\nWhat's the difference between scholarships and grants?\nGraduate Fellowships\nView All Articles >\nPlan for College\nCAREERS\nCOLLEGE ADMISSIONS\nFAFSA\nSCHOLARSHIPS\nPAYING FOR COLLEGE\nSTUDENT LIFE BLOG\n\nFEATURED ARTICLES\n\nBest Job Search Sites March 2026\nResumes That Get Noticed\nHigh Paying Careers\nSTEM Careers\nView All Articles >\nStudent Loans\nFAFSA\nPRIVATE STUDENT LOANS\nFEDERAL STUDENT LOANS\nREPAY STUDENT LOANS\nLENDER REVIEWS\n\nFEATURED ARTICLES\n\nFiling the FAFSA 2026-2027: A Simple Guide for Stud",
+  "fingerprint": "25cf0f30b8b4cfb88d6e338b2e7a8ddd201c6b7e8a8370fe2481dd7a3085b88c"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

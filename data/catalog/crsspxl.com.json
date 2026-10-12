@@ -1,0 +1,17 @@
+{
+ "domain": "crsspxl.com",
+ "name": "Cross Pixel Media, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:45:20.040Z",
+  "contacts": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://privacy.crsspxl.com/optout"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

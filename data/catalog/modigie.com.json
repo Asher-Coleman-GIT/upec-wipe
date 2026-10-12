@@ -1,0 +1,27 @@
+{
+ "domain": "modigie.com",
+ "name": "Modigie Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:09.777Z",
+  "status": 200,
+  "optOutUrl": "https://modigie.com/privacy-policy/",
+  "title": "Privacy Policy - Modigie",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "dpauli@modigie.com"
+  ],
+  "text": "Solutions\nModigie Advantage\nPricing\nAbout\nContact Us\nTEST YOUR DATA\nPRIVACY POLICY\nOUR COMMITMENT TO PRIVACY\n\nOur Privacy Policy explains how Modigie collects, uses, and discloses information about you. The terms “Modigie,” “we,” “us,” and “our” include our subcontractors and or affiliates. We use the terms “client,” “you,” and “your” to mean any person using our Platform or attending related events, including any organization or person using the Platform on an organization’s behalf. This Privacy Policy applies to the processing of information about members and other individuals that we collec",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

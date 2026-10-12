@@ -1,0 +1,34 @@
+{
+ "domain": "gm.com",
+ "name": "General Motors LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:29:32.507Z",
+  "status": 200,
+  "optOutUrl": "https://www.gm.com/consumer-privacy",
+  "title": "U.S. Consumer Privacy Request Form | General Motors",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "search-toggle",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@gm.com"
+  ],
+  "text": "OUR COMPANY\nOUR BRANDS\nOUR OFFERINGS\nOUR IMPACT\nINNOVATION\nNEWS\nOwners Careers Investors\nChevrolet Buick GMC Cadillac OnStar\nU.S. Consumer Privacy Request Form\n\n    \n\nShop\nChevrolet\nBuick\nGMC\nCadillac\nOnStar and Connected Services\nCarBravo\nGM Apparel & Lifestyle\nGM Genuine Parts & ACDelco\nChevrolet Performance Parts\nGM Energy\nOwners\nMy GM Account\nGM Rewards\nGM Rewards Mastercard\nCertified Service\nRecall Center\nIgnition Updates\nTakata Information\nCalifornia Warranty Information\nFinance\nGM Financial\nGM Insurance\nCorporate Offers\nGM Ventures\nPartners\nCommunity Dealer Development\nGlobal Connect\nMo",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "domain": "33across.com",
+ "name": "33Across, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:10.914Z",
+  "contacts": [
+   "privacy@33across.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://33across.com/privacy-policy/ccpa-notice/"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

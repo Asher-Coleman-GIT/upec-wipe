@@ -1,0 +1,28 @@
+{
+ "domain": "roundsky.com",
+ "name": "Round Sky, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:27:52.037Z",
+  "status": 200,
+  "optOutUrl": "https://www.roundsky.com/supplemental-privacy-notice/",
+  "title": "Supplemental Privacy Notice | Round Sky",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@roundsky.com"
+  ],
+  "text": "AFFILIATES LENDERS CLICKS ABOUT US CONTACT SIGNUP >\nLOGIN\nClick here to go to our general Privacy Policy\nUS State Supplemental Privacy Notice to Residents of California, Colorado, Connecticut, Minnesota, Virginia, and Utah\nSeparate Supplemental Privacy Notice for residents of MN is located here\n\n\nLast updated: August 25, 2026\n\nThis Supplemental Privacy Notice applies to you only if you are a natural person and live in California, Colorado, Connecticut, Virginia, or Utah. This Supplemental Privacy Notice is incorporated into and forms part of the Round Sky, Inc. privacy policy and notice.\n\nThis",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

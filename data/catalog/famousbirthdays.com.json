@@ -1,0 +1,40 @@
+{
+ "domain": "famousbirthdays.com",
+ "name": "Famous Birthdays LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:37.447Z",
+  "status": 200,
+  "optOutUrl": "https://www.famousbirthdays.com/privacy/",
+  "title": "Privacy Policy | Famous Birthdays",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "q",
+    "id": "main-search",
+    "placeholder": " Search ",
+    "aria": "Enter Celebrity or Date",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "privacy@famousbirthdays.com"
+  ],
+  "text": "popular\ntrending\nvideo\ntrivia\nrandom\nPrivacy Policy\n\nLast updated: July 1, 2023\n\nWe take your privacy seriously. This policy outlines Famous Birthdays' information gathering, cookie policy, and privacy-related practices. It also discloses our practices and policies concerning privacy laws and regulations such as the California Consumer Privacy Act (CCPA) and the EU's General Data Protection Regulation (GDPR).\n\nProcessing Your Personal Information\n\nFamousBirthdays.com is an open and easy to use platform. No user login is required nor offered on our website. We don't set any first-party cookies.",
+  "fingerprint": "0c65af5cf6cafbb8d4f594a1f749317123a2eccd5a72e1d45ebe7ac5023d6b31"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

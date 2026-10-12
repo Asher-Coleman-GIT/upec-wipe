@@ -1,0 +1,49 @@
+{
+ "domain": "madhive.com",
+ "name": "MadHive, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:00.975Z",
+  "status": 200,
+  "optOutUrl": "https://www.madhive.com/legal/us-state-privacy-notice",
+  "title": "Madhive - Made for local",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@madhive.com"
+  ],
+  "text": "We’ve updated our Privacy Policy. Please review the changes to understand how your information is handled.\nLearn More\nSolutions\nCase studiesInsightsNewsroomCareersAbout us\nGet a demo\nMade for local\nThe only platform built for local media.\nLearn more\nLocal, scaled and always on target\n.\n\nOur platform is built to power local media's evolution by putting innovative tools in the hands of local sellers, agencies and more.\n\nGo granular.\nScale infinitely.\nLess time clicking.\nMore time closing.\nOne stack.\nZero swivel.\nCut costs.\nNot corners.\nWhen Madhive delivers, local wins\n4x\nincremental reach\n2x\nas",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "domain": "pimeyes.com",
+ "name": "pimeyes.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:26.329Z",
+  "status": 200,
+  "optOutUrl": "https://pimeyes.com/en/opt-out",
+  "title": "Opt-Out Request Form | PimEyes",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "v-2-23",
+    "placeholder": "Enter your email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Information about how your request will be processed"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Register",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Log in",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "1. Please upload a clear photo of your f",
+    "id": "reka-accordion-trigger-v-2-12",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "v-2-14",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "v-2-15",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "v-2-16",
+    "inForm": true
+   },
+   {
+    "text": "Upload a photo",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Next step",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "2. Upload an anonymized scan of your ID ",
+    "id": "reka-accordion-trigger-v-2-17",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "v-2-19",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "v-2-20",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "3. Your email for the confirmation lette",
+    "id": "reka-accordion-trigger-v-2-21",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "v-2-24",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Start free search now",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Opt-Out Request Form | PimEyes\n\nGet 30% off PROtect & Advanced and lock in your discounted price for 1 year with code HERITAGE.\n\nHome\nPricing\nAbout Us\nPrivacy & Ethics\nOpt-Out\nBlog\nRegister\nLog in\nOpt-Out Request Form\n\nPlease use this form to exercise your right to have any and all of your data removed from our system.\n\nSupport\nOpt-Out\nDMCA\nSAR\nInformation about how your request will be processed\n\nFor full and clear information please carefully read our Privacy policy and Terms of service.\n\nWhen filling in the form, you will be asked to upload a photo of yourself. We will use your picture to p",
+  "fingerprint": "47d0e0b53a3fa593e0da7f429090747d24ec1971ae814daac485695f7519bf9a"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

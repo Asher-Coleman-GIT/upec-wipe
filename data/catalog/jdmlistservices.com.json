@@ -1,0 +1,28 @@
+{
+ "domain": "jdmlistservices.com",
+ "name": "JDM LIST SERVICES, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:11:47.274Z",
+  "status": 404,
+  "optOutUrl": "https://jdmlistservices.com/do-not-sell-my-info",
+  "title": "404 Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "chrissy@jdmlistservices.com"
+  ],
+  "text": "File not found (404 error)\n\nIf you think what you're looking for should be here, please contact the site owner.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

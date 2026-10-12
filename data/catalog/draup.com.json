@@ -1,0 +1,83 @@
+{
+ "domain": "draup.com",
+ "name": "Draup, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:50.879Z",
+  "status": 200,
+  "optOutUrl": "https://draup.com/",
+  "title": "AI Workforce Transformation & AI Sales Agents | Draup",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email_top",
+    "placeholder": "Work email ID",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "AI Workforce Transformation\nTalent Intelligence​"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "AI Workforce Transformation\nTalent Intelligence​"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email_bottom",
+    "placeholder": "Work email ID",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Start With a\nFree AI Workforce\nDiagnostic"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Start With a\nFree AI Workforce\nDiagnostic"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Book a Demo",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Get Started",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "amareshr@draup.com"
+  ],
+  "text": "AI Workforce Transformation\nSolutions\nCompany\nResources\nPress\nLogin\nBook a Demo\nAI Workforce Transformation\nTalent Intelligence​\n\nBuilt on Draup’s proprietary, continuously refreshed data layer, connecting insights across labor market, work architecture, business intelligence, and technology adoption.\n\nTRUSTED BY THE WORLD'S LARGEST ENTERPRISES\nLOVED BY ANALYSTS\nTrailblazer in HR Technology\n16 mentions in reports and Hype Cycles\nEtter\nAI Workforce Transformation\nYour Board Set an AI Target.\nWhere’s the Workforce Plan?\n\nEtter models AI's impact in your enterprise across every business unit, fun",
+  "fingerprint": "293d4e737adbcbcd44b5bc5e550d419f33e7fe7863c39aa8ca17c0f4344a6bfa"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

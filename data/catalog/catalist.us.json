@@ -1,0 +1,40 @@
+{
+ "domain": "catalist.us",
+ "name": "Catalist LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:41:39.338Z",
+  "status": 200,
+  "optOutUrl": "https://catalist.us/privacy-policy/",
+  "title": "Privacy Policy | Political Data Privacy Policy by Catalist",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "Search",
+    "label": "",
+    "form": 0,
+    "heading": "9. TEXAS DATA BROKER NOTICE"
+   }
+  ],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "privacy@catalist.us"
+  ],
+  "text": "Skip to content\nHOME\n \nWHO WE ARE\n \nWHAT HAPPENED\n \nDATA\n \nANALYTICS & MODELS\n \nSERVICES\n \nCONTACT US\n×\nHOME\nWHO WE ARE\nWHAT HAPPENED\nDATA\nANALYTICS & MODELS\nSERVICES\nCONTACT US\nPRIVACY POLICY\n\n(Updated as of July 1, 2026)\n\n1. INTRODUCTION\n\nThis website is operated by Catalist LLC (“Catalist” or “we”). We are a mission-driven political organization that provides data, analytics, and data services (“Products and Services”) to, and on behalf of, Democratic and/or progressive political or nonprofit campaigns, organizations, and causes and other organizations engaging in political or governmental ",
+  "fingerprint": "3f9c177151be89e8ef3c25a68aa3b023806f944811bccf59f4d2174bea5c09b5"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

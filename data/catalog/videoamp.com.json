@@ -1,0 +1,44 @@
+{
+ "domain": "videoamp.com",
+ "name": "VideoAmp, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:42.888Z",
+  "status": 200,
+  "optOutUrl": "https://www.videoamp.com/us-privacy-notice/",
+  "title": "U.S. Privacy Notice and Rights  - VideoAmp",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "I understand",
+    "id": "ketch-banner-button-primary",
+    "inForm": false
+   },
+   {
+    "text": "Customize Settings",
+    "id": "ketch-banner-button-secondary",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "ketch-banner-button-tertiary",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@videoamp.com"
+  ],
+  "text": "Your Privacy Choices\n\nWe and our vendors use technology that collects data about your use of our site so we can improve and personalize our products and services, for analytics and marketing, and to fulfill your requests. We may also share this information with marketing vendors, social media companies, and analytics partners. By using our website, you acknowledge and agree to our Terms of Use. To learn more about our privacy practices review our Privacy Policy.\n\nI understand\nCustomize Settings\nReject All\nVALID™\nSOLUTIONS\nPOWERED BY VIDEOAMP™\nRESOURCES\nOUR COMPANY\nLET'S TALK\nU.S. Privacy Notic",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

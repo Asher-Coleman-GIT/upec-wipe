@@ -1,0 +1,28 @@
+{
+ "domain": "greatlakeslists.com",
+ "name": "Great Lakes List, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:07:00.160Z",
+  "status": 200,
+  "optOutUrl": "https://greatlakeslists.com/privacy-policy",
+  "title": "Great Lakes List Management",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "ccpa@greatlakeslists.com"
+  ],
+  "text": "Great Lakes\nList Management\nBrowse Lists\nInsurance\nEmail Marketing\nList Management\nsessionCONNECT™\nPrivacy Notice / Your Privacy Rights\n\nEffective Date: 10/13/2020\n\nDate Last Updated: 01/29/2025\n\nIf you are a California resident, please click here for more information about your specific privacy rights.\n\n1. Introduction\n\nGreat Lakes List Management (\"us,\" \"we,\" or \"our\") collects and processes information about you as described in this Privacy Notice (\"Notice\"). We are committed to protecting the privacy of those with whom we interact. This Notice contains details about how we collect, use, an",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,250 @@
+{
+ "domain": "marketops.com",
+ "name": "MarketOps LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:33.783Z",
+  "status": 200,
+  "optOutUrl": "https://marketops.com/data-inquiries/",
+  "title": "Data Inquiries - MarketOps",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_10",
+    "id": "input_6_10",
+    "placeholder": "Name",
+    "aria": "",
+    "label": "Name*",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_46",
+    "id": "choice_6_46_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_46",
+    "id": "choice_6_46_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_6_3",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_48",
+    "id": "choice_6_48_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_48",
+    "id": "choice_6_48_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_4",
+    "id": "input_6_4",
+    "placeholder": "Phone",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_47",
+    "id": "choice_6_47_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_47",
+    "id": "choice_6_47_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.1",
+    "id": "input_6_49_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.2",
+    "id": "input_6_49_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.3",
+    "id": "input_6_49_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.4",
+    "id": "input_6_49_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "State / Province / Region",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.5",
+    "id": "input_6_49_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP / Postal Code",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_49.6",
+    "id": "input_6_49_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country",
+    "form": 0,
+    "heading": "Data Inquiries",
+    "options": [
+     "=",
+     "AF=Afghanistan",
+     "AX=Åland Islands",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_31",
+    "id": "choice_6_31_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "I have one or more identifier (e.g., Cookie ID, Mobile ID, C",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_31",
+    "id": "choice_6_31_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No, I do not have any identifiers",
+    "form": 0,
+    "heading": "Data Inquiries"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_15",
+    "id": "input_6_15",
+    "placeholder": "",
+    "aria": "",
+    "label": "Reason for inquiry*",
+    "form": 0,
+    "heading": "Data Inquiries",
+    "options": [
+     "=Select Option",
+     "Opt-in request=Opt-in request",
+     "Opt-out request=Opt-out request",
+     "Data File=Request a copy of my",
+     "data removal=Removal of my person"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_6",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@marketops.com"
+  ],
+  "text": "Home\nCross-Channel Advertising\nAbout Us\nPrivacy \nContact Us\nREQUEST A DEMO\n\nDitch modeled intent. Drive better ROl with real shopping signals from your customers.\nLearn More \n\nData Inquiries\n\nYou can use this form to submit a request regarding your personal information. In order to verify your identity and process your request, please complete this form and we will respond as soon as possible. If you have any questions, please contact [email] By submitting this form to MarketOps, you hereby confirm that all the information you provide is correct.\n\nTo ensure accurate processing o",
+  "fingerprint": "e5dd7fa583c51857cd52ad2432f67fdba554a4c3546164ccf7103219286e8664"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

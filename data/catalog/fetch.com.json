@@ -1,0 +1,27 @@
+{
+ "domain": "fetch.com",
+ "name": "Fetch Rewards, LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:03:44.700Z",
+  "status": 400,
+  "optOutUrl": "https://fetch.com/privacy-policy.;%20https://preferences.fetch.com/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "c.brown@fetchrewards.com"
+  ],
+  "text": "",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "domain": "windfall.com",
+ "name": "Windfall Data, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:36.200Z",
+  "status": 200,
+  "optOutUrl": "https://www.windfall.com/your-privacy-choices",
+  "title": "Your Privacy Choices | Windfall",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-5cc7209c-ed5b-4b50-88b0-4ec007aee645_8470",
+    "placeholder": "Your Email",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Subscribe",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@windfall.com"
+  ],
+  "text": "Platform\n \nSolutions\n \nPartners\n \nResources\n \nCompany\nLogin\n Request a Demo\nYour Privacy Choices\n\nPrivacy choices for residents of states with applicable privacy laws\n\n\nCustomers and consumers who reside in states with applicable privacy laws are entitled to exercise certain privacy rights regarding their personal information as described in our Privacy Policy.\n\nPlease note that, in order to account for multiple instances of common names, our database is organized by name and address. Accordingly, we need the following information to be able to process your opt-out: (a) first and last name, an",
+  "fingerprint": "50fb268e6f4011823e847307b9dbbd9f3cd6f6ccbbd9f64297c9502a9332892b"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

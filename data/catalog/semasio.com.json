@@ -1,0 +1,29 @@
+{
+ "domain": "semasio.com",
+ "name": "Semasio GmbH",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:19.811Z",
+  "status": 200,
+  "optOutUrl": "https://www.semasio.com/legal/semasio-privacy-policy",
+  "title": "Semasio Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "info@semasio.com",
+   "privacy@semasio.com"
+  ],
+  "text": "Products\nServices\nFactory\nIndustries\nResource Library\nCompany\nContact us\nPlatform Privacy Policy\n\nLast update on March 13th, 2025\n\nGo back\n\nSemasio, a Samba TV company, (“we,” “our,” “us”) provides a variety of consumer data, marketing analytics, and related products and services designed to help our business customers (“clients”), and companies that work with them, market their goods and services to consumers in a relevant and efficient way, generally through using online advertising intelligence and information (the “Services”).\n\nOur Services, which focus on advertising technologies which ut",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

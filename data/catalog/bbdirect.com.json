@@ -1,0 +1,34 @@
+{
+ "domain": "bbdirect.com",
+ "name": "BB Direct Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:38:20.400Z",
+  "status": 200,
+  "optOutUrl": "https://www.bbdirect.com/resources/privacy-compliance.html",
+  "title": "CPPA Compliance | BB Direct",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "galiant-chat-button",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "melodyrongstad@bbdirect.com"
+  ],
+  "text": "Skip to Main Content\nHome\nAbout\nResources\nOrder Lists Online\nContact\n(866) 501-6273\nMAILING LISTS\nDATA ENHANCEMENT & HYGIENE\nOMNICHANNEL\nOPT-OUT PRIVACY COMPLIANCE FORM\nThank you.\nLet's Create Your\nPERFECT MAILING LIST!\n\nWe can build, price, and deliver your highly targeted direct mail or email list usually within 1 hour!\n\nSpeak to a List Expert Now!\nCall: (866) 501-6273\nPO Box 151261\nCape Coral, FL 33915\nPH:\n(866) 501-6273\nRequest Quote\n \n \n \nSERVICES\nMailing Lists\nData Enhancement\nOmnichannel\nQUICK LINKS\nAbout\nResources\nOrder Lists Online\nContact\nFEATURED ARTICLES\nWhat Your Patient List Isn'",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

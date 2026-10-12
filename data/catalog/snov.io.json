@@ -1,0 +1,134 @@
+{
+ "domain": "snov.io",
+ "name": "Snovio Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:27.256Z",
+  "status": 200,
+  "optOutUrl": "https://snov.io/do-not-sell-my-personal-information",
+  "title": "Do Not Sell My Personal Information | Snov.io",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_18e452e0-a699-4677-8172-b76f01c8801e",
+    "id": "name",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_a4ad2b1e-9276-4726-aa0d-178c02666f4b",
+    "id": "lastname",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "field_89cecfcb-64c8-4a3e-8a3a-ba11b29f81ee",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_bf130037-f69d-41ef-806f-7b0313f4bea2",
+    "id": "address",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_7553d3b8-ac4f-4912-a6d2-3c2231034817",
+    "id": "city",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_df8b7352-6e14-409d-9518-67ec07e05bbe",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_dbbc5f23-9a43-4c22-8e47-d513b5b39c84",
+    "id": "pcode",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_1a5ee868-1761-417e-8f19-1d8325154534",
+    "id": "country",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "field_7a981fff-229b-4dd8-870b-fb7f64117018",
+    "id": "requested",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell my personal information",
+    "form": 0,
+    "heading": "Do Not Sell My Personal Information"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "submitFormCCPA",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "v.budkevych@snov.io"
+  ],
+  "text": "Product\n\nSolutions\n\nDeliverability Tools\n\nResources\n\nPartners\n\nPricing\nLog in\nTalk to sales\nSign up\nDo Not Sell My Personal Information\n\nSnov.io complies with the California Consumer Privacy Act (CCPA) and is always ready to assist California residents in exercising their rights granted by the statute. If you are a California resident, the CCPA permits you to request to opt-out of the “sale” of your personal information to third parties.\n\nDoes Snovio actually sell your personal information to third parties?\n\nSnovio does not directly sell personal information in the conventional sense, such as ",
+  "fingerprint": "385a07ea4b5248e205cf57d93ea809ce9b48cd760e78f763fc8cd173696a5cf8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

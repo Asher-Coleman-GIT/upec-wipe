@@ -1,0 +1,143 @@
+{
+ "domain": "outlogic.io",
+ "name": "Outlogic, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:21:05.294Z",
+  "status": 200,
+  "optOutUrl": "https://outlogic.io/opt-out-form/",
+  "title": "Your Privacy Choices - Outlogic",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonNecessary",
+    "placeholder": "",
+    "aria": "",
+    "label": "Necessary",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonPreferences",
+    "placeholder": "",
+    "aria": "",
+    "label": "Preferences",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonStatistics",
+    "placeholder": "",
+    "aria": "",
+    "label": "Statistics",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "CybotCookiebotDialogBodyLevelButtonMarketing",
+    "placeholder": "",
+    "aria": "",
+    "label": "Marketing",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1",
+    "id": "input_2_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Device ID",
+    "form": 0,
+    "heading": "Submitting Requests to Opt-Out, for Deletion, or to Limit th"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_2",
+    "id": "input_2_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 0,
+    "heading": "Submitting Requests to Opt-Out, for Deletion, or to Limit th"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_2",
+    "id": "input_3_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email",
+    "form": 1,
+    "heading": "Still Have Questions?"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "input_3",
+    "id": "input_3_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Question",
+    "form": 1,
+    "heading": "Still Have Questions?"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "inForm": false
+   },
+   {
+    "text": "Allow selection",
+    "id": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_2",
+    "inForm": true
+   },
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_3",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@outlogic.io"
+  ],
+  "text": "This website uses cookies\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.\nConsent Selection\nNecessary\nPreferences\nStatistics\nMarketing\nShow details\nAllow all\nAllow selection\nDeny\nObservation Panel\nContact Us\nYour Privacy Choices and Consumer Rights\n\nCalifornia Residents:  You have the right to Limi",
+  "fingerprint": "5b3981bc1aa1a2a29a8b505ce8486637cf9696d4c34147ce8b25ab96304fafae"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

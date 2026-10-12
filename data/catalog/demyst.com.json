@@ -1,0 +1,41 @@
+{
+ "domain": "demyst.com",
+ "name": "Demyst Data, Ltd",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:59:57.233Z",
+  "status": 200,
+  "optOutUrl": "https://www.demyst.com/privacy-policy",
+  "title": "Privacy Policy | Demyst",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Ok, Got it",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookie Policy",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Manage Cookies",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Privacy Notice\n\nEffective Date: March 18, 2022\n\nWho is Demyst Data?\n\nDemyst Data Limited and its affiliated companies (together “Demyst Data,” “we,” and “us”) provide the Demyst Data platform and data libraries (collectively referred to herein as the “Platform”), a Software as a Service solution that enables organizations to solve business problems through the use of better data and a best in class infrastructure.\n\nDemyst Data takes the private nature of the Personal Information (defined below) we collect seriously, and we are committed to protecting it. Therefore, we have in place controls an",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

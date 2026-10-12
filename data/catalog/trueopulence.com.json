@@ -1,0 +1,45 @@
+{
+ "domain": "trueopulence.com",
+ "name": "True Opulence Corporation",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:34:43.612Z",
+  "status": 200,
+  "optOutUrl": "https://trueopulence.com/en/privacy-policy",
+  "title": "True Opulence CRM | Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "Your email here",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "9. Consent"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@trueopulence.com"
+  ],
+  "text": "SERVICES \nTRUE DIGITAL PLATFORM \nABOUT US\nCONTACT\nLOGIN\nGET STARTED\nThe Platform\nAccess, enrich, and convert customers seamlessly.\nLearn More \nRequest a Demo \nFeatures\nCAMPAIGNS\nCALENDAR & TASKS\nANALYTICS\nTRUE USERS\nLEAD CONVERSION\nRELATIONSHIP MANAGEMENT\nLIVE CHAT\nSolutions\nBy Industry\nRETAIL\nTRAVEL & HOSPITALITY\nFINANCIAL SERVICES\nREAL ESTATE\nHEALTHCARE\nEDUCATION\nLEGAL\nNON-PROFIT\nBy Role\nMARKETING\nSALES\nANALYTICS\nPROJECT MANAGEMENT\nHUMAN RESOURCES\nPROSPECT & RESEARCH\nCUSTOMER SERVICE\nAnd More\nPartnerships\nDiscover connections and collaborative ventures.\nPARTNERS\nRelationships\nKnow a bit more",
+  "fingerprint": "ad6490e11cbb0bb35760f319382f21855be6e5fed7b417ff64c0c57dfe780395"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "domain": "pmg.com",
+ "name": "PMG Worldwide, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:52.832Z",
+  "status": 200,
+  "optOutUrl": "https://www.pmg.com/privacy-policy",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-c3dbe919-3ec6-4051-b9c1-8e956585bf49",
+    "placeholder": "Enter your email*",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Insights meet inbox. Sign up for PMG's email newsletter."
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Insights meet inbox. Sign up for PMG's email newsletter."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject Optional Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dataprivacy@pmg.com"
+  ],
+  "text": "WHAT WE DO\nOUR WORK\nTEAM & CULTURE\nINSIGHTS & NEWS\nABOUT PMG\nOPEN ROLES\nLET'S CONNECT\nPMG Worldwide, LLC Privacy\nPolicy\n\nLast Updated: July 1, 2026\n\nPMG Worldwide, LLC (“PMG”, \"us\", “we“ or “our”) has created this Privacy Policy (“Policy”) in order to comprehensively inform individuals about our privacy practices and to demonstrate our firm commitment to privacy. This Privacy Policy along with our Cookies Policy and our International Privacy Policy (collectively, this “Policy”) describes how we collect, use, disclose, transfer, store, retain or otherwise process your personal information in th",
+  "fingerprint": "708bb1c05b01980722a23a04dba8f87ec571f7de12090b98d983100ffb0ea939"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

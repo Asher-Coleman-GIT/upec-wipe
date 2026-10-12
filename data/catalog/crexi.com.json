@@ -1,0 +1,65 @@
+{
+ "domain": "crexi.com",
+ "name": "Commercial Real Estate Exchange, Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:27:28.113Z",
+  "status": 403,
+  "optOutUrl": "https://www.crexi.com/privacy",
+  "title": "Crexi Privacy Policy | Crexi.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "searchInput",
+    "id": "",
+    "placeholder": "Enter a location or keywords",
+    "aria": "",
+    "label": "",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Products",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Upgrade",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign in",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@crexi.com"
+  ],
+  "text": "www.crexi.com - The Commercial Real Estate Exchange\nSkip to content\nSale\nLease\nAuctions\nComps & Records\nProducts\nAI\nUpgrade\nAdd listing\nSign in\n\n CREXI\n\nPRIVACY POLICY\n\nEffective: August 15, 2024\n\n \n\nCommercial Real Estate Exchange, Inc. (together with its affiliates, successors, and assigns acting as businesses or controllers within the meaning of U.S. state privacy laws, “Crexi”, “we”, “our”, or “us”) is committed to protecting your privacy.  This Privacy Policy explains how your personal information is collected, used, disclosed, and protected by Crexi, and tells you about the rights and ch",
+  "fingerprint": "914fc95f08abac13038e77f3ccb4ec73375efaffee6e2f6439f30368b820ada7"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

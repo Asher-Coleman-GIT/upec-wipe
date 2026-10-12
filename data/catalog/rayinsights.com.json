@@ -1,0 +1,188 @@
+{
+ "domain": "rayinsights.com",
+ "name": "Ray CDP, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:39.643Z",
+  "status": 200,
+  "optOutUrl": "https://www.rayinsights.com/privacy-notice/consumer-choice-portal/ray-cdp-opt-out-and-delete-request/",
+  "title": "RayCDP Opt-out and Delete Request - Ray Insights",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "nf-field-24",
+    "id": "nf-field-24-0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt out of marketing",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "nf-field-24",
+    "id": "nf-field-24-1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete my data",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "nf-field-24",
+    "id": "nf-field-24-2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Correct my data",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "nf-field-14",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "fname",
+    "id": "nf-field-16",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lname",
+    "id": "nf-field-17",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name *",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "nf-field-18",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address *",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "nf-field-19",
+    "placeholder": "",
+    "aria": "",
+    "label": "City *",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "nf-field-20",
+    "id": "nf-field-20",
+    "placeholder": "",
+    "aria": "",
+    "label": "US States *",
+    "form": 0,
+    "heading": "Consumer Choice",
+    "options": [
+     "=- Select State -",
+     "AL=Alabama",
+     "AK=Alaska",
+     "AZ=Arizona",
+     "AR=Arkansas",
+     "CA=California",
+     "CO=Colorado",
+     "CT=Connecticut"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "nf-field-21",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip *",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "phone",
+    "id": "nf-field-22",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "nf-field-26",
+    "id": "nf-field-26",
+    "placeholder": "",
+    "aria": "",
+    "label": "By checking this box, I affirm I am the consumer whose perso",
+    "form": 0,
+    "heading": "Consumer Choice"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "nf-field-15",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Consumer Choice"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "nf-field-15",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "ddemarsh@rayinsights.com"
+  ],
+  "text": "386.259.0031\nHome | Discover | Contact Us | Login\nAcquisition\nLoyalty\nData & Analytics\nEcommerce\nManaged & Professional Services\nRayCDP Opt-out and Delete Request\nConsumer Choice\nFields marked with an * are required\n\n\n\n\nRayCDP honors consumer privacy and choice. This form is used to submit data subject Opt-Out, Delete and Correction requests.\n\nThis data is used to identify you in our records and to process your request. \n\n\nI would like to: *\nOpt out of marketing\nDelete my data\nCorrect my data\nEmail *\nFirst Name *\nLast Name *\nAddress *\nCity *\nUS States *\n- Select State -\nAlabama\nAlaska\nArizona\n",
+  "fingerprint": "e188fd7d752c6000dd6c456ce3327ba6de8b9cb0548e6fe51563385dad088ac3"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

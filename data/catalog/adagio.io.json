@@ -1,0 +1,43 @@
+{
+ "domain": "adagio.io",
+ "name": "Onfocus SAS",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:57.356Z",
+  "status": 200,
+  "optOutUrl": "https://adagio.io/",
+  "title": "Adagio.io | Optimize. Scale. Sustainably | adagio.io",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Customise",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "dpo@adagio.io"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomise\nReject All\nAccept All\nPowered by\nRequest a demo\nSign in\nBreaking the glass ceiling for proactive publishers\n\nAdagio demand optimization solutions help publishers leverage unlimited demand sources at unprecedented revenue levels, while improving user experience, SPO, and reducing carbon footprint.\n\nRequest a demo\nTrusted by 25000+ publishers worldwide\nSay hello to a bright future\n\nFuture-pro",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

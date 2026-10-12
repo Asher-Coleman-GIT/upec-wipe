@@ -1,0 +1,77 @@
+{
+ "domain": "coxautoinc.com",
+ "name": "Cox Automotive, Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:44:59.806Z",
+  "status": 404,
+  "optOutUrl": "https://www.coxautoinc.com/privacy-statement/;%20https:/www.coxautoinc.com/consumerprivacyrights/",
+  "title": "Page not found - Cox Automotive Inc.",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "EMAIL",
+    "id": "mce-EMAIL",
+    "placeholder": "Enter your email",
+    "aria": "",
+    "label": "Email Address*",
+    "form": 1,
+    "heading": "Topline Auto Insights"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "b_8a41f44c0b93fc2a3555a44f1_b37ae19503",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Topline Auto Insights"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "subscribe",
+    "id": "mc-embedded-subscribe",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Topline Auto Insights"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Our Brands",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "toggle-header-search",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "mc-embedded-subscribe",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "consumer-privacy-ops@coxautoinc.com"
+  ],
+  "text": "Cox Automotive Welcomes Fullpath See More\nx\nOur Brands\nAutotrader\nCentral Dispatch\nCox Fleet\nDealer.com\nDealertrack\nEV Battery Solutions\nKBB\nManheim\nNextGear Capital\nvAuto\nVinSolutions\nXtime\nHelp\n1-855-Cox-Auto\n\nCox Automotive Inc.\n\nBrands\nWhat We Offer\nWho We Are\nInsights\nSearch\nNot Found!\n\nWe couldn't find anything matching that URL. Check it was typed correctly or head home to find your way again.\n\nInsights\nLatest News & Insights\nAuto Market Snapshot\nContributors\nMedia\nPress Releases\nMedia Contacts\nCompany\nAbout us\nContact us\nInsights\nInternational\nCareers\nCox Enterprises\nInformation\nVisito",
+  "fingerprint": "c925cec99fe27a7ca3dba45362fc853feef95c5e54fc86e9d0ffd27caf5dd2c5"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

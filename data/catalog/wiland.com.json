@@ -1,0 +1,101 @@
+{
+ "domain": "wiland.com",
+ "name": "Wiland, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:38:31.270Z",
+  "status": 200,
+  "optOutUrl": "https://wiland.com/privacy-choices/",
+  "title": "Privacy Choices - Wiland",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_1",
+    "id": "input_2_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Name*",
+    "form": 0,
+    "heading": "Let's talk. The possibilities are endless!"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_2",
+    "id": "input_2_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Organization*",
+    "form": 0,
+    "heading": "Let's talk. The possibilities are endless!"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_12",
+    "id": "input_2_12",
+    "placeholder": "",
+    "aria": "",
+    "label": "Job Title*",
+    "form": 0,
+    "heading": "Let's talk. The possibilities are endless!"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_2_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address*",
+    "form": 0,
+    "heading": "Let's talk. The possibilities are endless!"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_10",
+    "id": "input_2_10",
+    "placeholder": "",
+    "aria": "",
+    "label": "Phone*",
+    "form": 0,
+    "heading": "Let's talk. The possibilities are endless!"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "input_5",
+    "id": "input_2_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Add comments",
+    "form": 0,
+    "heading": "Let's talk. The possibilities are endless!"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Start the Conversation!",
+    "id": "gform_submit_button_2",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@wiland.com"
+  ],
+  "text": "Now Available: Digital marketing audiences curated for every season of the promotional calendar. Explore them all here.\n\nmenu\nWiland\nBRANDS AGENCIES NONPROFITS DATA AUDIENCES PERSONABUILDER\nclose\nHome\narrow_forward\nProducts\nAbout\narrow_forward\nBlog\narrow_forward\nPartners\narrow_forward\nEvents\narrow_forward\nCareers\narrow_forward\nContact\narrow_forward\nWiland Privacy Choices\nOur Data Ethics Practices and Use of Consumer Data\nWe care about people.\n\nWe are a marketing company whose clients range from some of the biggest companies and charities in the United States to local charities, such as food ba",
+  "fingerprint": "587beb27ec4d08abc5b2dbe2c7bb41864a5f3c3c73eb645c848723cd5ed54ca8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

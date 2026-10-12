@@ -1,0 +1,25 @@
+{
+ "domain": "marketforcecorp.com",
+ "name": "Market Force Corporation",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:16:26.221Z",
+  "status": 404,
+  "optOutUrl": "https://www.marketforcecorp.com/privacy-policy/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "The resource you are looking for has been removed, had its name changed, or is temporarily unavailable.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

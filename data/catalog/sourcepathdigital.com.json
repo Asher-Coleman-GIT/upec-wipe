@@ -1,0 +1,325 @@
+{
+ "domain": "sourcepathdigital.com",
+ "name": "Source Path Digital",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:42.953Z",
+  "status": 200,
+  "optOutUrl": "https://sourcepathdigital.com/california-consumer-portal/",
+  "title": "California Consumer Portal - Source Path Digital",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "actions[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Delete my personal information",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "actions[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Tell me what personal information Source Path Digital has ab",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "actions[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Tell me what personal information Source Path Digital has so",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "actions[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Correct inaccurate personal information about me",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "actions[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Do not sell or share my personal information",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "actions[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Limit the use or disclosure of my sensitive personal informa",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name *",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name *",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address *",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "telephone",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Telephone Number Optional",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "address",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "city",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "zip",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP Code",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "previous-address",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Previous Street Address",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "previous-city",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Previous City",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "previous-state",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Previous State",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "previous-zip",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Previous ZIP Code",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "correction-details",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "What information do you believe is inaccurate, and what shou",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "authorized-agent[]",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "I am submitting this request as an authorized agent for anot",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "agent-name",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Authorized Agent Name",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "agent-organization",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Organization",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "agent-email",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Authorized Agent Email",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "agent-authority",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "Additional information regarding your authority to submit th",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "certification",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "I certify that the information submitted is accurate and tha",
+    "form": 0,
+    "heading": "Response Times"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Response Times"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit Privacy Request",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@sourcepathdigital.com"
+  ],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All,\" you consent to our use of cookies.\n\nCustomize\nReject All\nAccept All\nPowered by\n \nHOME\n \nABOUT US\n \nSOLUTIONS\n \nINDUSTRIES\n \nCASE STUDIES\n \nCONTACT US\nCalifornia Consumer Portal\nCalifornia Privacy Rights Portal\n\nSource Path Digital provides this portal for California residents to exercise privacy rights available under the California Consumer Privacy Act, as amended (“CCPA”), and other applicable California privacy laws.\n\nSource Path Di",
+  "fingerprint": "e3cf08afad0dd8ff2fff8c7e6d41f176615dad77cc1fd7bda44f83f0ca3f3205"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

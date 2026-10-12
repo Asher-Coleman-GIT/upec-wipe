@@ -1,0 +1,78 @@
+{
+ "domain": "foundryco.com",
+ "name": "IDG Communications Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:05:21.003Z",
+  "status": 200,
+  "optOutUrl": "https://foundryco.com/privacy-policy/",
+  "title": "Privacy Policy | Foundry",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "_search_facet",
+    "id": "search-field-toggle",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Translation available",
+    "id": "language-picker",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "Skip to content\nContact us\nTranslation available\nSearch for:\nBrands\nAudiences\nSolutions\nResearch\nResources\nAbout us\nFOUNDRYCO, INC.\nPrivacy Policy\nWelcome\n\nWe’re glad you chose to visit an FoundryCo, Inc. (“Foundry” or “we”) site! We care about your privacy and the personal data you share with us and want you to understand how we are using and protecting the personal data we collect about you as a data controller.\n\nFoundry is respectful of data privacy and adopts best practices in compliance with applicable privacy law and regulations, including the European General Data Protection Regulation ",
+  "fingerprint": "092c4669323552bf9e519301cce2dca6f426e4b6b932f7ad7760406bacf6a012"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

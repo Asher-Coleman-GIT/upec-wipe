@@ -1,0 +1,260 @@
+{
+ "domain": "aristotle.com",
+ "name": "Aristotle International, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:58.649Z",
+  "status": 200,
+  "optOutUrl": "https://www.aristotle.com/privacy/delete-my-personal-information/",
+  "title": "Delete my personal information - Aristotle",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_21",
+    "id": "input_10_21",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_3",
+    "id": "input_10_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "First Name*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_4",
+    "id": "input_10_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "Middle Name (optional)",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_5",
+    "id": "input_10_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last Name*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_6",
+    "id": "input_10_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address and Unit Number*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_7",
+    "id": "input_10_7",
+    "placeholder": "",
+    "aria": "",
+    "label": "City*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_9",
+    "id": "input_10_9",
+    "placeholder": "",
+    "aria": "",
+    "label": "State*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA.",
+    "options": [
+     "Alabama=Alabama",
+     "California=California",
+     "Colorado=Colorado",
+     "Connecticut=Connecticut",
+     "Delaware=Delaware",
+     "Indiana=Indiana",
+     "Iowa=Iowa",
+     "Kentucky=Kentucky"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_8",
+    "id": "input_10_8",
+    "placeholder": "",
+    "aria": "",
+    "label": "Zip*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_14",
+    "id": "input_10_14",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_15",
+    "id": "input_10_15",
+    "placeholder": "(999) 999-9999",
+    "aria": "",
+    "label": "Mobile Number",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_17[]",
+    "id": "input_10_17_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Month",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA.",
+    "options": [
+     "=Month",
+     "1=1",
+     "2=2",
+     "3=3",
+     "4=4",
+     "5=5",
+     "6=6",
+     "7=7"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_17[]",
+    "id": "input_10_17_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Day",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA.",
+    "options": [
+     "=Day",
+     "1=1",
+     "2=2",
+     "3=3",
+     "4=4",
+     "5=5",
+     "6=6",
+     "7=7"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_17[]",
+    "id": "input_10_17_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Year",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA.",
+    "options": [
+     "=Year",
+     "2027=2027",
+     "2026=2026",
+     "2025=2025",
+     "2024=2024",
+     "2023=2023",
+     "2022=2022",
+     "2021=2021"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_18",
+    "id": "input_10_18",
+    "placeholder": "9999",
+    "aria": "",
+    "label": "Last 4 Digits of SSN*",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_20",
+    "id": "input_10_20",
+    "placeholder": "",
+    "aria": "",
+    "label": "CAPTCHA",
+    "form": 0,
+    "heading": "REQUEST TO DELETE MY PERSONAL DATA."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "I Accept & Continue",
+    "id": "gform_submit_button_10",
+    "inForm": true
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "dpo@aristotle.com"
+  ],
+  "text": "CAMPAIGNS\nPAC\nADVOCACY\nDATA\nINTEGRITY\nABOUT\nBLOG\nLOGIN\nCONTACT US\nREQUEST TO DELETE MY PERSONAL DATA.\nCompany\nThis field is for validation purposes and should be left unchanged.\n\nAll fields are required (except where noted).\n\nFirst Name*\nMiddle Name (optional)\nLast Name*\nAddress and Unit Number*\nCity*\nState*\nAlabama\nCalifornia\nColorado\nConnecticut\nDelaware\nIndiana\nIowa\nKentucky\nLouisiana\nMaryland\nMinnesota\nMontana\nNebraska\nNevada\nNew Hampshire.\nNew Jersey\nOklahoma\nOregon\nRhode Island\nTennessee\nTexas\nUtah\nVirginia\nOther\nZip*\nEmail*\nMobile Number\nDate of Birth*\nMonth\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\nD",
+  "fingerprint": "ae082b77487ca737f4e16adfecd59f1f6321b1176f4941859f82828af328471f"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

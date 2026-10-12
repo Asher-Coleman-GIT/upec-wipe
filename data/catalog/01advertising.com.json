@@ -1,0 +1,34 @@
+{
+ "domain": "01advertising.com",
+ "name": "01Advertising Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:04.052Z",
+  "status": 200,
+  "optOutUrl": "https://www.01advertising.com/legal/metrics/",
+  "title": "Legal Portal",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@01advertising.com"
+  ],
+  "text": "Home\nSolutions\nContact\nLegal & Privacy\nLegal Portal\nStatements\nPrivacy Policy\nTerms of Service\nCookies\nCookie Policy\nConsent Preferences\nChoices\nDo Not Sell or Share My Personal information\nLimit the Use Of My Sensitive Personal Information\nPrivacy Request Metrics\nHome\nSolutions\nContacts\nLegal\nPrivacy Policy\nTerms of Service\nCookie Policy\nConsent Preferences\nDo Not Sell My Information\nCopyright © 2026",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

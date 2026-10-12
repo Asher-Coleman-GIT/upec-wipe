@@ -1,0 +1,25 @@
+{
+ "domain": "blackbox.email",
+ "name": "Indiemark LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:39:36.355Z",
+  "status": 200,
+  "optOutUrl": "https://blackbox.email/privacy-policy",
+  "title": "BlackBox - Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "HOME\nSOLUTION\nPRICING\nNEWS\nCONTACT\nLOG IN\nPRIVACY POLICY\nEffective January 1, 2020\nView the prior version of our privacy policy (last updated May 15, 2018) here.\n1. Introduction to Our Services\n\nIndiemark LLC (dba Email Industries), the owner and operator of this website, provide to clients a wide variety of risk assessment, data enhancements and analytic services, which help our clients and the platforms and partners they work with to provide safer, more compliant and more relevant marketing communications.\n\nMost of the information that we handle is not collected on this website, but rather t",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

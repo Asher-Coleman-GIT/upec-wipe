@@ -1,0 +1,83 @@
+{
+ "domain": "newmexicodatainsights.com",
+ "name": "New Mexico Data Insights",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T23:32:22.498Z",
+  "status": 200,
+  "optOutUrl": "https://www.newmexicodatainsights.com/",
+  "title": "New Mexico Data Insights | Professional Property Research Services",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "name",
+    "id": "name",
+    "placeholder": "",
+    "aria": "",
+    "label": "Full Name *",
+    "form": 0,
+    "heading": "Request a Consultation"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "company",
+    "id": "company",
+    "placeholder": "",
+    "aria": "",
+    "label": "Company Name",
+    "form": 0,
+    "heading": "Request a Consultation"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email Address *",
+    "form": 0,
+    "heading": "Request a Consultation"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "needs",
+    "id": "needs",
+    "placeholder": "",
+    "aria": "",
+    "label": "Describe Your Research Needs *",
+    "form": 0,
+    "heading": "Request a Consultation"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SUBMIT REQUEST",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Your Privacy Choices",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@eleris.com"
+  ],
+  "text": "NEW MEXICO DATA INSIGHTS\nServices\nAbout\nOur Process\nContact\nProfessional Property Research for Real Estate\n\nNew Mexico Data Insights provides expert-led research and analysis for real estate professionals, investors, and institutions nationwide.\n\nREQUEST A CONSULTATION\nOur Professional Services\n\nOur team of trained research specialists conducts comprehensive property research on behalf of each client. Every engagement is handled by a dedicated professional who reviews your specific requirements and delivers a customized research report.\n\nTitle & Ownership Research\n\nDetailed chain-of-title rese",
+  "fingerprint": "47ab14d9fd90eeec278b3f3bc82fbbdbbd4e4c5aa0ce3c9cd7e73be26da8a0c8"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

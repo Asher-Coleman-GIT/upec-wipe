@@ -1,0 +1,27 @@
+{
+ "domain": "networx.com",
+ "name": "Networx Systems Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "blocked",
+ "survey": {
+  "checkedAt": "2026-10-11T23:32:14.081Z",
+  "status": 403,
+  "optOutUrl": "https://www.networx.com/privacy",
+  "title": "403 Forbidden",
+  "block": "hard",
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "amyl@networx.com"
+  ],
+  "text": "403 Forbidden",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

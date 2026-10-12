@@ -1,0 +1,44 @@
+{
+ "domain": "moodys.com",
+ "name": "Moody's Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:18:28.787Z",
+  "status": 200,
+  "optOutUrl": "https://www.moodys.com/web/en/us/legal/privacy-policy.html",
+  "title": "Privacy Policy and Data Protection at Moody’s",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Sign In",
+    "id": ":r2:",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@moodys.com"
+  ],
+  "text": "Sign In\nWho We Serve\nSolutions\nCapabilities\nInsights\nAbout Us\nSupport\nREAD IN\nENGLISH\nFRANÇAIS\nDEUTSCH\nPORTUGUÊS\nESPAÑOL\n简体中文\n日本語\nPrivacy Policy\n\nLAST UPDATED: July 28 2026\n\nMoody’s respects and values your privacy. This Privacy Policy explains how we collect your Personal Data (defined below) on those web sites of Moody’s that post or link directly to this Privacy Policy (collectively, the “Site”) and through offline means, how we use, disclose, and protect such data, and the choices you have concerning our use of such data. Please read this Privacy Policy carefully. Moody’s may from time to ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

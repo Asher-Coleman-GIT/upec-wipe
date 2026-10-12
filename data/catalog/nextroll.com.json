@@ -1,0 +1,28 @@
+{
+ "domain": "nextroll.com",
+ "name": "NextRoll, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:19:56.123Z",
+  "status": 200,
+  "optOutUrl": "https://www.nextroll.com/privacy",
+  "title": "NextRoll - Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@nextroll.com"
+  ],
+  "text": "Home\nOur AdRoll Brand\nCareers\nCulture\nBlog\nService Privacy Notice\n\nEffective as of June 10, 2026\nView archived Privacy Notice\n\nNextRoll, Inc. and its subsidiaries and affiliates (“we ” “our” or “us”) a connected advertising platform built for fast-moving, resource-constrained marketers. We provide multi-channel audience activation, account-based marketing, AI-powered engines and agents, cross-channel attribution, and award-winning support to help businesses generate awareness, deepen engagement, and drive full-funnel growth.\n\nWe have prepared this Service Privacy Notice to describe the types o",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

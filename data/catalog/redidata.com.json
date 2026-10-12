@@ -1,0 +1,98 @@
+{
+ "domain": "redidata.com",
+ "name": "Redi-Data Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:16.547Z",
+  "status": 307,
+  "optOutUrl": "https://www.redidata.com/privacy-policy/",
+  "title": "Privacy Policy, Privacy Statement | RediData.com",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "s",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "btnSubmit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "Effective Date: May 11, 2018 | Updated: June 22, 2026"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "your-email",
+    "id": "",
+    "placeholder": "Email*",
+    "aria": "",
+    "label": "",
+    "form": 2,
+    "heading": "Effective Date: May 11, 2018 | Updated: June 22, 2026"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Contact Us",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Subscribe",
+    "id": "btnSubmit",
+    "inForm": true
+   },
+   {
+    "text": "settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Close GDPR Cookie Banner",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@redidata.com"
+  ],
+  "text": "973-227-4380\nSearch for:\nSolutions \nHealthcare Lists\nBusiness & Consumer Lists\nRedi-Data Digital®\nServices \nRedi-Counts™\n\nRedi-Connect®\n\nKaiser Permanente Suppression\n\nRedi-Data Reseller\n\nData Append\n\nDirect Mail Marketing & Digital Printing Services\n\nData Processing\n\nDear Health Care Provider Letters\n\nReal-Time Physician Verification\n\nResources\nCompany \nAbout Us\n\nOur Partners\n\nOur Team\n\nNews and Events\n\nData Quality\n\nContact Us\nPRIVACY STATEMENT\nEffective Date: May 11, 2018 | Updated: June 22, 2026\nA. The Types of Personal Information we collect\n\nRedi-Data is committed to providing you with a",
+  "fingerprint": "07fc2ac76b35f2979ff39bed10d31e7e176f8397f8b84e15403f12358f9fa257"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

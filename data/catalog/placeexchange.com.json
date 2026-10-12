@@ -1,0 +1,98 @@
+{
+ "domain": "placeexchange.com",
+ "name": "Place Exchange, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:41.074Z",
+  "status": 200,
+  "optOutUrl": "https://www.placeexchange.com/do-not-sell-my-information",
+  "title": "Do Not Sell My Information - PlaceExchange",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "field_1[]",
+    "id": "wsf-1-field-1-row-1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes, Opt-me Out: Please stop using and sharing my device's M",
+    "form": 0,
+    "heading": "What “Opting-Out” Means"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "field_2",
+    "id": "wsf-1-field-2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email *",
+    "form": 0,
+    "heading": "What “Opting-Out” Means"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "field_3",
+    "id": "wsf-1-field-3",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mobile Advertising Identifier *",
+    "form": 0,
+    "heading": "What “Opting-Out” Means"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Submit",
+    "id": "wsf-1-field-6",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All Non-Essential Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@placeexchange.com"
+  ],
+  "text": "Contact Us\nFor Demand Partners\nPlace Exchange SSP\nPlace Exchange Clear\nPlace Exchange Dynamic Creative\nPerView Measurement for Buyers\nFor Supply Partners\nPlace Exchange SSP\nPlace Exchange Publisher Portal\nPerView Measurement for Sellers\nAbout Place Exchange\nMarkets and Partners\nPortal Login\nNews & Events\nJoin Our Team\nContact Us\nDo Not Sell My Information\nAbout this Form\n\nIn the course of operating Place Exchange, we may receive your device’s mobile advertising identifier from our Data Providers and share it with Advertisers and other partners. (We do not collect any information directly from ",
+  "fingerprint": "10ce3bfcf99ae15496f44d5a0beb06a3946195d9a298c6100535a9a536dac4dc"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

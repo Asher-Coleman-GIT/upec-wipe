@@ -1,0 +1,20 @@
+{
+ "domain": "kargo.com",
+ "name": "Kargo Global LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:12:15.833Z",
+  "contacts": [
+   "ccparequest@kargo.com"
+  ],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.kargo.com/ccpa"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

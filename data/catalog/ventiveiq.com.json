@@ -1,0 +1,28 @@
+{
+ "domain": "ventiveiq.com",
+ "name": "VentiveIQ LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:09.914Z",
+  "status": 200,
+  "optOutUrl": "https://ventiveiq.com/privacy-policy/",
+  "title": "Privacy Policy - VentiveIQ",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "privacy@ventiveiq.com"
+  ],
+  "text": "Data\nSolutions\nIndustries\nResources\nCompany\nContact Us\nPrivacy Policy\nIntroduction\n\nLast Updated: May 30 2024\n\nWe value your privacy very highly. Please read this VentiveIQ Privacy Policy (“Privacy Policy”) carefully before using the Website operated VentiveIQ LLC , a Limited Liability Company formed in New Jersey, United States (“us,” “we,” “our”) in connection with the https://VentiveIQ.com website, and any other website or service that we own or control and which posts or links to this Privacy Policy (collectively, the “Website”).  By accessing or using the Website, you agree to be bound by",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

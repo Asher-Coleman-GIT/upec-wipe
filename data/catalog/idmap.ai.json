@@ -1,0 +1,43 @@
+{
+ "domain": "idmap.ai",
+ "name": "IDMAP Inc",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:09:36.968Z",
+  "status": 200,
+  "optOutUrl": "https://idmap.ai/mobile-optout/",
+  "title": "Privacy Policy - idmap.ai",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Do Not Share My Personal Information",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept",
+    "id": "acceptCookies",
+    "inForm": false
+   },
+   {
+    "text": "Decline",
+    "id": "declineCookies",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "michael.belsky@idmap.ai"
+  ],
+  "text": "Home\nContact\nPrivacy Policy\n\nLast Updated: September 22, 2026\n\nIDMAP.TECH LLC and its affiliates (“IDMAP,” “we,” “us,” or “our”) are global marketing companies. We help our clients improve how they advertise and market through digital channels. We believe that the responsible use of data supports business growth and builds strong relationships between brands and consumers. IDMAP values your privacy and is committed to protecting the privacy of your information.\n\nThis Privacy Policy (“Policy”) describes how IDMAP uses the personal information you provide and the rights you have. We have created",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

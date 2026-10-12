@@ -1,0 +1,59 @@
+{
+ "domain": "bombora.com",
+ "name": "Bombora, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:08.098Z",
+  "status": 200,
+  "optOutUrl": "https://bombora.com/opt-out/",
+  "title": "Privacy philosophy | Bombora",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Solutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Solutions for",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "How Bombora works",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Resources",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Partners",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Company",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legal@bombora.com"
+  ],
+  "text": "Skip to Main Content\nCustomer login\nSolutions\nHow Bombora works\nPartners & integrations\nResources\nCompany\nSpeak to an expert\nOur privacy philosophy\n\nBombora was founded to unlock the potential of the B2B ecosystem, for the benefit of the ecosystem. We are stewards of data.\n\nData subjects should have the right to control how and when their data is collected and shared. Our data solutions are built to meet leading enterprise quality and privacy standards. Direct-source signals ensure long-turn durability. \n\nKey policies and terms\nBombora’s privacy policy\n\nUnderstand our data collection and usage",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

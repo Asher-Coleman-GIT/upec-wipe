@@ -1,0 +1,57 @@
+{
+ "domain": "bridg.com",
+ "name": "Bridg, a division of Cardlytics, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:40:28.934Z",
+  "status": 200,
+  "optOutUrl": "https://datagrail.bridg.com/",
+  "title": "Bridg Privacy Policy | Data & Your Rights",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Why Brands Don’t Need to Hesitate on RMNs"
+   },
+   {
+    "tag": "input",
+    "type": "search",
+    "name": "query",
+    "id": "",
+    "placeholder": "Search…",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": "Why Brands Don’t Need to Hesitate on RMNs"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legalnotices@cardlytics.com"
+  ],
+  "text": "Skip Navigation\nSolutions\nIndustries\nResources\nCompany\nLog in\nLet’s talk growth\nPrivacy Policy\n\nEffective Date: January 10, 2026\n\n \n\nIntroduction\n\nThank you for choosing to learn more about the privacy policies of DB Sub, LLC (“DB,” “we,” “us,”“our” or “Company”).\n\nThis privacy policy (“Privacy Policy”) explains how we may collect, store, use, and disclose information when you access or use this Privacy Policy webpage (“Webpage”) or DB’s products and services (collectively referred to as “Services”).\n\nOur affiliates and parent company, ParTech, Inc., have their own privacy policies that apply ",
+  "fingerprint": "8f3ae95fce576ce260124f3f4c4fd37ac488752c53822e8093dbfde8e90dc8fb"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

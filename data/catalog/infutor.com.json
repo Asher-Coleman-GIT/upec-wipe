@@ -1,0 +1,53 @@
+{
+ "domain": "infutor.com",
+ "name": "Lead Intelligence Inc.",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:10:36.641Z",
+  "status": 200,
+  "optOutUrl": "https://infutor.com/privacy-center/",
+  "title": "Privacy Center | infutor.com",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Close",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Cookies Settings",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@infutor.com"
+  ],
+  "text": "Understand and retain customers with enriched data.\n\nDownload the whitepaper\nmyJornaya\nSupport\nProducts\nInfluence borrowers earlier\nGet the Guide\nProducts\nConsumer Marketing Data\nTotal Consumer Insights\nIdentity Data\nTotal Consumer History\nTotal Email\nTotal IP Address\nTotal MAID\nTotal Phone\nAudiences\nDigital Audiences\nData Append\nAttribute Append\nIdentity Append\nIn-Market Alerts\nActivate\nLead Insights\nIntelligence\nTCPA Guardian\nBusiness Need\nIdentity Resolution\nIdentity Append\nSnowflake App\nData Enrichment\nAttribute Append\nConsumer Profile Report\nSnowflake App\nLead Quality\nIntelligence\nPersist",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "domain": "radaris.com",
+ "name": "radaris.com",
+ "sources": [
+  "badbool"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:25.964Z",
+  "status": 200,
+  "optOutUrl": "https://radaris.com/control-privacy",
+  "title": "This Domain Has Been Transferred by Court Order — Radaris.com",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": "This Domain Has Been Transferred by Court Order\n\nAtlas Data Privacy Corporation, et al. v. Radaris.com, et al.\nSuperior Court of New Jersey, Law Division, Middlesex County\nDocket No. MID-L-000847-24\n\nPursuant to a final judgment of the New Jersey Superior Court, the domain name radaris.com has been transferred to Atlas Data Privacy Corporation (“Atlas”) and is no longer under the control of its former operators.\n\nOn February 8, 2024, Atlas and five individual plaintiffs filed a lawsuit in New Jersey Superior Court: Atlas Data Privacy Corporation, et al. v. Radaris.com, et al. On May 27, 2025, ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

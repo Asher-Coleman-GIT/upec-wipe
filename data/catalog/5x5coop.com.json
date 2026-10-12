@@ -1,0 +1,76 @@
+{
+ "domain": "5x5coop.com",
+ "name": "5X5 US, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [
+  "5x5data.com"
+ ],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:33:18.912Z",
+  "status": 404,
+  "optOutUrl": "https://5x5data.com/dsr-out/",
+  "title": "Page not found - 5x5 Data",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "s",
+    "id": "s",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "Search for:",
+    "form": 0,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "searchsubmit",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Customize",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Reject All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Accept All",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Search",
+    "id": "searchsubmit",
+    "inForm": true
+   },
+   {
+    "text": "",
+    "id": "search-close",
+    "inForm": true
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "We value your privacy\n\nWe use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.\n\nCustomize\nReject All\nAccept All\nRocketReach Expands Data Quality by Partnering with 5×5 Learn More\nSolutions\nProducts\nThe Co-Op\nResources\nAbout 5x5\nProduct schemas\nContact us\nSearch for:\n404. Not found\nCONTACT US\nTake the next step\nLet’s talk\n\nFOLLOW US\n\nSOLUTIONS\nAccount-Based Marketing\nAudience Activation\nAudience Creation\nDemand Generation\nDemand-Side Platform\nEmployee Satisfaction\nFraud Recogniti",
+  "fingerprint": "358fffdeb9a782c69ca3dfec8d621b95c1523b97eed074053ebde8d19f962a73"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

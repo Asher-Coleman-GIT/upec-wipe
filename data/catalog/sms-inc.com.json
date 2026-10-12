@@ -1,0 +1,28 @@
+{
+ "domain": "sms-inc.com",
+ "name": "Specialists Marketing Services, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T22:30:23.718Z",
+  "status": 404,
+  "optOutUrl": "https://sms-inc.com/privacy-notice/",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "dataprivacyteam@sms-inc.com"
+  ],
+  "text": "",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

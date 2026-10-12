@@ -1,0 +1,114 @@
+{
+ "domain": "clay.com",
+ "name": "Clay Labs, Inc",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:42:55.076Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.clay.com/policies",
+  "title": "Clay Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "1. What information do we collect?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "2. How do we use your information?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "3. Will We Share Your Information With A",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "4. How Do We Handle Your Third-Party Log",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "5. How Long Do We Keep Your Information?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "6. How Do We Keep Your Information Safe?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "7. Do We Collect Information From Minors",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "8. Can I Change My Account Information O",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "9. Can I Opt-Out Of Email Marketing?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "10. Are There Controls For Do-Not-Track ",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "11. What Are My Privacy Rights In Europe",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "12. Do Residents Of Certain U.S. States ",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "13. Is Clay A Data Broker?",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "14. International Visitors",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "15. California § 7102 Metrics",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "16. Updates",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "17. Contact Us",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@clay.com"
+  ],
+  "text": "Skip to navigation\nSkip to sidebar\nSkip to main content\nThe data we collect, how it's used, and who we share it with\nWe care about your privacy and want to help you understand how we collect, use, and share your personal information.\nShow me how the Privacy Center works →\nPrivacy Policy\n1. What information do we collect?\n2. How do we use your information?\n3. Will We Share Your Information With Anyone?\n4. How Do We Handle Your Third-Party Logins?\n5. How Long Do We Keep Your Information?\n6. How Do We Keep Your Information Safe?\n7. Do We Collect Information From Minors?\n8. Can I Change My Account",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

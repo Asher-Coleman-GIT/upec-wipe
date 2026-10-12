@@ -1,0 +1,218 @@
+{
+ "domain": "datafy.com",
+ "name": "Datafy LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:09.942Z",
+  "status": 200,
+  "optOutUrl": "https://www.datafy.com/opt-out",
+  "title": "Datafy - Personal Data Rights Request",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "first-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "* First Name",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "last-name",
+    "placeholder": "",
+    "aria": "",
+    "label": "* Last Name",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "",
+    "id": "primary-email-address",
+    "placeholder": "",
+    "aria": "",
+    "label": "* Primary Email Address",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "",
+    "id": "secondaryEmail",
+    "placeholder": "",
+    "aria": "",
+    "label": "Add a secondary email address?",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requester",
+    "id": "Myself",
+    "placeholder": "",
+    "aria": "",
+    "label": "Myself",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "requester",
+    "id": "AnotherIndividual",
+    "placeholder": "",
+    "aria": "",
+    "label": "Another Individual",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "country",
+    "placeholder": "",
+    "aria": "",
+    "label": "* Country",
+    "form": 0,
+    "heading": "Personal Data Rights Request",
+    "options": [
+     "=Select Country",
+     "af=Afghanistan",
+     "al=Albania",
+     "dz=Algeria",
+     "ad=Andorra",
+     "ao=Angola",
+     "ai=Anguilla",
+     "ag=Antigua and Barbuda"
+    ]
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "",
+    "id": "state",
+    "placeholder": "",
+    "aria": "",
+    "label": "* State",
+    "form": 0,
+    "heading": "Personal Data Rights Request",
+    "options": [
+     "=Select State"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "mobile-device-advertising-id",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mobile Device Advertising ID (Not required but strongly reco",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "action",
+    "id": "Opt-out",
+    "placeholder": "",
+    "aria": "",
+    "label": "Opt-out of the sale and use of my personal data",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "action",
+    "id": "Know",
+    "placeholder": "",
+    "aria": "",
+    "label": "Exercise the right to know what personal data has been colle",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "action",
+    "id": "Limit",
+    "placeholder": "",
+    "aria": "",
+    "label": "Exercise the right to limit the use and disclosure of person",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "action",
+    "id": "Delete",
+    "placeholder": "",
+    "aria": "",
+    "label": "Excercise the right to delete my personal data",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "action",
+    "id": "Correct",
+    "placeholder": "",
+    "aria": "",
+    "label": "Exercise the right to correct my collected personal data (if",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "",
+    "id": "additional-request-notes",
+    "placeholder": "",
+    "aria": "",
+    "label": "Additional Notes",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "signature",
+    "placeholder": "",
+    "aria": "",
+    "label": "* Signature",
+    "form": 0,
+    "heading": "Personal Data Rights Request"
+   }
+  ],
+  "buttons": [],
+  "captcha": true,
+  "contacts": [
+   "opt-out@datafy.com"
+  ],
+  "text": "It's finally here! A new way to measure attendance. Discover Tally\nSolutions\nIndustries\nPricing\nResources\nSign in\nGet a demo\nPersonal Data Rights Request\n\nAt Datafy, we value your preferences regarding your personal data and are dedicated to respecting your privacy rights. Our commitment extends beyond our clients to also include all visitors to our website, or any covered individual that is included within our analysis software and advertising technologies.\n\nIf you reside in a state that grants specific protected data-related rights, you have the option to:\n\nOpt out of the sale or use of your",
+  "fingerprint": "916f8c3312f547724e5d907b0c654f37867310898c686a0c64e27e1166025be6"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

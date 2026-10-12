@@ -1,0 +1,49 @@
+{
+ "domain": "lob.com",
+ "name": "Lob.com, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:15:17.398Z",
+  "status": 200,
+  "optOutUrl": "https://www.lob.com/privacy",
+  "title": "Privacy Policy - Lob",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Set Cookie Preferences",
+    "id": "onetrust-pc-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "Reject All Cookies",
+    "id": "onetrust-reject-all-handler",
+    "inForm": false
+   },
+   {
+    "text": "Accept All Cookies",
+    "id": "onetrust-accept-btn-handler",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy.inbox@lob.com"
+  ],
+  "text": "Product\nSolutions\nResources\nPricing\nLogistics for Printers\nSUPPORT\nLOGIN\nGet started for free\nBook a demo\nLob Privacy Policy\n\nLast Updated: July 6, 2026\n\nPlease see our Privacy Snapshot below for a high-level overview of our privacy practices.\n\n‍\n\nPlease read this Privacy Policy carefully.\n\n‍\n\nThis Lob.com, Inc. (“Lob”, “we” or “us”) Privacy Policy contains important information about how we collect, use, and disclose your personal information when you visit our website, use our products and services, apply for a job with us, and in connection with our other interactions with you (collectively",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

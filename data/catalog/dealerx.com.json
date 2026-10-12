@@ -1,0 +1,260 @@
+{
+ "domain": "dealerx.com",
+ "name": "DealerX Partners LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:47:02.114Z",
+  "status": 200,
+  "optOutUrl": "https://dealerx.com/privacy-options/",
+  "title": "Dealerships, OEMs and Enterprise Customers Leverage DealerX To Sell & Service More Vehicles",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_10",
+    "id": "input_76_10",
+    "placeholder": "Name",
+    "aria": "",
+    "label": "Name*",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_46",
+    "id": "choice_76_46_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_46",
+    "id": "choice_76_46_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "input_3",
+    "id": "input_76_3",
+    "placeholder": "Email",
+    "aria": "",
+    "label": "Email*",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_48",
+    "id": "choice_76_48_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_48",
+    "id": "choice_76_48_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "tel",
+    "name": "input_4",
+    "id": "input_76_4",
+    "placeholder": "Phone",
+    "aria": "",
+    "label": "Phone",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_47",
+    "id": "choice_76_47_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "Yes",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_47",
+    "id": "choice_76_47_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.1",
+    "id": "input_76_49_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "Street Address",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.2",
+    "id": "input_76_49_2",
+    "placeholder": "",
+    "aria": "",
+    "label": "Address Line 2",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.3",
+    "id": "input_76_49_3",
+    "placeholder": "",
+    "aria": "",
+    "label": "City",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.4",
+    "id": "input_76_49_4",
+    "placeholder": "",
+    "aria": "",
+    "label": "State / Province / Region",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "input_49.5",
+    "id": "input_76_49_5",
+    "placeholder": "",
+    "aria": "",
+    "label": "ZIP / Postal Code",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_49.6",
+    "id": "input_76_49_6",
+    "placeholder": "",
+    "aria": "",
+    "label": "Country",
+    "form": 0,
+    "heading": "Manage Your Data",
+    "options": [
+     "=",
+     "AF=Afghanistan",
+     "AX=Åland Islands",
+     "AL=Albania",
+     "DZ=Algeria",
+     "AS=American Samoa",
+     "AD=Andorra",
+     "AO=Angola"
+    ]
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_31",
+    "id": "choice_76_31_0",
+    "placeholder": "",
+    "aria": "",
+    "label": "I have one or more identifier (e.g., Cookie ID, Mobile ID, C",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "input_31",
+    "id": "choice_76_31_1",
+    "placeholder": "",
+    "aria": "",
+    "label": "No, I do not have any identifiers",
+    "form": 0,
+    "heading": "Manage Your Data"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "input_15",
+    "id": "input_76_15",
+    "placeholder": "",
+    "aria": "",
+    "label": "Reason for inquiry*",
+    "form": 0,
+    "heading": "Manage Your Data",
+    "options": [
+     "=Select Option",
+     "Opt-in request=Opt-in request",
+     "Opt-out request=Opt-out request",
+     "Data File=Request a copy of my",
+     "data removal=Removal of my person"
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "gform_submit_button_76",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": true,
+  "contacts": [
+   "privacy@dealerx.com"
+  ],
+  "text": "Home\nSolutions\nStrategy\nPrivacy\nAbout Us\nContact Us\nPrivacy Options\n\nLast updated: March 20th, 2025\n\nDealerX does not sell or license consumer data to third parties\n\nYour privacy is important to us. This page allows you to control the information that DealerX Partners, LLC (“DealerX”, “we”, “our” or “us”) collects through the DealerX owned and operated corporate websites (“Websites”) and the DealerX platform (“Platform”).\n\nTo learn what information we collect through our Websites, please visit our DealerX Website Privacy Policy. To learn what information we collect through our Platform visit o",
+  "fingerprint": "b55ea6f69aa2da4dd01e1fd1d5d287f730a1033a97ea1b4d66fd366465458205"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "domain": "completemailinglists.com",
+ "name": "Complete Mailing Lists LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-11T21:43:47.704Z",
+  "status": 404,
+  "optOutUrl": "https://www.completemailinglists.com/do-not-sell-my-information",
+  "title": "",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "ewoolf@completemailinglists.com"
+  ],
+  "text": "Page not found.\nGo Home\nAbout\nMenu Item One\nMenu Item Two\nMenu Item Three\nServices\nMenu Item One\nMenu Item Two\nMenu Item Three\nNews\nMenu Item One\nMenu Item Two\nMenu Item Three",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

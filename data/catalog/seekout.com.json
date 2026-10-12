@@ -1,0 +1,28 @@
+{
+ "domain": "seekout.com",
+ "name": "ZipStorm, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:29:11.136Z",
+  "status": 200,
+  "optOutUrl": "https://www.seekout.com/privacy/",
+  "title": "Privacy Policy | SeekOut",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@seekout.com"
+  ],
+  "text": "Skip to content\nSolutions\nCapabilities\nResources\nCompany\nPricing\nSign in\nStart free\nBook a demo\nPrivacy Policy\n\nLast Updated: 06/01/2026\n\nThe SeekOut services include an online talent search and talent optimization solution that allows customers to (i) discover and engage with internal and external candidates; and (ii) analyze attributes of existing personnel for internal talent purposes, including through the compilation and maintenance of the SeekOut Candidate Database. We also provide a talent sourcing and recruiting service called SeekOut Spot that sources and recruits qualified candidates",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

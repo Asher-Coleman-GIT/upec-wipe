@@ -1,0 +1,40 @@
+{
+ "domain": "privco.com",
+ "name": "PrivCo Media LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:24:02.815Z",
+  "status": 200,
+  "optOutUrl": "https://www.privco.com/privacy-policy",
+  "title": "PrivCo Privacy Policy",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "",
+    "placeholder": "Search",
+    "aria": "",
+    "label": "",
+    "form": 0,
+    "heading": ""
+   }
+  ],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@privco.com"
+  ],
+  "text": "Use Cases\nAPI\nIndustries\nPricing\nMethodology\n\nSign In\n\nCreate Free Account\n\nPrivCo Privacy Policy\n\nLast Updated: July 2, 2024\n\nIntroduction\n\nThis privacy and cookie policy (\"Policy\") describes how PrivCo Holding, Inc. (\"Company,\" \"we,\" and \"our\") collects, uses and shares personal data when using this website privco.com (the \"Site\"), Google Chrome Extension (\"Extension\") and our services provided in connection with the Site and Extension (the \"Services\"). Please read the following information carefully to understand our views and practices regarding your personal data and how we will treat it.",
+  "fingerprint": "20f4526319b210a16ffbea699b826d02dce5fa3c7b36c25d47c99fc30c298c17"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "domain": "dataskip.io",
+ "name": "Dataskip",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:46:41.986Z",
+  "status": 200,
+  "optOutUrl": "https://dataskip.io/pricing",
+  "title": "Skip Tracing Pricing: 4 Cents Per Hit | DataSkip",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "",
+    "id": "receipt-records",
+    "placeholder": "",
+    "aria": "Records uploaded, up to 250,000",
+    "label": "UPLOADED",
+    "form": -1,
+    "heading": "SKIP TRACING COST: YOU ONLY PAY FOR WHAT COMES BACK."
+   }
+  ],
+  "buttons": [
+   {
+    "text": "ACCEPT ALL",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "REJECT NON-ESSENTIAL",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "DATASKIP.IO\nPRICING\nINDUSTRIES\nDEVELOPERS\nFAQ\nCONTACT US\nSIGN IN\nSIGN UP\n\nRATE SHEET\n\nSKIP TRACING PRICING.\n\nWhat your money gets. No minimum order, and misses are never charged.\n\nCORE SERVICE\nSKIP TRACING\n\n4¢\nPER HIT\n\nFlat rate from the dashboard or the developer API\n98.9% hit rate on typical lists\nMisses are free\nNo minimum order\nDATA BUYING\n\n5¢\nAS LOW AS\n\nVolume pricing: as low as 5¢ per record\nMonthly plans from $79.99 a month with records included\nOwner name, addresses, phones, and emails included\nDelivered as CSV\nNo minimum order\nMEMBERSHIP\n\n$14.99\nPER MONTH\n\n100 free skips every day\nUp ",
+  "fingerprint": "49287f8bc4b1813ddce08e36b05ccf4fab2775ea3bcee4d349166d6c94b82695"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "domain": "start.io",
+ "name": "Start.io Inc.",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:31:35.293Z",
+  "status": 200,
+  "optOutUrl": "https://www.start.io/policy/privacy-policy-site/",
+  "title": "Start.io | Start.io End User Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "support@start.io",
+   "privacy@start.io",
+   "dpo@start.io"
+  ],
+  "text": "Publishers\nAdvertising Solutions\nAbout us\nLog in\nSign up\nStart.io End User Privacy Policy\nLanguages\n\nStart.io End User Privacy Policy\n\nStart.io Inc. and its Affiliates (formerly: StartApp Inc.; “we,” “us,” “our” or “Start.io”) respects your privacy. This privacy policy (the “Policy”) explains Start.io’s privacy practices with respect to your personal information throughout the entire Start.io Network, the ways your personal information and data is collected, used and shared and the rights and options available to you with respect to your personal data.\n\nWho we are?\n\nStart.io is a mobile advert",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "domain": "pipl.com",
+ "name": "Pipl, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:30.452Z",
+  "status": 200,
+  "optOutUrl": "https://pipl.com/california-privacy-notice-individuals",
+  "title": "Pipl | Privacy Center",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Show submenu for Solutions\nSolutions",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Use Cases\nUse Cases",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Learning Center\nLearnin",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Company\nCompany",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Show submenu for Login\nLogin",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@pipl.com"
+  ],
+  "text": "Skip to main content\nWhy Pipl\n \nShow submenu for Solutions\nSolutions\n \nShow submenu for Use Cases\nUse Cases\n \nShow submenu for Learning Center\nLearning Center\n \nShow submenu for Company\nCompany\n \nShow submenu for Login\nLogin\nRequest a Demo\nContact Us\nPipl Privacy Policy\n\nLast updated: May 26, 2026\n\nPipl Privacy and Information Security Center\nPipl Privacy Policy\nPersonal Information We May Collect\nHow We May Use Your Personal Information\nHow We May Share Your Personal Information\nCommitment to Children's Privacy\nThird Party Websites\nData Subject Rights\nExercising Your Rights\nInternational Tran",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

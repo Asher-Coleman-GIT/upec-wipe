@@ -1,0 +1,27 @@
+{
+ "domain": "ogury.com",
+ "name": "Ogury Ltd",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:20:31.227Z",
+  "status": 200,
+  "optOutUrl": "https://privacy.ogury.com/",
+  "title": "Ogury Website and Customer Privacy and Cookie Notice - Ogury",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [
+   "legal@ogury.co"
+  ],
+  "text": "Solutions\nPlatform\nResources\nCompany\nCareers\nContact Us\nOgury Advertising Privacy Policy.\n\nThis privacy policy set out:\n\nWhat data we collect and from which sources;\nOur commitments regarding your data;\nHow your data is (or is not) used by Ogury;\nHow your data may be shared with third parties;\nthe rights and choices you have over your data if you are located in the EEA, the UK, or Switzerland or in a regulated U.S. State, so that you can easily exercise them.\n\nWhen we say “Ogury,” “we,” or “us” in this privacy policy, we mean Ogury Limited (including its subsidiaries and affiliates) that acts ",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

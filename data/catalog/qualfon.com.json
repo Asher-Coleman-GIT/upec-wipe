@@ -1,0 +1,60 @@
+{
+ "domain": "qualfon.com",
+ "name": "Qualfon",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:25:18.758Z",
+  "status": 200,
+  "optOutUrl": "https://www.qualfon.com/privacy-policy/",
+  "title": "Privacy Policy | Qualfon - Protecting Your Information",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Allow all",
+    "id": "CybotCookiebotDialogBodyButtonAccept",
+    "inForm": false
+   },
+   {
+    "text": "Deny",
+    "id": "CybotCookiebotDialogBodyButtonDecline",
+    "inForm": false
+   },
+   {
+    "text": "Open Solutions",
+    "id": "e-n-menu-dropdown-icon-1701",
+    "inForm": false
+   },
+   {
+    "text": "Open Industries",
+    "id": "e-n-menu-dropdown-icon-1702",
+    "inForm": false
+   },
+   {
+    "text": "Open About Us",
+    "id": "e-n-menu-dropdown-icon-1704",
+    "inForm": false
+   },
+   {
+    "text": "Open Resources",
+    "id": "e-n-menu-dropdown-icon-1705",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "consumerprivacy@qualfon.com",
+   "privacy@qualfon.com"
+  ],
+  "text": "This website uses cookies\n\nThis site uses cookies and other website tracking technologies that allow us and third parties we authorize to better understand our site visitors, perform targeted advertising, and help the site function.This may include tools that record your interaction with the site. You may accept all or deny all but those tools that are necessary for the site to function properly. You may also revoke your acceptance at any time by changing your privacy settings in this tool. For more information about our use of these tools and our privacy practices in general, please review ou",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

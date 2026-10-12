@@ -1,0 +1,40 @@
+{
+ "domain": "arccorp.com",
+ "name": "Airlines Reporting Corporation",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T21:36:52.543Z",
+  "status": 200,
+  "optOutUrl": "https://www2.arccorp.com/site-privacy-policy/",
+  "title": "Privacy Policy",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Accept",
+    "id": "accept-cookies",
+    "inForm": false
+   },
+   {
+    "text": "Opt Out",
+    "id": "decline-cookies",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "legalteam@arccorp.com",
+   "privacy@arccorp.com"
+  ],
+  "text": "To provide you with a better experience, we use cookies to analyze site traffic and personalize content. You can choose 'Opt Out' if you'd prefer not to allow cookies. Visit our privacy policy for more information.\n\nAcceptOpt Out\nParticipation\nSolutions\nCommunications\nTraining\nResources\nAbout ARC\nContact UsMy ARCAccreditation Login\nPrivacy Policy\n\nEffective April 17, 2026\n\nPersonal Data We Collect\nCookies\nSocial Media\nIndividuals Under 13\nHow Personal Data May Be Used\nHow We Share Personal Data\nLawful Bases for Processing\nKeeping Information Secure\nRecord Retention\nLinks to Non-ARC Websites\nDa",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

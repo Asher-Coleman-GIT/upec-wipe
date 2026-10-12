@@ -1,0 +1,33 @@
+{
+ "domain": "donorbureau.com",
+ "name": "DonorBureau LLC",
+ "sources": [
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:00:41.586Z",
+  "status": 200,
+  "optOutUrl": "https://donorbureau.com/opt-out",
+  "title": "California Privacy Rights for Residents | Donor Bureau",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Free Trial",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "ccpa@donorbureau.com"
+  ],
+  "text": "Solutions\n▾\nWho We Serve\nFAQs\nAbout\n▾\nCase Studies\nContact Us\nFree Trial\nCalifornia Privacy Rights\n\nCalifornia Privacy Rights for California Residents Only\n\nAs of January 1, 2020, the California Consumer Privacy Act (“CCPA”) provides California consumers (California residents) with certain rights regarding their personal information (“PI”). This page describes your CCPA rights and explains how to exercise those rights subject to our verification process. Note that this law applies only to California residents.\n\nDonorBureau (“DonorBureau,” “we,” or “our”) provides services in furtherance of pol",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

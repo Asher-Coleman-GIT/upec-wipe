@@ -1,0 +1,45 @@
+{
+ "domain": "remodeling.com",
+ "name": "Remodeling.com, LLC",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:26:34.880Z",
+  "status": 200,
+  "optOutUrl": "https://remodeling.com/privacy-policy/",
+  "title": "Privacy Policy - Remodeling.com",
+  "block": null,
+  "controls": [],
+  "buttons": [
+   {
+    "text": "Find Home Professionals",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Projects Cost Guides",
+    "id": "",
+    "inForm": false
+   },
+   {
+    "text": "Trending Content",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "operations@ignitevisibility.com",
+   "privacy@remodeling.com"
+  ],
+  "text": "Skip to content\nWe may earn a fee for some placements. Learn more about our process.\nFind Home Professionals\nProjects Cost Guides\nTrending Content\nPros\nPrivacy Policy\n\nLast Updated: July 30, 2026\n\nIgnite Visibility and its affiliates (EverConnect, 33 Mile Radius LLC, Keyword Connects LLC, Remodeling.com LLC, Best Pick Reports LLC, Five Star Rated LLC, Socius Marketing LLC, Qiigo Inc., Brighter Vision Web Solutions, Inc.) (“Ignite Visibility,” “Company,” “we,” “us,” or “our”) want you to be familiar with how we collect, use, and disclose Personal Information. This Privacy Policy describes our p",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

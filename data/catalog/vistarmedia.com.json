@@ -1,0 +1,136 @@
+{
+ "domain": "vistarmedia.com",
+ "name": "Vistar Media, Inc.",
+ "sources": [
+  "markup",
+  "ca-registry"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:37:52.560Z",
+  "status": 200,
+  "optOutUrl": "https://www.vistarmedia.com/privacy-choices",
+  "title": "Your privacy choices - Vistar Media",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "firstname",
+    "id": "firstname-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "First name*",
+    "form": 1,
+    "heading": "Your privacy choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "lastname",
+    "id": "lastname-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "Last name*",
+    "form": 1,
+    "heading": "Your privacy choices"
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "email",
+    "id": "email-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "Email*",
+    "form": 1,
+    "heading": "Your privacy choices"
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "state",
+    "id": "state-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "State/Region",
+    "form": 1,
+    "heading": "Your privacy choices"
+   },
+   {
+    "tag": "input",
+    "type": "number",
+    "name": "mobile_device_id",
+    "id": "mobile_device_id-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "Mobile Device ID*",
+    "form": 1,
+    "heading": "Your privacy choices"
+   },
+   {
+    "tag": "select",
+    "type": "select-one",
+    "name": "type_of_request",
+    "id": "type_of_request-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "Type of Request*",
+    "form": 1,
+    "heading": "Your privacy choices",
+    "options": [
+     "=Please Select",
+     "Right to Know=Right to Know",
+     "Right to Data Portability=Right to Data Portab",
+     "Right to Deletion=Right to Deletion",
+     "Right to Opt-Out=Right to Opt-Out",
+     "Right to Collect=Right to Collect"
+    ]
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "comments_",
+    "id": "comments_-eebd52df-1490-4b75-bfcb-8d91f934dd7c_7694",
+    "placeholder": "",
+    "aria": "",
+    "label": "Comments:",
+    "form": 1,
+    "heading": "Your privacy choices"
+   },
+   {
+    "tag": "input",
+    "type": "submit",
+    "name": "",
+    "id": "",
+    "placeholder": "",
+    "aria": "",
+    "label": "",
+    "form": 1,
+    "heading": "Your privacy choices"
+   }
+  ],
+  "buttons": [
+   {
+    "text": "SUBMIT",
+    "id": "",
+    "inForm": true
+   },
+   {
+    "text": "Cookie Settings",
+    "id": "hs_show_banner_button",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [
+   "privacy@vistarmedia.com"
+  ],
+  "text": "Solutions\nProducts\nResources\nAbout\nContact\nLogin\nYour privacy choices\n\n \n\nFirst name*\nLast name*\nEmail*\nState/Region\nMobile Device ID*\nType of Request*\nPlease Select\nRight to Know\nRight to Data Portability\nRight to Deletion\nRight to Opt-Out\nRight to Collect\nComments:\nLooking for your mobile advertiser ID (\"MAID\")?\n\nFollow the steps below:\n\nFor iOS Devices (iPhones or iPads):\n\nDownload any of these apps.\nOpen the app, and you will see your device’s advertising ID (IDFA).\n\nFor Android Devices:\n\nOpen the “Settings” app on your device.\nTap “Ads.”\nLook at the bottom of the screen to find your Andro",
+  "fingerprint": "df26ea2e92938bcdf12dcf0f6d04f685856d3681e29e7120a020d18d873fdf1d"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}

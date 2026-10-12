@@ -1,0 +1,219 @@
+{
+ "domain": "pii.ai",
+ "name": "Delivr.ai Inc",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [],
+ "group": "business",
+ "survey": {
+  "checkedAt": "2026-10-11T22:22:21.465Z",
+  "status": 200,
+  "optOutUrl": "https://dsrp-platform.pii.ai/7886d230-6f28-42d6-ba95-7d141f0a6520/submit.html",
+  "title": "delivr.ai Customer Rights Portal",
+  "block": null,
+  "controls": [
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[submitter][ei0dibs-eavx57v]",
+    "id": "ei0dibs-eavx57v--customer",
+    "placeholder": "",
+    "aria": "Type of Requestor",
+    "label": "Consumer",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[submitter][ei0dibs-eavx57v]",
+    "id": "ei0dibs-eavx57v--employee",
+    "placeholder": "",
+    "aria": "Type of Requestor",
+    "label": "Employee",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[submitter][ei0dibs-eavx57v]",
+    "id": "ei0dibs-eavx57v--jobApplicant",
+    "placeholder": "",
+    "aria": "Type of Requestor",
+    "label": "Job Applicant",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[submitter][ei0dibs-eavx57v]",
+    "id": "ei0dibs-eavx57v--marketingRecipient",
+    "placeholder": "",
+    "aria": "Type of Requestor",
+    "label": "Marketing Recipient",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[submitter][ei0dibs-eavx57v]",
+    "id": "ei0dibs-eavx57v--authorizedAgent",
+    "placeholder": "",
+    "aria": "Type of Requestor",
+    "label": "Authorized Agent",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[requestType][ei0dibs-ehcc8se]",
+    "id": "ei0dibs-ehcc8se--access",
+    "placeholder": "",
+    "aria": "Type of Request",
+    "label": "Access (Shine The Light)",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[requestType][ei0dibs-ehcc8se]",
+    "id": "ei0dibs-ehcc8se--delete",
+    "placeholder": "",
+    "aria": "Type of Request",
+    "label": "Erase PII Information",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[requestType][ei0dibs-ehcc8se]",
+    "id": "ei0dibs-ehcc8se--donotsell",
+    "placeholder": "",
+    "aria": "Type of Request",
+    "label": "Do Not Sell PII Information",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[requestType][ei0dibs-ehcc8se]",
+    "id": "ei0dibs-ehcc8se--correct",
+    "placeholder": "",
+    "aria": "Type of Request",
+    "label": "Correct PII Information",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "radio",
+    "name": "data[requestType][ei0dibs-ehcc8se]",
+    "id": "ei0dibs-ehcc8se--transfer",
+    "placeholder": "",
+    "aria": "Type of Request",
+    "label": "Transfer PII Information",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "data[userName]",
+    "id": "e2vedq9-userName",
+    "placeholder": "",
+    "aria": "User Name",
+    "label": "User Name",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "data[firstName]",
+    "id": "euwppea-firstName",
+    "placeholder": "",
+    "aria": "First Name",
+    "label": "First Name",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "data[lastName]",
+    "id": "ekdevgn-lastName",
+    "placeholder": "",
+    "aria": "Last Name",
+    "label": "Last Name",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "email",
+    "name": "data[email]",
+    "id": "e0i9m4h-email",
+    "placeholder": "",
+    "aria": "Email",
+    "label": "Email",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "text",
+    "name": "data[phoneNumber]",
+    "id": "emcowos-phoneNumber",
+    "placeholder": "(___) ___-____",
+    "aria": "Phone Number",
+    "label": "Phone Number \n, numeric only,",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "textarea",
+    "type": "textarea",
+    "name": "data[commentsMax550Characters]",
+    "id": "ee5wmoi-commentsMax550Characters",
+    "placeholder": "",
+    "aria": "Comments",
+    "label": "Comments (max 550 characters)",
+    "form": -1,
+    "heading": ""
+   },
+   {
+    "tag": "input",
+    "type": "checkbox",
+    "name": "data[terms]",
+    "id": "",
+    "placeholder": "",
+    "aria": "Terms and Conditions checkbox",
+    "label": "By submitting this request, I am confirming the above inform",
+    "form": -1,
+    "heading": ""
+   }
+  ],
+  "buttons": [
+   {
+    "text": "Submit",
+    "id": "",
+    "inForm": false
+   }
+  ],
+  "captcha": false,
+  "contacts": [],
+  "text": "DSR Request\nStatus\nData Subject Request\n\n\n\n\n\n\n\nRequestor\nI am a (an)\nConsumer\nEmployee\nJob Applicant\nMarketing Recipient\nAuthorized Agent\nRequest\nType \nAccess (Shine The Light)\nErase PII Information\nDo Not Sell PII Information\nCorrect PII Information\nTransfer PII Information\nRequest Details\nUser Name \nFirst Name \nLast Name \nEmail \nPhone Number \n, numeric only,\nComments (max 550 characters)\n\nWe value your privacy and are committed to protecting your personal information. Visit our website to learn more \n\nBy submitting this request, I am confirming the above information is true and accurate. \nSu",
+  "fingerprint": "3c294a778d817cc2289e70c53a0af769320fcd585451d14dc458e6571c2201cb"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}
