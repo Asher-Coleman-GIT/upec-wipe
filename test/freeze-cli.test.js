@@ -5,7 +5,7 @@
  * subcommands by spawning watcher.js as a child process. The freeze mode is
  * self-contained (no Playwright, no network), so this is hermetic.
  *
- * State isolation: watcher.js's freeze mode honours AIDR_STATE_PATH for its
+ * State isolation: watcher.js's freeze mode honours UPEC_WIPE_STATE_PATH for its
  * state file (via lib/config), so the real state.json is never touched.
  */
 
@@ -21,7 +21,7 @@ const WATCHER = path.join(__dirname, '..', 'watcher.js');
 function runWatcher(args, statePath) {
   return spawnSync('node', [WATCHER, ...args], {
     cwd: path.join(__dirname, '..'),
-    env: { ...process.env, AIDR_STATE_PATH: statePath, HEADLESS: '1', CI: '1' },
+    env: { ...process.env, UPEC_WIPE_STATE_PATH: statePath, HEADLESS: '1', CI: '1' },
     encoding: 'utf8',
     timeout: 30000,
   });

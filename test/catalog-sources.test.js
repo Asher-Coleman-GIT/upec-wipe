@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const { markupRows, badboolRows, feedRows, buildCandidates } = require('../lib/catalog-sources');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cat-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-cat-'));
 const write = (n, v) => { const p = path.join(tmp, n); fs.writeFileSync(p, JSON.stringify(v)); return p; };
 
 test('source loaders read the three formats', () => {

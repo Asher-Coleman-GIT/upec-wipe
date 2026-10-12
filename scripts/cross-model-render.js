@@ -111,9 +111,9 @@ function renderReport({ summary, findings }, meta) {
 module.exports = { parseFindings, countBySeverity, renderReport, cell };
 
 if (require.main === module) {
-  const outJson = process.env.AIDR_OUT_JSON;
-  const reportPath = process.env.AIDR_REPORT;
-  const files = (process.env.AIDR_TARGETS || '').split('\n').map(s => s.trim()).filter(Boolean);
+  const outJson = process.env.UPEC_WIPE_OUT_JSON;
+  const reportPath = process.env.UPEC_WIPE_REPORT;
+  const files = (process.env.UPEC_WIPE_TARGETS || '').split('\n').map(s => s.trim()).filter(Boolean);
 
   const raw = fs.readFileSync(outJson, 'utf8');
   const data = parseFindings(raw);
@@ -121,10 +121,10 @@ if (require.main === module) {
 
   const md = renderReport(data, {
     family: 'OpenAI (non-Anthropic)',
-    tool: process.env.AIDR_REVIEW_TOOL || 'codex CLI',
-    model: process.env.AIDR_REVIEW_MODEL || 'codex default',
-    base: process.env.AIDR_BASE || '',
-    head: process.env.AIDR_HEAD || '',
+    tool: process.env.UPEC_WIPE_REVIEW_TOOL || 'codex CLI',
+    model: process.env.UPEC_WIPE_REVIEW_MODEL || 'codex default',
+    base: process.env.UPEC_WIPE_BASE || '',
+    head: process.env.UPEC_WIPE_HEAD || '',
     files,
   });
 

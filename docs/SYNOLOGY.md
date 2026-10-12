@@ -29,7 +29,7 @@ Full 40-broker serial run inside the container, using cgroup v2 accounting
 | Configuration | Peak | Result |
 |---|---|---|
 | Default profile, uncapped | **248.5 MB** | all 40 brokers |
-| `AIDR_LOW_MEMORY=1`, hard 700 MB cap | **235.8 MB** | all 40 brokers |
+| `UPEC_WIPE_LOW_MEMORY=1`, hard 700 MB cap | **235.8 MB** | all 40 brokers |
 | After launch, before any broker | 140 MB | - |
 
 Memory is **flat across the run** - 236 MB after 10 brokers, 248 MB after 40 - so
@@ -67,7 +67,7 @@ SSH in (Control Panel → Terminal & SNMP → Enable SSH):
 
 ```bash
 cd /volume1/docker
-git clone https://github.com/stephenlthorn/auto-identity-remove.git
+git clone https://github.com/Asher-Coleman-GIT/auto-identity-remover-upec.git upec-wipe
 cd upec-wipe
 ```
 
@@ -106,9 +106,9 @@ docker build -t upec-wipe .
 
 docker run --rm --init \
   -e TZ=America/New_York \
-  -e AIDR_LOW_MEMORY=1 \
+  -e UPEC_WIPE_LOW_MEMORY=1 \
   -v /volume1/docker/upec-wipe:/app/data \
-  -e AIDR_STATE_PATH=/app/data/state.json \
+  -e UPEC_WIPE_STATE_PATH=/app/data/state.json \
   --memory=1g \
   upec-wipe node watcher.js --dry-run
 ```
@@ -116,7 +116,7 @@ docker run --rm --init \
 Or with compose, from the project directory:
 
 ```bash
-TZ=America/New_York AIDR_LOW_MEMORY=1 docker compose run --rm watcher node watcher.js --dry-run
+TZ=America/New_York UPEC_WIPE_LOW_MEMORY=1 docker compose run --rm watcher node watcher.js --dry-run
 ```
 
 Always do a `--dry-run` first. It navigates and confirms the brokers are
@@ -135,7 +135,7 @@ cd /volume1/docker/upec-wipe && docker compose run --rm watcher
 
 | Setting | Why |
 |---|---|
-| `AIDR_LOW_MEMORY=1` | Adds `--disable-gpu`, `--no-zygote` and friends. Saved ~13 MB peak in testing - small, but it also cuts background work on slow cores. |
+| `UPEC_WIPE_LOW_MEMORY=1` | Adds `--disable-gpu`, `--no-zygote` and friends. Saved ~13 MB peak in testing - small, but it also cuts background work on slow cores. |
 | `TZ=<your zone>` | Containers are UTC. Without this every report timestamp lands in the wrong hour. |
 | `--init` / `init: true` | Otherwise node is PID 1, `docker stop` cannot reap the Chromium children, and the state lock is left behind - wedging the next run. |
 | `--memory=1g` | Not required (peak is ~250 MB) but it turns a runaway into a container restart instead of DSM killing something else. |

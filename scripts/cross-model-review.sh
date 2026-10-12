@@ -164,7 +164,7 @@ echo "cross-model review: $FILE_COUNT file(s) against $BASE"
 # which is scrubbed just as well but silently reviews the pre-edit version of
 # every file you are actually working on.
 
-WORK="$(mktemp -d)/aidr-review"
+WORK="$(mktemp -d)/upec-wipe-review"
 cleanup() { rm -rf "$(dirname "$WORK")" >/dev/null 2>&1 || true; }
 trap cleanup EXIT
 mkdir -p "$WORK"
@@ -276,7 +276,7 @@ PREAMBLE
 #
 # Notes on the flags, learned the hard way:
 #  - No hardcoded -m. This build cannot always decode the server's model list, so
-#    pin only via AIDR_REVIEW_MODEL when you deliberately want a specific model.
+#    pin only via UPEC_WIPE_REVIEW_MODEL when you deliberately want a specific model.
 #  - `codex exec review --base X "prompt"` is rejected at arg-parse time: --base
 #    and a custom prompt are mutually exclusive. Hence plain `codex exec` with the
 #    diff inlined above.
@@ -294,7 +294,7 @@ codex exec \
   -s read-only \
   --ephemeral \
   --skip-git-repo-check \
-  ${AIDR_REVIEW_MODEL:+-m "$AIDR_REVIEW_MODEL"} \
+  ${UPEC_WIPE_REVIEW_MODEL:+-m "$UPEC_WIPE_REVIEW_MODEL"} \
   --output-schema "$REPO_ROOT/scripts/cross-model-review.schema.json" \
   -o "$OUT_JSON" \
   "$(cat "$PROMPT_FILE")" >"$WORK/codex.log" 2>&1
@@ -326,11 +326,11 @@ REPORT="$REPORT_DIR/$(date +%F)-$HEAD_SHA.md"
 
 # node, not jq: node is already a hard dependency of this project, jq is not.
 COUNTS="$(
-  AIDR_OUT_JSON="$OUT_JSON" \
-  AIDR_REPORT="$REPORT" \
-  AIDR_BASE="$BASE" \
-  AIDR_HEAD="$HEAD_SHA" \
-  AIDR_TARGETS="$TARGETS" \
+  UPEC_WIPE_OUT_JSON="$OUT_JSON" \
+  UPEC_WIPE_REPORT="$REPORT" \
+  UPEC_WIPE_BASE="$BASE" \
+  UPEC_WIPE_HEAD="$HEAD_SHA" \
+  UPEC_WIPE_TARGETS="$TARGETS" \
   node "$REPO_ROOT/scripts/cross-model-render.js"
 )"
 

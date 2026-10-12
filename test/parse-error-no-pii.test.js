@@ -21,7 +21,7 @@ const doctor = require('../lib/doctor');
 const BAD = '{"person": {"email": jane.doe@example.com, "lastName": "Turing"}}';
 const PII = /jane|example\.com|Turing/i;
 
-function tmp() { return fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-parse-')); }
+function tmp() { return fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-parse-')); }
 
 test('loadConfig: a malformed config.json throws a SyntaxError naming the file, not its contents', () => {
   const dir = tmp();

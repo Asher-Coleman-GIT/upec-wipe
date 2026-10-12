@@ -20,7 +20,7 @@
 // switch turns that off. Must be set before lib/timing is first required.
 process.env.TURBO = '1';
 // L14: keep the hash key out of the repo's data/ dir during tests.
-process.env.AIDR_SERP_KEY_PATH = require('node:path').join(require('node:fs').mkdtempSync(require('node:path').join(require('node:os').tmpdir(), 'serpkey-env-')), '.serp-key');
+process.env.UPEC_WIPE_SERP_KEY_PATH = require('node:path').join(require('node:fs').mkdtempSync(require('node:path').join(require('node:os').tmpdir(), 'serpkey-env-')), '.serp-key');
 
 const { test, beforeEach, afterEach } = require('node:test');
 const assert = require('node:assert/strict');

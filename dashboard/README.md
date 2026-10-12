@@ -28,7 +28,7 @@ The only dependency is `express`.
 upec-wipe dashboard
 ```
 
-It prints a one-time login. Running `node server.js` directly without `AIDR_USER`/`AIDR_PASS` refuses to start.
+It prints a one-time login. Running `node server.js` directly without `UPEC_WIPE_USER`/`UPEC_WIPE_PASS` refuses to start.
 
 ## Auth
 
@@ -37,10 +37,10 @@ on a reverse proxy for access control):
 
 | Var | Default | Meaning |
 |-----|---------|---------|
-| `AIDR_PORT` | `8080` | Listen port |
-| `AIDR_HOST` | 127.0.0.1 | Bind address. Must be loopback (127.x, ::1, localhost); anything else refuses to start. For remote access use ssh -L. |
-| `AIDR_USER` / `AIDR_PASS` | _(unset)_ | HTTP Basic credentials. **Both must be set** for the env credentials to be active (setting only one is treated as misconfigured and logs a warning). When set, **all routes except `/api/health`** require them (browser-native login prompt). |
-| `AIDR_TOKEN` | _(unset)_ | Token accepted **only** via the `X-AIDR-Token` header (for scripts/automation). Not accepted via query string. |
+| `UPEC_WIPE_PORT` | `8080` | Listen port |
+| `UPEC_WIPE_HOST` | 127.0.0.1 | Bind address. Must be loopback (127.x, ::1, localhost); anything else refuses to start. For remote access use ssh -L. |
+| `UPEC_WIPE_USER` / `UPEC_WIPE_PASS` | _(unset)_ | HTTP Basic credentials. **Both must be set** for the env credentials to be active (setting only one is treated as misconfigured and logs a warning). When set, **all routes except `/api/health`** require them (browser-native login prompt). |
+| `UPEC_WIPE_TOKEN` | _(unset)_ | Token accepted **only** via the `X-UPEC_WIPE-Token` header (for scripts/automation). Not accepted via query string. |
 
 A request is allowed if it satisfies **either** valid Basic credentials **or** a
 valid token. Cross-origin state-changing requests are rejected (CSRF defense).
@@ -49,7 +49,7 @@ compared in constant time.
 
 ### Changing the login (Admin tab)
 
-`AIDR_USER`/`AIDR_PASS` are the **bootstrap** credentials. When you change the
+`UPEC_WIPE_USER`/`UPEC_WIPE_PASS` are the **bootstrap** credentials. When you change the
 password from the **Admin** tab, the new username + a salted `scrypt` hash are
 written atomically to `dashboard/.auth.json` (gitignored, `0600`), which then
 **overrides** the env vars - no restart needed. Delete `.auth.json` to fall back
@@ -64,7 +64,7 @@ Removed in this fork. Runs start only when you press a button here or run a comm
 ## Security notes
 
 The config holds personal data and the UI can trigger real opt-out submissions,
-so set `AIDR_USER`/`AIDR_PASS` (and optionally `AIDR_TOKEN` for automation). The
+so set `UPEC_WIPE_USER`/`UPEC_WIPE_PASS` (and optionally `UPEC_WIPE_TOKEN` for automation). The
 server binds loopback only. `/api/health` is
 intentionally unauthenticated and returns only `{ ok: true }` (no path or
 version disclosure).

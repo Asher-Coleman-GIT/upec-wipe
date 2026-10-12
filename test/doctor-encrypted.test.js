@@ -28,19 +28,19 @@ function withEnv(vars, fn) {
 }
 
 test('doctor checkConfig accepts an encrypted config when the passphrase is available', async () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-doc-enc-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-doc-enc-'));
   try {
     fs.writeFileSync(path.join(dir, 'config.json.enc'), JSON.stringify(secrets.encryptConfig(PLAIN, 'pp-123')));
-    const r = await withEnv({ AIDR_PASSPHRASE: 'pp-123' }, () => checkConfig(dir));
+    const r = await withEnv({ UPEC_WIPE_PASSPHRASE: 'pp-123' }, () => checkConfig(dir));
     assert.equal(r.ok, true, r.hint);
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
 
 test('doctor checkConfig on an encrypted config without a passphrase names the passphrase, not setup', async () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-doc-enc-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-doc-enc-'));
   try {
     fs.writeFileSync(path.join(dir, 'config.json.enc'), JSON.stringify(secrets.encryptConfig(PLAIN, 'pp-123')));
-    const r = await withEnv({ AIDR_PASSPHRASE: undefined, AIDR_PASSPHRASE_FILE: undefined, HOME: dir, USERPROFILE: dir }, () => checkConfig(dir));
+    const r = await withEnv({ UPEC_WIPE_PASSPHRASE: undefined, UPEC_WIPE_PASSPHRASE_FILE: undefined, HOME: dir, USERPROFILE: dir }, () => checkConfig(dir));
     assert.equal(r.ok, false);
     assert.match(r.hint, /passphrase/i);
     assert.doesNotMatch(r.hint, /setup/);

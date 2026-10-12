@@ -21,7 +21,7 @@
 #   docker run --rm --init ... upec-wipe node watcher.js --dry-run
 #
 # Low-RAM hosts (Synology NAS, Raspberry Pi, small VPS): add
-#   -e AIDR_LOW_MEMORY=1
+#   -e UPEC_WIPE_LOW_MEMORY=1
 # See docs/SYNOLOGY.md for measured numbers and the full NAS walkthrough.
 
 FROM mcr.microsoft.com/playwright:v1.60.0-noble

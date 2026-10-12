@@ -1,8 +1,8 @@
 /**
  * test/passphrase-sources.test.js
  *
- * The passphrase may come from AIDR_PASSPHRASE, a file named by
- * AIDR_PASSPHRASE_FILE, or the default file ~/.config/auto-identity-remove/passphrase.
+ * The passphrase may come from UPEC_WIPE_PASSPHRASE, a file named by
+ * UPEC_WIPE_PASSPHRASE_FILE, or the default file ~/.config/upec-wipe/passphrase.
  */
 
 'use strict';
@@ -15,7 +15,7 @@ const path = require('path');
 const { getPassphrase, readPassphraseFile } = require('../lib/config');
 
 function tmpFile(content, mode) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-pp-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-pp-'));
   const f = path.join(dir, 'pp');
   fs.writeFileSync(f, content, { mode: mode || 0o600 });
   fs.chmodSync(f, mode || 0o600);
@@ -24,18 +24,18 @@ function tmpFile(content, mode) {
 const POSIX = process.platform !== 'win32';
 
 test('override beats everything', () => {
-  assert.equal(getPassphrase('ov', { AIDR_PASSPHRASE: 'env' }), 'ov');
+  assert.equal(getPassphrase('ov', { UPEC_WIPE_PASSPHRASE: 'env' }), 'ov');
 });
 
 test('env var beats file', () => {
   const { f } = tmpFile('file\n');
-  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE: 'env', AIDR_PASSPHRASE_FILE: f }), 'env');
+  assert.equal(getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE: 'env', UPEC_WIPE_PASSPHRASE_FILE: f }), 'env');
 });
 
-test('AIDR_PASSPHRASE_FILE is read and one trailing LF or CRLF stripped', () => {
-  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('s3cret\n').f }), 's3cret');
-  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('s3cret\r\n').f }), 's3cret');
-  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('  spaced  ').f }), '  spaced  ');
+test('UPEC_WIPE_PASSPHRASE_FILE is read and one trailing LF or CRLF stripped', () => {
+  assert.equal(getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE_FILE: tmpFile('s3cret\n').f }), 's3cret');
+  assert.equal(getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE_FILE: tmpFile('s3cret\r\n').f }), 's3cret');
+  assert.equal(getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE_FILE: tmpFile('  spaced  ').f }), '  spaced  ');
 });
 
 test('nothing set yields empty string', () => {
@@ -45,23 +45,23 @@ test('nothing set yields empty string', () => {
 test('group/world-readable passphrase file is refused', { skip: !POSIX }, () => {
   const { f } = tmpFile('x', 0o644);
   assert.throws(() => readPassphraseFile(f), /readable by other users/);
-  assert.throws(() => getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: f }), /readable by other users/);
+  assert.throws(() => getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE_FILE: f }), /readable by other users/);
 });
 
 test('empty passphrase file is refused', () => {
   assert.throws(() => readPassphraseFile(tmpFile('\n').f), /empty/);
 });
 
-test('missing AIDR_PASSPHRASE_FILE path throws a clear error', () => {
-  assert.throws(() => getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: '/nonexistent/aidr' }), /AIDR_PASSPHRASE_FILE/);
+test('missing UPEC_WIPE_PASSPHRASE_FILE path throws a clear error', () => {
+  assert.throws(() => getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE_FILE: '/nonexistent/upec-wipe' }), /UPEC_WIPE_PASSPHRASE_FILE/);
 });
 
-// I1 (final review): ~/.config/auto-identity-remove/passphrase is the lowest-
+// I1 (final review): ~/.config/upec-wipe/passphrase is the lowest-
 // priority source, so manual commands work unprefixed after --encrypt-config.
 function homeWithDefault(content, mode) {
-  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-home-'));
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-home-'));
   if (content !== undefined) {
-    const dir = path.join(home, '.config', 'auto-identity-remove');
+    const dir = path.join(home, '.config', 'upec-wipe');
     fs.mkdirSync(dir, { recursive: true });
     const f = path.join(dir, 'passphrase');
     fs.writeFileSync(f, content, { mode: mode || 0o600 });
@@ -78,8 +78,8 @@ test('default passphrase file in the home config dir is used last', () => {
 
 test('default passphrase file has the lowest priority', () => {
   const home = homeWithDefault('fromdefault');
-  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE: 'env' }, home), 'env');
-  assert.equal(getPassphrase(undefined, { AIDR_PASSPHRASE_FILE: tmpFile('file').f }, home), 'file');
+  assert.equal(getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE: 'env' }, home), 'env');
+  assert.equal(getPassphrase(undefined, { UPEC_WIPE_PASSPHRASE_FILE: tmpFile('file').f }, home), 'file');
 });
 
 test('absent default passphrase file yields empty', () => {
@@ -93,6 +93,6 @@ test('group/world-readable default passphrase file is refused', { skip: !POSIX }
 
 test('default passphrase path that is not a readable file throws (only ENOENT means absent)', () => {
   const home = homeWithDefault();
-  fs.mkdirSync(path.join(home, '.config', 'auto-identity-remove', 'passphrase'), { recursive: true });
+  fs.mkdirSync(path.join(home, '.config', 'upec-wipe', 'passphrase'), { recursive: true });
   assert.throws(() => getPassphrase(undefined, {}, home));
 });

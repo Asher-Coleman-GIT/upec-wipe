@@ -2,7 +2,7 @@
  * test/generic-runner-encryption.test.js
  *
  * Fix 1: getConfig() / activePerson() in generic-runner.js must route through
- * loadConfig (which decrypts when AIDR_PASSPHRASE is set) instead of doing a
+ * loadConfig (which decrypts when UPEC_WIPE_PASSPHRASE is set) instead of doing a
  * raw JSON.parse(readFileSync(CONFIG_PATH)).
  */
 

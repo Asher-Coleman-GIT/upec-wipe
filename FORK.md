@@ -39,8 +39,8 @@ Do not add `SYS_ADMIN` back. Record the outcome here once checked.
 
 - The Docker steps above (build, `--doctor`, `--dry-run`, Chromium under `cap_drop: [ALL]`, the passphrase secret).
 
-Secret file: `secrets/aidr-passphrase` must be mode 600 on the host
-(`chmod 600 secrets/aidr-passphrase`), because the tool refuses a group- or
+Secret file: `secrets/upec-wipe-passphrase` must be mode 600 on the host
+(`chmod 600 secrets/upec-wipe-passphrase`), because the tool refuses a group- or
 world-readable passphrase file. The container user must be able to read it:
-either `sudo chown 1001 secrets/aidr-passphrase` (uid 1001 is pwuser) or run the
+either `sudo chown 1001 secrets/upec-wipe-passphrase` (uid 1001 is pwuser) or run the
 container as your host uid.

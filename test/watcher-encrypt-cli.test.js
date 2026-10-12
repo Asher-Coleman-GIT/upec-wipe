@@ -3,7 +3,7 @@
  *
  * End-to-end test of the --encrypt-config / --decrypt-config migration CLI.
  * Hermetic: runs in a temp copy of the repo's lib/ + watcher.js with a temp
- * config.json; never touches the repo's real config.json. AIDR_PASSPHRASE is
+ * config.json; never touches the repo's real config.json. UPEC_WIPE_PASSPHRASE is
  * passed via the child env.
  */
 
@@ -27,7 +27,7 @@ const PLAIN = { person: { firstName: 'Alan', lastName: 'Turing' }, capsolver: { 
 // --decrypt-config exit before any of those run. So the load-time require chain
 // is pure Node built-ins + the repo's own lib/ modules.
 function buildTempRepo() {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-watcher-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-watcher-'));
   fs.copyFileSync(path.join(REPO, 'watcher.js'), path.join(dir, 'watcher.js'));
   // Copy the whole lib/ directory (watcher's requires resolve relative to dir).
   fs.cpSync(path.join(REPO, 'lib'), path.join(dir, 'lib'), { recursive: true });
@@ -44,7 +44,7 @@ function runWatcher(dir, args, env) {
   // accidental launch off-screen.
   return execFileSync('node', ['watcher.js', ...args], {
     cwd: dir,
-    env: { ...process.env, AIDR_PASSPHRASE: PASS, HEADLESS: '1', ...env },
+    env: { ...process.env, UPEC_WIPE_PASSPHRASE: PASS, HEADLESS: '1', ...env },
     encoding: 'utf8',
     timeout: 30000,
   });
@@ -92,13 +92,13 @@ test('--decrypt-config restores plaintext config.json and removes the envelope',
 test('--encrypt-config without a passphrase exits non-zero', () => {
   const dir = buildTempRepo();
   fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(PLAIN, null, 2));
-  // Empty HOME: the default ~/.config/auto-identity-remove/passphrase must not exist for the child.
-  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-empty-home-'));
+  // Empty HOME: the default ~/.config/upec-wipe/passphrase must not exist for the child.
+  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-empty-home-'));
   try {
     assert.throws(
       () => execFileSync('node', ['watcher.js', '--encrypt-config'], {
         cwd: dir,
-        env: { ...process.env, AIDR_PASSPHRASE: '', HEADLESS: '1', HOME: emptyHome, USERPROFILE: emptyHome },
+        env: { ...process.env, UPEC_WIPE_PASSPHRASE: '', HEADLESS: '1', HOME: emptyHome, USERPROFILE: emptyHome },
         encoding: 'utf8',
         timeout: 30000,
       }),
@@ -114,12 +114,12 @@ test('--update-brokers says so when the encrypted config cannot be read (no sile
   const dir = buildTempRepo();
   fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(PLAIN, null, 2));
   runWatcher(dir, ['--encrypt-config']);
-  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-empty-home-'));
+  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-empty-home-'));
   try {
     const r = spawnSync('node', ['watcher.js', '--update-brokers'], {
       cwd: dir,
       env: {
-        ...process.env, AIDR_PASSPHRASE: '', HOME: emptyHome, USERPROFILE: emptyHome, HEADLESS: '1',
+        ...process.env, UPEC_WIPE_PASSPHRASE: '', HOME: emptyHome, USERPROFILE: emptyHome, HEADLESS: '1',
         // Never reach the real registries from a test.
         CA_REGISTRY_URL: 'https://127.0.0.1:1/ca.csv', VT_REGISTRY_URL: 'https://127.0.0.1:1/vt.csv',
       },

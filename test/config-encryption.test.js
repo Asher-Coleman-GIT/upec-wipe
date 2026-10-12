@@ -3,7 +3,7 @@
  *
  * Integration of lib/config.js with at-rest encryption. Hermetic: all reads go
  * to temp files via injected { configPath, encPath } opts; the passphrase is
- * injected via opts (never relies on the ambient AIDR_PASSPHRASE env).
+ * injected via opts (never relies on the ambient UPEC_WIPE_PASSPHRASE env).
  */
 
 const { test } = require('node:test');
@@ -22,29 +22,29 @@ const PLAIN = {
 const PASS = 'a-strong-passphrase';
 
 function tmpDir() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cfg-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-cfg-'));
 }
 
-// Run `fn` with AIDR_PASSPHRASE guaranteed unset, then restore it. Needed for
+// Run `fn` with UPEC_WIPE_PASSPHRASE guaranteed unset, then restore it. Needed for
 // the "no passphrase" assertions: passing passphrase:'' falls back to the env
-// var (getPassphrase treats '' as "use the env"), so an ambient AIDR_PASSPHRASE
+// var (getPassphrase treats '' as "use the env"), so an ambient UPEC_WIPE_PASSPHRASE
 // in the shell/CI would otherwise make those tests non-hermetic.
 // Hermetic: also points HOME/USERPROFILE at an empty dir so a developer's real
-// ~/.config/auto-identity-remove/passphrase cannot supply a passphrase.
+// ~/.config/upec-wipe/passphrase cannot supply a passphrase.
 function withoutEnvPassphrase(fn) {
-  const prev = process.env.AIDR_PASSPHRASE;
+  const prev = process.env.UPEC_WIPE_PASSPHRASE;
   const prevHome = process.env.HOME;
   const prevProfile = process.env.USERPROFILE;
   const emptyHome = tmpDir();
-  delete process.env.AIDR_PASSPHRASE;
+  delete process.env.UPEC_WIPE_PASSPHRASE;
   process.env.HOME = emptyHome;
   process.env.USERPROFILE = emptyHome;
   try { fn(); }
   finally {
     if (prevHome === undefined) delete process.env.HOME; else process.env.HOME = prevHome;
     if (prevProfile === undefined) delete process.env.USERPROFILE; else process.env.USERPROFILE = prevProfile;
-    if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
-    else process.env.AIDR_PASSPHRASE = prev;
+    if (prev === undefined) delete process.env.UPEC_WIPE_PASSPHRASE;
+    else process.env.UPEC_WIPE_PASSPHRASE = prev;
     fs.rmSync(emptyHome, { recursive: true, force: true });
   }
 }
@@ -94,7 +94,7 @@ test('loadConfig throws a clear error when an encrypted config has no passphrase
   withoutEnvPassphrase(() => {
     assert.throws(
       () => cfg.loadConfig({ configPath, encPath, passphrase: '' }),
-      /AIDR_PASSPHRASE/
+      /UPEC_WIPE_PASSPHRASE/
     );
   });
 });
@@ -110,7 +110,7 @@ test('loadConfig throws when the passphrase is wrong for an encrypted config', (
   );
 });
 
-test('loadConfig warns once on plaintext when AIDR_PASSPHRASE is set but file is plaintext', () => {
+test('loadConfig warns once on plaintext when UPEC_WIPE_PASSPHRASE is set but file is plaintext', () => {
   const dir = tmpDir();
   const configPath = path.join(dir, 'config.json');
   const encPath = path.join(dir, 'config.json.enc');
@@ -169,14 +169,14 @@ test('decryptConfigToDisk writes plaintext config.json and removes the envelope'
   assert.equal(fs.existsSync(encPath), false, 'envelope should be removed');
 });
 
-test('getPassphrase falls back to AIDR_PASSPHRASE env when no override is given', () => {
-  const prev = process.env.AIDR_PASSPHRASE;
-  process.env.AIDR_PASSPHRASE = 'from-env';
+test('getPassphrase falls back to UPEC_WIPE_PASSPHRASE env when no override is given', () => {
+  const prev = process.env.UPEC_WIPE_PASSPHRASE;
+  process.env.UPEC_WIPE_PASSPHRASE = 'from-env';
   try {
     assert.equal(cfg.getPassphrase(), 'from-env');
     assert.equal(cfg.getPassphrase('override'), 'override');
   } finally {
-    if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
-    else process.env.AIDR_PASSPHRASE = prev;
+    if (prev === undefined) delete process.env.UPEC_WIPE_PASSPHRASE;
+    else process.env.UPEC_WIPE_PASSPHRASE = prev;
   }
 });

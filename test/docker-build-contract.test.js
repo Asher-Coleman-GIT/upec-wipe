@@ -168,6 +168,6 @@ test('docker-compose.yml no longer declares the obsolete top-level version key',
 test('docker-compose.yml drops capabilities and blocks privilege escalation', () => {
   assert.match(compose, /cap_drop:\s*\[ALL\]/);
   assert.match(compose, /no-new-privileges:true/);
-  assert.match(compose, /AIDR_PASSPHRASE_FILE=\/run\/secrets\/aidr-passphrase/);
-  assert.doesNotMatch(compose, /AIDR_PASSPHRASE=/);
+  assert.match(compose, /UPEC_WIPE_PASSPHRASE_FILE=\/run\/secrets\/upec-wipe-passphrase/);
+  assert.doesNotMatch(compose, /UPEC_WIPE_PASSPHRASE=/);
 });

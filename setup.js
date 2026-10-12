@@ -263,7 +263,7 @@ async function main() {
     // have no runtime effect (loadConfig prefers the .enc).
     console.error('\nError: An encrypted config exists (config.json.enc) but it could not be decrypted.');
     console.error('   Set the passphrase and re-run so your current values are preserved:\n');
-    console.error('     AIDR_PASSPHRASE=... node setup.js\n');
+    console.error('     UPEC_WIPE_PASSPHRASE=... node setup.js\n');
     console.error('   Refusing to continue: writing a plaintext config.json here would put your');
     console.error('   full PII back on disk in the clear and would be ignored at runtime anyway.');
     process.exit(1);
@@ -331,7 +331,7 @@ async function main() {
   }
 
   // ── Profile dir ──────────────────────────────────────────────────────────
-  const defaultProfileDir = path.join(os.homedir(), '.config', 'auto-identity-remove');
+  const defaultProfileDir = path.join(os.homedir(), '.config', 'upec-wipe');
   const profileDir = await ask('Browser profile directory', existing.profileDir || defaultProfileDir);
 
   // ── Build config ─────────────────────────────────────────────────────────
@@ -359,13 +359,13 @@ async function main() {
       console.log(`Re-encrypted to ${encResult.encPath}; plaintext shredded.\n`);
     } else {
       console.error('Warning: Could not re-encrypt the config. config.json is currently PLAINTEXT.');
-      console.error('   Fix it now with: AIDR_PASSPHRASE=... node watcher.js --encrypt-config\n');
+      console.error('   Fix it now with: UPEC_WIPE_PASSPHRASE=... node watcher.js --encrypt-config\n');
     }
   } else {
     console.log('-- Encrypt config at rest? ----------------------------------------');
     console.log('Your config holds PII, the CapSolver key, and (optionally) an SMTP');
     console.log('password. You can encrypt it with AES-256-GCM. You will then need to');
-    console.log('set AIDR_PASSPHRASE in the environment when running the watcher.\n');
+    console.log('set UPEC_WIPE_PASSPHRASE in the environment when running the watcher.\n');
     const doEncrypt = await confirm('Encrypt config.json now?');
     if (doEncrypt) {
       const passphrase = await askSecret('Choose a passphrase (keep it safe - there is no recovery)');
@@ -373,7 +373,7 @@ async function main() {
         const encResult = maybeEncryptConfig({ passphrase });
         if (encResult.encrypted) {
           console.log(`\nconfig encrypted to ${encResult.encPath}; plaintext shredded.`);
-          console.log('   Run the watcher with: AIDR_PASSPHRASE=... node watcher.js\n');
+          console.log('   Run the watcher with: UPEC_WIPE_PASSPHRASE=... node watcher.js\n');
         }
       } else {
         console.log('  No passphrase entered - leaving config in plaintext.\n');

@@ -37,15 +37,15 @@ function spawnNode(resolved) {
   let onSpawn = null;
 
   if (resolved.command === 'dashboard') {
-    // Boot the dashboard authenticated. server.js reads AIDR_USER/AIDR_PASS
+    // Boot the dashboard authenticated. server.js reads UPEC_WIPE_USER/UPEC_WIPE_PASS
     // (see dashboard/server.js) and refuses to start if no credentials are set,
     // so generate a one-time pair when the caller did not supply one.
-    if (!env.AIDR_USER || !env.AIDR_PASS) {
+    if (!env.UPEC_WIPE_USER || !env.UPEC_WIPE_PASS) {
       const creds = generateDashboardCreds();
-      env.AIDR_USER = creds.user;
-      env.AIDR_PASS = creds.pass;
-      const host = env.AIDR_HOST || '127.0.0.1';
-      const port = env.AIDR_PORT || '8080';
+      env.UPEC_WIPE_USER = creds.user;
+      env.UPEC_WIPE_PASS = creds.pass;
+      const host = env.UPEC_WIPE_HOST || '127.0.0.1';
+      const port = env.UPEC_WIPE_PORT || '8080';
       onSpawn = () => {
         process.stdout.write('\n  Dashboard starting...\n');
         process.stdout.write(`  URL:      http://${host}:${port}\n`);

@@ -13,7 +13,7 @@
 const fs = require('fs');
 const cfg = require('/app/lib/config');
 
-const target = process.env.AIDR_STATE_PATH || '/app/state.json';
+const target = process.env.UPEC_WIPE_STATE_PATH || '/app/state.json';
 
 cfg.recordSuccess('CiProbe', 'submitted');
 cfg.saveState();

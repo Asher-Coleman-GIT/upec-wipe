@@ -38,7 +38,7 @@ const { registrableDomain } = require('./lib/serp-scan');
 // Config is loaded lazily so that modules importing only the pure helpers
 // (classifyNavError, isDeadStatus, loadDeadSet) don't require config.json.
 // Routed through loadConfig (not raw JSON.parse) so that encrypted configs
-// (--encrypt-config) are decrypted transparently via AIDR_PASSPHRASE.
+// (--encrypt-config) are decrypted transparently via UPEC_WIPE_PASSPHRASE.
 let _config = null;
 function getConfig() {
   if (!_config) {

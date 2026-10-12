@@ -45,8 +45,8 @@ test('dashboard has no schedule route or tab', () => {
 
 test('a systemd CREDENTIALS_DIRECTORY no longer supplies the passphrase', () => {
   const { getPassphrase } = require('../lib/config');
-  const cred = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cred-'));
-  fs.writeFileSync(path.join(cred, 'aidr-passphrase'), 'fromcred');
-  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-home-'));
+  const cred = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-cred-'));
+  fs.writeFileSync(path.join(cred, 'upec-wipe-passphrase'), 'fromcred');
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-home-'));
   assert.equal(getPassphrase(undefined, { CREDENTIALS_DIRECTORY: cred }, home), '');
 });

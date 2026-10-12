@@ -17,7 +17,7 @@ const secrets = require('../lib/secrets');
 const PLAIN = { person: { firstName: 'Edsger', lastName: 'Dijkstra' }, capsolver: { apiKey: 'CAP-9' } };
 
 function tmpDir() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-setup-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-setup-'));
 }
 
 test('maybeEncryptConfig with a passphrase encrypts and shreds the plaintext', () => {

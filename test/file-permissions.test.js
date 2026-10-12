@@ -29,7 +29,7 @@ function modeOf(p) {
 }
 
 function tmpdir() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-perm-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-perm-'));
 }
 
 test('OWNER_ONLY is exported as 0600', () => {

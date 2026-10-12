@@ -50,7 +50,7 @@ const BOB = {
  * synthetic config.json.
  */
 function loadBrokersWithConfig(config) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-brokers-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-brokers-'));
   fs.copyFileSync(path.join(__dirname, '..', 'brokers.js'), path.join(dir, 'brokers.js'));
   fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(config));
   const modPath = path.join(dir, 'brokers.js');
@@ -154,7 +154,7 @@ test('config.person still wins over persons[] for the default export', () => {
 test('no config.json at all still loads without throwing', () => {
   // The lazy-load contract: `require('./brokers')` must survive a fresh clone
   // where the user has not run setup yet.
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-brokers-noconf-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-brokers-noconf-'));
   fs.copyFileSync(path.join(__dirname, '..', 'brokers.js'), path.join(dir, 'brokers.js'));
   const modPath = path.join(dir, 'brokers.js');
   delete require.cache[modPath];

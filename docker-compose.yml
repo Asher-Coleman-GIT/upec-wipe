@@ -17,7 +17,7 @@ services:
     security_opt:
       - no-new-privileges:true
     secrets:
-      - aidr-passphrase
+      - upec-wipe-passphrase
     volumes:
       # Not :ro - config.json is written back by --encrypt-config and by the
       # right-to-know pending-request bookkeeping.
@@ -26,19 +26,19 @@ services:
       - ./logs:/app/logs
     environment:
       - NODE_ENV=production
-      - AIDR_PASSPHRASE_FILE=/run/secrets/aidr-passphrase
+      - UPEC_WIPE_PASSPHRASE_FILE=/run/secrets/upec-wipe-passphrase
       # Container clocks are UTC. Report timestamps use local time, so set
       # this to your zone or they land at the wrong hour.
       - TZ=${TZ:-UTC}
       # Set to 1 on hosts with ~2GB RAM. See docs/SYNOLOGY.md.
-      - AIDR_LOW_MEMORY=${AIDR_LOW_MEMORY:-0}
+      - UPEC_WIPE_LOW_MEMORY=${UPEC_WIPE_LOW_MEMORY:-0}
     # Docker defaults /dev/shm to 64MB; Chromium renderers exhaust that and die.
     # The code also passes --disable-dev-shm-usage so a plain `docker run`
     # without this setting still works, but a real shm is faster.
     shm_size: 512mb
 
 secrets:
-  aidr-passphrase:
+  upec-wipe-passphrase:
     # chmod 600 this file on the host. Remove this block and the service's
-    # `secrets:` / AIDR_PASSPHRASE_FILE lines if you do not encrypt the config.
-    file: ./secrets/aidr-passphrase
+    # `secrets:` / UPEC_WIPE_PASSPHRASE_FILE lines if you do not encrypt the config.
+    file: ./secrets/upec-wipe-passphrase

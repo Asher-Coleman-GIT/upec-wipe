@@ -90,8 +90,8 @@ function classifyStatus(status) {
  *
  * Returns { envUser, envPass, envConfigured, warning? }
  *
- * @param {string} envUser  Value of AIDR_USER env var (empty string if unset).
- * @param {string} envPass  Value of AIDR_PASS env var (empty string if unset).
+ * @param {string} envUser  Value of UPEC_WIPE_USER env var (empty string if unset).
+ * @param {string} envPass  Value of UPEC_WIPE_PASS env var (empty string if unset).
  * @returns {{ envUser: string, envPass: string, envConfigured: boolean, warning?: string }}
  */
 function resolveEnvCreds(envUser, envPass) {
@@ -105,7 +105,7 @@ function resolveEnvCreds(envUser, envPass) {
       envUser: '',
       envPass: '',
       envConfigured: false,
-      warning: 'AIDR_USER/AIDR_PASS: only one of the two is set - env credentials ignored (set BOTH to enable)',
+      warning: 'UPEC_WIPE_USER/UPEC_WIPE_PASS: only one of the two is set - env credentials ignored (set BOTH to enable)',
     };
   }
   return { envUser: '', envPass: '', envConfigured: false };
@@ -182,10 +182,10 @@ function isLoopbackHost(host) {
 function dashboardStartupProblems({ host, authConfigured }) {
   const problems = [];
   if (!isLoopbackHost(host)) {
-    problems.push(`AIDR_HOST=${host} is not a loopback address. This fork only binds 127.0.0.1/::1; use "ssh -L 8080:127.0.0.1:8080 host" for remote access.`);
+    problems.push(`UPEC_WIPE_HOST=${host} is not a loopback address. This fork only binds 127.0.0.1/::1; use "ssh -L 8080:127.0.0.1:8080 host" for remote access.`);
   }
   if (!authConfigured) {
-    problems.push('No credentials set. Start it with `upec-wipe dashboard` (generates a one-time login) or set AIDR_USER and AIDR_PASS.');
+    problems.push('No credentials set. Start it with `upec-wipe dashboard` (generates a one-time login) or set UPEC_WIPE_USER and UPEC_WIPE_PASS.');
   }
   return problems;
 }

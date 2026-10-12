@@ -27,7 +27,7 @@ const crypto = require('crypto');
 // ---- helpers ----------------------------------------------------------------
 
 function tmpFile(suffix) {
-  return path.join(os.tmpdir(), `aidr-test-${crypto.randomBytes(6).toString('hex')}${suffix}`);
+  return path.join(os.tmpdir(), `upec-wipe-test-${crypto.randomBytes(6).toString('hex')}${suffix}`);
 }
 
 function basicAuth(user, pass) {
@@ -91,14 +91,14 @@ function buildServer({ user = 'testuser', pass = 'testpass', cfgContent, stateCo
   }
 
   // Set env vars before requiring the module.
-  process.env.AIDR_USER = user;
-  process.env.AIDR_PASS = pass;
-  process.env.AIDR_PORT = '0'; // ephemeral
-  delete process.env.AIDR_TOKEN;
+  process.env.UPEC_WIPE_USER = user;
+  process.env.UPEC_WIPE_PASS = pass;
+  process.env.UPEC_WIPE_PORT = '0'; // ephemeral
+  delete process.env.UPEC_WIPE_TOKEN;
   if (passphrase !== undefined) {
-    process.env.AIDR_PASSPHRASE = passphrase;
+    process.env.UPEC_WIPE_PASSPHRASE = passphrase;
   } else {
-    delete process.env.AIDR_PASSPHRASE;
+    delete process.env.UPEC_WIPE_PASSPHRASE;
   }
 
   purgeServerModule();
@@ -159,9 +159,9 @@ function buildServer({ user = 'testuser', pass = 'testpass', cfgContent, stateCo
 
   purgeServerModule();
   // server.js calls getPassphrase() at require time, which now also reads
-  // ~/.config/auto-identity-remove/passphrase. Require it under an empty HOME so
+  // ~/.config/upec-wipe/passphrase. Require it under an empty HOME so
   // the developer's real default passphrase file cannot change the outcome.
-  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-dash-home-'));
+  const emptyHome = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-dash-home-'));
   const prevHome = process.env.HOME;
   const prevProfile = process.env.USERPROFILE;
   process.env.HOME = emptyHome;
@@ -198,8 +198,8 @@ function buildServer({ user = 'testuser', pass = 'testpass', cfgContent, stateCo
           } else {
             try { fs.unlinkSync(realState); } catch (_) {}
           }
-          // Restore AIDR_PASSPHRASE env var.
-          delete process.env.AIDR_PASSPHRASE;
+          // Restore UPEC_WIPE_PASSPHRASE env var.
+          delete process.env.UPEC_WIPE_PASSPHRASE;
         }),
         realConfig,
         realConfigEnc,
@@ -644,7 +644,7 @@ const secrets = require('../lib/secrets');
 const { readConfigMeta, maskConfig, MASK } = require('./server');
 
 function _encTmpDir() {
-  return _encFs.mkdtempSync(_encPath.join(_encOs.tmpdir(), 'aidr-dash-'));
+  return _encFs.mkdtempSync(_encPath.join(_encOs.tmpdir(), 'upec-wipe-dash-'));
 }
 
 test('readConfigMeta returns plaintext config when config.json is plaintext', () => {
@@ -680,23 +680,23 @@ test('readConfigMeta flags parseError when an encrypted config has no passphrase
   assert.equal(m.parseError, true);
 });
 
-// getPassphrase() throws on a bad AIDR_PASSPHRASE_FILE; require()-ing server.js
+// getPassphrase() throws on a bad UPEC_WIPE_PASSPHRASE_FILE; require()-ing server.js
 // must catch that at module load (fail CLOSED and report at `node server.js`
 // startup, not crash a plain require with a raw stack). Here we only assert the
 // require()-level contract: no throw, and the resulting empty CONFIG_PASSPHRASE
 // makes an encrypted config report locked (parseError) instead of being decrypted
 // with the wrong (empty) passphrase.
-test('requiring server.js with a missing AIDR_PASSPHRASE_FILE does not throw; readConfigMeta then reports locked', () => {
+test('requiring server.js with a missing UPEC_WIPE_PASSPHRASE_FILE does not throw; readConfigMeta then reports locked', () => {
   const dir = _encTmpDir();
   const configPath = _encPath.join(dir, 'config.json');
   const encPath = _encPath.join(dir, 'config.json.enc');
   const plain = { person: { firstName: 'Locked' } };
   _encFs.writeFileSync(encPath, JSON.stringify(secrets.encryptConfig(plain, 'realpw')));
 
-  const prevPassphrase = process.env.AIDR_PASSPHRASE;
-  const prevPassphraseFile = process.env.AIDR_PASSPHRASE_FILE;
-  delete process.env.AIDR_PASSPHRASE;
-  process.env.AIDR_PASSPHRASE_FILE = _encPath.join(dir, 'does-not-exist');
+  const prevPassphrase = process.env.UPEC_WIPE_PASSPHRASE;
+  const prevPassphraseFile = process.env.UPEC_WIPE_PASSPHRASE_FILE;
+  delete process.env.UPEC_WIPE_PASSPHRASE;
+  process.env.UPEC_WIPE_PASSPHRASE_FILE = _encPath.join(dir, 'does-not-exist');
 
   purgeServerModule();
   try {
@@ -708,10 +708,10 @@ test('requiring server.js with a missing AIDR_PASSPHRASE_FILE does not throw; re
     assert.equal(m.exists, true);
     assert.equal(m.parseError, true);
   } finally {
-    if (prevPassphrase !== undefined) process.env.AIDR_PASSPHRASE = prevPassphrase;
-    else delete process.env.AIDR_PASSPHRASE;
-    if (prevPassphraseFile !== undefined) process.env.AIDR_PASSPHRASE_FILE = prevPassphraseFile;
-    else delete process.env.AIDR_PASSPHRASE_FILE;
+    if (prevPassphrase !== undefined) process.env.UPEC_WIPE_PASSPHRASE = prevPassphrase;
+    else delete process.env.UPEC_WIPE_PASSPHRASE;
+    if (prevPassphraseFile !== undefined) process.env.UPEC_WIPE_PASSPHRASE_FILE = prevPassphraseFile;
+    else delete process.env.UPEC_WIPE_PASSPHRASE_FILE;
     purgeServerModule();
   }
 });
@@ -934,7 +934,7 @@ test('maskConfig covers every secret leaf that config.example.json declares', ()
 
 test('PUT /api/config refuses to write plaintext beside an active encrypted config', async () => {
   // The old else-branch wrote a plaintext config.json whenever config.json.enc
-  // existed but AIDR_PASSPHRASE was unset. Two harms at once: full PII landed on
+  // existed but UPEC_WIPE_PASSPHRASE was unset. Two harms at once: full PII landed on
   // disk in the clear, and loadConfig() still prefers the .enc file, so the edit
   // the operator just made silently did nothing.
   const plain = { person: { firstName: 'Alice', lastName: 'Smith' }, capsolver: { apiKey: 'ORIGINAL' } };
@@ -955,7 +955,7 @@ test('PUT /api/config refuses to write plaintext beside an active encrypted conf
     assert.match(
       JSON.stringify(r.json || {}),
       /passphrase/i,
-      'the error should tell the operator to supply AIDR_PASSPHRASE',
+      'the error should tell the operator to supply UPEC_WIPE_PASSPHRASE',
     );
     assert.equal(
       fs.existsSync(realConfig),
@@ -978,7 +978,7 @@ const M3_BASE = {
   network: { required: true, proxy: '' },
   generic: { enabled: false },
   browser: { persistentProfile: false },
-  profileDir: '~/.config/auto-identity-remove',
+  profileDir: '~/.config/upec-wipe',
 };
 
 async function m3Put(body) {
@@ -1104,8 +1104,8 @@ function rawRequest(server, { pathname = '/api/version', headers = {}, method = 
   });
 }
 
-test('L1: AIDR_HOST on another loopback address is accepted as a Host, non-loopback names still 421', async () => {
-  process.env.AIDR_HOST = '127.0.0.5';
+test('L1: UPEC_WIPE_HOST on another loopback address is accepted as a Host, non-loopback names still 421', async () => {
+  process.env.UPEC_WIPE_HOST = '127.0.0.5';
   const { server, close } = await buildServer();
   try {
     const port = server.address().port;
@@ -1115,7 +1115,7 @@ test('L1: AIDR_HOST on another loopback address is accepted as a Host, non-loopb
     const other = await rawRequest(server, { headers: { Host: `127.0.0.6:${port}`, Authorization: auth } });
     assert.equal(other.status, 421, 'only the configured loopback address, not all of 127/8');
   } finally {
-    delete process.env.AIDR_HOST;
+    delete process.env.UPEC_WIPE_HOST;
     await close();
   }
 });
@@ -1237,12 +1237,12 @@ test('L3: deleting .auth.json at runtime never opens the dashboard', async () =>
 
 test('L4: childEnv strips dashboard credentials but keeps passphrase sources', () => {
   const { childEnv } = require('../lib/child-env');
-  const env = childEnv({ AIDR_PASS: 'a', AIDR_USER: 'b', AIDR_TOKEN: 'c', AIDR_PASSPHRASE_FILE: '/f', AIDR_PASSPHRASE: 'p', PATH: '/bin' }, { HEADLESS: '1' });
-  assert.equal('AIDR_PASS' in env, false);
-  assert.equal('AIDR_USER' in env, false);
-  assert.equal('AIDR_TOKEN' in env, false);
-  assert.equal(env.AIDR_PASSPHRASE_FILE, '/f');
-  assert.equal(env.AIDR_PASSPHRASE, 'p');
+  const env = childEnv({ UPEC_WIPE_PASS: 'a', UPEC_WIPE_USER: 'b', UPEC_WIPE_TOKEN: 'c', UPEC_WIPE_PASSPHRASE_FILE: '/f', UPEC_WIPE_PASSPHRASE: 'p', PATH: '/bin' }, { HEADLESS: '1' });
+  assert.equal('UPEC_WIPE_PASS' in env, false);
+  assert.equal('UPEC_WIPE_USER' in env, false);
+  assert.equal('UPEC_WIPE_TOKEN' in env, false);
+  assert.equal(env.UPEC_WIPE_PASSPHRASE_FILE, '/f');
+  assert.equal(env.UPEC_WIPE_PASSPHRASE, 'p');
   assert.equal(env.HEADLESS, '1');
 });
 

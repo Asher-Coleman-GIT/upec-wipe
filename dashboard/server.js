@@ -30,8 +30,8 @@ process.umask(0o077);
  *   GET  /api/freeze             -> credit/identity freeze checklist + status
  *   POST /api/freeze             -> { key, action: done|clear } mark a freeze target
  *
- * Auth (all routes except /api/health, static + API): set AIDR_USER + AIDR_PASS
- *   for HTTP Basic, and/or AIDR_TOKEN for header token auth (X-AIDR-Token). A
+ * Auth (all routes except /api/health, static + API): set UPEC_WIPE_USER + UPEC_WIPE_PASS
+ *   for HTTP Basic, and/or UPEC_WIPE_TOKEN for header token auth (X-UPEC_WIPE-Token). A
  *   request is allowed if it satisfies EITHER. Credentials can be changed at
  *   runtime via the Admin tab, which writes a scrypt-hashed dashboard/.auth.json
  *   that overrides the env vars. If nothing is set the dashboard refuses to
@@ -60,7 +60,7 @@ const BROKERS = path.join(ROOT, 'brokers.js');
 const SERP_HISTORY = path.join(ROOT, 'data', 'serp-history.json');
 const secrets = require('../lib/secrets');
 const { isConfigEncrypted, getPassphrase } = require('../lib/config');
-// getPassphrase() can throw (bad/missing/world-readable AIDR_PASSPHRASE_FILE).
+// getPassphrase() can throw (bad/missing/world-readable UPEC_WIPE_PASSPHRASE_FILE).
 // Caught here so a plain `require('./server')` never crashes with a raw stack;
 // the error is instead reported and the process exits cleanly at startup
 // (see the require.main === module block below). A require()-only consumer
@@ -71,12 +71,12 @@ let PASSPHRASE_ERROR = null;
 try { CONFIG_PASSPHRASE = getPassphrase(); } catch (err) { PASSPHRASE_ERROR = err; }
 const EXPOSURE_LIB = path.join(ROOT, 'lib', 'exposure.js');
 
-const PORT = Number.parseInt(process.env.AIDR_PORT, 10) || 8080;
-const HOST = process.env.AIDR_HOST || '127.0.0.1';
-const TOKEN = process.env.AIDR_TOKEN || '';
+const PORT = Number.parseInt(process.env.UPEC_WIPE_PORT, 10) || 8080;
+const HOST = process.env.UPEC_WIPE_HOST || '127.0.0.1';
+const TOKEN = process.env.UPEC_WIPE_TOKEN || '';
 
 // Validate env credentials: BOTH must be set or neither is used (fix #6).
-const _envCreds = resolveEnvCreds(process.env.AIDR_USER || '', process.env.AIDR_PASS || '');
+const _envCreds = resolveEnvCreds(process.env.UPEC_WIPE_USER || '', process.env.UPEC_WIPE_PASS || '');
 if (_envCreds.warning) process.stderr.write(_envCreds.warning + '\n');
 const ENV_USER = _envCreds.envUser;
 const ENV_PASS = _envCreds.envPass;
@@ -125,7 +125,7 @@ const AUTH_REQUIRED = authConfigured();
 function authorized(req) {
   if (!AUTH_REQUIRED && !authConfigured()) return true;
   if (TOKEN) { // header only - never accept the token via query string (leaks to logs/history)
-    const t = req.get('x-aidr-token');
+    const t = req.get('x-upec-wipe-token');
     if (t && safeEq(t, TOKEN)) return true;
   }
   const c = loadCreds();
@@ -150,8 +150,8 @@ app.use((_req, res, next) => {
 // Audit L1: Host allowlist (DNS-rebinding defense). The Origin/Host CSRF check
 // below compares two attacker-controlled values, so the Host itself is pinned.
 // The port may be the configured PORT or the port the connection actually hit
-// (differs under AIDR_PORT=0 or a published container port).
-// A configured AIDR_HOST that is another IPv4 loopback literal (127/8) is
+// (differs under UPEC_WIPE_PORT=0 or a published container port).
+// A configured UPEC_WIPE_HOST that is another IPv4 loopback literal (127/8) is
 // accepted too, so the URL bin/upec-wipe.js prints works; a rebinding attacker
 // cannot send an IP-literal Host for their own name.
 const EXTRA_HOST = /^127(\.\d{1,3}){3}$/.test(HOST) && HOST !== '127.0.0.1' ? HOST : null;
@@ -196,7 +196,7 @@ app.use((req, res, next) => {
   }
   if (authorized(req)) return next();
   // A request with no credentials at all is the normal browser prompt, not a guess.
-  if (req.get('authorization') || req.get('x-aidr-token')) recordAuthFailure(addr, now);
+  if (req.get('authorization') || req.get('x-upec-wipe-token')) recordAuthFailure(addr, now);
   res.set('WWW-Authenticate', 'Basic realm="upec-wipe dashboard"');
   res.status(401).json({ error: 'unauthorized' });
 });
@@ -250,7 +250,7 @@ function readJsonMeta(file) {
   catch (_) { return { exists: true, parseError: true }; }
 }
 // Envelope-aware config reader. Prefers config.json.enc, else config.json (which
-// may itself be an envelope). Decrypts with the passphrase (AIDR_PASSPHRASE).
+// may itself be an envelope). Decrypts with the passphrase (UPEC_WIPE_PASSPHRASE).
 // On a missing/wrong passphrase for an encrypted config, returns parseError so
 // the API surfaces a clear "could not read" instead of leaking ciphertext.
 // opts (for tests): { configPath, encPath, passphrase }.
@@ -602,7 +602,7 @@ app.put('/api/config', (req, res) => {
   if (encrypted && !passphrase) {
     return res.status(409).json({
       error: 'Config is encrypted but no passphrase is available to this process. '
-        + 'Restart the dashboard with AIDR_PASSPHRASE set; refusing to write a plaintext config.json.',
+        + 'Restart the dashboard with UPEC_WIPE_PASSPHRASE set; refusing to write a plaintext config.json.',
     });
   }
 

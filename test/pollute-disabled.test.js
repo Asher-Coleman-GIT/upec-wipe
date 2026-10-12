@@ -24,7 +24,7 @@ const WATCHER = path.join(ROOT, 'watcher.js');
 const MSG = '--pollute is disabled in this fork: it submitted real personal data. See docs/THREAT-MODEL.md.';
 
 function runWatcher(args) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-pollute-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-pollute-'));
   const preload = path.join(dir, 'trap.js');
   fs.writeFileSync(preload, [
     "'use strict';",

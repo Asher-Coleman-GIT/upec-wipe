@@ -32,7 +32,7 @@ if [ "$probe_mode" != "600" ]; then
   exit 2
 fi
 
-PROFILE="${HOME}/.config/auto-identity-remove"
+PROFILE="${HOME}/.config/upec-wipe"
 chmod 700 "$REPO"
 for d in logs data "$PROFILE"; do
   [ -d "$d" ] && chmod 700 "$d"

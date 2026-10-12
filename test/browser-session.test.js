@@ -39,7 +39,7 @@ test('default profile is a fresh 0700 temp dir that cleanup removes', () => {
 });
 
 test('browser.persistentProfile true uses profileDir and never deletes it', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-keep-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-keep-'));
   const p = acquireProfileDir({ browser: { persistentProfile: true }, profileDir: dir });
   assert.equal(p.ephemeral, false);
   assert.equal(p.dir, dir);

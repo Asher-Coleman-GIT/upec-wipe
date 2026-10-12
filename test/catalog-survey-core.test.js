@@ -72,7 +72,7 @@ test('mergeSurvey for a new site starts unreviewed, and a group override wins', 
 });
 
 test('writeRecordAtomic writes the whole record and leaves no temp file', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cat-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-cat-'));
   const p = core.writeRecordAtomic(dir, { domain: 'acme.com', name: 'Acme' });
   assert.equal(p, path.join(dir, 'acme.com.json'));
   assert.deepEqual(JSON.parse(fs.readFileSync(p, 'utf8')), { domain: 'acme.com', name: 'Acme' });

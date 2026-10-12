@@ -59,7 +59,7 @@ test('#4 feed dedupe keys on the broker website, not the shared privacy host', (
   assert.deepEqual(dedupeFeedBrokers(rows, []).map(r => r.name), ['A', 'B']);
 });
 test('#4 candidates are keyed by the broker website and record the form host', () => {
-  const f = require('fs'); const p = require('path').join(require('os').tmpdir(), `aidr-feed-${process.pid}.json`);
+  const f = require('fs'); const p = require('path').join(require('os').tmpdir(), `upec-wipe-feed-${process.pid}.json`);
   f.writeFileSync(p, JSON.stringify([
     { name: 'A', optOutUrl: 'https://privacyportal.onetrust.com/webform/1', website: 'https://www.a.com', source: 'ca' },
     { name: 'B', optOutUrl: 'https://privacyportal.onetrust.com/webform/2', website: 'https://b.com', source: 'ca' },

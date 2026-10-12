@@ -96,7 +96,7 @@ jobs:
         run: |
           echo '{"optOuts":{}}' > "$RUNNER_TEMP/state.json"
           docker run --rm --init \
-            -e AIDR_STATE_PATH=/app/state.json \
+            -e UPEC_WIPE_STATE_PATH=/app/state.json \
             -v "$RUNNER_TEMP/state.json:/app/state.json" \
             upec-wipe-ci node scripts/ci/docker-state-check.js
           grep -q CiProbe "$RUNNER_TEMP/state.json" || { echo "host file not updated"; exit 1; }

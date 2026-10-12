@@ -74,7 +74,7 @@ function makeEl(overrides = {}) {
  *     runs UNMODIFIED here (no second source of truth). This is what lets the
  *     selection logic and the marker semantics be exercised for real.
  *   - locator(sel): resolves to the candidate(s) matching `sel`. We model the
- *     marker attribute selector `[data-aidr-resolve="1"]` (used by resolveField)
+ *     marker attribute selector `[data-upec-wipe-resolve="1"]` (used by resolveField)
  *     so .fill() hits the EXACT element that was tagged, not an index.
  *
  * `mutate` (optional) is a callback invoked ONCE, AFTER the scoring evaluate
@@ -87,7 +87,7 @@ function makeEl(overrides = {}) {
  * whatever now sits at that index - that divergence is exactly the race.
  */
 function makeResolvePage(candidates, opts = {}) {
-  const RESOLVE_MARKER = 'data-aidr-resolve';
+  const RESOLVE_MARKER = 'data-upec-wipe-resolve';
   let scored = false;
 
   function matches(el, sel) {
@@ -336,7 +336,7 @@ test('resolveField: fullName still resolves a genuine full_name field', async ()
 // runs against the REAL production callback over `candidates`. getByLabel is a
 // no-op (primary fallback). A flag records whether the resolver's evaluate ran.
 function makeFillFormPage(candidates) {
-  const RESOLVE_MARKER = 'data-aidr-resolve';
+  const RESOLVE_MARKER = 'data-upec-wipe-resolve';
   const state = { resolverCalled: false };
 
   // page.locator(sel): only marker selectors resolve; broker CSS selectors miss
@@ -404,7 +404,7 @@ test('fillForm: secondary resolver fires when exact selector input[name="email"]
 
   assert.ok(state.resolverCalled, 'resolveField should have been invoked via page.evaluate');
   assert.equal(candidates[0]._filledWith, 'user@example.com', 'resolver should fill the correct value into the marked element');
-  assert.ok(!candidates[0].hasAttribute('data-aidr-resolve'), 'marker should be cleared after fill');
+  assert.ok(!candidates[0].hasAttribute('data-upec-wipe-resolve'), 'marker should be cleared after fill');
 });
 
 // ─── 7. fillForm: secondary fallback fires for ambiguous-keyword selectors ────
@@ -518,7 +518,7 @@ test('fillForm: resolver is NOT invoked when primary getByLabel fallback succeed
 // A resolvable field exists (matchable by name/placeholder/aria), so the
 // resolver must fire and fill it.
 function makeLabelMissPage(candidates) {
-  const RESOLVE_MARKER = 'data-aidr-resolve';
+  const RESOLVE_MARKER = 'data-upec-wipe-resolve';
   const state = { resolverCalled: false, getByLabelAttempted: false };
 
   function locatorMatches(el, sel) {
@@ -596,7 +596,7 @@ test('fillForm: resolver FIRES when CSS miss + getByLabel silently misses (renam
   assert.ok(state.getByLabelAttempted, 'primary getByLabel path should have been entered (non-ambiguous keyword)');
   assert.ok(state.resolverCalled, 'resolver MUST fire after a SILENT getByLabel miss - not be short-circuited by filled=true');
   assert.equal(candidates[0]._filledWith, 'user@example.com', 'resolver should fill the renamed email field that getByLabel could not reach');
-  assert.ok(!candidates[0].hasAttribute('data-aidr-resolve'), 'marker cleared after fill');
+  assert.ok(!candidates[0].hasAttribute('data-upec-wipe-resolve'), 'marker cleared after fill');
 });
 
 // Companion to 9 + 9b: getByLabel SUCCESS still short-circuits the resolver
@@ -737,7 +737,7 @@ test('confirm-guard CASE A: primary unreadable + confirm readable → abstain (n
   const page = makeResolvePage(candidates);
   const result = await resolveField(page, 'input[name="email"]', 'relay@mask.example');
   assert.equal(result, null, 'must abstain - filling the confirm field breaks email !== confirm submission');
-  assert.ok(!confirm.hasAttribute('data-aidr-resolve'), 'confirm field must never be tagged as the winner');
+  assert.ok(!confirm.hasAttribute('data-upec-wipe-resolve'), 'confirm field must never be tagged as the winner');
 });
 
 // CASE primary+confirm both readable - the resolver MUST pick the primary, never
@@ -888,7 +888,7 @@ test('TOCTOU: exactly one element is tagged as the winner', async () => {
   const candidates = [a, b];
   const page = makeResolvePage(candidates);
   await resolveField(page, 'input[name="firstName"]', 'Jane');
-  const tagged = candidates.filter(el => el.hasAttribute('data-aidr-resolve'));
+  const tagged = candidates.filter(el => el.hasAttribute('data-upec-wipe-resolve'));
   assert.equal(tagged.length, 1, 'exactly one winner must be tagged');
   assert.equal(tagged[0], a, 'the firstName field is the tagged winner');
 });
@@ -896,12 +896,12 @@ test('TOCTOU: exactly one element is tagged as the winner', async () => {
 test('TOCTOU: a stale marker from a prior run is cleared before scoring', async () => {
   const winner = makeEl({ name: 'email', id: 'email', type: 'email', tagName: 'INPUT', autocomplete: 'email', placeholder: 'Email' });
   const stale = makeEl({ name: 'old', id: 'old', type: 'text', tagName: 'INPUT' });
-  stale.setAttribute('data-aidr-resolve', '1'); // leftover from an aborted run
+  stale.setAttribute('data-upec-wipe-resolve', '1'); // leftover from an aborted run
   const candidates = [stale, winner];
   const page = makeResolvePage(candidates);
   const result = await resolveField(page, 'input[name="email"]', 'relay@mask.example');
   assert.equal(result._resolvedEl, winner, 'stale marker must be cleared so the new winner binds');
-  assert.ok(!stale.hasAttribute('data-aidr-resolve'), 'stale marker must be removed');
+  assert.ok(!stale.hasAttribute('data-upec-wipe-resolve'), 'stale marker must be removed');
 });
 
 // ─── 16. Observability - abstain emits one console.warn (new path only) ──────

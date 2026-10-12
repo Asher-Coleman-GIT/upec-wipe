@@ -50,7 +50,7 @@ test('a recorded select option value and "on" are allowed literals', () => {
 });
 
 test('loadCatalog skips invalid files with a warning and ignores candidates.json', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-cat-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-cat-'));
   fs.writeFileSync(path.join(dir, 'example-people.com.json'), JSON.stringify(base()));
   fs.writeFileSync(path.join(dir, 'broken.com.json'), '{ "domain": "broken.com", ');
   fs.writeFileSync(path.join(dir, 'candidates.json'), '[]');
@@ -63,7 +63,7 @@ test('loadCatalog skips invalid files with a warning and ignores candidates.json
 
 test('invalid JSON is skipped with a warning, a missing directory gives no records and no warning', () => {
   const warnings = [];
-  assert.deepEqual(loadCatalog(path.join(os.tmpdir(), 'aidr-no-such-dir'), (m) => warnings.push(m)), []);
+  assert.deepEqual(loadCatalog(path.join(os.tmpdir(), 'upec-wipe-no-such-dir'), (m) => warnings.push(m)), []);
   assert.equal(warnings.length, 0);
 });
 

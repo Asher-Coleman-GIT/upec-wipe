@@ -40,7 +40,7 @@ const ALICE = {
 const PASSPHRASE = 'a-real-passphrase';
 
 function tmpdir() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-setup-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-setup-'));
 }
 
 test('readExistingConfig is exported so the encrypted path is testable', () => {

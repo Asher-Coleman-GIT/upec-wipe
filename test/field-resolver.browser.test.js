@@ -4,15 +4,15 @@
  * Real-browser (headless Chromium) integration tests for lib/field-resolver.js
  * and the secondary-fallback path in lib/forms.js.
  *
- * Runs ONLY when the environment variable AIDR_BROWSER_TESTS=1 is set, so the
+ * Runs ONLY when the environment variable UPEC_WIPE_BROWSER_TESTS=1 is set, so the
  * default `npm test` fast suite (browser-free) is unaffected. To run:
  *
- *   AIDR_BROWSER_TESTS=1 node --test test/field-resolver.browser.test.js
+ *   UPEC_WIPE_BROWSER_TESTS=1 node --test test/field-resolver.browser.test.js
  *
  * These tests use real Playwright pages (`page.setContent(fixtureHTML)`) and
  * drive the REAL `fillForm` / `resolveField` code path end-to-end. No mocks -
  * the scorer is serialised through `page.evaluate` / `new Function` in a real
- * Chromium process, the `data-aidr-resolve` marker binding is genuine, and
+ * Chromium process, the `data-upec-wipe-resolve` marker binding is genuine, and
  * `page.locator(...).inputValue()` reads actual DOM state.
  *
  * Scenario catalogue:
@@ -27,7 +27,7 @@
  *      field present; resolver MUST abstain (both fields stay empty).
  *   5. Happy path - exact selector hits; resolver NOT invoked (fill succeeds
  *      via the primary CSS path, not the semantic fallback).
- *   6. TOCTOU marker - data-aidr-resolve attribute is set during evaluate and
+ *   6. TOCTOU marker - data-upec-wipe-resolve attribute is set during evaluate and
  *      cleared after fill; verify start→set→cleared lifecycle.
  */
 
@@ -36,9 +36,9 @@
 const { describe, test, before, after } = require('node:test');
 const assert = require('node:assert/strict');
 
-const ENABLED = Boolean(process.env.AIDR_BROWSER_TESTS);
+const ENABLED = Boolean(process.env.UPEC_WIPE_BROWSER_TESTS);
 
-// Wrap everything in a describe so that when AIDR_BROWSER_TESTS is unset the
+// Wrap everything in a describe so that when UPEC_WIPE_BROWSER_TESTS is unset the
 // whole suite registers as a single skipped block - no hard process.exit, no
 // worker-exit warning, no attempt to load playwright or a browser binary.
 describe('field-resolver browser integration', { skip: !ENABLED }, () => {
@@ -197,7 +197,7 @@ describe('field-resolver browser integration', { skip: !ENABLED }, () => {
 
   test('S4: happy path - exact selector fills without resolver', async () => {
     // The exact CSS selector hits; fillForm() fills it directly.
-    // To verify the resolver was NOT invoked we check: the data-aidr-resolve
+    // To verify the resolver was NOT invoked we check: the data-upec-wipe-resolve
     // marker is absent after the fill (the resolver sets+clears it; if it was
     // never set, it's absent). Also verify the field value.
     const html = `
@@ -213,9 +213,9 @@ describe('field-resolver browser integration', { skip: !ENABLED }, () => {
       assert.strictEqual(got, 'happy@example.com',
         `S4 FAIL: email="${got}", expected "happy@example.com"`);
       // Confirm resolver marker was never set (primary path, no fallback)
-      const markerCount = await page.locator('[data-aidr-resolve]').count();
+      const markerCount = await page.locator('[data-upec-wipe-resolve]').count();
       assert.strictEqual(markerCount, 0,
-        `S4 FAIL: data-aidr-resolve marker found (resolver was invoked when it shouldn't be)`);
+        `S4 FAIL: data-upec-wipe-resolve marker found (resolver was invoked when it shouldn't be)`);
       console.log('S4 PASS: email=', got, '| resolver marker absent:', markerCount === 0);
     } finally {
       await page.close();
@@ -224,7 +224,7 @@ describe('field-resolver browser integration', { skip: !ENABLED }, () => {
 
   // ─── Scenario 5: TOCTOU marker lifecycle ────────────────────────────────────
 
-  test('S5: TOCTOU marker - data-aidr-resolve is set then cleared during fill', async () => {
+  test('S5: TOCTOU marker - data-upec-wipe-resolve is set then cleared during fill', async () => {
     // Drive resolveField() directly (not via fillForm) so we can capture the
     // marker state at three points: before resolve, after resolve (before clear),
     // and after clearResolveMarker.
@@ -237,13 +237,13 @@ describe('field-resolver browser integration', { skip: !ENABLED }, () => {
     const page = await makePage(html);
     try {
       // Before: no marker
-      const before = await page.locator('[data-aidr-resolve]').count();
+      const before = await page.locator('[data-upec-wipe-resolve]').count();
       assert.strictEqual(before, 0, 'S5 FAIL: marker present before resolve');
 
       // After resolveField: marker set on the winner
       const locator = await resolveField(page, 'input[name="email"]', 'mark@example.com');
       assert.ok(locator !== null, 'S5 FAIL: resolveField returned null (scorer failed)');
-      const afterResolve = await page.locator('[data-aidr-resolve="1"]').count();
+      const afterResolve = await page.locator('[data-upec-wipe-resolve="1"]').count();
       assert.strictEqual(afterResolve, 1, `S5 FAIL: marker count after resolve=${afterResolve}, expected 1`);
 
       // Actually fill so the locator is consumed
@@ -254,7 +254,7 @@ describe('field-resolver browser integration', { skip: !ENABLED }, () => {
 
       // After clearResolveMarker: marker gone
       await clearResolveMarker(page);
-      const afterClear = await page.locator('[data-aidr-resolve]').count();
+      const afterClear = await page.locator('[data-upec-wipe-resolve]').count();
       assert.strictEqual(afterClear, 0,
         `S5 FAIL: marker still present after clearResolveMarker, count=${afterClear}`);
 

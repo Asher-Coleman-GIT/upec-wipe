@@ -159,10 +159,10 @@ This part is the same for Parts A and B.
 1. Optional, only if you want encryption: create an empty passphrase file that only you can read. Skip to step 2 if you do not want encryption:
 
    ```
-   mkdir -p ~/.config/auto-identity-remove && install -m 600 /dev/null ~/.config/auto-identity-remove/passphrase
+   mkdir -p ~/.config/upec-wipe && install -m 600 /dev/null ~/.config/upec-wipe/passphrase
    ```
 
-   Open it with `nano ~/.config/auto-identity-remove/passphrase`, type a long passphrase (a few random words), and save. Warning: if you lose the passphrase, your config cannot be recovered and you must run setup again.
+   Open it with `nano ~/.config/upec-wipe/passphrase`, type a long passphrase (a few random words), and save. Warning: if you lose the passphrase, your config cannot be recovered and you must run setup again.
 
 2. Run the setup questions. This asks for your name, address and other details, and saves them in `config.json` in this folder:
 
@@ -170,7 +170,7 @@ This part is the same for Parts A and B.
    node bin/upec-wipe.js setup
    ```
 
-   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, your date of birth (optional: only PrivateRecords uses it, and leaving it blank sends that site to your manual list), then your CapSolver key (leave it blank to skip), then your SimpleLogin API key, then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/auto-identity-remove/passphrase` on its own.
+   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, your date of birth (optional: only PrivateRecords uses it, and leaving it blank sends that site to your manual list), then your CapSolver key (leave it blank to skip), then your SimpleLogin API key, then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/upec-wipe/passphrase` on its own.
 
 3. Open the settings file in a simple editor:
 
@@ -211,10 +211,10 @@ This part is the same for Parts A and B.
 5. Optional: encrypt your config. Skip this if you did not create a passphrase file in step 1:
 
    ```
-   AIDR_PASSPHRASE_FILE=~/.config/auto-identity-remove/passphrase node watcher.js --encrypt-config
+   UPEC_WIPE_PASSPHRASE_FILE=~/.config/upec-wipe/passphrase node watcher.js --encrypt-config
    ```
 
-   It reports that the config was encrypted. Afterward, plain commands such as `node bin/upec-wipe.js doctor` and `node bin/upec-wipe.js run` work without the `AIDR_PASSPHRASE_FILE=...` prefix, because the tool reads `~/.config/auto-identity-remove/passphrase` by default. Keep that file mode 600: the tool refuses it if other users can read it. If you keep the passphrase somewhere else, put `AIDR_PASSPHRASE_FILE=<path>` in front of each command instead.
+   It reports that the config was encrypted. Afterward, plain commands such as `node bin/upec-wipe.js doctor` and `node bin/upec-wipe.js run` work without the `UPEC_WIPE_PASSPHRASE_FILE=...` prefix, because the tool reads `~/.config/upec-wipe/passphrase` by default. Keep that file mode 600: the tool refuses it if other users can read it. If you keep the passphrase somewhere else, put `UPEC_WIPE_PASSPHRASE_FILE=<path>` in front of each command instead.
 
 6. Check that everything is ready:
 
@@ -362,7 +362,7 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 | `... - not sent: email.smtp.from ... Set email.smtp.from to a non-real address.` | Your `"from"` is missing or is your real email. Set it to a non-real address. |
 | `... - not sent: email.smtp.user ... Use a separate SMTP mailbox that is not linked to you, or remove the email block ...` | Your SMTP login is your real email and brokers can see it. Switch to a separate mailbox not linked to you, or delete the `email` block and handle those brokers by hand. |
 | `Email step not run: ...` | The email step checks its setup before sending anything. Fix what it names: the `email.smtp` block, `user` and `from` must be the same dedicated address, and it must run in a terminal so you can type `SEND`. |
-| `upec-wipe-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
+| `upec-wipe-dashboard: UPEC_WIPE_HOST=... is not a loopback address. ...` | Unset `UPEC_WIPE_HOST` so the dashboard stays on this computer. |
 | `Network check failed for direct connections - nothing was sent. ...` | The tool was about to contact SimpleLogin, CapSolver, HIBP, your SMTP server or a registry, and Mullvad is off. Connect the Mullvad app and run again. |
 | `Note: network.proxy covers the browser only. ...` | You set `network.proxy`. Brokers see the proxy, but those services see your real IP. Use the Mullvad app instead if that matters to you. |
 | `Playwright is not installed. Run: npm ci --ignore-scripts && npx playwright install chromium` | Run that command in the tool's folder. |

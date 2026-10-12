@@ -215,7 +215,7 @@ test('resolveEnvCreds: only user set -> envConfigured false, warning emitted', (
   assert.equal(r.envUser, '');
   assert.equal(r.envPass, '');
   assert.ok(r.warning, 'should emit a warning');
-  assert.match(r.warning, /AIDR_USER|AIDR_PASS/);
+  assert.match(r.warning, /UPEC_WIPE_USER|UPEC_WIPE_PASS/);
 });
 
 test('resolveEnvCreds: only pass set -> envConfigured false, warning emitted', () => {

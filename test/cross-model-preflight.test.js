@@ -36,7 +36,7 @@ const PROBE = path.join(ROOT, 'scripts', 'cross-model-preflight.sh');
  * @param {string|null} body shell source for the stub, or null for no codex
  */
 function runProbe(body, extraEnv = {}) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-probe-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-probe-'));
   try {
     if (body !== null) {
       const stub = path.join(dir, 'codex');
@@ -146,7 +146,7 @@ exit 1
  * cross-model review of 1994125.
  */
 test('the review script exits with the probe status, not 0, when the reviewer is dead', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-review-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-review-'));
   try {
     const r = spawnSync('bash', [path.join(ROOT, 'scripts', 'cross-model-review.sh')], {
       cwd: ROOT,
@@ -209,7 +209,7 @@ test('a reviewer that exits non-zero is a failed review even if it wrote output'
   // The renderer only checked whether the findings file was non-empty, so a
   // codex that died part-way through writing one still produced a report and a
   // clean exit. A truncated review must never read as a passing review.
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-partial-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-partial-'));
   try {
     fs.writeFileSync(path.join(dir, 'codex'), `#!/bin/sh
 case "$1" in

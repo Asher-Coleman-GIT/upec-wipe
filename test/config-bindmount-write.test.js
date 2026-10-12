@@ -33,7 +33,7 @@ const path = require('node:path');
 const { _renameOrRewrite } = require('../lib/config');
 
 function tmpdir() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-bindmount-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-bindmount-'));
 }
 
 test('_renameOrRewrite is exported for the durable-write paths', () => {

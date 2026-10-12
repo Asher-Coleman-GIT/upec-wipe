@@ -63,7 +63,7 @@ attacker at all.
 ## Hardening you should actually do
 
 ```bash
-# 1. Encrypt the config at rest. Needs AIDR_PASSPHRASE set when running.
+# 1. Encrypt the config at rest. Needs UPEC_WIPE_PASSPHRASE set when running.
 node watcher.js --encrypt-config
 
 # 2. Confirm the PII files are owner-only. The tool writes 0600, but a file you

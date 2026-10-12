@@ -24,7 +24,7 @@ const {
 } = require('../lib/exposure');
 
 function tmpFile() {
-  return path.join(os.tmpdir(), `aidr-exposure-${crypto.randomBytes(6).toString('hex')}.json`);
+  return path.join(os.tmpdir(), `upec-wipe-exposure-${crypto.randomBytes(6).toString('hex')}.json`);
 }
 
 afterEach(() => {

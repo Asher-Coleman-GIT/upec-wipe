@@ -37,7 +37,7 @@ const PASSPHRASE = 'correct horse battery staple';
  * resolves inside the sandbox instead of at the real repo root.
  */
 function sandbox() {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'aidr-enc-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-enc-'));
   fs.copyFileSync(path.join(__dirname, '..', 'brokers.js'), path.join(dir, 'brokers.js'));
   // Copy all of lib/: config.js lazily requires siblings (./secrets, ./defunct),
   // and a partial copy would make the require fail and fall through to the
@@ -69,14 +69,14 @@ test('an encrypted-only config still populates broker form fields', () => {
   // --encrypt-config removes the plaintext; reproduce that exactly.
   assert.equal(fs.existsSync(path.join(dir, 'config.json')), false);
 
-  const prev = process.env.AIDR_PASSPHRASE;
-  process.env.AIDR_PASSPHRASE = PASSPHRASE;
+  const prev = process.env.UPEC_WIPE_PASSPHRASE;
+  process.env.UPEC_WIPE_PASSPHRASE = PASSPHRASE;
   let brokers;
   try {
     brokers = loadBrokers(dir);
   } finally {
-    if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
-    else process.env.AIDR_PASSPHRASE = prev;
+    if (prev === undefined) delete process.env.UPEC_WIPE_PASSPHRASE;
+    else process.env.UPEC_WIPE_PASSPHRASE = prev;
   }
 
   const values = nonEmptyValues(brokers);
@@ -97,12 +97,12 @@ test('an encrypted-only config still populates search URLs', () => {
     JSON.stringify(secrets.encryptConfig({ person: ALICE }, PASSPHRASE)),
   );
 
-  const prev = process.env.AIDR_PASSPHRASE;
-  process.env.AIDR_PASSPHRASE = PASSPHRASE;
+  const prev = process.env.UPEC_WIPE_PASSPHRASE;
+  process.env.UPEC_WIPE_PASSPHRASE = PASSPHRASE;
   let brokers;
   try { brokers = loadBrokers(dir); } finally {
-    if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
-    else process.env.AIDR_PASSPHRASE = prev;
+    if (prev === undefined) delete process.env.UPEC_WIPE_PASSPHRASE;
+    else process.env.UPEC_WIPE_PASSPHRASE = prev;
   }
 
   const urls = brokers.filter(b => b.searchUrl).map(b => b.searchUrl).join(' ');
@@ -118,12 +118,12 @@ test('an envelope-shaped config.json (in-place encryption) also works', () => {
     JSON.stringify(secrets.encryptConfig({ person: ALICE }, PASSPHRASE)),
   );
 
-  const prev = process.env.AIDR_PASSPHRASE;
-  process.env.AIDR_PASSPHRASE = PASSPHRASE;
+  const prev = process.env.UPEC_WIPE_PASSPHRASE;
+  process.env.UPEC_WIPE_PASSPHRASE = PASSPHRASE;
   let brokers;
   try { brokers = loadBrokers(dir); } finally {
-    if (prev === undefined) delete process.env.AIDR_PASSPHRASE;
-    else process.env.AIDR_PASSPHRASE = prev;
+    if (prev === undefined) delete process.env.UPEC_WIPE_PASSPHRASE;
+    else process.env.UPEC_WIPE_PASSPHRASE = prev;
   }
 
   assert.ok(nonEmptyValues(brokers).includes(ALICE.email));
@@ -157,12 +157,12 @@ test('an encrypted config with no passphrase does not throw at require time', ()
     path.join(dir, 'config.json.enc'),
     JSON.stringify(secrets.encryptConfig({ person: ALICE }, PASSPHRASE)),
   );
-  const prev = process.env.AIDR_PASSPHRASE;
-  delete process.env.AIDR_PASSPHRASE;
+  const prev = process.env.UPEC_WIPE_PASSPHRASE;
+  delete process.env.UPEC_WIPE_PASSPHRASE;
   try {
     assert.doesNotThrow(() => loadBrokers(dir));
   } finally {
-    if (prev !== undefined) process.env.AIDR_PASSPHRASE = prev;
+    if (prev !== undefined) process.env.UPEC_WIPE_PASSPHRASE = prev;
   }
   fs.rmSync(dir, { recursive: true, force: true });
 });

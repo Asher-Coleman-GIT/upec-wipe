@@ -34,7 +34,7 @@ function mkTmp(prefix) { return fs.mkdtempSync(path.join(os.tmpdir(), prefix)); 
 // Spawn `node <args>` under umask 022 with a preload that reports the umask the
 // process ended with.
 function umaskAfter(nodeArgs, opts) {
-  const dir = mkTmp('aidr-umask-');
+  const dir = mkTmp('upec-wipe-umask-');
   const preload = path.join(dir, 'report-umask.js');
   fs.writeFileSync(preload,
     "process.on('exit', () => { process.stderr.write('UMASK=' + process.umask().toString(8) + '\\n'); });\n");
@@ -70,7 +70,7 @@ test('setup.js sets umask 077 (on require, before main)', { skip: SKIP }, () => 
 
 test('dashboard/server.js sets umask 077 (on require)', { skip: SKIP }, () => {
   const { umask, r } = umaskAfter(['-e', `require(${JSON.stringify(path.join(ROOT, 'dashboard', 'server.js'))})`],
-    { env: { AIDR_USER: 'u', AIDR_PASS: 'p'.repeat(16) } });
+    { env: { UPEC_WIPE_USER: 'u', UPEC_WIPE_PASS: 'p'.repeat(16) } });
   assert.equal(umask, 0o077, r.stderr);
 });
 
@@ -87,7 +87,7 @@ test('umask call sits at the top of each entry point, before any require', () =>
 // Build a minimal copy of the repo under os.tmpdir() so watcher.js resolves
 // CONFIG_PATH to a Linux-fs file whose mode can be checked.
 function makeFixtureRepo() {
-  const dir = mkTmp('aidr-fixture-');
+  const dir = mkTmp('upec-wipe-fixture-');
   for (const f of ['watcher.js', 'brokers.js', 'generic-runner.js', 'package.json']) {
     fs.copyFileSync(path.join(ROOT, f), path.join(dir, f));
   }
@@ -104,7 +104,7 @@ test('watcher --allow X keeps config.json at 0600 under umask 022', { skip: SKIP
     fs.chmodSync(cfg, 0o600);
     const r = spawnSync('sh', ['-c', `umask 022; exec '${process.execPath}' '${path.join(dir, 'watcher.js')}' --allow Spokeo`], {
       encoding: 'utf8', timeout: 30000, cwd: dir,
-      env: { ...process.env, NODE_ENV: 'test', HOME: dir, AIDR_STATE_PATH: path.join(dir, 'state.json') },
+      env: { ...process.env, NODE_ENV: 'test', HOME: dir, UPEC_WIPE_STATE_PATH: path.join(dir, 'state.json') },
     });
     assert.equal(r.status, 0, r.stderr);
     assert.deepEqual(JSON.parse(fs.readFileSync(cfg, 'utf8')).allowlist, ['Spokeo']);
@@ -113,7 +113,7 @@ test('watcher --allow X keeps config.json at 0600 under umask 022', { skip: SKIP
 
     const r2 = spawnSync('sh', ['-c', `umask 022; exec '${process.execPath}' '${path.join(dir, 'watcher.js')}' --unallow Spokeo`], {
       encoding: 'utf8', timeout: 30000, cwd: dir,
-      env: { ...process.env, NODE_ENV: 'test', HOME: dir, AIDR_STATE_PATH: path.join(dir, 'state.json') },
+      env: { ...process.env, NODE_ENV: 'test', HOME: dir, UPEC_WIPE_STATE_PATH: path.join(dir, 'state.json') },
     });
     assert.equal(r2.status, 0, r2.stderr);
     assert.equal(modeOf(cfg), 0o600);
@@ -138,7 +138,7 @@ test('every logs/ and data/ mkdirSync passes mode 0o700', () => {
 
 test('writeAuditFile creates its dir 0700 even under umask 022', { skip: SKIP }, () => {
   const { writeAuditFile } = require('../lib/audit');
-  const base = mkTmp('aidr-audit-');
+  const base = mkTmp('upec-wipe-audit-');
   const prev = process.umask(0o022);
   try {
     const logsDir = path.join(base, 'logs', 'nested');

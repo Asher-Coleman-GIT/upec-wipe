@@ -31,7 +31,7 @@ Beyond the opt-out run, it can also:
 - **Close the loop** - re-verify removals (`upec-wipe verify`), watch search engines for new listings (`upec-wipe serp-watch`), and generate a monthly PDF report (`upec-wipe report`)
 - **Add teeth** - send CCPA/GDPR right-to-know requests (`upec-wipe know`) and auto-generate regulator complaints when a broker blows the legal deadline (`upec-wipe complaints`)
 - **Protect proactively** - check Have I Been Pwned (`upec-wipe breach`) and walk a credit/identity-freeze checklist (`upec-wipe freeze`)
-- **Stay private** - submit from a masked relay email (SimpleLogin), encrypt `config.json` at rest (AES-256-GCM, opt-in via `AIDR_PASSPHRASE`), and detect success/confirmation text in 6 languages
+- **Stay private** - submit from a masked relay email (SimpleLogin), encrypt `config.json` at rest (AES-256-GCM, opt-in via `UPEC_WIPE_PASSPHRASE`), and detect success/confirmation text in 6 languages
 - **Run from a browser** - an optional local web dashboard with a first-run config wizard, live run console, and status board (`upec-wipe dashboard`)
 - **Keep coverage fresh** - pull the broker list from the official California (SB 362) and Vermont registries (`upec-wipe update-brokers`), and keep brokers you *want* to stay listed on via an allowlist
 
@@ -53,7 +53,7 @@ npx playwright install chromium
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/stephenlthorn/auto-identity-remove.git
+git clone https://github.com/Asher-Coleman-GIT/auto-identity-remover-upec.git upec-wipe
 cd upec-wipe
 
 # 2. One-command install (checks Node, installs deps + the Chromium browser)
@@ -187,16 +187,16 @@ in the wrong hour.
 single-file bind mount fails with `EBUSY`, which is how every state write in
 Docker used to be silently discarded. There is now a fallback that keeps state
 working with file mounts, but it gives up crash-atomicity. To keep the
-guarantee, mount a directory and point `AIDR_STATE_PATH` inside it:
+guarantee, mount a directory and point `UPEC_WIPE_STATE_PATH` inside it:
 
 ```bash
 docker run --rm --init \
   -v "$(pwd):/app/data" \
-  -e AIDR_STATE_PATH=/app/data/state.json \
+  -e UPEC_WIPE_STATE_PATH=/app/data/state.json \
   upec-wipe
 ```
 
-**Low-RAM hosts** (NAS, Raspberry Pi, small VPS): add `-e AIDR_LOW_MEMORY=1`. A
+**Low-RAM hosts** (NAS, Raspberry Pi, small VPS): add `-e UPEC_WIPE_LOW_MEMORY=1`. A
 full 40-broker run peaks at about 250 MB either way; the flag trades some render
 fidelity for less background work on slow cores.
 
