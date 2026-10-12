@@ -2,13 +2,12 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('fs');
-const path = require('path');
 const Module = require('module');
 const originalLoad = Module._load.bind(Module);
 const { catalogBrokersForPerson } = require('../lib/catalog');
 
-const watcherSrc = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+const { watcherSource } = require('./helpers/watcher-source');
+const watcherSrc = watcherSource();
 
 test('the run appends catalog brokers after the 32, for each person', () => {
   assert.match(watcherSrc, /const personBrokers = \[\s*\.\.\.brokers\.forPerson\(person\),\s*\.\.\.catalogBrokersForPerson\(catalogRecords, person, explicitCatalogOpts\),/);

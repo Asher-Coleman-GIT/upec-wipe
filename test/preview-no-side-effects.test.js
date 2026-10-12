@@ -9,8 +9,6 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
 const Module = require('node:module');
 
 function loadRunner(captchaCalls, logged) {
@@ -61,7 +59,7 @@ test('a real run still solves the CAPTCHA', async () => {
 });
 
 test('watcher opens manual pages in the everyday browser only on a real run', () => {
-  const src = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+  const src = require('./helpers/watcher-source').modeSource('run');
   const block = src.slice(src.indexOf('// Open manual-required sites'), src.indexOf('openInBrowser(manualUrls);') + 30);
   assert.match(block, /if \(manualUrls\.length > 0 && !DRY_RUN\)/);
 });

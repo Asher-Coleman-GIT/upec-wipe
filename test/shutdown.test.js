@@ -137,13 +137,13 @@ test('uninstall removes the listeners', () => {
 });
 
 test('watcher.js installs the handler for the main run and --confirm-emails', () => {
-  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'watcher.js'), 'utf8');
+  const src = require('./helpers/watcher-source').watcherSource();
   const uses = src.match(/installSignalCleanup\(/g) || [];
   assert.ok(uses.length >= 2, `expected >= 2 installSignalCleanup calls, got ${uses.length}`);
 });
 
 test('watcher.js --confirm-emails registers the profile cleanup before the browser launches', () => {
-  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'watcher.js'), 'utf8');
+  const src = require('./helpers/watcher-source').modeSource('confirm-emails');
   const i = src.indexOf('chromium: chromiumForConfirm, config');
   assert.ok(i > 0);
   assert.match(src.slice(i, i + 200), /onProfile/);

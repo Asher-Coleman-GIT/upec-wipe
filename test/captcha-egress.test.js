@@ -11,11 +11,10 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
 const Module = require('node:module');
 
 const egress = require('../lib/egress');
+const { modeSource } = require('./helpers/watcher-source');
 const { EgressError } = egress;
 const captcha = require('../lib/captcha');
 
@@ -78,7 +77,7 @@ test('processBrokerWithPerson lets EgressError out and still closes the page', a
 });
 
 test('watcher stops the explicit broker loop on EgressError with exit code 1', () => {
-  const src = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+  const src = modeSource('run');
   const loop = src.slice(src.indexOf('for (const broker of sorted)'), src.indexOf('// Build the set of explicit broker hostnames'));
   assert.match(loop, /catch \(err\) \{\s*if \(!\(err instanceof EgressError\)\) throw err;/);
   assert.match(loop, /process\.exitCode = 1;/);

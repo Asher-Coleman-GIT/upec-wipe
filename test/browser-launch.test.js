@@ -10,6 +10,7 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
+const { watcherSource } = require('./helpers/watcher-source');
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -72,7 +73,7 @@ test('resolveHeadless auto-detects headless for a linux box with no DISPLAY', ()
 });
 
 test('every chromium launch site in watcher.js goes through lib/browser-session', () => {
-  const watcher = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+  const watcher = watcherSource();
   assert.equal(
     (watcher.match(/launchPersistentContext\(/g) || []).length,
     0,

@@ -220,7 +220,7 @@ test('doctor: failing gate turns the SMTP and CapSolver probes into "skipped: no
 });
 
 test('watcher wires the gate config once', () => {
-  const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'watcher.js'), 'utf8');
+  const src = require('./helpers/watcher-source').watcherSource();
   assert.match(src, /setEgressConfig\(/);
 });
 

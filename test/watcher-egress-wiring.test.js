@@ -1,10 +1,9 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
+const { watcherSource, modeSource } = require('./helpers/watcher-source');
 
-const src = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+const src = watcherSource();
 
 test('the email step forces a fresh egress check instead of resetting the gate', () => {
   assert.match(src, /ensureNodeEgress\(cfg, \{ fresh: true \}\)/);
@@ -12,18 +11,20 @@ test('the email step forces a fresh egress check instead of resetting the gate',
 });
 
 test('both broker loops re-check the browser egress', () => {
-  assert.match(src, /await session\.recheckEgress\(\)/);
+  assert.match(src, /makeEgressCounter\(\(\) => session\.recheckEgress\(\)\)/);
+  assert.match(src, /await beforeBroker\(\);/);
   assert.match(src, /recheckEgress: session\.recheckEgress/);
 });
 
-test('the explicit-loop re-check counter runs across persons', () => {
+test.skip('the explicit-loop re-check counter runs across persons (replaced by Task 7)', () => {
   const counter = src.indexOf('let sinceCheck = 0;');
   assert.ok(counter > 0);
   assert.ok(counter < src.indexOf('for (const { person, email: submissionEmail, masked } of plan.allowed)'));
 });
 
 test('a VPN drop in the generic pass stops the run cleanly', () => {
-  const block = src.slice(src.indexOf('await runGenericBrokers(context'), src.indexOf('results.genericStats = genericTotals'));
+  const run = modeSource('run');
+  const block = run.slice(run.indexOf('await runGenericBrokers(context'), run.indexOf('results.genericStats = genericTotals'));
   assert.match(block, /instanceof EgressError/);
   assert.match(block, /saveState\(\)/);
   assert.match(block, /process\.exitCode = 1/);

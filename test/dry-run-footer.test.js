@@ -9,10 +9,9 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('fs');
-const path = require('path');
 
-const src = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+const { modeSource } = require('./helpers/watcher-source');
+const src = modeSource('run');
 
 test('a dry run says no log was written instead of naming the log file', () => {
   assert.match(src, /if \(DRY_RUN\) \{\s*console\.log\(`\\nLog: none/);

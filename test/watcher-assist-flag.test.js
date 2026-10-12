@@ -8,12 +8,11 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
-const src = fs.readFileSync(path.join(ROOT, 'watcher.js'), 'utf8');
+const src = require('./helpers/watcher-source').modeSource('run');
 
 test('--assist without a visible browser window is refused before any work', () => {
   const r = spawnSync(process.execPath, [path.join(ROOT, 'watcher.js'), '--assist'],
@@ -22,8 +21,8 @@ test('--assist without a visible browser window is refused before any work', () 
   assert.match(r.stderr, /--assist needs a visible browser window/);
 });
 
-test('both broker-runner configure calls pass the assist flag', () => {
-  const calls = src.match(/brokerRunner\.configure\(\{[^}]*\}\)/g) || [];
-  assert.ok(calls.length >= 2);
+test('every broker runner is created with the assist flag', () => {
+  const calls = src.match(/createBrokerRunner\(\{[^}]*\}\)/g) || [];
+  assert.ok(calls.length >= 1);
   for (const c of calls) assert.match(c, /assist: ASSIST/);
 });

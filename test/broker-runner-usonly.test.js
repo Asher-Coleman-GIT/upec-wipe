@@ -196,6 +196,6 @@ test('appliesToPerson says whether a states-limited broker is relevant', () => {
 });
 
 test('the run loop does not print a header for a broker that does not apply', () => {
-  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'watcher.js'), 'utf8');
-  assert.match(src, /if \(!brokerRunner\.appliesToPerson\(broker, person\)\) continue;\s*process\.stdout\.write\(`\\n\[\$\{stamp\(\)\}\] \$\{broker\.name\}…/);
+  const src = require('./helpers/watcher-source').modeSource('run');
+  assert.match(src, /if \(!runner\.appliesToPerson\(broker, person\)\) continue;\s*process\.stdout\.write\(`\\n\[\$\{stamp\(\)\}\] \$\{broker\.name\}…/);
 });

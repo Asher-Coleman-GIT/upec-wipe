@@ -1,9 +1,8 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
 const { confirmBreachCheck } = require('../lib/hibp');
+const { modeSource } = require('./helpers/watcher-source');
 
 function io(answer, isTTY = true) {
   const lines = [];
@@ -26,7 +25,7 @@ test('only YES continues, after saying the real address goes to haveibeenpwned.c
 });
 
 test('watcher asks before running the breach check', () => {
-  const src = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+  const src = modeSource('breach');
   const i = src.indexOf('confirmBreachCheck(');
   assert.ok(i > 0);
   assert.ok(i < src.indexOf('await runBreachCheck('));

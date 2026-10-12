@@ -7,6 +7,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { loadChromium } = require('../lib/playwright-loader');
+const { modeFiles } = require('./helpers/watcher-source');
 
 test('L6: missing playwright fails with the install hint and requires nothing else', () => {
   const seen = [];
@@ -24,7 +25,7 @@ test('L6: present playwright returns chromium', () => {
 });
 
 test('L6: no source file mentions the home-dir plugin fallback', () => {
-  for (const f of ['watcher.js', 'generic-runner.js', 'setup.js']) {
+  for (const f of ['watcher.js', ...modeFiles(), 'generic-runner.js', 'setup.js']) {
     const src = fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
     assert.equal(/openclaw/i.test(src), false, f);
   }

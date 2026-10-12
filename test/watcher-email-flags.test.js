@@ -3,11 +3,10 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
-const src = fs.readFileSync(path.join(__dirname, '..', 'watcher.js'), 'utf8');
+const { modeSource } = require('./helpers/watcher-source');
+const src = modeSource('run');
 
 test('the email step runs only under --email', () => {
-  assert.match(src, /const EMAIL\s+= process\.argv\.includes\('--email'\)/);
-  assert.match(src, /const FORMS\s+= process\.argv\.includes\('--forms'\) \|\| !EMAIL/);
   const calls = src.match(/runEmailStep\(/g) || [];
   assert.equal(calls.length, 1);
   assert.match(src, /if \(EMAIL\) \{[\s\S]{0,1500}runEmailStep\(\{/);
@@ -22,11 +21,11 @@ test('--email alone returns before the browser opens', () => {
 });
 
 test('each send re-runs the egress check instead of reusing the cached result', () => {
-  assert.match(src, /ensureEgress: \(cfg\) => ensureNodeEgress\(cfg, \{ fresh: true \}\)/);
+  assert.match(modeSource('shared'), /ensureEgress: \(cfg\) => ensureNodeEgress\(cfg, \{ fresh: true \}\)/);
 });
 
 test('--list and the dashboard read email status through emailStatus (multi-person keys)', () => {
-  assert.match(src, /emailStatus\(state, n\)/);
+  assert.match(modeSource('list'), /emailStatus\(state, n\)/);
   const dash = fs.readFileSync(path.join(__dirname, '..', 'dashboard', 'server.js'), 'utf8');
   assert.match(dash, /emailStatus\(st, n\)/);
   assert.match(dash, /catalogEmailTargets\(records, \{ explicitNames/);

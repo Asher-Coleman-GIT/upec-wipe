@@ -13,7 +13,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SOURCES = ['watcher.js', 'setup.js', 'lib/notify.js', 'lib/serp-watch.js', 'lib/report.js', 'dashboard/server.js', 'dashboard/public/app.js'];
+const { modeFiles } = require('./helpers/watcher-source');
+const SOURCES = ['watcher.js', ...modeFiles(), 'setup.js', 'lib/notify.js', 'lib/serp-watch.js', 'lib/report.js', 'dashboard/server.js', 'dashboard/public/app.js'];
 
 test('lib/notify.js only exports openInBrowser and isSafeUrl', () => {
   assert.deepEqual(Object.keys(require('../lib/notify')).sort(), ['isSafeUrl', 'openInBrowser']);

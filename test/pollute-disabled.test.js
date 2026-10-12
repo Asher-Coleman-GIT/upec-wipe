@@ -64,7 +64,7 @@ test('watcher --pollute with --dry-run is refused the same way', () => {
 });
 
 test('watcher.js has no runnable noise branch', () => {
-  const src = fs.readFileSync(WATCHER, 'utf8');
+  const src = require('./helpers/watcher-source').watcherSource();
   assert.doesNotMatch(src, /generateBogusPerson/);
   assert.doesNotMatch(src, /POLLUTE_COUNT/);
 });
