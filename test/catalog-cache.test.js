@@ -23,3 +23,26 @@ test('the dashboard reads the catalog through the cache', () => {
   assert.match(src, /cachedCatalogLoader\(/);
   assert.ok(!/loadCatalog\(/.test(src), 'server.js must not read the catalog directly');
 });
+
+test('the default TTL is one minute', () => {
+  let t = 0;
+  let reads = 0;
+  const get = cachedCatalogLoader({ now: () => t, load: () => { reads++; return []; } });
+  get();
+  t += 59999;
+  get();
+  assert.equal(reads, 1);
+  t += 1;
+  get();
+  assert.equal(reads, 2);
+});
+
+test('a clock that jumps backwards (WSL after the host sleeps) forces a fresh read', () => {
+  let t = 1000000;
+  let reads = 0;
+  const get = cachedCatalogLoader({ now: () => t, load: () => { reads++; return []; } });
+  get();
+  t -= 3600000;
+  get();
+  assert.equal(reads, 2);
+});
