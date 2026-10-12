@@ -473,7 +473,7 @@ async function loadFreeze() {
 
 // ---------- footer (version) ----------
 api('/version').then(v => {
-  if (v && !v.error) $('#foot').textContent = `auto-identity-remove dashboard · tool v${v.tool} · ${v.node} · ${v.brokers} brokers`;
+  if (v && !v.error) $('#foot').textContent = `upec-wipe dashboard · tool v${v.tool} · ${v.node} · ${v.brokers} brokers`;
 }).catch(() => {});
 
 // ---------- first-run wizard ----------

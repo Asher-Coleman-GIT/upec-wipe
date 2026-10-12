@@ -95,7 +95,7 @@ test('relay configured creates an alias via createImpl and caches it', async () 
   assert.equal(createArgs.length, 1, 'createImpl should be called exactly once');
   assert.equal(createArgs[0].apiKey, 'sl-test-key');
   // M2: the alias note is stored at SimpleLogin, so it must not name the person.
-  assert.equal(createArgs[0].note, 'auto-identity-remove');
+  assert.equal(createArgs[0].note, 'upec-wipe');
   for (const pii of ['Jane', 'Doe', 'jane.doe@example.com']) assert.ok(!createArgs[0].note.includes(pii), `note leaks ${pii}`);
   const key = personKey(PERSON_A);
   assert.equal(state.relayAliases[key], 'jane.alias@aliases.simplelogin.io');

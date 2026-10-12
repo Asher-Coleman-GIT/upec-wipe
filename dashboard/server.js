@@ -3,7 +3,7 @@
 // complaints, reports, config rewrites) is owner-only, however it was launched.
 process.umask(0o077);
 /*
- * auto-identity-remove - web dashboard (optional)
+ * upec-wipe - web dashboard (optional)
  *
  * A small, dependency-light (express-only) control panel that wraps the
  * existing CLI. It reads the project's own files (brokers.js, config.json,
@@ -152,7 +152,7 @@ app.use((_req, res, next) => {
 // The port may be the configured PORT or the port the connection actually hit
 // (differs under AIDR_PORT=0 or a published container port).
 // A configured AIDR_HOST that is another IPv4 loopback literal (127/8) is
-// accepted too, so the URL bin/aidr.js prints works; a rebinding attacker
+// accepted too, so the URL bin/upec-wipe.js prints works; a rebinding attacker
 // cannot send an IP-literal Host for their own name.
 const EXTRA_HOST = /^127(\.\d{1,3}){3}$/.test(HOST) && HOST !== '127.0.0.1' ? HOST : null;
 function hostAllowed(req) {
@@ -197,7 +197,7 @@ app.use((req, res, next) => {
   if (authorized(req)) return next();
   // A request with no credentials at all is the normal browser prompt, not a guess.
   if (req.get('authorization') || req.get('x-aidr-token')) recordAuthFailure(addr, now);
-  res.set('WWW-Authenticate', 'Basic realm="aidr dashboard"');
+  res.set('WWW-Authenticate', 'Basic realm="upec-wipe dashboard"');
   res.status(401).json({ error: 'unauthorized' });
 });
 // CSRF defense: reject cross-origin state-changing requests. Same-origin (browser
@@ -724,18 +724,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 if (require.main === module) {
   require('../lib/privilege').exitIfRoot();
   if (PASSPHRASE_ERROR) {
-    console.error(`aidr-dashboard: ${PASSPHRASE_ERROR.message}`);
+    console.error(`upec-wipe-dashboard: ${PASSPHRASE_ERROR.message}`);
     process.exit(1);
   }
   const problems = dashboardStartupProblems({ host: HOST, authConfigured: authConfigured() });
   if (problems.length) {
-    for (const p of problems) console.error(`aidr-dashboard: ${p}`);
+    for (const p of problems) console.error(`upec-wipe-dashboard: ${p}`);
     process.exit(1);
   }
   app.listen(PORT, HOST, () => {
     const c = loadCreds();
     const mode = [c ? `basic(${c.source})` : null, TOKEN ? 'token' : null].filter(Boolean).join('+');
-    console.log(`aidr-dashboard listening on ${HOST}:${PORT} (root=${ROOT}, auth=${mode})`);
+    console.log(`upec-wipe-dashboard listening on ${HOST}:${PORT} (root=${ROOT}, auth=${mode})`);
     if (c && c.source === 'broken') console.warn('WARNING: .auth.json is present but corrupt - all logins will fail until it is fixed or removed.');
   });
 }

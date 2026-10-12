@@ -6,7 +6,7 @@ This page lists every place this fork sends data, what it sends, and which netwo
 
 - The tool runs on your own machine. There is no central server, no telemetry, no analytics, no crash reporting and no update check. A full code audit found none, in the tool or in its dependencies.
 - Brokers get your name and location (they already have them) plus one throwaway SimpleLogin alias instead of your real email.
-- A few services get more than brokers do, because their job needs it: SimpleLogin (knows your real inbox), Have I Been Pwned (gets your real email, only if you run `aidr breach`), search engines (get your full name and city, only if you run `aidr serp` or `aidr serp-watch`), your SMTP provider (only if you keep the `email` block) and CapSolver (gets broker page addresses, only if you give it a key).
+- A few services get more than brokers do, because their job needs it: SimpleLogin (knows your real inbox), Have I Been Pwned (gets your real email, only if you run `upec-wipe breach`), search engines (get your full name and city, only if you run `upec-wipe serp` or `upec-wipe serp-watch`), your SMTP provider (only if you keep the `email` block) and CapSolver (gets broker page addresses, only if you give it a key).
 - By default nothing leaves your machine unless Mullvad is on. The browser checks before it visits any broker, and the tool checks again before any direct connection (SimpleLogin, CapSolver, HIBP, SMTP, broker registries). If a check fails, the run stops and nothing is sent.
 
 ## What the tool reads
@@ -17,7 +17,7 @@ Everything comes from your local `config.json` (or `config.json.enc` if you encr
 | --- | --- | --- |
 | `person.firstName`, `lastName`, `fullName` | Search URLs and opt-out forms | Brokers. Search engines on `serp`. SMTP provider and email brokers if you keep the `email` block. |
 | `person.city`, `state`, `zip`, `country` | Forms and search URLs | Brokers. City and state go to search engines on `serp`. |
-| `person.email` | Your real address. Never given to brokers when a relay is set. | SimpleLogin (as the inbox the alias forwards to). HIBP on `aidr breach`. |
+| `person.email` | Your real address. Never given to brokers when a relay is set. | SimpleLogin (as the inbox the alias forwards to). HIBP on `upec-wipe breach`. |
 | `person.phone`, `phoneFormatted` | Email opt-outs only. No broker form gets your phone. | Your SMTP provider and the email brokers, only if you keep the `email` block. |
 | `person.aliases` | Asked for by setup, but nothing uses it today. | Nobody. |
 | `person.dob` | Optional (setup). Only forms that require it: PrivateRecords today. Left blank, PrivateRecords goes to your manual list. Never written to run logs. | PrivateRecords |
@@ -42,30 +42,30 @@ Every connection uses one of three paths.
 
 | Destination | What is sent | When | Path |
 | --- | --- | --- | --- |
-| Explicit brokers (44 in `brokers.js`, such as Spokeo, Whitepages, Radaris, MyLife) | Search URLs with your name and state. Forms with your name, city, state, zip and your alias in every email field. | `aidr run` | Browser |
-| Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. CapSolver is not called and nothing opens in your everyday browser. | `aidr preview` | Browser |
-| Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `aidr verify` | Browser |
+| Explicit brokers (44 in `brokers.js`, such as Spokeo, Whitepages, Radaris, MyLife) | Search URLs with your name and state. Forms with your name, city, state, zip and your alias in every email field. | `upec-wipe run` | Browser |
+| Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. CapSolver is not called and nothing opens in your everyday browser. | `upec-wipe preview` | Browser |
+| Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `upec-wipe verify` | Browser |
 | About 490 other sites from public datasets and the CA and Vermont registries | Name, alias, state and zip on whatever form the site has. A "Do Not Sell" link can lead to any page. | Only with `--generic` or `generic.enabled: true` | Browser |
-| DuckDuckGo, Bing, Google | `"<full name>" "<city>, <state>"` for every person | `aidr serp`, `aidr serp-watch`, dashboard "serp" | Browser |
+| DuckDuckGo, Bing, Google | `"<full name>" "<city>, <state>"` for every person | `upec-wipe serp`, `upec-wipe serp-watch`, dashboard "serp" | Browser |
 | `am.i.mullvad.net` | Nothing but your IP | Every browser session that visits sites, and once per run before any direct connection | Browser and direct |
 | `api.ipify.org` | Nothing but your IP: once through the proxy, once direct (this one shows your real IP) | Only when `network.proxy` is set | Browser and direct |
-| SimpleLogin (`app.simplelogin.io`) | Your API key and a neutral note. SimpleLogin already knows your real inbox, because the alias forwards there. | A real run or `aidr know`, when no alias is cached yet for that person. `aidr doctor` also sends the key once to check it (account info request; no alias is made, and the reply is discarded). | Direct |
+| SimpleLogin (`app.simplelogin.io`) | Your API key and a neutral note. SimpleLogin already knows your real inbox, because the alias forwards there. | A real run or `upec-wipe know`, when no alias is cached yet for that person. `upec-wipe doctor` also sends the key once to check it (account info request; no alias is made, and the reply is discarded). | Direct |
 | CapSolver (`api.capsolver.com`) | Your API key, the address of the broker page showing the CAPTCHA and the CAPTCHA's site key, a public code the page uses to identify its CAPTCHA (for AWS WAF also its key, iv and context). No images, and none of your config fields. | A broker shows a CAPTCHA and you set a real key | Direct |
 | Your SMTP server, then the broker | Subject with your full name. Body with your name, city, state, zip, phone and alias. The broker can also see the SMTP account address. TLS 1.2 or newer is required. | A real run, only if you keep the `email` block. The recommended setup deletes it. | Direct |
-| Your SMTP server, then the broker | A right-to-know request under the California (CCPA) or European (GDPR) privacy law, asking what the broker holds about you, with the same fields | `aidr know` with the `email` block. Without it, the request text is printed for you to send by hand. | Direct |
-| Have I Been Pwned | **Your real email**, for every person, plus your HIBP key. The user agent is a generic `Mozilla/5.0`. | `aidr breach`, only with `hibp.apiKey` set | Direct |
-| `oag.ca.gov`, `bizfilings.vermont.gov` | Nothing about you | `aidr update-brokers` | Direct |
-| Your SMTP host (connection only) and `api.capsolver.com` (one HEAD request) | Nothing about you | `aidr doctor` | Direct |
+| Your SMTP server, then the broker | A right-to-know request under the California (CCPA) or European (GDPR) privacy law, asking what the broker holds about you, with the same fields | `upec-wipe know` with the `email` block. Without it, the request text is printed for you to send by hand. | Direct |
+| Have I Been Pwned | **Your real email**, for every person, plus your HIBP key. The user agent is a generic `Mozilla/5.0`. | `upec-wipe breach`, only with `hibp.apiKey` set | Direct |
+| `oag.ca.gov`, `bizfilings.vermont.gov` | Nothing about you | `upec-wipe update-brokers` | Direct |
+| Your SMTP host (connection only) and `api.capsolver.com` (one HEAD request) | Nothing about you | `upec-wipe doctor` | Direct |
 | Broker confirmation links from your saved `.eml` files | The confirmation token in the link. The link must be on the broker's own domain. | `--confirm-emails` or dashboard "confirm" | Browser |
 | Manual-action pages | The page address only | End of a real run, when some brokers need you | Everyday browser |
 | Install downloads (npm, the Playwright browser, NodeSource, Ubuntu packages, the fork's git host) | Nothing about you, but your real IP if Mullvad is not on yet | `install.sh` and the install steps in the manual | Direct |
-| Nothing | `aidr report`, `aidr complaints`, `aidr score`, `aidr pending`, `aidr list` and `aidr freeze` make no outside connections. The dashboard itself makes none either; runs you start from it behave like the commands above. | | |
+| Nothing | `upec-wipe report`, `upec-wipe complaints`, `upec-wipe score`, `upec-wipe pending`, `upec-wipe list` and `upec-wipe freeze` make no outside connections. The dashboard itself makes none either; runs you start from it behave like the commands above. | | |
 
 ## What stays on your machine
 
 - `config.json` (or `config.json.enc`): all your details. Encryption covers this file only.
 - `state.json`: which brokers you submitted to and when, and your alias mapping keyed by your real email. Plaintext.
-- `logs/`: plaintext, and it holds personal data. Each real run writes `logs/audit-*.md`, which starts with your full name and **real email**. `aidr complaints` writes complaint letters under `logs/complaints/` with your name, location, real email and phone. `--snapshot` saves screenshots of filled-in forms under `logs/snapshots/`. Error details in `logs/run-*.json` keep only the site's address, and previews that show filled-in fields are printed to the screen, not written there. Never share `logs/` files for help; copy only the lines you need and remove your details.
+- `logs/`: plaintext, and it holds personal data. Each real run writes `logs/audit-*.md`, which starts with your full name and **real email**. `upec-wipe complaints` writes complaint letters under `logs/complaints/` with your name, location, real email and phone. `--snapshot` saves screenshots of filled-in forms under `logs/snapshots/`. Error details in `logs/run-*.json` keep only the site's address, and previews that show filled-in fields are printed to the screen, not written there. Never share `logs/` files for help; copy only the lines you need and remove your details.
 - `data/serp-history.json` and `data/exposure-history.json`: search-scan and exposure-score history. `data/.serp-key` is a random key used to label the search history without writing your name.
 
 New files are created readable only by you (umask 077, mode 600).
@@ -75,8 +75,8 @@ New files are created readable only by you (umask 077, mode 600).
 - **Brokers** learn your name and location (which they have already) and the alias. They also see a Mullvad IP (or your proxy's IP if you set `network.proxy`). Because all brokers get the same alias, they could match their records on it.
 - **SimpleLogin** knows your real inbox and every alias. It sees which brokers email you.
 - **CapSolver** knows your account and the addresses of broker opt-out pages that showed a CAPTCHA. Today those are BeenVerified, MyLife and FamilyTreeNow, and their opt-out addresses have no name in them. Without a key, a broker whose page shows a CAPTCHA is recorded as failed (`captcha_failed`) and its page opens in your browser at the end of the run; `--retry-failed` tries it again later. `--no-capsolver` records those brokers as manual instead.
-- **HIBP** gets your real email when you run `aidr breach`.
-- **Search engines** get your full name with your city and state when you run `aidr serp`.
+- **HIBP** gets your real email when you run `upec-wipe breach`.
+- **Search engines** get your full name with your city and state when you run `upec-wipe serp`.
 - **Your SMTP provider** sees every opt-out email, if you keep the `email` block.
 - **Mullvad** sees the traffic leaving its servers, as any VPN does.
 
@@ -89,13 +89,13 @@ git check-ignore config.json state.json logs/run.json data/.serp-key
 All four names are printed, so a normal `git add` skips them. (`git add -f` would still add them; never do that.)
 
 ```
-node bin/aidr.js preview
+node bin/upec-wipe.js preview
 ```
 
 Shows what each broker form would get, without submitting. This does use the network: it runs the Mullvad check and opens each broker's search page with your name.
 
 ```
-node bin/aidr.js doctor
+node bin/upec-wipe.js doctor
 ```
 
 Checks your setup. Its network probes (SMTP host, CapSolver) run only after the direct-connection check passes, so off Mullvad they show as skipped. With `network.proxy` set or `network.required: false` they run straight from your real IP.

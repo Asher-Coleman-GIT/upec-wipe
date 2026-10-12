@@ -1,8 +1,8 @@
 /**
  * test/cli-dispatch-paths.test.js
  *
- * `aidr dashboard` was dead on arrival: lib/cli-map.js returns the script as a
- * path relative to the repo root ('dashboard/server.js') while bin/aidr.js
+ * `upec-wipe dashboard` was dead on arrival: lib/cli-map.js returns the script as a
+ * path relative to the repo root ('dashboard/server.js') while bin/upec-wipe.js
  * spawned it with cwd set to <root>/dashboard, so node looked for
  * <root>/dashboard/dashboard/server.js and died with MODULE_NOT_FOUND. Every
  * existing test around the CLI was string-shaped - it asserted the map

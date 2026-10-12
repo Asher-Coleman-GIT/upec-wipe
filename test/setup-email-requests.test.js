@@ -1,5 +1,5 @@
 'use strict';
-// Setup asks for the dedicated mailbox used by `aidr run --email` (phase 2).
+// Setup asks for the dedicated mailbox used by `upec-wipe run --email` (phase 2).
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { buildConfig, dedicatedMailboxProblem } = require('../setup');

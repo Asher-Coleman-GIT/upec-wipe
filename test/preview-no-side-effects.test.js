@@ -1,7 +1,7 @@
 /**
  * test/preview-no-side-effects.test.js
  *
- * F-D fact-check: `aidr preview` (dry-run) still called CapSolver on CAPTCHA
+ * F-D fact-check: `upec-wipe preview` (dry-run) still called CapSolver on CAPTCHA
  * brokers (spends credit, a direct connection) and opened manual pages in the
  * everyday browser (no proxy) at the end. A dry run does neither.
  */

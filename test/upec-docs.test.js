@@ -23,7 +23,7 @@ test('manual covers each platform section', () => {
 
 test('manual names every safety setting exactly', () => {
   const m = read('docs/UPEC-MANUAL.md');
-  for (const s of ['"required": true', 'smtp', '"from"', 'network', 'AIDR_PASSPHRASE_FILE', 'scripts/harden.sh', 'aidr preview', 'Lockdown mode', '/mnt/c']) {
+  for (const s of ['"required": true', 'smtp', '"from"', 'network', 'AIDR_PASSPHRASE_FILE', 'scripts/harden.sh', 'upec-wipe preview', 'Lockdown mode', '/mnt/c']) {
     assert.ok(m.includes(s), s);
   }
 });

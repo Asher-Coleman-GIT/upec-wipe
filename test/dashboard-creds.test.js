@@ -1,7 +1,7 @@
 /**
  * test/dashboard-creds.test.js
  *
- * Unit tests for the dashboard credential generator used by `aidr dashboard`.
+ * Unit tests for the dashboard credential generator used by `upec-wipe dashboard`.
  * Pure (uses crypto.randomBytes) - no network, no filesystem.
  */
 

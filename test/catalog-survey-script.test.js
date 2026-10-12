@@ -26,7 +26,7 @@ test('ASSIST=1 waits for the member at solvable checks', () => {
 test('--resume skips sites surveyed in the last 7 days', () => {
   assert.match(src, /RESUME_DAYS = 7/);
 });
-test('aidr catalog-check runs the survey over reviewed sites', () => {
+test('upec-wipe catalog-check runs the survey over reviewed sites', () => {
   const r = resolveCommand(['catalog-check']);
   assert.equal(r.ok, true);
   assert.deepEqual(r.args, ['scripts/catalog-survey.js', '--reviewed']);

@@ -2,7 +2,7 @@
  * test/umask-file-modes.test.js
  *
  * Audit M2 (follow-up C1 item 3). Only run.sh and harden.sh set a umask, so
- * launching through bin/aidr.js (the documented entry point), watcher.js,
+ * launching through bin/upec-wipe.js (the documented entry point), watcher.js,
  * setup.js or the dashboard directly created run logs, audit files (full name
  * and real email), complaints, snapshots and reports 0644 and their dirs 0755.
  * `--allow/--unallow` also rewrote config.json through a default-mode tmp file,
@@ -53,8 +53,8 @@ function umaskAfter(nodeArgs, opts) {
   }
 }
 
-test('bin/aidr.js sets umask 077', { skip: SKIP }, () => {
-  const { umask, r } = umaskAfter([path.join(ROOT, 'bin', 'aidr.js'), '--help']);
+test('bin/upec-wipe.js sets umask 077', { skip: SKIP }, () => {
+  const { umask, r } = umaskAfter([path.join(ROOT, 'bin', 'upec-wipe.js'), '--help']);
   assert.equal(umask, 0o077, r.stderr);
 });
 
@@ -75,7 +75,7 @@ test('dashboard/server.js sets umask 077 (on require)', { skip: SKIP }, () => {
 });
 
 test('umask call sits at the top of each entry point, before any require', () => {
-  for (const rel of ['bin/aidr.js', 'watcher.js', 'setup.js', 'dashboard/server.js']) {
+  for (const rel of ['bin/upec-wipe.js', 'watcher.js', 'setup.js', 'dashboard/server.js']) {
     const src = fs.readFileSync(path.join(ROOT, rel), 'utf8');
     const u = src.indexOf('process.umask(0o077)');
     assert.ok(u > 0, `${rel} must call process.umask(0o077)`);

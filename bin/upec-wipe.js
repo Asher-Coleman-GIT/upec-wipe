@@ -4,14 +4,14 @@
 // complaints, reports, config rewrites) is owner-only, however it was launched.
 process.umask(0o077);
 /*
- * bin/aidr.js - friendly CLI dispatcher for auto-identity-remove.
+ * bin/upec-wipe.js - friendly CLI dispatcher for upec-wipe.
  *
  * Maps subcommands (setup, run, preview, verify, dashboard, score, report,
  * doctor) to the existing entrypoints via lib/cli-map.js, then spawns them.
  * The dashboard subcommand generates one-time credentials so the local web UI
  * is never unauthenticated, and prints the URL + login once.
  *
- * Usage: aidr <command> [options]   (run `aidr --help` for the full list)
+ * Usage: upec-wipe <command> [options]   (run `upec-wipe --help` for the full list)
  */
 
 const path = require('path');
@@ -63,7 +63,7 @@ function spawnNode(resolved) {
     process.exit(code === null ? 1 : code);
   });
   child.on('error', err => {
-    process.stderr.write(`aidr: failed to start ${resolved.file}: ${err.message}\n`);
+    process.stderr.write(`upec-wipe: failed to start ${resolved.file}: ${err.message}\n`);
     process.exit(1);
   });
 }
@@ -74,7 +74,7 @@ function main() {
 
   if (resolved.target === 'help') {
     if (!resolved.ok && resolved.error) {
-      process.stderr.write(`aidr: ${resolved.error}\n\n`);
+      process.stderr.write(`upec-wipe: ${resolved.error}\n\n`);
       printHelp();
       process.exit(2);
     }

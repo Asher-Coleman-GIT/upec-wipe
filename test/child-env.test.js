@@ -31,7 +31,7 @@ test('L4: childEnv does not mutate its input', () => {
   assert.deepEqual(input, BASE);
 });
 
-test('L4: bin/aidr.js builds the child env through cliChildEnv', () => {
-  const src = fs.readFileSync(path.join(__dirname, '..', 'bin', 'aidr.js'), 'utf8');
+test('L4: bin/upec-wipe.js builds the child env through cliChildEnv', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'bin', 'upec-wipe.js'), 'utf8');
   assert.match(src, /cliChildEnv\(resolved\.command, process\.env\)/);
 });

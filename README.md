@@ -1,33 +1,39 @@
-# auto-identity-remove
+# UPEC-WIPE
 
-> **UPEC hardened fork.** Defaults differ from upstream: SimpleLogin relay required
-> and fail-closed, generic pass off, never runs as root, dashboard loopback-only.
-> Start with [docs/UPEC-MANUAL.md](docs/UPEC-MANUAL.md).
+**Web Identity Purge Engine** - a privacy-first tool that asks data brokers and people-search sites to stop selling your personal information and delete it.
 
-![CI](https://github.com/stephenlthorn/auto-identity-remove/actions/workflows/test.yml/badge.svg)
+![CI](https://github.com/Asher-Coleman-GIT/auto-identity-remover-upec/actions/workflows/test.yml/badge.svg)
 
-Automated data broker opt-out runner for macOS, Linux, and Windows. Removes your personal information from **500+ people-search sites and data broker databases** whenever you run it - with CAPTCHA solving, persistent state tracking (so completed opt-outs aren't resubmitted every run), and a local log when done. [**Privacy & data flow ->**](docs/PRIVACY.md)
+UPEC-WIPE sends requests; it cannot erase anything itself. Each broker decides how fully it complies, and some will refuse, especially where your state's law gives you few rights. What the tool does is make every request you are entitled to send, with as little extra exposure as possible.
+
+> **Fork of [auto-identity-remove](https://github.com/stephenlthorn/auto-identity-remove)** by Stephen Thorn (MIT). UPEC-WIPE keeps its form-filling engine and adds a fail-closed privacy model and new subsystems; see [What changed from auto-identity-remove](#what-changed-from-auto-identity-remove). Start with [docs/UPEC-MANUAL.md](docs/UPEC-MANUAL.md). [**Privacy & data flow ->**](docs/PRIVACY.md)
+
+## What changed from auto-identity-remove
+
+- **Fail closed on privacy.** A SimpleLogin alias is required for every form; your real email is never sent. Nothing leaves your computer unless Mullvad is connected. It never runs as root, the dashboard listens on this computer only, and there is no background scheduler: it runs only when you start it.
+- **A reviewed site catalog** (`data/catalog/`): every site from the public broker lists was surveyed; people-search sites are reviewed by hand into automatic forms, manual links or exclusions, and re-checked for changes (`upec-wipe catalog-check`).
+- **Email requests** (`upec-wipe run --email`): brokers that take requests only by email get a privacy request (opt out of sale and targeted advertising, and delete) from a dedicated mailbox, with the policy sentence that gives the right recorded for each one. Forms and email are separate steps (`--forms`, `--email`).
 
 ## What it does
 
-Each month, the script:
+Each time you run it, the tool:
 
 1. **Searches** each data broker site for your name + state
 2. **Finds your specific listing** (for sites that need a profile URL)
 3. **Fills and submits** the opt-out form automatically
-4. **Solves CAPTCHAs** via [CapSolver](https://capsolver.com) (AI-powered, ~$0.001/solve)
+4. **Solves CAPTCHAs** via [CapSolver](https://capsolver.com) (optional, ~$0.001/solve)
 5. **Skips** brokers you were already removed from recently (90-day re-check window)
 6. **Opens** any sites that require manual action in your browser
 
 Beyond the opt-out run, it can also:
 
-- **Score your exposure** - a single 0-100 number with a month-over-month trend (`aidr score`), built from verified removals, search-engine visibility, and breach data
-- **Close the loop** - re-verify removals (`aidr verify`), watch search engines for new listings (`aidr serp-watch`), and generate a monthly PDF report (`aidr report`)
-- **Add teeth** - send CCPA/GDPR right-to-know requests (`aidr know`) and auto-generate regulator complaints when a broker blows the legal deadline (`aidr complaints`)
-- **Protect proactively** - check Have I Been Pwned (`aidr breach`) and walk a credit/identity-freeze checklist (`aidr freeze`)
+- **Score your exposure** - a single 0-100 number with a month-over-month trend (`upec-wipe score`), built from verified removals, search-engine visibility, and breach data
+- **Close the loop** - re-verify removals (`upec-wipe verify`), watch search engines for new listings (`upec-wipe serp-watch`), and generate a monthly PDF report (`upec-wipe report`)
+- **Add teeth** - send CCPA/GDPR right-to-know requests (`upec-wipe know`) and auto-generate regulator complaints when a broker blows the legal deadline (`upec-wipe complaints`)
+- **Protect proactively** - check Have I Been Pwned (`upec-wipe breach`) and walk a credit/identity-freeze checklist (`upec-wipe freeze`)
 - **Stay private** - submit from a masked relay email (SimpleLogin), encrypt `config.json` at rest (AES-256-GCM, opt-in via `AIDR_PASSPHRASE`), and detect success/confirmation text in 6 languages
-- **Run from a browser** - an optional local web dashboard with a first-run config wizard, live run console, and status board (`aidr dashboard`)
-- **Keep coverage fresh** - pull the broker list from the official California (SB 362) and Vermont registries (`aidr update-brokers`), and keep brokers you *want* to stay listed on via an allowlist
+- **Run from a browser** - an optional local web dashboard with a first-run config wizard, live run console, and status board (`upec-wipe dashboard`)
+- **Keep coverage fresh** - pull the broker list from the official California (SB 362) and Vermont registries (`upec-wipe update-brokers`), and keep brokers you *want* to stay listed on via an allowlist
 
 ---
 
@@ -48,52 +54,52 @@ npx playwright install chromium
 ```bash
 # 1. Clone the repo
 git clone https://github.com/stephenlthorn/auto-identity-remove.git
-cd auto-identity-remove
+cd upec-wipe
 
 # 2. One-command install (checks Node, installs deps + the Chromium browser)
 bash install.sh
 
 # 3. Run interactive setup (creates config.json)
-node bin/aidr.js setup
+node bin/upec-wipe.js setup
 
 # 4. Preview what it will do - submits nothing
-node bin/aidr.js preview
+node bin/upec-wipe.js preview
 
 # 5. Run for real anytime
-node bin/aidr.js run
+node bin/upec-wipe.js run
 ```
 
-> Tip: run `npm link` (or `npm i -g .`) so you can type `aidr` directly instead
-> of `node bin/aidr.js`. There is no `./node_modules/.bin/aidr` - npm only
+> Tip: run `npm link` (or `npm i -g .`) so you can type `upec-wipe` directly instead
+> of `node bin/upec-wipe.js`. There is no `./node_modules/.bin/upec-wipe` - npm only
 > creates `.bin` shims for *dependencies*, never for the package's own `bin`.
 
-### The `aidr` command
+### The `upec-wipe` command
 
-`aidr` is a friendly wrapper around the underlying scripts. Every subcommand
+`upec-wipe` is a friendly wrapper around the underlying scripts. Every subcommand
 maps to an existing entrypoint:
 
 | Command | What it does |
 |---------|--------------|
-| `aidr setup` | Interactive first-run setup (creates `config.json`) |
-| `aidr preview` | Dry-run: fills forms but submits nothing |
-| `aidr run` | Runs the opt-out pass for real |
-| `aidr verify` | Re-searches brokers and reports whether you still appear |
-| `aidr score` | Prints your 0-100 exposure score and its month-over-month trend |
-| `aidr report` | Generates the monthly PDF report (saved locally) |
-| `aidr pending` | Lists brokers awaiting an email-confirmation click |
-| `aidr serp` | Scans search engines for where your name still ranks |
-| `aidr serp-watch` | Scans and lists domains where your name newly appears |
-| `aidr breach` | Checks Have I Been Pwned and recommends a credit freeze on high-severity breaches |
-| `aidr freeze` | Shows the credit/identity-freeze checklist and its status |
-| `aidr complaints` | Generates regulator complaints for brokers past the CCPA/GDPR deadline |
-| `aidr know` | Sends CCPA/GDPR right-to-know requests |
-| `aidr update-brokers` | Refreshes the broker list from the CA + Vermont registries |
-| `aidr list` | Lists configured brokers and their last-known status |
-| `aidr doctor` | Self-diagnoses your environment and configuration |
-| `aidr dashboard` | Starts the local web dashboard and prints its URL + a one-time login |
+| `upec-wipe setup` | Interactive first-run setup (creates `config.json`) |
+| `upec-wipe preview` | Dry-run: fills forms but submits nothing |
+| `upec-wipe run` | Runs the opt-out pass for real |
+| `upec-wipe verify` | Re-searches brokers and reports whether you still appear |
+| `upec-wipe score` | Prints your 0-100 exposure score and its month-over-month trend |
+| `upec-wipe report` | Generates the monthly PDF report (saved locally) |
+| `upec-wipe pending` | Lists brokers awaiting an email-confirmation click |
+| `upec-wipe serp` | Scans search engines for where your name still ranks |
+| `upec-wipe serp-watch` | Scans and lists domains where your name newly appears |
+| `upec-wipe breach` | Checks Have I Been Pwned and recommends a credit freeze on high-severity breaches |
+| `upec-wipe freeze` | Shows the credit/identity-freeze checklist and its status |
+| `upec-wipe complaints` | Generates regulator complaints for brokers past the CCPA/GDPR deadline |
+| `upec-wipe know` | Sends CCPA/GDPR right-to-know requests |
+| `upec-wipe update-brokers` | Refreshes the broker list from the CA + Vermont registries |
+| `upec-wipe list` | Lists configured brokers and their last-known status |
+| `upec-wipe doctor` | Self-diagnoses your environment and configuration |
+| `upec-wipe dashboard` | Starts the local web dashboard and prints its URL + a one-time login |
 
-Pass extra flags straight through, e.g. `aidr run --only Spokeo` or
-`aidr preview --skip BeenVerified`. Run `aidr --help` for the full list.
+Pass extra flags straight through, e.g. `upec-wipe run --only Spokeo` or
+`upec-wipe preview --skip BeenVerified`. Run `upec-wipe --help` for the full list.
 Every subcommand maps to the equivalent `node watcher.js --<flag>` invocation.
 
 > A native desktop wrapper (Electron/Tauri) is a planned follow-up and is **not**
@@ -146,7 +152,7 @@ dependencies are pre-installed. No Mac required. Builds for `linux/amd64` and
 
 ```bash
 # Build the image (once)
-docker build -t auto-identity-remove .
+docker build -t upec-wipe .
 
 # Dry-run - navigates and checks reachability, submits nothing
 docker run --rm --init \
@@ -154,7 +160,7 @@ docker run --rm --init \
   -v "$(pwd)/state.json:/app/state.json" \
   -v "$(pwd)/logs:/app/logs" \
   -e TZ="$(date +%Z)" \
-  auto-identity-remove node watcher.js --dry-run
+  upec-wipe node watcher.js --dry-run
 
 # Full run
 docker run --rm --init \
@@ -162,7 +168,7 @@ docker run --rm --init \
   -v "$(pwd)/state.json:/app/state.json" \
   -v "$(pwd)/logs:/app/logs" \
   -e TZ="$(date +%Z)" \
-  auto-identity-remove
+  upec-wipe
 ```
 
 Or with compose: `docker compose run --rm watcher node watcher.js --dry-run`.
@@ -187,7 +193,7 @@ guarantee, mount a directory and point `AIDR_STATE_PATH` inside it:
 docker run --rm --init \
   -v "$(pwd):/app/data" \
   -e AIDR_STATE_PATH=/app/data/state.json \
-  auto-identity-remove
+  upec-wipe
 ```
 
 **Low-RAM hosts** (NAS, Raspberry Pi, small VPS): add `-e AIDR_LOW_MEMORY=1`. A
@@ -203,7 +209,7 @@ fidelity for less background work on slow cores.
 ## Files
 
 ```
-auto-identity-remove/
+upec-wipe/
 ├── setup.js            ← Run once: interactive setup
 ├── watcher.js          ← Main runner
 ├── brokers.js          ← Broker list with opt-out strategies
@@ -452,10 +458,10 @@ This fork never schedules runs. If you ran setup from an earlier version and sai
 
 | Platform | Command |
 |----------|---------|
-| **macOS** (launchd) | `launchctl unload ~/Library/LaunchAgents/com.auto-identity-remove.plist` then `rm ~/Library/LaunchAgents/com.auto-identity-remove.plist` |
-| **Linux** (systemd) | `systemctl --user disable --now auto-identity-remove.timer` then `rm ~/.config/systemd/user/auto-identity-remove.{service,timer}` |
-| **Linux** (crontab fallback) | Run `crontab -e` and delete the `auto-identity-remove` line |
-| **Windows** (schtasks) | `schtasks /Delete /TN auto-identity-remove /F` |
+| **macOS** (launchd) | `launchctl unload ~/Library/LaunchAgents/com.upec-wipe.plist` then `rm ~/Library/LaunchAgents/com.upec-wipe.plist` |
+| **Linux** (systemd) | `systemctl --user disable --now upec-wipe.timer` then `rm ~/.config/systemd/user/upec-wipe.{service,timer}` |
+| **Linux** (crontab fallback) | Run `crontab -e` and delete the `upec-wipe` line |
+| **Windows** (schtasks) | `schtasks /Delete /TN upec-wipe /F` |
 
 ---
 
@@ -560,4 +566,4 @@ npm run review:cross-model        # review the current diff with a non-Anthropic
 
 ## License
 
-MIT - see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE). UPEC-WIPE is a fork of [auto-identity-remove](https://github.com/stephenlthorn/auto-identity-remove), copyright (c) 2026 Stephen Thorn; the fork's changes are copyright (c) 2026 the UPEC-WIPE contributors. Both notices are kept in LICENSE, as the MIT license requires.

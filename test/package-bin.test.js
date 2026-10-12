@@ -2,7 +2,7 @@
  * test/package-bin.test.js
  *
  * Verifies the npx/installable CLI wiring in package.json: the bin entry
- * points at bin/aidr.js and that file exists and is executable.
+ * points at bin/upec-wipe.js and that file exists and is executable.
  */
 
 const { test } = require('node:test');
@@ -13,18 +13,18 @@ const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
 const pkg = require('../package.json');
 
-test('package.json declares the aidr bin pointing at bin/aidr.js', () => {
+test('package.json declares the upec-wipe bin pointing at bin/upec-wipe.js', () => {
   assert.ok(pkg.bin, 'package.json must have a "bin" field');
-  assert.equal(pkg.bin.aidr, './bin/aidr.js');
+  assert.equal(pkg.bin['upec-wipe'], './bin/upec-wipe.js');
 });
 
-test('bin/aidr.js exists on disk', () => {
-  const binPath = path.join(ROOT, 'bin', 'aidr.js');
-  assert.ok(fs.existsSync(binPath), 'bin/aidr.js must exist');
+test('bin/upec-wipe.js exists on disk', () => {
+  const binPath = path.join(ROOT, 'bin', 'upec-wipe.js');
+  assert.ok(fs.existsSync(binPath), 'bin/upec-wipe.js must exist');
 });
 
-test('bin/aidr.js starts with a node shebang', () => {
-  const binPath = path.join(ROOT, 'bin', 'aidr.js');
+test('bin/upec-wipe.js starts with a node shebang', () => {
+  const binPath = path.join(ROOT, 'bin', 'upec-wipe.js');
   const head = fs.readFileSync(binPath, 'utf8').split('\n')[0];
   assert.match(head, /^#!\/usr\/bin\/env node/);
 });

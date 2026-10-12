@@ -1,10 +1,10 @@
 {
-  "name": "auto-identity-remove",
+  "name": "upec-wipe",
   "version": "1.0.0",
-  "description": "Automated data broker opt-out runner - removes your personal info from 30+ people-search and data broker sites on a monthly schedule",
+  "description": "UPEC-WIPE (Web Identity Purge Engine): a privacy-first fork of auto-identity-remove that sends opt-out and deletion requests to data brokers through web forms and email, behind a masked alias and a VPN check",
   "main": "watcher.js",
   "bin": {
-    "aidr": "./bin/aidr.js"
+    "upec-wipe": "./bin/upec-wipe.js"
   },
   "files": [
     "bin/",
@@ -24,7 +24,7 @@
     "start": "node watcher.js",
     "run": "bash run.sh",
     "test": "node --require ./test/helpers/egress-off.js --test test/*.test.js dashboard/validate.test.js dashboard/config-status.test.js",
-    "aidr": "node bin/aidr.js",
+    "upec-wipe": "node bin/upec-wipe.js",
     "review:doctor": "bash scripts/cross-model-preflight.sh",
     "review:cross-model": "bash scripts/cross-model-review.sh"
   },

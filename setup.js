@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * auto-identity-remove - interactive setup
+ * upec-wipe - interactive setup
  *
  * Run once: node setup.js
  *
@@ -176,7 +176,7 @@ module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingC
  * @returns {object}
  */
 /**
- * Why `mailbox` cannot be the dedicated sender for `aidr run --email`, or null.
+ * Why `mailbox` cannot be the dedicated sender for `upec-wipe run --email`, or null.
  * Blank means "skip". Brokers see this address, so it may not be the real one.
  * @param {string} mailbox
  * @param {string} realEmail
@@ -251,7 +251,7 @@ function buildConfig(existing, a) {
 
 async function main() {
   rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-  console.log('\nauto-identity-remove - Setup\n');
+  console.log('\nUPEC-WIPE - Setup\n');
   console.log('This will create config.json with your personal info (gitignored).');
   console.log('Run this once. Re-run anytime to update.\n');
 
@@ -311,7 +311,7 @@ async function main() {
 
   // ── Email requests (phase 2) ─────────────────────────────────────────────
   console.log('\n── Email Requests (dedicated mailbox, optional) ───────────');
-  console.log('Some data brokers only take privacy requests by email. `aidr run --email`');
+  console.log('Some data brokers only take privacy requests by email. `upec-wipe run --email`');
   console.log('sends them from a mailbox made only for this - brokers see that address,');
   console.log('so never use your everyday email. For Gmail: create a new account, turn on');
   console.log('2-step verification, then make an app password at');

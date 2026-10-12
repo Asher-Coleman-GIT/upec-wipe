@@ -1,6 +1,6 @@
 # Threat model
 
-This tool submits your identity to dozens of companies on purpose. The goal of this fork is that no broker learns more than it already had, plus one throwaway email alias. A few services get more than that because their job needs it: SimpleLogin knows your real inbox, HIBP gets your real email when you run `aidr breach`, search engines get your full name and city when you run `aidr serp`, CapSolver sees which broker pages showed a CAPTCHA, and your SMTP provider sees every opt-out email you send. [PRIVACY.md](PRIVACY.md) lists every destination and exactly what it gets.
+This tool submits your identity to dozens of companies on purpose. The goal of this fork is that no broker learns more than it already had, plus one throwaway email alias. A few services get more than that because their job needs it: SimpleLogin knows your real inbox, HIBP gets your real email when you run `upec-wipe breach`, search engines get your full name and city when you run `upec-wipe serp`, CapSolver sees which broker pages showed a CAPTCHA, and your SMTP provider sees every opt-out email you send. [PRIVACY.md](PRIVACY.md) lists every destination and exactly what it gets.
 
 ## What each layer protects
 
@@ -18,12 +18,12 @@ This tool submits your identity to dozens of companies on purpose. The goal of t
 
 ## What this tool does not protect
 
-- The confirmation step. `Submitted` does not mean `deleted`. Run `aidr verify` to check.
+- The confirmation step. `Submitted` does not mean `deleted`. Run `upec-wipe verify` to check.
 - Brokers adding you back later. Opt-outs have to be repeated every month.
 - Your SMTP provider. It sees every opt-out email you send.
 - The SMTP account itself. A broker that receives an opt-out email can see the address of the account it was sent from (`email.smtp.user`), whatever `from` says, because providers such as Gmail rewrite `From` and the account is in the envelope. The relay alias does not hide it. Leave out the `email` block (the recommended setup) or use a separate mailbox not linked to you.
-- HIBP. `aidr breach` sends your real email to haveibeenpwned.com. Do not run it if that matters to you.
-- Search engines. `aidr serp` and `aidr serp-watch` search for your full name with your city and state on DuckDuckGo, Bing and Google, through the VPN.
+- HIBP. `upec-wipe breach` sends your real email to haveibeenpwned.com. Do not run it if that matters to you.
+- Search engines. `upec-wipe serp` and `upec-wipe serp-watch` search for your full name with your city and state on DuckDuckGo, Bing and Google, through the VPN.
 - CapSolver. It sees your account and the address of each broker page that showed a CAPTCHA. It gets no images and none of your details. Leave out the key (or use `--no-capsolver`) and those brokers become manual.
 - Mullvad. It sees the traffic leaving its servers, as any VPN does.
 - Installing. `install.sh` and the install steps download from npm, the Playwright CDN, NodeSource and Ubuntu's mirrors. Connect Mullvad first if you do not want those to see your home IP.

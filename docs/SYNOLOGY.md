@@ -68,7 +68,7 @@ SSH in (Control Panel → Terminal & SNMP → Enable SSH):
 ```bash
 cd /volume1/docker
 git clone https://github.com/stephenlthorn/auto-identity-remove.git
-cd auto-identity-remove
+cd upec-wipe
 ```
 
 ### 2. Create your config on a machine with a browser
@@ -78,7 +78,7 @@ NAS. The wizard is interactive and wants a browser for the account-creation
 steps, so it is not a good fit for a headless NAS.
 
 ```bash
-scp config.json admin@nas.local:/volume1/docker/auto-identity-remove/
+scp config.json admin@nas.local:/volume1/docker/upec-wipe/
 ```
 
 ### 3. Lock down the files
@@ -102,15 +102,15 @@ working anyway, but it gives up crash-atomicity - so mount the directory and
 keep the guarantee:
 
 ```bash
-docker build -t auto-identity-remove .
+docker build -t upec-wipe .
 
 docker run --rm --init \
   -e TZ=America/New_York \
   -e AIDR_LOW_MEMORY=1 \
-  -v /volume1/docker/auto-identity-remove:/app/data \
+  -v /volume1/docker/upec-wipe:/app/data \
   -e AIDR_STATE_PATH=/app/data/state.json \
   --memory=1g \
-  auto-identity-remove node watcher.js --dry-run
+  upec-wipe node watcher.js --dry-run
 ```
 
 Or with compose, from the project directory:
@@ -128,7 +128,7 @@ This fork does not schedule runs. When you want a run (about once a month), SSH
 in and run:
 
 ```bash
-cd /volume1/docker/auto-identity-remove && docker compose run --rm watcher
+cd /volume1/docker/upec-wipe && docker compose run --rm watcher
 ```
 
 ## Settings that matter on a small box
@@ -154,11 +154,11 @@ cd /volume1/docker/auto-identity-remove && docker compose run --rm watcher
 
 ```bash
 # Is the browser actually launchable in your image?
-docker run --rm auto-identity-remove node -e \
+docker run --rm upec-wipe node -e \
   "require('playwright').chromium.launch({headless:true}).then(b=>{console.log('browser OK');return b.close()})"
 
 # Does the image agree with the client about Playwright versions?
-docker run --rm auto-identity-remove sh -c 'ls /ms-playwright; node -p "require(\"playwright-core/package.json\").version"'
+docker run --rm upec-wipe sh -c 'ls /ms-playwright; node -p "require(\"playwright-core/package.json\").version"'
 
 # Is state actually being written?
 docker compose run --rm watcher node -e \

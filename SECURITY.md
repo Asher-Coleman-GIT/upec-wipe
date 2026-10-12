@@ -78,7 +78,7 @@ ls -l config.json state.json
 git check-ignore -v config.json state.json
 ```
 
-Start the dashboard only with `aidr dashboard`. It refuses to bind anything but loopback and refuses to start without credentials. For remote access use `ssh -L 8080:127.0.0.1:8080 <host>`.
+Start the dashboard only with `upec-wipe dashboard`. It refuses to bind anything but loopback and refuses to start without credentials. For remote access use `ssh -L 8080:127.0.0.1:8080 <host>`.
 
 ## Review process
 

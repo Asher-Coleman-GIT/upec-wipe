@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * auto-identity-remove - watcher.js (thin orchestrator)
+ * upec-wipe - watcher.js (thin orchestrator)
  *
  * Automated data broker opt-out runner. Internals live in lib/ (config,
  * logger, notify, captcha, forms, broker-runner, platform).
@@ -258,7 +258,7 @@ if (process.argv.includes('--reply')) {
   const { loadCatalog, catalogEmailTargets } = require('./lib/catalog');
   const brokersList = require('./brokers');
   if (!REPLY_OUTCOMES.includes(outcome)) {
-    console.error(`Usage: aidr reply <broker> ${REPLY_OUTCOMES.join('|')}`);
+    console.error(`Usage: upec-wipe reply <broker> ${REPLY_OUTCOMES.join('|')}`);
     process.exit(2);
   }
   const names = [
@@ -861,7 +861,7 @@ async function _mainBody() {
   }
   const { runGenericBrokers } = require('./generic-runner');
 
-  console.log('\nauto-identity-remove - starting run');
+  console.log('\nUPEC-WIPE - starting run');
   if (PREVIEW)       console.log('PREVIEW - field values and target URLs will be printed before submit. No state will be saved.');
   if (ASSIST)        console.log('ASSIST - when a site shows a bot check, the run waits for you to complete it in the browser window (up to 3 min each).');
   else if (DRY_RUN)  console.log('DRY RUN - forms will be filled but NOT submitted. No state will be saved.');

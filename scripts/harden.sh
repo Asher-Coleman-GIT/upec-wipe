@@ -26,7 +26,7 @@ if [ "$probe_mode" != "600" ]; then
   echo "chmod has no effect on $REPO (mode came back $probe_mode)." >&2
   case "$REPO" in
     /mnt/[a-z]/*) echo "This is a Windows drive under WSL. Move the repo into your Linux home, e.g.:" >&2
-                  echo "  git clone \"$REPO\" ~/auto-identity-remove" >&2 ;;
+                  echo "  git clone \"$REPO\" ~/upec-wipe" >&2 ;;
     *)            echo "Move the repo to a local Linux/macOS filesystem." >&2 ;;
   esac
   exit 2

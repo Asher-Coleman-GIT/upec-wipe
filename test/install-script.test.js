@@ -44,21 +44,21 @@ test('install.sh installs the Playwright Chromium browser', () => {
 });
 
 test('install.sh prints the next step, as a command that actually runs', () => {
-  // This used to assert the literal string "aidr setup", which install.sh
-  // satisfied with `./node_modules/.bin/aidr setup` - a path npm never creates
+  // This used to assert the literal string "upec-wipe setup", which install.sh
+  // satisfied with `./node_modules/.bin/upec-wipe setup` - a path npm never creates
   // for a package's own bin entry. The test passed; the documented command did
   // not exist. Assert the working invocation instead.
   const src = read();
-  assert.match(src, /node bin\/aidr\.js setup/, 'the printed next step must be a runnable command');
+  assert.match(src, /node bin\/upec-wipe\.js setup/, 'the printed next step must be a runnable command');
   assert.doesNotMatch(
     src,
-    /node_modules\/\.bin\/aidr/,
+    /node_modules\/\.bin\/upec-wipe/,
     'npm does not create a .bin shim for the root package, so this path never exists',
   );
 });
 
 test('install.sh installs the dashboard dependencies too', () => {
   // express is declared only in dashboard/package.json, so a documented install
-  // that skips this leaves `aidr dashboard` unable to start.
+  // that skips this leaves `upec-wipe dashboard` unable to start.
   assert.match(read(), /cd dashboard && npm ci/);
 });

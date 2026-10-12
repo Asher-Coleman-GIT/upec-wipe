@@ -185,7 +185,7 @@ function dashboardStartupProblems({ host, authConfigured }) {
     problems.push(`AIDR_HOST=${host} is not a loopback address. This fork only binds 127.0.0.1/::1; use "ssh -L 8080:127.0.0.1:8080 host" for remote access.`);
   }
   if (!authConfigured) {
-    problems.push('No credentials set. Start it with `aidr dashboard` (generates a one-time login) or set AIDR_USER and AIDR_PASS.');
+    problems.push('No credentials set. Start it with `upec-wipe dashboard` (generates a one-time login) or set AIDR_USER and AIDR_PASS.');
   }
   return problems;
 }

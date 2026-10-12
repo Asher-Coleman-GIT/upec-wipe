@@ -2,7 +2,7 @@
  * test/docs-commands.test.js
  *
  * Every Quick Start step in README.md and install.sh told the user to run
- * `./node_modules/.bin/aidr <cmd>`. That path never exists: npm creates
+ * `./node_modules/.bin/upec-wipe <cmd>`. That path never exists: npm creates
  * node_modules/.bin shims for a package's *dependencies*, never for the
  * package's own "bin" entry. So steps 3, 4 and 5 of the documented install
  * failed with "no such file or directory" for every user who followed them, and
@@ -28,12 +28,12 @@ function captures(text, re) {
   return [...new Set([...text.matchAll(re)].map(m => m[1]))];
 }
 
-test('no doc tells the user to run ./node_modules/.bin/aidr', () => {
+test('no doc tells the user to run ./node_modules/.bin/upec-wipe', () => {
   // Allowed only in prose that explains why it does not exist.
   const offenders = [];
   for (const [name, text] of [['README.md', readme], ['install.sh', install]]) {
     for (const line of text.split('\n')) {
-      if (!line.includes('node_modules/.bin/aidr')) continue;
+      if (!line.includes('node_modules/.bin/upec-wipe')) continue;
       if (/There is no|never creates|does not exist/i.test(line)) continue;
       offenders.push(`${name}: ${line.trim()}`);
     }
@@ -46,10 +46,10 @@ test('no doc tells the user to run ./node_modules/.bin/aidr', () => {
 });
 
 test("the package's bin target exists and carries a shebang", () => {
-  const binSpec = pkg.bin && pkg.bin.aidr;
-  assert.ok(binSpec, 'package.json must declare bin.aidr');
+  const binSpec = pkg.bin && pkg.bin['upec-wipe'];
+  assert.ok(binSpec, 'package.json must declare bin.upec-wipe');
   const target = path.join(ROOT, binSpec);
-  assert.ok(fs.existsSync(target), `bin.aidr points at ${binSpec}, which does not exist`);
+  assert.ok(fs.existsSync(target), `bin.upec-wipe points at ${binSpec}, which does not exist`);
   assert.match(fs.readFileSync(target, 'utf8'), /^#!/, 'the bin entry should carry a shebang');
 });
 
@@ -77,13 +77,13 @@ test('every script install.sh invokes exists', () => {
 
 test('install.sh installs the dashboard dependencies', () => {
   // express lives only in dashboard/package.json, so without this step
-  // `aidr dashboard` fails with MODULE_NOT_FOUND right after a clean install.
+  // `upec-wipe dashboard` fails with MODULE_NOT_FOUND right after a clean install.
   const dashPkg = require(path.join(ROOT, 'dashboard', 'package.json'));
   assert.ok(dashPkg.dependencies && dashPkg.dependencies.express, 'precondition: express is a dashboard-only dep');
   assert.match(
     install,
     /cd dashboard && npm ci/,
-    'install.sh must install dashboard deps or `aidr dashboard` cannot start',
+    'install.sh must install dashboard deps or `upec-wipe dashboard` cannot start',
   );
 });
 

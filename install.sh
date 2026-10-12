@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install.sh - one-command setup for auto-identity-remove.
+# install.sh - one-command setup for upec-wipe.
 #
 # Run once after cloning:   bash install.sh
 #
@@ -11,7 +11,7 @@ set -e
 cd "$(dirname "$0")"
 
 echo ""
-echo "auto-identity-remove - installer"
+echo "upec-wipe - installer"
 echo "--------------------------------"
 
 # 1. Node present?
@@ -43,11 +43,11 @@ npx playwright install chromium
 
 # 5. Install the dashboard's own dependencies.
 #    express lives in dashboard/package.json, not the root manifest, so without
-#    this step `aidr dashboard` fails with MODULE_NOT_FOUND right after a
+#    this step `upec-wipe dashboard` fails with MODULE_NOT_FOUND right after a
 #    documented install.
 echo ""
 echo "Installing dashboard dependencies..."
-(cd dashboard && npm ci --ignore-scripts) || echo "  (dashboard deps failed - 'aidr dashboard' will not start until you run: cd dashboard && npm ci --ignore-scripts)"
+(cd dashboard && npm ci --ignore-scripts) || echo "  (dashboard deps failed - 'upec-wipe dashboard' will not start until you run: cd dashboard && npm ci --ignore-scripts)"
 
 # 6. Next steps.
 echo ""
@@ -56,15 +56,15 @@ echo "Install complete."
 echo ""
 echo "Next steps:"
 echo "  1. Run setup (creates config.json):"
-echo "       node bin/aidr.js setup"
+echo "       node bin/upec-wipe.js setup"
 echo "  2. Preview what it will do (submits nothing):"
-echo "       node bin/aidr.js preview"
+echo "       node bin/upec-wipe.js preview"
 echo "  3. Run for real when ready:"
-echo "       node bin/aidr.js run"
+echo "       node bin/upec-wipe.js run"
 echo ""
 echo "  Open the local web dashboard:"
-echo "       node bin/aidr.js dashboard"
+echo "       node bin/upec-wipe.js dashboard"
 echo ""
-echo "Tip: run 'npm link' (or 'npm i -g .') to use 'aidr' instead of 'node bin/aidr.js'."
+echo "Tip: run 'npm link' (or 'npm i -g .') to use 'upec-wipe' instead of 'node bin/upec-wipe.js'."
 echo "--------------------------------"
 echo ""

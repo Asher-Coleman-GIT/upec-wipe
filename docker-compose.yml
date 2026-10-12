@@ -1,4 +1,4 @@
-# docker-compose.yml - auto-identity-remove
+# docker-compose.yml - upec-wipe
 #
 # One-off run:        docker compose run --rm watcher
 # Preview only:       docker compose run --rm watcher node watcher.js --dry-run

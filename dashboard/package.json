@@ -1,8 +1,8 @@
 {
-  "name": "auto-identity-remove-dashboard",
+  "name": "upec-wipe-dashboard",
   "version": "1.0.0",
   "private": true,
-  "description": "Optional web dashboard for auto-identity-remove - status, runs, config editor, schedule, live logs.",
+  "description": "Optional web dashboard for upec-wipe - status, runs, config editor, schedule, live logs.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

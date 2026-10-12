@@ -1,4 +1,4 @@
-# UPEC guide to auto-identity-remove
+# UPEC-WIPE manual
 
 ## What this does
 
@@ -12,9 +12,9 @@ It is set up here so that brokers see a throwaway email address and a VPN addres
 
 A month looks like this:
 
-1. You run `node bin/aidr.js run` (nothing runs on its own).
+1. You run `node bin/upec-wipe.js run` (nothing runs on its own).
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
-3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/aidr.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/aidr.js verify` checks whether you are really gone.
+3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/upec-wipe.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/upec-wipe.js verify` checks whether you are really gone.
 
 Some extra commands send more about you to other services: `breach` sends your real email to Have I Been Pwned, and `serp` searches for your name and city on search engines. They are off unless you run them. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
@@ -91,13 +91,13 @@ WSL2 gives Windows a built-in Linux. This tool runs inside it. Connect Mullvad b
 4. Download the fork into your home folder (`~`). Replace `<fork URL>` with the address the club maintainer gave you:
 
    ```
-   git clone <fork URL> ~/auto-identity-remove
+   git clone <fork URL> ~/upec-wipe
    ```
 
    It prints "Cloning into ..." and finishes. Move into the folder:
 
    ```
-   cd ~/auto-identity-remove
+   cd ~/upec-wipe
    ```
 
    Nothing is printed. Run the installer, which installs the tool's parts and a browser:
@@ -121,16 +121,16 @@ WSL2 gives Windows a built-in Linux. This tool runs inside it. Connect Mullvad b
 These steps are for Ubuntu or Debian. First make a dedicated user so the tool never runs as an account that holds your other files. This creates it and asks you to set a password:
 
 ```
-sudo useradd -m -s /bin/bash aidr && sudo passwd aidr
+sudo useradd -m -s /bin/bash upec-wipe && sudo passwd upec-wipe
 ```
 
 Switch to that user:
 
 ```
-sudo -iu aidr
+sudo -iu upec-wipe
 ```
 
-The prompt now shows `aidr@`. Then do steps 3 and 4 of Part A (install git, curl and Node 20, clone, `cd`, `bash install.sh`, `npx playwright install-deps chromium`). Never run the tool with `sudo` or as root.
+The prompt now shows `upec-wipe@`. Then do steps 3 and 4 of Part A (install git, curl and Node 20, clone, `cd`, `bash install.sh`, `npx playwright install-deps chromium`). Never run the tool with `sudo` or as root.
 
 If you use the Mullvad command-line app instead of the desktop app, connect:
 
@@ -167,7 +167,7 @@ This part is the same for Parts A and B.
 2. Run the setup questions. This asks for your name, address and other details, and saves them in `config.json` in this folder:
 
    ```
-   node bin/aidr.js setup
+   node bin/upec-wipe.js setup
    ```
 
    Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, your date of birth (optional: only PrivateRecords uses it, and leaving it blank sends that site to your manual list), then your CapSolver key (leave it blank to skip), then your SimpleLogin API key, then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/auto-identity-remove/passphrase` on its own.
@@ -214,26 +214,26 @@ This part is the same for Parts A and B.
    AIDR_PASSPHRASE_FILE=~/.config/auto-identity-remove/passphrase node watcher.js --encrypt-config
    ```
 
-   It reports that the config was encrypted. Afterward, plain commands such as `node bin/aidr.js doctor` and `node bin/aidr.js run` work without the `AIDR_PASSPHRASE_FILE=...` prefix, because the tool reads `~/.config/auto-identity-remove/passphrase` by default. Keep that file mode 600: the tool refuses it if other users can read it. If you keep the passphrase somewhere else, put `AIDR_PASSPHRASE_FILE=<path>` in front of each command instead.
+   It reports that the config was encrypted. Afterward, plain commands such as `node bin/upec-wipe.js doctor` and `node bin/upec-wipe.js run` work without the `AIDR_PASSPHRASE_FILE=...` prefix, because the tool reads `~/.config/auto-identity-remove/passphrase` by default. Keep that file mode 600: the tool refuses it if other users can read it. If you keep the passphrase somewhere else, put `AIDR_PASSPHRASE_FILE=<path>` in front of each command instead.
 
 6. Check that everything is ready:
 
    ```
-   node bin/aidr.js doctor
+   node bin/upec-wipe.js doctor
    ```
 
    It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP, CapSolver and SimpleLogin checks connect to those services, so they wait for the same network check as a run: with the Mullvad app off they say "skipped: not on Mullvad". It also works after you encrypt your config.
 
-7. Rehearse a run with `aidr preview` (you run it as `node bin/aidr.js preview`). Make sure Mullvad is connected first. It does everything except submit:
+7. Rehearse a run with `upec-wipe preview` (you run it as `node bin/upec-wipe.js preview`). Make sure Mullvad is connected first. It does everything except submit:
 
    ```
-   node bin/aidr.js preview
+   node bin/upec-wipe.js preview
    ```
 
    Nothing is submitted. Expect a line with `Network: Mullvad exit`. A preview writes no log file and saves no state: the summary on screen is the whole result, so read it there. Now do the real run:
 
    ```
-   node bin/aidr.js run
+   node bin/upec-wipe.js run
    ```
 
    It works through the brokers for a while and prints a summary at the end.
@@ -283,17 +283,17 @@ This part is the same for Parts A and B.
 2. Run the tool:
 
    ```
-   node bin/aidr.js run
+   node bin/upec-wipe.js run
    ```
 
    With Docker, use `docker compose run --rm watcher` instead.
 
 3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The tool cannot do this part, so you must.
-4. Every few months, check you are really gone with `node bin/aidr.js verify`.
+4. Every few months, check you are really gone with `node bin/upec-wipe.js verify`.
 5. See which brokers still need you:
 
    ```
-   node bin/aidr.js pending
+   node bin/upec-wipe.js pending
    ```
 
    It lists opt-outs waiting for a confirmation or a manual step.
@@ -303,7 +303,7 @@ This part is the same for Parts A and B.
 A web page for browsing results. It only works on this computer.
 
 ```
-node bin/aidr.js dashboard
+node bin/upec-wipe.js dashboard
 ```
 
 It prints a web address and a login. Open that address in your browser and use that login. `127.0.0.1` or `localhost` with the printed port both work; any other name is refused with a `misdirected request` error, which protects against web pages that try to reach the dashboard. After 10 wrong logins in 15 minutes it locks for the rest of that window. New passwords set in the Admin tab must be at least 12 characters.
@@ -313,16 +313,16 @@ It prints a web address and a login. Open that address in your browser and use t
 Some data brokers only take privacy requests by email. These are sent by a separate step, never by a normal run.
 
 1. Create a new Gmail account used only for this. Turn on 2-step verification and create an app password (myaccount.google.com/apppasswords).
-2. Run `node bin/aidr.js setup` and answer the "Email Requests" questions: the new address, the SMTP server (Enter for `smtp.gmail.com`) and the app password. Setup writes the `email` block with that address as both `smtp.user` and `smtp.from`, and refuses your everyday email. Brokers see only this address. (You can also edit the `email` block in `config.json` by hand.)
-3. Connect Mullvad, then rehearse: `node bin/aidr.js preview --email`. It lists every broker, the sentence from its policy that gives the right, and the full email. Nothing is sent.
-4. Send: `node bin/aidr.js run --email`. Type `SEND` to confirm. Emails go out one every 45 seconds; leave it running. If it stops (the mailbox limit, Ctrl-C), run it again later; it never emails a broker twice.
-5. Replies arrive in the new Gmail. Log each one: `node bin/aidr.js reply <broker> honored|refused|verify|none|bounced`. `aidr list` shows each email broker's status.
+2. Run `node bin/upec-wipe.js setup` and answer the "Email Requests" questions: the new address, the SMTP server (Enter for `smtp.gmail.com`) and the app password. Setup writes the `email` block with that address as both `smtp.user` and `smtp.from`, and refuses your everyday email. Brokers see only this address. (You can also edit the `email` block in `config.json` by hand.)
+3. Connect Mullvad, then rehearse: `node bin/upec-wipe.js preview --email`. It lists every broker, the sentence from its policy that gives the right, and the full email. Nothing is sent.
+4. Send: `node bin/upec-wipe.js run --email`. Type `SEND` to confirm. Emails go out one every 45 seconds; leave it running. If it stops (the mailbox limit, Ctrl-C), run it again later; it never emails a broker twice.
+5. Replies arrive in the new Gmail. Log each one: `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`. `upec-wipe list` shows each email broker's status.
 
-`aidr run` on its own (or `--forms`) fills web forms only. `--forms --email` does both.
+`upec-wipe run` on its own (or `--forms`) fills web forms only. `--forms --email` does both.
 
 ## Command reference
 
-Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your computer; see [PRIVACY.md](PRIVACY.md) for details.
+Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your computer; see [PRIVACY.md](PRIVACY.md) for details.
 
 | Command | What it does | Sends |
 | --- | --- | --- |
@@ -346,7 +346,7 @@ Run each as `node bin/aidr.js <command>`. "Sends" lists what leaves your compute
 | `update-brokers` | Refreshes the extra broker list from the California and Vermont registries. | Nothing about you. |
 | `dashboard` | Starts the local web page. | Nothing. Runs started from it send what the command would. |
 
-Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time), `--no-capsolver` (treat CAPTCHA brokers as manual) and `--generic` (also try about 490 smaller sites from public lists; off by default because nobody reviewed them). `aidr list` also lists the reviewed catalog sites and when each was checked. `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
+Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time), `--no-capsolver` (treat CAPTCHA brokers as manual) and `--generic` (also try about 490 smaller sites from public lists; off by default because nobody reviewed them). `upec-wipe list` also lists the reviewed catalog sites and when each was checked. `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
 
 ## Troubleshooting
 
@@ -362,7 +362,7 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 | `... - not sent: email.smtp.from ... Set email.smtp.from to a non-real address.` | Your `"from"` is missing or is your real email. Set it to a non-real address. |
 | `... - not sent: email.smtp.user ... Use a separate SMTP mailbox that is not linked to you, or remove the email block ...` | Your SMTP login is your real email and brokers can see it. Switch to a separate mailbox not linked to you, or delete the `email` block and handle those brokers by hand. |
 | `Email step not run: ...` | The email step checks its setup before sending anything. Fix what it names: the `email.smtp` block, `user` and `from` must be the same dedicated address, and it must run in a terminal so you can type `SEND`. |
-| `aidr-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
+| `upec-wipe-dashboard: AIDR_HOST=... is not a loopback address. ...` | Unset `AIDR_HOST` so the dashboard stays on this computer. |
 | `Network check failed for direct connections - nothing was sent. ...` | The tool was about to contact SimpleLogin, CapSolver, HIBP, your SMTP server or a registry, and Mullvad is off. Connect the Mullvad app and run again. |
 | `Note: network.proxy covers the browser only. ...` | You set `network.proxy`. Brokers see the proxy, but those services see your real IP. Use the Mullvad app instead if that matters to you. |
 | `Playwright is not installed. Run: npm ci --ignore-scripts && npx playwright install chromium` | Run that command in the tool's folder. |

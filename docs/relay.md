@@ -1,6 +1,6 @@
 # Masked-Email Relay
 
-By default, auto-identity-remove submits opt-outs using `config.person.email`.
+By default, upec-wipe submits opt-outs using `config.person.email`.
 That hands every broker a fresh real address. A masked/relay email lets each
 removal request go out under a per-person alias you control, which you can
 disable later if a broker abuses it.
@@ -31,7 +31,7 @@ email-based opt-outs. Without `config.relay`, behavior is unchanged.
    relay configured (or the placeholder key still in place), every person is
    blocked and the run exits non-zero with no submissions. Your real email is
    never used as a fallback.
-5. Email-method brokers: they are sent only by `aidr run --email` (see the
+5. Email-method brokers: they are sent only by `upec-wipe run --email` (see the
    manual, "Email requests"). A broker that receives an email can see the SMTP
    account it came from (`email.smtp.user`), not just `from`, so use a separate
    mailbox that is not linked to you, as both `email.smtp.user` and

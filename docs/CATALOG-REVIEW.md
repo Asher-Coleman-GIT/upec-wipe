@@ -39,12 +39,12 @@ Rules learned from the 2026-10 surveys:
 
 ## 4. Prove the batch
 
-    node bin/aidr.js preview --only "Site One,Site Two"
+    node bin/upec-wipe.js preview --only "Site One,Site Two"
 
 A record stays `reviewed` only if its preview fills the intended fields and names the submit target. Otherwise make it `manual` or put it back to `unreviewed` with a note. Then run `npm test` (every record must validate and hold no personal data) and commit the batch.
 
 ## 5. Keeping it current
 
-    node bin/aidr.js catalog-check
+    node bin/upec-wipe.js catalog-check
 
 Re-checks reviewed sites. A site whose page moved, lost a field or gained a bot check becomes `needs-review` and runs as manual until it is reviewed again.

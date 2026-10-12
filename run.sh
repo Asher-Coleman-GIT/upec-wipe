@@ -1,5 +1,5 @@
 #!/bin/bash
-# auto-identity-remove - manual run entrypoint
+# upec-wipe - manual run entrypoint
 # Usage: ./run.sh [watcher.js flags]
 
 set -e

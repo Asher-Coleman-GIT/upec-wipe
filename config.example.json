@@ -32,7 +32,7 @@
   },
 
   "email": {
-    "_comment": "Optional. Used only by `aidr run --email` (phase 2 email requests). Without it, email-only brokers are handled by hand. Brokers can see the SMTP account's own address (user), not just from, so only use a separate mailbox that is not linked to you, as both user and from. Never your everyday account. Gmail example for such a separate mailbox: host=smtp.gmail.com, port=587, an App Password (myaccount.google.com/apppasswords); Gmail rewrites from to the account address.",
+    "_comment": "Optional. Used only by `upec-wipe run --email` (phase 2 email requests). Without it, email-only brokers are handled by hand. Brokers can see the SMTP account's own address (user), not just from, so only use a separate mailbox that is not linked to you, as both user and from. Never your everyday account. Gmail example for such a separate mailbox: host=smtp.gmail.com, port=587, an App Password (myaccount.google.com/apppasswords); Gmail rewrites from to the account address.",
     "smtp": {
       "host": "smtp.gmail.com",
       "port": 587,

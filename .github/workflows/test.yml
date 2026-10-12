@@ -28,9 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
-      # test/cli-dashboard-boot.test.js runs `aidr dashboard` for real, which
+      # test/cli-dashboard-boot.test.js runs `upec-wipe dashboard` for real, which
       # needs express from the dashboard's own manifest. Without this the test
-      # skips itself, and a skipped test is how `aidr dashboard` shipped broken.
+      # skips itself, and a skipped test is how `upec-wipe dashboard` shipped broken.
       - name: Install dashboard dependencies
         working-directory: dashboard
         run: npm ci --ignore-scripts
@@ -80,15 +80,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build the image
-        run: docker build -t aidr-ci .
+        run: docker build -t upec-wipe-ci .
 
       - name: Chromium must actually launch inside the image
-        run: docker run --rm --init aidr-ci node scripts/ci/docker-smoke.js
+        run: docker run --rm --init upec-wipe-ci node scripts/ci/docker-smoke.js
 
       - name: Default 64MB /dev/shm must not be a hard requirement
         # No --shm-size on purpose: a plain `docker run` gets 64MB of /dev/shm,
         # which is why the code passes --disable-dev-shm-usage.
-        run: docker run --rm --init aidr-ci node scripts/ci/docker-shm-check.js
+        run: docker run --rm --init upec-wipe-ci node scripts/ci/docker-shm-check.js
 
       - name: State must persist through a single-file bind mount
         # The documented recipe mounts state.json as a file. rename() onto a bind
@@ -98,7 +98,7 @@ jobs:
           docker run --rm --init \
             -e AIDR_STATE_PATH=/app/state.json \
             -v "$RUNNER_TEMP/state.json:/app/state.json" \
-            aidr-ci node scripts/ci/docker-state-check.js
+            upec-wipe-ci node scripts/ci/docker-state-check.js
           grep -q CiProbe "$RUNNER_TEMP/state.json" || { echo "host file not updated"; exit 1; }
 
       - name: Image must not contain PII or secrets
@@ -106,14 +106,14 @@ jobs:
         # maintainer's own config into a layer that travels with the image.
         run: |
           for f in config.json config.json.enc state.json state.json.bak state.json.checkpoint state.json.checkpoint.tmp .env .claude dashboard/.auth.json .superpowers venv secrets; do
-            if docker run --rm --entrypoint sh aidr-ci -c "test -e /app/$f"; then
+            if docker run --rm --entrypoint sh upec-wipe-ci -c "test -e /app/$f"; then
               echo "SECURITY: /app/$f is baked into the image"
               exit 1
             fi
           done
           # A bare `node_modules` in .dockerignore matches only the root, so
           # dashboard/node_modules used to ship in every layer.
-          if docker run --rm --entrypoint sh aidr-ci -c "test -d /app/dashboard/node_modules"; then
+          if docker run --rm --entrypoint sh upec-wipe-ci -c "test -d /app/dashboard/node_modules"; then
             echo "BLOAT: /app/dashboard/node_modules is baked into the image"
             exit 1
           fi

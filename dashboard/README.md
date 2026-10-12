@@ -1,6 +1,6 @@
 # Dashboard (optional web UI)
 
-A small, self-contained web control panel for `auto-identity-remove`. It is
+A small, self-contained web control panel for `upec-wipe`. It is
 **optional** and additive - the CLI works exactly as before without it.
 
 It wraps the existing tooling rather than reimplementing it:
@@ -25,7 +25,7 @@ The only dependency is `express`.
 ## Run
 
 ```bash
-aidr dashboard
+upec-wipe dashboard
 ```
 
 It prints a one-time login. Running `node server.js` directly without `AIDR_USER`/`AIDR_PASS` refuses to start.

@@ -1,4 +1,4 @@
-# Dockerfile - auto-identity-remove
+# Dockerfile - upec-wipe
 #
 # Based on the official Playwright image, which ships Chromium plus every system
 # library it needs for both amd64 and arm64.
@@ -10,15 +10,15 @@
 # test/docker-build-contract.test.js enforces the match; do not bump one without
 # the other.
 #
-# Build:  docker build -t auto-identity-remove .
+# Build:  docker build -t upec-wipe .
 # Run:    docker run --rm --init \
 #                    -v "$(pwd)/config.json:/app/config.json" \
 #                    -v "$(pwd)/state.json:/app/state.json" \
 #                    -v "$(pwd)/logs:/app/logs" \
-#                    auto-identity-remove
+#                    upec-wipe
 #
 # Tip: pass --dry-run to preview without submitting anything:
-#   docker run --rm --init ... auto-identity-remove node watcher.js --dry-run
+#   docker run --rm --init ... upec-wipe node watcher.js --dry-run
 #
 # Low-RAM hosts (Synology NAS, Raspberry Pi, small VPS): add
 #   -e AIDR_LOW_MEMORY=1

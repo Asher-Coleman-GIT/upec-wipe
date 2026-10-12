@@ -1,7 +1,7 @@
 /**
  * test/cli-dashboard-boot.test.js
  *
- * The behavioural half of the PR #9 fix: actually run `aidr dashboard` and
+ * The behavioural half of the PR #9 fix: actually run `upec-wipe dashboard` and
  * require the server to come up. test/cli-bin-smoke.test.js deliberately
  * covered only the non-spawning paths (--help, --version, unknown command),
  * which is exactly why a subcommand that crashed with MODULE_NOT_FOUND on
@@ -20,7 +20,7 @@ const path = require('node:path');
 const { spawn } = require('node:child_process');
 
 const ROOT = path.join(__dirname, '..');
-const BIN = path.join(ROOT, 'bin', 'aidr.js');
+const BIN = path.join(ROOT, 'bin', 'upec-wipe.js');
 const DASHBOARD_DEPS = path.join(ROOT, 'dashboard', 'node_modules', 'express');
 
 /** An OS-assigned free port, so parallel test files cannot collide. */
@@ -35,7 +35,7 @@ function freePort() {
   });
 }
 
-test('aidr dashboard boots the server instead of dying on a doubled path', async (t) => {
+test('upec-wipe dashboard boots the server instead of dying on a doubled path', async (t) => {
   if (!fs.existsSync(DASHBOARD_DEPS)) {
     t.skip('dashboard dependencies are not installed (run: cd dashboard && npm ci)');
     return;
@@ -71,7 +71,7 @@ test('aidr dashboard boots the server instead of dying on a doubled path', async
     };
     const timer = setTimeout(() => done({ kind: 'timeout' }), 15000);
     const poll = setInterval(() => {
-      if (stdout.includes('aidr-dashboard listening')) done({ kind: 'listening' });
+      if (stdout.includes('upec-wipe-dashboard listening')) done({ kind: 'listening' });
     }, 50);
     child.on('exit', code => done({ kind: 'exit', code }));
     child.on('error', err => done({ kind: 'error', message: err.message }));

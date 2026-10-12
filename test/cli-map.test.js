@@ -1,7 +1,7 @@
 /**
  * test/cli-map.test.js
  *
- * Pure unit tests for the aidr CLI argument-to-target mapping. No spawning,
+ * Pure unit tests for the upec-wipe CLI argument-to-target mapping. No spawning,
  * no network, no filesystem - resolveCommand is a pure function.
  */
 
@@ -138,7 +138,7 @@ test('COMMANDS lists every public subcommand with a description', () => {
 
 test('buildHelp renders the program name and every subcommand', () => {
   const help = buildHelp();
-  assert.match(help, /aidr/);
+  assert.match(help, /upec-wipe/);
   for (const name of ['setup', 'run', 'preview', 'verify', 'score', 'report', 'breach', 'freeze', 'complaints', 'dashboard', 'doctor']) {
     assert.match(help, new RegExp(`\\b${name}\\b`), `help must mention ${name}`);
   }
