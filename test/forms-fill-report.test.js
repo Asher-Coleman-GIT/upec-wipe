@@ -148,3 +148,32 @@ test('a full state name fills a dropdown that lists codes', async () => {
   await fillForm(page, { '#state': 'Utah' });
   assert.deepEqual(chosen, ['UT']);
 });
+
+test('one filled field costs one visibility check and one evaluate before the fill', async () => {
+  const calls = [];
+  const el = {
+    first: () => el,
+    count: async () => { calls.push('count'); return 1; },
+    isVisible: async () => { calls.push('isVisible'); return true; },
+    evaluate: async (fn) => { calls.push('evaluate'); return fn({ tagName: 'INPUT', type: 'text' }); },
+    fill: async () => { calls.push('fill'); },
+  };
+  const page = { locator: () => el };
+  const r = await fillForm(page, { 'input[name="firstName"]': 'Jane' });
+  assert.equal(r.filled.length, 1);
+  assert.deepEqual(calls, ['isVisible', 'evaluate', 'fill']);
+});
+
+test('a field that is not on the page is reported missed without an evaluate', async () => {
+  const calls = [];
+  const el = {
+    first: () => el,
+    count: async () => { calls.push('count'); return 0; },
+    isVisible: async () => { calls.push('isVisible'); return false; },
+    evaluate: async () => { calls.push('evaluate'); throw new Error('no element'); },
+  };
+  const page = { locator: () => el, getByLabel: () => ({ count: async () => 0 }), evaluate: async () => null };
+  const r = await fillForm(page, { 'input[name="firstName"]': 'Jane' });
+  assert.deepEqual(r.missed, ['input[name="firstName"]']);
+  assert.ok(!calls.includes('evaluate'));
+});

@@ -154,7 +154,7 @@ test('Fix8: fillForm fills country select by label (full name) when label option
       first: () => ({
         count: async () => (sel.includes('country') ? 1 : 0),
         isVisible: async () => sel.includes('country'),
-        evaluate: async (fn) => sel.includes('country') ? 'select' : 'input',
+        evaluate: async (fn) => fn({ tagName: sel.includes('country') ? 'SELECT' : 'INPUT', type: '' }),
         selectOption: async (arg) => {
           selectOptionCalls.push(arg);
           // Simulate: {label: 'Canada'} succeeds (returns without throwing)
@@ -192,7 +192,7 @@ test('Fix8: fillForm falls back to country code when label option is not availab
       first: () => ({
         count: async () => (sel.includes('country') ? 1 : 0),
         isVisible: async () => sel.includes('country'),
-        evaluate: async (fn) => 'select',
+        evaluate: async (fn) => fn({ tagName: 'SELECT', type: '' }),
         selectOption: async (arg) => {
           selectOptionCalls.push(arg);
           // If arg is a label object, throw to simulate label not found
@@ -231,7 +231,7 @@ test('Fix8: fillForm logs a warning when a select cannot be matched', async () =
       first: () => ({
         count: async () => (sel.includes('country') ? 1 : 0),
         isVisible: async () => sel.includes('country'),
-        evaluate: async (fn) => 'select',
+        evaluate: async (fn) => fn({ tagName: 'SELECT', type: '' }),
         selectOption: async (arg) => {
           throw new Error('No matching option');
         },
