@@ -87,3 +87,37 @@ test('resolveMode: three modes together is a conflict', () => {
   const result = resolveMode({ list: true, score: true, report: true });
   assert.notEqual(result.conflict, null);
 });
+
+// ── pickMode: the one mode watcher.js runs for a set of parsed flags ──────────
+
+const { pickMode } = require('../lib/mode-dispatch');
+const { parseWatcherFlags } = require('../lib/cli-flags');
+const pick = (...args) => pickMode(parseWatcherFlags(['node', 'watcher.js', ...args]));
+
+test('pickMode: no mode flag is the opt-out run', () => {
+  assert.deepEqual(pick(), { mode: 'run', conflict: null });
+});
+
+test('pickMode: early read-only modes win before the conflict check', () => {
+  assert.equal(pick('--list', '--report').mode, 'list');
+  assert.equal(pick('--freeze', '--doctor').mode, 'freeze');
+});
+
+test('pickMode: later modes that conflict are refused', () => {
+  const r = pick('--doctor', '--report');
+  assert.equal(r.mode, null);
+  assert.match(r.conflict, /--report, --doctor|--doctor, --report/);
+});
+
+test('pickMode: each later mode by its flag', () => {
+  assert.equal(pick('--breach-check').mode, 'breach');
+  assert.equal(pick('--complaints').mode, 'complaints');
+  assert.equal(pick('--confirm-emails').mode, 'confirm-emails');
+  assert.equal(pick('--report').mode, 'report');
+  assert.equal(pick('doctor').mode, 'doctor');
+  assert.equal(pick('--update-brokers').mode, 'update-brokers');
+  assert.equal(pick('--know').mode, 'know');
+  assert.equal(pick('--reply', 'Pipl', 'honored').mode, 'reply');
+  assert.equal(pick('--allow', 'Spokeo').mode, 'allowlist');
+  assert.equal(pick('--encrypt-config').mode, 'encrypt-config');
+});
