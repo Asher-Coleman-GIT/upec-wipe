@@ -133,17 +133,19 @@ const DECLINE_COOKIE_SELECTORS = [
   'button[aria-label="Close"]',
 ];
 
+// One locator per list: a single browser round trip per page instead of a
+// count() and isVisible() per selector, about 500 times per pass. The first
+// visible match in document order wins.
+const DECLINE_COOKIE_LOCATOR = `${DECLINE_COOKIE_SELECTORS.join(', ')} >> visible=true`;
+
 async function dismissBanners(page) {
-  for (const sel of DECLINE_COOKIE_SELECTORS) {
-    try {
-      const el = page.locator(sel).first();
-      if ((await el.count()) > 0 && (await el.isVisible({ timeout: 500 }))) {
-        await el.click({ timeout: 1000 });
-        await page.waitForTimeout(500);
-        break;
-      }
-    } catch(_) {}
-  }
+  try {
+    const el = page.locator(DECLINE_COOKIE_LOCATOR).first();
+    if ((await el.count()) > 0) {
+      await el.click({ timeout: 1000 });
+      await page.waitForTimeout(500);
+    }
+  } catch (_) {}
 }
 
 // ─── Do Not Sell button detector ─────────────────────────────────────────────
@@ -161,17 +163,17 @@ const DNS_SELECTORS = [
   '.optanon-toggle-display',
 ];
 
+const DNS_LOCATOR = `${DNS_SELECTORS.join(', ')} >> visible=true`;
+
 async function clickDoNotSell(page) {
-  for (const sel of DNS_SELECTORS) {
-    try {
-      const el = page.locator(sel).first();
-      if ((await el.count()) > 0 && (await el.isVisible({ timeout: 500 }))) {
-        await el.click({ timeout: 2000 });
-        await page.waitForTimeout(1500);
-        return true;
-      }
-    } catch(_) {}
-  }
+  try {
+    const el = page.locator(DNS_LOCATOR).first();
+    if ((await el.count()) > 0) {
+      await el.click({ timeout: 2000 });
+      await page.waitForTimeout(1500);
+      return true;
+    }
+  } catch (_) {}
   return false;
 }
 
@@ -625,4 +627,4 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
   };
 }
 
-module.exports = { runGenericBrokers, loadGenericBrokers, processGenericUrl, classifyNavError, classifyOutcome, isDeadStatus, loadDeadSet, DEAD_URLS_PATH, _setConfig };
+module.exports = { runGenericBrokers, loadGenericBrokers, processGenericUrl, classifyNavError, classifyOutcome, isDeadStatus, loadDeadSet, DEAD_URLS_PATH, _setConfig, _dismissBanners: dismissBanners, _clickDoNotSell: clickDoNotSell };
