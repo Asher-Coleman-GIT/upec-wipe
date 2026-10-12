@@ -744,6 +744,8 @@ if (KNOW_MODE) {
       config, persons, state, save: saveState, brokers, preview: DRY_RUN,
       ...submissionOptions(plan), ...emailStepIo(),
     });
+    // Keeps an alias minted by buildSubmissionPlan even when nothing was sent.
+    saveState();
     const pending = getPendingKnowRequests(brokers, { olderThanDays: 45 });
     console.log(`\n${pending.length} earlier request(s) are past 45 days (run --know-status for detail).\n`);
     return code;
