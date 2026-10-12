@@ -19,7 +19,9 @@ test('every tracked catalog record validates', () => {
 test('no catalog record holds personal values; email addresses only in survey.contacts', () => {
   for (const f of files) {
     const rec = JSON.parse(fs.readFileSync(path.join(CATALOG_DIR, f), 'utf8'));
-    const text = JSON.stringify({ ...rec, survey: { ...(rec.survey || {}), contacts: [] } });
+    // review.to is an address by design; validateRecord pins it to survey.contacts.
+    const review = rec.review && rec.review.state === 'email' ? { ...rec.review, to: '' } : rec.review;
+    const text = JSON.stringify({ ...rec, survey: { ...(rec.survey || {}), contacts: [] }, review });
     // The review is written by hand: no person value at all. The survey is the
     // site's own text, where "Jane" or "Austin" occur by themselves (sample
     // placeholders, a company address), so it is held to the values only typing
