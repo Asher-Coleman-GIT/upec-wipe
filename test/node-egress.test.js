@@ -177,31 +177,6 @@ test('HIBP: failing gate means HIBP is never called', async () => {
   assert.equal(fetched, 0);
 });
 
-function stubNodemailer() {
-  const calls = { transports: 0, sent: 0 };
-  const origLoad = Module._load;
-  Module._load = function (request) {
-    if (request === 'nodemailer') {
-      return { createTransport: () => { calls.transports++; return { sendMail: async () => { calls.sent++; return {}; } }; } };
-    }
-    return origLoad.apply(this, arguments);
-  };
-  return { calls, restore: () => { Module._load = origLoad; } };
-}
-
-test('SMTP right-to-know: failing gate means sendMail is never called', async () => {
-  const { calls, restore } = stubNodemailer();
-  try {
-    const rtk = require('../lib/right-to-know-runner');
-    const config = { person: { firstName: 'A', lastName: 'B', email: 'p@example.com', country: 'US' }, email: { smtp: { host: 'h', port: 587, user: 'u', pass: 'p', from: 'u' } } };
-    failingGate(config);
-    await assert.rejects(() => rtk.sendKnowRequests([{ name: 'B', method: 'email', emailTo: 'x@broker.example' }], config, {}), EgressError);
-    assert.equal(calls.sent, 0);
-  } finally {
-    restore();
-  }
-});
-
 test('registries: failing gate means the registries are never fetched', async () => {
   const feeds = require('../lib/feeds');
   failingGate({});

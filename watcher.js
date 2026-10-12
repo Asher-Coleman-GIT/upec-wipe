@@ -39,6 +39,28 @@ const { setEgressConfig, ensureNodeEgress } = require('./lib/egress');
 const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
+// One line of input from the terminal.
+function askLine(question) {
+  return new Promise(resolve => {
+    const rl = require('readline').createInterface({ input: process.stdin, output: process.stdout });
+    rl.question(question, a => { rl.close(); resolve(a); });
+  });
+}
+
+// Terminal, transport and gate wiring shared by the --email and --know steps.
+function emailStepIo() {
+  const nodemailer = require('nodemailer');
+  const { smtpTransportOptions } = require('./lib/email');
+  return {
+    isTTY: !!process.stdin.isTTY,
+    ask: askLine,
+    log: (l) => console.log(l),
+    makeTransport: (smtp) => nodemailer.createTransport(smtpTransportOptions(smtp)),
+    ensureEgress: (cfg) => ensureNodeEgress(cfg, { fresh: true }),
+    sleep: (ms) => new Promise(r => setTimeout(r, ms)),
+  };
+}
+
 // Audit M1: noise mode filled its "bogus" forms with the real person's name and
 // alias and could mark real opt-outs done. It is disabled in this fork; refuse
 // before any config is read or any browser module is loaded.
@@ -701,7 +723,7 @@ const persons = getPersonsFromConfig(config);
 // recordKnowRequest -> saveState writes state.json.
 if (KNOW_MODE) {
   const brokers = require('./brokers');
-  const { sendKnowRequests } = require('./lib/right-to-know-runner');
+  const { runKnowStep } = require('./lib/right-to-know-runner');
   const { getPendingKnowRequests } = require('./lib/config');
   const KNOW_LOCK_PATH = STATE_PATH + '.lock';
   try {
@@ -713,37 +735,23 @@ if (KNOW_MODE) {
   }
 
   (async () => {
-    console.log('\nRight-to-know - requesting disclosure of held data from email brokers');
-    if (DRY_RUN) console.log('DRY RUN - previews only, nothing sent, no state saved.');
-    const emailBrokerCount = brokers.filter(b => b.method === 'email').length;
-    console.log(`${emailBrokerCount} email broker(s) x ${persons.length} person(s)\n`);
-
     const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
     for (const b of plan.blocked) {
       console.error(`Skipping person #${persons.indexOf(b.person) + 1}: ${b.reason}`);
     }
     if (plan.allowed.some(a => a.placeholder)) console.log(PREVIEW_ALIAS_NOTE);
-    const result = await sendKnowRequests(brokers, config, {
-      dryRun: DRY_RUN,
-      ...submissionOptions(plan),
+    const code = await runKnowStep({
+      config, persons, state, save: saveState, brokers, preview: DRY_RUN,
+      ...submissionOptions(plan), ...emailStepIo(),
     });
-    if (!DRY_RUN) saveState();
-
-    console.log('\n' + '='.repeat(54));
-    console.log('Right-to-know results - ' + new Date().toLocaleString());
-    console.log('='.repeat(54));
-    console.log(`  sent (SMTP) : ${result.sent.length}`);
-    console.log(`  manual      : ${result.manual.length}`);
-    console.log(`  errors      : ${result.errors.length}`);
-    for (const e of result.errors) console.log(`    - ${e.name}: ${e.error}`);
     const pending = getPendingKnowRequests(brokers, { olderThanDays: 45 });
-    console.log(`\n  ${pending.length} prior request(s) now past 45 days (run --know-status for detail).`);
-    console.log('='.repeat(54) + '\n');
-  })().then(() => {
-    lock.release(STATE_PATH + '.lock');
-    process.exit(0);
+    console.log(`\n${pending.length} earlier request(s) are past 45 days (run --know-status for detail).\n`);
+    return code;
+  })().then((code) => {
+    lock.release(KNOW_LOCK_PATH);
+    process.exit(code);
   }).catch(err => {
-    lock.release(STATE_PATH + '.lock');
+    lock.release(KNOW_LOCK_PATH);
     console.error('know error:', err.message);
     process.exit(1);
   });
@@ -837,21 +845,12 @@ async function _mainBody() {
   if (EMAIL) {
     const { runEmailStep } = require('./lib/email-step');
     const { catalogEmailTargets } = require('./lib/catalog');
-    const nodemailer = require('nodemailer');
-    const { smtpTransportOptions } = require('./lib/email');
-    const askLine = (q) => new Promise(resolve => {
-      const rl = require('readline').createInterface({ input: process.stdin, output: process.stdout });
-      rl.question(q, a => { rl.close(); resolve(a); });
-    });
     let code;
     try {
       code = await runEmailStep({
         config, persons, state, save: saveState,
         targets: catalogEmailTargets(catalogRecords, { explicitNames: explicitCatalogOpts.explicitNames }),
-        brokers, preview: DRY_RUN, isTTY: !!process.stdin.isTTY, ask: askLine, log: (l) => console.log(l),
-        makeTransport: (smtp) => nodemailer.createTransport(smtpTransportOptions(smtp)),
-        ensureEgress: (cfg) => ensureNodeEgress(cfg, { fresh: true }),
-        sleep: (ms) => new Promise(r => setTimeout(r, ms)),
+        brokers, preview: DRY_RUN, ...emailStepIo(),
       });
     } catch (err) {
       // Off the VPN: nothing was sent (the gate runs before the transport).

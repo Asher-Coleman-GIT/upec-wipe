@@ -8,16 +8,12 @@
  *
  * One shared helper (lib/email.js smtpTransportOptions) now builds the options:
  * requireTLS + TLS 1.2 minimum whenever secure is false, and TLS 1.2 minimum
- * on 465 too. Both send paths are checked with nodemailer stubbed.
+ * on 465 too. The shared email transport call is pinned in test/watcher-know-step.test.js.
  */
 'use strict';
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const Module = require('node:module');
-
-const configMod = require('../lib/config');
-const loggerMod = require('../lib/logger');
 
 const SMTP = { host: 'smtp.example.com', user: 'box@example.com', pass: 'pw', from: 'box@example.com' };
 
@@ -58,39 +54,4 @@ test('smtpTransportOptions: port 465 is implicit TLS with TLS 1.2 minimum', () =
     assert.equal(o.secure, true, String(port));
     assert.deepEqual(o.tls, { minVersion: 'TLSv1.2' });
   }
-});
-
-function withNodemailerStub(fn) {
-  const transports = [];
-  const origLoad = Module._load;
-  const orig = { rec: configMod.recordSuccess, log: loggerMod.logResult, last: configMod.lastOptOutDaysAgo, know: configMod.recordKnowRequest };
-  configMod.recordSuccess = () => {};
-  configMod.recordKnowRequest = () => {};
-  configMod.lastOptOutDaysAgo = () => 999;
-  loggerMod.logResult = () => {};
-  Module._load = function (request) {
-    if (request === 'nodemailer') {
-      return { createTransport: (opts) => { transports.push(opts); return { sendMail: async () => ({ messageId: 'x' }) }; } };
-    }
-    return origLoad.apply(this, arguments);
-  };
-  const restore = () => {
-    Module._load = origLoad;
-    configMod.recordSuccess = orig.rec;
-    configMod.recordKnowRequest = orig.know;
-    configMod.lastOptOutDaysAgo = orig.last;
-    loggerMod.logResult = orig.log;
-  };
-  return Promise.resolve().then(() => fn(transports)).finally(restore);
-}
-
-test('right-to-know path builds its transport with requireTLS', async () => {
-  await withNodemailerStub(async (transports) => {
-    const rtk = require('../lib/right-to-know-runner');
-    await rtk._sendViaSMTP({ name: 'B', emailTo: 'privacy@broker.example' },
-      { subject: 's', body: 'b' }, { ...SMTP, port: 587 });
-    assert.equal(transports.length, 1);
-    assert.equal(transports[0].requireTLS, true);
-    assert.equal(transports[0].tls.minVersion, 'TLSv1.2');
-  });
 });
