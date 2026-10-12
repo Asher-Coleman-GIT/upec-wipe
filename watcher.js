@@ -39,6 +39,19 @@ const { setEgressConfig, ensureNodeEgress } = require('./lib/egress');
 const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
+// One process at a time writes state.json. Exits 1 naming the holder's pid.
+function acquireStateLockOrExit() {
+  const lockPath = STATE_PATH + '.lock';
+  try {
+    lock.acquire(lockPath);
+  } catch (err) {
+    const pidMatch = err.message.match(/pid (\d+)/);
+    console.error(`Another instance is running, pid=${pidMatch ? pidMatch[1] : '?'}. Exiting.`);
+    process.exit(1);
+  }
+  return lockPath;
+}
+
 // One line of input from the terminal.
 function askLine(question) {
   return new Promise(resolve => {
@@ -153,13 +166,7 @@ if (FREEZE_MODE) {
   const isMutation = FREEZE_DONE_KEY !== null || FREEZE_CLEAR_KEY !== null;
   const FREEZE_LOCK_PATH = STATE_PATH + '.lock';
   if (isMutation) {
-    try {
-      lock.acquire(FREEZE_LOCK_PATH);
-    } catch (err) {
-      const pidMatch = err.message.match(/pid (\d+)/);
-      console.error(`Another instance is running, pid=${pidMatch ? pidMatch[1] : '?'}. Exiting.`);
-      process.exit(1);
-    }
+    acquireStateLockOrExit();
   }
 
   try {
@@ -242,8 +249,9 @@ if (LIST_MODE) {
     const last   = entry && entry.lastSuccess ? entry.lastSuccess.slice(0, 10) : '-';
     console.log(pad(b.name, 40) + pad(status, 18) + last);
   }
-  const { loadCatalog, catalogSummary } = require('./lib/catalog');
-  const catalog = catalogSummary(loadCatalog());
+  const { loadCatalog, catalogSummary, catalogEmailTargets } = require('./lib/catalog');
+  const catalogRecords = loadCatalog();
+  const catalog = catalogSummary(catalogRecords);
   if (catalog.length) {
     console.log(`\nCatalog sites (${catalog.length})`);
     console.log('-'.repeat(80));
@@ -253,9 +261,8 @@ if (LIST_MODE) {
       console.log(pad(c.name, 40) + pad(c.state + (c.reviewedAt ? ` ${c.reviewedAt}` : ''), 28) + last);
     }
   }
-  const { catalogEmailTargets } = require('./lib/catalog');
   const emailNames = [
-    ...catalogEmailTargets(loadCatalog(), { explicitNames: new Set(brokers.map(b => b.name.toLowerCase())) }).map(t => t.name),
+    ...catalogEmailTargets(catalogRecords, { explicitNames: new Set(brokers.map(b => b.name.toLowerCase())) }).map(t => t.name),
     ...brokers.filter(b => b.method === 'email').map(b => b.name),
   ];
   if (emailNames.length) {
@@ -289,10 +296,16 @@ if (process.argv.includes('--reply')) {
   ];
   const found = findEmailTarget(names, query);
   if (found.error) { console.error(found.error); process.exit(2); }
-  const st = loadState();
-  const keys = Object.keys(st.emailSent || {}).filter(k => k === found.name || k.startsWith(`${found.name}|`));
-  for (const key of (keys.length ? keys : [found.name])) recordReply(st, key, outcome);
-  saveState();
+  const replyLock = acquireStateLockOrExit();
+  try {
+    // Reload under the lock: a run may have written state since this process started.
+    const st = require('./lib/config').resetState();
+    const keys = Object.keys(st.emailSent || {}).filter(k => k === found.name || k.startsWith(`${found.name}|`));
+    for (const key of (keys.length ? keys : [found.name])) recordReply(st, key, outcome);
+    saveState();
+  } finally {
+    lock.release(replyLock);
+  }
   console.log(`${found.name}: reply logged as ${outcome}.`);
   process.exit(0);
 }
@@ -551,13 +564,7 @@ if (CONFIRM_EMAILS) {
   // Acquire the same process lock as main() - processConfirmationEmails calls
   // recordSuccess -> saveState, so it must not race a concurrent normal run.
   const CONFIRM_LOCK_PATH = STATE_PATH + '.lock';
-  try {
-    lock.acquire(CONFIRM_LOCK_PATH);
-  } catch (err) {
-    const pidMatch = err.message.match(/pid (\d+)/);
-    console.error(`Another instance is running, pid=${pidMatch ? pidMatch[1] : '?'}. Exiting.`);
-    process.exit(1);
-  }
+  acquireStateLockOrExit();
 
   // Ctrl+C / SIGTERM: close the browser (deletes the throwaway profile) and
   // release the lock before exiting 130/143.
@@ -625,13 +632,7 @@ chromiumForReport = loadChromium();
 const reportConfig = loadConfig();
 
 const REPORT_LOCK_PATH = STATE_PATH + '.lock';
-try {
-  lock.acquire(REPORT_LOCK_PATH);
-} catch (err) {
-  const pidMatch = err.message.match(/pid (\d+)/);
-  console.error(`Another instance is running, pid=${pidMatch ? pidMatch[1] : '?'}. Exiting.`);
-  process.exit(1);
-}
+acquireStateLockOrExit();
 
 (async () => {
   const state = loadState();
@@ -729,13 +730,7 @@ if (KNOW_MODE) {
   const { runKnowStep } = require('./lib/right-to-know-runner');
   const { getPendingKnowRequests } = require('./lib/config');
   const KNOW_LOCK_PATH = STATE_PATH + '.lock';
-  try {
-    lock.acquire(KNOW_LOCK_PATH);
-  } catch (err) {
-    const pidMatch = err.message.match(/pid (\d+)/);
-    console.error(`Another instance is running, pid=${pidMatch ? pidMatch[1] : '?'}. Exiting.`);
-    process.exit(1);
-  }
+  acquireStateLockOrExit();
 
   (async () => {
     const plan = await buildSubmissionPlan({ config, persons, state, preview: DRY_RUN });
@@ -805,14 +800,7 @@ let mainProfile = null; // throwaway profile, known before the browser finishes 
 
 async function main() {
   // Acquire process lock to prevent concurrent runs racing on state.json
-  try {
-    lock.acquire(LOCK_PATH);
-  } catch (err) {
-    const pidMatch = err.message.match(/pid (\d+)/);
-    const pid = pidMatch ? pidMatch[1] : '?';
-    console.error(`Another instance is running, pid=${pid}. Exiting.`);
-    process.exit(1);
-  }
+  acquireStateLockOrExit();
 
   // Ctrl+C / SIGTERM mid-run: close the session (deletes the throwaway
   // profile) and release the lock before exiting 130/143.
