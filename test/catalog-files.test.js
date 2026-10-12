@@ -10,6 +10,7 @@ const files = fs.existsSync(CATALOG_DIR) ? fs.readdirSync(CATALOG_DIR).filter(f 
 const example = require('../config.example.json');
 const person = example.person || (example.persons || [])[0] || {};
 const pii = ['firstName', 'lastName', 'city', 'zip', 'phone', 'email', 'dob'].map(k => person[k]).filter(v => typeof v === 'string' && v.length >= 4);
+const typedOnly = ['zip', 'phone', 'email'].map(k => person[k]).filter(v => typeof v === 'string' && v.length >= 4);
 
 test('every tracked catalog record validates', () => {
   for (const f of files) assert.equal(validateRecord(JSON.parse(fs.readFileSync(path.join(CATALOG_DIR, f), 'utf8')), f), null, f);
@@ -19,7 +20,13 @@ test('no catalog record holds personal values; email addresses only in survey.co
   for (const f of files) {
     const rec = JSON.parse(fs.readFileSync(path.join(CATALOG_DIR, f), 'utf8'));
     const text = JSON.stringify({ ...rec, survey: { ...(rec.survey || {}), contacts: [] } });
-    for (const v of pii) assert.ok(!text.includes(v), `${f} contains a config.example.json person value`);
+    // The review is written by hand: no person value at all. The survey is the
+    // site's own text, where "Jane" or "Austin" occur by themselves (sample
+    // placeholders, a company address), so it is held to the values only typing
+    // could put there.
+    const reviewText = JSON.stringify(rec.review || {});
+    for (const v of pii) assert.ok(!reviewText.includes(v), `${f} review contains a config.example.json person value`);
+    for (const v of typedOnly) assert.ok(!text.includes(v), `${f} contains a config.example.json person value`);
     assert.doesNotMatch(text, /[\w.+-]+@[\w-]+\.[\w.-]+/, `${f} has an email address outside survey.contacts`);
   }
 });

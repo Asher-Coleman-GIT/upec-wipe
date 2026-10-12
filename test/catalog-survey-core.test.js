@@ -78,3 +78,17 @@ test('writeRecordAtomic writes the whole record and leaves no temp file', () => 
   assert.deepEqual(JSON.parse(fs.readFileSync(p, 'utf8')), { domain: 'acme.com', name: 'Acme' });
   assert.deepEqual(fs.readdirSync(dir), ['acme.com.json']);
 });
+
+test('mergeSurvey keeps email addresses out of everything but contacts', () => {
+  const rec = core.mergeSurvey(null, { domain: 'x.com', name: 'X', contacts: [] }, {
+    group: 'business', title: 'Write to help@x.com',
+    controls: [C({ type: 'email', placeholder: 'you@example.com', label: 'Email (name@address.com)', options: ['a@b.co=a@b.co'] })],
+    buttons: [{ text: 'Send to jane@company.com', inForm: true }],
+    contacts: ['privacy@x.com'],
+  });
+  const { contacts, ...rest } = rec.survey;
+  assert.deepEqual(contacts, ['privacy@x.com']);
+  assert.doesNotMatch(JSON.stringify(rest), /[\w.+-]+@[\w-]+\.[\w.-]+/);
+  assert.equal(rest.controls[0].placeholder, '[email]');
+  assert.equal(rest.controls[0].type, 'email');
+});
