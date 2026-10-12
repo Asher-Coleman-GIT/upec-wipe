@@ -23,7 +23,7 @@ function deps(over = {}) {
 test('SEND sends after the egress gate', async () => {
   const { d, out } = deps();
   assert.equal(await runEmailStep(d), 0);
-  assert.equal(out.egress, 1);
+  assert.equal(out.egress, 2); // once before the transport opens, once before the send
   assert.equal(out.sent.length, 1);
   assert.match(out.lines.join('\n'), /Utah residents\./);
 });

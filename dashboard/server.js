@@ -483,15 +483,16 @@ app.get('/api/brokers', (_req, res) => {
     const { loadCatalog, catalogSummary, catalogEmailTargets } = require('../lib/catalog');
     const records = loadCatalog(undefined, () => {});
     const st = readJsonSafe(STATE, { optOuts: {} }) || {};
-    const emailName = new Map(catalogEmailTargets(records).map(t => [t.domain, t.name]));
+    const { emailStatus } = require('../lib/email-step');
+    const explicitNames = new Set(loadBrokers().map(b => String(b.name).toLowerCase()));
+    const emailName = new Map(catalogEmailTargets(records, { explicitNames }).map(t => [t.domain, t.name]));
     for (const c of catalogSummary(records)) {
       if (c.state === 'unreviewed' || c.state === 'excluded') continue;
       let note = null;
       if (c.state === 'email') {
         const n = emailName.get(c.domain);
-        const sent = (st.emailSent || {})[n];
-        const reply = (st.emailReplies || {})[n];
-        note = sent ? `email sent ${String(sent.at).slice(0, 10)}${reply ? `, reply: ${reply.outcome}` : ''}` : 'email not sent yet';
+        const { status, reply } = emailStatus(st, n);
+        note = `email ${status}${reply ? `, reply: ${reply}` : ''}`;
       }
       list.push({ name: c.name, method: `catalog (${c.state})`, priority: 5, usOnly: true, captchaLikely: false,
         confidence: c.reviewedAt ? `reviewed ${c.reviewedAt}` : null, optOutUrl: c.optOutUrl, note, source: 'catalog' });

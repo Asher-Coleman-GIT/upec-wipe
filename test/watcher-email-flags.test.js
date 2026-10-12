@@ -20,3 +20,14 @@ test('the forms run no longer sends email', () => {
 test('--email alone returns before the browser opens', () => {
   assert.match(src, /if \(!FORMS\) return;/);
 });
+
+test('each send re-runs the egress check instead of reusing the cached result', () => {
+  assert.match(src, /ensureEgress: async \(cfg\) => \{ _resetNodeEgress\(\); return ensureNodeEgress\(cfg\); \}/);
+});
+
+test('--list and the dashboard read email status through emailStatus (multi-person keys)', () => {
+  assert.match(src, /emailStatus\(state, n\)/);
+  const dash = fs.readFileSync(path.join(__dirname, '..', 'dashboard', 'server.js'), 'utf8');
+  assert.match(dash, /emailStatus\(st, n\)/);
+  assert.match(dash, /catalogEmailTargets\(records, \{ explicitNames/);
+});

@@ -35,7 +35,7 @@ const { resolveHeadless, isLowMemory } = require('./lib/browser');
 const { openBrowserSession, EgressError } = require('./lib/browser-session');
 // Node-direct calls (SimpleLogin, CapSolver, HIBP, SMTP, registries) are gated
 // by lib/egress ensureNodeEgress, which reads the config given here (audit M7).
-const { setEgressConfig, ensureNodeEgress } = require('./lib/egress');
+const { setEgressConfig, ensureNodeEgress, _resetNodeEgress } = require('./lib/egress');
 const { installSignalCleanup } = require('./lib/shutdown');
 require('./lib/privilege').exitIfRoot();
 
@@ -239,11 +239,10 @@ if (LIST_MODE) {
   if (emailNames.length) {
     console.log(`\nEmail requests (${emailNames.length})`);
     console.log('-'.repeat(80));
+    const { emailStatus } = require('./lib/email-step');
     for (const n of emailNames) {
-      const sent = (state.emailSent || {})[n];
-      const reply = (state.emailReplies || {})[n];
-      const status = !sent ? 'not sent' : sent.status === 'unknown' ? 'unknown' : `sent ${String(sent.at).slice(0, 10)}`;
-      console.log(pad(n, 40) + pad(status, 18) + (reply ? `${reply.outcome} ${String(reply.at).slice(0, 10)}` : '-'));
+      const { status, reply } = emailStatus(state, n);
+      console.log(pad(n, 40) + pad(status, 18) + (reply || '-'));
     }
   }
   console.log('');
@@ -849,7 +848,7 @@ async function _mainBody() {
         targets: catalogEmailTargets(catalogRecords, { explicitNames: explicitCatalogOpts.explicitNames }),
         brokers, preview: DRY_RUN, isTTY: !!process.stdin.isTTY, ask: askLine, log: (l) => console.log(l),
         makeTransport: (smtp) => nodemailer.createTransport(smtpTransportOptions(smtp)),
-        ensureEgress: ensureNodeEgress, sleep: (ms) => new Promise(r => setTimeout(r, ms)),
+        ensureEgress: async (cfg) => { _resetNodeEgress(); return ensureNodeEgress(cfg); }, sleep: (ms) => new Promise(r => setTimeout(r, ms)),
       });
     } catch (err) {
       // Off the VPN: nothing was sent (the gate runs before the transport).
