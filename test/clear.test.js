@@ -1,0 +1,111 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+
+// A temp repo root and home holding dummy files. Nothing here is real data.
+function sandbox() {
+  const base = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-clear-'));
+  const root = path.join(base, 'repo');
+  const home = path.join(base, 'home');
+  fs.mkdirSync(path.join(root, 'data', 'catalog'), { recursive: true });
+  fs.mkdirSync(path.join(home, '.config', 'upec-wipe'), { recursive: true });
+  const put = (rel, body = '{"person":{"firstName":"Jane"}}', at = root) => {
+    fs.mkdirSync(path.dirname(path.join(at, rel)), { recursive: true });
+    fs.writeFileSync(path.join(at, rel), body);
+  };
+  return { base, root, home, put, cleanup: () => fs.rmSync(base, { recursive: true, force: true }) };
+}
+
+const { planClear, describePlan } = require('../lib/modes/clear');
+
+test('clear plans the config files and the default passphrase only', () => {
+  const s = sandbox();
+  try {
+    s.put('config.json'); s.put('config.json.enc'); s.put('state.json'); s.put('logs/run-1.json');
+    s.put('.config/upec-wipe/passphrase', 'x', s.home);
+    const p = planClear({ all: false, root: s.root, home: s.home, env: {} });
+    assert.deepEqual(p.remove, [
+      path.join(s.root, 'config.json'),
+      path.join(s.root, 'config.json.enc'),
+      path.join(s.home, '.config', 'upec-wipe', 'passphrase'),
+    ]);
+    assert.deepEqual(p.keep, []);
+    assert.equal(p.lockPath, path.join(s.root, 'state.json.lock'));
+  } finally { s.cleanup(); }
+});
+
+test('clear-all adds state, logs, serp files and leftovers; never repo files', () => {
+  const s = sandbox();
+  try {
+    for (const f of ['config.json', 'state.json', 'state.json.bak', 'state.json.tmp', 'state.json.checkpoint',
+      'state.json.checkpoint.tmp', 'logs/run-1.json', 'logs/snapshots/a.png', 'data/serp-history.json', 'data/.serp-key',
+      'data/exposure-history.json', 'data/exposure-history.json.bak', 'inbox/confirms/a.eml',
+      'data/catalog/example.com.json', 'data/feeds-brokers.json', 'data/dead-urls.json']) s.put(f);
+    const p = planClear({ all: true, root: s.root, home: s.home, env: {} });
+    const rel = p.remove.map(f => path.relative(s.root, f));
+    assert.deepEqual(rel, ['config.json', 'state.json', 'state.json.bak', 'state.json.tmp', 'state.json.checkpoint',
+      'state.json.checkpoint.tmp', 'logs', 'data/serp-history.json', 'data/.serp-key',
+      'data/exposure-history.json', 'data/exposure-history.json.bak', 'inbox']);
+  } finally { s.cleanup(); }
+});
+
+test('missing paths are left out, and nothing at all gives an empty plan', () => {
+  const s = sandbox();
+  try {
+    const p = planClear({ all: true, root: s.root, home: s.home, env: {} });
+    assert.deepEqual(p.remove, []);
+  } finally { s.cleanup(); }
+});
+
+test('a custom passphrase file is kept, not removed', () => {
+  const s = sandbox();
+  try {
+    const custom = path.join(s.base, 'vault', 'pp');
+    fs.mkdirSync(path.dirname(custom), { recursive: true }); fs.writeFileSync(custom, 'x');
+    const p = planClear({ all: false, root: s.root, home: s.home, env: { UPEC_WIPE_PASSPHRASE_FILE: custom } });
+    assert.deepEqual(p.remove, []);
+    assert.deepEqual(p.keep, [{ path: custom, reason: 'set by UPEC_WIPE_PASSPHRASE_FILE: delete it yourself if you no longer need it' }]);
+  } finally { s.cleanup(); }
+});
+
+test('UPEC_WIPE_STATE_PATH and UPEC_WIPE_SERP_KEY_PATH are honoured', () => {
+  const s = sandbox();
+  try {
+    const st = path.join(s.base, 'elsewhere', 'state.json');
+    const key = path.join(s.base, 'elsewhere', 'serp.key');
+    fs.mkdirSync(path.dirname(st), { recursive: true });
+    fs.writeFileSync(st, '{}'); fs.writeFileSync(st + '.bak', '{}'); fs.writeFileSync(key, 'k');
+    s.put('state.json');
+    const p = planClear({ all: true, root: s.root, home: s.home, env: { UPEC_WIPE_STATE_PATH: st, UPEC_WIPE_SERP_KEY_PATH: key } });
+    assert.ok(p.remove.includes(st) && p.remove.includes(st + '.bak') && p.remove.includes(key));
+    assert.equal(p.remove.includes(path.join(s.root, 'state.json')), false);
+    assert.equal(p.lockPath, st + '.lock');
+  } finally { s.cleanup(); }
+});
+
+test('a symlinked logs folder is listed as the link', () => {
+  const s = sandbox();
+  try {
+    const target = path.join(s.base, 'otherdisk');
+    fs.mkdirSync(target); fs.writeFileSync(path.join(target, 'keep.txt'), 'x');
+    fs.symlinkSync(target, path.join(s.root, 'logs'), 'dir');
+    const p = planClear({ all: true, root: s.root, home: s.home, env: {} });
+    assert.ok(p.remove.includes(path.join(s.root, 'logs')));
+  } finally { s.cleanup(); }
+});
+
+test('describePlan shows sizes, file counts and kept entries', () => {
+  const s = sandbox();
+  try {
+    s.put('config.json', 'abcd'); s.put('logs/a.json', 'ab'); s.put('logs/b.json', 'ab');
+    const p = planClear({ all: true, root: s.root, home: s.home, env: {} });
+    p.keep.push({ path: '/x/pp', reason: 'why' });
+    const lines = describePlan(p);
+    assert.match(lines[0], /config\.json  \(4 B\)$/);
+    assert.match(lines[1], /logs  \(4 B, 2 files\)$/);
+    assert.equal(lines[2], '  /x/pp  kept (why)');
+  } finally { s.cleanup(); }
+});
