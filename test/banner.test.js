@@ -81,3 +81,20 @@ test('help keeps the description line, drops the repeated title and the examples
   assert.doesNotMatch(help, /Web Identity Purge Engine\) -/);
   assert.doesNotMatch(help, /^Examples:/m);
 });
+
+const WORKFLOW = ['setup', 'doctor', 'preview', 'run', 'pending', 'reply', 'verify', 'list', 'serp-watch', 'catalog-check', 'clear', 'clear-all'];
+
+test('help lists the commands in workflow order', () => {
+  const { buildHelp } = require('../lib/cli-map');
+  const listed = buildHelp().split('\n').map(l => (l.match(/^  ([a-z-]+)\s{2,}/) || [])[1]).filter(Boolean);
+  assert.deepEqual(listed, WORKFLOW);
+});
+
+test('the README and the manual list the commands in the same order', () => {
+  for (const f of ['README.md', 'docs/UPEC-MANUAL.md']) {
+    const rows = fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n')
+      .map(l => (l.match(/^\| `([a-z-]+)(?: --email)?` \|/) || [])[1]).filter(Boolean);
+    const order = rows.filter((c, i) => WORKFLOW.includes(c) && rows.indexOf(c) === i);
+    assert.deepEqual(order, WORKFLOW, f);
+  }
+});

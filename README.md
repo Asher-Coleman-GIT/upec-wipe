@@ -49,17 +49,17 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | Command | What it does |
 | --- | --- |
 | `setup` | Interactive first-run setup (creates `config.json`) |
-| `clear` | Deletes your setup (config and passphrase); keeps history |
-| `clear-all` | Deletes everything UPEC-WIPE saved on this computer |
 | `doctor` | Checks your environment and configuration |
 | `preview` | Dry run: fills forms but submits nothing (`--email`: shows the emails, sends nothing) |
 | `run` | The opt-out pass: web forms by default (`--forms`); `--email` sends the email requests |
-| `reply` | Logs a broker's reply to an email request |
 | `pending` | Lists brokers awaiting an email-confirmation click |
+| `reply` | Logs a broker's reply to an email request |
 | `verify` | Re-searches brokers and reports whether you still appear |
 | `list` | Lists brokers, catalog sites and email requests with their last status |
 | `serp-watch` | Searches for your name on search engines and lists new domains since last time |
 | `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
+| `clear` | Deletes your setup (config and passphrase); keeps history |
+| `clear-all` | Deletes everything UPEC-WIPE saved on this computer |
 
 Retired commands and why: [docs/REFERENCE.md](docs/REFERENCE.md#retired-commands).
 

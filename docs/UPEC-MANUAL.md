@@ -341,17 +341,18 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | Command | What it does | Sends |
 | --- | --- | --- |
 | `setup` | Asks for your details and writes `config.json`. | Nothing. |
-| `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
-| `clear-all` | Deletes everything UPEC-WIPE saved on this computer. | Nothing. |
 | `doctor` | Checks your setup, including that SimpleLogin accepts your key. | After the network check passes: a connection to your SMTP host, one request to CapSolver, and one read-only request to SimpleLogin with your key (it creates no alias). |
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
 | `run` | The real opt-out pass: fills web forms (the same as `run --forms`). Never sends email. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. |
 | `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
-| `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
+| `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, catalog sites and email requests with their last status. | Nothing. |
 | `serp-watch` | Searches DuckDuckGo, Bing and Google for your name and lists sites where it is new since last time. | `"<your full name>" "<city>, <state>"` to those search engines. |
+| `catalog-check` | Re-reads the opt-out pages of reviewed catalog sites and flags any that changed (those then run as manual until reviewed again). Read-only. | Nothing about you: it opens those pages through the Mullvad check. |
+| `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
+| `clear-all` | Deletes everything UPEC-WIPE saved on this computer. | Nothing. |
 
 Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time) and `--no-capsolver` (treat CAPTCHA brokers as manual). `upec-wipe list` also lists the reviewed catalog sites and when each was checked. `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
 
