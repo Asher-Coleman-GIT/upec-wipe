@@ -63,7 +63,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `breach` | Checks Have I Been Pwned (sends your real email there; asks for YES first) |
 | `freeze` | Shows the credit and identity freeze checklist |
 | `serp` / `serp-watch` | Searches for your name on search engines / lists new domains since last time |
-| `update-brokers` | Refreshes the broker list from the California and Vermont registries |
+| `update-brokers` | Refreshes the catalog candidate sources from the California and Vermont registries |
 | `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
 | `dashboard` | Starts the local web dashboard and prints its URL and login |
 

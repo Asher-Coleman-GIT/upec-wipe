@@ -105,7 +105,7 @@ Catalog sites run after the explicit brokers, with the same checks and status wo
 
 ### Retired: the generic pass
 
-Earlier versions had an opt-in heuristic pass over about 500 sites from The Markup, BADBOOL and the state registries (`--generic`). The reviewed catalog now covers those lists, and the pass matched sites by their opt-out page's host rather than the broker's own domain, so it re-submitted to brokers the catalog handles or excludes. It was retired on 2026-10-13. `--generic`, or `generic.enabled: true` in `config.json`, now stops with "The generic pass was retired" and sends nothing; remove the flag or the `generic` block. The source lists stay as catalog inputs.
+Earlier versions had an opt-in heuristic pass over about 500 sites from The Markup, BADBOOL and the state registries (`--generic`). The reviewed catalog now covers those lists, and the pass matched sites by their opt-out page's host rather than the broker's own domain, so it re-submitted to brokers the catalog handles or excludes. It was retired on 2026-10-13. `--generic`, or `generic.enabled: true` in `config.json`, now stops with "The generic pass was retired" and sends nothing; remove the flag or the `generic` block. With an encrypted config, run `node watcher.js --decrypt-config`, remove the block, then `node watcher.js --encrypt-config`. The source lists stay as catalog inputs.
 
 ### Manual only
 

@@ -343,7 +343,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `breach` | Checks Have I Been Pwned for breaches. Needs `hibp.apiKey` and an interactive terminal; it asks you to type YES first. | **Your real email** to haveibeenpwned.com. |
 | `serp` | Searches DuckDuckGo, Bing and Google for your name. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `serp-watch` | Like `serp`, and lists sites where your name is new since last time. | Same as `serp`. |
-| `update-brokers` | Refreshes the extra broker list from the California and Vermont registries. | Nothing about you. |
+| `update-brokers` | Refreshes the catalog candidate sources from the California and Vermont registries. | Nothing about you. |
 | `dashboard` | Starts the local web page. | Nothing. Runs started from it send what the command would. |
 
 Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time) and `--no-capsolver` (treat CAPTCHA brokers as manual). `upec-wipe list` also lists the reviewed catalog sites and when each was checked. `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
