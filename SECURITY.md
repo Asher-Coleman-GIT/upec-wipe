@@ -19,7 +19,7 @@ one person, so please be patient rather than escalating publicly.
 This is not an ordinary utility. `config.json` contains:
 
 - legal name, home address, phone number, date of birth, email address
-- optionally: an SMTP password, a CapSolver API key, a SimpleLogin relay key, and per-broker site credentials
+- optionally: an SMTP app password for the dedicated mailbox, a CapSolver API key and a SimpleLogin relay key
 
 `state.json` contains the complete record of which brokers you have contacted and
 when. That record is itself sensitive: it is a list of sites that hold data about
@@ -27,7 +27,7 @@ you.
 
 So the bugs that matter most here are the ones that:
 
-1. Move PII somewhere unintended - a log, a snapshot, a report, an error message,
+1. Move PII somewhere unintended - a log, an error message, an email,
    another local user via file permissions, a third-party site chosen by a remote
    registry rather than by you, or the wrong form field.
 2. Submit one person's PII under another person's opt-out request.
@@ -42,7 +42,7 @@ attacker at all.
 
 - Anything in the three categories above
 - Command or argument injection through config values, feed data, or email content
-- SSRF via a URL that came from a remote broker registry or a confirmation email
+- SSRF via a URL that came from a remote broker registry or a catalog record
 - Weaknesses in the at-rest encryption (`lib/secrets.js`)
 - Secrets leaking to stdout, `ps` or logs
 
@@ -60,7 +60,8 @@ attacker at all.
 ## Hardening you should actually do
 
 ```bash
-# 1. Encrypt the config at rest. Needs UPEC_WIPE_PASSPHRASE set when running.
+# 1. Encrypt the config at rest. The passphrase lives in
+#    ~/.config/upec-wipe/passphrase (mode 600) or UPEC_WIPE_PASSPHRASE_FILE.
 node watcher.js --encrypt-config
 
 # 2. Confirm the PII files are owner-only. The tool writes 0600, but a file you

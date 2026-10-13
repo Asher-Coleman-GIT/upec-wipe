@@ -6,10 +6,10 @@ lets each removal request go out under a per-person alias you control, which
 you can disable later if a broker abuses it.
 
 When `config.relay` is set, the tool resolves one alias per person, caches it in
-`state.json` under `relayAliases`, and uses it for both form-based and
-email-based opt-outs. Without a working relay, nothing is submitted. Only
-`"required": false` in the `relay` block lets forms and emails get your real
-email instead.
+`state.json` under `relayAliases`, and puts it in every form's email field.
+Without a working relay, nothing is submitted. Only `"required": false` in the
+`relay` block lets forms get your real email instead. Email requests
+(`run --email`) do not use the alias: they come from your dedicated mailbox.
 
 ## SimpleLogin (automated, via API)
 
@@ -51,7 +51,8 @@ Apple has no public alias-creation API, so this is manual:
 2. Label it (e.g. "data-broker opt-outs") and copy the generated
    `@icloud.com` alias.
 3. Paste it into `config.person.email` in `config.json`.
-4. Leave `config.relay` unset so the tool uses that email directly.
+4. Set `"relay": { "required": false }` so the tool uses that email directly
+   (with no relay at all, nothing is submitted).
 
 ## Firefox Relay (manual fallback)
 
@@ -60,12 +61,12 @@ Firefox Relay's alias API is not integrated here, so this is manual:
 1. Sign in at https://relay.firefox.com and create a new mask.
 2. Copy the generated `@mozmail.com` alias.
 3. Paste it into `config.person.email` in `config.json`.
-4. Leave `config.relay` unset.
+4. Set `"relay": { "required": false }`, as for Apple above.
 
 ## Notes
 
 - Aliases are cached per person in `state.json` (`relayAliases` keyed by the
   person's lowercased email). Delete that key to force a fresh alias.
-- The alias is used in form email fields, in the email body, and as the
-  `Reply-To` on email-method submissions, so broker confirmations route back to
-  the alias inbox.
+- The alias is used in form email fields, so broker confirmations from forms
+  route back to the alias inbox. Email requests use the dedicated mailbox as
+  both `From` and `Reply-To`, so their replies arrive there.

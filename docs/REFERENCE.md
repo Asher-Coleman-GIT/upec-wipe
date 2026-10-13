@@ -169,13 +169,13 @@ The `Dockerfile` uses the official Playwright image, so Chromium and its system 
 # Build the image (once)
 docker build -t upec-wipe .
 
-# Dry run: checks reachability and fills forms, submits nothing
+# Preview: checks reachability and fills forms, submits nothing
 docker run --rm --init \
   -v "$(pwd)/config.json:/app/config.json" \
   -v "$(pwd)/state.json:/app/state.json" \
   -v "$(pwd)/logs:/app/logs" \
   -e TZ="$(date +%Z)" \
-  upec-wipe node watcher.js --dry-run
+  upec-wipe node watcher.js --preview
 
 # Full run
 docker run --rm --init \
@@ -186,11 +186,11 @@ docker run --rm --init \
   upec-wipe
 ```
 
-Or with compose: `docker compose run --rm watcher node watcher.js --dry-run`.
+Or with compose: `docker compose run --rm watcher node watcher.js --preview`.
 
 - **Create `state.json` before the first run** (`touch state.json`). If the path does not exist, Docker creates a directory there and the run fails with `EISDIR`.
 - **Use `--init`.** Without it node is PID 1, `docker stop` cannot reap the Chromium children, and the state lock is left behind.
-- **Set `TZ`.** Containers are UTC; without it report timestamps are in the wrong hour.
+- **Set `TZ`.** Containers are UTC; without it log timestamps are in the wrong hour.
 - **Prefer mounting a directory over single files.** `rename()` onto a single-file bind mount fails with `EBUSY`. A fallback keeps state working, but it gives up crash safety. To keep it, mount a directory:
 
   ```bash
@@ -297,7 +297,7 @@ What still leaks, and to whom, is in [THREAT-MODEL.md](THREAT-MODEL.md) and [PRI
 
 ## California DROP portal
 
-California's Delete Request and Opt-out Platform (DROP), from SB 362, is meant to let residents send one deletion request that every California-registered broker must honor. It is run by the California Privacy Protection Agency; the broker compliance deadline in SB 362 is August 1, 2026, and litigation may delay it. See https://cppa.ca.gov/data_broker_registry/. Until it is live for you, this tool's per-broker requests are the fallback.
+California's Delete Request and Opt-out Platform (DROP), from SB 362, is meant to let residents send one deletion request that every California-registered broker must honor. It is run by the California Privacy Protection Agency and is for California residents only. SB 362 required brokers to start processing its requests by August 1, 2026; check https://privacy.ca.gov/drop/ for its current status. It is listed in `brokers.js` as a manual site ("California DROP"), and this tool's per-broker requests cover everyone else.
 
 ---
 

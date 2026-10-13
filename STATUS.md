@@ -13,7 +13,7 @@
 >
 > If you encounter a broker that has changed its form, please file a GitHub issue with the broker name and the new form layout.
 
-**Last updated:** auto-generated table - re-run `node scripts/generate-status.js` after editing `brokers.js`.
+**Last updated:** 2026-10. This table is kept by hand: update it when you edit `brokers.js`.
 
 ## How to read this
 
@@ -22,7 +22,7 @@
 - **Confidence** - `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
 - **US-only** - site indexes US public records / voter data / phone directories; automatically skipped for non-US users.
 
-**This list covers the 32 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `node watcher.js --verify` to spot-check whether opt-outs are still in effect.
+**This list covers the 32 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `upec-wipe verify` to spot-check whether opt-outs are still in effect.
 
 ---
 
@@ -90,7 +90,7 @@ Sites that show a bot-protection page (Cloudflare and similar) are reported as *
 | `manual` | High (you) | Opened in your browser; you complete it. |
 | `email` | High (delivery) / Medium (compliance) | Email is sent. Whether the broker honors it is up to them. |
 
-After running, use `node watcher.js --verify` to search the broker for your name again and confirm whether listings are gone. `--verify` is the honest ceiling - "submitted" ≠ "deleted."
+After running, use `upec-wipe verify` to search the brokers for your name again and confirm whether listings are gone. `verify` is the honest ceiling: submitted is not deleted.
 
 ## Reporting drift
 

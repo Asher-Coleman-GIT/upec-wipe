@@ -2,7 +2,7 @@
 
 ## What this does
 
-Data brokers are companies that collect and sell your name, address and phone number. Once a month this tool works through 44 of the biggest ones (Spokeo, Whitepages, Radaris, MyLife and others): it finds your listing and files the opt-out form for you. Brokers that only take requests by email, or that need something the tool cannot do, go on a list for you to finish by hand.
+Data brokers are companies that collect and sell your name, address and phone number. When you run it (about once a month), this tool works through 32 of the biggest (Spokeo, Whitepages, MyLife, PeopleConnect and others) and the reviewed sites in its catalog: it finds your listing and files the opt-out form for you. Brokers that take requests only by email get one from a separate step, if you set it up (see Email requests). Sites that need something the tool cannot do go on a list for you to finish by hand.
 
 It is set up here so that brokers see a throwaway email address and a VPN address instead of your real ones:
 
@@ -42,7 +42,7 @@ Why: the tool creates one throwaway address for you that forwards to your real i
 
 ## Before you start: CapSolver (optional)
 
-A few brokers (today BeenVerified, MyLife and FamilyTreeNow) put a CAPTCHA on their opt-out page. CapSolver is a paid service that solves these automatically, for about $0.001 each, so a few cents a month.
+Several brokers (among them MyLife, FamilyTreeNow and FastPeopleSearch) put a CAPTCHA on their opt-out page; [STATUS.md](../STATUS.md) marks which. CapSolver is a paid service that solves these automatically, for about $0.001 each, so a few cents a month.
 
 You can skip it. Without a key, a broker whose page shows a CAPTCHA is marked as failed in the run summary and its page opens in your browser at the end of the run, so you can solve the CAPTCHA and finish the form yourself. `--retry-failed` tries those brokers again on a later run.
 
@@ -88,10 +88,10 @@ WSL2 gives Windows a built-in Linux. This tool runs inside it. Connect Mullvad b
 
    It should print a version starting with `v20`.
 
-4. Download the fork into your home folder (`~`). Replace `<fork URL>` with the address the club maintainer gave you:
+4. Download the tool into your home folder (`~`):
 
    ```
-   git clone <fork URL> ~/upec-wipe
+   git clone https://github.com/Asher-Coleman-GIT/upec-wipe.git ~/upec-wipe
    ```
 
    It prints "Cloning into ..." and finishes. Move into the folder:
@@ -170,7 +170,7 @@ This part is the same for Parts A and B.
    node bin/upec-wipe.js setup
    ```
 
-   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, your date of birth (optional: only PrivateRecords uses it, and leaving it blank sends that site to your manual list), then your CapSolver key (leave it blank to skip), then your SimpleLogin API key, then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/upec-wipe/passphrase` on its own.
+   Answer each question and press Enter. It asks for your name, aliases (other names you go by; stored but not used yet), city, country, state, zip, email and phone, your date of birth (optional: only a few people-search forms need it, and leaving it blank sends those sites to your manual list), then your CapSolver key (leave it blank to skip), then your SimpleLogin API key, then the "Email Requests" questions (leave the address blank to skip them; see Email requests), then the browser profile folder (press Enter to keep the default). Your real email is stored here but never given to brokers once the relay is set. When it asks "Encrypt config.json now?", answer **n**: encryption comes last, after you have edited the file. Setup does not schedule anything: the tool runs only when you start it. It finds the passphrase in `~/.config/upec-wipe/passphrase` on its own.
 
 3. Open the settings file in a simple editor:
 
@@ -186,7 +186,7 @@ This part is the same for Parts A and B.
    "relay": { "provider": "simplelogin", "apiKey": "<your key>", "required": true }
    ```
 
-   The email block, used for brokers that only accept an email. **Recommended: delete the whole `email` block** and handle email-only brokers by hand. The tool lists them as manual. The reason: a broker that receives your email can see the address of the SMTP account it was sent from, whatever `"from"` says. Gmail, for example, replaces `"from"` with your Gmail address, and the account address also travels in the hidden envelope. So only keep this block if you have a separate mailbox that is not linked to you in any way, and use that mailbox for both `"user"` and `"from"`. Never use your everyday email account here. The tool refuses to send if `"user"` or `"from"` is your real email:
+   The email block, used for brokers that only accept an email. Setup writes it when you answer the "Email Requests" questions; without it, those brokers are listed for you to handle by hand. A broker that receives your email can see the address of the SMTP account it was sent from, whatever `"from"` says (Gmail replaces `"from"` with the account address, and the address also travels in the hidden envelope). So use only a new mailbox made for this and not linked to you, as both `"user"` and `"from"`. Never use your everyday email account here. The tool refuses to send if `"user"` or `"from"` is your real email:
 
    ```
    "email": { "smtp": { "host": "...", "port": 587, "user": "<separate mailbox not linked to you>", "pass": "...", "from": "<the same separate mailbox>" } }
@@ -298,7 +298,9 @@ This part is the same for Parts A and B.
 
    It lists opt-outs waiting for a confirmation or a manual step.
 
-## Email requests (phase 2)
+6. If you send email requests: replies arrive in the dedicated mailbox. Log each one with `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`.
+
+## Email requests
 
 Some data brokers only take privacy requests by email. These are sent by a separate step, never by a normal run.
 
@@ -348,7 +350,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
 | `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
-| `list` | Lists the brokers and their last status. | Nothing. |
+| `list` | Lists the brokers, catalog sites and email requests with their last status. | Nothing. |
 | `serp-watch` | Searches DuckDuckGo, Bing and Google for your name and lists sites where it is new since last time. | `"<your full name>" "<city>, <state>"` to those search engines. |
 
 Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time) and `--no-capsolver` (treat CAPTCHA brokers as manual). `upec-wipe list` also lists the reviewed catalog sites and when each was checked. `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.

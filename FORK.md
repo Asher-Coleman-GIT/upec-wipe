@@ -1,8 +1,11 @@
 # UPEC hardened fork
 
 Fork of https://github.com/stephenlthorn/auto-identity-remove pinned at the commit in
-`UPSTREAM_BASE`. See `docs/superpowers/specs/2026-10-07-upec-hardened-fork-design.md`
-for what changed and why.
+`UPSTREAM_BASE`. `docs/superpowers/specs/` holds the design for each change, starting
+with `2026-10-07-upec-hardened-fork-design.md`. Since then the fork added the
+reviewed site catalog and the email requests, and retired the generic pass, the
+dashboard and several side commands (see the "Retired commands" table in
+`docs/REFERENCE.md`).
 
 Runs are manual only. Setup installs no scheduled job, and there is no
 `--install-scheduler`.
@@ -12,7 +15,9 @@ Runs are manual only. Setup installs no scheduled job, and there is no
     bash scripts/upstream-review.sh | less
 
 Read the whole diff. Upstream is largely AI-written and changes quickly. Only then
-merge by hand and write the reviewed commit SHA into `UPSTREAM_BASE`.
+merge by hand and write the reviewed commit SHA into `UPSTREAM_BASE`. Do not merge
+upstream code back into a retired feature (the dashboard, the generic runner, the
+removed commands): the fork refuses those on purpose.
 
 ## Setting it up
 
@@ -28,7 +33,7 @@ passphrase secret) was written, so none of it has been run.
 Commands to run on a Docker host:
 
     docker compose build && docker compose run --rm watcher node watcher.js --doctor
-    docker compose run --rm watcher node watcher.js --dry-run --only Spokeo
+    docker compose run --rm watcher node watcher.js --preview --only Spokeo
 
 Still to confirm: that Chromium launches under `cap_drop: [ALL]`. Its own sandbox
 needs user namespaces, which dropping all capabilities can block. If launch fails,
@@ -37,7 +42,7 @@ Do not add `SYS_ADMIN` back. Record the outcome here once checked.
 
 ## Still to verify
 
-- The Docker steps above (build, `--doctor`, `--dry-run`, Chromium under `cap_drop: [ALL]`, the passphrase secret).
+- The Docker steps above (build, `--doctor`, `--preview`, Chromium under `cap_drop: [ALL]`, the passphrase secret).
 
 Secret file: `secrets/upec-wipe-passphrase` must be mode 600 on the host
 (`chmod 600 secrets/upec-wipe-passphrase`), because the tool refuses a group- or

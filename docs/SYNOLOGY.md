@@ -4,8 +4,11 @@ Asked in [issue #8](https://github.com/stephenlthorn/auto-identity-remove/issues
 does this run on a DS720+ (Celeron J4125, x86_64, 2 GB RAM), and what is the
 memory footprint in practice?
 
+> Docker is not yet verified for this fork: see the Docker section of
+> [FORK.md](../FORK.md) before relying on it.
+
 **Short answer:** yes, and comfortably - about **250 MB peak** for a full
-40-broker run. But nobody had actually tried it before that issue, and three
+run (measured with the 40-broker list of the time). But nobody had actually tried it before that issue, and three
 defects meant it could not have worked. All three are fixed; the numbers below
 are measured, not estimated.
 
@@ -110,17 +113,17 @@ docker run --rm --init \
   -v /volume1/docker/upec-wipe:/app/data \
   -e UPEC_WIPE_STATE_PATH=/app/data/state.json \
   --memory=1g \
-  upec-wipe node watcher.js --dry-run
+  upec-wipe node watcher.js --preview
 ```
 
 Or with compose, from the project directory:
 
 ```bash
-TZ=America/New_York UPEC_WIPE_LOW_MEMORY=1 docker compose run --rm watcher node watcher.js --dry-run
+TZ=America/New_York UPEC_WIPE_LOW_MEMORY=1 docker compose run --rm watcher node watcher.js --preview
 ```
 
-Always do a `--dry-run` first. It navigates and confirms the brokers are
-reachable without submitting anything.
+Always do a `--preview` first. It navigates, fills the forms and confirms the
+brokers are reachable without submitting anything.
 
 ### 5. Run it
 
