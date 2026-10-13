@@ -75,7 +75,7 @@ Opens a browser, searches each broker where an opt-out was recorded, and reports
 
 A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
-- Only `search-form` brokers (with a `searchUrl` and `listingPattern`) can be checked automatically.
+- Only `search-form` brokers (with a `searchUrl` and `listingPattern`) can be checked automatically: today Spokeo, WhitePages, FastPeopleSearch and MyLife. For everything else, `upec-wipe serp-watch` is the wider check.
 - "Verified clear" means one search today found nothing. It is not proof of deletion.
 - A broker whose search page is down or slow counts as `unverifiable`, never as `still listed`.
 - Running `upec-wipe run` again tries removal again where you are still listed.

@@ -19,10 +19,11 @@ const configMock = {
   shouldSkip: () => null, saveCheckpoint: () => {}, stateKey: n => n,
   recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {},
 };
+const assistable = [];
 Module._load = function (request, parent, isMain) {
   if (!parent?.filename?.includes('broker-runner')) return originalLoad(request, parent, isMain);
   if (request === './config') return configMock;
-  if (request === './logger') return { logResult: (name, status, d) => logged.push({ name, status, detail: d }) };
+  if (request === './logger') return { logResult: (name, status, d) => logged.push({ name, status, detail: d }), results: { assistable } };
   if (request === './forms') return {
     fillForm: async () => ({ filled: [{ selector: '#first', value: 'Jane', kind: 'text' }], missed: [] }),
     findListingUrl: async () => { const n = findSeq.shift(); if (n instanceof Error) throw n; return n === undefined ? null : n; },
@@ -102,4 +103,8 @@ test('assist: a search interrupted by the site\'s own post-check redirect is tri
   configure({ dryRun: true, preview: true, assist: true, person: { country: 'US' } });
   await processBroker(ctx, SEARCH);
   assert.equal(logged.at(-1).status, 'preview', JSON.stringify(logged.at(-1)));
+});
+
+test('a solvable check met without --assist is noted for the summary hint', async () => {
+  assert.ok(assistable.length >= 1, 'the no-assist challenge test above notes its broker');
 });

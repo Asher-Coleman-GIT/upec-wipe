@@ -12,7 +12,7 @@ It is set up here so that brokers see a throwaway email address and a VPN addres
 
 A month looks like this:
 
-1. You run `node bin/upec-wipe.js run` (nothing runs on its own).
+1. You run `node bin/upec-wipe.js run --assist` and stay at the computer (nothing runs on its own). `--assist` lets you clear bot checks in the browser window so more sites get done.
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
 3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/upec-wipe.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/upec-wipe.js verify` checks whether you are really gone.
 
@@ -230,13 +230,13 @@ This part is the same for Parts A and B.
    node bin/upec-wipe.js preview
    ```
 
-   Nothing is submitted. Expect a line with `Network: Mullvad exit`. A preview writes no log file and saves no state: the summary on screen is the whole result, so read it there. Now do the real run:
+   Nothing is submitted. Expect a line with `Network: Mullvad exit`. A preview writes no log file and saves no state: the summary on screen is the whole result, so read it there. Now do the real run, staying at the computer:
 
    ```
-   node bin/upec-wipe.js run
+   node bin/upec-wipe.js run --assist
    ```
 
-   It works through the brokers for a while and prints a summary at the end.
+   It works through the brokers for a while and prints a summary at the end. When a site shows a bot check (such as Cloudflare's "Just a moment..."), the browser window waits up to 3 minutes for you to complete it, then the run fills and submits that site by itself. Without `--assist` the run needs no one at the computer, but those sites go to your manual list, and the summary ends with the exact `--assist --only` command to finish them.
 
 ## Part C: Docker
 
@@ -280,16 +280,16 @@ This part is the same for Parts A and B.
 ## Part D: Every month
 
 1. Connect Mullvad.
-2. Run the tool:
+2. Run the tool, staying at the computer so you can clear bot checks:
 
    ```
-   node bin/upec-wipe.js run
+   node bin/upec-wipe.js run --assist
    ```
 
-   With Docker, use `docker compose run --rm watcher` instead.
+   With Docker, use `docker compose run --rm watcher` instead (Docker has no visible window, so no `--assist`).
 
 3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The tool cannot do this part, so you must.
-4. Every few months, check you are really gone with `node bin/upec-wipe.js verify`.
+4. Every few months, check you are really gone. `node bin/upec-wipe.js verify` re-searches the 4 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch and MyLife). `node bin/upec-wipe.js serp-watch` searches DuckDuckGo, Bing and Google for your name and city and lists any broker site where you are new; it sends your name and city to those search engines.
 5. See which brokers still need you:
 
    ```
@@ -347,7 +347,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
-| `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
+| `verify` | Searches the 4 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch, MyLife) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, catalog sites and email requests with their last status. | Nothing. |
 | `serp-watch` | Searches DuckDuckGo, Bing and Google for your name and lists sites where it is new since last time. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `catalog-check` | Re-reads the opt-out pages of reviewed catalog sites and flags any that changed (those then run as manual until reviewed again). Read-only. | Nothing about you: it opens those pages through the Mullvad check. |

@@ -14,7 +14,7 @@ const configMock = {
 Module._load = function (request, parent, isMain) {
   if (!parent?.filename?.includes('broker-runner')) return originalLoad(request, parent, isMain);
   if (request === './config') return configMock;
-  if (request === './logger') return { logResult: (name, status, detail) => logged.push({ name, status, detail }) };
+  if (request === './logger') return { logResult: (name, status, detail) => logged.push({ name, status, detail }), results: { assistable: [] } };
   if (request === './forms') return { fillForm: async () => ({ filled: [{ selector: '#first', value: 'Jane', kind: 'text' }], missed: [] }), findListingUrl: (...a) => findImpl(...a) };
   if (request === './block-page') return { ...originalLoad(request, parent, isMain), checkPageBlockedDetail: async () => (blockedReason ? { reason: blockedReason, solvable: false } : null) };
   if (request === './timing') return { jitterSleep: async () => {} };
