@@ -143,3 +143,21 @@ test('saveState persists when the target cannot be renamed onto', () => {
   );
   fs.rmSync(dir, { recursive: true, force: true });
 });
+
+test('an unsafe in-place write explains the cause for EXDEV (another drive), not a lock', () => {
+  const dir = tmpdir();
+  const target = path.join(dir, 'state.json');
+  const tmp = target + '.tmp';
+  fs.writeFileSync(target, 'old');
+  fs.writeFileSync(tmp, 'new');
+  const realRename = fs.renameSync;
+  fs.renameSync = () => { const e = new Error('EXDEV: cross-device link not permitted'); e.code = 'EXDEV'; throw e; };
+  try {
+    assert.throws(() => _renameOrRewrite(tmp, target, 'new', () => false),
+      (e) => e.code === 'EXDEV' && /different drive or mount/.test(e.message) && !/another program/.test(e.message) && /Nothing was lost/.test(e.message));
+  } finally {
+    fs.renameSync = realRename;
+  }
+  assert.equal(fs.readFileSync(target, 'utf8'), 'old');
+  fs.rmSync(dir, { recursive: true, force: true });
+});

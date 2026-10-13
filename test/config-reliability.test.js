@@ -434,3 +434,22 @@ test('saveState: a .bak that cannot be inspected is treated as shared, so the sa
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('saveState: the folder is flushed after the rename, so the new name survives a power cut', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-dirsync-'));
+  const statePath = path.join(dir, 'state.json');
+  cfg.setTestStatePath(statePath);
+  const realOpen = fs.openSync;
+  const opened = [];
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    fs.openSync = (p, ...rest) => { opened.push(p); return realOpen(p, ...rest); };
+    cfg.saveState();
+  } finally {
+    fs.openSync = realOpen;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+  assert.ok(opened.includes(dir), 'the state folder was opened to fsync it');
+});
