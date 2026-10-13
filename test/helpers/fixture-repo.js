@@ -12,11 +12,19 @@ const { spawnSync } = require('node:child_process');
 const ROOT = path.join(__dirname, '..', '..');
 const COPY = ['watcher.js', 'brokers.js', 'setup.js', 'package.json', 'config.example.json', 'lib', 'bin', 'scripts', 'data'];
 
+// The member's own data files (gitignored) never leave the repo, not even for a
+// temp copy.
+const MEMBER_DATA = new Set(['serp-history.json', '.serp-key', 'exposure-history.json', 'exposure-history.json.bak']
+  .map(f => path.join(ROOT, 'data', f)));
+function copyFilter(src) {
+  return !MEMBER_DATA.has(path.resolve(src));
+}
+
 function makeFixtureRepo() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-fixture-'));
   for (const f of COPY) {
     const src = path.join(ROOT, f);
-    if (fs.existsSync(src)) fs.cpSync(src, path.join(dir, f), { recursive: true });
+    if (fs.existsSync(src)) fs.cpSync(src, path.join(dir, f), { recursive: true, filter: copyFilter });
   }
   fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(dir, 'node_modules'), 'dir');
   for (const f of ['config.json', 'config.json.enc', 'state.json']) {
@@ -48,4 +56,4 @@ function runIn(dir, relScript, args, opts = {}) {
   });
 }
 
-module.exports = { makeFixtureRepo, runIn, ROOT };
+module.exports = { makeFixtureRepo, runIn, copyFilter, ROOT };

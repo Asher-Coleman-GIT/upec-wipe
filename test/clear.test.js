@@ -292,3 +292,43 @@ test('the docs explain clear and clear-all', () => {
   }
   assert.match(read('docs/PRIVACY.md'), /upec-wipe clear-all/);
 });
+
+test('a state or serp-key path that names a directory is kept, never deleted', async () => {
+  const s = sandbox();
+  try {
+    const dir = path.join(s.base, 'somedir');
+    fs.mkdirSync(dir); fs.writeFileSync(path.join(dir, 'unrelated.txt'), 'x');
+    for (const env of [{ UPEC_WIPE_SERP_KEY_PATH: dir }, { UPEC_WIPE_STATE_PATH: dir }]) {
+      const p = planClear({ all: true, root: s.root, home: s.home, env });
+      assert.equal(p.remove.includes(dir), false, JSON.stringify(env));
+      assert.ok(p.keep.some(k => k.path === dir && /not a file/.test(k.reason)), JSON.stringify(env));
+    }
+    s.put('config.json');
+    const { deps } = io('CLEAR ALL');
+    assert.equal(await runClear({ all: true, root: s.root, home: s.home, env: { UPEC_WIPE_SERP_KEY_PATH: dir }, ...deps }), 0);
+    assert.ok(fs.existsSync(path.join(dir, 'unrelated.txt')));
+  } finally { s.cleanup(); }
+});
+
+test('a missing state directory does not claim a run is in progress', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json');
+    const env = { UPEC_WIPE_STATE_PATH: path.join(s.base, 'gone', 'dir', 'state.json') };
+    const { out, deps } = io('CLEAR', { lock: require('../lib/lock') });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env, ...deps }), 0);
+    assert.equal(out.some(l => /run is in progress/.test(l)), false);
+    assert.equal(fs.existsSync(path.join(s.root, 'config.json')), false);
+  } finally { s.cleanup(); }
+});
+
+test('any other lock error is reported by code and deletes nothing', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json');
+    const { out, deps } = io('CLEAR', { lock: { acquire: () => { throw Object.assign(new Error('EACCES: /x'), { code: 'EACCES' }); }, release: () => {} } });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 1);
+    assert.ok(out.includes('ERR Could not take the state lock: EACCES: nothing was deleted.'));
+    assert.ok(fs.existsSync(path.join(s.root, 'config.json')));
+  } finally { s.cleanup(); }
+});

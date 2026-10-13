@@ -200,3 +200,27 @@ test('REFERENCE has the retired commands table and the manual the freeze section
   assert.match(manual, /## Credit and identity freezes/);
   for (const n of ['Equifax', 'Experian', 'TransUnion', 'ChexSystems', 'NCTUE', 'Innovis', 'OptOutPrescreen']) assert.match(manual, new RegExp(n));
 });
+
+test('doctor also reports old complaint letters and exported emails', async () => {
+  const { checkRetiredSettings } = require('../lib/doctor');
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-doctor-'));
+  try {
+    fs.mkdirSync(path.join(root, 'logs', 'complaints'), { recursive: true });
+    fs.mkdirSync(path.join(root, 'inbox'), { recursive: true });
+    const r = await checkRetiredSettings({}, root);
+    assert.match(r.hint, /logs\/complaints holds your details from a removed command/);
+    assert.match(r.hint, /inbox holds your details from a removed command/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('the fixture never copies the member\'s own data files', () => {
+  const { copyFilter } = require('./helpers/fixture-repo');
+  const D = path.join(ROOT, 'data');
+  for (const f of ['serp-history.json', '.serp-key', 'exposure-history.json', 'exposure-history.json.bak']) {
+    assert.equal(copyFilter(path.join(D, f)), false, f);
+  }
+  assert.equal(copyFilter(path.join(D, 'catalog', 'example.com.json')), true);
+  assert.equal(copyFilter(path.join(ROOT, 'lib', 'config.js')), true);
+});
