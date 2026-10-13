@@ -21,7 +21,8 @@ const { cliChildEnv } = require('../lib/child-env');
 const ROOT = path.resolve(__dirname, '..');
 
 function printHelp() {
-  process.stdout.write(buildHelp() + '\n');
+  const { renderBanner, useColor } = require('../lib/banner');
+  process.stdout.write(renderBanner({ color: useColor() }) + '\n\n' + buildHelp() + '\n');
 }
 
 function printVersion() {
