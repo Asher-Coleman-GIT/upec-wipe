@@ -1,0 +1,27 @@
+{
+ "domain": "purecars.com",
+ "name": "PureCars Technologies, LLC",
+ "sources": [
+  "markup"
+ ],
+ "formHosts": [
+  "google.com"
+ ],
+ "group": "dead",
+ "survey": {
+  "checkedAt": "2026-10-13T08:51:07.855Z",
+  "status": 404,
+  "optOutUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdXAQsI4b0angLCONbwT4B4YSFiPyVMMLzizCuBSnPZmsTp_g/edit",
+  "title": "Page Not Found",
+  "block": null,
+  "controls": [],
+  "buttons": [],
+  "captcha": false,
+  "contacts": [],
+  "text": " Drive\n\nSorry, the file you have requested does not exist.\n\nMake sure that you have the correct URL and the file exists.\n\nGet stuff done with Google Drive\n\nApps in Google Drive make it easy to create, store and share online documents, spreadsheets, presentations and more.\n\nLearn more at drive.google.com/start/apps.",
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "review": {
+  "state": "unreviewed"
+ }
+}
