@@ -71,16 +71,18 @@ test('the run mode checks generic.enabled before the email step, the browser and
 
 test('doctor flags generic.enabled: true and passes without it', async () => {
   const { checkRetiredSettings } = require('../lib/doctor');
-  const bad = await checkRetiredSettings({ generic: { enabled: true } });
+  const root = fs.mkdtempSync(path.join(require('node:os').tmpdir(), 'upec-wipe-retired-'));
+  test.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const bad = await checkRetiredSettings({ generic: { enabled: true } }, root);
   assert.equal(bad.ok, false);
   assert.equal(bad.hint, CONFIG_MSG);
-  assert.equal((await checkRetiredSettings({ generic: { enabled: false } })).ok, true);
-  assert.equal((await checkRetiredSettings({})).ok, true);
+  assert.equal((await checkRetiredSettings({ generic: { enabled: false } }, root)).ok, true);
+  assert.equal((await checkRetiredSettings({}, root)).ok, true);
 });
 
 test('runDoctor runs the retired-settings check', async () => {
   const src = fs.readFileSync(path.join(ROOT, 'lib', 'doctor.js'), 'utf8');
-  assert.match(src, /name: 'retired',\s+run: \(\) => checkRetiredSettings\(cfg\)/);
+  assert.match(src, /name: 'retired',\s+run: \(\) => checkRetiredSettings\(cfg, rootDir\)/);
   assert.match(src, /running 7 checks/);
 });
 

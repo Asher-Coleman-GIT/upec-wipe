@@ -146,3 +146,31 @@ test('--dry-run is still an alias of --preview', () => {
     assert.equal(k in f, false, k);
   }
 });
+
+const os = require('node:os');
+
+test('doctor reports a hibp block and leftover files, and passes without them', async () => {
+  const { checkRetiredSettings } = require('../lib/doctor');
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-doctor-'));
+  try {
+    assert.equal((await checkRetiredSettings({}, root)).ok, true);
+    const hibp = await checkRetiredSettings({ hibp: { apiKey: '' } }, root);
+    assert.equal(hibp.ok, false);
+    assert.match(hibp.hint, /remove the "hibp" block from config\.json \(the breach check was removed\)/);
+    fs.mkdirSync(path.join(root, 'logs', 'snapshots'), { recursive: true });
+    fs.mkdirSync(path.join(root, 'data'), { recursive: true });
+    fs.writeFileSync(path.join(root, 'data', 'exposure-history.json'), '{}');
+    const left = await checkRetiredSettings({}, root);
+    assert.equal(left.ok, false);
+    assert.match(left.hint, /logs\/snapshots holds your details from a removed command; delete it when you no longer need it/);
+    assert.match(left.hint, /data\/exposure-history\.json holds your details from a removed command/);
+    assert.ok(fs.existsSync(path.join(root, 'logs', 'snapshots')), 'doctor never deletes');
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('the example config has no hibp block', () => {
+  const ex = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.example.json'), 'utf8'));
+  assert.equal('hibp' in ex, false);
+});
