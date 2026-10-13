@@ -13,6 +13,8 @@ const RED = '\x1b[38;2;190;0;0m';
 const RESET = '\x1b[0m';
 
 const PLAIN = [
+  '',
+  '',
   '▄▀▀▀▀▀▄',
   ' ▄▀▀▀▄',
   '  ▄▀▄',
@@ -35,8 +37,8 @@ test('with color, only the U is red', () => {
   const { renderBanner } = require('../lib/banner');
   const lines = renderBanner({ color: true }).split('\n');
   const plain = PLAIN.split('\n');
-  for (const i of [0, 1, 2, 3, 9]) assert.equal(lines[i], plain[i], `row ${i} has no color`);
-  for (let i = 4; i <= 8; i++) {
+  for (const i of [0, 1, 2, 3, 4, 5, 11]) assert.equal(lines[i], plain[i], `row ${i} has no color`);
+  for (let i = 6; i <= 10; i++) {
     const u = plain[i].slice(1, 6);
     assert.equal(lines[i], ' ' + RED + u + RESET + plain[i].slice(6), `row ${i}`);
   }
@@ -70,4 +72,12 @@ test('a run prints the banner only on a terminal, before the start line', () => 
   const at = src.indexOf('if (process.stdout.isTTY) console.log(renderBanner({ color: useColor() }));');
   assert.ok(at > 0, 'run.js prints the banner behind an isTTY check');
   assert.ok(at < src.indexOf("console.log('\\nUPEC-WIPE - starting run');"), 'before the start line');
+});
+
+test('help keeps the description line, drops the repeated title and the examples', () => {
+  const { buildHelp } = require('../lib/cli-map');
+  const help = buildHelp();
+  assert.ok(help.startsWith('data-broker opt-out and privacy requests\n\nUsage: upec-wipe <command> [options]'), help.slice(0, 80));
+  assert.doesNotMatch(help, /Web Identity Purge Engine\) -/);
+  assert.doesNotMatch(help, /^Examples:/m);
 });
