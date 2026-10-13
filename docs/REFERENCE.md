@@ -53,6 +53,8 @@ Each run ends with a summary in these groups:
 
 **Submitted does not mean deleted.** See [Verifying removals](#verifying-removals) and [STATUS.md](../STATUS.md).
 
+To forget the history, use `upec-wipe clear-all` (it deletes `state.json` with everything else); `upec-wipe clear` keeps it.
+
 Email requests (`run --email`) keep their own record per broker: when the email was sent and the reply you logged with `upec-wipe reply <broker> honored|refused|verify|none|bounced`. `upec-wipe list` shows both.
 
 ---

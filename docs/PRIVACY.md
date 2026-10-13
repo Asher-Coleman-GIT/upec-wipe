@@ -59,6 +59,8 @@ Every connection uses one of three paths.
 
 ## What stays on your machine
 
+To delete it all, run `upec-wipe clear-all`; `upec-wipe clear` deletes only the config and passphrase.
+
 - `config.json` (or `config.json.enc`): all your details. Encryption covers this file only.
 - `state.json`: which brokers you submitted to and when, and your alias mapping keyed by your real email. Plaintext.
 - `logs/`: plaintext, and it holds personal data. Each real run writes `logs/audit-*.md`, which starts with your full name and **real email**. Older versions also wrote complaint letters under `logs/complaints/` and form screenshots under `logs/snapshots/`; those commands were removed, and `upec-wipe doctor` points out any that are left. Error details in `logs/run-*.json` keep only the site's address, and previews that show filled-in fields are printed to the screen, not written there. Never share `logs/` files for help; copy only the lines you need and remove your details.

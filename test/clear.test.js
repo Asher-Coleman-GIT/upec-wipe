@@ -279,3 +279,16 @@ test('upec-wipe clear without a terminal refuses and deletes nothing (fixture, o
     assert.ok(fs.existsSync(path.join(dir, 'config.json')));
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
+
+test('the docs explain clear and clear-all', () => {
+  const read = (f) => fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
+  const manual = read('docs/UPEC-MANUAL.md');
+  assert.match(manual, /## Starting over or leaving/);
+  assert.match(manual, /upec-wipe(\.js)? clear-all/);
+  assert.match(manual, /simplelogin\.io/i);
+  for (const f of ['README.md', 'docs/UPEC-MANUAL.md']) {
+    assert.match(read(f), /^\| `clear` \|/m, f);
+    assert.match(read(f), /^\| `clear-all` \|/m, f);
+  }
+  assert.match(read('docs/PRIVACY.md'), /upec-wipe clear-all/);
+});

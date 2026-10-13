@@ -324,6 +324,14 @@ A freeze stops new credit or accounts being opened in your name. It is free, and
 | [Innovis](https://www.innovis.com/personal/securityFreeze) | New credit (the "fourth" bureau, often missed). |
 | [OptOutPrescreen](https://www.optoutprescreen.com/) | Prescreened credit and insurance offers in the mail. |
 
+## Starting over or leaving
+
+`node bin/upec-wipe.js clear` deletes your setup: `config.json` (or `config.json.enc`) and the passphrase file. Your history and logs stay, so you can run `setup` again, for example with a new mailbox, and the tool still knows what it already sent.
+
+`node bin/upec-wipe.js clear-all` deletes everything the tool saved on this computer: the setup, `state.json` (your opt-out and email history and logged replies), `logs/` and the search history. After it, the next `run --email` would email every broker again.
+
+Both list what they will delete and ask you to type `CLEAR` (or `CLEAR ALL`). Neither can delete your SimpleLogin alias (do that at simplelogin.io), emails already sent, your dedicated mailbox, what brokers already hold, or backups of this folder. Files are deleted normally, not overwritten.
+
 ## Command reference
 
 Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your computer; see [PRIVACY.md](PRIVACY.md) for details.
@@ -331,6 +339,8 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | Command | What it does | Sends |
 | --- | --- | --- |
 | `setup` | Asks for your details and writes `config.json`. | Nothing. |
+| `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
+| `clear-all` | Deletes everything UPEC-WIPE saved on this computer. | Nothing. |
 | `doctor` | Checks your setup, including that SimpleLogin accepts your key. | After the network check passes: a connection to your SMTP host, one request to CapSolver, and one read-only request to SimpleLogin with your key (it creates no alias). |
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
 | `run` | The real opt-out pass: fills web forms (the same as `run --forms`). Never sends email. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. |
