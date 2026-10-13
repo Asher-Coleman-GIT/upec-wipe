@@ -26,7 +26,7 @@ function makeFixtureRepo() {
 }
 
 // Spawn relScript inside dir with a preload that reports any playwright load.
-function runIn(dir, relScript, args) {
+function runIn(dir, relScript, args, opts = {}) {
   const preload = path.join(dir, '.trap.js');
   if (!fs.existsSync(preload)) {
     fs.writeFileSync(preload, [
@@ -44,7 +44,7 @@ function runIn(dir, relScript, args) {
   delete env.UPEC_WIPE_PASSPHRASE;
   delete env.UPEC_WIPE_PASSPHRASE_FILE;
   return spawnSync(process.execPath, ['-r', preload, path.join(dir, relScript), ...args], {
-    cwd: dir, encoding: 'utf8', timeout: 30000, env,
+    cwd: opts.cwd || dir, encoding: 'utf8', timeout: 30000, env,
   });
 }
 

@@ -247,3 +247,35 @@ test('a symlinked logs folder: the link goes, the target stays', async () => {
     assert.ok(fs.existsSync(path.join(target, 'keep.txt')));
   } finally { s.cleanup(); }
 });
+
+const { makeFixtureRepo, runIn } = require('./helpers/fixture-repo');
+
+test('dispatch routes clear and clear-all first, before modes that load config', () => {
+  const { pickMode } = require('../lib/mode-dispatch');
+  const { parseWatcherFlags } = require('../lib/cli-flags');
+  assert.equal(pickMode(parseWatcherFlags(['node', 'watcher.js', '--clear'])).mode, 'clear');
+  assert.equal(pickMode(parseWatcherFlags(['node', 'watcher.js', '--clear-all'])).mode, 'clear');
+  assert.equal(pickMode(parseWatcherFlags(['node', 'watcher.js', '--clear', '--list'])).mode, 'clear');
+});
+
+test('the clear mode never loads the config', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'lib', 'modes', 'clear.js'), 'utf8');
+  assert.doesNotMatch(src, /loadConfig|require\('\.\.\/config'\)|require\('\.\/shared'\)/);
+});
+
+test('help lists clear and clear-all', () => {
+  const help = require('../lib/cli-map').buildHelp();
+  assert.match(help, /^\s+clear\s+Delete your setup \(config and passphrase\); keeps history$/m);
+  assert.match(help, /^\s+clear-all\s+Delete everything UPEC-WIPE saved on this machine$/m);
+});
+
+test('upec-wipe clear without a terminal refuses and deletes nothing (fixture, other cwd)', () => {
+  const dir = makeFixtureRepo();
+  try {
+    fs.writeFileSync(path.join(dir, 'config.json'), '{"person":{"firstName":"Jane"}}');
+    const r = runIn(dir, 'bin/upec-wipe.js', ['clear'], { cwd: os.tmpdir() });
+    assert.equal(r.status, 1, r.stderr);
+    assert.match(r.stderr, /clear needs an interactive terminal: nothing was deleted\./);
+    assert.ok(fs.existsSync(path.join(dir, 'config.json')));
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});
