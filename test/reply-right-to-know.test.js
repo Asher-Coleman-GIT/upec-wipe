@@ -52,3 +52,11 @@ test('reply skips the values of other flags such as --only', () => {
   assert.equal(r.status, 0, r.stderr);
   assert.equal(state.emailReplies.Pipl.outcome, 'honored');
 });
+
+test('reply refuses extra arguments instead of guessing which one is the broker', () => {
+  const initial = { optOuts: {}, emailSent: { Pipl: { to: 'privacy@pipl.com', at: 't', messageId: 'm' } } };
+  const { r, state } = runReply(['Pipl', 'Spokeo', 'honored'], initial);
+  assert.equal(r.status, 2);
+  assert.match(r.stderr, /Usage: upec-wipe reply/);
+  assert.equal(state.emailReplies, undefined);
+});

@@ -44,9 +44,17 @@ test('--know-status is not --know, and --allow is parsed', () => {
 test('replyArgs: the broker and outcome after --reply, skipping flags and flag values', () => {
   const { replyArgs } = require('../lib/cli-flags');
   const r = (...a) => replyArgs(['node', 'watcher.js', '--reply', ...a]);
-  assert.deepEqual(r('Pipl', 'honored'), { query: 'Pipl', outcome: 'honored' });
-  assert.deepEqual(r('--right-to-know', 'Pipl', 'bounced'), { query: 'Pipl', outcome: 'bounced' });
-  assert.deepEqual(r('--only', 'Acme', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored' });
-  assert.deepEqual(r('Pipl', '--skip', 'none', 'refused'), { query: 'Pipl', outcome: 'refused' });
-  assert.deepEqual(r(), { query: '', outcome: '' });
+  assert.deepEqual(r('Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
+  assert.deepEqual(r('--right-to-know', 'Pipl', 'bounced'), { query: 'Pipl', outcome: 'bounced', extra: false });
+  assert.deepEqual(r('--only', 'Acme', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
+  assert.deepEqual(r('Pipl', '--skip', 'none', 'refused'), { query: 'Pipl', outcome: 'refused', extra: false });
+  assert.deepEqual(r(), { query: '', outcome: '', extra: false });
+});
+
+test('replyArgs: a third plain argument is reported, and --confirm-emails takes no value here', () => {
+  const { replyArgs } = require('../lib/cli-flags');
+  const r = (...a) => replyArgs(['node', 'watcher.js', '--reply', ...a]);
+  assert.equal(r('Pipl', 'Spokeo', 'honored').extra, true);
+  assert.equal(r('Pipl', 'honored').extra, false);
+  assert.deepEqual(r('--confirm-emails', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
 });

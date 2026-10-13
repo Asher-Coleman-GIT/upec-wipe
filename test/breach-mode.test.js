@@ -11,7 +11,7 @@ test('askLine resolves with the typed line', async () => {
   assert.equal(await askLine('Q? ', { input: Readable.from(['YES\n']), output: sink() }), 'YES');
 });
 
-test('askLine resolves empty when input is closed, instead of hanging', async () => {
+test('askLine resolves empty when input is closed, instead of hanging', { timeout: 5000 }, async () => {
   assert.equal(await askLine('Q? ', { input: Readable.from([]), output: sink() }), '');
 });
 
@@ -38,7 +38,7 @@ test('breach: a confirmed check runs and returns 0', async () => {
   assert.deepEqual(order, ['confirm', 'check']);
 });
 
-test('breach: closed input with the real confirmation never reaches HIBP', async () => {
+test('breach: closed input with the real confirmation never reaches HIBP', { timeout: 5000 }, async () => {
   let checked = 0;
   const lines = [];
   const code = await breachFlow({ emails: ['jane.doe@example.com'], apiKey: 'k', brokers: [], config: {} }, {

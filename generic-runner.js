@@ -142,6 +142,8 @@ const DECLINE_COOKIE_LOCATOR = `${DECLINE_COOKIE_SELECTORS.join(', ')} >> visibl
 function debugClickFailure(what, err, page) {
   if (!process.env.UPEC_WIPE_DEBUG) return;
   // The site's host only: the path and query can carry a person's details.
+  // (Broker opt-out pages are not per-person subdomains; if one ever were, this
+  // line only prints under UPEC_WIPE_DEBUG.)
   let host = '';
   try { host = new URL(page.url()).hostname.replace(/^www\./, ''); } catch (_) { host = ''; }
   console.warn(`[generic] ${what} click failed${host ? ` on ${host}` : ''}: ${redactUrlsInText(String((err && err.message) || err)).slice(0, 120)}`);

@@ -440,16 +440,21 @@ test('saveState: the folder is flushed after the rename, so the new name survive
   const statePath = path.join(dir, 'state.json');
   cfg.setTestStatePath(statePath);
   const realOpen = fs.openSync;
-  const opened = [];
+  const realClose = fs.closeSync;
+  const dirFds = new Set();
+  let dirOpens = 0;
   try {
     cfg.resetState();
     cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
-    fs.openSync = (p, ...rest) => { opened.push(p); return realOpen(p, ...rest); };
+    fs.openSync = (p, ...rest) => { const fd = realOpen(p, ...rest); if (p === dir) { dirOpens++; dirFds.add(fd); } return fd; };
+    fs.closeSync = (fd) => { dirFds.delete(fd); return realClose(fd); };
     cfg.saveState();
   } finally {
     fs.openSync = realOpen;
+    fs.closeSync = realClose;
     cfg.setTestStatePath(null);
     fs.rmSync(dir, { recursive: true, force: true });
   }
-  assert.ok(opened.includes(dir), 'the state folder was opened to fsync it');
+  assert.ok(dirOpens >= 1, 'the state folder was opened to fsync it');
+  assert.equal(dirFds.size, 0, 'every folder handle was closed');
 });
