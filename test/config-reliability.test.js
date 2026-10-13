@@ -400,3 +400,37 @@ test('saveState: a link count above one detaches the .bak even when inode number
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('saveState: a .bak that cannot be inspected is treated as shared, so the save stops', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-bak-unknown-'));
+  const statePath = path.join(dir, 'state.json');
+  const bakPath = statePath + '.bak';
+  cfg.setTestStatePath(statePath);
+  const realRename = fs.renameSync;
+  const realStat = fs.statSync;
+  const realWriteFileSync = fs.writeFileSync;
+  let wroteInPlace = false;
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    cfg.saveState(); // linked .bak: state.json now has nlink 2
+    fs.statSync = (p, o) => {
+      if (p === bakPath) { const e = new Error('EPERM: operation not permitted, stat'); e.code = 'EPERM'; throw e; }
+      return realStat(p, o);
+    };
+    fs.writeFileSync = (p, ...rest) => { if (p === statePath) wroteInPlace = true; return realWriteFileSync(p, ...rest); };
+    fs.renameSync = (from, to) => {
+      if (to === statePath) { const e = new Error('EBUSY'); e.code = 'EBUSY'; throw e; }
+      return realRename(from, to);
+    };
+    cfg.loadState().optOuts.__b__ = { lastSuccess: '2026-01-02T00:00:00.000Z' };
+    assert.throws(() => cfg.saveState(), /could not be saved safely/);
+    assert.equal(wroteInPlace, false, 'state.json was not written in place');
+  } finally {
+    fs.renameSync = realRename;
+    fs.statSync = realStat;
+    fs.writeFileSync = realWriteFileSync;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
