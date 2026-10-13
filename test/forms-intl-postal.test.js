@@ -7,10 +7,6 @@
  *   1. Does NOT strip spaces or letters from non-numeric postal codes.
  *   2. Adds a postcode/postal selector for AU, CA, GB, IE, NZ.
  *   3. Preserves the verbatim postal-code value from formFields.
- *
- * Also verifies that normalizePhone():
- *   - For US/CA, applies (xxx) xxx-xxxx formatting.
- *   - For non-US countries, passes the value through unchanged.
  */
 
 'use strict';
@@ -19,7 +15,6 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 
 const { applyRegionAliases } = require('../lib/forms');
-const { normalizePhone }     = require('../lib/config');
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -117,51 +112,4 @@ test('applyRegionAliases: US zip value is preserved unchanged', () => {
   assert.strictEqual(result['input[name*="zip" i]'], '10001');
 });
 
-// ── Tests - normalizePhone ────────────────────────────────────────────────────
 
-test('normalizePhone: US 10-digit number formatted as (xxx) xxx-xxxx', () => {
-  const formatted = normalizePhone('6045551234', 'US');
-  assert.strictEqual(formatted, '(604) 555-1234');
-});
-
-test('normalizePhone: US number already formatted is returned as-is', () => {
-  const formatted = normalizePhone('(604) 555-1234', 'US');
-  assert.strictEqual(formatted, '(604) 555-1234');
-});
-
-test('normalizePhone: CA 10-digit number formatted as (xxx) xxx-xxxx', () => {
-  // Canada uses NANP - same format as US
-  const formatted = normalizePhone('6135551234', 'CA');
-  assert.strictEqual(formatted, '(613) 555-1234');
-});
-
-test('normalizePhone: GB number passes through unchanged (no US formatting applied)', () => {
-  const raw = '+44 20 7946 0958';
-  const formatted = normalizePhone(raw, 'GB');
-  assert.strictEqual(formatted, raw, 'non-US phone must pass through verbatim');
-});
-
-test('normalizePhone: AU number passes through unchanged', () => {
-  const raw = '+61 2 9876 5432';
-  assert.strictEqual(normalizePhone(raw, 'AU'), raw);
-});
-
-test('normalizePhone: IE number passes through unchanged', () => {
-  const raw = '+353 1 234 5678';
-  assert.strictEqual(normalizePhone(raw, 'IE'), raw);
-});
-
-test('normalizePhone: NZ number passes through unchanged', () => {
-  const raw = '+64 9 123 4567';
-  assert.strictEqual(normalizePhone(raw, 'NZ'), raw);
-});
-
-test('normalizePhone: undefined country treated as US', () => {
-  const formatted = normalizePhone('6045551234', undefined);
-  assert.strictEqual(formatted, '(604) 555-1234');
-});
-
-test('normalizePhone: null/empty phone returns empty string for any country', () => {
-  assert.strictEqual(normalizePhone('', 'GB'), '');
-  assert.strictEqual(normalizePhone(null, 'US'), '');
-});

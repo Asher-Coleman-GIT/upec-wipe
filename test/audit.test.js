@@ -47,9 +47,9 @@ describe('renderAuditMarkdown', () => {
     assert.match(md, /Jane Doe/);
   });
 
-  it('includes the person email', () => {
+  it('never includes the person\'s real email', () => {
     const md = renderAuditMarkdown({ person, timestamp, results });
-    assert.match(md, /jane@example\.com/);
+    assert.doesNotMatch(md, /jane@example\.com/);
   });
 
   it('includes the full ISO timestamp', () => {

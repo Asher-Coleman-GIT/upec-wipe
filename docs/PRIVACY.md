@@ -11,15 +11,13 @@ This page lists every place this fork sends data, what it sends, and which netwo
 
 ## What the tool reads
 
-Everything comes from your local `config.json` (or `config.json.enc` if you encrypted it). Nothing about you is looked up online.
+Everything comes from your local `config.json` (or `config.json.enc` if you encrypted it). Nothing about you is looked up online. Setup no longer asks for a phone number or other names; `upec-wipe doctor` points out any left from older versions.
 
 | Field | Used for | Sent to |
 | --- | --- | --- |
 | `person.firstName`, `lastName`, `fullName` | Search URLs and opt-out forms | Brokers. Search engines on `serp-watch`. Your SMTP provider and the email brokers, on `run --email`. |
 | `person.city`, `state`, `zip`, `country` | Forms and search URLs | Brokers (zip and country on forms only). City and state go to search engines on `serp-watch` and to the email brokers on `run --email`. |
 | `person.email` | Your real address. Never given to brokers when a relay is set. | SimpleLogin (as the inbox the alias forwards to). |
-| `person.phone`, `phoneFormatted` | Asked for by setup, but nothing sends it today: no form or email gets your phone. | Nobody. |
-| `person.aliases` | Asked for by setup, but nothing uses it today. | Nobody. |
 | `person.dob` | Optional (setup). Only forms that require it: PrivateRecords and four reviewed people-search sites in the catalog. Left blank, those go to your manual list. Never written to run logs. | Those sites |
 | `relay.apiKey` | Creating your alias | SimpleLogin |
 | `capsolver.apiKey` | Solving CAPTCHAs | CapSolver |
@@ -63,7 +61,7 @@ To delete it all, run `upec-wipe clear-all`; `upec-wipe clear` deletes only the 
 
 - `config.json` (or `config.json.enc`): all your details. Encryption covers this file only.
 - `state.json`: which brokers you submitted to and when, and your alias mapping keyed by your real email. Plaintext.
-- `logs/`: plaintext, and it holds personal data. Each real run writes `logs/audit-*.md`, which starts with your full name and **real email**. Older versions also wrote complaint letters under `logs/complaints/` and form screenshots under `logs/snapshots/`; those commands were removed, and `upec-wipe doctor` points out any that are left. Error details in `logs/run-*.json` keep only the site's address, and previews that show filled-in fields are printed to the screen, not written there. Never share `logs/` files for help; copy only the lines you need and remove your details.
+- `logs/`: plaintext, and it holds personal data. Each real run writes `logs/audit-*.md`, which starts with your full name (not your email) and lists the brokers. Older versions also wrote complaint letters under `logs/complaints/` and form screenshots under `logs/snapshots/`; those commands were removed, and `upec-wipe doctor` points out any that are left. Error details in `logs/run-*.json` keep only the site's address, and previews that show filled-in fields are printed to the screen, not written there. Never share `logs/` files for help; copy only the lines you need and remove your details.
 - `data/serp-history.json`: search-scan history (an older `data/exposure-history.json` is left from the removed score command; `doctor` points it out). `data/.serp-key` is a random key used to label the search history without writing your name.
 
 New files are created readable only by you (umask 077, mode 600).

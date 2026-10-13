@@ -18,7 +18,7 @@ one person, so please be patient rather than escalating publicly.
 
 This is not an ordinary utility. `config.json` contains:
 
-- legal name, home address, phone number, date of birth, email address
+- legal name, home address, date of birth (optional), email address
 - optionally: an SMTP app password for the dedicated mailbox, a CapSolver API key and a SimpleLogin relay key
 
 `state.json` contains the complete record of which brokers you have contacted and

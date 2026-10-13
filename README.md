@@ -119,7 +119,7 @@ Write the failing test first. Tests use the dummy person from `config.example.js
 
 ## Security and review
 
-`config.json` holds your legal name, address, phone, date of birth and API keys. If you find a way for any of it to escape - into a log, a report, the wrong form field, another local user, or a site chosen by a remote registry - report it privately; see [SECURITY.md](SECURITY.md).
+`config.json` holds your legal name, address, email, date of birth and API keys. If you find a way for any of it to escape - into a log, a report, the wrong form field, another local user, or a site chosen by a remote registry - report it privately; see [SECURITY.md](SECURITY.md).
 
 Most of this code was written by AI models. Files that touch personal data, crypto, subprocesses or untrusted network input need a review from a different model family before merge, and CI builds the Docker image and launches a real browser. The policy and what it does and does not buy you: [docs/CROSS_MODEL_REVIEW.md](docs/CROSS_MODEL_REVIEW.md) (`npm run review:cross-model`).
 

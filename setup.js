@@ -5,7 +5,7 @@
  * Run once: node setup.js
  *
  * Creates config.json from your answers and walks you through:
- *   • Personal info (name, address, email, phone)
+ *   • Personal info (name, address, email)
  *   • CapSolver API key (for CAPTCHA-protected sites)
  */
 
@@ -85,7 +85,7 @@ function readExistingConfig(opts) {
 
 // ─── Prompt helper ────────────────────────────────────────────────────────────
 // rl is created lazily inside main() so that requiring this module for its
-// exported helpers (regionPrompts, formatPhone) does not open stdin.
+// exported helpers (regionPrompts, buildConfig) does not open stdin.
 
 let rl;
 const ask = (q, def = '') => new Promise(resolve =>
@@ -126,22 +126,6 @@ function regionPrompts(country) {
 }
 
 /**
- * Format a phone number for display.
- * US 10-digit strings are formatted as (xxx) xxx-xxxx.
- * All other inputs (non-US country or non-10-digit) are returned verbatim.
- *
- * @param {string} phone    Raw phone string
- * @param {string} country  2-letter ISO country code (upper-case)
- * @returns {string}
- */
-function formatPhone(phone, country) {
-  if (country === 'US' && phone.length === 10) {
-    return `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`;
-  }
-  return phone;
-}
-
-/**
  * If a non-empty passphrase is given, encrypt the plaintext config at configPath
  * into encPath (shredding the plaintext). Returns { encrypted: boolean }.
  * Pure aside from the file I/O it delegates to lib/config.encryptConfigToDisk.
@@ -161,7 +145,7 @@ function maybeEncryptConfig(opts) {
   return { encrypted: true, encPath: res.encPath };
 }
 
-module.exports = { regionPrompts, formatPhone, maybeEncryptConfig, readExistingConfig, buildConfig, dedicatedMailboxProblem };
+module.exports = { regionPrompts, maybeEncryptConfig, readExistingConfig, buildConfig, dedicatedMailboxProblem };
 
 // ─── Main setup ───────────────────────────────────────────────────────────────
 
@@ -223,6 +207,8 @@ function buildConfig(existing, a) {
   const relay = a.simpleloginKey ? { ...seededRelay, ...baseRelay, apiKey: a.simpleloginKey } : baseRelay;
   const prevPerson = { ...(prev.person || {}) };
   if (a.dob === '') delete prevPerson.dob; // a blank answer clears it
+  // Nothing uses these any more: keep less about the member.
+  for (const k of ['phone', 'phoneFormatted', 'aliases']) delete prevPerson[k];
   const email = buildEmailBlock(prev.email, a);
   return {
     ...prev,
@@ -231,14 +217,11 @@ function buildConfig(existing, a) {
       firstName: a.firstName,
       lastName: a.lastName,
       fullName: `${a.firstName} ${a.lastName}`,
-      aliases: a.aliases,
       city: a.city,
       country: a.country,
       state: a.state,
       zip: a.zip,
       email: a.email,
-      phone: a.phone,
-      phoneFormatted: a.phoneFormatted,
       ...(a.dob ? { dob: a.dob } : {}),
     },
     capsolver: { ...(prev.capsolver || {}), apiKey: a.capsolverKey || 'CAP-YOUR_KEY_HERE' },
@@ -280,16 +263,12 @@ async function main() {
   console.log('── Personal Info ──────────────────────────────────────────');
   const firstName      = await ask('First name',              p.firstName || '');
   const lastName       = await ask('Last name',               p.lastName  || '');
-  const aliasInput     = await ask('Aliases (comma-separated, e.g. "Steve Doe, S Doe")', (p.aliases||[]).join(', '));
-  const aliases        = aliasInput ? aliasInput.split(',').map(s => s.trim()).filter(Boolean) : [];
   const city           = await ask('City',                    p.city || '');
   const country        = (await ask('Country (2-letter ISO, e.g. US, CA, GB, AU)', p.country || 'US')).toUpperCase();
   const { regionLabel, postalLabel } = regionPrompts(country);
   const state          = await ask(regionLabel,               p.state || '');
   const zip            = await ask(postalLabel,               p.zip   || '');
   const email          = await ask('Email address',           p.email || '');
-  const phone          = await ask('Phone (digits only for US; any format for non-US)', p.phone || '');
-  const phoneFormatted = formatPhone(phone, country);
   let dob = await ask('Date of birth (YYYY-MM-DD, optional; only used where a site\'s form requires it)', p.dob || '');
   while (dob && !parseDob(dob)) dob = await ask('  That is not a valid date. Use YYYY-MM-DD, or leave blank', '');
 
@@ -336,12 +315,12 @@ async function main() {
 
   // ── Build config ─────────────────────────────────────────────────────────
   const config = buildConfig(existing, {
-    firstName, lastName, aliases, city, country, state, zip, email, phone,
-    phoneFormatted, dob, capsolverKey, simpleloginKey, profileDir,
+    firstName, lastName, city, country, state, zip, email,
+    dob, capsolverKey, simpleloginKey, profileDir,
     mailbox, smtpHost, appPassword,
   });
 
-  // 0600: config.json holds the legal name, home address, phone, DOB, the SMTP
+  // 0600: config.json holds the legal name, home address, DOB, the SMTP
   // password and every API key. The umask default (0644) makes all of that
   // readable by any other local account.
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), { mode: 0o600 });
