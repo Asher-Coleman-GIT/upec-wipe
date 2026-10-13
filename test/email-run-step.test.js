@@ -109,3 +109,19 @@ test('a logged bounce moves a sent email to manual', async () => {
   assert.equal(out.sent.length, 0);
   assert.match(out.lines.join('\n'), /manual Alpha: email to p@alpha\.com failed or bounced/);
 });
+
+test('a bounced interrupted send goes to manual without a resend prompt', async () => {
+  const state = { optOuts: {}, emailSent: { Alpha: { to: 'p@alpha.com', at: 't', status: 'unknown' } }, emailReplies: { Alpha: { outcome: 'bounced', at: 't' } } };
+  const { d, out } = deps({ state, ask: async (q) => { if (/Resend/.test(q)) throw new Error('must not ask'); return 'SEND'; } });
+  assert.equal(await runEmailStep(d), 0);
+  assert.equal(out.sent.length, 0);
+  assert.match(out.lines.join('\n'), /manual Alpha/);
+});
+
+test('an address that failed twice goes to manual', async () => {
+  const state = { optOuts: {}, emailFailures: { Alpha: 2 } };
+  const { d, out } = deps({ state });
+  assert.equal(await runEmailStep(d), 0);
+  assert.equal(out.sent.length, 0);
+  assert.match(out.lines.join('\n'), /manual Alpha/);
+});

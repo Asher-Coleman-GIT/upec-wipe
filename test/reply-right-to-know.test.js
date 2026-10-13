@@ -36,3 +36,11 @@ test('reply without the flag still logs against the deletion email key', () => {
   assert.equal(r.status, 0, r.stderr);
   assert.equal(state.emailReplies.Pipl.outcome, 'honored');
 });
+
+test('reply --right-to-know works wherever the flag sits', () => {
+  const { r, state } = runReply(['--right-to-know', 'Pipl', 'bounced'], {
+    optOuts: {}, emailSent: { 'know:Pipl': { to: 'privacy@pipl.com', at: 't', messageId: 'm' } },
+  });
+  assert.equal(r.status, 0, r.stderr);
+  assert.equal(state.emailReplies['know:Pipl'].outcome, 'bounced');
+});
