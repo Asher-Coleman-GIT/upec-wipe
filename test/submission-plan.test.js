@@ -1,30 +1,20 @@
 /**
  * test/submission-plan.test.js
  *
- * Fork policy: the generic pass is opt-in, and every web submission for a person
- * uses the relay alias resolved once up front. A person whose alias cannot be
- * obtained is blocked; everyone else still runs.
+ * Fork policy: every web submission for a person uses the relay alias resolved
+ * once up front. A person whose alias cannot be obtained is blocked; everyone
+ * else still runs.
  */
 
 'use strict';
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { isGenericEnabled, buildSubmissionPlan, withSubmissionEmail } = require('../lib/submission-plan');
+const { buildSubmissionPlan, withSubmissionEmail } = require('../lib/submission-plan');
 
 const A = { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', email: 'jane@example.com' };
 const B = { firstName: 'John', lastName: 'Roe', fullName: 'John Roe', email: 'john@example.com' };
 const RELAY = { relay: { provider: 'simplelogin', apiKey: 'k' } };
-
-test('generic pass is off by default', () => {
-  assert.equal(isGenericEnabled(['node', 'watcher.js'], {}), false);
-  assert.equal(isGenericEnabled(['node', 'watcher.js'], { generic: { enabled: 'true' } }), false);
-});
-
-test('generic pass turns on with --generic or generic.enabled === true', () => {
-  assert.equal(isGenericEnabled(['node', 'watcher.js', '--generic'], {}), true);
-  assert.equal(isGenericEnabled(['node', 'watcher.js'], { generic: { enabled: true } }), true);
-});
 
 test('relay.required false: everyone allowed with real email, masked=false', async () => {
   const plan = await buildSubmissionPlan({ config: { relay: { required: false } }, persons: [A, B], state: {} });

@@ -61,3 +61,41 @@ test('upec-wipe preview --generic is refused the same way', () => {
   assert.ok(out.includes(FLAG_MSG), `expected the retired message, got:\n${out}`);
   assert.doesNotMatch(out, /BROWSER_MODULE_LOADED/);
 });
+
+const CONFIG_MSG = 'The generic pass was retired: remove the "generic" block from config.json. Its sites are in the reviewed catalog (data/catalog/).';
+
+test('genericRetiredMessage refuses only generic.enabled === true', () => {
+  const { genericRetiredMessage } = require('../lib/submission-plan');
+  assert.equal(genericRetiredMessage({ generic: { enabled: true } }), CONFIG_MSG);
+  assert.equal(genericRetiredMessage({ generic: { enabled: false } }), null);
+  assert.equal(genericRetiredMessage({ generic: { enabled: 'true' } }), null);
+  assert.equal(genericRetiredMessage({ generic: { enabled: 1 } }), null);
+  assert.equal(genericRetiredMessage({}), null);
+  assert.equal(genericRetiredMessage(undefined), null);
+});
+
+test('the run mode checks generic.enabled before the email step, the browser and the egress check', () => {
+  const { modeSource } = require('./helpers/watcher-source');
+  const src = modeSource('run');
+  const check = src.indexOf('genericRetiredMessage(config)');
+  assert.ok(check > 0, 'run.js must call genericRetiredMessage(config)');
+  assert.ok(check > src.indexOf('loadRunSetup(flags)'), 'after the config is loaded');
+  assert.ok(check < src.indexOf('loadChromium()'), 'before the browser module loads');
+  assert.ok(check < src.indexOf('runEmailStep'), 'before the email step');
+  assert.ok(check < src.indexOf('openBrowserSession('), 'before the egress check');
+});
+
+test('doctor flags generic.enabled: true and passes without it', async () => {
+  const { checkRetiredSettings } = require('../lib/doctor');
+  const bad = await checkRetiredSettings({ generic: { enabled: true } });
+  assert.equal(bad.ok, false);
+  assert.equal(bad.hint, CONFIG_MSG);
+  assert.equal((await checkRetiredSettings({ generic: { enabled: false } })).ok, true);
+  assert.equal((await checkRetiredSettings({})).ok, true);
+});
+
+test('runDoctor runs the retired-settings check', async () => {
+  const src = fs.readFileSync(path.join(ROOT, 'lib', 'doctor.js'), 'utf8');
+  assert.match(src, /name: 'retired',\s+run: \(\) => checkRetiredSettings\(cfg\)/);
+  assert.match(src, /running 7 checks/);
+});
