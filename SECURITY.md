@@ -19,8 +19,7 @@ one person, so please be patient rather than escalating publicly.
 This is not an ordinary utility. `config.json` contains:
 
 - legal name, home address, phone number, date of birth, email address
-- optionally: an SMTP password, a CapSolver API key, a HIBP API key, a
-  SimpleLogin relay key, and per-broker site credentials
+- optionally: an SMTP password, a CapSolver API key, a SimpleLogin relay key, and per-broker site credentials
 
 `state.json` contains the complete record of which brokers you have contacted and
 when. That record is itself sensitive: it is a list of sites that hold data about
@@ -35,19 +34,17 @@ So the bugs that matter most here are the ones that:
 3. Report a removal that never happened. The entire output of this tool is "here
    is what was removed"; a false success is worse than a crash, because you stop
    worrying about a listing that is still live.
-4. Expose the local dashboard, which serves your config over HTTP.
 
 Reports in those categories are treated as security issues even if they need no
 attacker at all.
 
 ## In scope
 
-- Anything in the four categories above
+- Anything in the three categories above
 - Command or argument injection through config values, feed data, or email content
 - SSRF via a URL that came from a remote broker registry or a confirmation email
 - Weaknesses in the at-rest encryption (`lib/secrets.js`)
-- Dashboard authentication, CSRF, or path-traversal gaps
-- Secrets leaking to stdout, `ps`, logs, or the dashboard API
+- Secrets leaking to stdout, `ps` or logs
 
 ## Out of scope
 
@@ -77,8 +74,6 @@ ls -l config.json state.json
 # 4. Never commit config.json or state.json. Both are gitignored; verify with:
 git check-ignore -v config.json state.json
 ```
-
-Start the dashboard only with `upec-wipe dashboard`. It refuses to bind anything but loopback and refuses to start without credentials. For remote access use `ssh -L 8080:127.0.0.1:8080 <host>`.
 
 ## Review process
 

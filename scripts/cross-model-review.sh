@@ -108,9 +108,8 @@ bash "$(dirname "$0")/cross-model-preflight.sh" || exit $?
 # The modules that touch PII, crypto, subprocesses, or inbound untrusted data.
 # Kept in sync with the tier-1 table in docs/CROSS_MODEL_REVIEW.md.
 TIER1="lib/config.js lib/secrets.js lib/field-resolver.js lib/forms.js
-lib/imap-confirm.js lib/email.js lib/feeds.js lib/relay.js lib/scheduler.js
-lib/complaint.js lib/broker-runner.js brokers.js
-dashboard/server.js dashboard/validate.js setup.js"
+lib/email.js lib/email-step.js lib/feeds.js lib/relay.js lib/scheduler.js
+lib/broker-runner.js brokers.js setup.js"
 
 if [ -n "$FILES" ]; then
   TARGETS="$(printf '%s' "$FILES" | tr ',' '\n' | sed '/^$/d')"
@@ -182,7 +181,7 @@ done
 
 # Untracked-but-not-ignored files, only when they are reviewable code. A new
 # module should be reviewed before it is committed; notes.txt, addresses.csv and
-# a draft complaint letter should never leave the machine, and "it is not
+# a draft letter should never leave the machine, and "it is not
 # gitignored" is not evidence that they may.
 SKIPPED=0
 git ls-files -z --others --exclude-standard | while IFS= read -r -d '' f; do
@@ -226,10 +225,10 @@ your job is to find what a same-family self-review would share a blind spot on.
 
 WHAT THIS TOOL DOES: Node.js + Playwright automation that submits data-broker
 opt-out requests. config.json holds the user's legal name, home address, phone,
-date of birth and email. That PII is typed into 40+ third-party web forms, sent
-over SMTP, read back over IMAP, and written into regulator complaint PDFs. Broker
-lists are fetched from remote registries. It runs unattended on a monthly
-schedule and ships a local web dashboard.
+date of birth and email. That PII is typed into third-party web forms behind a
+masked alias and sent to brokers over SMTP from a dedicated mailbox, all behind
+a VPN check. Catalog candidate lists are fetched from remote registries. It runs
+only when the user starts it.
 
 WHAT COUNTS AS SERIOUS HERE, in rough order:
 1. PII reaching somewhere it should not: a log, a snapshot, a report, an error
@@ -238,10 +237,8 @@ WHAT COUNTS AS SERIOUS HERE, in rough order:
 2. Reporting success when nothing was submitted. The tool's entire output is
    "here is what was removed"; a false removal is worse than a crash because the
    user stops worrying.
-3. Security: weak or misused crypto, an auth or CSRF gap on the dashboard,
-   command or argument injection, SSRF through a remote-registry URL.
-4. Losing or corrupting state so the schedule re-submits or gets permanently
-   stuck.
+3. Security: weak or misused crypto, command or argument injection, SSRF through a remote-registry URL.
+4. Losing or corrupting state so a run re-submits or gets permanently stuck.
 5. Failing to work at all in a documented setup (Docker, Linux, a NAS).
 
 RULES

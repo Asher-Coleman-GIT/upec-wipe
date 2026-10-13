@@ -63,7 +63,7 @@
 | Google - Results About You | manual | n/a | manual | no |
 | Google - Outdated Content | manual | n/a | manual | no |
 
-Registry downloads checked 2026-10-12: California works from the CPPA registry (`https://cppa.ca.gov/data_broker_registry/registry.csv`, 866 rows, with a privacy-rights page and contact email per broker). Vermont's export is a script-only web page with no download, so `update-brokers` skips it and says so.
+Registry downloads checked 2026-10-12: California works from the CPPA registry (`https://cppa.ca.gov/data_broker_registry/registry.csv`, 866 rows, with a privacy-rights page and contact email per broker). Vermont's export is a script-only web page with no download, so `scripts/update-catalog-sources.js` skips it and says so.
 
 Sites that show a bot-protection page (Cloudflare and similar) are reported as **manual** with their link at run time, whatever this table says. In the 2026-10 survey that was WhitePages, TruePeopleSearch, BeenVerified, PeopleFinders, MyLife, FamilyTreeNow, CheckPeople, ThatsThem, SmartBackgroundChecks and NationalPublicData. Re-check any broker with `node scripts/inspect-broker-forms.js <name>` (read-only, dummy person). With `ASSIST=1` the window is visible and you complete each bot check yourself; the 2026-10-11 assisted survey got past every check except WhitePages, CheckPeople, PeopleSearchNow and ThatsThem.
 

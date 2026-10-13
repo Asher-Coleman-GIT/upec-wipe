@@ -174,3 +174,29 @@ test('the example config has no hibp block', () => {
   const ex = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.example.json'), 'utf8'));
   assert.equal('hibp' in ex, false);
 });
+
+const KEPT_DOCS = ['README.md', 'STATUS.md', 'FORK.md', 'SECURITY.md', 'docs/REFERENCE.md', 'docs/UPEC-MANUAL.md', 'docs/PRIVACY.md', 'docs/THREAT-MODEL.md', 'docs/SYNOLOGY.md'];
+const RETIRED_WORDS = /`(know|know-status|complaints|breach|score|report|freeze|dashboard|update-brokers|serp)`|--(know|complaints|breach-check|score|report|freeze|snapshot|confirm-emails|serp-scan|update-brokers|right-to-know)\b|Have I Been Pwned|haveibeenpwned/;
+
+test('the kept docs mention retired commands only as retired', () => {
+  for (const f of KEPT_DOCS) {
+    const text = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    const retiredTable = text.indexOf('## Retired commands');
+    text.split('\n').forEach((line, i) => {
+      if (!RETIRED_WORDS.test(line)) return;
+      const inTable = retiredTable !== -1 && text.indexOf(line) > retiredTable && line.startsWith('|');
+      assert.ok(inTable || /removed|retired|moved/i.test(line), `${f}:${i + 1}: ${line}`);
+    });
+  }
+});
+
+test('REFERENCE has the retired commands table and the manual the freeze section', () => {
+  const ref = fs.readFileSync(path.join(ROOT, 'docs', 'REFERENCE.md'), 'utf8');
+  assert.match(ref, /## Retired commands/);
+  for (const c of ['know', 'complaints', 'breach', 'score', 'report', 'freeze', 'snapshot', 'confirm-emails', 'serp', 'dashboard', 'update-brokers']) {
+    assert.match(ref, new RegExp(`^\\| \`${c}\` \\|`, 'm'), c);
+  }
+  const manual = fs.readFileSync(path.join(ROOT, 'docs', 'UPEC-MANUAL.md'), 'utf8');
+  assert.match(manual, /## Credit and identity freezes/);
+  for (const n of ['Equifax', 'Experian', 'TransUnion', 'ChexSystems', 'NCTUE', 'Innovis', 'OptOutPrescreen']) assert.match(manual, new RegExp(n));
+});

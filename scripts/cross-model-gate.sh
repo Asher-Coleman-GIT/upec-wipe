@@ -26,7 +26,7 @@ fi
 
 # Kept in sync with the tier-1 table in docs/CROSS_MODEL_REVIEW.md and with the
 # TIER1 list in scripts/cross-model-review.sh.
-TIER1_PATTERN='^(lib/(config|secrets|field-resolver|forms|imap-confirm|confirm|email|right-to-know-runner|feeds|serp-scan|scheduler|complaint|broker-runner|relay|captcha|hibp)\.js|dashboard/(server|validate)\.js|brokers\.js|setup\.js|Dockerfile|docker-compose\.yml)$'
+TIER1_PATTERN='^(lib/(config|secrets|field-resolver|forms|confirm|email|email-step|feeds|serp-scan|scheduler|broker-runner|relay|captcha)\.js|brokers\.js|setup\.js|Dockerfile|docker-compose\.yml)$'
 
 CHANGED="$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" || true)"
 TIER1_TOUCHED="$(printf '%s\n' "$CHANGED" | grep -E "$TIER1_PATTERN" || true)"

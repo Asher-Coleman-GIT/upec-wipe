@@ -13,6 +13,7 @@ Details that do not fit on the front page. For setting up and running the tool s
 - [Maintenance](#maintenance)
 - [Removing a schedule from an older version](#removing-a-schedule-from-an-older-version)
 - [International users](#international-users)
+- [Retired commands](#retired-commands)
 - [Is it safe to submit my details to brokers?](#is-it-safe-to-submit-my-details-to-brokers)
 - [California DROP portal](#california-drop-portal)
 - [Why not a paid service?](#why-not-a-paid-service)
@@ -81,7 +82,7 @@ A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
 ## Search-engine monitoring
 
-`upec-wipe serp` searches DuckDuckGo, Bing and Google for `"<your full name>" "<city>, <state>"` and lists the broker domains that rank. `upec-wipe serp-watch` does the same, compares the result with the previous snapshot in `data/serp-history.json`, and lists domains where your name is new. Both send your full name and city to those search engines, through the VPN. They run only when you start them.
+`upec-wipe serp-watch` searches DuckDuckGo, Bing and Google for `"<your full name>" "<city>, <state>"`, compares the broker domains that rank with the previous snapshot in `data/serp-history.json`, and lists domains where your name is new. It sends your full name and city to those search engines, through the VPN, and runs only when you start it.
 
 ---
 
@@ -212,9 +213,7 @@ Synology and other NAS users: see [SYNOLOGY.md](SYNOLOGY.md).
 | `UPEC_WIPE_STATE_PATH` | Where `state.json` lives. |
 | `UPEC_WIPE_LOW_MEMORY` | `1` lowers browser background work on small hosts. |
 | `UPEC_WIPE_DEBUG` | `1` prints where a `Fatal:` error came from (file and line, with account names and URL queries removed). Include it when you ask for help. |
-| `UPEC_WIPE_HOST`, `UPEC_WIPE_PORT` | Dashboard listen address. Loopback only; any other host is refused. |
-| `UPEC_WIPE_USER`, `UPEC_WIPE_PASS` | Dashboard login, instead of the generated one. |
-| `CA_REGISTRY_URL`, `VT_REGISTRY_URL` | Override the registry URLs used by `update-brokers`. |
+| `CA_REGISTRY_URL`, `VT_REGISTRY_URL` | Override the registry URLs used by `scripts/update-catalog-sources.js`. |
 
 ---
 
@@ -223,7 +222,7 @@ Synology and other NAS users: see [SYNOLOGY.md](SYNOLOGY.md).
 ### Refreshing the broker registries
 
 ```bash
-upec-wipe update-brokers
+node scripts/update-catalog-sources.js
 ```
 
 Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no browser, through the Mullvad check), dedups them against `brokers.js`, and writes `data/feeds-brokers.json`, which `scripts/catalog-candidates.js` reads with the bundled lists to find sites for the catalog. Entries that are not `https` are dropped.
@@ -258,6 +257,26 @@ UPEC-WIPE never schedules runs. If an earlier version of setup installed a month
 - `lib/forms.js` tries province, postal and postcode field names for non-US people, and fills a country `<select>` with your code when there is one.
 - Brokers marked `usOnly: true` (US people-search, phone directories and public-record sites such as Spokeo, WhitePages, FastPeopleSearch, TruePeopleSearch, BeenVerified, USPhonebook and PublicDataUSA) are skipped when your country is not `US`. Global brokers are tried for everyone.
 - Email requests cite US state law (the Utah Consumer Privacy Act for Utah residents), so they are aimed at US residents.
+
+---
+
+## Retired commands
+
+Each prints one line saying it was removed and exits without doing anything.
+
+| Command | Why it went | Use instead |
+| --- | --- | --- |
+| `know` | It cited California law (CCPA) for every non-EU member, which does not apply to Utah residents, and sent your phone number. | The email requests (`run --email`) ask for deletion under Utah law. |
+| `complaints` | Same California-law problem: it drafted complaints to the wrong regulator. | File with the Utah Division of Consumer Protection yourself if a broker ignores a request. |
+| `breach` | It sent your real email to Have I Been Pwned and needed a paid key. | Check haveibeenpwned.com yourself. |
+| `score` | Built mostly from the breach check. | `verify` and `serp-watch`. |
+| `report` | A PDF of the score. | `list` and `verify`. |
+| `freeze` | A checklist that sent nothing. | The manual's "Credit and identity freezes" section. |
+| `snapshot` | Saved screenshots of forms with your details. | Nothing. |
+| `confirm-emails` | Clicked links from exported emails unattended. | Click confirmation links yourself. |
+| `serp` | `serp-watch` does the same search and lists what is new. | `serp-watch`. |
+| `dashboard` | Could not run the email step or log replies, and was the largest attack surface. | The CLI. |
+| `update-brokers` | Maintainer work since the generic pass was retired. | `node scripts/update-catalog-sources.js`. |
 
 ---
 

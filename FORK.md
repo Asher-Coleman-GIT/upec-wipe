@@ -5,7 +5,7 @@ Fork of https://github.com/stephenlthorn/auto-identity-remove pinned at the comm
 for what changed and why.
 
 Runs are manual only. Setup installs no scheduled job, and there is no
-`--install-scheduler` or dashboard Schedule tab.
+`--install-scheduler`.
 
 ## Pulling upstream changes
 

@@ -15,7 +15,7 @@ These look like friction. They are the product, and each one has tests.
 - **Your real email is never sent to a broker.** Every form gets one SimpleLogin alias. If no alias can be made, nothing is submitted for you; there is no fallback to the real address.
 - **Nothing leaves your machine off the VPN.** The browser and every direct connection (SimpleLogin, CapSolver, SMTP, registries) pass a Mullvad check first. If it fails, the run stops.
 - **Nothing runs on its own.** No scheduler, no background job, no telemetry or update check. It runs when you start it.
-- **Local only.** It never runs as root, files are readable only by you, `config.json` can be encrypted at rest, and the optional dashboard listens on this computer only.
+- **Local only.** It never runs as root, files are readable only by you, `config.json` can be encrypted at rest and there is no local server.
 - **Email requests need you.** A plain run never sends email. `run --email` needs a terminal and you typing `SEND`, sends from a dedicated mailbox, one email every 45 seconds, and never emails a broker twice.
 
 What each layer does and does not protect: [THREAT-MODEL.md](docs/THREAT-MODEL.md). Every destination and exactly what it gets: [PRIVACY.md](docs/PRIVACY.md).
@@ -56,16 +56,10 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `pending` | Lists brokers awaiting an email-confirmation click |
 | `verify` | Re-searches brokers and reports whether you still appear |
 | `list` | Lists brokers, catalog sites and email requests with their last status |
-| `score` | Prints your 0-100 exposure score and its trend |
-| `report` | Saves a monthly PDF report on this computer |
-| `complaints` | Writes regulator complaints for brokers past the legal deadline, for you to file |
-| `know` | Sends CCPA/GDPR right-to-know requests from the dedicated mailbox |
-| `breach` | Checks Have I Been Pwned (sends your real email there; asks for YES first) |
-| `freeze` | Shows the credit and identity freeze checklist |
-| `serp` / `serp-watch` | Searches for your name on search engines / lists new domains since last time |
-| `update-brokers` | Refreshes the catalog candidate sources from the California and Vermont registries |
+| `serp-watch` | Searches for your name on search engines and lists new domains since last time |
 | `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
-| `dashboard` | Starts the local web dashboard and prints its URL and login |
+
+Retired commands and why: [docs/REFERENCE.md](docs/REFERENCE.md#retired-commands).
 
 Useful options: `--only <broker>`, `--skip <broker>`, `--resume`, `--retry-failed`, `--assist` (clear a bot check yourself and the run carries on), `--no-capsolver`. `upec-wipe --help` lists them all, and the [manual's command reference](docs/UPEC-MANUAL.md#command-reference) says what each command sends.
 
@@ -89,7 +83,6 @@ upec-wipe/
 │                         catalog, state, redaction, CAPTCHA
 ├── brokers.js            the 32 explicit brokers
 ├── data/catalog/         one reviewed record per site (tokens only, never real values)
-├── dashboard/            optional local web dashboard
 ├── setup.js              interactive setup
 ├── scripts/              catalog survey and review tools, upstream review, hardening
 ├── test/                 node:test suite (npm test)
@@ -116,8 +109,7 @@ upec-wipe/
 ## Development
 
 ```bash
-npm test                             # main suite, about 80 s
-node --test dashboard/*.test.js      # dashboard suite
+npm test                             # about 80 s
 ```
 
 Write the failing test first. Tests use the dummy person from `config.example.json`; never put real personal data in any tracked file, test or commit message. Tracked files use plain hyphens only. Rules for AI agents working here are in [CLAUDE.md](CLAUDE.md).

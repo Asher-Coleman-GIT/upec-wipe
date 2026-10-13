@@ -16,7 +16,7 @@ A month looks like this:
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
 3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/upec-wipe.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/upec-wipe.js verify` checks whether you are really gone.
 
-Some extra commands send more about you to other services: `breach` sends your real email to Have I Been Pwned, and `serp` searches for your name and city on search engines. They are off unless you run them. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
+One extra command sends more about you to another service: `serp-watch` searches for your name and city on search engines. It is off unless you run it. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
 ## What you need before starting
 
@@ -268,7 +268,7 @@ This part is the same for Parts A and B.
    It takes a few minutes. Then rehearse:
 
    ```
-   docker compose run --rm watcher node watcher.js --dry-run
+   docker compose run --rm watcher node watcher.js --preview
    ```
 
    Nothing is submitted. Then the real run:
@@ -298,16 +298,6 @@ This part is the same for Parts A and B.
 
    It lists opt-outs waiting for a confirmation or a manual step.
 
-## Dashboard (optional)
-
-A web page for browsing results. It only works on this computer.
-
-```
-node bin/upec-wipe.js dashboard
-```
-
-It prints a web address and a login. Open that address in your browser and use that login. `127.0.0.1` or `localhost` with the printed port both work; any other name is refused with a `misdirected request` error, which protects against web pages that try to reach the dashboard. After 10 wrong logins in 15 minutes it locks for the rest of that window. New passwords set in the Admin tab must be at least 12 characters.
-
 ## Email requests (phase 2)
 
 Some data brokers only take privacy requests by email. These are sent by a separate step, never by a normal run.
@@ -320,6 +310,20 @@ Some data brokers only take privacy requests by email. These are sent by a separ
 
 `upec-wipe run` on its own (or `--forms`) fills web forms only. `--forms --email` does both.
 
+## Credit and identity freezes
+
+A freeze stops new credit or accounts being opened in your name. It is free, and you can lift it for a day when you apply for credit. The tool does not do this for you; each takes a few minutes on the bureau's site.
+
+| Where | What it blocks |
+| --- | --- |
+| [Equifax](https://www.equifax.com/personal/credit-report-services/credit-freeze/) | New credit (one of the three major bureaus). Keep your PIN or login to lift it later. |
+| [Experian](https://www.experian.com/freeze/center.html) | New credit (major bureau). |
+| [TransUnion](https://www.transunion.com/credit-freeze) | New credit (major bureau). |
+| [ChexSystems](https://www.chexsystems.com/security-freeze/place-freeze) | New checking and savings accounts. |
+| [NCTUE](https://www.nctue.com/consumers) | New phone, utility and pay-TV accounts. |
+| [Innovis](https://www.innovis.com/personal/securityFreeze) | New credit (the "fourth" bureau, often missed). |
+| [OptOutPrescreen](https://www.optoutprescreen.com/) | Prescreened credit and insurance offers in the mail. |
+
 ## Command reference
 
 Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your computer; see [PRIVACY.md](PRIVACY.md) for details.
@@ -331,20 +335,11 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
 | `run` | The real opt-out pass: fills web forms (the same as `run --forms`). Never sends email. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. |
 | `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
-| `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. Add `--right-to-know` when the reply answers a right-to-know request. | Nothing. |
+| `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
 | `verify` | Searches the brokers again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers and their last status. | Nothing. |
-| `score` | Prints your exposure score (0 to 100) and its trend. | Nothing. |
-| `report` | Saves a monthly PDF report on this computer. | Nothing. |
-| `complaints` | Writes regulator complaints for brokers past the legal deadline, for you to file. | Nothing. |
-| `freeze` | Shows the credit-freeze checklist (Equifax, Experian, TransUnion and others). | Nothing. |
-| `know` | Sends "what do you hold about me" requests under the California (CCPA) or European (GDPR) privacy law to the brokers that take requests by email. It needs the `email` block and works like `run --email`: same dedicated mailbox, you type SEND, Mullvad is re-checked before every email, one email every 45 s, and the same request is never sent twice. Replies to know requests arrive in the dedicated mailbox, not the alias. | SimpleLogin: a request for your alias if none exists yet. Your SMTP server and those brokers: your name, city, state, zip, phone and alias. |
-| `breach` | Checks Have I Been Pwned for breaches. Needs `hibp.apiKey` and an interactive terminal; it asks you to type YES first. | **Your real email** to haveibeenpwned.com. |
-| `serp` | Searches DuckDuckGo, Bing and Google for your name. | `"<your full name>" "<city>, <state>"` to those search engines. |
-| `serp-watch` | Like `serp`, and lists sites where your name is new since last time. | Same as `serp`. |
-| `update-brokers` | Refreshes the catalog candidate sources from the California and Vermont registries. | Nothing about you. |
-| `dashboard` | Starts the local web page. | Nothing. Runs started from it send what the command would. |
+| `serp-watch` | Searches DuckDuckGo, Bing and Google for your name and lists sites where it is new since last time. | `"<your full name>" "<city>, <state>"` to those search engines. |
 
 Useful options for `run` and `preview`: `--assist` (when a site shows a bot check such as Cloudflare's "Just a moment...", the run waits up to 3 minutes for you to complete it in the browser window, then fills and submits by itself; needs a visible window), `--only <broker>` and `--skip <broker>` (limit to or leave out brokers), `--resume` (carry on after an interrupted run), `--retry-failed` (only the brokers that failed last time) and `--no-capsolver` (treat CAPTCHA brokers as manual). `upec-wipe list` also lists the reviewed catalog sites and when each was checked. `--allow <broker>` stops opting out of a broker you want to stay listed on, and `--unallow <broker>` undoes that.
 
@@ -364,12 +359,9 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 | `... - not sent: email.smtp.from ... Set email.smtp.from to a non-real address.` | Your `"from"` is missing or is your real email. Set it to a non-real address. |
 | `... - not sent: email.smtp.user ... Use a separate SMTP mailbox that is not linked to you, or remove the email block ...` | Your SMTP login is your real email and brokers can see it. Switch to a separate mailbox not linked to you, or delete the `email` block and handle those brokers by hand. |
 | `Email step not run: ...` | The email step checks its setup before sending anything. Fix what it names: the `email.smtp` block, `user` and `from` must be the same dedicated address, and it must run in a terminal so you can type `SEND`. |
-| `upec-wipe-dashboard: UPEC_WIPE_HOST=... is not a loopback address. ...` | Unset `UPEC_WIPE_HOST` so the dashboard stays on this computer. |
-| `Network check failed for direct connections - nothing was sent. ...` | The tool was about to contact SimpleLogin, CapSolver, HIBP, your SMTP server or a registry, and Mullvad is off. Connect the Mullvad app and run again. |
+| `Network check failed for direct connections - nothing was sent. ...` | The tool was about to contact SimpleLogin, CapSolver, your SMTP server or a registry, and Mullvad is off. Connect the Mullvad app and run again. |
 | `Note: network.proxy covers the browser only. ...` | You set `network.proxy`. Brokers see the proxy, but those services see your real IP. Use the Mullvad app instead if that matters to you. |
 | `Playwright is not installed. Run: npm ci --ignore-scripts && npx playwright install chromium` | Run that command in the tool's folder. |
-| `misdirected request: unexpected Host header` (dashboard) | Open the address the dashboard printed (or `localhost` with the same port). |
-| `too many failed login attempts; try again later` (dashboard) | Wait up to 15 minutes, then log in with the printed login. |
 | `blocked by bot protection - open in your normal browser: <link>` | The site blocks automated browsers or VPN addresses. Run again with `--assist` and complete the check in the browser window when asked. If the page says "you have been blocked" or "Error 1005", the site refuses this Mullvad server: switch servers or open the link yourself. |
 | `... (check not completed in time) - open in your normal browser: <link>` | `--assist` waited 3 minutes and the check did not clear. Open the link yourself, or run that broker again with `--assist --only <broker>`. |
 | `form not recognised (none of your details could be filled) - do it by hand: <link>` | The site changed its form, so nothing was submitted. Open the link and fill it in yourself. `node scripts/inspect-broker-forms.js <broker>` shows the current form so the definition can be updated. |
