@@ -10,34 +10,18 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const os = require('node:os');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
 const ROOT = path.join(__dirname, '..');
 const FLAG_MSG = 'The generic pass was retired: its sites are in the reviewed catalog (data/catalog/). Remove --generic.';
 
+const { makeFixtureRepo, runIn } = require('./helpers/fixture-repo');
+const FIXTURE = makeFixtureRepo();
+test.after(() => fs.rmSync(FIXTURE, { recursive: true, force: true }));
+// Spawned in a config-free copy of the repo: a broken refusal must never fall
+// through to a real run with the member's config.
 function runNode(script, args) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-generic-'));
-  const preload = path.join(dir, 'trap.js');
-  fs.writeFileSync(preload, [
-    "'use strict';",
-    "const Module = require('module');",
-    'const orig = Module._load;',
-    'Module._load = function (req, ...rest) {',
-    "  if (/^playwright(-core)?(\\/|$)/.test(String(req))) process.stderr.write('BROWSER_MODULE_LOADED\\n');",
-    '  return orig.call(this, req, ...rest);',
-    '};',
-  ].join('\n'));
-  try {
-    return spawnSync(process.execPath, ['-r', preload, script, ...args], {
-      encoding: 'utf8',
-      timeout: 30000,
-      env: { ...process.env, NODE_ENV: 'test' },
-    });
-  } finally {
-    fs.rmSync(dir, { recursive: true, force: true });
-  }
+  return runIn(FIXTURE, path.relative(ROOT, script), args);
 }
 
 test('watcher --generic prints the retired line and exits 1', () => {

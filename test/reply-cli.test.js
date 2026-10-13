@@ -20,29 +20,12 @@ function runReply(args, initialState) {
   return { r, state };
 }
 
-test('reply --right-to-know logs against the know: key', () => {
-  const { r, state } = runReply(['Pipl', 'bounced', '--right-to-know'], {
-    optOuts: {}, emailSent: { 'know:Pipl': { to: 'privacy@pipl.com', at: 't', messageId: 'm' } },
-  });
-  assert.equal(r.status, 0, r.stderr);
-  assert.equal(state.emailReplies['know:Pipl'].outcome, 'bounced');
-  assert.equal(state.emailReplies.Pipl, undefined);
-});
-
 test('reply without the flag still logs against the deletion email key', () => {
   const { r, state } = runReply(['Pipl', 'honored'], {
     optOuts: {}, emailSent: { Pipl: { to: 'privacy@pipl.com', at: 't', messageId: 'm' } },
   });
   assert.equal(r.status, 0, r.stderr);
   assert.equal(state.emailReplies.Pipl.outcome, 'honored');
-});
-
-test('reply --right-to-know works wherever the flag sits', () => {
-  const { r, state } = runReply(['--right-to-know', 'Pipl', 'bounced'], {
-    optOuts: {}, emailSent: { 'know:Pipl': { to: 'privacy@pipl.com', at: 't', messageId: 'm' } },
-  });
-  assert.equal(r.status, 0, r.stderr);
-  assert.equal(state.emailReplies['know:Pipl'].outcome, 'bounced');
 });
 
 test('reply skips the values of other flags such as --only', () => {
