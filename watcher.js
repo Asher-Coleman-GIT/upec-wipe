@@ -55,6 +55,6 @@ Promise.resolve()
   .then(() => require(`./lib/modes/${picked.mode}`).run({ flags, argv: process.argv }))
   .then((code) => { if (typeof code === 'number') process.exit(code); })
   .catch((err) => {
-    console.error('\nFatal:', err.message);
+    console.error(require('./lib/modes/shared').formatFatal(err));
     process.exit(1);
   });

@@ -353,6 +353,8 @@ Useful options for `run` and `preview`: `--assist` (when a site shows a bot chec
 | Message | What to do |
 | --- | --- |
 | `Network check failed - nothing was submitted. ...` | Connect Mullvad and check https://am.i.mullvad.net says you are using it. Then run again. |
+| `state.json could not be saved safely: another program is holding it ...` | Close the program that has the file open (an editor, a sync or backup tool, antivirus scanning it) and run again. Nothing was lost. |
+| `Fatal: <message>` | Run the same command with `UPEC_WIPE_DEBUG=1` in front to also print where it failed (file and line only), and include that when you ask for help. |
 | `Skipping person #N: Relay alias creation failed: ...` | Check the SimpleLogin API key in `config.json` and that your SimpleLogin account is verified. |
 | `no usable relay is configured (provider "simplelogin" + apiKey) ...` | Add your SimpleLogin key as `apiKey` in the `relay` block. Without it nothing is submitted for you. Only `"required": false` sends your real email instead. |
 | `... relay.apiKey is still the placeholder. ...` | Setup wrote `YOUR_SIMPLELOGIN_API_KEY` as a placeholder. Replace it with your SimpleLogin API key in the `relay` block. Until then nothing is submitted. |

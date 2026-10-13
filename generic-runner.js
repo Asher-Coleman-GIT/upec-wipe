@@ -34,6 +34,7 @@ const DEAD_URLS_PATH  = path.join(__dirname, 'data', 'dead-urls.json');
 const { detectConfirmationRequired } = require('./lib/confirm');
 const { CONFIRM_RECHECK_DAYS, RECHECK_DAYS, loadConfig } = require('./lib/config');
 const { withRetry } = require('./lib/retry');
+const { redactUrlsInText } = require('./lib/redact');
 const { EgressError } = require('./lib/egress');
 const { isAllowlisted } = require('./lib/filter');
 const { registrableDomain } = require('./lib/domain');
@@ -136,6 +137,13 @@ const DECLINE_COOKIE_SELECTORS = [
 // visible match in document order wins.
 const DECLINE_COOKIE_LOCATOR = `${DECLINE_COOKIE_SELECTORS.join(', ')} >> visible=true`;
 
+// A failed click is not an error for the pass (the page may simply differ), but
+// UPEC_WIPE_DEBUG shows it, with URLs removed.
+function debugClickFailure(what, err) {
+  if (!process.env.UPEC_WIPE_DEBUG) return;
+  console.warn(`[generic] ${what} click failed: ${redactUrlsInText(String((err && err.message) || err)).slice(0, 120)}`);
+}
+
 async function dismissBanners(page) {
   try {
     const el = page.locator(DECLINE_COOKIE_LOCATOR).first();
@@ -143,7 +151,7 @@ async function dismissBanners(page) {
       await el.click({ timeout: 1000 });
       await page.waitForTimeout(500);
     }
-  } catch (_) {}
+  } catch (err) { debugClickFailure('cookie banner', err); }
 }
 
 // ─── Do Not Sell button detector ─────────────────────────────────────────────
@@ -171,7 +179,7 @@ async function clickDoNotSell(page) {
       await page.waitForTimeout(1500);
       return true;
     }
-  } catch (_) {}
+  } catch (err) { debugClickFailure('Do Not Sell', err); }
   return false;
 }
 
@@ -565,7 +573,7 @@ async function runGenericBrokers(context, explicitBrokerHosts, state, logResult,
         // Off the VPN: stop the pass (finally still closes the page).
         if (err instanceof EgressError) throw err;
         // One broker must never abort the whole run or skip the cleanup below.
-        result = { status: 'error', detail: (err && err.message ? require('./lib/redact').redactUrlsInText(err.message).slice(0, 80) : 'error') };
+        result = { status: 'error', detail: (err && err.message ? redactUrlsInText(err.message).slice(0, 80) : 'error') };
         // If the working page itself crashed, replace it so the run can continue.
         if (typeof page.isClosed === 'function' && page.isClosed()) {
           try { page = await context.newPage(); } catch (_) {}
