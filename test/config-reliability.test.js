@@ -243,7 +243,7 @@ test('saveState: the .bak is a hard link to the saved file, not a second write',
     fs.writeFileSync = (...a) => { writeFileCalls++; return realWriteFileSync(...a); };
     cfg.saveState();
     fs.writeFileSync = realWriteFileSync;
-    assert.equal(writeFileCalls, 0, 'no second data write for the .bak');
+    assert.equal(writeFileCalls, 0, 'the .bak was written with writeFileSync instead of being linked');
     assert.equal(fs.statSync(bakPath).ino, fs.statSync(statePath).ino, '.bak shares the inode of state.json');
     assert.equal(fs.readFileSync(bakPath, 'utf8'), fs.readFileSync(statePath, 'utf8'));
   } finally {
@@ -326,6 +326,75 @@ test('saveState: when the .bak cannot be detached, the save fails instead of wri
     assert.equal(fs.readFileSync(bakPath, 'utf8'), first);
   } finally {
     fs.renameSync = realRename;
+    fs.writeFileSync = realWriteFileSync;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('saveState: a locked save explains itself and says nothing was lost', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-locked-'));
+  const statePath = path.join(dir, 'state.json');
+  const bakPath = statePath + '.bak';
+  cfg.setTestStatePath(statePath);
+  const realRename = fs.renameSync;
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    cfg.saveState();
+    fs.renameSync = (from, to) => {
+      if (to === statePath || to === bakPath) { const e = new Error('EPERM: operation not permitted'); e.code = 'EPERM'; throw e; }
+      return realRename(from, to);
+    };
+    cfg.loadState().optOuts.__b__ = { lastSuccess: '2026-01-02T00:00:00.000Z' };
+    assert.throws(() => cfg.saveState(), (e) => /could not be saved safely/.test(e.message) && /Nothing was lost/.test(e.message) && e.code === 'EPERM');
+  } finally {
+    fs.renameSync = realRename;
+    cfg.setTestStatePath(null);
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('saveState: a link count above one detaches the .bak even when inode numbers disagree', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-nlink-'));
+  const statePath = path.join(dir, 'state.json');
+  const bakPath = statePath + '.bak';
+  cfg.setTestStatePath(statePath);
+  const realRename = fs.renameSync;
+  const realStat = fs.statSync;
+  const realOpen = fs.openSync;
+  const realWriteFileSync = fs.writeFileSync;
+  const opened = [];
+  try {
+    cfg.resetState();
+    cfg.loadState().optOuts.__a__ = { lastSuccess: '2026-01-01T00:00:00.000Z' };
+    cfg.saveState(); // linked .bak
+    const linkedIno = realStat(statePath).ino;
+    // drvfs-style lie: the .bak reports a different inode number.
+    fs.statSync = (p, o) => {
+      const s = realStat(p, o);
+      if (p === bakPath) return Object.assign(Object.create(Object.getPrototypeOf(s)), s, { ino: s.ino + 1 });
+      return s;
+    };
+    fs.openSync = (p, flags, ...rest) => { opened.push([p, flags]); return realOpen(p, flags, ...rest); };
+    let bakInoDuringRewrite = null;
+    fs.writeFileSync = (p, ...rest) => {
+      if (p === statePath) bakInoDuringRewrite = realStat(bakPath).ino;
+      return realWriteFileSync(p, ...rest);
+    };
+    fs.renameSync = (from, to) => {
+      if (to === statePath) { const e = new Error('EBUSY'); e.code = 'EBUSY'; throw e; }
+      return realRename(from, to);
+    };
+    cfg.loadState().optOuts.__b__ = { lastSuccess: '2026-01-02T00:00:00.000Z' };
+    cfg.saveState();
+    assert.notEqual(bakInoDuringRewrite, null, 'the in-place fallback ran');
+    assert.notEqual(bakInoDuringRewrite, linkedIno, 'the .bak was detached before the in-place write');
+    assert.ok(opened.some(([p, f]) => p === bakPath + '.tmp' && f === 'r+'), 'the detached copy was opened for fsync');
+  } finally {
+    fs.renameSync = realRename;
+    fs.statSync = realStat;
+    fs.openSync = realOpen;
     fs.writeFileSync = realWriteFileSync;
     cfg.setTestStatePath(null);
     fs.rmSync(dir, { recursive: true, force: true });
