@@ -44,3 +44,11 @@ test('reply --right-to-know works wherever the flag sits', () => {
   assert.equal(r.status, 0, r.stderr);
   assert.equal(state.emailReplies['know:Pipl'].outcome, 'bounced');
 });
+
+test('reply skips the values of other flags such as --only', () => {
+  const { r, state } = runReply(['--only', 'Acme', 'Pipl', 'honored'], {
+    optOuts: {}, emailSent: { Pipl: { to: 'privacy@pipl.com', at: 't', messageId: 'm' } },
+  });
+  assert.equal(r.status, 0, r.stderr);
+  assert.equal(state.emailReplies.Pipl.outcome, 'honored');
+});

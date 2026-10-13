@@ -40,3 +40,13 @@ test('--know-status is not --know, and --allow is parsed', () => {
   assert.equal(p('--allow', 'Spokeo').ALLOWLIST_CMD.name, 'Spokeo');
   assert.equal(p().ALLOWLIST_CMD, null);
 });
+
+test('replyArgs: the broker and outcome after --reply, skipping flags and flag values', () => {
+  const { replyArgs } = require('../lib/cli-flags');
+  const r = (...a) => replyArgs(['node', 'watcher.js', '--reply', ...a]);
+  assert.deepEqual(r('Pipl', 'honored'), { query: 'Pipl', outcome: 'honored' });
+  assert.deepEqual(r('--right-to-know', 'Pipl', 'bounced'), { query: 'Pipl', outcome: 'bounced' });
+  assert.deepEqual(r('--only', 'Acme', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored' });
+  assert.deepEqual(r('Pipl', '--skip', 'none', 'refused'), { query: 'Pipl', outcome: 'refused' });
+  assert.deepEqual(r(), { query: '', outcome: '' });
+});
