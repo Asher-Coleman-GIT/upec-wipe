@@ -11,7 +11,7 @@ const os = require('node:os');
 const path = require('node:path');
 
 const ROOT = path.join(__dirname, '..');
-const JANE = { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', city: 'Austin', state: 'UT', zip: '84101', country: 'US', email: 'jane@example.com' };
+const JANE = { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', city: 'Exampleton', state: 'UT', zip: '84101', country: 'US', email: 'jane@example.com' };
 
 const ANSWERS = { firstName: 'Jane', lastName: 'Doe', city: 'Austin', country: 'US', state: 'TX', zip: '73301', email: 'jane@example.com', dob: '', capsolverKey: '', simpleloginKey: '', profileDir: '/tmp/x' };
 
@@ -44,10 +44,11 @@ test('doctor flags a leftover phone or aliases', async () => {
   const { checkRetiredSettings } = require('../lib/doctor');
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-min-'));
   try {
-    const r = await checkRetiredSettings({ person: { phone: '5125550000', aliases: [] } }, root);
+    const r = await checkRetiredSettings({ person: { phone: '5125550000', aliases: [], _phone_note: 'x' } }, root);
     assert.equal(r.ok, false);
-    assert.match(r.hint, /person\.phone is not used: remove it from config\.json to keep less about you/);
-    assert.match(r.hint, /person\.aliases is not used: remove it from config\.json to keep less about you/);
+    assert.match(r.hint, /person\.phone, person\.aliases are not used: re-run `upec-wipe setup` \(Enter keeps your other answers\) or remove them from config\.json, to keep less about you/);
+    const multi = await checkRetiredSettings({ persons: [{ firstName: 'Jane' }, { firstName: 'John', phone: '1' }] }, root);
+    assert.match(multi.hint, /persons\[1\]\.phone is not used/);
     assert.equal((await checkRetiredSettings({ person: { firstName: 'Jane' } }, root)).ok, true);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });
@@ -99,4 +100,50 @@ test('the docs no longer say setup asks for a phone or that the audit file holds
   const privacy = fs.readFileSync(path.join(ROOT, 'docs', 'PRIVACY.md'), 'utf8');
   assert.doesNotMatch(privacy, /full name and \*\*real email\*\*/);
   assert.doesNotMatch(privacy, /^\| `person\.phone`/m);
+});
+
+test('setup also drops the old _phone_note', () => {
+  const { buildConfig } = require('../setup');
+  assert.equal('_phone_note' in buildConfig({ person: { _phone_note: 'x' } }, ANSWERS).person, false);
+});
+
+test('"no match" only when --only names no email broker at all', async () => {
+  const { runEmailStep } = require('../lib/email-step');
+  const run = async (only, person) => {
+    const out = [];
+    await runEmailStep({
+      config: { email: { smtp: { host: 'smtp.example.com', user: 'box@example.com', from: 'box@example.com', pass: 'x' } }, relay: {} },
+      persons: [person], state: {}, save: () => {}, targets: TARGETS, brokers: [], preview: true,
+      isTTY: true, ask: async () => '', log: (l) => out.push(l), only,
+      makeTransport: () => ({ sendMail: async () => ({}) }), ensureEgress: async () => {}, sleep: async () => {},
+    });
+    return out;
+  };
+  const texan = { ...JANE, city: 'Austin', state: 'TX' };
+  const out = await run('Beta Brokers', texan);
+  assert.equal(out.some(l => /No email request matches/.test(l)), false, out.join('\n'));
+  assert.ok(out.includes('No email requests pending.'));
+});
+
+test('the reminder counts brokers, not person-broker pairs, and handles one', () => {
+  const { emailReminder } = require('../lib/email-step');
+  const two = [JANE, { ...JANE, firstName: 'John', fullName: 'John Doe' }];
+  assert.equal(emailReminder({ targets: TARGETS, brokers: [], persons: two, state: {}, config: {} }),
+    '2 brokers take requests only by email: set up email requests with `upec-wipe setup`, or handle them by hand.');
+  assert.equal(emailReminder({ targets: [TARGETS[0]], brokers: [], persons: [JANE], state: {}, config: {} }),
+    '1 broker takes requests only by email: set up email requests with `upec-wipe setup`, or handle them by hand.');
+  assert.equal(emailReminder({ targets: [TARGETS[0]], brokers: [], persons: [JANE], state: {}, config: { email: { smtp: { from: 'b@x' } } } }),
+    'Email requests not yet sent: 1 - run `upec-wipe run --email`.');
+});
+
+test('an email block without smtp.from points to setup, not to a failing run', () => {
+  const { emailReminder } = require('../lib/email-step');
+  assert.match(emailReminder({ targets: TARGETS, brokers: [], persons: [JANE], state: {}, config: { email: {} } }), /set up email requests with `upec-wipe setup`/);
+});
+
+test('the docs mention --only for email and the reminder; REFERENCE no longer mentions phones', () => {
+  const manual = fs.readFileSync(path.join(ROOT, 'docs', 'UPEC-MANUAL.md'), 'utf8');
+  assert.match(manual, /run --email --only "<broker>"/);
+  assert.match(manual, /Email requests not yet sent/);
+  assert.doesNotMatch(fs.readFileSync(path.join(ROOT, 'docs', 'REFERENCE.md'), 'utf8'), /phone numbers are stored/);
 });

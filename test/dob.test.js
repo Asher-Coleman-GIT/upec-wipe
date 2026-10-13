@@ -12,7 +12,7 @@ const { parseDob } = require('../lib/dob');
 const { buildConfig } = require('../setup');
 const { forPerson } = require('../brokers');
 
-const BASE = { firstName: 'Jane', lastName: 'Doe', aliases: [], city: 'Austin', country: 'US', state: 'TX', zip: '73301', email: 'jane.doe@example.com', phone: 'p', phoneFormatted: 'pf', capsolverKey: '', profileDir: '/p' };
+const BASE = { firstName: 'Jane', lastName: 'Doe', city: 'Austin', country: 'US', state: 'TX', zip: '73301', email: 'jane.doe@example.com', capsolverKey: '', profileDir: '/p' };
 
 test('parseDob accepts YYYY-MM-DD and rejects anything else', () => {
   assert.deepEqual(parseDob('1990-04-07'), { year: '1990', month: 4, monthName: 'April', day: '7' });

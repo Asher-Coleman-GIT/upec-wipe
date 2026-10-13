@@ -208,7 +208,7 @@ function buildConfig(existing, a) {
   const prevPerson = { ...(prev.person || {}) };
   if (a.dob === '') delete prevPerson.dob; // a blank answer clears it
   // Nothing uses these any more: keep less about the member.
-  for (const k of ['phone', 'phoneFormatted', 'aliases']) delete prevPerson[k];
+  for (const k of ['phone', 'phoneFormatted', 'aliases', '_phone_note']) delete prevPerson[k];
   const email = buildEmailBlock(prev.email, a);
   return {
     ...prev,

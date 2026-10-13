@@ -9,8 +9,8 @@ const { validateRecord, CATALOG_DIR } = require('../lib/catalog');
 const files = fs.existsSync(CATALOG_DIR) ? fs.readdirSync(CATALOG_DIR).filter(f => f.endsWith('.json') && f !== 'candidates.json') : [];
 const example = require('../config.example.json');
 const person = example.person || (example.persons || [])[0] || {};
-const pii = ['firstName', 'lastName', 'city', 'zip', 'phone', 'email', 'dob'].map(k => person[k]).filter(v => typeof v === 'string' && v.length >= 4);
-const typedOnly = ['zip', 'phone', 'email'].map(k => person[k]).filter(v => typeof v === 'string' && v.length >= 4);
+const pii = ['firstName', 'lastName', 'city', 'zip', 'email', 'dob'].map(k => person[k]).filter(v => typeof v === 'string' && v.length >= 4);
+const typedOnly = ['zip', 'email'].map(k => person[k]).filter(v => typeof v === 'string' && v.length >= 4);
 
 test('every tracked catalog record validates', () => {
   for (const f of files) assert.equal(validateRecord(JSON.parse(fs.readFileSync(path.join(CATALOG_DIR, f), 'utf8')), f), null, f);

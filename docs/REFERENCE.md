@@ -255,7 +255,6 @@ UPEC-WIPE never schedules runs. If an earlier version of setup installed a month
 ## International users
 
 - Setup asks for a **Country** (2-letter code such as `CA`, `GB`, `AU`) and then asks for **Province/Region** and **Postal code** in any format, instead of State and ZIP.
-- Non-US phone numbers are stored as typed.
 - `lib/forms.js` tries province, postal and postcode field names for non-US people, and fills a country `<select>` with your code when there is one.
 - Brokers marked `usOnly: true` (US people-search, phone directories and public-record sites such as Spokeo, WhitePages, FastPeopleSearch, TruePeopleSearch, BeenVerified, USPhonebook and PublicDataUSA) are skipped when your country is not `US`. Global brokers are tried for everyone.
 - Email requests cite US state law (the Utah Consumer Privacy Act for Utah residents), so they are aimed at US residents.

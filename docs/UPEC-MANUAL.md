@@ -307,10 +307,10 @@ Some data brokers only take privacy requests by email. These are sent by a separ
 1. Create a new Gmail account used only for this. Turn on 2-step verification and create an app password (myaccount.google.com/apppasswords).
 2. Run `node bin/upec-wipe.js setup` and answer the "Email Requests" questions: the new address, the SMTP server (Enter for `smtp.gmail.com`) and the app password. Setup writes the `email` block with that address as both `smtp.user` and `smtp.from`, and refuses your everyday email. Brokers see only this address. (You can also edit the `email` block in `config.json` by hand.)
 3. Connect Mullvad, then rehearse: `node bin/upec-wipe.js preview --email`. It lists every broker, the sentence from its policy that gives the right, and the full email. Nothing is sent.
-4. Send: `node bin/upec-wipe.js run --email`. Type `SEND` to confirm. Emails go out one every 45 seconds; leave it running. If it stops (the mailbox limit, Ctrl-C), run it again later; it never emails a broker twice.
+4. Send: `node bin/upec-wipe.js run --email`. Type `SEND` to confirm. Emails go out one every 45 seconds; leave it running. If it stops (the mailbox limit, Ctrl-C), run it again later; it never emails a broker twice. To send to just one broker, use `run --email --only "<broker>"` with the exact name `upec-wipe list` shows (`--skip` works the same way).
 5. Replies arrive in the new Gmail. Log each one: `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`. `upec-wipe list` shows each email broker's status.
 
-`upec-wipe run` on its own (or `--forms`) fills web forms only. `--forms --email` does both.
+`upec-wipe run` on its own (or `--forms`) fills web forms only, and ends with a reminder such as "Email requests not yet sent: 12 - run `upec-wipe run --email`". `--forms --email` does both.
 
 ## Credit and identity freezes
 
