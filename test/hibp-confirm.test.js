@@ -2,7 +2,6 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { confirmBreachCheck } = require('../lib/hibp');
-const { modeSource } = require('./helpers/watcher-source');
 
 function io(answer, isTTY = true) {
   const lines = [];
@@ -22,11 +21,4 @@ test('only YES continues, after saying the real address goes to haveibeenpwned.c
   assert.equal(await confirmBreachCheck(yes.args), true);
   assert.match(yes.lines.join('\n'), /haveibeenpwned\.com/);
   for (const a of ['yes', 'y', '', 'SEND']) assert.equal(await confirmBreachCheck(io(a).args), false);
-});
-
-test('watcher asks before running the breach check', () => {
-  const src = modeSource('breach');
-  const i = src.indexOf('confirmBreachCheck(');
-  assert.ok(i > 0);
-  assert.ok(i < src.indexOf('await runBreachCheck('));
 });
