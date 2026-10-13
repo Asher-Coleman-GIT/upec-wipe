@@ -7,18 +7,24 @@
  "formHosts": [
   "google.com"
  ],
- "group": "dead",
+ "group": "business",
  "survey": {
-  "checkedAt": "2026-10-13T08:51:07.855Z",
-  "status": 404,
-  "optOutUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdXAQsI4b0angLCONbwT4B4YSFiPyVMMLzizCuBSnPZmsTp_g/edit",
-  "title": "Page Not Found",
+  "checkedAt": "2026-10-13T08:58:24.512Z",
+  "status": 200,
+  "optOutUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdXAQsI4b0angLCONbwT4B4YSFiPyVMMLzizCuBSnPZmsTp_g/viewform",
+  "title": "PureCars - Privacy Request",
   "block": null,
   "controls": [],
-  "buttons": [],
+  "buttons": [
+   {
+    "text": "",
+    "id": "",
+    "inForm": false
+   }
+  ],
   "captcha": false,
   "contacts": [],
-  "text": " Drive\n\nSorry, the file you have requested does not exist.\n\nMake sure that you have the correct URL and the file exists.\n\nGet stuff done with Google Drive\n\nApps in Google Drive make it easy to create, store and share online documents, spreadsheets, presentations and more.\n\nLearn more at drive.google.com/start/apps.",
+  "text": "PureCars - Privacy Request\nThis form has been deprecated.  Please, visit purecars.com and see the Your Privacy Rights link at the bottom of the page.\nSign in to Google to save your progress. Learn more\nSubmit\nClear form\nThis form was created inside of Pure Auto LLC.\n\nDoes this form look suspicious? Report\n\n Forms\n \nHelp and feedback",
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
