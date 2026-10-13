@@ -18,7 +18,8 @@ process.umask(0o077);
  *   GET  /api/summary            -> counts + config flags + run state
  *   GET  /api/config             -> ../config.json with secrets masked
  *   PUT  /api/config             -> merge-write ../config.json (masked secrets preserved;
- *                                   network/relay/generic/browser/profileDir are file-only)
+ *                                   network/relay/browser/profileDir are file-only,
+ *                                   and so is the retired generic block)
  *   GET  /api/logs               -> list of files in ../logs
  *   GET  /api/logs/:name         -> one log file (size-capped, streamed)
  *   GET  /api/run/status         -> current/last run state
@@ -347,8 +348,9 @@ function mergeConfig(existing, incoming) {
 }
 
 // Audit M3: keys that switch off or redirect the fork's protections (egress
-// gate, alias relay, generic pass, persistent profile). They can only be changed
-// by editing config.json directly; the dashboard refuses any change to them.
+// gate, alias relay, persistent profile; also the retired generic block, so it
+// cannot be switched back on). They can only be changed by editing config.json
+// directly; the dashboard refuses any change to them.
 // Unchanged values are fine because the UI may round-trip the whole config.
 const FILE_ONLY_KEYS = ['network', 'relay', 'generic', 'browser', 'profileDir'];
 const hasOwn = (o, k) => !!o && typeof o === 'object' && Object.prototype.hasOwnProperty.call(o, k);

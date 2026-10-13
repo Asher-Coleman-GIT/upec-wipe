@@ -48,7 +48,7 @@ Each run ends with a summary in these groups:
 | `Not listed` | Your name was not found on that site. |
 | `Manual needed` | Listed under Action Required for you to finish by hand. |
 | `Errors` | Network or timeout problem. Tried again next run. |
-| `Dead (stale URL)` | The broker's page is gone (DNS failure or 404). Not counted as an error. |
+| `Dead (stale URL)` | The broker's page is gone (DNS failure or 404). Not counted as an error. Only the retired generic pass reported it, so it now stays at 0. |
 
 **Submitted does not mean deleted.** See [Verifying removals](#verifying-removals) and [STATUS.md](../STATUS.md).
 
@@ -105,7 +105,7 @@ Catalog sites run after the explicit brokers, with the same checks and status wo
 
 ### Retired: the generic pass
 
-Earlier versions had an opt-in heuristic pass over about 500 sites from The Markup, BADBOOL and the state registries (`--generic`). The reviewed catalog now covers those lists, and the pass matched sites by their opt-out page's host rather than the broker's own domain, so it re-submitted to brokers the catalog handles or excludes. It was retired on 2026-10-13. `--generic`, or `generic.enabled: true` in `config.json`, now stops with "The generic pass was retired" and sends nothing; remove the flag or the `generic` block. With an encrypted config, run `node watcher.js --decrypt-config`, remove the block, then `node watcher.js --encrypt-config`. The source lists stay as catalog inputs.
+Earlier versions had an opt-in heuristic pass (`--generic`) over the sites from The Markup, BADBOOL and the state registries that had no hand-mapped broker. The reviewed catalog now covers those lists, and the pass matched sites by their opt-out page's host rather than the broker's own domain, so it re-submitted to brokers the catalog handles or excludes. It was retired on 2026-10-13. `--generic`, or `generic.enabled: true` in `config.json`, now stops with "The generic pass was retired" and sends nothing; remove the flag or the `generic` block. With an encrypted config, run `node watcher.js --decrypt-config`, remove the block, then `node watcher.js --encrypt-config`. The source lists stay as catalog inputs.
 
 ### Manual only
 
@@ -228,15 +228,9 @@ upec-wipe update-brokers
 
 Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no browser, through the Mullvad check), dedups them against `brokers.js`, and writes `data/feeds-brokers.json`, which `scripts/catalog-candidates.js` reads with the bundled lists to find sites for the catalog. Entries that are not `https` are dropped.
 
-### Pruning dead URLs
+### The dead-site list
 
-Many URLs in the older public lists now 404 or fail DNS. They show as `Dead (stale URL)` and do not count as errors. After several runs:
-
-```bash
-node scripts/prune-dead.js
-```
-
-It reads every `logs/run-*.json`, finds hosts that were dead in every run they appeared in, and merges them into `data/dead-urls.json` (committed, so every clone shares it). Running it twice changes nothing. The catalog candidate builder skips hosts on this list.
+`data/dead-urls.json` lists hosts the catalog candidate builder skips. It was built from runs of the generic pass, which was retired; nothing a run does today adds to it. Dead sites are now recorded by the catalog survey instead (the `dead` group in `data/catalog/`). `node scripts/prune-dead.js` still merges hosts that were dead in every old `logs/run-*.json` it finds, and running it twice changes nothing.
 
 ### Pulling upstream changes
 

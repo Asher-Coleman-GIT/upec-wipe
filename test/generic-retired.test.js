@@ -172,3 +172,27 @@ test('REFERENCE tells an encrypted-config member how to remove the generic block
   assert.match(note, /--decrypt-config/);
   assert.match(note, /--encrypt-config/);
 });
+
+test('watcher --generic=1 is refused the same way', () => {
+  const r = runNode(path.join(ROOT, 'watcher.js'), ['--generic=1']);
+  assert.equal(r.status, 1);
+  const out = (r.stdout || '') + (r.stderr || '');
+  assert.ok(out.includes(FLAG_MSG), `expected the retired message, got:\n${out}`);
+  assert.doesNotMatch(out, /BROWSER_MODULE_LOADED/);
+});
+
+test('REFERENCE says where the dead-site list comes from now', () => {
+  const ref = fs.readFileSync(path.join(ROOT, 'docs', 'REFERENCE.md'), 'utf8');
+  const section = ref.slice(ref.indexOf('### The dead-site list'), ref.indexOf('### Pulling upstream changes'));
+  assert.doesNotMatch(section, /After several runs/);
+  assert.match(section, /retired/);
+  assert.match(section, /catalog survey/);
+  assert.doesNotMatch(ref, /about 500 sites/);
+});
+
+test('the dashboard comments do not list the generic pass as a live protection', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'dashboard', 'server.js'), 'utf8');
+  for (const line of src.split('\n')) {
+    if (/generic/.test(line) && /^\s*(\/\/|\*)/.test(line)) assert.match(line, /retired/, line);
+  }
+});

@@ -27,7 +27,7 @@ if (process.argv.includes('--pollute')) {
 // The generic pass was retired: the reviewed catalog covers its sites, and the
 // pass re-submitted to brokers the catalog excludes. Refuse before any config
 // is read, as for --pollute.
-if (process.argv.includes('--generic')) {
+if (process.argv.some(a => a === '--generic' || a.startsWith('--generic='))) {
   console.error('The generic pass was retired: its sites are in the reviewed catalog (data/catalog/). Remove --generic.');
   process.exit(1);
 }
