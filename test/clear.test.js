@@ -109,3 +109,141 @@ test('describePlan shows sizes, file counts and kept entries', () => {
     assert.equal(lines[2], '  /x/pp  kept (why)');
   } finally { s.cleanup(); }
 });
+
+const { runClear } = require('../lib/modes/clear');
+
+function io(answer, extra = {}) {
+  const out = [];
+  return {
+    out,
+    deps: {
+      isTTY: true,
+      ask: async (q) => { out.push(`ASK ${q}`); return answer; },
+      log: (l) => out.push(l),
+      error: (l) => out.push(`ERR ${l}`),
+      lock: { acquire: () => {}, release: () => {} },
+      ...extra,
+    },
+  };
+}
+
+test('no terminal refuses and deletes nothing', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json');
+    const { out, deps } = io('CLEAR', { isTTY: false });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 1);
+    assert.ok(out.includes('ERR clear needs an interactive terminal: nothing was deleted.'));
+    assert.ok(fs.existsSync(path.join(s.root, 'config.json')));
+  } finally { s.cleanup(); }
+});
+
+test('a wrong word, lowercase, or closed input deletes nothing', async () => {
+  for (const answer of ['no', 'clear', '']) {
+    const s = sandbox();
+    try {
+      s.put('config.json');
+      const { out, deps } = io(answer);
+      assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 1);
+      assert.ok(out.includes('Nothing was deleted.'), answer);
+      assert.ok(fs.existsSync(path.join(s.root, 'config.json')));
+    } finally { s.cleanup(); }
+  }
+});
+
+test('CLEAR (trimmed) deletes exactly the plan and keeps history', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json'); s.put('state.json'); s.put('logs/run.json');
+    s.put('.config/upec-wipe/passphrase', 'x', s.home);
+    const { out, deps } = io('  CLEAR  ');
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 0);
+    assert.equal(fs.existsSync(path.join(s.root, 'config.json')), false);
+    assert.equal(fs.existsSync(path.join(s.home, '.config', 'upec-wipe', 'passphrase')), false);
+    assert.ok(fs.existsSync(path.join(s.root, 'state.json')));
+    assert.ok(fs.existsSync(path.join(s.root, 'logs', 'run.json')));
+    assert.ok(out.includes(`Deleted ${path.join(s.root, 'config.json')}`));
+    assert.ok(out.includes('Done. Run "upec-wipe setup" to start again.'));
+    assert.ok(out.some(l => l.startsWith('This does not delete: your SimpleLogin alias')));
+    assert.ok(out.some(l => l.startsWith('Files are deleted normally, not overwritten')));
+    assert.equal(out.some(l => /email every broker again/.test(l)), false, 'that warning is clear-all only');
+  } finally { s.cleanup(); }
+});
+
+test('clear-all needs CLEAR ALL and warns about re-emailing', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json'); s.put('state.json'); s.put('data/catalog/example.com.json');
+    const plain = io('CLEAR');
+    assert.equal(await runClear({ all: true, root: s.root, home: s.home, env: {}, ...plain.deps }), 1);
+    assert.ok(fs.existsSync(path.join(s.root, 'state.json')));
+    const { out, deps } = io('CLEAR ALL');
+    assert.equal(await runClear({ all: true, root: s.root, home: s.home, env: {}, ...deps }), 0);
+    assert.equal(fs.existsSync(path.join(s.root, 'state.json')), false);
+    assert.ok(fs.existsSync(path.join(s.root, 'data', 'catalog', 'example.com.json')), 'repo files stay');
+    assert.ok(out.includes('The next "run --email" will email every broker again, and your logged replies will be gone.'));
+    assert.ok(out.includes('ASK Type CLEAR ALL to delete these files: '));
+  } finally { s.cleanup(); }
+});
+
+test('a held lock refuses before asking', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json');
+    const { out, deps } = io('CLEAR', { lock: { acquire: () => { throw new Error('LockError: held by pid 42'); }, release: () => {} } });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 1);
+    assert.ok(out.includes('ERR A run is in progress (state.json.lock): nothing was deleted.'));
+    assert.equal(out.some(l => l.startsWith('ASK')), false);
+    assert.ok(fs.existsSync(path.join(s.root, 'config.json')));
+  } finally { s.cleanup(); }
+});
+
+test('a stale lock from a dead run does not block clear', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json');
+    fs.writeFileSync(path.join(s.root, 'state.json.lock'), JSON.stringify({ pid: 999999 }));
+    const real = require('../lib/lock');
+    const lock = { acquire: (p) => real.acquire(p, { isAlive: () => false }), release: real.release };
+    const { deps } = io('CLEAR', { lock });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 0);
+    assert.equal(fs.existsSync(path.join(s.root, 'config.json')), false);
+  } finally { s.cleanup(); }
+});
+
+test('a failing delete is reported by code, the rest continue, exit 1', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json'); s.put('config.json.enc');
+    const { out, deps } = io('CLEAR', {
+      rm: (p) => { if (p.endsWith('config.json')) throw Object.assign(new Error('EACCES: /secret/path'), { code: 'EACCES' }); fs.rmSync(p, { recursive: true, force: true }); },
+    });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 1);
+    assert.ok(out.includes(`ERR Could not delete ${path.join(s.root, 'config.json')}: EACCES`));
+    assert.equal(out.some(l => l.includes('/secret/path')), false);
+    assert.equal(fs.existsSync(path.join(s.root, 'config.json.enc')), false);
+  } finally { s.cleanup(); }
+});
+
+test('nothing to clear says so and exits 0 without asking', async () => {
+  const s = sandbox();
+  try {
+    const { out, deps } = io('CLEAR');
+    assert.equal(await runClear({ all: true, root: s.root, home: s.home, env: {}, ...deps }), 0);
+    assert.ok(out.includes('Nothing to clear.'));
+    assert.equal(out.some(l => l.startsWith('ASK')), false);
+  } finally { s.cleanup(); }
+});
+
+test('a symlinked logs folder: the link goes, the target stays', async () => {
+  const s = sandbox();
+  try {
+    const target = path.join(s.base, 'otherdisk');
+    fs.mkdirSync(target); fs.writeFileSync(path.join(target, 'keep.txt'), 'x');
+    fs.symlinkSync(target, path.join(s.root, 'logs'), 'dir');
+    const { deps } = io('CLEAR ALL');
+    assert.equal(await runClear({ all: true, root: s.root, home: s.home, env: {}, ...deps }), 0);
+    assert.equal(fs.existsSync(path.join(s.root, 'logs')), false);
+    assert.ok(fs.existsSync(path.join(target, 'keep.txt')));
+  } finally { s.cleanup(); }
+});
