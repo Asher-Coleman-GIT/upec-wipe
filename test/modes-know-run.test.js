@@ -46,5 +46,6 @@ test('run: one counter is made before the persons loop', () => {
   const src = modeSource('run');
   const made = src.indexOf('const beforeBroker = makeEgressCounter(');
   assert.ok(made > 0);
+  assert.equal((src.match(/= makeEgressCounter\(/g) || []).length, 1, 'exactly one counter in run.js');
   assert.ok(made < src.indexOf('for (const { person, email: submissionEmail, masked } of plan.allowed)'));
 });

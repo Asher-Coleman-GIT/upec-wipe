@@ -4,8 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const MODES = ['freeze', 'encrypt-config', 'list', 'reply', 'score', 'pending', 'allowlist', 'know-status',
-  'breach', 'complaints', 'confirm-emails', 'report', 'doctor', 'update-brokers', 'know', 'run'];
+const { MODE_NAMES: MODES } = require('../lib/mode-dispatch');
 
 test('every mode pickMode can return has a file with run()', () => {
   for (const m of MODES) {

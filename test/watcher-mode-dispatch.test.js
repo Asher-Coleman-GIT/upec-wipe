@@ -121,3 +121,17 @@ test('pickMode: each later mode by its flag', () => {
   assert.equal(pick('--allow', 'Spokeo').mode, 'allowlist');
   assert.equal(pick('--encrypt-config').mode, 'encrypt-config');
 });
+
+test('pickMode: the first early mode wins among several', () => {
+  assert.equal(pick('--reply', 'Pipl', 'honored', '--score').mode, 'reply');
+  assert.equal(pick('--decrypt-config').mode, 'encrypt-config');
+});
+
+test('pickMode: serp flags run inside the opt-out run, and conflict with another mode', () => {
+  assert.equal(pick('--serp-scan').mode, 'run');
+  assert.equal(pick('--serp-scan', '--doctor').mode, null);
+});
+
+test('pickMode: the conflict message names the flags in a fixed order', () => {
+  assert.equal(pick('--doctor', '--report').conflict, 'Mutually exclusive modes cannot be combined: --report, --doctor. Use one at a time.');
+});

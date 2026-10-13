@@ -21,3 +21,18 @@ test('two runners keep their own options', async () => {
     config.setDryRun(false);
   }
 });
+
+test('a created runner ignores the default runner configure() state', async () => {
+  const br = require('../lib/broker-runner');
+  config.setDryRun(true);
+  try {
+    br.configure({ config: { allowlist: ['Acme'] } });
+    const fresh = createBrokerRunner({ config: { allowlist: [] }, person: { firstName: 'Jane', lastName: 'Doe' } });
+    const manualBefore = results.manual.length;
+    await fresh.processBroker({}, { name: 'Acme', method: 'manual', notes: 'by hand' });
+    assert.equal(results.manual.length - manualBefore, 1, 'the default allowlist did not leak in');
+  } finally {
+    br.configure({ config: null });
+    config.setDryRun(false);
+  }
+});

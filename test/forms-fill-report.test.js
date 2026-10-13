@@ -177,3 +177,14 @@ test('a field that is not on the page is reported missed without an evaluate', a
   assert.deepEqual(r.missed, ['input[name="firstName"]']);
   assert.ok(!calls.includes('evaluate'));
 });
+
+test('a field revealed by a ticked box is waited for, then filled', async () => {
+  let revealed = false;
+  let waited = 0;
+  const box = { first: () => box, isVisible: async () => true, evaluate: async (fn) => fn({ tagName: 'INPUT', type: 'checkbox' }), check: async () => { revealed = true; } };
+  const later = { first: () => later, isVisible: async () => revealed && waited > 0, waitFor: async () => { waited++; }, evaluate: async (fn) => fn({ tagName: 'INPUT', type: 'text' }), fill: async () => {} };
+  const page = { locator: (sel) => (sel.includes('consent') ? box : later) };
+  const r = await fillForm(page, { 'input[name="consent"]': 'on', 'input[name="firstName"]': 'Jane' });
+  assert.equal(waited, 1);
+  assert.deepEqual(r.filled.map(f => f.kind), ['checkbox', 'text']);
+});
