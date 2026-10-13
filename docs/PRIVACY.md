@@ -45,7 +45,7 @@ Every connection uses one of three paths.
 | Explicit brokers (44 in `brokers.js`, such as Spokeo, Whitepages, Radaris, MyLife) | Search URLs with your name and state. Forms with your name, city, state, zip and your alias in every email field. | `upec-wipe run` | Browser |
 | Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. CapSolver is not called and nothing opens in your everyday browser. | `upec-wipe preview` | Browser |
 | Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `upec-wipe verify` | Browser |
-| About 490 other sites from public datasets and the CA and Vermont registries | Name, alias, state and zip on whatever form the site has. A "Do Not Sell" link can lead to any page. | Only with `--generic` or `generic.enabled: true` | Browser |
+| Sites from the public broker lists outside the catalog | Nothing. The generic pass that filled their forms was retired; a leftover `--generic` or `generic.enabled: true` stops the run. | Never | - |
 | DuckDuckGo, Bing, Google | `"<full name>" "<city>, <state>"` for every person | `upec-wipe serp`, `upec-wipe serp-watch`, dashboard "serp" | Browser |
 | `am.i.mullvad.net` | Nothing but your IP | Every browser session that visits sites (again every 10 brokers), and before direct connections (again after 5 minutes and before every email) | Browser and direct |
 | `api.ipify.org` | Nothing but your IP: once through the proxy, once direct (this one shows your real IP) | Only when `network.proxy` is set | Browser and direct |

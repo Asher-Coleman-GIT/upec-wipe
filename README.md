@@ -67,7 +67,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
 | `dashboard` | Starts the local web dashboard and prints its URL and login |
 
-Useful options: `--only <broker>`, `--skip <broker>`, `--resume`, `--retry-failed`, `--assist` (clear a bot check yourself and the run carries on), `--no-capsolver`, `--generic` (also try about 490 unreviewed sites; off by default). `upec-wipe --help` lists them all, and the [manual's command reference](docs/UPEC-MANUAL.md#command-reference) says what each command sends.
+Useful options: `--only <broker>`, `--skip <broker>`, `--resume`, `--retry-failed`, `--assist` (clear a bot check yourself and the run carries on), `--no-capsolver`. `upec-wipe --help` lists them all, and the [manual's command reference](docs/UPEC-MANUAL.md#command-reference) says what each command sends.
 
 ## What it covers, and how far to trust it
 
@@ -75,7 +75,6 @@ Useful options: `--only <broker>`, `--skip <broker>`, `--resume`, `--retry-faile
 | --- | --- | --- |
 | **Explicit brokers** (`brokers.js`) | 32 | Spokeo, WhitePages, Radaris, MyLife and others, with hand-mapped selectors. [STATUS.md](STATUS.md) has the per-broker table. |
 | **Reviewed catalog** (`data/catalog/`) | about 640 | Every site from the public broker lists, surveyed and reviewed: people-search sites as automatic forms, manual links or exclusions; business data brokers as email requests where their policy gives a Utah or all-US right. |
-| **Generic pass** (`--generic`) | about 490 | Unreviewed sites from the public lists. Off unless you ask for it. |
 
 None are currently marked `verified`: a read-only survey re-read the live forms, but no broker has been tested end to end. `Submitted` means a broker accepted the form, not that you are deleted. Broker sites change their pages constantly and a selector that stops matching fails quietly; a form the tool cannot fill is never submitted. Details in [docs/REFERENCE.md](docs/REFERENCE.md#brokers-covered).
 
@@ -89,7 +88,6 @@ upec-wipe/
 ├── lib/                  shared engine: browser, forms, egress check, relay, email step,
 │                         catalog, state, redaction, CAPTCHA
 ├── brokers.js            the 32 explicit brokers
-├── generic-runner.js     the optional generic pass
 ├── data/catalog/         one reviewed record per site (tokens only, never real values)
 ├── dashboard/            optional local web dashboard
 ├── setup.js              interactive setup

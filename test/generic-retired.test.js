@@ -135,3 +135,23 @@ test('the example config has no generic block', () => {
   const example = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.example.json'), 'utf8'));
   assert.equal('generic' in example, false);
 });
+
+test('the docs and help mention --generic only as retired', () => {
+  const docs = ['README.md', 'STATUS.md', 'docs/REFERENCE.md', 'docs/UPEC-MANUAL.md', 'docs/PRIVACY.md', 'docs/THREAT-MODEL.md'];
+  for (const f of docs) {
+    const text = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    for (const line of text.split('\n')) {
+      if (!/--generic|generic\.enabled|generic-runner/.test(line)) continue;
+      assert.match(line, /retired/i, `${f} mentions the generic pass without saying it was retired:\n${line}`);
+    }
+    assert.doesNotMatch(text, /about 490|~490/, `${f} still counts the generic sites`);
+  }
+  const help = runNode(path.join(ROOT, 'bin', 'upec-wipe.js'), ['--help']);
+  assert.doesNotMatch(help.stdout, /--generic/);
+});
+
+test('REFERENCE says what the retired flag does now', () => {
+  const ref = fs.readFileSync(path.join(ROOT, 'docs', 'REFERENCE.md'), 'utf8');
+  assert.match(ref, /### Retired: the generic pass/);
+  assert.match(ref, /The generic pass was retired/);
+});

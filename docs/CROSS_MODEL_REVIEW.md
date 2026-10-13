@@ -137,7 +137,7 @@ data. Not by line count or churn.
 | `lib/feeds.js`, `lib/serp-scan.js` | Turn remote registry rows into navigation and submission targets |
 | `lib/scheduler.js` | Writes launchd/systemd/crontab units, historically via a shell |
 | `lib/complaint.js` | Generates PDFs containing full PII |
-| `generic-runner.js`, `lib/broker-runner.js`, `brokers.js` | Submit PII to third parties and decide what counts as success |
+| `lib/broker-runner.js`, `brokers.js` | Submit PII to third parties and decide what counts as success |
 | `lib/relay.js`, `lib/captcha.js`, `lib/hibp.js` | Outbound third-party APIs carrying the email address and API keys |
 | `setup.js` | Writes the PII file and installs the scheduler |
 | `Dockerfile`, `docker-compose.yml` | The only realistic deployment path for Linux and NAS users |

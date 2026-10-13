@@ -29,7 +29,7 @@ email instead.
    `https://app.simplelogin.io/api/alias/random/new?mode=word` (header
    `Authentication: <apiKey>`) and caches the returned alias in `state.json`.
    **If the API call fails, that person gets no submissions this run** - no
-   forms, no emails, no generic pass. With no usable
+   forms, no emails. With no usable
    relay configured (or the placeholder key still in place), every person is
    blocked and the run exits non-zero with no submissions. This is the default;
    only `"required": false` sends your real email instead.

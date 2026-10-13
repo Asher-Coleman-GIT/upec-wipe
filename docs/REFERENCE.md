@@ -87,7 +87,7 @@ A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
 ## Brokers covered
 
-UPEC-WIPE works through three sources, in this order.
+UPEC-WIPE works through two sources, in this order.
 
 ### 1. Explicit brokers (`brokers.js`)
 
@@ -103,15 +103,9 @@ Every site from the public broker lists was surveyed and reviewed, one JSON file
 
 Catalog sites run after the explicit brokers, with the same checks and status words. Records hold tokens such as `{firstName}`, never real values. See [CATALOG-REVIEW.md](CATALOG-REVIEW.md) for how sites are surveyed and reviewed.
 
-### 3. Generic pass (`generic-runner.js`, off by default)
+### Retired: the generic pass
 
-About 490 smaller sites from [The Markup's data broker list](https://themarkup.org/privacy/2023/01/26/which-data-brokers-offer-opt-outs), [BADBOOL](https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List) and the state registries. Nobody reviewed them, so the pass runs only with `--generic` (or `generic.enabled`). It never visits a site the catalog knows. For each site it tries, in order:
-
-1. Click a "Do Not Sell My Personal Information" button, then submit a follow-up form only if it filled one.
-2. Fill a generic opt-out form (email, name, state) and submit it.
-3. Record a data request link for you to follow up by hand.
-
-Cookie managers (OneTrust, TrustArc, Osano) are never used: a cookie preference is not an opt-out.
+Earlier versions had an opt-in heuristic pass over about 500 sites from The Markup, BADBOOL and the state registries (`--generic`). The reviewed catalog now covers those lists, and the pass matched sites by their opt-out page's host rather than the broker's own domain, so it re-submitted to brokers the catalog handles or excludes. It was retired on 2026-10-13. `--generic`, or `generic.enabled: true` in `config.json`, now stops with "The generic pass was retired" and sends nothing; remove the flag or the `generic` block. The source lists stay as catalog inputs.
 
 ### Manual only
 
@@ -232,17 +226,17 @@ Synology and other NAS users: see [SYNOLOGY.md](SYNOLOGY.md).
 upec-wipe update-brokers
 ```
 
-Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no browser, through the Mullvad check), dedups them against `brokers.js`, and writes `data/feeds-brokers.json` for the generic pass. Entries that are not `https` are dropped. A failed refresh never reduces coverage: the bundled lists stay as the fallback.
+Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no browser, through the Mullvad check), dedups them against `brokers.js`, and writes `data/feeds-brokers.json`, which `scripts/catalog-candidates.js` reads with the bundled lists to find sites for the catalog. Entries that are not `https` are dropped.
 
 ### Pruning dead URLs
 
-Many of the older generic URLs now 404 or fail DNS. They show as `Dead (stale URL)` and do not count as errors. After several runs:
+Many URLs in the older public lists now 404 or fail DNS. They show as `Dead (stale URL)` and do not count as errors. After several runs:
 
 ```bash
 node scripts/prune-dead.js
 ```
 
-It reads every `logs/run-*.json`, finds hosts that were dead in every run they appeared in, and merges them into `data/dead-urls.json` (committed, so every clone shares it). Running it twice changes nothing.
+It reads every `logs/run-*.json`, finds hosts that were dead in every run they appeared in, and merges them into `data/dead-urls.json` (committed, so every clone shares it). Running it twice changes nothing. The catalog candidate builder skips hosts on this list.
 
 ### Pulling upstream changes
 

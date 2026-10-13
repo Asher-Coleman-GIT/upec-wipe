@@ -22,7 +22,7 @@
 - **Confidence** - `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
 - **US-only** - site indexes US public records / voter data / phone directories; automatically skipped for non-US users.
 
-**This list covers the 32 explicit brokers in `brokers.js` only.** The other ~490 brokers in `data/markup-parsed.json` and `data/badbool-extra.json` are handled by the heuristic generic runner - every one of those is best-effort. Run `node watcher.js --verify` to spot-check whether opt-outs are still in effect.
+**This list covers the 32 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `node watcher.js --verify` to spot-check whether opt-outs are still in effect.
 
 ---
 
@@ -86,7 +86,7 @@ Sites that show a bot-protection page (Cloudflare and similar) are reported as *
 |---|---|---|
 | Explicit + `verified` | High | Hand-tested selectors against the live page. |
 | Explicit + `untested` | Medium | Definition exists, DOM may have shifted. Failures show up as `error` or `pending_confirm`. |
-| Generic runner (~490 sites) | Best-effort | 4-strategy heuristic. Many succeed; some get a manual fallback. **Not guaranteed.** |
+| Reviewed catalog | Per record | Reviewed forms, manual links and email requests; re-checked by `upec-wipe catalog-check`. |
 | `manual` | High (you) | Opened in your browser; you complete it. |
 | `email` | High (delivery) / Medium (compliance) | Email is sent. Whether the broker honors it is up to them. |
 

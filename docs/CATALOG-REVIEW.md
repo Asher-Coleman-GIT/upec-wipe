@@ -1,6 +1,6 @@
 # Reviewing the site catalog
 
-The catalog (`data/catalog/`) holds one record per site from the generic lists. A record only runs once it is **reviewed**. This is the procedure.
+The catalog (`data/catalog/`) holds one record per site from the public broker lists. A record only runs once it is **reviewed**. This is the procedure.
 
 ## 1. Candidates and the first survey
 
