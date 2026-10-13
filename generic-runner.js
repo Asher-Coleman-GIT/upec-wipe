@@ -139,9 +139,12 @@ const DECLINE_COOKIE_LOCATOR = `${DECLINE_COOKIE_SELECTORS.join(', ')} >> visibl
 
 // A failed click is not an error for the pass (the page may simply differ), but
 // UPEC_WIPE_DEBUG shows it, with URLs removed.
-function debugClickFailure(what, err) {
+function debugClickFailure(what, err, page) {
   if (!process.env.UPEC_WIPE_DEBUG) return;
-  console.warn(`[generic] ${what} click failed: ${redactUrlsInText(String((err && err.message) || err)).slice(0, 120)}`);
+  // The site's host only: the path and query can carry a person's details.
+  let host = '';
+  try { host = new URL(page.url()).hostname.replace(/^www\./, ''); } catch (_) { host = ''; }
+  console.warn(`[generic] ${what} click failed${host ? ` on ${host}` : ''}: ${redactUrlsInText(String((err && err.message) || err)).slice(0, 120)}`);
 }
 
 async function dismissBanners(page) {
@@ -151,7 +154,7 @@ async function dismissBanners(page) {
       await el.click({ timeout: 1000 });
       await page.waitForTimeout(500);
     }
-  } catch (err) { debugClickFailure('cookie banner', err); }
+  } catch (err) { debugClickFailure('cookie banner', err, page); }
 }
 
 // ─── Do Not Sell button detector ─────────────────────────────────────────────
@@ -179,7 +182,7 @@ async function clickDoNotSell(page) {
       await page.waitForTimeout(1500);
       return true;
     }
-  } catch (err) { debugClickFailure('Do Not Sell', err); }
+  } catch (err) { debugClickFailure('Do Not Sell', err, page); }
   return false;
 }
 

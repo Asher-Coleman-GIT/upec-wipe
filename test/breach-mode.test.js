@@ -37,3 +37,17 @@ test('breach: a confirmed check runs and returns 0', async () => {
   assert.equal(code, 0);
   assert.deepEqual(order, ['confirm', 'check']);
 });
+
+test('breach: closed input with the real confirmation never reaches HIBP', async () => {
+  let checked = 0;
+  const lines = [];
+  const code = await breachFlow({ emails: ['jane.doe@example.com'], apiKey: 'k', brokers: [], config: {} }, {
+    ask: (q) => askLine(q, { input: Readable.from([]), output: sink() }),
+    isTTY: () => true,
+    runBreachCheck: async () => { checked++; return {}; },
+    log: (l) => lines.push(l),
+  });
+  assert.equal(code, 1);
+  assert.equal(checked, 0);
+  assert.match(lines.join('\n'), /Not sent/);
+});

@@ -62,3 +62,22 @@ test('the fatal output never names the account or carries a URL query', () => {
   assert.ok(!/janedoe|Jane|janed/.test(out), out);
   assert.match(out, /~\/upec\/lib\/modes\/run\.js:10:5/);
 });
+
+test('the click debug line names the site but nothing after it', async () => {
+  const el = { first: () => el, count: async () => 1, click: async () => { throw new Error('Timeout 2000ms exceeded'); } };
+  const page = { locator: () => el, waitForTimeout: async () => {}, url: () => 'https://www.broker.example/opt-out?first=Jane' };
+  const warned = [];
+  const realWarn = console.warn;
+  const had = process.env.UPEC_WIPE_DEBUG;
+  console.warn = (...a) => warned.push(a.join(' '));
+  process.env.UPEC_WIPE_DEBUG = '1';
+  try {
+    await _clickDoNotSell(page);
+  } finally {
+    console.warn = realWarn;
+    if (had === undefined) delete process.env.UPEC_WIPE_DEBUG; else process.env.UPEC_WIPE_DEBUG = had;
+  }
+  assert.equal(warned.length, 1);
+  assert.match(warned[0], /broker\.example/);
+  assert.ok(!/Jane|opt-out/.test(warned[0]), warned[0]);
+});
