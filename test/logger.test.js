@@ -236,44 +236,6 @@ test('buildSummary shows Dead line and excludes dead from Errors count', () => {
   assert.match(s, /Submitted \(form accepted\):\s+1/);
 });
 
-// ── WP5: genericStats in summary ─────────────────────────────────────────────
-
-test('buildSummary omits generic stats line when genericStats is not set', () => {
-  logger.resetResults();
-  logger.logResult('A', 'success');
-  const s = logger.buildSummary();
-  assert.equal(s.includes('Generic runner'), false, 'no generic stats line without genericStats');
-});
-
-test('buildSummary includes generic stats line when genericStats is set', () => {
-  logger.resetResults();
-  logger.results.genericStats = { attempted: 487, submitted: 312, no_form_found: 142, error: 33 };
-  logger.logResult('A', 'success');
-  const s = logger.buildSummary();
-  assert.match(s, /Generic runner:/);
-  assert.match(s, /487 attempted/);
-  assert.match(s, /312 submitted/);
-  assert.match(s, /142 no-form-found/);
-  assert.match(s, /33 error/);
-  logger.results.genericStats = undefined;
-});
-
-test('resetResults clears genericStats', () => {
-  logger.resetResults();
-  logger.results.genericStats = { attempted: 5, submitted: 3, no_form_found: 1, error: 1 };
-  logger.resetResults();
-  assert.equal(logger.results.genericStats, undefined, 'genericStats cleared after reset');
-});
-
-test('buildSummary works normally when genericStats is set to zeros', () => {
-  logger.resetResults();
-  logger.results.genericStats = { attempted: 0, submitted: 0, no_form_found: 0, error: 0 };
-  const s = logger.buildSummary();
-  assert.match(s, /Generic runner:/);
-  assert.match(s, /0 attempted/);
-  logger.results.genericStats = undefined;
-});
-
 // ── WP-S7: drift section ──────────────────────────────────────────────────────
 
 test('buildDriftSection: returns empty string when no drifted brokers', () => {
@@ -360,12 +322,6 @@ test('no preview line on a real run', () => {
   logger.resetResults();
   assert.doesNotMatch(logger.buildSummary(), /Previewed/);
 });
-test('no generic line when the generic pass did not run', () => {
-  logger.resetResults();
-  logger.results.genericStats = {};
-  assert.doesNotMatch(logger.buildSummary(), /Generic runner/);
-});
-
 test('the skipped line does not claim a reason (it holds dry-run, allowlisted and US-only skips too)', () => {
   logger.resetResults();
   logger.logResult('A', 'skipped', 'dry-run - form filled but not submitted');

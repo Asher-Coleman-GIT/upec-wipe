@@ -51,11 +51,6 @@
     "required": true
   },
 
-  "generic": {
-    "_comment": "Heuristic pass over ~490 sites from public datasets. Off in this fork. Set enabled to true (or pass --generic) to opt in; it uses your relay alias.",
-    "enabled": false
-  },
-
   "network": {
     "_comment": "Fork default: required. Before visiting any broker the browser must be on a Mullvad exit (am.i.mullvad.net). Using a different VPN or proxy? Set proxy (e.g. socks5://10.64.0.1:1080) and the check becomes 'browser IP differs from direct IP'. required: false disables the check (not recommended).",
     "required": true,

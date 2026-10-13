@@ -88,7 +88,7 @@ test('umask call sits at the top of each entry point, before any require', () =>
 // CONFIG_PATH to a Linux-fs file whose mode can be checked.
 function makeFixtureRepo() {
   const dir = mkTmp('upec-wipe-fixture-');
-  for (const f of ['watcher.js', 'brokers.js', 'generic-runner.js', 'package.json']) {
+  for (const f of ['watcher.js', 'brokers.js', 'package.json']) {
     fs.copyFileSync(path.join(ROOT, f), path.join(dir, f));
   }
   for (const d of ['lib', 'data']) fs.cpSync(path.join(ROOT, d), path.join(dir, d), { recursive: true });

@@ -109,7 +109,7 @@ bash "$(dirname "$0")/cross-model-preflight.sh" || exit $?
 # Kept in sync with the tier-1 table in docs/CROSS_MODEL_REVIEW.md.
 TIER1="lib/config.js lib/secrets.js lib/field-resolver.js lib/forms.js
 lib/imap-confirm.js lib/email.js lib/feeds.js lib/relay.js lib/scheduler.js
-lib/complaint.js lib/broker-runner.js generic-runner.js brokers.js
+lib/complaint.js lib/broker-runner.js brokers.js
 dashboard/server.js dashboard/validate.js setup.js"
 
 if [ -n "$FILES" ]; then

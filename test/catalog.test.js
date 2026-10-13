@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { validateRecord, loadCatalog, catalogBrokersForPerson, catalogDomains, catalogSummary } = require('../lib/catalog');
+const { validateRecord, loadCatalog, catalogBrokersForPerson, catalogSummary } = require('../lib/catalog');
 
 const base = (over = {}) => ({
   domain: 'example-people.com', name: 'Example People', sources: ['markup'], group: 'people-search',
@@ -123,9 +123,8 @@ test('subdomain of an explicit host is dropped; a name clash is renamed (final r
   assert.deepEqual(out.map(b => b.name), ['Spokeo (x.com)']);
 });
 
-test('catalogDomains and catalogSummary list every record', () => {
+test('catalogSummary lists every record', () => {
   const recs = [base(), base({ domain: 'm.com', review: { state: 'manual', optOutUrl: 'https://m.com/p' } })];
-  assert.deepEqual([...catalogDomains(recs)], ['example-people.com', 'm.com']);
   assert.deepEqual(catalogSummary(recs).map(s => [s.name, s.state, s.optOutUrl]), [
     ['Example People', 'reviewed', 'https://www.example-people.com/opt-out'],
     ['Example People', 'manual', 'https://m.com/p'],

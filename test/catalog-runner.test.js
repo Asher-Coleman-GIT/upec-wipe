@@ -18,10 +18,6 @@ test('--list prints the catalog sites', () => {
   assert.match(watcherSrc, /catalogSummary\(/);
 });
 
-test('the generic pass is told about every catalog domain', () => {
-  assert.match(watcherSrc, /for \(const d of catalogDomains\(catalogRecords\)\) explicitHosts\.add\(d\);/);
-});
-
 // A reviewed catalog broker goes through processBroker with the same guards.
 const logged = [];
 let fillReport = { filled: [], missed: ['#first'] };

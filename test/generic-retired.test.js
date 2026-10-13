@@ -99,3 +99,39 @@ test('runDoctor runs the retired-settings check', async () => {
   assert.match(src, /name: 'retired',\s+run: \(\) => checkRetiredSettings\(cfg\)/);
   assert.match(src, /running 7 checks/);
 });
+
+test('generic-runner.js is gone and nothing requires it', () => {
+  assert.equal(fs.existsSync(path.join(ROOT, 'generic-runner.js')), false);
+  const files = ['watcher.js', 'setup.js', 'brokers.js'];
+  for (const dir of ['lib', 'lib/modes', 'bin', 'scripts', 'dashboard']) {
+    for (const f of fs.readdirSync(path.join(ROOT, dir))) if (f.endsWith('.js')) files.push(path.join(dir, f));
+  }
+  for (const f of files) {
+    assert.doesNotMatch(fs.readFileSync(path.join(ROOT, f), 'utf8'), /generic-runner/, `${f} still mentions generic-runner`);
+  }
+});
+
+test('the run summary has no generic line and the banner counts catalog sites', () => {
+  const logger = require('../lib/logger');
+  logger.resetResults();
+  assert.equal('genericStats' in logger.results, false);
+  assert.doesNotMatch(logger.buildSummary(), /Generic/);
+  const { modeSource } = require('./helpers/watcher-source');
+  const src = modeSource('run');
+  assert.doesNotMatch(src, /GENERIC_ENABLED|runGenericBrokers|genericStats/);
+  assert.match(src, /catalogFormSiteCount\(catalogRecords\)/);
+});
+
+test('catalogFormSiteCount counts the records a forms run lists', () => {
+  const { catalogFormSiteCount } = require('../lib/catalog');
+  const rec = (state) => ({ domain: `${state}.example`, review: { state } });
+  const records = ['reviewed', 'manual', 'needs-review', 'email', 'excluded', 'unreviewed'].map(rec);
+  records.push({ domain: 'none.example' });
+  assert.equal(catalogFormSiteCount(records), 3);
+  assert.equal(catalogFormSiteCount(undefined), 0);
+});
+
+test('the example config has no generic block', () => {
+  const example = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.example.json'), 'utf8'));
+  assert.equal('generic' in example, false);
+});

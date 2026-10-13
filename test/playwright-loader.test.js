@@ -25,7 +25,7 @@ test('L6: present playwright returns chromium', () => {
 });
 
 test('L6: no source file mentions the home-dir plugin fallback', () => {
-  for (const f of ['watcher.js', ...modeFiles(), 'generic-runner.js', 'setup.js']) {
+  for (const f of ['watcher.js', ...modeFiles(), 'setup.js']) {
     const src = fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
     assert.equal(/openclaw/i.test(src), false, f);
   }

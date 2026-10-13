@@ -13,7 +13,6 @@
     "watcher.js",
     "setup.js",
     "brokers.js",
-    "generic-runner.js",
     "run.sh",
     "config.example.json",
     "data/",

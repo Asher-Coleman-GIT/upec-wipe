@@ -10,7 +10,6 @@
  *   printed, the URLs are not. Rows with no URL stay (manual, never navigated).
  * - Response bodies over 5 MB are rejected (content-length and while streaming).
  * - Env overrides are honoured only when they are https URLs.
- * - generic-runner ignores any non-https feed row in an older feeds file.
  *
  * No real network: every fetch is an injected fake.
  */
@@ -140,13 +139,4 @@ test('an https env override is honoured without a warning', () => {
   const { feeds, warnings } = freshFeeds({ CA_REGISTRY_URL: 'https://ca.test/x.csv' });
   assert.equal(feeds.CA_REGISTRY_URL, 'https://ca.test/x.csv');
   assert.deepEqual(warnings, []);
-});
-
-test('generic-runner skips non-https feed rows', () => {
-  const src = fs.readFileSync(path.join(__dirname, '..', 'generic-runner.js'), 'utf8');
-  const start = src.indexOf('if (fs.existsSync(FEEDS_PATH))');
-  assert.ok(start !== -1, 'feeds loader block found');
-  const block = src.slice(start, src.indexOf('return brokers;', start));
-  assert.doesNotMatch(block, /startsWith\('http'\)/);
-  assert.match(block, /\^https:/);
 });
