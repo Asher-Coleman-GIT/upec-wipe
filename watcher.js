@@ -24,6 +24,14 @@ if (process.argv.includes('--pollute')) {
   process.exit(1);
 }
 
+// The generic pass was retired: the reviewed catalog covers its sites, and the
+// pass re-submitted to brokers the catalog excludes. Refuse before any config
+// is read, as for --pollute.
+if (process.argv.includes('--generic')) {
+  console.error('The generic pass was retired: its sites are in the reviewed catalog (data/catalog/). Remove --generic.');
+  process.exit(1);
+}
+
 // Runs are manual only in this fork. Refuse the old flag rather than let it fall
 // through to a real opt-out run.
 if (process.argv.includes('--install-scheduler')) {
