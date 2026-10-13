@@ -140,16 +140,6 @@ test('REFERENCE says what the retired flag does now', () => {
   assert.match(ref, /The generic pass was retired/);
 });
 
-test('update-brokers is described as refreshing the catalog sources', () => {
-  const help = runNode(path.join(ROOT, 'bin', 'upec-wipe.js'), ['--help']).stdout;
-  const line = help.split('\n').find(l => /^\s+update-brokers\s/.test(l));
-  assert.match(line, /catalog/, line);
-  for (const f of ['README.md', 'docs/UPEC-MANUAL.md']) {
-    const row = fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n').find(l => l.startsWith('| `update-brokers`'));
-    assert.match(row, /catalog/, `${f}: ${row}`);
-  }
-});
-
 test('REFERENCE tells an encrypted-config member how to remove the generic block', () => {
   const ref = fs.readFileSync(path.join(ROOT, 'docs', 'REFERENCE.md'), 'utf8');
   const note = ref.slice(ref.indexOf('### Retired: the generic pass'), ref.indexOf('### Manual only'));

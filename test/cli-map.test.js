@@ -60,42 +60,8 @@ test('resolveCommand: doctor maps to watcher.js --doctor', () => {
   assert.deepEqual(r.args, ['watcher.js', '--doctor']);
 });
 
-test('resolveCommand: score maps to watcher.js --score (exposure score)', () => {
-  const r = resolveCommand(['score']);
-  assert.deepEqual(r.args, ['watcher.js', '--score']);
-});
-
-test('resolveCommand: report maps to watcher.js --report (monthly report)', () => {
-  const r = resolveCommand(['report']);
-  assert.deepEqual(r.args, ['watcher.js', '--report']);
-});
-
-test('resolveCommand: serp maps to watcher.js --serp-scan', () => {
-  assert.deepEqual(resolveCommand(['serp']).args, ['watcher.js', '--serp-scan']);
-});
-
 test('resolveCommand: pending maps to watcher.js --pending', () => {
   assert.deepEqual(resolveCommand(['pending']).args, ['watcher.js', '--pending']);
-});
-
-test('resolveCommand: breach maps to watcher.js --breach-check', () => {
-  assert.deepEqual(resolveCommand(['breach']).args, ['watcher.js', '--breach-check']);
-});
-
-test('resolveCommand: freeze maps to watcher.js --freeze', () => {
-  assert.deepEqual(resolveCommand(['freeze']).args, ['watcher.js', '--freeze']);
-});
-
-test('resolveCommand: complaints maps to watcher.js --complaints', () => {
-  assert.deepEqual(resolveCommand(['complaints']).args, ['watcher.js', '--complaints']);
-});
-
-test('resolveCommand: know maps to watcher.js --know', () => {
-  assert.deepEqual(resolveCommand(['know']).args, ['watcher.js', '--know']);
-});
-
-test('resolveCommand: update-brokers maps to watcher.js --update-brokers', () => {
-  assert.deepEqual(resolveCommand(['update-brokers']).args, ['watcher.js', '--update-brokers']);
 });
 
 test('resolveCommand: a hyphenated subcommand passes through extra args', () => {
@@ -121,7 +87,7 @@ test('resolveCommand: unknown command fails and falls back to help', () => {
 });
 
 test('COMMANDS lists every public subcommand with a description', () => {
-  const expected = ['setup', 'run', 'preview', 'verify', 'score', 'report', 'pending', 'serp', 'serp-watch', 'breach', 'freeze', 'complaints', 'know', 'update-brokers', 'list', 'doctor'];
+  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'serp-watch', 'catalog-check', 'list', 'reply', 'doctor'];
   for (const name of expected) {
     assert.ok(COMMANDS[name], `COMMANDS must include ${name}`);
     assert.equal(typeof COMMANDS[name].desc, 'string');
@@ -132,13 +98,12 @@ test('COMMANDS lists every public subcommand with a description', () => {
 test('buildHelp renders the program name and every subcommand', () => {
   const help = buildHelp();
   assert.match(help, /upec-wipe/);
-  for (const name of ['setup', 'run', 'preview', 'verify', 'score', 'report', 'breach', 'freeze', 'complaints', 'doctor']) {
+  for (const name of ['setup', 'run', 'preview', 'verify', 'serp-watch', 'reply', 'doctor']) {
     assert.match(help, new RegExp(`\\b${name}\\b`), `help must mention ${name}`);
   }
 });
 
-test('L9: report and serp-watch descriptions no longer promise email or alerts', () => {
-  assert.equal(COMMANDS.report.desc, 'Generate the monthly PDF report (saved locally)');
+test('L9: the serp-watch description does not promise email or alerts', () => {
   assert.equal(COMMANDS['serp-watch'].desc, 'Scan and list domains where your name newly appears');
   assert.doesNotMatch(buildHelp(), /alert|email report/i);
 });

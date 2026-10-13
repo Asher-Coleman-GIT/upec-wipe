@@ -8,7 +8,6 @@
  *   B11 - saveCheckpoint is atomic (tmp + rename)
  *   B21 - HISTORY_MAX >= DEFUNCT_THRESHOLD is asserted at module load
  *   B23 - recordSuccess computes a single Date (lastAttempt == lastSuccess)
- *   B6  - recordKnowRequest accepts an optional (person, totalPersons) and keys via stateKey
  */
 
 'use strict';
@@ -89,36 +88,6 @@ test('B7: recordPendingConfirmation writes lastDetail, not the dead `detail` fie
     const entry = cfg.loadState().optOuts.Radaris;
     assert.equal(entry.lastDetail, 'check your email');
     assert.equal(entry.detail, undefined, 'dead `detail` field must not be written');
-  });
-});
-
-// ── B6: recordKnowRequest keys via stateKey ─────────────────────────────────
-
-test('B6: recordKnowRequest with a bare name (legacy) keys on the bare name', () => {
-  withTmpState(() => {
-    cfg.recordKnowRequest('Pipl');
-    const state = cfg.loadState();
-    assert.ok(state.optOuts['Pipl'] && state.optOuts['Pipl'].knowRequestedAt);
-  });
-});
-
-test('B6: recordKnowRequest with a person + count > 1 keys on the composite stateKey', () => {
-  withTmpState(() => {
-    const person = { firstName: 'Jane', lastName: 'Doe' };
-    cfg.recordKnowRequest('Pipl', person, 2);
-    const state = cfg.loadState();
-    assert.ok(state.optOuts['Pipl|Jane Doe'], 'composite key expected in multi-person mode');
-    assert.equal(state.optOuts['Pipl'], undefined, 'bare key must NOT be used in multi-person mode');
-  });
-});
-
-test('B6: recordKnowRequest with a person but count <= 1 keys on the bare name', () => {
-  withTmpState(() => {
-    const person = { firstName: 'Jane', lastName: 'Doe' };
-    cfg.recordKnowRequest('Pipl', person, 1);
-    const state = cfg.loadState();
-    assert.ok(state.optOuts['Pipl'] && state.optOuts['Pipl'].knowRequestedAt);
-    assert.equal(state.optOuts['Pipl|Jane Doe'], undefined);
   });
 });
 

@@ -93,3 +93,56 @@ test('the dashboard is gone', () => {
     }
   }
 });
+
+const REMOVED_MODULES = [
+  'lib/modes/know.js', 'lib/modes/know-status.js', 'lib/modes/complaints.js', 'lib/modes/breach.js',
+  'lib/modes/score.js', 'lib/modes/report.js', 'lib/modes/freeze.js', 'lib/modes/confirm-emails.js',
+  'lib/exposure.js', 'lib/complaint.js', 'lib/right-to-know.js', 'lib/right-to-know-runner.js',
+  'lib/hibp.js', 'lib/freeze.js', 'lib/report.js', 'lib/snapshot.js', 'lib/imap-confirm.js',
+];
+
+test('the retired modules are gone and nothing requires them', () => {
+  for (const f of REMOVED_MODULES) assert.equal(fs.existsSync(path.join(ROOT, f)), false, `${f} still exists`);
+  const files = ['watcher.js', 'setup.js', 'brokers.js'];
+  for (const d of ['lib', 'lib/modes', 'bin', 'scripts']) {
+    for (const f of fs.readdirSync(path.join(ROOT, d))) if (f.endsWith('.js')) files.push(path.join(d, f));
+  }
+  const names = REMOVED_MODULES.map(f => path.basename(f, '.js'));
+  for (const f of files) {
+    const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    for (const n of names) {
+      assert.doesNotMatch(src, new RegExp(`require\\([^)]*[/']${n}['"]\\)`), `${f} requires ${n}`);
+    }
+  }
+});
+
+test('dispatch and the CLI map know only the kept modes', () => {
+  const { MODE_NAMES } = require('../lib/mode-dispatch');
+  for (const m of ['know', 'know-status', 'complaints', 'breach', 'score', 'report', 'freeze', 'confirm-emails', 'update-brokers']) {
+    assert.equal(MODE_NAMES.includes(m), false, m);
+  }
+  const { buildHelp } = require('../lib/cli-map');
+  const help = buildHelp();
+  for (const c of ['know', 'complaints', 'breach', 'score', 'report', 'freeze', 'dashboard', 'update-brokers']) {
+    assert.doesNotMatch(help, new RegExp(`^\\s+${c}\\s`, 'm'), c);
+  }
+  assert.doesNotMatch(help, /^\s+serp\s/m);
+  assert.match(help, /^\s+serp-watch\s/m);
+  assert.doesNotMatch(help, /--right-to-know/);
+});
+
+test('serp-watch still runs and the serp scan block is gone', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'lib', 'modes', 'run.js'), 'utf8');
+  assert.match(src, /require\('\.\.\/serp-watch'\)/);
+  assert.doesNotMatch(src, /SERP_SCAN|runSerpScan|SNAPSHOT/);
+  assert.equal(fs.existsSync(path.join(ROOT, 'lib', 'serp-scan.js')), true);
+});
+
+test('--dry-run is still an alias of --preview', () => {
+  const { parseWatcherFlags } = require('../lib/cli-flags');
+  const f = parseWatcherFlags(['node', 'watcher.js', '--dry-run']);
+  assert.equal(f.DRY_RUN, true);
+  for (const k of ['KNOW_MODE', 'SCORE_MODE', 'REPORT', 'BREACH_CHECK', 'FREEZE_MODE', 'SNAPSHOT', 'CONFIRM_EMAILS', 'SERP_SCAN', 'UPDATE_BROKERS', 'COMPLAINTS_MODE', 'KNOW_STATUS']) {
+    assert.equal(k in f, false, k);
+  }
+});

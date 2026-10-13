@@ -24,10 +24,7 @@ test('--preview implies a dry run', () => {
 test('value flags take the next argument', () => {
   assert.equal(p('--only', 'Spokeo').ONLY_ARG, 'Spokeo');
   assert.equal(p().ONLY_ARG, null);
-  assert.equal(p('--freeze-done', 'equifax').FREEZE_DONE_KEY, 'equifax');
-  assert.equal(p('--freeze-done', 'equifax').FREEZE_MODE, true);
-  assert.equal(p('--confirm-emails', 'mail').confirmEmailsDir, 'mail');
-  assert.equal(p('--confirm-emails', '--dry-run').confirmEmailsDir, './inbox/confirms');
+  assert.equal(p('--skip', 'Radaris').SKIP_ARG, 'Radaris');
 });
 
 test('doctor as the first argument or as a flag', () => {
@@ -35,8 +32,7 @@ test('doctor as the first argument or as a flag', () => {
   assert.equal(p('--doctor').DOCTOR, true);
 });
 
-test('--know-status is not --know, and --allow is parsed', () => {
-  assert.equal(p('--know-status').KNOW_MODE, false);
+test('--allow is parsed', () => {
   assert.equal(p('--allow', 'Spokeo').ALLOWLIST_CMD.name, 'Spokeo');
   assert.equal(p().ALLOWLIST_CMD, null);
 });
@@ -45,16 +41,16 @@ test('replyArgs: the broker and outcome after --reply, skipping flags and flag v
   const { replyArgs } = require('../lib/cli-flags');
   const r = (...a) => replyArgs(['node', 'watcher.js', '--reply', ...a]);
   assert.deepEqual(r('Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
-  assert.deepEqual(r('--right-to-know', 'Pipl', 'bounced'), { query: 'Pipl', outcome: 'bounced', extra: false });
+  assert.deepEqual(r('--resume', 'Pipl', 'bounced'), { query: 'Pipl', outcome: 'bounced', extra: false });
   assert.deepEqual(r('--only', 'Acme', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
   assert.deepEqual(r('Pipl', '--skip', 'none', 'refused'), { query: 'Pipl', outcome: 'refused', extra: false });
   assert.deepEqual(r(), { query: '', outcome: '', extra: false });
 });
 
-test('replyArgs: a third plain argument is reported, and --confirm-emails takes no value here', () => {
+test('replyArgs: a third plain argument is reported, and a bare flag takes no value', () => {
   const { replyArgs } = require('../lib/cli-flags');
   const r = (...a) => replyArgs(['node', 'watcher.js', '--reply', ...a]);
   assert.equal(r('Pipl', 'Spokeo', 'honored').extra, true);
   assert.equal(r('Pipl', 'honored').extra, false);
-  assert.deepEqual(r('--confirm-emails', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
+  assert.deepEqual(r('--resume', 'Pipl', 'honored'), { query: 'Pipl', outcome: 'honored', extra: false });
 });

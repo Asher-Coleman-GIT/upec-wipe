@@ -136,20 +136,6 @@ test('uninstall removes the listeners', () => {
   assert.equal(proc.listenerCount('SIGTERM'), 0);
 });
 
-test('watcher.js installs the handler for the main run and --confirm-emails', () => {
-  const src = require('./helpers/watcher-source').watcherSource();
-  const uses = src.match(/installSignalCleanup\(/g) || [];
-  assert.ok(uses.length >= 2, `expected >= 2 installSignalCleanup calls, got ${uses.length}`);
-});
-
-test('watcher.js --confirm-emails registers the profile cleanup before the browser launches', () => {
-  const src = require('./helpers/watcher-source').modeSource('confirm-emails');
-  const i = src.indexOf('chromium: chromiumForConfirm, config');
-  assert.ok(i > 0);
-  assert.match(src.slice(i, i + 200), /onProfile/);
-  assert.match(src.slice(0, i), /syncCleanup/);
-});
-
 test('openBrowserSession reports the profile via onProfile before launch, so a signal during launch can clean it', async () => {
   const fs = require('fs');
   const { openBrowserSession } = require('../lib/browser-session');

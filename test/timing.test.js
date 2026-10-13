@@ -180,7 +180,7 @@ test('every production call site uses a valid range', async () => {
   const fs = require('node:fs');
   const path = require('node:path');
   const root = path.join(__dirname, '..');
-  const files = ['lib/broker-runner.js', 'lib/serp-scan.js', 'lib/hibp.js', 'lib/forms.js'];
+  const files = ['lib/broker-runner.js', 'lib/serp-scan.js', 'lib/forms.js'];
   let checked = 0;
   for (const f of files) {
     const src = fs.readFileSync(path.join(root, f), 'utf8');

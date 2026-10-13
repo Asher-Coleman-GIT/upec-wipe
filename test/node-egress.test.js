@@ -166,15 +166,6 @@ test('buildSubmissionPlan propagates EgressError instead of blocking quietly', a
   assert.equal(created, 0);
 });
 
-test('HIBP: failing gate means HIBP is never called', async () => {
-  const { runBreachCheck } = require('../lib/hibp');
-  const config = {};
-  failingGate(config);
-  let fetched = 0;
-  await assert.rejects(() => runBreachCheck({ emails: ['p@example.com'], apiKey: 'k', config, fetchImpl: async () => { fetched++; return { status: 404 }; } }), EgressError);
-  assert.equal(fetched, 0);
-});
-
 test('registries: failing gate means the registries are never fetched', async () => {
   const feeds = require('../lib/feeds');
   failingGate({});

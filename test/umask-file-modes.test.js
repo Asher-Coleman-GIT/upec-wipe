@@ -117,8 +117,8 @@ test('watcher --allow X keeps config.json at 0600 under umask 022', { skip: SKIP
 });
 
 test('every logs/ and data/ mkdirSync passes mode 0o700', () => {
-  const files = ['watcher.js', ...require('./helpers/watcher-source').modeFiles(), 'lib/audit.js', 'lib/complaint.js', 'lib/exposure.js', 'lib/imap-confirm.js',
-    'lib/serp-scan.js', 'lib/snapshot.js', 'lib/browser-session.js'];
+  const files = ['watcher.js', ...require('./helpers/watcher-source').modeFiles(), 'lib/audit.js',
+    'lib/serp-scan.js', 'lib/browser-session.js'];
   const offenders = [];
   for (const rel of files) {
     const lines = fs.readFileSync(path.join(ROOT, rel), 'utf8').split('\n');

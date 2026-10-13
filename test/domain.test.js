@@ -14,7 +14,7 @@ test('the domain helpers live in lib/domain; serp-scan re-exports the same funct
 });
 
 test('nothing outside serp-watch imports serp-scan just for the domain helpers', () => {
-  const files = ['lib/broker-runner.js', 'lib/catalog.js', 'lib/catalog-drift.js', 'lib/catalog-survey-core.js', 'lib/catalog-sources.js', 'lib/feeds.js', 'lib/imap-confirm.js'];
+  const files = ['lib/broker-runner.js', 'lib/catalog.js', 'lib/catalog-drift.js', 'lib/catalog-survey-core.js', 'lib/catalog-sources.js', 'lib/feeds.js'];
   for (const f of files) {
     const src = fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
     assert.ok(!/require\(['"][./]*(lib\/)?serp-scan['"]\)/.test(src), `${f} still imports serp-scan`);

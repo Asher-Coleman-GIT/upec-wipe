@@ -80,7 +80,7 @@ test('every chromium launch site in watcher.js goes through lib/browser-session'
     'watcher.js must not launch Chromium directly; use openBrowserSession (ephemeral profile, proxy, egress check)',
   );
   const sessions = watcher.match(/openBrowserSession\(/g) || [];
-  assert.ok(sessions.length >= 4, `expected at least 4 session launch sites, found ${sessions.length}`);
+  assert.ok(sessions.length >= 1, `expected the run's session launch site, found ${sessions.length}`);
 
   const session = fs.readFileSync(path.join(__dirname, '..', 'lib', 'browser-session.js'), 'utf8');
   assert.match(session, /launchPersistentContext\([^)]*buildLaunchOptions\(/,
