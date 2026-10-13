@@ -122,11 +122,9 @@ test('every test command loads the egress-off preload', () => {
   const root = path.join(__dirname, '..');
   const rootPkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
   assert.match(rootPkg.scripts.test, /--require[ =]\.\/test\/helpers\/egress-off\.js/);
-  const dashPkg = JSON.parse(fs.readFileSync(path.join(root, 'dashboard', 'package.json'), 'utf8'));
-  assert.match(dashPkg.scripts.test, /--require[ =]\.\.\/test\/helpers\/egress-off\.js/);
   const ci = fs.readFileSync(path.join(root, '.github', 'workflows', 'test.yml'), 'utf8');
   const runs = ci.split('\n').filter((l) => /run:\s*node\b.*--test\b/.test(l));
-  assert.ok(runs.length >= 2, 'found the CI test steps');
+  assert.ok(runs.length >= 1, 'found the CI test step');
   for (const l of runs) assert.match(l, /--require[ =]\S*egress-off\.js/, l);
 });
 

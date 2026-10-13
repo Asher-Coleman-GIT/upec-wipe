@@ -9,7 +9,6 @@
   "files": [
     "bin/",
     "lib/",
-    "dashboard/",
     "watcher.js",
     "setup.js",
     "brokers.js",
@@ -22,7 +21,7 @@
     "setup": "node setup.js",
     "start": "node watcher.js",
     "run": "bash run.sh",
-    "test": "node --require ./test/helpers/egress-off.js --test test/*.test.js dashboard/validate.test.js dashboard/config-status.test.js",
+    "test": "node --require ./test/helpers/egress-off.js --test test/*.test.js",
     "upec-wipe": "node bin/upec-wipe.js",
     "review:doctor": "bash scripts/cross-model-preflight.sh",
     "review:cross-model": "bash scripts/cross-model-review.sh"
@@ -37,6 +36,14 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "keywords": ["privacy", "data-broker", "opt-out", "gdpr", "ccpa", "automation", "playwright"],
+  "keywords": [
+    "privacy",
+    "data-broker",
+    "opt-out",
+    "gdpr",
+    "ccpa",
+    "automation",
+    "playwright"
+  ],
   "license": "MIT"
 }

@@ -103,13 +103,6 @@ test('resolveCommand: a hyphenated subcommand passes through extra args', () => 
   assert.deepEqual(r.args, ['watcher.js', '--serp-watch', '--only', 'Spokeo']);
 });
 
-test('resolveCommand: dashboard maps to dashboard/server.js with dashboard cwd', () => {
-  const r = resolveCommand(['dashboard']);
-  assert.equal(r.file, 'dashboard/server.js');
-  assert.deepEqual(r.args, ['dashboard/server.js']);
-  assert.equal(r.cwd, 'dashboard');
-});
-
 test('resolveCommand: extra args are passed through after the mapped flags', () => {
   const r = resolveCommand(['run', '--dry-run', '--only', 'Spokeo']);
   assert.deepEqual(r.args, ['watcher.js', '--dry-run', '--only', 'Spokeo']);
@@ -128,7 +121,7 @@ test('resolveCommand: unknown command fails and falls back to help', () => {
 });
 
 test('COMMANDS lists every public subcommand with a description', () => {
-  const expected = ['setup', 'run', 'preview', 'verify', 'score', 'report', 'pending', 'serp', 'serp-watch', 'breach', 'freeze', 'complaints', 'know', 'update-brokers', 'list', 'dashboard', 'doctor'];
+  const expected = ['setup', 'run', 'preview', 'verify', 'score', 'report', 'pending', 'serp', 'serp-watch', 'breach', 'freeze', 'complaints', 'know', 'update-brokers', 'list', 'doctor'];
   for (const name of expected) {
     assert.ok(COMMANDS[name], `COMMANDS must include ${name}`);
     assert.equal(typeof COMMANDS[name].desc, 'string');
@@ -139,7 +132,7 @@ test('COMMANDS lists every public subcommand with a description', () => {
 test('buildHelp renders the program name and every subcommand', () => {
   const help = buildHelp();
   assert.match(help, /upec-wipe/);
-  for (const name of ['setup', 'run', 'preview', 'verify', 'score', 'report', 'breach', 'freeze', 'complaints', 'dashboard', 'doctor']) {
+  for (const name of ['setup', 'run', 'preview', 'verify', 'score', 'report', 'breach', 'freeze', 'complaints', 'doctor']) {
     assert.match(help, new RegExp(`\\b${name}\\b`), `help must mention ${name}`);
   }
 });

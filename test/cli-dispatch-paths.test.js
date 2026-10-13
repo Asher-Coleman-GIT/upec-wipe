@@ -39,12 +39,6 @@ test('every subcommand resolves to a script that exists on disk', () => {
   }
 });
 
-test('dashboard resolves to <root>/dashboard/server.js, not <root>/dashboard/dashboard/server.js', () => {
-  const target = resolveSpawnTarget(resolveCommand(['dashboard']), ROOT);
-  assert.equal(target.script, path.join(ROOT, 'dashboard', 'server.js'));
-  assert.equal(target.cwd, path.join(ROOT, 'dashboard'));
-});
-
 test('a root-cwd subcommand keeps the repo root as its cwd', () => {
   const target = resolveSpawnTarget(resolveCommand(['run']), ROOT);
   assert.equal(target.script, path.join(ROOT, 'watcher.js'));

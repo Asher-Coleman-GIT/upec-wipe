@@ -4,7 +4,7 @@
  * Hermetic smoke test for the bin/upec-wipe.js dispatcher. Only exercises the
  * non-spawning paths (--help, --version, unknown command) by running the bin
  * as a child process and asserting its exit code + output. No network, no
- * real opt-out run, no dashboard boot.
+ * real opt-out run.
  */
 
 const { test } = require('node:test');
@@ -28,7 +28,7 @@ test('upec-wipe --help exits 0 and lists subcommands', () => {
   assert.equal(r.code, 0);
   assert.match(r.stdout, /Usage: upec-wipe/);
   assert.match(r.stdout, /\bsetup\b/);
-  assert.match(r.stdout, /\bdashboard\b/);
+  assert.match(r.stdout, /\bserp-watch\b/);
 });
 
 test('upec-wipe with no args prints help and exits 0', () => {

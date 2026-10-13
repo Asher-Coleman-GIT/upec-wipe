@@ -41,15 +41,7 @@ echo ""
 echo "Installing the Chromium browser (npx playwright install chromium)..."
 npx playwright install chromium
 
-# 5. Install the dashboard's own dependencies.
-#    express lives in dashboard/package.json, not the root manifest, so without
-#    this step `upec-wipe dashboard` fails with MODULE_NOT_FOUND right after a
-#    documented install.
-echo ""
-echo "Installing dashboard dependencies..."
-(cd dashboard && npm ci --ignore-scripts) || echo "  (dashboard deps failed - 'upec-wipe dashboard' will not start until you run: cd dashboard && npm ci --ignore-scripts)"
-
-# 6. Next steps.
+# 5. Next steps.
 echo ""
 echo "--------------------------------"
 echo "Install complete."
@@ -61,9 +53,6 @@ echo "  2. Preview what it will do (submits nothing):"
 echo "       node bin/upec-wipe.js preview"
 echo "  3. Run for real when ready:"
 echo "       node bin/upec-wipe.js run"
-echo ""
-echo "  Open the local web dashboard:"
-echo "       node bin/upec-wipe.js dashboard"
 echo ""
 echo "Tip: run 'npm link' (or 'npm i -g .') to use 'upec-wipe' instead of 'node bin/upec-wipe.js'."
 echo "--------------------------------"

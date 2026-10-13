@@ -19,12 +19,6 @@ test('L4: watcher-bound children lose UPEC_WIPE_PASS, UPEC_WIPE_USER and UPEC_WI
   assert.equal(env.PATH, '/bin');
 });
 
-test('L4: the dashboard child keeps its own credentials (it needs them to boot)', () => {
-  const env = cliChildEnv('dashboard', BASE);
-  assert.equal(env.UPEC_WIPE_PASS, 'a');
-  assert.equal(env.UPEC_WIPE_USER, 'b');
-});
-
 test('L4: childEnv does not mutate its input', () => {
   const input = { ...BASE };
   childEnv(input);

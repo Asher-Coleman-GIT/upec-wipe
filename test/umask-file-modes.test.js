@@ -3,7 +3,7 @@
  *
  * Audit M2 (follow-up C1 item 3). Only run.sh and harden.sh set a umask, so
  * launching through bin/upec-wipe.js (the documented entry point), watcher.js,
- * setup.js or the dashboard directly created run logs, audit files (full name
+ * setup.js directly created run logs, audit files (full name
  * and real email), complaints, snapshots and reports 0644 and their dirs 0755.
  * `--allow/--unallow` also rewrote config.json through a default-mode tmp file,
  * turning setup's 0600 into 0644.
@@ -68,14 +68,8 @@ test('setup.js sets umask 077 (on require, before main)', { skip: SKIP }, () => 
   assert.equal(umask, 0o077, r.stderr);
 });
 
-test('dashboard/server.js sets umask 077 (on require)', { skip: SKIP }, () => {
-  const { umask, r } = umaskAfter(['-e', `require(${JSON.stringify(path.join(ROOT, 'dashboard', 'server.js'))})`],
-    { env: { UPEC_WIPE_USER: 'u', UPEC_WIPE_PASS: 'p'.repeat(16) } });
-  assert.equal(umask, 0o077, r.stderr);
-});
-
 test('umask call sits at the top of each entry point, before any require', () => {
-  for (const rel of ['bin/upec-wipe.js', 'watcher.js', 'setup.js', 'dashboard/server.js']) {
+  for (const rel of ['bin/upec-wipe.js', 'watcher.js', 'setup.js']) {
     const src = fs.readFileSync(path.join(ROOT, rel), 'utf8');
     const u = src.indexOf('process.umask(0o077)');
     assert.ok(u > 0, `${rel} must call process.umask(0o077)`);

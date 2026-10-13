@@ -56,7 +56,7 @@ test("the package's bin target exists and carries a shebang", () => {
 test('every `node <file>` command in the README points at a real file', () => {
   const referenced = captures(
     readme,
-    /\bnode\s+((?:bin|lib|scripts|dashboard)\/[\w./-]+\.js|watcher\.js|setup\.js)/g,
+    /\bnode\s+((?:bin|lib|scripts)\/[\w./-]+\.js|watcher\.js|setup\.js)/g,
   );
   assert.ok(referenced.length > 0, 'precondition: the README documents some node commands');
   const missing = referenced.filter(f => !fs.existsSync(path.join(ROOT, f)));
@@ -73,18 +73,6 @@ test('every script install.sh invokes exists', () => {
   const referenced = captures(install, /\b(?:bash|node)\s+(scripts\/[\w./-]+)/g);
   const missing = referenced.filter(f => !fs.existsSync(path.join(ROOT, f)));
   assert.deepEqual(missing, [], 'install.sh invokes scripts that do not exist');
-});
-
-test('install.sh installs the dashboard dependencies', () => {
-  // express lives only in dashboard/package.json, so without this step
-  // `upec-wipe dashboard` fails with MODULE_NOT_FOUND right after a clean install.
-  const dashPkg = require(path.join(ROOT, 'dashboard', 'package.json'));
-  assert.ok(dashPkg.dependencies && dashPkg.dependencies.express, 'precondition: express is a dashboard-only dep');
-  assert.match(
-    install,
-    /cd dashboard && npm ci/,
-    'install.sh must install dashboard deps or `upec-wipe dashboard` cannot start',
-  );
 });
 
 test('the paths listed in package.json "files" all exist', () => {

@@ -34,7 +34,7 @@ test('every npm ci / npm install of project deps passes --ignore-scripts', () =>
       if (!/--ignore-scripts\b/.test(line)) offenders.push(`${rel}:${n}: ${line.trim()}`);
     }
   }
-  assert.ok(seen >= 6, `expected the install lines to be found (saw ${seen})`);
+  assert.ok(seen >= 3, `expected the install lines to be found (saw ${seen})`);
   assert.deepEqual(offenders, []);
 });
 
@@ -44,11 +44,10 @@ test('npx playwright install is kept without --ignore-scripts', () => {
   assert.doesNotMatch(src, /playwright install[^\n]*--ignore-scripts/);
 });
 
-test('CI audit gate is --audit-level=moderate for both manifests', () => {
+test('CI audit gate is --audit-level=moderate', () => {
   const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/test.yml'), 'utf8');
   const audits = yml.split('\n').filter(l => /npm audit\b/.test(l) && !/^\s*#/.test(l));
-  assert.equal(audits.length, 2, audits.join('\n'));
+  assert.equal(audits.length, 1, audits.join('\n'));
   for (const l of audits) assert.match(l, /--audit-level=moderate\b/);
-  assert.ok(audits.some(l => /cd dashboard/.test(l)), 'dashboard manifest audited');
   assert.doesNotMatch(yml, /--audit-level=high/);
 });

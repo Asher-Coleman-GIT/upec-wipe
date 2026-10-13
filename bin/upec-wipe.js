@@ -6,10 +6,9 @@ process.umask(0o077);
 /*
  * bin/upec-wipe.js - friendly CLI dispatcher for upec-wipe.
  *
- * Maps subcommands (setup, run, preview, verify, dashboard, score, report,
- * doctor) to the existing entrypoints via lib/cli-map.js, then spawns them.
- * The dashboard subcommand generates one-time credentials so the local web UI
- * is never unauthenticated, and prints the URL + login once.
+ * Maps subcommands (setup, run, preview, verify, reply, doctor and the rest) to
+ * the existing entrypoints via lib/cli-map.js, then spawns them. Retired
+ * subcommands refuse with one line.
  *
  * Usage: upec-wipe <command> [options]   (run `upec-wipe --help` for the full list)
  */
@@ -18,7 +17,6 @@ const path = require('path');
 const { spawn } = require('child_process');
 const { resolveCommand, resolveSpawnTarget, buildHelp } = require('../lib/cli-map');
 const { cliChildEnv } = require('../lib/child-env');
-const { generateDashboardCreds } = require('../lib/dashboard-creds');
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -34,30 +32,7 @@ function printVersion() {
 function spawnNode(resolved) {
   const { cwd, args } = resolveSpawnTarget(resolved, ROOT);
   const env = cliChildEnv(resolved.command, process.env);
-  let onSpawn = null;
-
-  if (resolved.command === 'dashboard') {
-    // Boot the dashboard authenticated. server.js reads UPEC_WIPE_USER/UPEC_WIPE_PASS
-    // (see dashboard/server.js) and refuses to start if no credentials are set,
-    // so generate a one-time pair when the caller did not supply one.
-    if (!env.UPEC_WIPE_USER || !env.UPEC_WIPE_PASS) {
-      const creds = generateDashboardCreds();
-      env.UPEC_WIPE_USER = creds.user;
-      env.UPEC_WIPE_PASS = creds.pass;
-      const host = env.UPEC_WIPE_HOST || '127.0.0.1';
-      const port = env.UPEC_WIPE_PORT || '8080';
-      onSpawn = () => {
-        process.stdout.write('\n  Dashboard starting...\n');
-        process.stdout.write(`  URL:      http://${host}:${port}\n`);
-        process.stdout.write(`  Username: ${creds.user}\n`);
-        process.stdout.write(`  Password: ${creds.pass}\n`);
-        process.stdout.write('  (these credentials are shown once; re-run to get new ones)\n\n');
-      };
-    }
-  }
-
   const child = spawn(process.execPath, args, { cwd, env, stdio: 'inherit' });
-  if (onSpawn) child.on('spawn', onSpawn);
   child.on('exit', (code, signal) => {
     if (signal) { process.exit(1); }
     process.exit(code === null ? 1 : code);
@@ -80,7 +55,7 @@ function main() {
     report: 'the exposure score depended on the breach check. See docs/REFERENCE.md.',
     freeze: 'the freeze checklist is in docs/UPEC-MANUAL.md.',
     serp: 'use upec-wipe serp-watch.',
-    dashboard: 'use the CLI; see docs/REFERENCE.md.',
+    dashboard: 'use the CLI; see docs/REFERENCE.md.', // removed: the local web dashboard
   };
   if (args[0] === 'update-brokers') {
     process.stderr.write('update-brokers moved: run node scripts/update-catalog-sources.js.\n');

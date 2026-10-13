@@ -87,7 +87,7 @@ test('runDoctor runs the retired-settings check', async () => {
 test('generic-runner.js is gone and nothing requires it', () => {
   assert.equal(fs.existsSync(path.join(ROOT, 'generic-runner.js')), false);
   const files = ['watcher.js', 'setup.js', 'brokers.js'];
-  for (const dir of ['lib', 'lib/modes', 'bin', 'scripts', 'dashboard']) {
+  for (const dir of ['lib', 'lib/modes', 'bin', 'scripts']) {
     for (const f of fs.readdirSync(path.join(ROOT, dir))) if (f.endsWith('.js')) files.push(path.join(dir, f));
   }
   for (const f of files) {
@@ -174,9 +174,3 @@ test('REFERENCE says where the dead-site list comes from now', () => {
   assert.doesNotMatch(ref, /about 500 sites/);
 });
 
-test('the dashboard comments do not list the generic pass as a live protection', () => {
-  const src = fs.readFileSync(path.join(ROOT, 'dashboard', 'server.js'), 'utf8');
-  for (const line of src.split('\n')) {
-    if (/generic/.test(line) && /^\s*(\/\/|\*)/.test(line)) assert.match(line, /retired/, line);
-  }
-});

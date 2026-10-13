@@ -57,8 +57,3 @@ test('install.sh prints the next step, as a command that actually runs', () => {
   );
 });
 
-test('install.sh installs the dashboard dependencies too', () => {
-  // express is declared only in dashboard/package.json, so a documented install
-  // that skips this leaves `upec-wipe dashboard` unable to start.
-  assert.match(read(), /cd dashboard && npm ci/);
-});

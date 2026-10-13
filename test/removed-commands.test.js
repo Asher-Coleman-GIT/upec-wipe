@@ -80,3 +80,16 @@ test('watcher.js checks REMOVED before parsing flags or loading a mode', () => {
   assert.ok(check < src.indexOf('parseWatcherFlags(process.argv)'), 'before flags are parsed');
   assert.ok(check < src.indexOf('require(`./lib/modes/'), 'before any mode loads');
 });
+
+test('the dashboard is gone', () => {
+  assert.equal(fs.existsSync(path.join(ROOT, 'dashboard')), false);
+  assert.equal(fs.existsSync(path.join(ROOT, 'lib', 'dashboard-creds.js')), false);
+  const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
+  assert.doesNotMatch(JSON.stringify(pkg), /dashboard/);
+  for (const f of ['bin/upec-wipe.js', 'lib/child-env.js', 'install.sh', 'docker-compose.yml', 'Dockerfile']) {
+    const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    for (const line of src.split('\n')) {
+      if (/dashboard/i.test(line)) assert.match(line, /removed/i, `${f}: ${line}`);
+    }
+  }
+});

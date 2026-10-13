@@ -37,12 +37,6 @@ test('watcher refuses --install-scheduler instead of starting a real run', () =>
   assert.match(r.stderr, /--install-scheduler was removed/);
 });
 
-test('dashboard has no schedule route or tab', () => {
-  assert.doesNotMatch(read('dashboard/server.js'), /\/api\/schedule|systemctl/);
-  assert.doesNotMatch(read('dashboard/public/index.html'), /tab-schedule/);
-  assert.doesNotMatch(read('dashboard/public/app.js'), /schedule/i);
-});
-
 test('a systemd CREDENTIALS_DIRECTORY no longer supplies the passphrase', () => {
   const { getPassphrase } = require('../lib/config');
   const cred = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-cred-'));

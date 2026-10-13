@@ -24,9 +24,6 @@ test('each send re-runs the egress check instead of reusing the cached result', 
   assert.match(modeSource('shared'), /ensureEgress: \(cfg\) => ensureNodeEgress\(cfg, \{ fresh: true \}\)/);
 });
 
-test('--list and the dashboard read email status through emailStatus (multi-person keys)', () => {
+test('--list reads email status through emailStatus (multi-person keys)', () => {
   assert.match(modeSource('list'), /emailStatus\(state, n\)/);
-  const dash = fs.readFileSync(path.join(__dirname, '..', 'dashboard', 'server.js'), 'utf8');
-  assert.match(dash, /emailStatus\(st, n\)/);
-  assert.match(dash, /catalogEmailTargets\(records, \{ explicitNames/);
 });
