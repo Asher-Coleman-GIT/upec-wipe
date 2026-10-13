@@ -1,12 +1,11 @@
 /**
  * test/dead-url.test.js
  *
- * Unit tests for the pure classification helpers exported from generic-runner.js
- * and for the dead-URL short-circuit logic (using injected sets / temp files).
+ * Unit tests for the pure classification helpers in lib/dead-urls.js and for
+ * loadDeadSet (using temp files).
  *
  * Does NOT require Playwright - classifyNavError and isDeadStatus are pure
- * functions; processGenericUrl tests are done via processGenericUrl's optional
- * injectedDeadSet parameter.
+ * functions.
  */
 
 'use strict';
@@ -17,7 +16,7 @@ const fs       = require('fs');
 const os       = require('os');
 const path     = require('path');
 
-const { classifyNavError, isDeadStatus, loadDeadSet } = require('../generic-runner');
+const { classifyNavError, isDeadStatus, loadDeadSet } = require('../lib/dead-urls');
 
 // ── classifyNavError ──────────────────────────────────────────────────────────
 

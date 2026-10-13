@@ -11,7 +11,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const { markupRows, badboolRows, feedRows, buildCandidates } = require(path.join(ROOT, 'lib/catalog-sources'));
 const { explicitHostsOf } = require(path.join(ROOT, 'lib/feeds'));
-const { loadDeadSet, DEAD_URLS_PATH } = require(path.join(ROOT, 'generic-runner'));
+const { loadDeadSet, DEAD_URLS_PATH } = require(path.join(ROOT, 'lib/dead-urls'));
 const brokers = require(path.join(ROOT, 'brokers')).forPerson({ firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', state: 'TX', city: 'Austin', zip: '73301', email: 'jane@example.com', country: 'US' });
 
 const rows = [
