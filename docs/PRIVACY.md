@@ -51,7 +51,7 @@ Every connection uses one of three paths.
 | SimpleLogin (`app.simplelogin.io`) | Your API key and a neutral note. SimpleLogin already knows your real inbox, because the alias forwards there. | A real run, when no alias is cached yet for that person. `upec-wipe doctor` also sends the key once to check it (account info request; no alias is made, and the reply is discarded). | Direct |
 | CapSolver (`api.capsolver.com`) | Your API key, the address of the broker page showing the CAPTCHA and the CAPTCHA's site key, a public code the page uses to identify its CAPTCHA (for AWS WAF also its key, iv and context). No images, and none of your config fields. | A broker shows a CAPTCHA and you set a real key | Direct |
 | Your SMTP server, then the broker | Subject with your full name. Body with your name, city, state, zip, phone and alias. The broker can also see the SMTP account address. TLS 1.2 or newer is required. | A real run, only if you keep the `email` block. The recommended setup deletes it. | Direct |
-| `oag.ca.gov`, `bizfilings.vermont.gov` | Nothing about you | `upec-wipe update-brokers` | Direct |
+| `oag.ca.gov`, `bizfilings.vermont.gov` | Nothing about you | `node scripts/update-catalog-sources.js` (maintainers; it replaced the removed `upec-wipe update-brokers`) | Direct |
 | Your SMTP host (connection only) and `api.capsolver.com` (one HEAD request) | Nothing about you | `upec-wipe doctor` | Direct |
 | Manual-action pages | The page address only | End of a real run, when some brokers need you | Everyday browser |
 | Install downloads (npm, the Playwright browser, NodeSource, Ubuntu packages, the fork's git host) | Nothing about you, but your real IP if Mullvad is not on yet | `install.sh` and the install steps in the manual | Direct |

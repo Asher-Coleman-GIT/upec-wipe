@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-// Audit M2: everything this process creates (run logs, audit files, snapshots,
-// complaints, reports, config rewrites) is owner-only, however it was launched.
+// Audit M2: everything this process creates (run logs, audit files, config
+// rewrites) is owner-only, however it was launched.
 process.umask(0o077);
 /*
  * bin/upec-wipe.js - friendly CLI dispatcher for upec-wipe.
@@ -57,7 +57,7 @@ function main() {
     serp: 'use upec-wipe serp-watch.',
     dashboard: 'use the CLI; see docs/REFERENCE.md.', // removed: the local web dashboard
   };
-  if (args[0] === 'update-brokers') {
+  if (args[0] === 'update-brokers') { // moved to a maintainer script
     process.stderr.write('update-brokers moved: run node scripts/update-catalog-sources.js.\n');
     process.exit(1);
   }

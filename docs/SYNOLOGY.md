@@ -143,8 +143,8 @@ cd /volume1/docker/upec-wipe && docker compose run --rm watcher
 
 ## What does not work on a NAS
 
-- **Notifications.** Removed in this fork. Check the log files and the
-  report PDF in the data directory instead.
+- **Notifications.** Removed in this fork. Check the run summary and the log
+  files in the data directory instead.
 - **The interactive `setup.js` wizard.** Some steps want a real browser. Run it
   elsewhere and copy `config.json` over.
 - **Headed mode.** There is no display. The tool auto-detects this (Linux with no

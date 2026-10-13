@@ -10,7 +10,7 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { buildSubmissionPlan, withSubmissionEmail } = require('../lib/submission-plan');
+const { buildSubmissionPlan } = require('../lib/submission-plan');
 
 const A = { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', email: 'jane@example.com' };
 const B = { firstName: 'John', lastName: 'Roe', fullName: 'John Roe', email: 'john@example.com' };
@@ -48,15 +48,6 @@ test('unexpected errors are not swallowed', async () => {
   // Only RelayUnavailableError means "block this person"; a programming error
   // (here: persons is not iterable) must surface.
   await assert.rejects(() => buildSubmissionPlan({ config: RELAY, persons: null, state: {} }), TypeError);
-});
-
-test('withSubmissionEmail swaps only the email', () => {
-  const p = withSubmissionEmail(A, 'alias@simplelogin.com');
-  assert.notEqual(p, A);
-  assert.equal(p.email, 'alias@simplelogin.com');
-  assert.equal(p.firstName, 'Jane');
-  assert.equal(A.email, 'jane@example.com', 'original not mutated');
-  assert.equal(withSubmissionEmail(A, A.email), A);
 });
 
 test('preview plan: no alias minted, placeholder flagged, required relay still blocks', async () => {

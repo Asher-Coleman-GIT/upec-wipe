@@ -80,7 +80,7 @@ None are currently marked `verified`: a read-only survey re-read the live forms,
 upec-wipe/
 ├── bin/upec-wipe.js      the upec-wipe command; maps subcommands to watcher.js flags
 ├── watcher.js            entry point; picks a mode and runs it
-├── lib/modes/            one file per mode (run, reply, know, breach, list, ...)
+├── lib/modes/            one file per mode (run, reply, list, doctor, clear, ...)
 ├── lib/                  shared engine: browser, forms, egress check, relay, email step,
 │                         catalog, state, redaction, CAPTCHA
 ├── brokers.js            the 32 explicit brokers

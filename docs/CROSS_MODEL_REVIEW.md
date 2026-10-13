@@ -140,9 +140,8 @@ data. Not by line count or churn.
 | `setup.js` | Writes the PII file and installs the scheduler |
 | `Dockerfile`, `docker-compose.yml` | The only realistic deployment path for Linux and NAS users |
 
-Tier 2 - Copilot alone is enough: `watcher.js` orchestration, `lib/report.js`,
-`lib/logger.js`, `lib/audit.js`, `lib/exposure.js`, `lib/diff.js`, `data/`,
-`docs/`, `test/`.
+Tier 2 - Copilot alone is enough: `watcher.js` and `lib/modes/` orchestration,
+`lib/logger.js`, `lib/audit.js`, `lib/diff.js`, `data/`, `docs/`, `test/`.
 
 ## Recording the result
 

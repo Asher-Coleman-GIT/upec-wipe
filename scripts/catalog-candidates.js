@@ -4,7 +4,7 @@
 //   node scripts/catalog-candidates.js
 //
 // Reads data/markup-parsed.json, data/badbool-extra.json and (when
-// `upec-wipe update-brokers` has written it) data/feeds-brokers.json. No network.
+// scripts/update-catalog-sources.js has written it) data/feeds-brokers.json. No network.
 'use strict';
 const fs = require('fs');
 const path = require('path');

@@ -75,8 +75,9 @@ for (const [cmd, msg] of Object.entries(COMMANDS)) {
 
 test('watcher.js checks REMOVED before parsing flags or loading a mode', () => {
   const src = fs.readFileSync(path.join(ROOT, 'watcher.js'), 'utf8');
-  const check = src.indexOf('for (const { flag, message } of REMOVED)');
-  assert.ok(check > 0, 'watcher.js must loop over REMOVED');
+  const check = src.indexOf('checkRetired(process.argv)');
+  assert.ok(check > 0, 'watcher.js must call checkRetired');
+  assert.doesNotMatch(fs.readFileSync(path.join(ROOT, 'lib', 'retired-flags.js'), 'utf8'), /require\(/, 'the retired-flag check requires nothing');
   assert.ok(check < src.indexOf('parseWatcherFlags(process.argv)'), 'before flags are parsed');
   assert.ok(check < src.indexOf('require(`./lib/modes/'), 'before any mode loads');
 });
@@ -223,4 +224,55 @@ test('the fixture never copies the member\'s own data files', () => {
   }
   assert.equal(copyFilter(path.join(D, 'catalog', 'example.com.json')), true);
   assert.equal(copyFilter(path.join(ROOT, 'lib', 'config.js')), true);
+});
+
+test('code comments do not describe removed features as live', () => {
+  const files = ['watcher.js', 'setup.js', 'docker-compose.yml', 'Dockerfile'];
+  for (const d of ['lib', 'lib/modes', 'bin', 'scripts']) {
+    for (const f of fs.readdirSync(path.join(ROOT, d))) if (/\.(js|sh)$/.test(f)) files.push(path.join(d, f));
+  }
+  const STALE = /right-to-know|--know\b|\bknow step|dashboard|complaints, reports|update-brokers/i;
+  for (const f of files) {
+    fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n').forEach((line, i) => {
+      if (!STALE.test(line) || /simplelogin\.io\/dashboard/.test(line)) return;
+      if (/^\s*(const REMOVED|\{ flag:|\.\.\.\[)/.test(line) || /removed|retired|moved|\bwas\b|\bold\b|leftover/i.test(line)) return;
+      if (/^\s*(know|'know-status'|complaints|dashboard|breach|score|report|freeze|serp):/.test(line)) return; // REMOVED_COMMANDS keys
+      assert.fail(`${f}:${i + 1}: ${line.trim()}`);
+    });
+  }
+});
+
+test('docs never name a removed upec-wipe command as live, README layout included', () => {
+  const RE = /upec-wipe (know|know-status|complaints|breach|score|report|freeze|dashboard|update-brokers|serp)(?![\w-])/;
+  for (const f of KEPT_DOCS) {
+    fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n').forEach((line, i) => {
+      if (RE.test(line)) assert.match(line, /removed|retired|moved|\bwas\b/i, `${f}:${i + 1}: ${line}`);
+    });
+  }
+  const layout = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8').split('\n').find(l => l.includes('lib/modes/'));
+  assert.doesNotMatch(layout, /\bknow\b|\bbreach\b/, layout);
+});
+
+test('watcher refuses any --flag=value form (kept flags take their value as the next argument)', () => {
+  for (const arg of ['--clear-all=yes', '--preview=1', '--only=Spokeo']) {
+    const r = runIn(dir, 'watcher.js', [arg]);
+    assert.equal(r.status, 1, arg);
+    assert.match(r.stderr, new RegExp(`^${arg.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} is not a valid flag: write the value as the next argument\\.$`, 'm'));
+    assert.doesNotMatch(r.stderr + r.stdout, /BROWSER_MODULE_LOADED/);
+  }
+});
+
+test('doctor and clear-all know the old dashboard folder', async () => {
+  const { checkRetiredSettings } = require('../lib/doctor');
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'upec-wipe-doctor-'));
+  try {
+    fs.mkdirSync(path.join(root, 'dashboard'), { recursive: true });
+    fs.writeFileSync(path.join(root, 'dashboard', '.auth.json'), '{}');
+    assert.match((await checkRetiredSettings({}, root)).hint, /dashboard\/\.auth\.json holds your details from a removed command/);
+    const { planClear } = require('../lib/modes/clear');
+    assert.ok(planClear({ all: true, root, home: root, env: {} }).remove.includes(path.join(root, 'dashboard')));
+    assert.equal(planClear({ all: false, root, home: root, env: {} }).remove.includes(path.join(root, 'dashboard')), false);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
 });

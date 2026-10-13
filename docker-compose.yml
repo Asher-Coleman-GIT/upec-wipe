@@ -19,8 +19,7 @@ services:
     secrets:
       - upec-wipe-passphrase
     volumes:
-      # Not :ro - config.json is written back by --encrypt-config and by the
-      # right-to-know pending-request bookkeeping.
+      # Not :ro - config.json is written back by --encrypt-config and --allow.
       - ./config.json:/app/config.json
       - ./state.json:/app/state.json
       - ./logs:/app/logs

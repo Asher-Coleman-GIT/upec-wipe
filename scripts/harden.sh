@@ -38,7 +38,7 @@ for d in logs data "$PROFILE"; do
   [ -d "$d" ] && chmod 700 "$d"
 done
 for f in config.json config.json.enc state.json state.json.bak state.json.checkpoint \
-         dashboard/.auth.json "$PROFILE/passphrase"; do
+         dashboard/.auth.json "$PROFILE/passphrase"; do  # .auth.json: leftover from the removed dashboard
   [ -e "$f" ] && chmod 600 "$f"
 done
 find logs -type f -exec chmod 600 {} + 2>/dev/null || true

@@ -26,7 +26,7 @@ echo "== Files touched =="
 git --no-pager diff --stat "$BASE" "$REF"
 echo
 echo "== Dependency manifest changes (read these first) =="
-git --no-pager diff "$BASE" "$REF" -- package.json package-lock.json dashboard/package.json dashboard/package-lock.json
+git --no-pager diff "$BASE" "$REF" -- package.json package-lock.json
 echo
 echo "== Full diff =="
 git --no-pager diff "$BASE" "$REF"

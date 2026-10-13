@@ -332,3 +332,29 @@ test('any other lock error is reported by code and deletes nothing', async () =>
     assert.ok(fs.existsSync(path.join(s.root, 'config.json')));
   } finally { s.cleanup(); }
 });
+
+test('without a terminal the plan is still listed before the refusal', async () => {
+  const s = sandbox();
+  try {
+    s.put('config.json');
+    const { out, deps } = io('CLEAR', { isTTY: false });
+    assert.equal(await runClear({ all: false, root: s.root, home: s.home, env: {}, ...deps }), 1);
+    const listed = out.findIndex(l => l.includes(path.join(s.root, 'config.json')));
+    const refused = out.indexOf('ERR clear needs an interactive terminal: nothing was deleted.');
+    assert.ok(listed !== -1 && listed < refused, out.join('\n'));
+  } finally { s.cleanup(); }
+});
+
+test('an unreadable folder shows size unknown instead of crashing', () => {
+  const s = sandbox();
+  try {
+    s.put('logs/run.json');
+    const locked = path.join(s.root, 'logs', 'locked');
+    fs.mkdirSync(locked); fs.chmodSync(locked, 0o000);
+    try {
+      const p = planClear({ all: true, root: s.root, home: s.home, env: {} });
+      const line = describePlan(p).find(l => l.includes(path.join(s.root, 'logs')));
+      assert.match(line, /size unknown/);
+    } finally { fs.chmodSync(locked, 0o700); }
+  } finally { s.cleanup(); }
+});

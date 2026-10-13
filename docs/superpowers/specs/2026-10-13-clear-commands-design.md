@@ -22,7 +22,7 @@ When `UPEC_WIPE_PASSPHRASE_FILE` points elsewhere, that file is listed as "kept 
 ### `upec-wipe clear-all`
 
 Deletes everything `clear` deletes, plus, when present:
-- `state.json`, `state.json.bak`, `state.json.tmp`, `state.json.checkpoint`, `state.json.checkpoint.tmp`, `state.json.lock` (or the same names next to `UPEC_WIPE_STATE_PATH` when it is set);
+- `state.json`, `state.json.bak`, `state.json.tmp`, `state.json.checkpoint`, `state.json.checkpoint.tmp` (or the same names next to `UPEC_WIPE_STATE_PATH` when it is set);
 - `logs/` (the whole directory);
 - `data/serp-history.json`, `data/.serp-key` (or `UPEC_WIPE_SERP_KEY_PATH` when set);
 - leftovers from retired commands: `data/exposure-history.json`, `data/exposure-history.json.bak`, `inbox/`. (`logs/snapshots/` and `logs/reports/` go with `logs/`.)
@@ -31,13 +31,13 @@ It never touches repo files: `data/catalog/`, `data/feeds-brokers.json`, `data/d
 
 ## Behaviour
 
-1. **List first.** Print each path that exists and will be deleted, with its size (directories: total size and file count). Paths that do not exist are skipped silently. If none exists: print `Nothing to clear.` and exit 0.
+1. **List first**, before any other check, so a refusal still shows what would go. Print each path that exists and will be deleted, with its size (directories: total size and file count). Paths that do not exist are skipped silently. If none exists: print `Nothing to clear.` and exit 0.
 2. **Say what it cannot reach.** Always print:
    - `This does not delete: your SimpleLogin alias (delete it at simplelogin.io), emails already sent or opt-outs already submitted, your dedicated mailbox, copies brokers hold, or any backup of this folder.`
    - `Files are deleted normally, not overwritten: on SSDs and on WSL's /mnt/c an overwrite does not reliably destroy the old data.`
    - `clear-all` adds: `The next "run --email" will email every broker again, and your logged replies will be gone.`
 3. **Confirm.** Needs an interactive terminal: stdin and stdout are TTYs. Otherwise print `clear needs an interactive terminal: nothing was deleted.` and exit 1. Prompt `Type CLEAR to delete these files:` (for `clear-all`: `Type CLEAR ALL to delete these files:`). Any other answer, or closed input: `Nothing was deleted.` and exit 1. There is no `--yes` flag.
-4. **Not during a run.** Take the state lock (`lib/lock.js`, the path `STATE_PATH + '.lock'` that runs use) before deleting; if a run holds it, print `A run is in progress (state.json.lock): nothing was deleted.` and exit 1. `clear-all` deletes the lock file last, after releasing it.
+4. **Not during a run.** Take the state lock (`lib/lock.js`, the path `STATE_PATH + '.lock'` that runs use) before deleting; if a run holds it, print `A run is in progress (state.json.lock): nothing was deleted.` and exit 1. Releasing the lock removes `state.json.lock`, so it is not listed. If the state directory does not exist, no run can hold the lock and clear proceeds without it; any other lock error is printed by its code and nothing is deleted.
 5. **Delete and report.** `fs.rmSync(path, { recursive: true, force: true })` for each listed path, in the listed order. Print `Deleted <path>` for each, then `Done. Run "upec-wipe setup" to start again.` A path that fails to delete prints `Could not delete <path>: <error code>` (no message text, which can carry paths), the rest continue, and the exit code is 1.
 6. **Never runs as root** (the existing `exitIfRoot`), and loads no config: it must work when the config is broken or encrypted without the passphrase.
 
