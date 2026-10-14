@@ -177,12 +177,14 @@ test('buildSummary contains honest disclaimer footer', () => {
   logger.resetResults();
   const s = logger.buildSummary();
   assert.match(s, /Submitted does not mean deleted/);
-  assert.match(s, /--verify/);
+  assert.match(s, /upec-wipe verify/);
 });
 
 test('DISCLAIMER constant is exported', () => {
   assert.equal(typeof logger.DISCLAIMER, 'string');
   assert.match(logger.DISCLAIMER, /Submitted does not mean deleted/);
+  assert.match(logger.DISCLAIMER, /upec-wipe verify/);
+  assert.doesNotMatch(logger.DISCLAIMER, /watcher\.js/);
 });
 
 // ── WP3 (this WP): inbox checklist for pending_confirm ───────────────────────

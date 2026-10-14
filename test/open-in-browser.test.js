@@ -21,7 +21,7 @@ function stubSpawn() {
   const orig = childProcess.spawn;
   childProcess.spawn = (cmd, args, opts) => {
     calls.push({ cmd, args: args || [], opts });
-    return { unref: () => {} };
+    return { unref: () => {}, on: () => {} };
   };
   return { calls, restore: () => { childProcess.spawn = orig; } };
 }
@@ -114,3 +114,24 @@ for (const platform of ['win32', 'darwin', 'linux']) {
     assert.doesNotMatch(out, /whoami/, 'only the host is printed');
   });
 }
+
+test('openInBrowser: a missing opener (xdg-open absent, e.g. WSL) warns instead of crashing the run', () => {
+  const { EventEmitter } = require('node:events');
+  const orig = childProcess.spawn;
+  const procs = [];
+  childProcess.spawn = () => { const p = new EventEmitter(); p.unref = () => {}; procs.push(p); return p; };
+  const warnings = [];
+  const origWarn = console.warn;
+  console.warn = (m) => warnings.push(String(m));
+  try {
+    notify.openInBrowser(['https://example.com/opt-out?firstName=Jane'], 'linux');
+    const err = Object.assign(new Error('spawn xdg-open ENOENT'), { code: 'ENOENT' });
+    assert.doesNotThrow(() => procs[0].emit('error', err));
+  } finally {
+    childProcess.spawn = orig;
+    console.warn = origWarn;
+  }
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /example\.com/);
+  assert.doesNotMatch(warnings[0], /Jane/, 'the warning names the host only, never the query');
+});
