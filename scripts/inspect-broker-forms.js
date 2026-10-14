@@ -13,7 +13,8 @@
  *     (visible window; when a site shows a bot check, complete it and the
  *      survey carries on)
  *
- * Output: one JSON file per broker in logs/broker-survey/ (gitignored).
+ * Output: one JSON file per broker in logs/broker-survey/ (gitignored), or in
+ * SURVEY_OUT when set.
  */
 'use strict';
 process.umask(0o077);
@@ -29,7 +30,7 @@ const { waitForHumanCheck } = require(path.join(ROOT, 'lib/assist'));
 const ASSIST = process.env.ASSIST === '1';
 const brokers = require(path.join(ROOT, 'brokers')).forPerson({ firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', state: 'TX', city: 'Austin', zip: '73301', email: 'jane@example.com', country: 'US' });
 
-const OUT = path.join(ROOT, 'logs', 'broker-survey');
+const OUT = process.env.SURVEY_OUT ? path.resolve(process.env.SURVEY_OUT) : path.join(ROOT, 'logs', 'broker-survey');
 const only = process.argv.slice(2);
 
 const { dumpFrame } = require(path.join(ROOT, 'lib/page-dump'));
