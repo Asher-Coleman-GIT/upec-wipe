@@ -19,7 +19,7 @@
 
 - **Method** - how the opt-out is automated. `search-form` (looks you up first, then submits removal), `direct-form` (goes straight to the opt-out URL), `email` (sends a removal-request email), `manual` (opened in your browser).
 - **CAPTCHA** - whether CapSolver is invoked before submit.
-- **Confidence** - `submitted` means a real run's form was accepted but the final step (such as a confirmation email) is still open. `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
+- **Confidence** - `failed` means a real run did not get the request in. `submitted` means a real run's form was accepted but the final step (such as a confirmation email) is still open. `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
 - **US-only** - site indexes US public records / voter data / phone directories; automatically skipped for non-US users.
 
 **This list covers the 32 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `upec-wipe verify` to spot-check whether opt-outs are still in effect.
@@ -33,23 +33,23 @@
 | California DROP | manual | n/a | manual | CA only |
 | Spokeo | search-form | no | surveyed 2026-10 | yes |
 | WhitePages | search-form | no | untested | yes |
-| FastPeopleSearch | search-form | yes | surveyed 2026-10 | yes |
+| FastPeopleSearch | search-form | yes | submitted 2026-10-14 (CapSolver Turnstile, form accepted; promised email not received yet; the listing check matched a surname-only /name/ page) | yes |
 | TruePeopleSearch | direct-form | no | submitted 2026-10-14 (assisted: bot check cleared, form accepted; promised confirmation email not received yet) | yes |
 | BeenVerified | manual | - | surveyed 2026-10-11 (you pick your record) | yes |
 | PeopleConnect Suppression Center | manual | n/a | manual | yes |
-| PeopleFinders | direct-form | yes | surveyed 2026-10-11 (step 1 of 2; step 2 is the emailed link) | no |
+| PeopleFinders | direct-form | yes | submitted 2026-10-14 (assisted; step 1 accepted, but the name fields were not found and the emailed link had expired within the hour; click it at once) | no |
 | MyLife | search, then manual | - | surveyed 2026-10-11 (embedded form; you get your listing link) | no |
-| FamilyTreeNow | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
+| FamilyTreeNow | direct-form | yes | failed 2026-10-14 (bot check cleared, then CapSolver rejected the hCaptcha with HTTP 400) | no |
 | CheckPeople | direct-form | no | untested | no |
-| ThatsThem | direct-form | no | untested | no |
+| ThatsThem | direct-form | no | submitted 2026-10-14 (assisted; form accepted, the email comes once removal is complete) | no |
 | USPhonebook | direct-form | yes | verified 2026-10-14 (run end to end: CapSolver solved the reCAPTCHA, form accepted, emailed link confirmed) | yes |
-| SmartBackgroundChecks | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
-| SearchPeopleFree | direct-form | yes | surveyed 2026-10 | no |
+| SmartBackgroundChecks | direct-form | yes | verified 2026-10-14 (assisted, CapSolver reCAPTCHA, emailed link confirmed) | no |
+| SearchPeopleFree | direct-form | yes | verified 2026-10-14 (CapSolver Turnstile; the emailed link, valid 24 hours, opens a second form that asks for street address and date of birth, done by hand) | no |
 | PeopleSearchNow | direct-form | yes | surveyed 2026-10 | no |
 | InfoTracer | manual | n/a | manual | no |
-| SocialCatfish | direct-form | yes | surveyed 2026-10 | no |
+| SocialCatfish | direct-form | yes | failed 2026-10-14 (name and state fields not found; no confirmation) | no |
 | NationalPublicData | manual | - | surveyed 2026-10-11 (needs your profile link) | no |
-| PrivateRecords | direct-form | no | surveyed 2026-10-11 (needs your date of birth; manual without it) | no |
+| PrivateRecords | direct-form | no | verified 2026-10-14 (needs your date of birth; emailed link confirmed) | no |
 | Acxiom | manual | n/a | manual | no |
 | LexisNexis | manual | n/a | manual | no |
 | ZoomInfo | manual | n/a | manual | no |
@@ -62,6 +62,19 @@
 | Pipl | email | n/a | untested | no |
 | Google - Results About You | manual | n/a | manual | no |
 | Google - Outdated Content | manual | n/a | manual | no |
+
+### Catalog sites run end to end
+
+The catalog sites below were run on 2026-10-14 and their emailed links confirmed. The site said the removal also covers reports members already hold and matching records added later.
+
+| Site | Domain | Result |
+|---|---|---|
+| We Inform | weinform.org | confirmed 2026-10-14 |
+| Truth Now | checksecrets.com | confirmed 2026-10-14 |
+| The People Searchers | peoplesearcher.com | confirmed 2026-10-14 |
+| Infomatics | privatereports.com | confirmed 2026-10-14 |
+
+They share one request form with PrivateRecords (same operator).
 
 Registry downloads checked 2026-10-12: California works from the CPPA registry (`https://cppa.ca.gov/data_broker_registry/registry.csv`, 866 rows, with a privacy-rights page and contact email per broker). Vermont's export is a script-only web page with no download, so `scripts/update-catalog-sources.js` skips it and says so.
 
