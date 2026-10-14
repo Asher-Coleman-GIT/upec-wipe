@@ -10,8 +10,6 @@ UPEC-WIPE sends requests; it cannot erase anything itself. Each broker decides h
 
 ## Privacy guarantees
 
-These look like friction. They are the product, and each one has tests.
-
 - **Your real email is never sent to a broker.** Every form gets one SimpleLogin alias. If no alias can be made, nothing is submitted for you; there is no fallback to the real address.
 - **Nothing leaves your machine off the VPN.** The browser and every direct connection (SimpleLogin, CapSolver, SMTP, registries) pass a Mullvad check first. If it fails, the run stops.
 - **Nothing runs on its own.** No scheduler, no background job, no telemetry or update check. It runs when you start it.
