@@ -32,6 +32,7 @@ const configMock = {
   isPendingConfirmation: () => false,
   recordSuccess: (name, detail) => recorded.success.push({ name, detail }),
   recordPendingConfirmation: () => {},
+  recordManual: () => {},
   recordFailure: () => {},
   loadState: () => ({ optOuts: {} }),
   saveCheckpoint: () => {},

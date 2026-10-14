@@ -17,7 +17,7 @@ let waitCalls = 0;
 let findSeq = [];
 const configMock = {
   shouldSkip: () => null, saveCheckpoint: () => {}, stateKey: n => n,
-  recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {},
+  recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {}, recordManual: () => {},
 };
 const assistable = [];
 Module._load = function (request, parent, isMain) {

@@ -23,7 +23,7 @@ What each layer does and does not protect: [THREAT-MODEL.md](docs/THREAT-MODEL.m
 ## How a month works
 
 1. **Connect Mullvad**, then run `upec-wipe run --assist` and stay at the computer. It searches each broker for you, fills and submits the opt-out forms, and when a site shows a bot check it waits for you to clear it in the browser window. A plain `upec-wipe run` works unattended but leaves those sites for you to finish by hand.
-2. **Click the confirmation emails** that arrive at your alias. `upec-wipe pending` lists the brokers still waiting.
+2. **Click the confirmation emails** that arrive at your alias, and **finish the manual sites**. `upec-wipe pending` lists the brokers waiting for a click; `upec-wipe manual` lists the sites to do by hand, with their links. Mark each one finished with `upec-wipe done "<name>"`.
 3. **Send the email requests** (when set up): `upec-wipe preview --email` shows every email and the policy sentence that gives you the right; `upec-wipe run --email` sends them. Brokers that take requests only by email get an opt-out of sale and targeted ads plus a deletion request.
 4. **Log the replies**: `upec-wipe reply <broker> honored|refused|verify|none|bounced`.
 5. **Check you are gone**, every few months. `verify` re-checks the 4 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch, MyLife); `serp-watch` searches the web for your name and flags any broker site, including ones the tool does not know. Brokers add people back, so repeat the run monthly.
@@ -53,6 +53,8 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `preview` | Dry run: fills forms but submits nothing (`--email`: shows the emails, sends nothing) |
 | `run` | The opt-out pass: web forms by default (`--forms`); `--email` sends the email requests |
 | `pending` | Lists brokers awaiting an email-confirmation click |
+| `manual` | Lists the sites waiting for you to finish by hand, with their links |
+| `done` | Marks a site finished by hand, or its confirmation link clicked |
 | `reply` | Logs a broker's reply to an email request |
 | `verify` | Re-searches the 4 searchable brokers and reports whether you still appear |
 | `list` | Lists brokers, catalog sites and email requests with their last status |

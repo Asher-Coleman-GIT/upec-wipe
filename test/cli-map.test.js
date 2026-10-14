@@ -87,7 +87,7 @@ test('resolveCommand: unknown command fails and falls back to help', () => {
 });
 
 test('COMMANDS lists every public subcommand with a description', () => {
-  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'serp-watch', 'catalog-check', 'list', 'reply', 'doctor'];
+  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'manual', 'done', 'serp-watch', 'catalog-check', 'list', 'reply', 'doctor'];
   for (const name of expected) {
     assert.ok(COMMANDS[name], `COMMANDS must include ${name}`);
     assert.equal(typeof COMMANDS[name].desc, 'string');
@@ -114,4 +114,9 @@ test('reply maps to watcher --reply and passes the arguments through', () => {
   assert.equal(r.ok, true);
   assert.equal(r.file, 'watcher.js');
   assert.deepEqual(r.args.slice(-3), ['--reply', 'Claritas', 'honored']);
+});
+
+test('manual and done map to watcher --manual / --done and pass the arguments through', () => {
+  assert.deepEqual(resolveCommand(['manual']).args, ['watcher.js', '--manual']);
+  assert.deepEqual(resolveCommand(['done', 'Search People Free']).args, ['watcher.js', '--done', 'Search People Free']);
 });

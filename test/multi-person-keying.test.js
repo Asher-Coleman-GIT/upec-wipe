@@ -67,6 +67,7 @@ const configMockFactory = () => ({
   isPendingConfirmation: () => false,
   recordSuccess: (key) => recorded.successKeys.push(key),
   recordPendingConfirmation: () => {},
+  recordManual: () => {},
   recordFailure: (key) => recorded.failureKeys.push(key),
   loadState: () => ({ optOuts: {} }),
   saveCheckpoint: (key) => recorded.checkpointKeys.push(key),

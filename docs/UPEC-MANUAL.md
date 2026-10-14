@@ -14,7 +14,7 @@ A month looks like this:
 
 1. You run `node bin/upec-wipe.js run --assist` and stay at the computer (nothing runs on its own). `--assist` lets you clear bot checks in the browser window so more sites get done.
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
-3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/upec-wipe.js pending` lists only the brokers still waiting for you to click a confirmation email. Later, `node bin/upec-wipe.js verify` checks whether you are really gone.
+3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/upec-wipe.js pending` lists only the brokers still waiting for you to click a confirmation email, and `node bin/upec-wipe.js manual` lists the sites to finish by hand with their links. Later, `node bin/upec-wipe.js verify` checks whether you are really gone.
 
 One extra command sends more about you to another service: `serp-watch` searches for your name and city on search engines. It is off unless you run it. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
@@ -294,9 +294,10 @@ This part is the same for Parts A and B.
 
    ```
    node bin/upec-wipe.js pending
+   node bin/upec-wipe.js manual
    ```
 
-   It lists opt-outs waiting for a confirmation or a manual step.
+   `pending` lists opt-outs waiting for you to click a confirmation email. `manual` lists every site a run handed to you (bot checks, CAPTCHAs it could not solve, sites with no form it can fill), with the reason and the link, oldest first. When you finish one, or click its confirmation link, mark it: `node bin/upec-wipe.js done "<name>"` (quote names with spaces). It drops off both lists, and runs skip it for 90 days before checking it again.
 
 6. If you send email requests: replies arrive in the dedicated mailbox. Log each one with `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`.
 
@@ -345,7 +346,9 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
 | `run` | The real opt-out pass: fills web forms (the same as `run --forms`). Never sends email. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. |
 | `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
-| `pending` | Lists brokers waiting for you to click a confirmation email. Brokers that need a manual step are in the run summary instead. | Nothing. |
+| `pending` | Lists brokers waiting for you to click a confirmation email. | Nothing. |
+| `manual` | Lists the sites waiting for you to finish by hand, with the reason and link each run gave. Some links carry your name (a site's own search link). | Nothing. |
+| `done` | Marks a site finished: `done "<name>"`. Clears it from `manual` and `pending`; runs skip it for 90 days. | Nothing. |
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the 4 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch, MyLife) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, catalog sites and email requests with their last status. | Nothing. |

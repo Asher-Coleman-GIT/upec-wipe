@@ -43,11 +43,11 @@ Each run ends with a summary in these groups:
 | Status | Meaning |
 | --- | --- |
 | `Submitted (form accepted)` | The opt-out form was submitted this run. |
-| `Awaiting email confirm` | The broker said "check your email to confirm". Click the link in your inbox. Retried after 14 days if still pending. |
+| `Awaiting email confirm` | The broker said "check your email to confirm". Click the link in your inbox, then `upec-wipe done "<name>"`. Retried after 14 days if still pending. |
 | `Skipped` | Not attempted this run: done recently, waiting on a confirmation, on your allowlist, US-only for a non-US person, or a dry run. |
 | `Previewed (not submitted)` | A preview filled the form and sent nothing. |
 | `Not listed` | Your name was not found on that site. |
-| `Manual needed` | Listed under Action Required for you to finish by hand. |
+| `Manual needed` | Listed under Action Required for you to finish by hand. `upec-wipe manual` lists them again later with their links; `upec-wipe done "<name>"` marks one finished. |
 | `Errors` | Network or timeout problem. Tried again next run. |
 | `Dead (stale URL)` | The broker's page is gone (DNS failure or 404). Not counted as an error. Only the retired generic pass reported it, so it now stays at 0. |
 

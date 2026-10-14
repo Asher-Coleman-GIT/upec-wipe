@@ -50,6 +50,7 @@ function loadRunnerWithStubs() {
       return {
         recordSuccess: () => {},
         recordPendingConfirmation: () => {},
+        recordManual: () => {},
         recordFailure: () => {},
         shouldSkip: () => null,
         saveCheckpoint: () => {},

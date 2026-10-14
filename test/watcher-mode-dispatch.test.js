@@ -76,6 +76,8 @@ test('pickMode: each mode by its flag', () => {
   assert.equal(pick('--encrypt-config').mode, 'encrypt-config');
   assert.equal(pick('--list').mode, 'list');
   assert.equal(pick('--pending').mode, 'pending');
+  assert.equal(pick('--manual').mode, 'manual');
+  assert.equal(pick('--done', 'Spokeo').mode, 'done');
 });
 
 test('pickMode: the first early mode wins among several', () => {

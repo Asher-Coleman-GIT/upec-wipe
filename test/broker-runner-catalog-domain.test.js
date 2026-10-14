@@ -15,7 +15,7 @@ let fills = 0;
 let landed = 'https://acme.com/optout';
 const configMock = {
   shouldSkip: () => null, saveCheckpoint: () => {}, stateKey: n => n,
-  recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {},
+  recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {}, recordManual: () => {},
 };
 Module._load = function (request, parent, isMain) {
   if (!parent?.filename?.includes('broker-runner')) return originalLoad(request, parent, isMain);

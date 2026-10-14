@@ -51,6 +51,9 @@ function runIn(dir, relScript, args, opts = {}) {
   delete env.UPEC_WIPE_STATE_PATH;
   delete env.UPEC_WIPE_PASSPHRASE;
   delete env.UPEC_WIPE_PASSPHRASE_FILE;
+  // A test may point the child at a state file inside the fixture; under
+  // `npm test` the preload otherwise gives every process its own temp state.
+  if (opts.statePath) env.UPEC_WIPE_STATE_PATH = opts.statePath;
   return spawnSync(process.execPath, ['-r', preload, path.join(dir, relScript), ...args], {
     cwd: opts.cwd || dir, encoding: 'utf8', timeout: 30000, env,
   });

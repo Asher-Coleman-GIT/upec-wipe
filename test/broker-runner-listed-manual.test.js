@@ -17,7 +17,7 @@ let fillCalls = 0;
 let gotoCalls = 0;
 const configMock = {
   shouldSkip: () => null, saveCheckpoint: () => {}, stateKey: n => n,
-  recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {},
+  recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {}, recordManual: () => {},
 };
 Module._load = function (request, parent, isMain) {
   if (!parent?.filename?.includes('broker-runner')) return originalLoad(request, parent, isMain);
