@@ -130,18 +130,22 @@ test('the README broker count matches brokers.js', () => {
   );
 });
 
-test('the README does not claim brokers are verified when none are', () => {
-  // STATUS.md says every broker is untested. The README used to imply a
-  // `verified` tier existed, which overstates how much the output can be trusted.
-  const brokers = require('../brokers');
-  const verified = brokers.filter(b => b.confidence === 'verified');
-  if (verified.length === 0) {
-    assert.match(
-      readme,
-      /None are currently marked `verified`/,
-      'with zero verified brokers, the README must say so plainly',
-    );
-  } else {
-    assert.match(readme, /`verified`/, 'the README should explain what verified means');
+test('README and REFERENCE match the verified brokers in STATUS.md', () => {
+  // STATUS.md is the one place a broker's confidence is recorded. `verified`
+  // means a member ran it end to end on the live site; the landing docs must
+  // name exactly those brokers, or say plainly that there are none.
+  const status = fs.readFileSync(path.join(ROOT, 'STATUS.md'), 'utf8');
+  const reference = fs.readFileSync(path.join(ROOT, 'docs', 'REFERENCE.md'), 'utf8');
+  const verified = status.split('\n')
+    .map(line => line.split('|').map(c => c.trim()))
+    .filter(cells => cells.length > 4 && /^verified\b/.test(cells[4]))
+    .map(cells => cells[1]);
+  for (const doc of [readme, reference]) {
+    if (verified.length === 0) {
+      assert.match(doc, /None (are|is) (currently )?marked `verified`/);
+    } else {
+      assert.doesNotMatch(doc, /None (are|is) (currently )?marked `verified`/);
+      for (const name of verified) assert.ok(doc.includes(name), `${name} is verified in STATUS.md but not named`);
+    }
   }
 });

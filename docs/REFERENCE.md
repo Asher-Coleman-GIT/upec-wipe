@@ -94,7 +94,7 @@ UPEC-WIPE works through two sources, in this order.
 
 ### 1. Explicit brokers (`brokers.js`)
 
-32 hand-mapped brokers with their own selectors: 11 direct forms, 4 search-then-remove forms, 2 email brokers and 15 manual (opened for you). [STATUS.md](../STATUS.md) has the per-broker table, with method, CAPTCHA, US-only and confidence. **None is marked `verified`**: a read-only survey on 2026-10-10 re-read the live forms, but none has been tested end to end. Some have moved or died (NationalPublicData is defunct, Clearbit moved to HubSpot); STATUS.md lists them.
+32 hand-mapped brokers with their own selectors: 11 direct forms, 4 search-then-remove forms, 2 email brokers and 15 manual (opened for you). [STATUS.md](../STATUS.md) has the per-broker table, with method, CAPTCHA, US-only and confidence. **Only USPhonebook is marked `verified`** (run end to end on 2026-10-14); for the rest, a read-only survey on 2026-10-10 re-read the live forms, but they have not been tested end to end. Some have moved or died (NationalPublicData is defunct, Clearbit moved to HubSpot); STATUS.md lists them.
 
 ### 2. Reviewed site catalog (`data/catalog/`)
 

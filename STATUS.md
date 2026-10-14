@@ -1,6 +1,6 @@
 # Broker Status
 
-> **Reality check:** Every broker entry here is labeled `untested` until manually verified against the live site. The selectors compile and the test suite verifies their internal structure, but no end-to-end verification has been performed in the current run window. Many of these sites change their DOM frequently - selectors decay.
+> **Reality check:** A broker is `verified` only after a member ran it end to end on the live site; every other entry may have drifted. The selectors compile and the test suite verifies their internal structure, but only the `verified` entries have been run end to end. Many of these sites change their DOM frequently - selectors decay.
 >
 > **What "untested" means:** the broker entry is structurally valid but has not been hand-verified against the live site recently. The opt-out attempt will be made but may silently fail if the site has changed its form.
 >
@@ -19,7 +19,7 @@
 
 - **Method** - how the opt-out is automated. `search-form` (looks you up first, then submits removal), `direct-form` (goes straight to the opt-out URL), `email` (sends a removal-request email), `manual` (opened in your browser).
 - **CAPTCHA** - whether CapSolver is invoked before submit.
-- **Confidence** - `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
+- **Confidence** - `submitted` means a real run's form was accepted but the final step (such as a confirmation email) is still open. `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
 - **US-only** - site indexes US public records / voter data / phone directories; automatically skipped for non-US users.
 
 **This list covers the 32 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `upec-wipe verify` to spot-check whether opt-outs are still in effect.
@@ -34,7 +34,7 @@
 | Spokeo | search-form | no | surveyed 2026-10 | yes |
 | WhitePages | search-form | no | untested | yes |
 | FastPeopleSearch | search-form | yes | surveyed 2026-10 | yes |
-| TruePeopleSearch | direct-form | no | surveyed 2026-10-11 (assisted) | yes |
+| TruePeopleSearch | direct-form | no | submitted 2026-10-14 (assisted: bot check cleared, form accepted; promised confirmation email not received yet) | yes |
 | BeenVerified | manual | - | surveyed 2026-10-11 (you pick your record) | yes |
 | PeopleConnect Suppression Center | manual | n/a | manual | yes |
 | PeopleFinders | direct-form | yes | surveyed 2026-10-11 (step 1 of 2; step 2 is the emailed link) | no |
@@ -42,7 +42,7 @@
 | FamilyTreeNow | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
 | CheckPeople | direct-form | no | untested | no |
 | ThatsThem | direct-form | no | untested | no |
-| USPhonebook | direct-form | yes | surveyed 2026-10 | yes |
+| USPhonebook | direct-form | yes | verified 2026-10-14 (run end to end: CapSolver solved the reCAPTCHA, form accepted, emailed link confirmed) | yes |
 | SmartBackgroundChecks | direct-form | yes | surveyed 2026-10-11 (assisted) | no |
 | SearchPeopleFree | direct-form | yes | surveyed 2026-10 | no |
 | PeopleSearchNow | direct-form | yes | surveyed 2026-10 | no |
