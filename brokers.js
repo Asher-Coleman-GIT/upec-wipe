@@ -196,6 +196,8 @@ function buildBrokers(person) {
     // Send Request): name and email, and they email a link. That link opens
     // the Record Suppression Form (date of birth, address, phone) - step 2,
     // done by hand from the email. The page has both forms, so scope to the first.
+    // Since 2026-10-14 step 1 appears only after its "Next" button.
+    startSelector: 'button:has-text("Next")',
     formFields: {
       'form:has(button:has-text("Send Request")) input[placeholder="First Name"]': F,
       'form:has(button:has-text("Send Request")) input[placeholder="Last Name"]': L,
