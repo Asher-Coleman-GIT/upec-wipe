@@ -77,3 +77,34 @@ test('findBroker: exact name, case-insensitive, else a unique partial match, els
   assert.match(findBroker(names, 'people').error, /more than one/);
   assert.match(findBroker(names, 'nothing').error, /No broker or site matches "nothing"/);
 });
+
+test('importFromLog adds manual and CAPTCHA-failed sites, skipping ones already done or pending', () => {
+  const { importFromLog } = require('../lib/manual');
+  const log = {
+    runAt: '2026-10-14T21:16:42.000Z',
+    manual: [
+      { broker: 'WhitePages', status: 'manual', detail: 'blocked by bot protection - open in your normal browser: https://www.whitepages.com/suppression-requests' },
+      { broker: 'Done Site', status: 'manual', detail: 'https://done.example/optout' },
+      { broker: 'WhitePages', status: 'manual', detail: 'duplicate line' },
+    ],
+    captchaFailed: [{ broker: 'FamilyTreeNow', status: 'captcha_failed', detail: 'https://www.familytreenow.com/optout' }],
+  };
+  const recorded = [];
+  const n = importFromLog(log, {
+    keyFor: (name) => name,
+    shouldSkip: (key) => (key === 'Done Site' ? { reason: 'done' } : null),
+    record: (key, detail, since) => recorded.push({ key, detail, since }),
+  });
+  assert.equal(n, 2);
+  assert.deepEqual(recorded, [
+    { key: 'WhitePages', detail: 'blocked by bot protection - open in your normal browser: https://www.whitepages.com/suppression-requests', since: '2026-10-14T21:16:42.000Z' },
+    { key: 'FamilyTreeNow', detail: 'the CAPTCHA could not be solved - do it by hand: https://www.familytreenow.com/optout', since: '2026-10-14T21:16:42.000Z' },
+  ]);
+});
+
+test('recordManual takes an explicit since for a new entry', () => {
+  withCleanState((state) => {
+    cfg.recordManual(N, 'x', '2026-10-14T21:16:42.000Z');
+    assert.equal(state.optOuts[N].manual.since, '2026-10-14T21:16:42.000Z');
+  });
+});

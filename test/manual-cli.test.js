@@ -79,3 +79,55 @@ test('done refuses an unknown name and a missing name, changing nothing', () => 
   assert.match(r.stderr, /Usage: upec-wipe done <broker>/);
   assert.deepEqual(readState(), STATE);
 });
+
+test('manual --import-last-run fills the list from the newest run log, once', () => {
+  withState({ optOuts: { USPhonebook: { lastSuccess: new Date().toISOString() } } });
+  const logs = path.join(dir, 'logs');
+  fs.mkdirSync(logs, { recursive: true });
+  fs.writeFileSync(path.join(logs, 'run-2026-10-14T21-16-42.json'), JSON.stringify({
+    runAt: '2026-10-14T21:16:42.000Z',
+    manual: [
+      { broker: 'WhitePages', status: 'manual', detail: 'blocked by bot protection - open in your normal browser: https://www.whitepages.com/suppression-requests' },
+      { broker: 'USPhonebook', status: 'manual', detail: 'https://www.usphonebook.com/removal' },
+    ],
+    captchaFailed: [{ broker: 'FamilyTreeNow', status: 'captcha_failed', detail: 'https://www.familytreenow.com/optout' }],
+  }));
+  let r = runIn(dir, 'watcher.js', { statePath }, ['--manual', '--import-last-run']);
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /Imported 2 site\(s\)/);
+  assert.match(r.stdout, /WhitePages/);
+  assert.match(r.stdout, /FamilyTreeNow/);
+  const st = readState().optOuts;
+  assert.equal(st.WhitePages.manual.since, '2026-10-14T21:16:42.000Z');
+  assert.equal(st.USPhonebook.manual, undefined, 'a site already done is not imported');
+  r = runIn(dir, 'watcher.js', { statePath }, ['--manual', '--import-last-run']);
+  assert.match(r.stdout, /Imported 0 site\(s\)/);
+  fs.rmSync(logs, { recursive: true, force: true });
+});
+
+test('done takes several names, and changes nothing when one is unknown', () => {
+  withState(STATE);
+  let r = runIn(dir, 'watcher.js', { statePath }, ['--done', 'Nobody Such', 'WhitePages']);
+  assert.equal(r.status, 2);
+  assert.match(r.stderr, /No broker or site matches "Nobody Such"/);
+  assert.deepEqual(readState(), STATE);
+  r = runIn(dir, 'watcher.js', { statePath }, ['--done', 'WhitePages', 'acme people']);
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /WhitePages: marked done/);
+  assert.match(r.stdout, /Acme People: marked done/);
+  const st = readState().optOuts;
+  assert.equal(st.WhitePages.manual, undefined);
+  assert.equal(st['Acme People'].manual, undefined);
+});
+
+test('manual --import-last-run refuses with several people instead of guessing', () => {
+  withState({ optOuts: { 'Spokeo|Jane Doe': {}, 'Spokeo|John Doe': {} } });
+  const logs = path.join(dir, 'logs');
+  fs.mkdirSync(logs, { recursive: true });
+  fs.writeFileSync(path.join(logs, 'run-2026-10-14T21-16-42.json'), JSON.stringify({ runAt: 'x', manual: [{ broker: 'WhitePages', detail: 'https://w.example' }] }));
+  const r = runIn(dir, 'watcher.js', { statePath }, ['--manual', '--import-last-run']);
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /one person only/);
+  assert.equal(readState().optOuts.WhitePages, undefined);
+  fs.rmSync(logs, { recursive: true, force: true });
+});

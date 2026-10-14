@@ -297,7 +297,7 @@ This part is the same for Parts A and B.
    node bin/upec-wipe.js manual
    ```
 
-   `pending` lists opt-outs waiting for you to click a confirmation email. `manual` lists every site a run handed to you (bot checks, CAPTCHAs it could not solve, sites with no form it can fill), with the reason and the link, oldest first. When you finish one, or click its confirmation link, mark it: `node bin/upec-wipe.js done "<name>"` (quote names with spaces). It drops off both lists, and runs skip it for 90 days before checking it again.
+   `pending` lists opt-outs waiting for you to click a confirmation email. `manual` lists every site a run handed to you (bot checks, CAPTCHAs it could not solve, sites with no form it can fill), with the reason and the link, oldest first. When you finish one, or click its confirmation link, mark it: `node bin/upec-wipe.js done "<name>"` (quote names with spaces; several names at once work too, and if one is unknown nothing is marked). It drops off both lists, and runs skip it for 90 days before checking it again. For a run made before runs saved this list, `node bin/upec-wipe.js manual --import-last-run` loads it from the newest run log in `logs/`.
 
 6. If you send email requests: replies arrive in the dedicated mailbox. Log each one with `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`.
 
@@ -348,7 +348,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. | Nothing. |
 | `manual` | Lists the sites waiting for you to finish by hand, with the reason and link each run gave. Some links carry your name (a site's own search link). | Nothing. |
-| `done` | Marks a site finished: `done "<name>"`. Clears it from `manual` and `pending`; runs skip it for 90 days. | Nothing. |
+| `done` | Marks sites finished: `done "<name>" [...]`. Clears them from `manual` and `pending`; runs skip them for 90 days. | Nothing. |
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the 4 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch, MyLife) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, catalog sites and email requests with their last status. | Nothing. |
