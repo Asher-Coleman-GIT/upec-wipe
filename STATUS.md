@@ -37,9 +37,9 @@
 | TruePeopleSearch | direct-form | no | submitted 2026-10-14 (assisted: bot check cleared, form accepted; promised confirmation email not received yet) | yes |
 | BeenVerified | manual | - | surveyed 2026-10-11 (you pick your record) | yes |
 | PeopleConnect Suppression Center | manual | n/a | manual | yes |
-| PeopleFinders | direct-form | yes | submitted 2026-10-14 (assisted; step 1 accepted, but the name fields were not found and the emailed link had expired within the hour; click it at once) | no |
+| PeopleFinders | direct-form | yes | submitted 2026-10-14 (assisted; the step 1 form now opens behind a "Next" button, so the name fields were missed - fixed with startSelector the same day; the emailed link expired within the hour, click it at once) | no |
 | MyLife | search, then manual | - | surveyed 2026-10-11 (embedded form; you get your listing link) | no |
-| FamilyTreeNow | direct-form | yes | failed 2026-10-14 (bot check cleared, then CapSolver rejected the hCaptcha with HTTP 400) | no |
+| FamilyTreeNow | direct-form | yes | failed 2026-10-14 (bot check cleared, then CapSolver rejected the hCaptcha with HTTP 400; the next run logs CapSolver's reason) | no |
 | CheckPeople | direct-form | no | untested | no |
 | ThatsThem | direct-form | no | submitted 2026-10-14 (assisted; form accepted, the email comes once removal is complete) | no |
 | USPhonebook | direct-form | yes | verified 2026-10-14 (run end to end: CapSolver solved the reCAPTCHA, form accepted, emailed link confirmed) | yes |
@@ -47,7 +47,7 @@
 | SearchPeopleFree | direct-form | yes | verified 2026-10-14 (CapSolver Turnstile; the emailed link, valid 24 hours, opens a second form that asks for street address and date of birth, done by hand) | no |
 | PeopleSearchNow | direct-form | yes | surveyed 2026-10 | no |
 | InfoTracer | manual | n/a | manual | no |
-| SocialCatfish | direct-form | yes | failed 2026-10-14 (name and state fields not found; no confirmation) | no |
+| SocialCatfish | direct-form | yes | failed 2026-10-14 (the state select waited out a timeout on "UT" against full state names, so the fields after it were missed; fixed the same day, re-run to confirm) | no |
 | NationalPublicData | manual | - | surveyed 2026-10-11 (needs your profile link) | no |
 | PrivateRecords | direct-form | no | verified 2026-10-14 (needs your date of birth; emailed link confirmed) | no |
 | Acxiom | manual | n/a | manual | no |
