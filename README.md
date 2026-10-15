@@ -57,7 +57,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `verify` | Re-searches the 4 searchable brokers and reports whether you still appear |
 | `list` | Lists brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status |
 | `serp-watch` | Searches DuckDuckGo and Google for your name and lists the known broker sites that show it |
-| `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
+| `catalog-check` | Flags reviewed catalog form sites whose opt-out page changed |
 | `clear` | Deletes your setup (config and passphrase); keeps history |
 | `clear-all` | Deletes everything UPEC-WIPE saved on this computer |
 

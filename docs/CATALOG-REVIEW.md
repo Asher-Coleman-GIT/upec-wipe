@@ -47,4 +47,6 @@ A record stays `reviewed` only if its preview fills the intended fields and name
 
     node bin/upec-wipe.js catalog-check
 
-Re-checks reviewed sites. A site whose page moved, lost a field or gained a bot check becomes `needs-review` and runs as manual until it is reviewed again.
+Re-checks the reviewed form sites (manual links and email records are not checked). A site whose page moved, is gone or lost a field becomes `needs-review` and runs as manual until it is reviewed again. A field only has to exist in the page: some forms keep their fields hidden until an option is checked. A page that did not load or showed a bot check is listed as "could not be checked" and left as it was; `--assist` opens a visible window so you can complete bot checks.
+
+It updates `data/catalog/<domain>.json`, which git tracks: commit the result, or drop it with `git checkout data/catalog`.

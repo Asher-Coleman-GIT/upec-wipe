@@ -99,7 +99,7 @@ Sites that show a bot-protection page (Cloudflare and similar) are reported as *
 |---|---|---|
 | Explicit + `verified` | High | Hand-tested selectors against the live page. |
 | Explicit + `untested` | Medium | Definition exists, DOM may have shifted. Failures show up as `error` or `pending_confirm`. |
-| Reviewed catalog | Per record | Reviewed forms, manual links and email requests; re-checked by `upec-wipe catalog-check`. |
+| Reviewed catalog | Per record | Reviewed forms, manual links and email requests; the forms are re-checked by `upec-wipe catalog-check`, the manual links and email addresses are not. |
 | `manual` | High (you) | Opened in your browser; you complete it. |
 | `email` | High (delivery) / Medium (compliance) | Email is sent. Whether the broker honors it is up to them. |
 

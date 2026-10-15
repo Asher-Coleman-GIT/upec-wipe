@@ -102,3 +102,14 @@ test('mergeSurvey turns em and en dashes in site text into hyphens (house style)
   assert.ok(!s.includes('\u2014') && !s.includes('\u2013'));
   assert.equal(rec.survey.title, 'Opt Out - X');
 });
+
+// 2026-10-15: catalog-check relabelled the 4 reviewed people-search sites
+// "business" (the form page has no people-search wording). A reviewed or
+// otherwise decided record keeps the group it was reviewed under.
+test('mergeSurvey keeps the group of a record that is no longer unreviewed', () => {
+  const prev = { domain: 'acme.com', name: 'Acme', group: 'people-search', review: { state: 'reviewed' } };
+  const merged = core.mergeSurvey(prev, { domain: 'acme.com', urls: ['https://acme.com/'] }, { group: 'business', checkedAt: 'x' });
+  assert.equal(merged.group, 'people-search');
+  const fresh = core.mergeSurvey({ domain: 'b.com', group: 'unknown', review: { state: 'unreviewed' } }, { domain: 'b.com', urls: [] }, { group: 'business' });
+  assert.equal(fresh.group, 'business', 'an unreviewed record still takes the survey group');
+});

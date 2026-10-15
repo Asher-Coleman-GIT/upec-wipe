@@ -31,3 +31,17 @@ test('upec-wipe catalog-check runs the survey over reviewed sites', () => {
   assert.equal(r.ok, true);
   assert.deepEqual(r.args, ['scripts/catalog-survey.js', '--reviewed']);
 });
+
+test('a reviewed check records which definition fields exist in the page, hidden or not', () => {
+  assert.match(src, /present\s*=/);
+  assert.match(src, /document\.querySelector\(sel\)/);
+});
+
+test('upec-wipe catalog-check --assist works like ASSIST=1', () => {
+  assert.match(src, /argv\.includes\('--assist'\)/);
+});
+
+test('sites that could not be checked are listed apart from changed ones', () => {
+  assert.match(src, /could not be checked/);
+});
+

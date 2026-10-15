@@ -8,6 +8,7 @@
  *   node scripts/catalog-survey.js --resume            skip sites surveyed in the last 7 days
  *   node scripts/catalog-survey.js --reviewed          reviewed sites only, report drift (upec-wipe catalog-check)
  *   ASSIST=1 node scripts/catalog-survey.js --group blocked   visible window; complete each bot check
+ *     (--assist does the same: upec-wipe catalog-check --assist)
  *
  * Opens pages and follows opt-out links by URL. Never clicks, types or
  * submits. Uses no personal data. Writes data/catalog/<domain>.json.
@@ -25,12 +26,12 @@ const { waitForHumanCheck } = require(path.join(ROOT, 'lib/assist'));
 const { dumpFrame } = require(path.join(ROOT, 'lib/page-dump'));
 const { CATALOG_DIR } = require(path.join(ROOT, 'lib/catalog'));
 const core = require(path.join(ROOT, 'lib/catalog-survey-core'));
-const { detectDrift, applyDrift } = require(path.join(ROOT, 'lib/catalog-drift'));
+const { detectDrift, applyDrift, checkProblem } = require(path.join(ROOT, 'lib/catalog-drift'));
 
-const ASSIST = process.env.ASSIST === '1';
+const argv = process.argv.slice(2);
+const ASSIST = process.env.ASSIST === '1' || argv.includes('--assist');
 const WAIT = Number(process.env.WAIT || 3000);
 const RESUME_DAYS = 7;
-const argv = process.argv.slice(2);
 const argOf = (flag) => { const i = argv.indexOf(flag); return i >= 0 ? argv[i + 1] : null; };
 const GROUP = argOf('--group');
 const ONLY = (argOf('--only') || '').split(',').map(s => s.trim()).filter(Boolean);
@@ -62,6 +63,13 @@ async function surveyOne(ctx, cand, rec) {
     await page.waitForTimeout(WAIT);
     let dump = await page.mainFrame().evaluate(dumpFrame);
     let title = await page.title();
+    // The reviewed definition's #id / [name] fields: in the page at all, even
+    // hidden until an option is checked (dumpFrame lists visible controls only).
+    const fields = Object.keys((rec && rec.review && rec.review.definition && rec.review.definition.formFields) || {})
+      .filter(sel => /^#[\w-]+$/.test(sel) || /^[\w-]*\[name="[^"]+"\]$/.test(sel));
+    if (REVIEWED && fields.length) {
+      out.present = await page.evaluate((sels) => Object.fromEntries(sels.map(sel => [sel, !!document.querySelector(sel)])), fields);
+    }
     if (!blocked && !REVIEWED && !core.hasIdentityField(dump.controls)) {
       for (const next of core.optOutLinks(dump.links, page.url(), cand.domain)) {
         const r2 = await page.goto(next, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => null);
@@ -102,10 +110,13 @@ async function surveyOne(ctx, cand, rec) {
   await ctx.addInitScript(buildStealthScript()).catch(() => {});
   const today = new Date().toISOString().slice(0, 10);
   const drifted = [];
+  const unchecked = [];
   let n = 0;
   for (const [cand, rec] of todo) {
     const survey = await surveyOne(ctx, cand, rec);
     const reason = detectDrift(rec, survey);
+    const problem = REVIEWED ? checkProblem(survey) : null;
+    if (problem) unchecked.push(`${cand.domain}: ${problem}`);
     let record = core.mergeSurvey(rec, cand, survey);
     if (reason) { record = applyDrift(record, reason, today); drifted.push(`${cand.domain}: ${reason}`); }
     core.writeRecordAtomic(CATALOG_DIR, record);
@@ -113,5 +124,11 @@ async function surveyOne(ctx, cand, rec) {
     console.log(`${String(n).padStart(4)}/${todo.length} ${cand.domain.padEnd(34)} ${record.group.padEnd(14)} ${survey.status || '-'} controls=${(survey.controls || []).length}${reason ? ' DRIFT: ' + reason : ''}${survey.error ? ' ' + survey.error.slice(0, 60) : ''}`);
   }
   await browser.close();
-  if (REVIEWED) console.log(drifted.length ? `\n${drifted.length} reviewed site(s) changed and now need review:\n  ${drifted.join('\n  ')}` : '\nNo reviewed site changed.');
+  if (REVIEWED) {
+    if (unchecked.length) console.log(`\n${unchecked.length} reviewed site(s) could not be checked (left as they were; try again, with --assist for bot checks):\n  ${unchecked.join('\n  ')}`);
+    const checked = todo.length - unchecked.length;
+    console.log(drifted.length
+      ? `\n${drifted.length} reviewed site(s) changed and now need review:\n  ${drifted.join('\n  ')}`
+      : `\nNo reviewed site changed (${checked} of ${todo.length} checked).`);
+  }
 })().catch(e => { console.error(e.message); process.exit(1); });
