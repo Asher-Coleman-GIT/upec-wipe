@@ -62,6 +62,9 @@ const COMMANDS = {
   serp: /^serp was removed: use upec-wipe serp-watch\.$/m,
   dashboard: /^dashboard was removed: use the CLI; see docs\/REFERENCE\.md\.$/m,
   'update-brokers': /^update-brokers moved: run node scripts\/update-catalog-sources\.js\.$/m,
+  // 2026-10-15: it rewrites tracked data/catalog files, which would leave a
+  // member's clone dirty and break git pull. The maintainer runs and commits it.
+  'catalog-check': /^catalog-check moved: it is a maintainer command\. In the development copy run node scripts\/catalog-survey\.js --reviewed and commit the result\.$/m,
 };
 
 for (const [cmd, msg] of Object.entries(COMMANDS)) {
@@ -124,7 +127,7 @@ test('dispatch and the CLI map know only the kept modes', () => {
   }
   const { buildHelp } = require('../lib/cli-map');
   const help = buildHelp();
-  for (const c of ['know', 'complaints', 'breach', 'score', 'report', 'freeze', 'dashboard', 'update-brokers']) {
+  for (const c of ['know', 'complaints', 'breach', 'score', 'report', 'freeze', 'dashboard', 'update-brokers', 'catalog-check']) {
     assert.doesNotMatch(help, new RegExp(`^\\s+${c}\\s`, 'm'), c);
   }
   assert.doesNotMatch(help, /^\s+serp\s/m);

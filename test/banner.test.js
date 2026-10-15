@@ -82,7 +82,7 @@ test('help keeps the description line, drops the repeated title and the examples
   assert.doesNotMatch(help, /^Examples:/m);
 });
 
-const WORKFLOW = ['setup', 'doctor', 'preview', 'run', 'pending', 'manual', 'done', 'reply', 'verify', 'list', 'serp-watch', 'catalog-check', 'clear', 'clear-all'];
+const WORKFLOW = ['setup', 'doctor', 'preview', 'run', 'pending', 'manual', 'done', 'reply', 'verify', 'list', 'serp-watch', 'clear', 'clear-all'];
 
 test('help lists the commands in workflow order', () => {
   const { buildHelp } = require('../lib/cli-map');

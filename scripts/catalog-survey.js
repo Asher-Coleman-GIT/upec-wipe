@@ -6,9 +6,9 @@
  *   node scripts/catalog-survey.js --group blocked     only sites last grouped "blocked"
  *   node scripts/catalog-survey.js --only a.com,b.com
  *   node scripts/catalog-survey.js --resume            skip sites surveyed in the last 7 days
- *   node scripts/catalog-survey.js --reviewed          reviewed sites only, report drift (upec-wipe catalog-check)
+ *   node scripts/catalog-survey.js --reviewed          reviewed sites only, report drift (maintainer; commit the result)
  *   ASSIST=1 node scripts/catalog-survey.js --group blocked   visible window; complete each bot check
- *     (--assist does the same: upec-wipe catalog-check --assist)
+ *     (--assist does the same)
  *
  * Opens pages and follows opt-out links by URL. Never clicks, types or
  * submits. Uses no personal data. Writes data/catalog/<domain>.json.

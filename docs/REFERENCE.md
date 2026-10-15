@@ -110,7 +110,7 @@ Every site from the public broker lists was surveyed and reviewed, one JSON file
 
 - **People-search sites** are reviewed by hand into automatic forms (a few need your date of birth), manual links, or exclusions where a parent company's opt-out already covers them.
 - **Business data brokers** get an email request when their privacy policy names Utah or honors all US residents and they hold consumer data. The policy sentence that gives the right is stored with the record. The rest are manual or excluded.
-- **Dead or blocked sites** are recorded so they are not visited again. `upec-wipe catalog-check` re-reads reviewed sites and flags any whose opt-out page changed.
+- **Dead or blocked sites** are recorded so they are not visited again. The maintainer re-reads the reviewed form sites with `node scripts/catalog-survey.js --reviewed` and commits any that changed (see [CATALOG-REVIEW.md](CATALOG-REVIEW.md)); members get the result with `git pull`.
 
 Catalog sites run after the explicit brokers, with the same checks and status words. Records hold tokens such as `{firstName}`, never real values. See [CATALOG-REVIEW.md](CATALOG-REVIEW.md) for how sites are surveyed and reviewed.
 

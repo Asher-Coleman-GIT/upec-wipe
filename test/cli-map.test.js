@@ -87,7 +87,7 @@ test('resolveCommand: unknown command fails and falls back to help', () => {
 });
 
 test('COMMANDS lists every public subcommand with a description', () => {
-  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'manual', 'done', 'serp-watch', 'catalog-check', 'list', 'reply', 'doctor'];
+  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'manual', 'done', 'serp-watch', 'list', 'reply', 'doctor'];
   for (const name of expected) {
     assert.ok(COMMANDS[name], `COMMANDS must include ${name}`);
     assert.equal(typeof COMMANDS[name].desc, 'string');

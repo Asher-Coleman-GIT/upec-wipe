@@ -45,8 +45,8 @@ A record stays `reviewed` only if its preview fills the intended fields and name
 
 ## 5. Keeping it current
 
-    node bin/upec-wipe.js catalog-check
+    node scripts/catalog-survey.js --reviewed
 
-Re-checks the reviewed form sites (manual links and email records are not checked). A site whose page moved, is gone or lost a field becomes `needs-review` and runs as manual until it is reviewed again. A field only has to exist in the page: some forms keep their fields hidden until an option is checked. A page that did not load or showed a bot check is listed as "could not be checked" and left as it was; `--assist` opens a visible window so you can complete bot checks.
+A maintainer step, run in the development copy (it was the member command `catalog-check` until 2026-10-15). Re-checks the reviewed form sites (manual links and email records are not checked). A site whose page moved, is gone or lost a field becomes `needs-review` and runs as manual until it is reviewed again. A field only has to exist in the page: some forms keep their fields hidden until an option is checked. A page that did not load or showed a bot check is listed as "could not be checked" and left as it was; `--assist` opens a visible window so you can complete bot checks.
 
-It updates `data/catalog/<domain>.json`, which git tracks: commit the result, or drop it with `git checkout data/catalog`.
+It updates `data/catalog/<domain>.json`, which git tracks: commit the result so members get it with `git pull`, or drop it with `git checkout data/catalog`. Members never run it: a member's copy with changed catalog files would conflict on `git pull`.

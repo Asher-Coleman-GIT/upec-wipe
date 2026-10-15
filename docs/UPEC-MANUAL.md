@@ -353,7 +353,6 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `verify` | Searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status; excluded and not-yet-reviewed sites are only counted. | Nothing. |
 | `serp-watch` | Searches DuckDuckGo and Google for your name and lists the known broker sites that show it, marking new ones. | `"<your full name>" "<city>, <state>"` to those search engines. |
-| `catalog-check` | Re-reads the opt-out pages of the reviewed catalog form sites and flags any that changed (those then run as manual until reviewed again). It submits nothing, and it updates the catalog files in `data/catalog/`, which git tracks. | Nothing about you: it opens those pages through the Mullvad check. |
 | `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
 | `clear-all` | Deletes everything UPEC-WIPE saved on this computer. | Nothing. |
 

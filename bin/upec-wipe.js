@@ -62,6 +62,10 @@ function main() {
     process.stderr.write('update-brokers moved: run node scripts/update-catalog-sources.js.\n');
     process.exit(1);
   }
+  if (args[0] === 'catalog-check') { // rewrites tracked data/catalog files: maintainer only
+    process.stderr.write('catalog-check moved: it is a maintainer command. In the development copy run node scripts/catalog-survey.js --reviewed and commit the result.\n');
+    process.exit(1);
+  }
   if (Object.prototype.hasOwnProperty.call(REMOVED_COMMANDS, args[0])) {
     process.stderr.write(`${args[0]} was removed: ${REMOVED_COMMANDS[args[0]]}\n`);
     process.exit(1);
