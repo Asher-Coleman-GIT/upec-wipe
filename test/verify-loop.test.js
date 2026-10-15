@@ -407,3 +407,31 @@ test('L8: two persons are verified with their own forPerson broker entries', asy
     ['Bob', 'https://b1.example/search?n=Bob'],
   ]);
 });
+
+// ── verifySearch: direct-form brokers with a public name search ──────────────
+function verifySearchBroker(name) {
+  return { ...directBroker(name), verifySearch: { url: `https://${name}.example/jane-doe/texas`, linkPattern: /x/, cardSelector: '.card' } };
+}
+
+test('a direct-form broker with verifySearch is searched, and --assist reaches the search', async () => {
+  const broker = verifySearchBroker('PhoneBook');
+  const person = { firstName: 'Jane', lastName: 'Doe', city: 'Austin' };
+  const state  = makeState('PhoneBook', 8);
+  const seen = [];
+  const result = await runVerify(makeContext(), [broker], [person], {
+    state, assist: true,
+    findUrl: async (_page, b, p, o) => { seen.push({ b: b.name, p, assist: o && o.assist }); return 'https://PhoneBook.example/jane-doe/U1'; },
+  });
+  assert.equal(result.still_listed.length, 1);
+  assert.deepEqual(seen, [{ b: 'PhoneBook', p: person, assist: true }]);
+});
+
+test('verifySearch without a city on file is unverifiable, not searched', async () => {
+  const broker = verifySearchBroker('PhoneBook');
+  const state  = makeState('PhoneBook', 8);
+  const result = await runVerify(makeContext(), [broker], [{ firstName: 'Jane', lastName: 'Doe' }], {
+    state, findUrl: async () => { throw new Error('must not search'); },
+  });
+  assert.equal(result.unverifiable.length, 1);
+  assert.match(result.unverifiable[0].reason, /city/);
+});

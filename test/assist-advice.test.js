@@ -41,8 +41,8 @@ test('a run without --assist prints the hint after the summary', () => {
 test('the docs recommend --assist and say what verify covers', () => {
   const readme = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
   assert.match(readme, /upec-wipe run --assist/);
-  assert.match(readme, /verify` re-checks the 4 brokers whose search it can read/);
+  assert.match(readme, /verify --assist` re-checks the 5 brokers whose search it can read/);
   const manual = fs.readFileSync(path.join(ROOT, 'docs', 'UPEC-MANUAL.md'), 'utf8');
   assert.match(manual, /node bin\/upec-wipe\.js run --assist/);
-  assert.match(manual, /Spokeo, WhitePages, FastPeopleSearch and MyLife/);
+  assert.match(manual, /Spokeo, WhitePages, FastPeopleSearch, MyLife and USPhonebook/);
 });

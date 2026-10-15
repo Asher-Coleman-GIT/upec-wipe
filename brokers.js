@@ -21,6 +21,8 @@ const _fs = require('fs');
 // it into a temp dir) must not throw. Without lib/, no form gets a birth date.
 let parseDob = () => null;
 try { ({ parseDob } = require('./lib/dob')); } catch (_) { /* no lib/ */ }
+let usStateName = () => '';
+try { ({ usStateName } = require('./lib/us-state')); } catch (_) { /* no lib/ */ }
 
 let _cachedConfig = null;
 function _getConfig() {
@@ -100,6 +102,11 @@ function buildBrokers(person) {
   const ST = s(p.state), C = s(p.city), E = s(p.email), Z = s(p.zip);
   // Optional; only forms that require it use it (see requires: ['dob']).
   const DOB = parseDob(p.dob) || { year: '', monthName: '', day: '' };
+  // verify: "Jane Doe" -> "jane-doe" as people-search URLs spell names, and
+  // the same slug escaped for a profile-link pattern.
+  const slug = (v) => s(v).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const NAME_SLUG = `${slug(F)}-${slug(L)}`;
+  const NAME_RE = NAME_SLUG.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
   return [
 
@@ -271,6 +278,14 @@ function buildBrokers(person) {
     captchaLikely: true,
     priority: 2,
     usOnly: true,
+    // verify: surveyed 2026-10-15 (dummy person). Each result is a
+    // .ls_contacts-people-finder-wrapper card; its button links /first-last/U<id>.
+    verifySearch: {
+      url: `https://www.usphonebook.com/${NAME_SLUG}/${slug(usStateName(ST))}`,
+      linkPattern: new RegExp(`usphonebook\\.com/${NAME_RE}/U[A-Za-z0-9]+$`, 'i'),
+      linkSelector: 'a.ls_contacts-btn',
+      cardSelector: '.ls_contacts-people-finder-wrapper',
+    },
   },
 
   {

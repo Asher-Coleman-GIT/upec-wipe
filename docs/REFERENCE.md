@@ -75,7 +75,10 @@ Opens a browser, searches each broker where an opt-out was recorded, and reports
 
 A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
-- Only `search-form` brokers (with a `searchUrl` and `listingPattern`) can be checked automatically: today Spokeo, WhitePages, FastPeopleSearch and MyLife. For everything else, `upec-wipe serp-watch` is the wider check.
+- Two kinds of broker can be checked automatically: `search-form` brokers (with a `searchUrl` and `listingPattern`: Spokeo, WhitePages, FastPeopleSearch and MyLife) and direct-form brokers with a public name search (`verifySearch` in `brokers.js`: USPhonebook). For everything else, `upec-wipe serp-watch` is the wider check.
+- A `verifySearch` listing counts only when a result card's own profile link carries your name and the card names your city, because these searches also list namesakes and relatives. Without a city in your config those brokers are `unverifiable`.
+- Most broker searches show a bot check. Run `upec-wipe verify --assist` at the computer and complete each check in the browser window; without `--assist` a bot check makes that broker `unverifiable`.
+- To add a broker's search, survey its result page with the dummy person: `ASSIST=1 node scripts/inspect-search-results.js` (read-only, writes to `logs/search-survey/`).
 - "Verified clear" means one search today found nothing. It is not proof of deletion.
 - A broker whose search page is down or slow counts as `unverifiable`, never as `still listed`.
 - Running `upec-wipe run` again tries removal again where you are still listed.
