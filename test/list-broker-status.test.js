@@ -11,7 +11,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { brokerStatus, brokerRows } = require('../lib/list-status');
+const { brokerStatus, brokerRows, catalogRows } = require('../lib/list-status');
 
 test('each state entry maps to what the member is waiting on', () => {
   assert.deepEqual(brokerStatus(undefined), { status: 'never run', date: '-' });
@@ -52,6 +52,38 @@ test('a states-limited broker shows for a person who lives there, and when no st
   assert.equal(brokerRows(brokers, {}, []).length, 1);
 });
 
+test('a by-hand broker with no record yet is "do by hand", not "never run"', () => {
+  const rows = brokerRows([{ name: 'Hand Only', method: 'manual' }, { name: 'Form', method: 'direct-form' }], {}, []);
+  assert.deepEqual(rows.map(r => r.status), ['do by hand', 'never run']);
+});
+
+const rec = (domain, name, review) => ({ domain, name, sources: ['markup'], group: 'people-search', review });
+const RECORDS = [
+  rec('handdata.example', 'Hand Data, LLC', { state: 'manual', reviewedAt: '2026-10-11', optOutUrl: 'https://handdata.example/p' }),
+  rec('donedata.example', 'Done Data, Inc', { state: 'manual', reviewedAt: '2026-10-11', optOutUrl: 'https://donedata.example/p' }),
+  rec('formdata.example', 'Form Data', { state: 'reviewed', reviewedAt: '2026-10-12', definition: {
+    method: 'direct-form', optOutUrl: 'https://formdata.example/o', formFields: { '#e': '{email}' }, submitSelector: 'button' } }),
+  rec('changed.example', 'Changed Site', { state: 'needs-review', reviewedAt: '2026-10-12', optOutUrl: 'https://changed.example/o', note: 'moved' }),
+  rec('notpeople.example', 'Not People', { state: 'excluded', reviewedAt: '2026-10-12' }),
+  rec('later.example', 'Later', { state: 'unreviewed' }),
+  rec('mailer.example', 'Mailer', { state: 'email', to: 'privacy@mailer.example' }),
+];
+
+test('catalogRows uses the names runs record state under, and member statuses', () => {
+  const state = { optOuts: { 'Done Data': { lastSuccess: '2026-10-14T00:00:00Z' } } };
+  assert.deepEqual(catalogRows(RECORDS, state, []), [
+    { name: 'Hand Data', status: 'do by hand', date: '-' },
+    { name: 'Done Data', status: 'success', date: '2026-10-14' },
+    { name: 'Form Data', status: 'never run', date: '-' },
+    { name: 'Changed Site', status: 'do by hand', date: '-' },
+  ]);
+});
+
+test('catalogRows leaves out a site an explicit broker already covers', () => {
+  const brokers = [{ name: 'Hand Main', method: 'direct-form', optOutUrl: 'https://www.handdata.example/x' }];
+  assert.deepEqual(catalogRows(RECORDS, {}, brokers).map(r => r.name), ['Done Data', 'Form Data', 'Changed Site']);
+});
+
 // Spawned in a config-free copy of the repo with its own empty state file.
 const { makeFixtureRepo, runIn } = require('./helpers/fixture-repo');
 const FIXTURE = makeFixtureRepo();
@@ -65,4 +97,8 @@ test('upec-wipe list: no email brokers in the broker table, and a Status column'
   assert.match(table, /^Broker\s+Status\s+Date$/m);
   assert.doesNotMatch(table, /^(Pipl|Spokeo \(email\))\s/m);
   assert.match(table, /^Spokeo\s+never run\s+-$/m);
+  const catalog = out.split(/\nCatalog sites/)[1].split(/\nEmail requests/)[0];
+  assert.doesNotMatch(catalog, /\d{4}-\d{2}-\d{2}\s+\S/, 'no review dates in the catalog section');
+  assert.doesNotMatch(catalog, /^.{40}manual\b/m);
+  assert.match(catalog, /^.{40}do by hand\s+-$/m);
 });
