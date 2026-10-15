@@ -40,7 +40,7 @@ Every connection uses one of three paths.
 | Destination | What is sent | When | Path |
 | --- | --- | --- | --- |
 | Explicit brokers (32 in `brokers.js`, such as Spokeo, Whitepages, MyLife) and reviewed catalog sites | Search URLs with your name and state. Forms with your name, city, state, zip and your alias in every email field. | `upec-wipe run` | Browser |
-| Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. CapSolver is not called and nothing opens in your everyday browser. | `upec-wipe preview` | Browser |
+| Same brokers | Nothing about you except your state (and country): the forms are filled with a dummy person (Jane Doe, Exampleton, the placeholder `preview-alias@relay.invalid`) and not submitted, and no listing search is made. CapSolver is not called and nothing opens in your everyday browser. | `upec-wipe preview` | Browser |
 | Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `upec-wipe verify` | Browser |
 | Sites from the public broker lists outside the catalog | Nothing. The generic pass that filled their forms was retired; a leftover `--generic` or `generic.enabled: true` stops the run. | Never | - |
 | DuckDuckGo, Google | `"<full name>" "<city>, <state>"` for every person | `upec-wipe web-check` | Browser |
@@ -88,7 +88,7 @@ All four names are printed, so a normal `git add` skips them. (`git add -f` woul
 node bin/upec-wipe.js preview
 ```
 
-Shows what each broker form would get, without submitting. This does use the network: it runs the Mullvad check and opens each broker's search page with your name.
+Shows which fields each broker form fills, without submitting, using a dummy person: page scripts can read a field you never submit, so a rehearsal types nothing about you. It uses the network (the Mullvad check and each opt-out page), but sends only your state and country. `preview --email` prints your real letters on your screen and sends nothing.
 
 ```
 node bin/upec-wipe.js doctor

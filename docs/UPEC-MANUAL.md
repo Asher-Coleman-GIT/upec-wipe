@@ -224,7 +224,7 @@ This part is the same for Parts A and B.
 
    It prints a list of checks. Fix anything marked as a problem before you continue. The SMTP, CapSolver and SimpleLogin checks connect to those services, so they wait for the same network check as a run: with the Mullvad app off they say "skipped: not on Mullvad". It also works after you encrypt your config.
 
-7. Rehearse a run with `upec-wipe preview` (you run it as `node bin/upec-wipe.js preview`). Make sure Mullvad is connected first. It does everything except submit:
+7. Rehearse a run with `upec-wipe preview` (you run it as `node bin/upec-wipe.js preview`). Make sure Mullvad is connected first. It opens every opt-out page and fills the forms with a dummy person (Jane Doe, Exampleton), so you see which fields each form takes without typing anything about you into a broker's page; it skips the listing searches and submits nothing:
 
    ```
    node bin/upec-wipe.js preview
@@ -343,7 +343,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | --- | --- | --- |
 | `setup` | Asks for your details and writes `config.json`. | Nothing. |
 | `doctor` | Checks your setup, including that SimpleLogin accepts your key. | After the network check passes: a connection to your SMTP host, one request to CapSolver, and one read-only request to SimpleLogin with your key (it creates no alias). |
-| `preview` | Rehearses a run: opens every broker and fills the forms, submits nothing. Does not call CapSolver or open pages in your everyday browser. | Your name in each broker's search page. |
+| `preview` | Rehearses a run: opens every broker and fills the forms with a dummy person, submits nothing, skips the listing searches. Does not call CapSolver or open pages in your everyday browser. | Your state and country only (the forms get the dummy person). |
 | `run` | The real opt-out pass: fills web forms (the same as `run --forms`). Never sends email. | Brokers: your name, city, state, zip and your alias. SimpleLogin: a request for your alias the first time. CapSolver: CAPTCHA pages, if you set a key. |
 | `run --email` | Sends the email requests (see Email requests) after you type `SEND`. `preview --email` shows them and sends nothing. | Your dedicated mailbox's SMTP server, and each listed broker: your name, city and state, from the dedicated address. |
 | `pending` | Lists brokers waiting for you to click a confirmation email. | Nothing. |

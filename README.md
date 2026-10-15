@@ -36,7 +36,7 @@ cd upec-wipe
 bash install.sh                      # checks Node, installs deps and Chromium
 node bin/upec-wipe.js setup          # writes config.json (gitignored)
 node bin/upec-wipe.js doctor         # checks the setup
-node bin/upec-wipe.js preview        # fills forms, submits nothing
+node bin/upec-wipe.js preview        # fills forms with a dummy person, submits nothing
 node bin/upec-wipe.js run            # the real opt-out pass
 ```
 
@@ -48,7 +48,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | --- | --- |
 | `setup` | Interactive first-run setup (creates `config.json`) |
 | `doctor` | Checks your environment and configuration |
-| `preview` | Dry run: fills forms but submits nothing (`--email`: shows the emails, sends nothing) |
+| `preview` | Rehearsal: fills forms with a dummy person, submits nothing (`--email`: shows your emails, sends nothing) |
 | `run` | The opt-out pass: web forms by default (`--forms`); `--email` sends the email requests |
 | `pending` | Lists brokers awaiting an email-confirmation click |
 | `manual` | Lists the sites waiting for you to finish by hand, with their links |

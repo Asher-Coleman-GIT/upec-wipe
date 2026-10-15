@@ -19,7 +19,7 @@ These look like friction. They are the product. An optimization that removes one
 
 - Never run `setup.js` / `upec-wipe setup`: it overwrites the member's real `config.json`.
 - Never read, print, copy or commit `config.json`, `config.json.enc`, `state.json`, `logs/` or `secrets/`.
-- Never run `upec-wipe run` or `--email` (they submit real requests). `preview` types the member's real details into broker pages: to prove form selectors, dry-fill with the dummy person through `lib/forms.js` `fillForm` instead.
+- Never run `upec-wipe run` or `--email` (they submit real requests), and never `preview --email` (it prints the member's real letters). A plain `preview` fills forms with the dummy person since 2026-10-15 and submits nothing, so `preview --only "<broker>"` can prove form selectors; `lib/forms.js` `fillForm` with the dummy person works too.
 - Unknown flags to `scripts/catalog-survey.js` start a full survey of every site.
 - Never force-push, rewrite published history, or push to `upec/hardening` directly: work on a branch and open a pull request.
 

@@ -158,7 +158,7 @@ Add an entry to `brokers.js`:
 }
 ```
 
-To prove the selectors, dry-fill the form with the dummy person from `config.example.json` through `fillForm` in `lib/forms.js`. Do not run `preview` with your real details just to test a selector. Then run `npm test`. For sites from the public lists, add a catalog record instead; see [CATALOG-REVIEW.md](CATALOG-REVIEW.md).
+To prove the selectors, run `upec-wipe preview --only "<broker>"`: since 2026-10-15 a preview fills the dummy person (Jane Doe, Exampleton), never your details. `fillForm` in `lib/forms.js` with the dummy person from `config.example.json` works too. Then run `npm test`. For sites from the public lists, add a catalog record instead; see [CATALOG-REVIEW.md](CATALOG-REVIEW.md).
 
 ---
 
@@ -184,7 +184,7 @@ The `Dockerfile` uses the official Playwright image, so Chromium and its system 
 # Build the image (once)
 docker build -t upec-wipe .
 
-# Preview: checks reachability and fills forms, submits nothing
+# Preview: checks reachability and fills forms with a dummy person, submits nothing
 docker run --rm --init \
   -v "$(pwd)/config.json:/app/config.json" \
   -v "$(pwd)/state.json:/app/state.json" \

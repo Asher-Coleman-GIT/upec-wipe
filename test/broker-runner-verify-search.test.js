@@ -16,10 +16,11 @@ const logged = [];
 let searchResult = null;
 const searches = [];
 let oldSearches = 0;
+let skipResult = null;
 Module._load = function (request, parent, isMain) {
   if (!parent?.filename?.includes('broker-runner')) return originalLoad(request, parent, isMain);
   if (request === './config') return {
-    shouldSkip: () => null, saveCheckpoint: () => {}, stateKey: n => n,
+    shouldSkip: () => skipResult, saveCheckpoint: () => {}, stateKey: n => n,
     recordSuccess: () => {}, recordPendingConfirmation: () => {}, recordFailure: () => {}, recordManual: () => {},
   };
   if (request === './logger') return { logResult: (name, status, d) => logged.push({ name, status, detail: d }), results: { assistable: [] } };
@@ -50,7 +51,7 @@ const SPOKEO = {
   optOutUrl: 'https://s.example/optout', formFields: { '#e': 'x' },
 };
 const PERSON = { firstName: 'Jane', lastName: 'Doe', city: 'Austin', state: 'TX', country: 'US' };
-function reset() { logged.length = 0; searches.length = 0; oldSearches = 0; searchResult = null; }
+function reset() { skipResult = null; logged.length = 0; searches.length = 0; oldSearches = 0; searchResult = null; }
 
 test('the run searches through verifySearch (not the old pattern) and passes --assist', async () => {
   reset(); searchResult = null;
@@ -77,4 +78,21 @@ test('a changed layout is an error, never "Not listed"', async () => {
   reset(); searchResult = new Error('no result cards found - the page layout may have changed');
   await createBrokerRunner({ dryRun: true, preview: true, person: PERSON }).processBroker(ctx, SPOKEO);
   assert.equal(logged.at(-1).status, 'error');
+});
+
+test('a preview or dry run skips the listing search (it would send a name) and still fills the form', async () => {
+  reset(); searchResult = 'https://s.example/Jane-Doe/Texas/Austin/p1';
+  await createBrokerRunner({ dryRun: true, preview: true, rehearsal: true, person: PERSON }).processBroker(ctx, SPOKEO);
+  assert.equal(searches.length, 0);
+  assert.equal(oldSearches, 0);
+  assert.equal(logged.at(-1).status, 'preview');
+});
+
+test('a rehearsal ignores the member\'s re-check window: it is about the forms, not about them', async () => {
+  reset(); skipResult = { reason: 'Last removed 1d ago - re-check in 89d' };
+  await createBrokerRunner({ dryRun: true, preview: true, rehearsal: true, person: PERSON }).processBroker(ctx, SPOKEO);
+  assert.equal(logged.at(-1).status, 'preview');
+  reset(); skipResult = { reason: 'Last removed 1d ago - re-check in 89d' };
+  await createBrokerRunner({ dryRun: false, person: PERSON }).processBroker(ctx, SPOKEO);
+  assert.equal(logged.at(-1).status, 'skipped', 'a real run still honours it');
 });
