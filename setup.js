@@ -16,7 +16,7 @@ process.umask(0o077);
 const fs      = require('fs');
 const path    = require('path');
 const os      = require('os');
-const readline = require('readline');
+const { createPrompter } = require('./lib/prompt');
 
 const { encryptConfigToDisk, getPassphrase } = require('./lib/config');
 const { relayConfigured } = require('./lib/relay');
@@ -84,25 +84,12 @@ function readExistingConfig(opts) {
 }
 
 // ─── Prompt helper ────────────────────────────────────────────────────────────
-// rl is created lazily inside main() so that requiring this module for its
-// exported helpers (regionPrompts, buildConfig) does not open stdin.
+// The prompter is created lazily inside main() so that requiring this module
+// for its exported helpers (regionPrompts, buildConfig) does not open stdin.
 
-let rl;
-const ask = (q, def = '') => new Promise(resolve =>
-  rl.question(def ? `${q} [${def}]: ` : `${q}: `, ans => resolve(ans.trim() || def))
-);
-const askSecret = (q) => new Promise(resolve => {
-  process.stdout.write(`${q}: `);
-  process.stdin.setRawMode?.(true);
-  let val = '';
-  process.stdin.resume();
-  process.stdin.once('data', d => {
-    val = d.toString().trim();
-    process.stdout.write('\n');
-    process.stdin.setRawMode?.(false);
-    resolve(val);
-  });
-});
+let prompter;
+const ask = (q, def = '') => prompter.ask(q, def);
+const askSecret = (q) => prompter.askSecret(q);
 const confirm = async (q) => {
   const ans = (await ask(`${q} (y/n)`, 'y')).toLowerCase();
   return ans === 'y' || ans === 'yes';
@@ -233,7 +220,7 @@ function buildConfig(existing, a) {
 }
 
 async function main() {
-  rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  prompter = createPrompter();
   console.log('\nUPEC-WIPE - Setup\n');
   console.log('This will create config.json with your personal info (gitignored).');
   console.log('Run this once. Re-run anytime to update.\n');
@@ -366,7 +353,7 @@ async function main() {
     console.log('state.json initialized (tracks opt-out history).\n');
   }
 
-  rl.close();
+  prompter.close();
 
   console.log('─'.repeat(54));
   console.log('Setup complete!\n');
