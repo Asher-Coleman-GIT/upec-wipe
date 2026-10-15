@@ -299,7 +299,7 @@ This part is the same for Parts A and B.
 
    `pending` lists opt-outs waiting for you to click a confirmation email. `manual` lists every site a run handed to you (bot checks, CAPTCHAs it could not solve, sites with no form it can fill), with the reason and the link, oldest first. When you finish one, or click its confirmation link, mark it: `node bin/upec-wipe.js done "<name>"` (quote names with spaces; several names at once work too, and if one is unknown nothing is marked). It drops off both lists, and runs skip it for 90 days before checking it again. For a run made before runs saved this list, `node bin/upec-wipe.js manual --import-last-run` loads it from the newest run log in `logs/`.
 
-6. If you send email requests: replies arrive in the dedicated mailbox. Log each one with `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`.
+6. If you send email requests: replies arrive in the dedicated mailbox. Run `node bin/upec-wipe.js read-email` to go through them (it asks before logging each one), or log one by hand with `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`.
 
 ## Email requests
 
@@ -309,7 +309,7 @@ Some data brokers only take privacy requests by email. These are sent by a separ
 2. Run `node bin/upec-wipe.js setup` and answer the "Email Requests" questions: the new address, the SMTP server (Enter for `smtp.gmail.com`) and the app password. Setup writes the `email` block with that address as both `smtp.user` and `smtp.from`, and refuses your everyday email. Brokers see only this address. (You can also edit the `email` block in `config.json` by hand.)
 3. Connect Mullvad, then rehearse: `node bin/upec-wipe.js preview --email`. It lists every broker, the sentence from its policy that gives the right, and the full email. Nothing is sent.
 4. Send: `node bin/upec-wipe.js run --email`. Type `SEND` to confirm. Emails go out one every 45 seconds; leave it running. If it stops (the mailbox limit, Ctrl-C), run it again later; it never emails a broker twice. To send to just one broker, use `run --email --only "<broker>"` with the exact name `upec-wipe list` shows (`--skip` works the same way).
-5. Replies arrive in the new Gmail. Log each one: `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`. `upec-wipe list` shows each email broker's status.
+5. Replies arrive in the new Gmail. Run `node bin/upec-wipe.js read-email` to go through them, or log one by hand: `node bin/upec-wipe.js reply <broker> honored|refused|verify|none|bounced`. `upec-wipe list` shows each email broker's status.
 
 `upec-wipe run` on its own (or `--forms`) fills web forms only, and ends with a reminder such as "Email requests not yet sent: 12 - run `upec-wipe run --email`". `--forms --email` does both.
 
@@ -349,6 +349,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `pending` | Lists brokers waiting for you to click a confirmation email. | Nothing. |
 | `manual` | Lists the sites waiting for you to finish by hand, with the reason and link each run gave. Some links carry your name (a site's own search link). | Nothing. |
 | `done` | Marks sites finished: `done "<name>" [...]`. Clears them from `manual` and `pending`; runs skip them for 90 days. | Nothing. |
+| `read-email` | Reads the replies to your email requests in the dedicated mailbox, read-only: suggests an outcome per broker, shows their form links (not opened) and logs each outcome after you say yes. | Your mailbox login to your mail provider (IMAP), through the Mullvad check. |
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status; excluded and not-yet-reviewed sites are only counted. | Nothing. |

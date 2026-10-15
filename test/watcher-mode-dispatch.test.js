@@ -91,3 +91,9 @@ test('pickMode: web-check runs inside the opt-out run, and conflicts with doctor
   assert.equal(r.mode, null);
   assert.equal(r.conflict, 'Mutually exclusive modes cannot be combined: --doctor, --web-check. Use one at a time.');
 });
+
+test('pickMode: --read-email is its own early mode with a --since value', () => {
+  assert.equal(pick('--read-email').mode, 'read-email');
+  const { parseWatcherFlags: p } = require('../lib/cli-flags');
+  assert.equal(p(['node', 'watcher.js', '--read-email', '--since', '2026-10-01']).SINCE_ARG, '2026-10-01');
+});

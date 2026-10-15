@@ -21,7 +21,7 @@ Everything comes from your local `config.json` (or `config.json.enc` if you encr
 | `person.dob` | Optional (setup). Only forms that require it: PrivateRecords and four reviewed people-search sites in the catalog. Left blank, those go to your manual list. Never written to run logs. | Those sites |
 | `relay.apiKey` | Creating your alias | SimpleLogin |
 | `capsolver.apiKey` | Solving CAPTCHAs | CapSolver |
-| `email.smtp.*` | Sending the email requests | Your SMTP provider. Brokers see the dedicated mailbox address (`user`, also `from`). |
+| `email.smtp.*` | Sending the email requests, and reading the replies (`read-email`) | Your SMTP provider (and its IMAP server on `read-email`). Brokers see the dedicated mailbox address (`user`, also `from`). |
 
 `config.json`, `state.json`, `logs/`, `inbox/` and the files under `data/` that hold your history are git-ignored and kept out of the Docker image.
 
@@ -44,6 +44,7 @@ Every connection uses one of three paths.
 | Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `upec-wipe verify` | Browser |
 | Sites from the public broker lists outside the catalog | Nothing. The generic pass that filled their forms was retired; a leftover `--generic` or `generic.enabled: true` stops the run. | Never | - |
 | DuckDuckGo, Google | `"<full name>" "<city>, <state>"` for every person | `upec-wipe web-check` | Browser |
+| Your mail provider (IMAP, such as `imap.gmail.com`) | The dedicated mailbox's address and app password, to read it. Read-only: nothing is marked read, moved, deleted or sent. | `upec-wipe read-email` | Direct |
 | `am.i.mullvad.net` | Nothing but your IP | Every browser session that visits sites (again every 10 brokers), and before direct connections (again after 5 minutes and before every email) | Browser and direct |
 | `api.ipify.org` | Nothing but your IP: once through the proxy, once direct (this one shows your real IP) | Only when `network.proxy` is set | Browser and direct |
 | SimpleLogin (`app.simplelogin.io`) | Your API key and a neutral note. SimpleLogin already knows your real inbox, because the alias forwards there. | A real run, when no alias is cached yet for that person. `upec-wipe doctor` also sends the key once to check it (account info request; no alias is made, and the reply is discarded). | Direct |

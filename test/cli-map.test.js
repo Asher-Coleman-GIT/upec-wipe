@@ -120,3 +120,9 @@ test('manual and done map to watcher --manual / --done and pass the arguments th
   assert.deepEqual(resolveCommand(['manual']).args, ['watcher.js', '--manual']);
   assert.deepEqual(resolveCommand(['done', 'Search People Free']).args, ['watcher.js', '--done', 'Search People Free']);
 });
+
+test('upec-wipe read-email maps to watcher.js --read-email and passes --since', () => {
+  const r = resolveCommand(['read-email', '--since', '2026-10-01']);
+  assert.deepEqual(r.args, ['watcher.js', '--read-email', '--since', '2026-10-01']);
+  assert.match(COMMANDS['read-email'].desc, /read-only/i);
+});

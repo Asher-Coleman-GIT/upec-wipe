@@ -53,6 +53,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `pending` | Lists brokers awaiting an email-confirmation click |
 | `manual` | Lists the sites waiting for you to finish by hand, with their links |
 | `done` | Marks a site finished by hand, or its confirmation link clicked |
+| `read-email` | Reads the replies to your email requests (read-only) and logs each outcome you confirm |
 | `reply` | Logs a broker's reply to an email request |
 | `verify` | Re-searches the 4 searchable brokers and reports whether you still appear |
 | `list` | Lists brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status |

@@ -57,6 +57,12 @@ To forget the history, use `upec-wipe clear-all` (it deletes `state.json` with e
 
 Email requests (`run --email`) keep their own record per broker: when the email was sent and the reply you logged with `upec-wipe reply <broker> honored|refused|verify|none|bounced`. `upec-wipe list` shows both.
 
+`upec-wipe read-email [--since YYYY-MM-DD]` goes through the replies for you. It logs in to the dedicated mailbox over IMAP with the same app password (Gmail: `imap.gmail.com`; another provider: set `email.imap.host`) and reads the inbox and spam since your first email request. For each broker that replied it suggests an outcome (honored, refused, verify, bounced, or acknowledged with nothing to log yet), quotes the sentence it is based on, shows the links as host and path, and asks `Log <broker> as <outcome>? [y/N]`.
+
+- Read-only: the IMAP client can only log in, open a folder read-only, search, read without marking as read, and log out; anything else is refused in code. Nothing is moved, deleted or sent.
+- No link is opened. The suggestion is only a suggestion: nothing is logged without your yes, and without a terminal it prints the `reply` commands instead.
+- Like the email step it connects from this machine, so Mullvad must be up, and `network.proxy` or `network.required: false` is refused. Nothing about the messages is saved.
+
 ---
 
 ## Verifying removals
