@@ -13,8 +13,12 @@
  *     (visible window; when a site shows a bot check, complete it and the
  *      survey carries on)
  *
+ *   ASSIST=1 MATCH=1 node scripts/inspect-search-results.js
+ *     (runs the real verify search, lib/verify-search.js, for every broker
+ *      with a verifySearch, as the dummy person; prints what it matched)
+ *
  * Output: one JSON file per page in logs/search-survey/ (gitignored), or in
- * SURVEY_OUT when set.
+ * SURVEY_OUT when set. MATCH=1 prints only.
  */
 'use strict';
 process.umask(0o077);
@@ -28,6 +32,7 @@ const { ensureNodeEgress } = require(path.join(ROOT, 'lib/egress'));
 const { checkPageBlockedDetail } = require(path.join(ROOT, 'lib/block-page'));
 const { waitForHumanCheck } = require(path.join(ROOT, 'lib/assist'));
 const ASSIST = process.env.ASSIST === '1';
+const MATCH = process.env.MATCH === '1';
 const OUT = process.env.SURVEY_OUT ? path.resolve(process.env.SURVEY_OUT) : path.join(ROOT, 'logs', 'search-survey');
 
 // Candidate name searches for the dummy person. Brokers that already have a
@@ -82,6 +87,25 @@ function describeResults() {
   return out;
 }
 
+// MATCH=1: the verify search itself, as the dummy person. The survey pages
+// showed Jane Doe cards in Austin on Spokeo, TruePeopleSearch and
+// SmartBackgroundChecks, so those should report a listing.
+async function matchAll(ctx, only) {
+  const { searchListing } = require(path.join(ROOT, 'lib/verify-search'));
+  const list = require(path.join(ROOT, 'brokers')).forPerson(DUMMY).filter(b => b.verifySearch && (!only.length || only.includes(b.name)));
+  for (const b of list) {
+    const page = await ctx.newPage();
+    let out;
+    try {
+      out = (await searchListing(page, b, DUMMY, { assist: ASSIST })) || 'not listed';
+    } catch (e) {
+      out = `unverifiable: ${String(e.message).split('\n')[0]}`;
+    }
+    console.log(`${b.name.padEnd(24)} ${out}`);
+    await page.close();
+  }
+}
+
 (async () => {
   // Same rule as a run: nothing leaves this machine unless it goes out via Mullvad.
   await ensureNodeEgress({ network: { required: true } });
@@ -91,6 +115,11 @@ function describeResults() {
   const browser = await loadChromium().launch(buildLaunchOptions({ headless: process.env.HEADED !== '1' && !ASSIST }));
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'en-US' });
   await ctx.addInitScript(buildStealthScript()).catch(() => {});
+  if (MATCH) {
+    await matchAll(ctx, only);
+    await browser.close();
+    return;
+  }
   for (const [name, urls] of targets) {
     for (const [i, url] of urls.entries()) {
       const page = await ctx.newPage();

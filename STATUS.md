@@ -31,14 +31,14 @@
 | Broker | Method | CAPTCHA | Confidence | US-only |
 |---|---|---|---|---|
 | California DROP | manual | n/a | manual | CA only |
-| Spokeo | search-form | no | surveyed 2026-10 | yes |
+| Spokeo | search-form | no | surveyed 2026-10; listing search fixed 2026-10-15 (the old link pattern matched nothing, so every earlier "Not listed" was wrong; now one city's results page, name + city in a card) | yes |
 | WhitePages | search-form | no | untested | yes |
 | FastPeopleSearch | search-form | yes | submitted 2026-10-14 (CapSolver Turnstile, form accepted; promised email not received yet; the listing check matched a surname-only /name/ page) | yes |
 | TruePeopleSearch | direct-form | no | submitted 2026-10-14 (assisted: bot check cleared, form accepted; promised confirmation email not received yet) | yes |
 | BeenVerified | manual | - | surveyed 2026-10-11 (you pick your record) | yes |
 | PeopleConnect Suppression Center | manual | n/a | manual | yes |
 | PeopleFinders | direct-form | yes | submitted 2026-10-14 (assisted; the step 1 form now opens behind a "Next" button, so the name fields were missed - fixed with startSelector the same day; the emailed link expired within the hour, click it at once) | no |
-| MyLife | search, then manual | - | surveyed 2026-10-11 (embedded form; you get your listing link) | no |
+| MyLife | manual | - | manual since 2026-10-15 (the old search URL answers 404 and the new one ignores location, so the 2026-10-14 "Not listed" was not a real check; search mylife.com by hand) | no |
 | FamilyTreeNow | direct-form | yes | failed 2026-10-15 (CapSolver: "We don't support this service" for hCaptcha; hCaptcha is now never sent to CapSolver - run with `--assist` and solve it in the browser window) | no |
 | CheckPeople | direct-form | no | untested | no |
 | ThatsThem | direct-form | no | submitted 2026-10-14 (assisted; form accepted, the email comes once removal is complete) | no |

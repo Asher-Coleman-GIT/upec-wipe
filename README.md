@@ -24,7 +24,7 @@ What each layer does and does not protect: [THREAT-MODEL.md](docs/THREAT-MODEL.m
 2. **Click the confirmation emails** that arrive at your alias, and **finish the manual sites**. `upec-wipe pending` lists the brokers waiting for a click; `upec-wipe manual` lists the sites to do by hand, with their links. Mark each one finished with `upec-wipe done "<name>"`.
 3. **Send the email requests** (when set up): `upec-wipe preview --email` shows every email and the policy sentence that gives you the right; `upec-wipe run --email` sends them. Brokers that take requests only by email get an opt-out of sale and targeted ads plus a deletion request.
 4. **Log the replies**: `upec-wipe reply <broker> honored|refused|verify|none|bounced`.
-5. **Check you are gone**, every few months. `verify --assist` re-checks the 5 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch, MyLife, USPhonebook); `serp-watch` searches the web for your name and flags any broker site, including ones the tool does not know. Brokers add people back, so repeat the run monthly.
+5. **Check you are gone**, every few months. `verify --assist` re-checks the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); `serp-watch` searches the web for your name and flags any broker site, including ones the tool does not know. Brokers add people back, so repeat the run monthly.
 
 ## Quick start
 

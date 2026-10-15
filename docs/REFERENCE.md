@@ -75,8 +75,8 @@ Opens a browser, searches each broker where an opt-out was recorded, and reports
 
 A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
-- Two kinds of broker can be checked automatically: `search-form` brokers (with a `searchUrl` and `listingPattern`: Spokeo, WhitePages, FastPeopleSearch and MyLife) and direct-form brokers with a public name search (`verifySearch` in `brokers.js`: USPhonebook). For everything else, `upec-wipe serp-watch` is the wider check.
-- A `verifySearch` listing counts only when a result card's own profile link carries your name and the card names your city, because these searches also list namesakes and relatives. Without a city in your config those brokers are `unverifiable`.
+- Six brokers can be checked automatically. Spokeo, USPhonebook, TruePeopleSearch and SmartBackgroundChecks have a `verifySearch` in `brokers.js`: a listing counts only when one result card names you (first and last name, middle names and aliases allowed) and your city, because these searches also list namesakes, aliases and relatives. Runs use the same check to find your Spokeo listing. WhitePages and FastPeopleSearch still use the older `searchUrl` + `listingPattern`, which takes any profile link on the results page and can mistake a namesake. For everything else, `upec-wipe serp-watch` is the wider check.
+- Without a city in your config the `verifySearch` brokers are `unverifiable`. A results page with no result cards and no "no results" message, or one that answers with an HTTP error, is also `unverifiable`, never "clear": the site may have changed.
 - Most broker searches show a bot check. Run `upec-wipe verify --assist` at the computer and complete each check in the browser window; without `--assist` a bot check makes that broker `unverifiable`.
 - To add a broker's search, survey its result page with the dummy person: `ASSIST=1 node scripts/inspect-search-results.js` (read-only, writes to `logs/search-survey/`).
 - "Verified clear" means one search today found nothing. It is not proof of deletion.

@@ -66,10 +66,11 @@ test('MyLife points at its privacy request page, not the privacy policy', () => 
   assert.equal(get('MyLife').optOutUrl, 'https://www.mylife.com/privacyrequest');
 });
 
-test('MyLife searches, then hands over the listing (its form cannot be completed)', () => {
+test('MyLife is manual (2026-10-15: its search moved and ignores location; its form cannot be completed)', () => {
   const b = get('MyLife');
-  assert.equal(b.manualAfterSearch, true);
+  assert.equal(b.method, 'manual');
   assert.equal(b.formFields, undefined);
+  assert.match(b.notes, /mylife\.com\/privacyrequest/);
 });
 
 test('PeopleFinders fills only the step-one Right to Opt-Out form', () => {

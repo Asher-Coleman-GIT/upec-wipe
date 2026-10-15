@@ -106,7 +106,8 @@ function buildBrokers(person) {
   // the same slug escaped for a profile-link pattern.
   const slug = (v) => s(v).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const NAME_SLUG = `${slug(F)}-${slug(L)}`;
-  const NAME_RE = NAME_SLUG.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // "north exampleton" -> "North-Exampleton" (Spokeo's URL spelling).
+  const title = (v) => slug(v).split('-').filter(Boolean).map(w => w[0].toUpperCase() + w.slice(1)).join('-');
 
   return [
 
@@ -126,7 +127,17 @@ function buildBrokers(person) {
     name: 'Spokeo',
     method: 'search-form',
     searchUrl: `https://www.spokeo.com/search?q=${enc(N)}&type=pp&state=${ST}`,
-    listingPattern: /spokeo\.com\/[^/]+\/[^/]+\/[^/]+-p\d+/i,
+    // Profile links are /First-Last/State/City/p<digits>. Until 2026-10-15
+    // this wanted "-p<digits>", matched nothing, and every run said "Not listed".
+    listingPattern: /spokeo\.com\/[^/]+\/[^/]+\/[^/]+\/p\d+/i,
+    // Runs and verify search one city's results page and read the cards
+    // (surveyed 2026-10-15, dummy person). Aliases come after relatives here,
+    // so the whole card is read.
+    verifySearch: {
+      url: `https://www.spokeo.com/${title(F)}-${title(L)}/${title(usStateName(ST))}/${title(C)}`,
+      cardSelector: '#name-search-results-list > div',
+      linkPattern: /spokeo\.com\/[^/]+\/[^/]+\/[^/]+\/p\d+/i,
+    },
     optOutUrl: 'https://www.spokeo.com/optout',
     formFields: { 'input[name="email"]': E },
     submitSelector: 'button[type="submit"],input[type="submit"]',
@@ -171,6 +182,14 @@ function buildBrokers(person) {
     // broad name selectors typed into that instead of the opt-out form.
     formFields: { '#FirstName': F, '#LastName': L, '#Email': E, '#AuthorizeContact': 'on' },
     submitSelector: 'button:has-text("Send Request")',
+    // verify: surveyed 2026-10-15 (dummy person, assisted bot check).
+    verifySearch: {
+      url: `https://www.truepeoplesearch.com/results?name=${enc(`${F} ${L}`)}&citystatezip=${enc(`${C}, ${ST}`)}`,
+      cardSelector: '.card-summary',
+      linkSelector: 'a.detail-link',
+      linkPattern: /truepeoplesearch\.com\/find\/person\//i,
+      stopAt: /\bRelated to\b/i,
+    },
     captchaLikely: false,
     priority: 1,
     usOnly: true,
@@ -220,15 +239,13 @@ function buildBrokers(person) {
 
   {
     name: 'MyLife',
-    method: 'search-form',
-    searchUrl: `https://www.mylife.com/find-people/results.pubview?searchtype=PEOPLE&firstname=${enc(F)}&lastname=${enc(L)}&state=${ST}`,
-    listingPattern: /mylife\.com\/[^/]+\/[^/]+-\d+\.html/i,
-    // The request form is a Jotform embedded in /privacyrequest whose email
-    // box is a separate verification widget. Search, then hand over.
+    // Manual since 2026-10-15: the old search URL answers 404 and the new one
+    // ignores the location (100 people nationwide, loaded as you scroll), so
+    // a listing further down would read as "not listed". The request form is
+    // a Jotform whose email box is a separate verification widget.
+    method: 'manual',
     optOutUrl: 'https://www.mylife.com/privacyrequest',
-    manualAfterSearch: true,
-    notes: 'the form asks for the profile URL, your name, city, ZIP, state and email',
-    captchaLikely: true,
+    notes: 'search mylife.com for your name and pick the result in your city; if you are listed, copy that profile URL and submit it at https://www.mylife.com/privacyrequest (the form asks for the profile URL, your name, city, ZIP, state and email)',
     priority: 1,
     expectedSender: 'support@mylife.com',
   },
@@ -279,12 +296,14 @@ function buildBrokers(person) {
     priority: 2,
     usOnly: true,
     // verify: surveyed 2026-10-15 (dummy person). Each result is a
-    // .ls_contacts-people-finder-wrapper card; its button links /first-last/U<id>.
+    // .ls_contacts-people-finder-wrapper card; its button links /first-last/U<id>
+    // and its relatives are links too.
     verifySearch: {
       url: `https://www.usphonebook.com/${NAME_SLUG}/${slug(usStateName(ST))}`,
-      linkPattern: new RegExp(`usphonebook\\.com/${NAME_RE}/U[A-Za-z0-9]+$`, 'i'),
-      linkSelector: 'a.ls_contacts-btn',
       cardSelector: '.ls_contacts-people-finder-wrapper',
+      linkSelector: 'a.ls_contacts-btn',
+      linkPattern: /usphonebook\.com\/[a-z0-9-]+\/U[A-Za-z0-9]+$/i,
+      stopAt: /\bRelatives?\b/i,
     },
   },
 
@@ -294,6 +313,15 @@ function buildBrokers(person) {
     optOutUrl: 'https://www.smartbackgroundchecks.com/remove',
     formFields: { '#subject_fn': F, '#subject_ln': L, '#subject_email': E, '#confirm_authorize': 'on' },
     submitSelector: 'form button:has-text("Submit")',
+    // verify: surveyed 2026-10-15 (dummy person, assisted bot check). People
+    // are often listed under another name ("Also known as ...").
+    verifySearch: {
+      url: `https://www.smartbackgroundchecks.com/people/${NAME_SLUG}/${slug(C)}/${slug(ST)}`,
+      cardSelector: 'div[id].row.no-gutters',
+      linkSelector: 'a.name-list-title',
+      linkPattern: /smartbackgroundchecks\.com\/people\//i,
+      stopAt: /\bRelated to\b/i,
+    },
     captchaLikely: true,
     priority: 2,
   },
