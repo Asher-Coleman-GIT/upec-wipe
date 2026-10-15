@@ -37,7 +37,7 @@ test('manual lists every open site with its reason and link, and loads no browse
   assert.match(r.stdout, /WhitePages/);
   assert.match(r.stdout, /https:\/\/www\.whitepages\.com\/suppression-requests/);
   assert.match(r.stdout, /Acme People/);
-  assert.match(r.stdout, /2 site\(s\) need you/);
+  assert.match(r.stdout, /^2 sites to finish by hand$/m);
   assert.match(r.stdout, /upec-wipe done/);
   assert.doesNotMatch(r.stdout, /PeopleFinders/, 'email-confirmation brokers belong to `pending`');
 });
