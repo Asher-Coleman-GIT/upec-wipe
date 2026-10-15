@@ -1,6 +1,6 @@
 # Threat model
 
-This tool submits your identity to dozens of companies on purpose. The goal of this fork is that no broker learns more than it already had, plus one throwaway email alias. A few services get more than that because their job needs it: SimpleLogin knows your real inbox, search engines get your full name and city when you run `upec-wipe serp-watch`, CapSolver sees which broker pages showed a CAPTCHA, and your SMTP provider sees every email request you send. [PRIVACY.md](PRIVACY.md) lists every destination and exactly what it gets.
+This tool submits your identity to dozens of companies on purpose. The goal of this fork is that no broker learns more than it already had, plus one throwaway email alias. A few services get more than that because their job needs it: SimpleLogin knows your real inbox, search engines get your full name and city when you run `upec-wipe web-check`, CapSolver sees which broker pages showed a CAPTCHA, and your SMTP provider sees every email request you send. [PRIVACY.md](PRIVACY.md) lists every destination and exactly what it gets.
 
 ## What each layer protects
 
@@ -21,7 +21,7 @@ This tool submits your identity to dozens of companies on purpose. The goal of t
 - Brokers adding you back later. Opt-outs have to be repeated every month.
 - Your SMTP provider. It sees every email request you send.
 - The SMTP account itself. A broker that receives an opt-out email can see the address of the account it was sent from (`email.smtp.user`), whatever `from` says, because providers such as Gmail rewrite `From` and the account is in the envelope. The relay alias does not hide it. Use a new mailbox made only for this and not linked to you (setup refuses your everyday email), or leave out the `email` block and handle those brokers by hand.
-- Search engines. `upec-wipe serp-watch` searches for your full name with your city and state on DuckDuckGo and Google, through the VPN.
+- Search engines. `upec-wipe web-check` searches for your full name with your city and state on DuckDuckGo and Google, through the VPN.
 - CapSolver. It sees your account and the address of each broker page that showed a CAPTCHA. It gets no images and none of your details. Leave out the key (or use `--no-capsolver`) and those brokers become manual.
 - Mullvad. It sees the traffic leaving its servers, as any VPN does.
 - Installing. `install.sh` and the install steps download from npm, the Playwright CDN, NodeSource and Ubuntu's mirrors. Connect Mullvad first if you do not want those to see your home IP.

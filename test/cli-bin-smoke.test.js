@@ -28,7 +28,7 @@ test('upec-wipe --help exits 0 and lists subcommands', () => {
   assert.equal(r.code, 0);
   assert.match(r.stdout, /Usage: upec-wipe/);
   assert.match(r.stdout, /\bsetup\b/);
-  assert.match(r.stdout, /\bserp-watch\b/);
+  assert.match(r.stdout, /\bweb-check\b/);
 });
 
 test('upec-wipe with no args prints help and exits 0', () => {

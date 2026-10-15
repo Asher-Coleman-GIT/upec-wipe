@@ -46,8 +46,8 @@ test('resolveMode: --list and --doctor together is a conflict', () => {
   assert.ok(result.conflict.includes('list') && result.conflict.includes('doctor'), result.conflict);
 });
 
-test('resolveMode: --doctor and --serp-watch together is a conflict', () => {
-  assert.notEqual(resolveMode({ doctor: true, serpWatch: true }).conflict, null);
+test('resolveMode: --doctor and --web-check together is a conflict', () => {
+  assert.notEqual(resolveMode({ doctor: true, webCheck: true }).conflict, null);
 });
 
 test('resolveMode: three modes together is a conflict', () => {
@@ -85,9 +85,9 @@ test('pickMode: the first early mode wins among several', () => {
   assert.equal(pick('--decrypt-config').mode, 'encrypt-config');
 });
 
-test('pickMode: serp-watch runs inside the opt-out run, and conflicts with doctor', () => {
-  assert.equal(pick('--serp-watch').mode, 'run');
-  const r = pick('--serp-watch', '--doctor');
+test('pickMode: web-check runs inside the opt-out run, and conflicts with doctor', () => {
+  assert.equal(pick('--web-check').mode, 'run');
+  const r = pick('--web-check', '--doctor');
   assert.equal(r.mode, null);
-  assert.equal(r.conflict, 'Mutually exclusive modes cannot be combined: --doctor, --serp-watch. Use one at a time.');
+  assert.equal(r.conflict, 'Mutually exclusive modes cannot be combined: --doctor, --web-check. Use one at a time.');
 });

@@ -16,7 +16,7 @@ A month looks like this:
 2. Brokers send "confirm your request" emails to your alias, which land in your inbox. You click them.
 3. Brokers you must finish by hand are listed in the summary at the end of the run, and those with a web page open in your browser. `node bin/upec-wipe.js pending` lists only the brokers still waiting for you to click a confirmation email, and `node bin/upec-wipe.js manual` lists the sites to finish by hand with their links. Later, `node bin/upec-wipe.js verify` checks whether you are really gone.
 
-One extra command sends more about you to another service: `serp-watch` searches for your name and city on search engines. It is off unless you run it. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
+One extra command sends more about you to another service: `web-check` searches for your name and city on search engines. It is off unless you run it. The command reference at the end says what each command sends, and [PRIVACY.md](PRIVACY.md) lists every destination.
 
 ## What you need before starting
 
@@ -289,7 +289,7 @@ This part is the same for Parts A and B.
    With Docker, use `docker compose run --rm watcher` instead (Docker has no visible window, so no `--assist`).
 
 3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The tool cannot do this part, so you must.
-4. Every few months, check you are really gone. `node bin/upec-wipe.js verify --assist` re-searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); most show a bot check, which you complete in the browser window. `node bin/upec-wipe.js serp-watch --assist` searches DuckDuckGo and Google for your name and city and lists every known broker site that shows up, marking new ones; run it at the computer, since it needs a visible browser window. It sends your name and city to those search engines.
+4. Every few months, check you are really gone. `node bin/upec-wipe.js verify --assist` re-searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); most show a bot check, which you complete in the browser window. `node bin/upec-wipe.js web-check --assist` searches DuckDuckGo and Google for your name and city and lists every known broker site that shows up, marking new ones; run it at the computer, since it needs a visible browser window. It sends your name and city to those search engines.
 5. See which brokers still need you:
 
    ```
@@ -352,7 +352,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status; excluded and not-yet-reviewed sites are only counted. | Nothing. |
-| `serp-watch` | Searches DuckDuckGo and Google for your name and lists the known broker sites that show it, marking new ones. | `"<your full name>" "<city>, <state>"` to those search engines. |
+| `web-check` | Searches DuckDuckGo and Google for your name and lists the known broker sites that show it, marking new ones. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
 | `clear-all` | Deletes everything UPEC-WIPE saved on this computer. | Nothing. |
 

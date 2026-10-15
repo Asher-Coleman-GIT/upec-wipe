@@ -55,11 +55,15 @@ function main() {
     score: 'the exposure score depended on the breach check. See docs/REFERENCE.md.',
     report: 'the exposure score depended on the breach check. See docs/REFERENCE.md.',
     freeze: 'the freeze checklist is in docs/UPEC-MANUAL.md.',
-    serp: 'use upec-wipe serp-watch.',
+    serp: 'use upec-wipe web-check.',
     dashboard: 'use the CLI; see docs/REFERENCE.md.', // removed: the local web dashboard
   };
   if (args[0] === 'update-brokers') { // moved to a maintainer script
     process.stderr.write('update-brokers moved: run node scripts/update-catalog-sources.js.\n');
+    process.exit(1);
+  }
+  if (args[0] === 'serp-watch') { // renamed 2026-10-15
+    process.stderr.write('serp-watch was renamed: use upec-wipe web-check.\n');
     process.exit(1);
   }
   if (args[0] === 'catalog-check') { // rewrites tracked data/catalog files: maintainer only

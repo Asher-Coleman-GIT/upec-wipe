@@ -75,7 +75,7 @@ Opens a browser, searches each broker where an opt-out was recorded, and reports
 
 A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
-- Six brokers can be checked automatically. Spokeo, USPhonebook, TruePeopleSearch and SmartBackgroundChecks have a `verifySearch` in `brokers.js`: a listing counts only when one result card names you (first and last name, middle names and aliases allowed) and your city, because these searches also list namesakes, aliases and relatives. Runs use the same check to find your Spokeo listing. WhitePages and FastPeopleSearch still use the older `searchUrl` + `listingPattern`, which takes any profile link on the results page and can mistake a namesake. For everything else, `upec-wipe serp-watch` is the wider check.
+- Six brokers can be checked automatically. Spokeo, USPhonebook, TruePeopleSearch and SmartBackgroundChecks have a `verifySearch` in `brokers.js`: a listing counts only when one result card names you (first and last name, middle names and aliases allowed) and your city, because these searches also list namesakes, aliases and relatives. Runs use the same check to find your Spokeo listing. WhitePages and FastPeopleSearch still use the older `searchUrl` + `listingPattern`, which takes any profile link on the results page and can mistake a namesake. For everything else, `upec-wipe web-check` is the wider check.
 - Without a city in your config the `verifySearch` brokers are `unverifiable`. A results page with no result cards and no "no results" message, or one that answers with an HTTP error, is also `unverifiable`, never "clear": the site may have changed.
 - Most broker searches show a bot check. Run `upec-wipe verify --assist` at the computer and complete each check in the browser window; without `--assist` a bot check makes that broker `unverifiable`.
 - To add a broker's search, survey its result page with the dummy person: `ASSIST=1 node scripts/inspect-search-results.js` (read-only, writes to `logs/search-survey/`).
@@ -87,12 +87,13 @@ A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
 ## Search-engine monitoring
 
-`upec-wipe serp-watch --assist` searches DuckDuckGo and Google for `"<your full name>" "<city>, <state>"` and lists every known broker site in the results (the explicit brokers and the catalog sites), marking the ones new since the last scan in `data/serp-history.json`. It sends your full name and city to those search engines, through the VPN, and runs only when you start it.
+`upec-wipe web-check --assist` searches DuckDuckGo and Google for `"<your full name>" "<city>, <state>"` and lists every known broker site in the results (the explicit brokers and the catalog sites), marking the ones new since the last scan in `data/serp-history.json`. It sends your full name and city to those search engines, through the VPN, and runs only when you start it.
 
 - Run it at the computer: both engines show a bot check or draw no results for a hidden browser, so it needs a visible browser window, and `--assist` lets you complete Google's check.
 - An engine it cannot read (an error page, a bot check, or a page whose results it cannot find) is reported as not read, never as "nothing found". When no engine could be read it says "Nothing was checked" and exits 1. Sites are listed as no longer showing your name only when every engine was read.
 - It only recognises known broker sites. A people-search site that is in neither list is not flagged.
 - Bing was dropped on 2026-10-15: it served this browser results unrelated to the query.
+- It was called `serp-watch` until 2026-10-15; the old name now says to use `web-check`.
 
 ---
 
@@ -278,12 +279,12 @@ Each prints one line saying it was removed and exits without doing anything.
 | `know` | It cited California law (CCPA) for every non-EU member, which does not apply to Utah residents, and sent your phone number. | The email requests (`run --email`) ask for deletion under Utah law. |
 | `complaints` | Same California-law problem: it drafted complaints to the wrong regulator. | File with the Utah Division of Consumer Protection yourself if a broker ignores a request. |
 | `breach` | It sent your real email to Have I Been Pwned and needed a paid key. | Check haveibeenpwned.com yourself. |
-| `score` | Built mostly from the breach check. | `verify` and `serp-watch`. |
+| `score` | Built mostly from the breach check. | `verify` and `web-check`. |
 | `report` | A PDF of the score. | `list` and `verify`. |
 | `freeze` | A checklist that sent nothing. | The manual's "Credit and identity freezes" section. |
 | `snapshot` | Saved screenshots of forms with your details. | Nothing. |
 | `confirm-emails` | Clicked links from exported emails unattended. | Click confirmation links yourself. |
-| `serp` | `serp-watch` does the same search and lists what is new. | `serp-watch`. |
+| `serp` | `web-check` does the same search and lists what is new. | `web-check`. |
 | `dashboard` | Could not run the email step or log replies, and was the largest attack surface. | The CLI. |
 | `update-brokers` | Maintainer work since the generic pass was retired. | `node scripts/update-catalog-sources.js`. |
 

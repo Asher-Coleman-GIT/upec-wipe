@@ -65,8 +65,8 @@ test('resolveCommand: pending maps to watcher.js --pending', () => {
 });
 
 test('resolveCommand: a hyphenated subcommand passes through extra args', () => {
-  const r = resolveCommand(['serp-watch', '--only', 'Spokeo']);
-  assert.deepEqual(r.args, ['watcher.js', '--serp-watch', '--only', 'Spokeo']);
+  const r = resolveCommand(['web-check', '--only', 'Spokeo']);
+  assert.deepEqual(r.args, ['watcher.js', '--web-check', '--only', 'Spokeo']);
 });
 
 test('resolveCommand: extra args are passed through after the mapped flags', () => {
@@ -87,7 +87,7 @@ test('resolveCommand: unknown command fails and falls back to help', () => {
 });
 
 test('COMMANDS lists every public subcommand with a description', () => {
-  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'manual', 'done', 'serp-watch', 'list', 'reply', 'doctor'];
+  const expected = ['setup', 'run', 'preview', 'verify', 'pending', 'manual', 'done', 'web-check', 'list', 'reply', 'doctor'];
   for (const name of expected) {
     assert.ok(COMMANDS[name], `COMMANDS must include ${name}`);
     assert.equal(typeof COMMANDS[name].desc, 'string');
@@ -98,13 +98,13 @@ test('COMMANDS lists every public subcommand with a description', () => {
 test('buildHelp renders the program name and every subcommand', () => {
   const help = buildHelp();
   assert.match(help, /upec-wipe/);
-  for (const name of ['setup', 'run', 'preview', 'verify', 'serp-watch', 'reply', 'doctor']) {
+  for (const name of ['setup', 'run', 'preview', 'verify', 'web-check', 'reply', 'doctor']) {
     assert.match(help, new RegExp(`\\b${name}\\b`), `help must mention ${name}`);
   }
 });
 
-test('L9: the serp-watch description does not promise email or alerts', () => {
-  assert.equal(COMMANDS['serp-watch'].desc, 'Scan and list domains where your name newly appears');
+test('L9: the web-check description does not promise email or alerts', () => {
+  assert.equal(COMMANDS['web-check'].desc, 'Search DuckDuckGo and Google for your name and list the broker sites that show it');
   assert.doesNotMatch(buildHelp(), /alert|email report/i);
 });
 

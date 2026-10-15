@@ -27,7 +27,8 @@ const FLAGS = {
   '--freeze-clear': /^--freeze-clear was removed: the freeze checklist is in docs\/UPEC-MANUAL\.md\.$/m,
   '--snapshot': /^--snapshot was removed: it saved screenshots of forms with your details\. See docs\/REFERENCE\.md\.$/m,
   '--confirm-emails': /^--confirm-emails was removed: click confirmation links yourself\. See docs\/REFERENCE\.md\.$/m,
-  '--serp-scan': /^--serp-scan was removed: use upec-wipe serp-watch\.$/m,
+  '--serp-scan': /^--serp-scan was removed: use upec-wipe web-check\.$/m,
+  '--serp-watch': /^--serp-watch was renamed: use upec-wipe web-check\.$/m,
   '--update-brokers': /^--update-brokers moved: run node scripts\/update-catalog-sources\.js\.$/m,
   '--right-to-know': /^--right-to-know was removed with the know command\. See docs\/REFERENCE\.md\.$/m,
   '--generic': /^The generic pass was retired: its sites are in the reviewed catalog \(data\/catalog\/\)\. Remove --generic\.$/m,
@@ -59,7 +60,8 @@ const COMMANDS = {
   score: /^score was removed: the exposure score depended on the breach check\. See docs\/REFERENCE\.md\.$/m,
   report: /^report was removed: the exposure score depended on the breach check\. See docs\/REFERENCE\.md\.$/m,
   freeze: /^freeze was removed: the freeze checklist is in docs\/UPEC-MANUAL\.md\.$/m,
-  serp: /^serp was removed: use upec-wipe serp-watch\.$/m,
+  serp: /^serp was removed: use upec-wipe web-check\.$/m,
+  'serp-watch': /^serp-watch was renamed: use upec-wipe web-check\.$/m,
   dashboard: /^dashboard was removed: use the CLI; see docs\/REFERENCE\.md\.$/m,
   'update-brokers': /^update-brokers moved: run node scripts\/update-catalog-sources\.js\.$/m,
   // 2026-10-15: it rewrites tracked data/catalog files, which would leave a
@@ -131,11 +133,12 @@ test('dispatch and the CLI map know only the kept modes', () => {
     assert.doesNotMatch(help, new RegExp(`^\\s+${c}\\s`, 'm'), c);
   }
   assert.doesNotMatch(help, /^\s+serp\s/m);
-  assert.match(help, /^\s+serp-watch\s/m);
+  assert.doesNotMatch(help, /^\s+serp-watch\s/m);
+  assert.match(help, /^\s+web-check\s/m);
   assert.doesNotMatch(help, /--right-to-know/);
 });
 
-test('serp-watch still runs and the serp scan block is gone', () => {
+test('web-check still runs and the serp scan block is gone', () => {
   const src = fs.readFileSync(path.join(ROOT, 'lib', 'modes', 'run.js'), 'utf8');
   assert.match(src, /require\('\.\.\/serp-watch'\)/);
   assert.doesNotMatch(src, /SERP_SCAN|runSerpScan|SNAPSHOT/);
