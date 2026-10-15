@@ -214,3 +214,22 @@ test('extractFailedBrokers reads the real run-log shape written by logResult ({ 
   assert.ok(names.has('Radaris'));
   assert.equal(names.has('Spokeo'), false);
 });
+
+// 2026-10-15: names that match nothing must stop a run, not run an empty one.
+test('unknownNames lists --only names that match nothing, with a suggestion', () => {
+  const { unknownNames } = require('../lib/filter');
+  const known = ['Data Partners', 'Pop Acta Media', 'Wiland', 'Spokeo'];
+  assert.deepEqual(unknownNames('Wiland,Data Part,ners,spokeo', known), [
+    { name: 'Data Part', suggestion: 'Data Partners' },
+    { name: 'ners', suggestion: null },
+    { name: 'spokeo', suggestion: 'Spokeo' },
+  ]);
+  assert.deepEqual(unknownNames('Wiland,Spokeo', known), []);
+});
+
+test('a forms run checks --only names before the browser opens', () => {
+  const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'lib', 'modes', 'run.js'), 'utf8');
+  const check = src.indexOf('unknownNames(ONLY_ARG');
+  assert.ok(check > 0, 'run.js checks the --only names');
+  assert.ok(check < src.indexOf('openBrowserSession('), 'before any browser starts');
+});

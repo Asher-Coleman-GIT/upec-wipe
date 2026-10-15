@@ -68,3 +68,13 @@ test('a retired flag keeps its own message', () => {
   assert.equal(r.status, 1);
   assert.match(out, /generic pass was retired/);
 });
+
+// 2026-10-15: `run --only --assist "A,B"` took "--assist" as the list, matched
+// nothing and ran an empty pass; the real list was ignored.
+test('a value flag followed by another flag, or by nothing, is refused', () => {
+  assert.match(checkUnknownFlags(argv('--only', '--assist', 'Adstra,Wiland')), /^--only needs a value right after it/);
+  assert.match(checkUnknownFlags(argv('--assist', '--only')), /^--only needs a value right after it/);
+  assert.match(checkUnknownFlags(argv('--skip', '--preview')), /^--skip needs a value/);
+  assert.match(checkUnknownFlags(argv('--read-email', '--since')), /^--since needs a value/);
+  assert.equal(checkUnknownFlags(argv('--assist', '--only', 'Adstra,Wiland')), null);
+});
