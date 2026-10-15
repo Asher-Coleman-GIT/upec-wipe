@@ -437,13 +437,6 @@ function buildBrokers(person) {
   },
 
   {
-    name: 'Spokeo (email)',
-    method: 'email',
-    emailTo: 'privacy@spokeo.com',
-    priority: 2,
-  },
-
-  {
     name: 'Epsilon',
     method: 'manual',
     optOutUrl: 'https://legal.epsilon.com/dsr',

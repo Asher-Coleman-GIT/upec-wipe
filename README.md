@@ -69,7 +69,7 @@ Useful options: `--only <broker>`, `--skip <broker>`, `--resume`, `--retry-faile
 
 | Source | Count | What it is |
 | --- | --- | --- |
-| **Explicit brokers** (`brokers.js`) | 32 | Spokeo, WhitePages, MyLife, PeopleConnect and others, with hand-mapped selectors. [STATUS.md](STATUS.md) has the per-broker table. |
+| **Explicit brokers** (`brokers.js`) | 31 | Spokeo, WhitePages, MyLife, PeopleConnect and others, with hand-mapped selectors. [STATUS.md](STATUS.md) has the per-broker table. |
 | **Reviewed catalog** (`data/catalog/`) | about 640 | Every site from the public broker lists, surveyed and reviewed: people-search sites as automatic forms, manual links or exclusions; dead, blocked and non-consumer sites recorded so they are not visited. |
 | **Email requests** (`run --email`) | 67 | 65 catalog business brokers whose policy gives a Utah right (62) or honors every US resident (3), plus Pipl and Spokeo's email channel. Each gets an opt-out of sale and targeted ads plus a deletion request under the Utah Consumer Privacy Act, sent from your dedicated mailbox. |
 
@@ -84,7 +84,7 @@ upec-wipe/
 ├── lib/modes/            one file per mode (run, reply, list, doctor, clear, ...)
 ├── lib/                  shared engine: browser, forms, egress check, relay, email step,
 │                         catalog, state, redaction, CAPTCHA
-├── brokers.js            the 32 explicit brokers
+├── brokers.js            the 31 explicit brokers
 ├── data/catalog/         one reviewed record per site (tokens only, never real values)
 ├── setup.js              interactive setup
 ├── scripts/              catalog survey and review tools, upstream review, hardening

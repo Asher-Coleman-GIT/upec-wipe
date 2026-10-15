@@ -22,7 +22,7 @@
 - **Confidence** - `failed` means a real run did not get the request in. `submitted` means a real run's form was accepted but the final step (such as a confirmation email) is still open. `surveyed 2026-10` means the selectors were read from the live opt-out page on 2026-10-10 (no submit). `verified` means the selectors / flow have been manually confirmed against the live site. `untested` means the entry exists but has not been hand-verified end-to-end and depends on the broker not having changed its DOM.
 - **US-only** - site indexes US public records / voter data / phone directories; automatically skipped for non-US users.
 
-**This list covers the 32 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `upec-wipe verify` to spot-check whether opt-outs are still in effect.
+**This list covers the 31 explicit brokers in `brokers.js` only.** Sites from the public broker lists are in the reviewed catalog (`data/catalog/`); see docs/CATALOG-REVIEW.md. Run `upec-wipe verify` to spot-check whether opt-outs are still in effect.
 
 ---
 
@@ -55,7 +55,6 @@
 | ZoomInfo | manual | n/a | manual | no |
 | Clearbit | manual | n/a | manual | no |
 | Addresses.com | manual | n/a | manual | no |
-| Spokeo (email) | email | n/a | untested | no |
 | Epsilon | manual | n/a | manual | no |
 | OptOutPrescreen (credit bureaus) | manual | n/a | manual | yes |
 | DataAxle | manual | - | surveyed 2026-10-11 (old box was a newsletter signup) | no |

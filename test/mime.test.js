@@ -12,7 +12,7 @@ test('headers: folded lines and encoded-word subjects are decoded', () => {
   const m = parseMessage(raw('From: "Privacy Team" <privacy@broker.example>\nSubject: =?UTF-8?B?Q29uZmlybWF0aW9uOiBkb25l?=\n =?UTF-8?Q?_=E2=80=93_thanks?=\nDate: Thu, 15 Oct 2026 10:00:00 +0000\n\nHello'));
   assert.equal(m.from, '"Privacy Team" <privacy@broker.example>');
   assert.equal(m.fromAddress, 'privacy@broker.example');
-  assert.equal(m.subject, 'Confirmation: done – thanks');
+  assert.equal(m.subject, 'Confirmation: done \u2013 thanks');
   assert.equal(m.date.toISOString(), '2026-10-15T10:00:00.000Z');
   assert.equal(m.text, 'Hello');
 });
@@ -26,7 +26,7 @@ test('multipart/alternative with quoted-printable text and base64 html', () => {
     '--b1', 'Content-Type: text/html; charset=utf-8', 'Content-Transfer-Encoding: base64', '', html,
     '--b1--', '',
   ].join('\n')));
-  assert.equal(m.text.trim(), 'Dear Jane, your request has been completed — thank you.');
+  assert.equal(m.text.trim(), 'Dear Jane, your request has been completed \u2014 thank you.');
   assert.match(m.html, /has been completed/);
   assert.deepEqual(m.links, ['https://broker.example/privacy?x=1']);
 });

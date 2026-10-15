@@ -42,14 +42,14 @@
   "fingerprint": "0f002c1d2c0d5398635e91c14dbab91d4d97aa34843150586a08a3aefe88b0db"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacy@thedatatrust.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://thedatatrust.com/your-privacy-choices/",
+  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the Consumer Privacy Request Form",
   "basis": {
    "kind": "utah",
    "quote": "Additional State Privacy Rights Eligible residents of states in which there is a comprehensive privacy law in effect, including, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah,",
    "url": "https://thedatatrust.com/privacy-policy/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }

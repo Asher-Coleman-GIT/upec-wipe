@@ -39,14 +39,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacy@eltoro.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://eltoro.com/do-not-sell-my-personal-information/",
+  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the opt-out form, then the deletion form at https://eltoro.com/access-deletion-form/",
   "basis": {
    "kind": "all-us",
    "quote": "EL TORO allows all US residents to opt-out of the “sale” or “share” of their personal information or limit the use of certain “sensitive personal information,” as defined by the California Consumer Privacy Act (“CCPA”); Colorado Privacy Act (“CPA”); Connecticut Data Privacy Act (“CTDPA”); Delaware P",
    "url": "https://eltoro.com/privacy-policy/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }

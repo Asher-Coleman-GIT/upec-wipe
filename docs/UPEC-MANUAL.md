@@ -2,7 +2,7 @@
 
 ## What this does
 
-Data brokers are companies that collect and sell your name, address and phone number. When you run it (about once a month), this tool works through 32 of the biggest (Spokeo, Whitepages, MyLife, PeopleConnect and others) and the reviewed sites in its catalog: it finds your listing and files the opt-out form for you. Brokers that take requests only by email get one from a separate step, if you set it up (see Email requests). Sites that need something the tool cannot do go on a list for you to finish by hand.
+Data brokers are companies that collect and sell your name, address and phone number. When you run it (about once a month), this tool works through 31 of the biggest (Spokeo, Whitepages, MyLife, PeopleConnect and others) and the reviewed sites in its catalog: it finds your listing and files the opt-out form for you. Brokers that take requests only by email get one from a separate step, if you set it up (see Email requests). Sites that need something the tool cannot do go on a list for you to finish by hand.
 
 It is set up here so that brokers see a throwaway email address and a VPN address instead of your real ones:
 

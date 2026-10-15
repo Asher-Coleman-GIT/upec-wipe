@@ -29,14 +29,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacy@messagedigital.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://messagedigital.com/my-data",
+  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the Privacy Request form (or call +1 (888) 980-3207)",
   "basis": {
    "kind": "utah",
    "quote": "If you are a resident of California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, Iowa, Delaware, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, Maryland, Indiana, Kentucky, Rhode Island, or another U.S.",
    "url": "https://messagedigital.com/privacy-policy"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }

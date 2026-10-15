@@ -74,14 +74,14 @@
   "fingerprint": "89bc305715568e20e70ec005da5f3c2a4b3631ca310e371a8c19572ec66bec3c"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "legal@popacta.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://optout.popacta.com/contact-us",
+  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the online opt-out form",
   "basis": {
    "kind": "utah",
    "quote": "Additional Privacy Rights If you are a resident of California, Colorado, Connecticut, Montana, Oregon, Texas, Utah, or Virginia, you may have additional rights to access and control your Personal Information.",
    "url": "https://popacta.com/privacy-policy"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }

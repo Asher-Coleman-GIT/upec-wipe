@@ -35,14 +35,14 @@
   "fingerprint": "3f9c177151be89e8ef3c25a68aa3b023806f944811bccf59f4d2174bea5c09b5"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacy@catalist.us",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://catalist.us/your-privacy-choices/",
+  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the Privacy Request Form",
   "basis": {
    "kind": "utah",
    "quote": "Residents of California, Colorado, Utah, Oregon, Montana, Delaware, Iowa, Nebraska, New Hampshire, New Jersey, Tennessee, Maryland, Indiana, Kentucky, and Rhode Island are entitled to additional rights as detailed under Your Privacy Choices.",
    "url": "https://catalist.us/privacy-policy/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }

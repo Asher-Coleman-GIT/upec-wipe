@@ -41,14 +41,14 @@
   "fingerprint": "ab2eeb615776b4b5c95346e4b4f7955d8a8b760b32c03ae62c0f23c3d3bead57"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "jhenson@thedatagroup.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://thedatagroup.com/privacy/consumer-optout-request-form/",
+  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the Consumer Privacy Request Form (it says it only processes data for clients)",
   "basis": {
    "kind": "utah",
    "quote": "22.4 Utah Residents - Utah Consumer Privacy Act (UCPA) Utah residents have the following rights under the UCPA: Right to Access Right to Correct Right to Delete Right to Opt-Out of targeted advertising and sale of personal data Right to Data Portability Right to Non-Discrimination To exercise your r",
    "url": "https://thedatagroup.com/privacy/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }
