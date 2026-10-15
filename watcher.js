@@ -39,6 +39,14 @@ if (process.argv.includes('--install-scheduler')) {
   process.exit(1);
 }
 
+// Any other unknown flag refuses too: ignored, a typo like --emial started a
+// real web-form run.
+const unknown = require('./lib/cli-flags').checkUnknownFlags(process.argv);
+if (unknown) {
+  console.error(unknown);
+  process.exit(1);
+}
+
 const flags = parseWatcherFlags(process.argv);
 if (flags.EMAIL && flags.VERIFY) {
   console.error('--email cannot be combined with --verify.');
