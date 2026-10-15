@@ -87,7 +87,12 @@ A dated report is saved to `logs/verify-YYYY-MM-DD.json`.
 
 ## Search-engine monitoring
 
-`upec-wipe serp-watch` searches DuckDuckGo, Bing and Google for `"<your full name>" "<city>, <state>"`, compares the broker domains that rank with the previous snapshot in `data/serp-history.json`, and lists domains where your name is new. It sends your full name and city to those search engines, through the VPN, and runs only when you start it.
+`upec-wipe serp-watch --assist` searches DuckDuckGo and Google for `"<your full name>" "<city>, <state>"` and lists every known broker site in the results (the explicit brokers and the catalog sites), marking the ones new since the last scan in `data/serp-history.json`. It sends your full name and city to those search engines, through the VPN, and runs only when you start it.
+
+- Run it at the computer: both engines show a bot check or draw no results for a hidden browser, so it needs a visible browser window, and `--assist` lets you complete Google's check.
+- An engine it cannot read (an error page, a bot check, or a page whose results it cannot find) is reported as not read, never as "nothing found". When no engine could be read it says "Nothing was checked" and exits 1. Sites are listed as no longer showing your name only when every engine was read.
+- It only recognises known broker sites. A people-search site that is in neither list is not flagged.
+- Bing was dropped on 2026-10-15: it served this browser results unrelated to the query.
 
 ---
 

@@ -24,7 +24,7 @@ What each layer does and does not protect: [THREAT-MODEL.md](docs/THREAT-MODEL.m
 2. **Click the confirmation emails** that arrive at your alias, and **finish the manual sites**. `upec-wipe pending` lists the brokers waiting for a click; `upec-wipe manual` lists the sites to do by hand, with their links. Mark each one finished with `upec-wipe done "<name>"`.
 3. **Send the email requests** (when set up): `upec-wipe preview --email` shows every email and the policy sentence that gives you the right; `upec-wipe run --email` sends them. Brokers that take requests only by email get an opt-out of sale and targeted ads plus a deletion request.
 4. **Log the replies**: `upec-wipe reply <broker> honored|refused|verify|none|bounced`.
-5. **Check you are gone**, every few months. `verify --assist` re-checks the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); `serp-watch` searches the web for your name and flags any broker site, including ones the tool does not know. Brokers add people back, so repeat the run monthly.
+5. **Check you are gone**, every few months. `verify --assist` re-checks the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); `serp-watch --assist` searches DuckDuckGo and Google for your name and lists the known broker sites that show it. Brokers add people back, so repeat the run monthly.
 
 ## Quick start
 
@@ -56,7 +56,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `reply` | Logs a broker's reply to an email request |
 | `verify` | Re-searches the 4 searchable brokers and reports whether you still appear |
 | `list` | Lists brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status |
-| `serp-watch` | Searches for your name on search engines and lists new domains since last time |
+| `serp-watch` | Searches DuckDuckGo and Google for your name and lists the known broker sites that show it |
 | `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
 | `clear` | Deletes your setup (config and passphrase); keeps history |
 | `clear-all` | Deletes everything UPEC-WIPE saved on this computer |

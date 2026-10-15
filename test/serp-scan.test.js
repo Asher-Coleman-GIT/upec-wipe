@@ -5,9 +5,7 @@
  * No live network. No real browser.
  *
  * Tested behaviours:
- *  1. parseSerp('ddg', html)    - extracts ranked URLs from DuckDuckGo HTML
- *  2. parseSerp('bing', html)   - extracts ranked URLs from Bing HTML
- *  3. parseSerp('google', html) - extracts ranked URLs from Google HTML
+ *  1-3. parseSerp per engine: see test/serp-engines.test.js
  *  4. hostnameOf(url)           - strips www prefix, handles edge cases
  *  5. matchBrokers(...)         - returns intersection of serp + broker hostnames
  *  6. buildQuery(person)        - builds the quoted search string
@@ -48,130 +46,12 @@ const {
 
 // ─── HTML fixtures ──────────────────────────────────────────────────────────
 
-const DDG_HTML = `
-<html><body>
-<div class="result">
-  <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane-Doe%2FAustin-TX">Spokeo</a>
-</div>
-<div class="result">
-  <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.whitepages.com%2Fpeople%2Fjane-doe">WhitePages</a>
-</div>
-<div class="result">
-  <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.example.com%2F">Other</a>
-</div>
-</body></html>
-`;
 
-const BING_HTML = `
-<html><body>
-<ol id="b_results">
-  <li class="b_algo"><h2><a href="https://www.radaris.com/p/Jane/Doe/">Radaris</a></h2></li>
-  <li class="b_algo"><h2><a href="https://www.truepeoplesearch.com/results?name=jane+doe">TPS</a></h2></li>
-  <li class="b_algo"><h2><a href="https://unrelated.com/page">Unrelated</a></h2></li>
-</ol>
-</body></html>
-`;
 
-const GOOGLE_HTML = `
-<html><body>
-<div class="g"><a href="https://www.beenverified.com/people/jane-doe">BeenVerified</a></div>
-<div class="g"><a href="/url?q=https://peoplefinders.com/jane-doe">PeopleFinders redirect</a></div>
-<div class="g"><a href="https://www.google.com/search?q=related">Google internal - skip</a></div>
-<div class="g"><a href="https://news.ycombinator.com/item?id=123">HN</a></div>
-</body></html>
-`;
 
 // ─── parseSerp: DDG ─────────────────────────────────────────────────────────
 
-test('parseSerp ddg extracts decoded URLs from uddg param', () => {
-  const results = parseSerp('ddg', DDG_HTML);
-  assert.ok(Array.isArray(results), 'should return an array');
-  assert.ok(results.length >= 2, 'should extract at least 2 results');
-  assert.ok(results.some(r => r.url.includes('spokeo.com')), 'should include spokeo');
-  assert.ok(results.some(r => r.url.includes('whitepages.com')), 'should include whitepages');
-});
-
-test('parseSerp ddg assigns 1-based rank', () => {
-  const results = parseSerp('ddg', DDG_HTML);
-  assert.equal(results[0].rank, 1);
-  assert.equal(results[1].rank, 2);
-});
-
-test('parseSerp ddg sets engine to ddg', () => {
-  const results = parseSerp('ddg', DDG_HTML);
-  assert.ok(results.every(r => r.engine === 'ddg'));
-});
-
-test('parseSerp ddg falls back to href when no uddg param', () => {
-  const html = `<a class="result__a" href="https://direct.example.com/page">Direct</a>`;
-  const results = parseSerp('ddg', html);
-  assert.equal(results.length, 1);
-  assert.equal(results[0].url, 'https://direct.example.com/page');
-});
-
-test('parseSerp ddg returns empty array for empty html', () => {
-  const results = parseSerp('ddg', '<html></html>');
-  assert.deepEqual(results, []);
-});
-
-// ─── parseSerp: Bing ─────────────────────────────────────────────────────────
-
-test('parseSerp bing extracts URLs from li.b_algo h2 a', () => {
-  const results = parseSerp('bing', BING_HTML);
-  assert.ok(results.length >= 2);
-  assert.ok(results.some(r => r.url.includes('radaris.com')));
-  assert.ok(results.some(r => r.url.includes('truepeoplesearch.com')));
-});
-
-test('parseSerp bing assigns 1-based rank', () => {
-  const results = parseSerp('bing', BING_HTML);
-  assert.equal(results[0].rank, 1);
-  assert.equal(results[1].rank, 2);
-});
-
-test('parseSerp bing sets engine to bing', () => {
-  const results = parseSerp('bing', BING_HTML);
-  assert.ok(results.every(r => r.engine === 'bing'));
-});
-
-test('parseSerp bing returns empty array for empty html', () => {
-  const results = parseSerp('bing', '<html></html>');
-  assert.deepEqual(results, []);
-});
-
-// ─── parseSerp: Google ───────────────────────────────────────────────────────
-
-test('parseSerp google extracts URLs from div.g a[href]', () => {
-  const results = parseSerp('google', GOOGLE_HTML);
-  assert.ok(results.length >= 1);
-  assert.ok(results.some(r => r.url.includes('beenverified.com')));
-});
-
-test('parseSerp google skips internal google.com links', () => {
-  const results = parseSerp('google', GOOGLE_HTML);
-  assert.ok(!results.some(r => r.url.includes('google.com/search')));
-});
-
-test('parseSerp google assigns 1-based rank', () => {
-  const results = parseSerp('google', GOOGLE_HTML);
-  assert.equal(results[0].rank, 1);
-});
-
-test('parseSerp google sets engine to google', () => {
-  const results = parseSerp('google', GOOGLE_HTML);
-  assert.ok(results.every(r => r.engine === 'google'));
-});
-
-test('parseSerp google returns empty array for empty html', () => {
-  const results = parseSerp('google', '<html></html>');
-  assert.deepEqual(results, []);
-});
-
-test('parseSerp throws on unknown engine', () => {
-  assert.throws(() => parseSerp('yahoo', '<html></html>'), /unknown engine/i);
-});
-
-// ─── hostnameOf ──────────────────────────────────────────────────────────────
+// parseSerp per engine: test/serp-engines.test.js (markup surveyed 2026-10-15).
 
 test('hostnameOf strips www prefix', () => {
   assert.equal(hostnameOf('https://www.spokeo.com/Jane-Doe-xyz'), 'spokeo.com');
@@ -303,13 +183,10 @@ const SAMPLE_PERSONS = [
 test('runSerpScan returns summary with total_brokers_appearing', async () => {
   const context = makeContext({
     'duckduckgo.com': `
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">Spokeo</a>
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Funrelated.com%2F">Other</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">Spokeo</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Funrelated.com%2F">Other</a>
     `,
-    'bing.com': `
-      <li class="b_algo"><h2><a href="https://www.whitepages.com/people/jane">WP</a></h2></li>
-    `,
-    'google.com': `<html></html>`,
+    'google.com': `<cite>https://www.whitepages.com › people</cite>`,
   });
 
   const summary = await runSerpScan(context, SAMPLE_PERSONS, SAMPLE_BROKERS, { _skipWrite: true });
@@ -321,9 +198,8 @@ test('runSerpScan returns summary with total_brokers_appearing', async () => {
 test('runSerpScan identifies broker appearing in DDG results', async () => {
   const context = makeContext({
     'duckduckgo.com': `
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane-Doe">Spokeo</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane-Doe">Spokeo</a>
     `,
-    'bing.com': `<html></html>`,
     'google.com': `<html></html>`,
   });
 
@@ -336,7 +212,6 @@ test('runSerpScan identifies broker appearing in DDG results', async () => {
 test('runSerpScan marks google as blocked when page content is empty/error-like', async () => {
   const context = makeContext({
     'duckduckgo.com': `<html></html>`,
-    'bing.com': `<html></html>`,
     'google.com': `
       <div>Our systems have detected unusual traffic from your computer network.</div>
     `,
@@ -350,25 +225,21 @@ test('runSerpScan marks google as blocked when page content is empty/error-like'
 test('runSerpScan total_brokers_appearing reflects number of unique brokers found', async () => {
   const context = makeContext({
     'duckduckgo.com': `
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S1</a>
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.whitepages.com%2FJane">WP</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S1</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.whitepages.com%2FJane">WP</a>
     `,
-    'bing.com': `
-      <li class="b_algo"><h2><a href="https://radaris.com/p/Jane">Radaris</a></h2></li>
-    `,
-    'google.com': `<html></html>`,
+    'google.com': `<cite>https://radaris.com › p › Jane</cite>`,
   });
 
   const summary = await runSerpScan(context, SAMPLE_PERSONS, SAMPLE_BROKERS, { _skipWrite: true });
   assert.equal(summary.total_brokers_appearing, 3);
 });
 
-test('runSerpScan ranks object has ddg, bing, google keys', async () => {
+test('runSerpScan ranks object has ddg and google keys', async () => {
   const context = makeContext({
     'duckduckgo.com': `
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
     `,
-    'bing.com': `<html></html>`,
     'google.com': `<html></html>`,
   });
 
@@ -376,7 +247,6 @@ test('runSerpScan ranks object has ddg, bing, google keys', async () => {
   const r = summary.results.find(r => r.broker === 'Spokeo');
   if (r) {
     assert.ok('ddg' in r.ranks);
-    assert.ok('bing' in r.ranks);
     assert.ok('google' in r.ranks);
   }
 });
@@ -456,7 +326,7 @@ test('M7: runSerpScan history record does not contain plaintext person name', as
         goto: async (url) => { page._url = url; },
         content: async () => {
           if (page._url && page._url.includes('duckduckgo')) {
-            return `<a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane-Doe">Spokeo</a>`;
+            return `<a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane-Doe">Spokeo</a>`;
           }
           return '<html></html>';
         },
@@ -523,7 +393,7 @@ test('M7: runSerpScan history record does not contain raw query with person name
     newPage: async () => ({
       goto: async () => {},
       content: async () =>
-        `<a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FBob">Spokeo</a>`,
+        `<a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FBob">Spokeo</a>`,
       close: async () => {},
     }),
   };
@@ -553,16 +423,14 @@ test('M7: runSerpScan history record does not contain raw query with person name
 test('runSerpScan null rank means broker not found on that engine', async () => {
   const context = makeContext({
     'duckduckgo.com': `
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
     `,
-    'bing.com': `<html></html>`,
     'google.com': `<html></html>`,
   });
 
   const summary = await runSerpScan(context, SAMPLE_PERSONS, SAMPLE_BROKERS, { _skipWrite: true });
   const r = summary.results.find(r => r.broker === 'Spokeo');
   if (r) {
-    assert.equal(r.ranks.bing, null, 'bing rank should be null when not found');
     assert.equal(r.ranks.google, null, 'google rank should be null when not found');
   }
 });
@@ -662,8 +530,8 @@ test('Fix4: runSerpScan batches history writes - single writeFileSync + rename p
       content: async function() {
         if (this._url && this._url.includes('duckduckgo')) {
           return `
-            <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
-            <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.whitepages.com%2FJane">WP</a>
+            <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
+            <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.whitepages.com%2FJane">WP</a>
           `;
         }
         return '<html></html>';
@@ -733,7 +601,7 @@ test('Fix4: history is capped at HISTORY_MAX entries - older entries are dropped
       goto: async function(url) { this._url = url; },
       content: async function() {
         if (this._url && this._url.includes('duckduckgo')) {
-          return `<a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>`;
+          return `<a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>`;
         }
         return '<html></html>';
       },
@@ -775,9 +643,8 @@ test('Fix4: history is capped at HISTORY_MAX entries - older entries are dropped
 test('runSerpScan summary results include a broker hostname', async () => {
   const context = makeContext({
     'duckduckgo.com': `
-      <a class="result__a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
+      <a data-testid="result-title-a" href="https://duckduckgo.com/?uddg=https%3A%2F%2Fwww.spokeo.com%2FJane">S</a>
     `,
-    'bing.com': `<html></html>`,
     'google.com': `<html></html>`,
   });
 

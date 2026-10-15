@@ -289,7 +289,7 @@ This part is the same for Parts A and B.
    With Docker, use `docker compose run --rm watcher` instead (Docker has no visible window, so no `--assist`).
 
 3. Check your SimpleLogin inbox for "confirm your request" emails and click each link. The tool cannot do this part, so you must.
-4. Every few months, check you are really gone. `node bin/upec-wipe.js verify --assist` re-searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); most show a bot check, which you complete in the browser window. `node bin/upec-wipe.js serp-watch` searches DuckDuckGo, Bing and Google for your name and city and lists any broker site where you are new; it sends your name and city to those search engines.
+4. Every few months, check you are really gone. `node bin/upec-wipe.js verify --assist` re-searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch); most show a bot check, which you complete in the browser window. `node bin/upec-wipe.js serp-watch --assist` searches DuckDuckGo and Google for your name and city and lists every known broker site that shows up, marking new ones; run it at the computer, since it needs a visible browser window. It sends your name and city to those search engines.
 5. See which brokers still need you:
 
    ```
@@ -352,7 +352,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the 6 brokers whose search it can read (Spokeo, USPhonebook, TruePeopleSearch, SmartBackgroundChecks, WhitePages and FastPeopleSearch) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
 | `list` | Lists the brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status; excluded and not-yet-reviewed sites are only counted. | Nothing. |
-| `serp-watch` | Searches DuckDuckGo, Bing and Google for your name and lists sites where it is new since last time. | `"<your full name>" "<city>, <state>"` to those search engines. |
+| `serp-watch` | Searches DuckDuckGo and Google for your name and lists the known broker sites that show it, marking new ones. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `catalog-check` | Re-reads the opt-out pages of reviewed catalog sites and flags any that changed (those then run as manual until reviewed again). Read-only. | Nothing about you: it opens those pages through the Mullvad check. |
 | `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
 | `clear-all` | Deletes everything UPEC-WIPE saved on this computer. | Nothing. |

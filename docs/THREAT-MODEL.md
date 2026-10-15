@@ -21,7 +21,7 @@ This tool submits your identity to dozens of companies on purpose. The goal of t
 - Brokers adding you back later. Opt-outs have to be repeated every month.
 - Your SMTP provider. It sees every email request you send.
 - The SMTP account itself. A broker that receives an opt-out email can see the address of the account it was sent from (`email.smtp.user`), whatever `from` says, because providers such as Gmail rewrite `From` and the account is in the envelope. The relay alias does not hide it. Use a new mailbox made only for this and not linked to you (setup refuses your everyday email), or leave out the `email` block and handle those brokers by hand.
-- Search engines. `upec-wipe serp-watch` searches for your full name with your city and state on DuckDuckGo, Bing and Google, through the VPN.
+- Search engines. `upec-wipe serp-watch` searches for your full name with your city and state on DuckDuckGo and Google, through the VPN.
 - CapSolver. It sees your account and the address of each broker page that showed a CAPTCHA. It gets no images and none of your details. Leave out the key (or use `--no-capsolver`) and those brokers become manual.
 - Mullvad. It sees the traffic leaving its servers, as any VPN does.
 - Installing. `install.sh` and the install steps download from npm, the Playwright CDN, NodeSource and Ubuntu's mirrors. Connect Mullvad first if you do not want those to see your home IP.

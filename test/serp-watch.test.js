@@ -244,3 +244,62 @@ test('runSerpWatch returns the scan summary on the result for callers to print',
   });
   assert.equal(result.summary, summary);
 });
+
+// --- 2026-10-15 review: the report must say what was and was not checked ----
+
+const { formatWatchReport } = require('../lib/serp-watch');
+
+test('runSerpWatch passes --assist and the catalog sites to the scan', async () => {
+  let seen = null;
+  await runSerpWatch({}, [{ firstName: 'Jane', lastName: 'Doe' }], [], {
+    _readHistory: () => [], assist: true, extraBrokers: [{ name: 'x', optOutUrl: 'https://x.example/' }],
+    _runSerpScan: async (_c, _p, _b, o) => { seen = o; return { results: [], read: ['ddg', 'google'], unreadable: [] }; },
+  });
+  assert.equal(seen.assist, true);
+  assert.equal(seen.extraBrokers.length, 1);
+});
+
+test('nothing counts as "gone" when an engine could not be read', async () => {
+  const watch = await runSerpWatch({}, [], [], {
+    _readHistory: () => [{ hostname: 'spokeo.com' }],
+    _runSerpScan: async () => ({ results: [], read: ['ddg'], unreadable: [{ engine: 'google', label: 'Google', reason: 'bot check' }] }),
+  });
+  assert.deepEqual(watch.diff.goneDomains, []);
+  assert.equal(watch.complete, false);
+});
+
+test('the report names every broker site showing the name, marking new ones', () => {
+  const { lines, exitCode } = formatWatchReport({
+    summary: { results: [{ broker: 'Spokeo', hostname: 'spokeo.com' }, { broker: 'Radaris', hostname: 'radaris.com' }], read: ['ddg', 'google'], unreadable: [] },
+    diff: { newDomains: ['radaris.com'], goneDomains: [], stillPresent: ['spokeo.com'] },
+    complete: true,
+  });
+  const out = lines.join('\n');
+  assert.match(out, /radaris\.com \(Radaris\) - NEW/);
+  assert.match(out, /spokeo\.com \(Spokeo\)/);
+  assert.doesNotMatch(out, /spokeo\.com \(Spokeo\) - NEW/);
+  assert.equal(exitCode, 0);
+});
+
+test('the report says which engines could not be read, and never "no broker sites" for them', () => {
+  const { lines, exitCode } = formatWatchReport({
+    summary: { results: [], read: ['ddg'], unreadable: [{ engine: 'google', label: 'Google', reason: 'bot check' }] },
+    diff: { newDomains: [], goneDomains: [], stillPresent: [] },
+    complete: false,
+  });
+  const out = lines.join('\n');
+  assert.match(out, /Google could not be read: bot check/);
+  assert.match(out, /only DuckDuckGo was read/i);
+  assert.equal(exitCode, 0);
+});
+
+test('when no engine could be read the report says nothing was checked, exit 1', () => {
+  const { lines, exitCode } = formatWatchReport({
+    summary: { results: [], read: [], unreadable: [{ engine: 'ddg', label: 'DuckDuckGo', reason: 'HTTP 403' }, { engine: 'google', label: 'Google', reason: 'bot check' }] },
+    diff: { newDomains: [], goneDomains: [], stillPresent: [] },
+    complete: false,
+  });
+  assert.match(lines.join('\n'), /Nothing was checked/);
+  assert.doesNotMatch(lines.join('\n'), /No .*broker/);
+  assert.equal(exitCode, 1);
+});

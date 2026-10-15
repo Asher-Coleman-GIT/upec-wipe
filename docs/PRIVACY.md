@@ -43,7 +43,7 @@ Every connection uses one of three paths.
 | Same brokers | The same search URLs with your name. Forms are filled but not submitted. The alias is your cached one, or the placeholder `preview-alias@relay.invalid`. CapSolver is not called and nothing opens in your everyday browser. | `upec-wipe preview` | Browser |
 | Search-form brokers | Each person's own search URLs, to see if you are still listed. Results are saved to `state.json`. | `upec-wipe verify` | Browser |
 | Sites from the public broker lists outside the catalog | Nothing. The generic pass that filled their forms was retired; a leftover `--generic` or `generic.enabled: true` stops the run. | Never | - |
-| DuckDuckGo, Bing, Google | `"<full name>" "<city>, <state>"` for every person | `upec-wipe serp-watch` | Browser |
+| DuckDuckGo, Google | `"<full name>" "<city>, <state>"` for every person | `upec-wipe serp-watch` | Browser |
 | `am.i.mullvad.net` | Nothing but your IP | Every browser session that visits sites (again every 10 brokers), and before direct connections (again after 5 minutes and before every email) | Browser and direct |
 | `api.ipify.org` | Nothing but your IP: once through the proxy, once direct (this one shows your real IP) | Only when `network.proxy` is set | Browser and direct |
 | SimpleLogin (`app.simplelogin.io`) | Your API key and a neutral note. SimpleLogin already knows your real inbox, because the alias forwards there. | A real run, when no alias is cached yet for that person. `upec-wipe doctor` also sends the key once to check it (account info request; no alias is made, and the reply is discarded). | Direct |
