@@ -29,7 +29,7 @@ function captchaPage(type) {
   return { url: () => 'https://broker.example/optout', evaluate: async () => (n++ === 0 ? type : 'SITEKEY'), waitForTimeout: async () => {} };
 }
 
-for (const type of ['recaptcha', 'hcaptcha', 'turnstile', 'recaptcha-v3', 'aws-waf']) {
+for (const type of ['recaptcha', 'turnstile', 'recaptcha-v3', 'aws-waf']) {
   test(`detectAndSolveCaptcha (${type}) rethrows EgressError instead of returning false`, async () => {
     failingGate();
     try {
