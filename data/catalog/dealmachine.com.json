@@ -25,7 +25,7 @@
   "state": "manual",
   "reviewedAt": "2026-10-15",
   "optOutUrl": "https://privacyrequest.dealmachine.com/remove",
-  "notes": "Replied 2026-10-15 to the email request that it does not take requests by email: use the removal request form; it asks for your name, property address and contact details",
+  "notes": "Refused email requests (2026-10-15). Use the removal request form; it asks for your name, property address and contact details.",
   "basis": {
    "kind": "utah",
    "quote": "Utah’s law does not provide a right to correct inaccurate personal data, does not require opt-in consent before processing sensitive data (notice and an opportunity to opt out applies instead), and does not require us to offer an internal appeal process for denied requests.",
