@@ -55,7 +55,7 @@ Run `npm link` once to type `upec-wipe` instead of `node bin/upec-wipe.js`.
 | `done` | Marks a site finished by hand, or its confirmation link clicked |
 | `reply` | Logs a broker's reply to an email request |
 | `verify` | Re-searches the 4 searchable brokers and reports whether you still appear |
-| `list` | Lists brokers, catalog sites and email requests with their last status |
+| `list` | Lists brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status |
 | `serp-watch` | Searches for your name on search engines and lists new domains since last time |
 | `catalog-check` | Flags reviewed catalog sites whose opt-out page changed |
 | `clear` | Deletes your setup (config and passphrase); keeps history |

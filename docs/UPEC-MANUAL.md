@@ -351,7 +351,7 @@ Run each as `node bin/upec-wipe.js <command>`. "Sends" lists what leaves your co
 | `done` | Marks sites finished: `done "<name>" [...]`. Clears them from `manual` and `pending`; runs skip them for 90 days. | Nothing. |
 | `reply` | Logs a broker's reply to an email request: `reply <broker> honored\|refused\|verify\|none\|bounced`. | Nothing. |
 | `verify` | Searches the 4 brokers whose search it can read (Spokeo, WhitePages, FastPeopleSearch, MyLife) again to see if you are still listed, and saves the result. | Your name in each broker's search page. |
-| `list` | Lists the brokers, catalog sites and email requests with their last status. | Nothing. |
+| `list` | Lists the brokers, the catalog sites you can act on (reviewed or manual) and email requests with their last status; excluded and not-yet-reviewed sites are only counted. | Nothing. |
 | `serp-watch` | Searches DuckDuckGo, Bing and Google for your name and lists sites where it is new since last time. | `"<your full name>" "<city>, <state>"` to those search engines. |
 | `catalog-check` | Re-reads the opt-out pages of reviewed catalog sites and flags any that changed (those then run as manual until reviewed again). Read-only. | Nothing about you: it opens those pages through the Mullvad check. |
 | `clear` | Deletes your setup (config and passphrase); keeps history. | Nothing. |
