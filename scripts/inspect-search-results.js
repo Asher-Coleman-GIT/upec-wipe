@@ -35,35 +35,49 @@ const OUT = process.env.SURVEY_OUT ? path.resolve(process.env.SURVEY_OUT) : path
 const CANDIDATES = {
   TruePeopleSearch: ['https://www.truepeoplesearch.com/results?name=Jane%20Doe&citystatezip=Austin%2C%20TX'],
   FastPeopleSearch: ['https://www.fastpeoplesearch.com/name/jane-doe_austin-tx'],
-  SmartBackgroundChecks: [
-    'https://www.smartbackgroundchecks.com/people/jane-doe/austin/tx',
-    'https://www.smartbackgroundchecks.com/search?firstName=Jane&lastName=Doe&city=Austin&state=TX',
-  ],
+  SmartBackgroundChecks: ['https://www.smartbackgroundchecks.com/people/jane-doe/austin/tx'],
   SearchPeopleFree: ['https://www.searchpeoplefree.com/find/jane-doe/tx/austin'],
   ThatsThem: ['https://thatsthem.com/name/Jane-Doe/Austin-TX'],
   PeopleSearchNow: ['https://www.peoplesearchnow.com/person/jane-doe_austin_tx'],
+  Spokeo: ['https://www.spokeo.com/Jane-Doe/Texas/Austin'],
+  // The brokers.js MyLife search answered 404 on 2026-10-15.
+  MyLife: [
+    'https://www.mylife.com/jane-doe/',
+    'https://www.mylife.com/pub-multisearch.pubview?searchFirstName=Jane&searchLastName=Doe&searchLocation=Austin%2C%20TX',
+    'https://www.mylife.com/',
+  ],
 };
 const DUMMY = { firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', state: 'TX', city: 'Austin', zip: '73301', email: 'jane@example.com', country: 'US' };
 for (const b of require(path.join(ROOT, 'brokers')).forPerson(DUMMY)) {
-  if (b.searchUrl && b.method === 'search-form') CANDIDATES[b.name] = [b.searchUrl];
+  if (b.searchUrl && b.method === 'search-form' && !CANDIDATES[b.name]) CANDIDATES[b.name] = [b.searchUrl];
 }
 
-// In the page: links that name the dummy person, with the elements around them.
+// In the page: result cards that name the dummy person (in a link or only in
+// the card text: some sites link "View Details" or list people under aliases),
+// with the elements around each card's links.
 function describeResults() {
-  const named = (s) => /jane[\s_+-]*(\w+[\s_+-]+)?doe/i.test(s || '');
+  const named = (s) => /jane\b[\s\S]{0,40}?\bdoe\b/i.test(s || '');
   const out = [];
-  const seen = new Set();
+  const cards = new Set();
   for (const a of Array.from(document.querySelectorAll('a[href]'))) {
-    if (seen.has(a.href) || !(named(a.href) || named(a.textContent))) continue;
-    seen.add(a.href);
-    const chain = [];
+    // The smallest ancestor (up to 8 levels) whose text names the person and
+    // looks like one result: short enough not to be the whole list.
+    let card = null;
     let el = a;
     for (let i = 0; i < 8 && el; i++, el = el.parentElement) {
-      chain.push(`${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''}${Array.from(el.classList).map(c => '.' + c).join('')} len=${(el.innerText || '').length}`);
+      const len = (el.innerText || '').length;
+      if (len > 1500) break;
+      if (named(el.innerText) || named(a.href)) { card = el; break; }
     }
-    const card = a.closest('li,article,tr,[class*="card"],[class*="result"],[class*="person"]');
-    out.push({ href: a.href, text: (a.textContent || '').trim().slice(0, 60), chain, card: card ? (card.innerText || '').replace(/\s+/g, ' ').slice(0, 300) : null });
-    if (out.length >= 25) break;
+    if (!card || cards.has(card)) continue;
+    cards.add(card);
+    const chain = [];
+    for (let i = 0, e = a; i < 8 && e; i++, e = e.parentElement) {
+      chain.push(`${e.tagName.toLowerCase()}${e.id ? '#' + e.id : ''}${Array.from(e.classList).slice(0, 4).map(c => '.' + c).join('')} len=${(e.innerText || '').length}`);
+    }
+    const links = Array.from(card.querySelectorAll('a[href]')).slice(0, 6).map(x => ({ href: x.href, text: (x.textContent || '').trim().slice(0, 40), cls: x.className && String(x.className).slice(0, 60) }));
+    out.push({ href: a.href, text: (a.textContent || '').trim().slice(0, 60), chain, card: (card.innerText || '').replace(/\s+/g, ' ').slice(0, 300), links });
+    if (out.length >= 15) break;
   }
   return out;
 }

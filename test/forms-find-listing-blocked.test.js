@@ -28,3 +28,8 @@ test('a navigation failure is rethrown', async () => {
   const p = page(); p.goto = async () => { throw new Error('net::ERR_NAME_NOT_RESOLVED'); };
   await assert.rejects(findListingUrl(p, broker), /ERR_NAME_NOT_RESOLVED/);
 });
+// MyLife, 2026-10-15: its search URL now answers 404 with a normal page. The
+// run read that as "Not listed" and verify would have said "verified clear".
+test('a search page answering 404 throws instead of returning null', async () => {
+  await assert.rejects(findListingUrl(page({ title: 'People Search', text: 'Uh Oh! 404: Page not Found', status: 404 }), broker), /HTTP 404/);
+});

@@ -136,3 +136,9 @@ test('USPhonebook carries a verifySearch built from the person', () => {
   assert.ok(!re.test('https://www.usphonebook.com/mary-jane-doe/UkTNyQjM3EjN5EzR'));
   assert.equal(b.verifySearch.cardSelector, '.ls_contacts-people-finder-wrapper');
 });
+
+test('a verify search page answering 404 throws (unverifiable, never "clear")', async () => {
+  const p = page({ status: 404 });
+  await assert.rejects(searchListing(p, VS_BROKER, PERSON, { ...noSleep, check: async () => null }), /HTTP 404/);
+  assert.equal(p.calls.evaluate, 0);
+});
