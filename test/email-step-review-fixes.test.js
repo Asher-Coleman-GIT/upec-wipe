@@ -24,9 +24,17 @@ test('#1 a connection error stops the run and counts no broker failure', async (
     assert.equal(r.stopped, 'connection');
     assert.deepEqual(state.emailFailures, {});
     assert.equal(r.failed.length, 0);
-    assert.deepEqual(state.emailSent, {});
+    // Review 2026-10-15: the socket can drop after the message was handed over,
+    // so the send stays "unknown" and the next run asks instead of resending.
+    assert.deepEqual(state.emailSent, { Alpha: { to: 'p@alpha.com', at: NOW(), status: 'unknown' } });
   }
   assert.equal(step.classifySmtpError({ code: 'EENVELOPE', responseCode: 553 }), 'broker');
+});
+
+test('a rejection with a server reply clears the unknown record (nothing was accepted)', async () => {
+  const { state, o } = opts(async () => { throw Object.assign(new Error('Daily user sending limit exceeded'), { responseCode: 550 }); });
+  await step.sendEmailPlan(items(), o);
+  assert.equal(state.emailSent.Alpha, undefined);
 });
 
 test('#2 a utah-basis broker is emailed only for a Utah resident; all-us goes to everyone', () => {

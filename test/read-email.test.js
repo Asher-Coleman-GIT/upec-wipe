@@ -151,3 +151,15 @@ test('opt-out and form links come before help-desk links; "already logged" sits 
   await readEmail({}, w.deps);
   assert.match(w.out.join('\n'), /Pipl - honored \(1 message, already logged as honored\)/);
 });
+
+// Review 2026-10-15: one message the parser could not read aborted the whole run.
+test('a message that cannot be parsed is skipped and counted, the rest are read', async () => {
+  const good = msg({ fromAddress: 'privacy@pipl.com', text: 'We did not find any profiles that match.' });
+  const w = world({ messages: ['BROKEN', good], isTTY: false });
+  w.deps.parseMessage = (m) => { if (m === 'BROKEN') throw new RangeError('bad'); return m; };
+  const code = await readEmail({}, w.deps);
+  assert.equal(code, 0);
+  const out = w.out.join('\n');
+  assert.match(out, /Pipl/);
+  assert.match(out, /1 message could not be read/);
+});

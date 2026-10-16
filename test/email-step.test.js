@@ -117,3 +117,24 @@ test('classifySmtpError', () => {
   assert.equal(step.classifySmtpError({ responseCode: 550, message: 'Daily user sending limit exceeded' }), 'quota');
   assert.equal(step.classifySmtpError({ responseCode: 550, message: 'no such user' }), 'broker');
 });
+
+// Review 2026-10-15: "never emailed twice" went by state key only, and the key
+// changes when a second person is added or a catalog name gains a suffix.
+test('plan: an address already emailed under another key is not emailed again', () => {
+  const sentBare = { emailSent: { Acme: { to: 'privacy@acme.com', at: NOW() } } };
+  const J = { ...P, firstName: 'John', fullName: 'John Doe' };
+
+  // A second person added: the first person's send was under the bare name.
+  const two = step.buildEmailPlan({ targets: [T('Acme', 'privacy@acme.com')], brokers: [], persons: [P, J], state: sentBare, from: FROM, maxPerRun: 100 });
+  assert.deepEqual(two.items.map(i => i.key), ['Acme|John Doe'], 'only the person never emailed gets one');
+
+  // A catalog name that gained a domain suffix.
+  const renamed = step.buildEmailPlan({ targets: [T('Acme (acme.com)', 'privacy@acme.com')], brokers: [], persons: [P], state: sentBare, from: FROM, maxPerRun: 100 });
+  assert.deepEqual(renamed.items, []);
+
+  // A send whose outcome is unknown still asks first, under the new name too.
+  const unknown = { emailSent: { Acme: { to: 'privacy@acme.com', at: NOW(), status: 'unknown' } } };
+  const u = step.buildEmailPlan({ targets: [T('Acme (acme.com)', 'privacy@acme.com')], brokers: [], persons: [P], state: unknown, from: FROM, maxPerRun: 100 });
+  assert.deepEqual(u.items, []);
+  assert.equal(u.unknown.length, 1);
+});
