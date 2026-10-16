@@ -24,12 +24,16 @@ if [ -z "$BASE_SHA" ]; then
   exit 64
 fi
 
-# Kept in sync with the tier-1 table in docs/CROSS_MODEL_REVIEW.md and with the
-# TIER1 list in scripts/cross-model-review.sh.
-TIER1_PATTERN='^(lib/(config|secrets|field-resolver|forms|confirm|email|email-step|feeds|serp-scan|scheduler|broker-runner|relay|captcha)\.js|brokers\.js|setup\.js|Dockerfile|docker-compose\.yml)$'
+# The same list scripts/cross-model-review.sh uses (scripts/cross-model-tier1.txt).
+TIER1="$(sed -e '/^#/d' -e '/^[[:space:]]*$/d' "$(dirname "$0")/cross-model-tier1.txt")"
 
-CHANGED="$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" || true)"
-TIER1_TOUCHED="$(printf '%s\n' "$CHANGED" | grep -E "$TIER1_PATTERN" || true)"
+# A failed diff (a base SHA missing from a shallow clone) is not "nothing
+# changed" (review 2026-10-15).
+if ! CHANGED="$(git diff --name-only "$BASE_SHA".."$HEAD_SHA")"; then
+  echo "git diff $BASE_SHA..$HEAD_SHA failed (is the base commit fetched?); cannot tell which files changed." >&2
+  exit 2
+fi
+TIER1_TOUCHED="$(printf '%s\n' "$CHANGED" | grep -Fx -f <(printf '%s\n' "$TIER1") || true)"
 
 if [ -z "$TIER1_TOUCHED" ]; then
   echo "No tier-1 files changed - cross-model review not required."

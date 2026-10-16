@@ -246,7 +246,7 @@ Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no
 
 ### The dead-site list
 
-`data/dead-urls.json` lists hosts the catalog candidate builder skips. It was built from runs of the generic pass, which was retired; nothing a run does today adds to it. Dead sites are now recorded by the catalog survey instead (the `dead` group in `data/catalog/`). `node scripts/prune-dead.js` still merges hosts that were dead in every old `logs/run-*.json` it finds, and running it twice changes nothing.
+`data/dead-urls.json` lists hosts the catalog candidate builder skips. It was built from runs of the generic pass, which was retired; nothing a run does today adds to it. Dead sites are now recorded by the catalog survey instead (the `dead` group in `data/catalog/`).
 
 ### Pulling upstream changes
 

@@ -105,11 +105,10 @@ bash "$(dirname "$0")/cross-model-preflight.sh" || exit $?
 
 # ── Scope ────────────────────────────────────────────────────────────────────
 
-# The modules that touch PII, crypto, subprocesses, or inbound untrusted data.
-# Kept in sync with the tier-1 table in docs/CROSS_MODEL_REVIEW.md.
-TIER1="lib/config.js lib/secrets.js lib/field-resolver.js lib/forms.js
-lib/email.js lib/email-step.js lib/feeds.js lib/relay.js lib/scheduler.js
-lib/broker-runner.js brokers.js setup.js"
+# The modules that touch PII, crypto, subprocesses, or inbound untrusted data:
+# one list, shared with the gate (test/cross-model-tier1.test.js checks it
+# against the tier-1 table in docs/CROSS_MODEL_REVIEW.md).
+TIER1="$(sed -e '/^#/d' -e '/^[[:space:]]*$/d' "$(dirname "$0")/cross-model-tier1.txt")"
 
 if [ -n "$FILES" ]; then
   TARGETS="$(printf '%s' "$FILES" | tr ',' '\n' | sed '/^$/d')"
@@ -133,7 +132,10 @@ else
     echo "git diff against '$BASE' failed; refusing to report a clean review" >&2
     exit 6
   fi
-  TARGETS="$(printf '%s\n' "$CHANGED" | while read -r f; do is_reviewable "$f" && echo "$f"; done)"
+  # `if`, not `is_reviewable && echo`: with the last file not reviewable the
+  # loop ended with status 1 and set -e killed the script silently (exit 1
+  # reads as "a P1"; review 2026-10-15).
+  TARGETS="$(printf '%s\n' "$CHANGED" | while read -r f; do if is_reviewable "$f"; then echo "$f"; fi; done)"
 fi
 
 TARGETS="$(printf '%s\n' "$TARGETS" | sed '/^$/d' | while read -r f; do [ -f "$f" ] && echo "$f"; done || true)"

@@ -71,3 +71,17 @@ test('Innovation Brands stays an email target and notes its verification link', 
   const names = catalogEmailTargets(records, { explicitNames: new Set() }).map(t => t.name);
   assert.ok(names.includes('Innovation Brands'));
 });
+
+// Review 2026-10-15 (low): legal words were stripped anywhere in a name
+// ("Data Co-Op LLC" -> "Data-Op"), and a "|" (the state-key person separator)
+// passed through.
+test('displayName strips legal suffixes only at the end or before a comma or bracket', () => {
+  const { displayName } = require('../lib/catalog');
+  assert.equal(displayName('Data Co-Op LLC', 'x'), 'Data Co-Op');
+  assert.equal(displayName('The Company Store', 'x'), 'The Company Store');
+  assert.equal(displayName('BDO GCI, LLC (f.k.a. BDO USA)', 'x'), 'BDO GCI (f.k.a. BDO USA)');
+  assert.equal(displayName('Acme | Data', 'x'), 'Acme Data');
+  for (const [legal, short] of [['Adstra LLC', 'Adstra'], ['OWMN, LTD.', 'OWMN'], ['Clearview AI, Inc.', 'Clearview AI'], ['33Across, Inc.', '33Across'], ['Inc.', 'x']]) {
+    assert.equal(displayName(legal, 'x'), short, legal);
+  }
+});

@@ -130,14 +130,15 @@ data. Not by line count or churn.
 |---|---|
 | `lib/config.js` | Loads and writes the PII; owns encryption orchestration and all state durability |
 | `lib/secrets.js` | AES-256-GCM + scrypt envelope. Crypto mistakes are silent |
+| `lib/egress.js` | The VPN gate every direct connection passes; a fail-open here sends from the real IP |
 | `lib/field-resolver.js`, `lib/forms.js` | Decide *which* PII value goes into *which* form field on a third-party site |
 | `lib/confirm.js` | Reads attacker-influenced page text to decide whether a broker asked for confirmation |
 | `lib/email.js`, `lib/email-step.js` | Send PII over SMTP |
-| `lib/feeds.js`, `lib/serp-scan.js` | Turn remote registry rows into navigation and submission targets |
-| `lib/scheduler.js` | Writes launchd/systemd/crontab units, historically via a shell |
+| `lib/imap.js`, `lib/mime.js`, `lib/read-email.js` | Log in to the request mailbox and parse untrusted broker mail |
+| `lib/feeds.js`, `lib/catalog.js`, `lib/serp-scan.js` | Turn remote registry rows and catalog records into navigation, submission and email targets |
 | `lib/broker-runner.js`, `brokers.js` | Submit PII to third parties and decide what counts as success |
 | `lib/relay.js`, `lib/captcha.js` | Outbound third-party APIs carrying the email address and API keys |
-| `setup.js` | Writes the PII file and installs the scheduler |
+| `setup.js` | Writes the PII file and reads the secrets |
 | `Dockerfile`, `docker-compose.yml` | The only realistic deployment path for Linux and NAS users |
 
 Tier 2 - Copilot alone is enough: `watcher.js` and `lib/modes/` orchestration,

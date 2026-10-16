@@ -104,3 +104,19 @@ test('search-engine hosts never count as broker sites', async () => {
     { extraBrokers: [{ name: 'Google - Results About You', optOutUrl: 'https://myactivity.google.com/results-about-you' }] });
   assert.deepEqual(s.results, []);
 });
+
+// Review 2026-10-15 (low): with no city the query was `"Jane Doe" "undefined,
+// TX"`; engines found nothing and the report said no broker showed the name.
+test('a person with no city is not searched and nothing reads as a clean result', async () => {
+  const { buildQuery } = require('../lib/serp-scan');
+  assert.equal(buildQuery({ firstName: 'Jane', lastName: 'Doe', state: 'TX' }), null);
+  assert.equal(buildQuery({ firstName: 'Ja"ne', lastName: 'Doe', city: 'Exampleton', state: 'TX' }), '"Jane Doe" "Exampleton, TX"');
+  let opened = 0;
+  const context = { newPage: async () => { opened++; throw new Error('must not search'); } };
+  const log = console.log; console.log = () => {};
+  let summary;
+  try { summary = await runSerpScan(context, [{ firstName: 'Jane', lastName: 'Doe', state: 'TX' }], BROKERS, { _skipWrite: true, _noSleep: true }); } finally { console.log = log; }
+  assert.equal(opened, 0);
+  assert.deepEqual(summary.read, []);
+  assert.match(summary.unreadable.map(u => u.reason).join(' '), /city/);
+});

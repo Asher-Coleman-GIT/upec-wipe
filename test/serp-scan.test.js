@@ -7,7 +7,6 @@
  * Tested behaviours:
  *  1-3. parseSerp per engine: see test/serp-engines.test.js
  *  4. hostnameOf(url)           - strips www prefix, handles edge cases
- *  5. matchBrokers(...)         - returns intersection of serp + broker hostnames
  *  6. buildQuery(person)        - builds the quoted search string
  *  7. hashPerson(...)           - returns stable 64-char hex (sha256)
  *  8. runSerpScan(...)          - orchestrates via injected page stub
@@ -38,7 +37,6 @@ afterEach(() => {
 const {
   parseSerp,
   hostnameOf,
-  matchBrokers,
   buildQuery,
   hashPerson,
   runSerpScan,
@@ -75,31 +73,6 @@ test('hostnameOf returns empty string for invalid url', () => {
 
 test('hostnameOf returns empty string for empty string', () => {
   assert.equal(hostnameOf(''), '');
-});
-
-// ─── matchBrokers ────────────────────────────────────────────────────────────
-
-test('matchBrokers returns intersection of serp and broker hostnames', () => {
-  const serpHostnames = ['spokeo.com', 'whitepages.com', 'linkedin.com'];
-  const brokerHostnames = ['spokeo.com', 'radaris.com', 'whitepages.com'];
-  const matches = matchBrokers(serpHostnames, brokerHostnames);
-  assert.deepEqual(matches.sort(), ['spokeo.com', 'whitepages.com']);
-});
-
-test('matchBrokers returns empty array when no overlap', () => {
-  const matches = matchBrokers(['linkedin.com', 'nytimes.com'], ['spokeo.com', 'radaris.com']);
-  assert.deepEqual(matches, []);
-});
-
-test('matchBrokers returns empty array for empty inputs', () => {
-  assert.deepEqual(matchBrokers([], []), []);
-  assert.deepEqual(matchBrokers(['spokeo.com'], []), []);
-  assert.deepEqual(matchBrokers([], ['spokeo.com']), []);
-});
-
-test('matchBrokers deduplicates results', () => {
-  const matches = matchBrokers(['spokeo.com', 'spokeo.com'], ['spokeo.com']);
-  assert.equal(matches.length, 1);
 });
 
 // ─── buildQuery ──────────────────────────────────────────────────────────────
@@ -252,6 +225,18 @@ test('runSerpScan ranks object has ddg and google keys', async () => {
 });
 
 // ── M7: PII redaction in history + subdomain matching ────────────────────────
+
+// The broker matching web-check uses (buildBrokerHostnameIndex + hostMatchesBase),
+// in the shape of the old matchBrokers helper these cases were written for.
+const { hostMatchesBase } = require('../lib/serp-scan');
+function matchBrokers(serpHostnames, brokerHostnames) {
+  const found = new Set();
+  for (const h of serpHostnames) {
+    const b = brokerHostnames.find(bh => hostMatchesBase(h, bh));
+    if (b) found.add(b);
+  }
+  return [...found];
+}
 
 test('M7: matchBrokers matches privacy.spokeo.com against broker spokeo.com', () => {
   // L6 fix: strip leading subdomains so privacy.spokeo.com matches spokeo.com
@@ -707,4 +692,21 @@ test('L14 polish: a directory or unreadable file at the key path is a clear erro
       assert.throws(() => hashPerson('A', 'a@example.com', { keyPath: locked }), (e) => e.code === 'EACCES');
     }
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});
+
+// Review 2026-10-15 (low): every catalog record counted as a broker site,
+// including excluded shared platforms (zendesk.com, onetrust.com), so a result
+// on some-company.zendesk.com was reported under the wrong company.
+test('web-check counts people-search sites and decided records, not excluded platforms', () => {
+  const { webCheckSites } = require('../lib/serp-scan');
+  const recs = [
+    { domain: 'zendesk.com', name: 'TechTarget, Inc', group: 'business', review: { state: 'excluded' } },
+    { domain: 'onetrust.com', name: 'AnalyticsIQ, Inc.', group: 'business', review: { state: 'unreviewed' } },
+    { domain: 'peoplelookup.example', name: 'People Lookup', group: 'people-search', review: { state: 'excluded' } },
+    { domain: 'formsite.example', name: 'Form Site', group: 'people-search', review: { state: 'reviewed' } },
+    { domain: 'brokerco.example', name: 'Broker Co', group: 'business', review: { state: 'email' } },
+  ];
+  assert.deepEqual(webCheckSites(recs).map(s => s.optOutUrl), [
+    'https://peoplelookup.example/', 'https://formsite.example/', 'https://brokerco.example/',
+  ]);
 });

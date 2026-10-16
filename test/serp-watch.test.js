@@ -8,7 +8,6 @@
  *  1. diffSerpResults(previous, current) - { newDomains, goneDomains, stillPresent }
  *  2. summaryHostnames(summary)          - broker hostnames from a runSerpScan summary
  *  3. historyHostnames(history)          - distinct hostnames from a history array
- *  4. buildAlert(diff, persons)          - concise alert string for new domains
  */
 
 'use strict';
@@ -24,7 +23,6 @@ const {
   diffSerpResults,
   summaryHostnames,
   historyHostnames,
-  buildAlert,
 } = require('../lib/serp-watch');
 
 // --- diffSerpResults ---------------------------------------------------------
@@ -126,28 +124,6 @@ test('historyHostnames returns empty array for empty / non-array input', () => {
 test('historyHostnames skips entries with no hostname', () => {
   const history = [{ hostname: 'spokeo.com' }, { broker: 'X' }, { hostname: '' }];
   assert.deepEqual(historyHostnames(history), ['spokeo.com']);
-});
-
-// --- buildAlert --------------------------------------------------------------
-
-test('buildAlert lists the new domains in a concise string', () => {
-  const persons = [{ firstName: 'Jane', lastName: 'Doe' }];
-  const msg = buildAlert({ newDomains: ['radaris.com', 'spokeo.com'], goneDomains: [], stillPresent: [] }, persons);
-  assert.match(msg, /SERP watch/i);
-  assert.match(msg, /radaris\.com/);
-  assert.match(msg, /spokeo\.com/);
-});
-
-test('buildAlert includes the person name when a single person is watched', () => {
-  const persons = [{ firstName: 'Jane', lastName: 'Doe' }];
-  const msg = buildAlert({ newDomains: ['radaris.com'], goneDomains: [], stillPresent: [] }, persons);
-  assert.match(msg, /Jane Doe/);
-});
-
-test('buildAlert summarises a count when multiple persons are watched', () => {
-  const persons = [{ firstName: 'Jane', lastName: 'Doe' }, { firstName: 'Bob', lastName: 'Smith' }];
-  const msg = buildAlert({ newDomains: ['radaris.com'], goneDomains: [], stillPresent: [] }, persons);
-  assert.match(msg, /2 watched/i);
 });
 
 // --- runSerpWatch orchestrator (deps injected) --------------------------------
@@ -302,4 +278,23 @@ test('when no engine could be read the report says nothing was checked, exit 1',
   assert.match(lines.join('\n'), /Nothing was checked/);
   assert.doesNotMatch(lines.join('\n'), /No .*broker/);
   assert.equal(exitCode, 1);
+});
+
+// Review 2026-10-15 (low): the "previous snapshot" was every host ever seen,
+// so a site gone for months showed as "no longer showing your name" forever
+// and a site that came back was never flagged NEW.
+test('the previous snapshot is the latest scan only', () => {
+  const { previousSnapshotHosts } = require('../lib/serp-watch');
+  const history = [
+    { personId: 'a', hostname: 'oldsite.example', scannedAt: '2026-08-01T10:00:00.000Z' },
+    { personId: 'a', hostname: 'spokeo.com', scannedAt: '2026-10-01T10:00:00.000Z' },
+    { personId: 'b', hostname: 'radaris.com', scannedAt: '2026-10-01T10:00:00.000Z' },
+  ];
+  assert.deepEqual(previousSnapshotHosts(history).sort(), ['radaris.com', 'spokeo.com']);
+  assert.deepEqual(previousSnapshotHosts([]), []);
+});
+
+test('one scan stamps all its history entries with the same time', () => {
+  const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'lib', 'serp-scan.js'), 'utf8');
+  assert.doesNotMatch(src, /scannedAt: new Date\(\)\.toISOString\(\)/);
 });

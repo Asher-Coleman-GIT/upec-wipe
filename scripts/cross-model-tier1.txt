@@ -1,0 +1,26 @@
+# Tier-1 files for the cross-model review policy (docs/CROSS_MODEL_REVIEW.md):
+# the modules that touch PII, crypto, subprocesses, or inbound untrusted data.
+# One path per line. Read by scripts/cross-model-review.sh (--full) and
+# scripts/cross-model-gate.sh; test/cross-model-tier1.test.js keeps the policy
+# table in step with it.
+lib/config.js
+lib/secrets.js
+lib/egress.js
+lib/field-resolver.js
+lib/forms.js
+lib/confirm.js
+lib/email.js
+lib/email-step.js
+lib/imap.js
+lib/mime.js
+lib/read-email.js
+lib/feeds.js
+lib/catalog.js
+lib/serp-scan.js
+lib/broker-runner.js
+brokers.js
+lib/relay.js
+lib/captcha.js
+setup.js
+Dockerfile
+docker-compose.yml

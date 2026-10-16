@@ -9,6 +9,7 @@ state.json.tmp
 state.json.lock
 serp-history.json
 data/serp-history.json
+data/serp-history.json.tmp
 data/feeds-brokers.json
 data/exposure-history.json
 data/exposure-history.json.bak
