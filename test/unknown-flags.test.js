@@ -78,3 +78,27 @@ test('a value flag followed by another flag, or by nothing, is refused', () => {
   assert.match(checkUnknownFlags(argv('--read-email', '--since')), /^--since needs a value/);
   assert.equal(checkUnknownFlags(argv('--assist', '--only', 'Adstra,Wiland')), null);
 });
+
+// Review 2026-10-15: a word that is not a flag was ignored, so `run -h`,
+// `run Spokeo` (forgot --only) or `run -only Spokeo` started a full real run.
+test('a stray word, a single-dash flag or a dash look-alike is refused', () => {
+  assert.match(checkUnknownFlags(argv('Spokeo')), /"Spokeo" is not a flag/);
+  assert.match(checkUnknownFlags(argv('Spokeo')), /--only "Spokeo"/);
+  assert.match(checkUnknownFlags(argv('-only', 'Spokeo')), /did you mean --only\?/);
+  assert.match(checkUnknownFlags(argv('\u2014only', 'Spokeo')), /did you mean --only\?/);
+  assert.match(checkUnknownFlags(argv('-h')), /upec-wipe --help/);
+  assert.match(checkUnknownFlags(argv('--assist', 'Spokeo', '--only', 'Pipl')), /"Spokeo" is not a flag/);
+});
+
+test('words are still accepted where a command takes them', () => {
+  assert.equal(checkUnknownFlags(argv('--allow', 'Spokeo')), null);
+  assert.equal(checkUnknownFlags(argv('--unallow', 'Spokeo')), null);
+  assert.equal(checkUnknownFlags(argv('--since', '2026-10-01', '--read-email')), null);
+  assert.equal(checkUnknownFlags(argv('--done', 'Spokeo', '--only', 'X', 'Pipl')), null);
+});
+
+test('an empty or blank value is refused (an unset shell variable ran every broker)', () => {
+  assert.match(checkUnknownFlags(argv('--only', '')), /--only needs a value/);
+  assert.match(checkUnknownFlags(argv('--skip', '  ')), /--skip needs a value/);
+  assert.match(checkUnknownFlags(argv('--email', '--only', ' , ')), /--only needs a value/);
+});

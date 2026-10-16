@@ -168,3 +168,13 @@ test('recordAttempt stamps lastAttempt and history, never lastSuccess', () => {
   assert.equal(e.lastSuccess, undefined);
   assert.equal(cfg.shouldSkip('BrokerA'), null, 'the next run still searches');
 });
+
+test('getPendingConfirmations finds the broker definition for a per-person key', () => {
+  const { stateFile } = makeTmpState();
+  cfg.setTestStatePath(stateFile);
+  cfg.setDryRun(false);
+  delete cfg.loadState().optOuts['BrokerY|Jane Doe'];
+  cfg.recordPendingConfirmation('BrokerY|Jane Doe', 'check your inbox');
+  const p = cfg.getPendingConfirmations([{ name: 'BrokerY', expectedSender: 'optout@brokery.example' }]).find(e => e.name.startsWith('BrokerY'));
+  assert.equal(p.expectedSender, 'optout@brokery.example');
+});

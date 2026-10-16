@@ -114,3 +114,10 @@ test('findBroker: a legal name with its suffix matches the short catalog name', 
   assert.deepEqual(findBroker(names, 'Adstra LLC'), { name: 'Adstra' });
   assert.deepEqual(findBroker(names, 'DT Client Services, LLC'), { name: 'DT Client Services' });
 });
+
+// Review 2026-10-15: `done` for a broker with no state yet wrote the bare name,
+// which a several-person run never reads (it uses "Broker|First Last").
+test('keysFor falls back to the given per-person keys when the broker has none', () => {
+  assert.deepEqual(keysFor({ optOuts: {} }, 'Z', ['Z|Jane Doe', 'Z|John Doe']), ['Z|Jane Doe', 'Z|John Doe']);
+  assert.deepEqual(keysFor({ optOuts: { 'Z|Jane Doe': {} } }, 'Z', ['Z|Jane Doe', 'Z|John Doe']), ['Z|Jane Doe']);
+});

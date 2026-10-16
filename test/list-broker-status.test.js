@@ -109,3 +109,17 @@ test('upec-wipe list: no email brokers in the broker table, and a Status column'
   assert.doesNotMatch(catalog, /^.{40}manual\b/m);
   assert.match(catalog, /^.{40}do by hand\s+-$/m);
 });
+
+// Review 2026-10-15: with several people, runs write "Broker|First Last" keys;
+// list looked up the bare name and said "never run" after a success.
+test('with several people, list shows one row per person from their keys', () => {
+  const state = { optOuts: {
+    'Spokeo|Jane Doe': { lastSuccess: '2026-10-14T10:00:00Z' },
+    'Spokeo|John Doe': { manual: { since: '2026-10-13T10:00:00Z' } },
+  } };
+  const rows = brokerRows([{ name: 'Spokeo', method: 'search-form' }, { name: 'Pipl', method: 'email' }], state, []);
+  assert.deepEqual(rows, [
+    { name: 'Spokeo (Jane Doe)', status: 'success', date: '2026-10-14' },
+    { name: 'Spokeo (John Doe)', status: 'do by hand', date: '2026-10-13' },
+  ]);
+});

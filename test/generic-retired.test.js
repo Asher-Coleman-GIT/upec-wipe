@@ -83,7 +83,7 @@ test('doctor flags generic.enabled: true and passes without it', async () => {
 test('runDoctor runs the retired-settings check', async () => {
   const src = fs.readFileSync(path.join(ROOT, 'lib', 'doctor.js'), 'utf8');
   assert.match(src, /name: 'retired',\s+run: \(\) => checkRetiredSettings\(cfg, rootDir\)/);
-  assert.match(src, /running 7 checks/);
+  assert.match(src, /running 8 checks/);
 });
 
 test('generic-runner.js is gone and nothing requires it', () => {

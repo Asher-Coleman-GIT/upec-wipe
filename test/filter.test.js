@@ -229,7 +229,7 @@ test('unknownNames lists --only names that match nothing, with a suggestion', ()
 
 test('a forms run checks --only names before the browser opens', () => {
   const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'lib', 'modes', 'run.js'), 'utf8');
-  const check = src.indexOf('unknownNames(ONLY_ARG');
+  const check = src.indexOf('checkRunNames(');
   assert.ok(check > 0, 'run.js checks the --only names');
   assert.ok(check < src.indexOf('openBrowserSession('), 'before any browser starts');
 });

@@ -457,3 +457,39 @@ describe('runDoctor', () => {
     assert.ok(typeof summary.failed  === 'number');
   });
 });
+
+// Review 2026-10-15: doctor passed in three cases where a run would fail.
+describe('doctor review fixes', () => {
+  const { checkEgress } = require('../lib/doctor');
+  const { EgressError } = require('../lib/egress');
+
+  it('fails off the VPN instead of reporting the probes as skipped', async () => {
+    const off = await checkEgress({}, { ensureEgress: async () => { throw new EgressError('not on Mullvad'); } });
+    assert.equal(off.ok, false);
+    assert.match(off.hint, /Mullvad/);
+    const on = await checkEgress({}, { ensureEgress: async () => {} });
+    assert.equal(on.ok, true);
+  });
+
+  it('accepts a persons-only config and checks every person a run uses', async () => {
+    const good = { firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com', zip: '00000' };
+    const dir1 = tmpDir();
+    fs.writeFileSync(path.join(dir1, 'config.json'), JSON.stringify({ persons: [good, { ...good, firstName: 'John' }] }));
+    assert.equal((await checkConfig(dir1)).ok, true);
+
+    const dir2 = tmpDir();
+    fs.writeFileSync(path.join(dir2, 'config.json'), JSON.stringify({ person: good, persons: [good, { firstName: 'John' }] }));
+    const r = await checkConfig(dir2);
+    assert.equal(r.ok, false);
+    assert.match(r.hint, /person 2/);
+  });
+
+  it('reads the state file a run uses (UPEC_WIPE_STATE_PATH)', async () => {
+    const dir = tmpDir();
+    const elsewhere = path.join(tmpDir(), 'custom-state.json');
+    fs.writeFileSync(elsewhere, '{ not json');
+    assert.equal((await checkState(dir, elsewhere)).ok, false);
+    const src = fs.readFileSync(path.join(__dirname, '..', 'lib', 'doctor.js'), 'utf8');
+    assert.match(src, /checkState\(rootDir, opts\.rootDir \? undefined : require\('\.\/config'\)\.STATE_PATH\)/);
+  });
+});
