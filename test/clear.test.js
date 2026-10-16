@@ -358,3 +358,17 @@ test('an unreadable folder shows size unknown instead of crashing', () => {
     } finally { fs.chmodSync(locked, 0o700); }
   } finally { s.cleanup(); }
 });
+
+// Review 2026-10-15 (low): an interrupted write leaves <file>.tmp beside it;
+// config.json.tmp holds the details in plain text.
+test('clear removes interrupted-write leftovers of the config; clear-all also the state backup one', () => {
+  const s = sandbox();
+  try {
+    for (const f of ['config.json.tmp', 'config.json.enc.tmp', 'state.json.bak.tmp', 'data/serp-history.json.tmp']) s.put(f);
+    const clear = planClear({ all: false, root: s.root, home: s.home, env: {} }).remove.map(p => path.relative(s.root, p));
+    assert.ok(clear.includes('config.json.tmp'));
+    assert.ok(clear.includes('config.json.enc.tmp'));
+    const all = planClear({ all: true, root: s.root, home: s.home, env: {} }).remove.map(p => path.relative(s.root, p));
+    for (const f of ['config.json.tmp', 'config.json.enc.tmp', 'state.json.bak.tmp', path.join('data', 'serp-history.json.tmp')]) assert.ok(all.includes(f), f);
+  } finally { s.cleanup(); }
+});

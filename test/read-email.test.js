@@ -163,3 +163,14 @@ test('a message that cannot be parsed is skipped and counted, the rest are read'
   assert.match(out, /Pipl/);
   assert.match(out, /1 message could not be read/);
 });
+
+// Review 2026-10-15 (low): a spam From/Subject can decode to ESC/BEL; printed
+// raw it could retitle or clear the terminal and hide what is shown.
+test('control characters from mail never reach the terminal', async () => {
+  const evil = msg({ fromAddress: 'x@spam.example', from: '\u001b]0;pwned\u0007\u001b[2J <x@spam.example>', subject: 'Hi \u009b31m there\u0000' });
+  const w = world({ messages: [evil], isTTY: false });
+  await readEmail({}, w.deps);
+  const out = w.out.join('\n');
+  assert.doesNotMatch(out, /[\u0000-\u0008\u000b-\u001f\u007f-\u009f]/);
+  assert.match(out, /Hi .*there/);
+});

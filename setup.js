@@ -17,6 +17,7 @@ const fs      = require('fs');
 const path    = require('path');
 const os      = require('os');
 const { createPrompter } = require('./lib/prompt');
+const { isPlaceholderKey } = require('./lib/captcha');
 
 const { encryptConfigToDisk, getPassphrase } = require('./lib/config');
 const { relayConfigured } = require('./lib/relay');
@@ -265,7 +266,10 @@ async function main() {
   console.log('solves them automatically for ~$0.001 each - pennies per month.');
   console.log('Sign up free at https://capsolver.com and paste your API key below.');
   console.log('Leave blank to skip (those sites go to your manual list instead).\n');
-  const capsolverKey = await ask('CapSolver API key', (existing.capsolver||{}).apiKey || '');
+  // Asked without echo; the current key is kept on Enter, never shown.
+  const prevCapKey = (existing.capsolver || {}).apiKey || '';
+  const hasCapKey = Boolean(prevCapKey) && !isPlaceholderKey(prevCapKey);
+  const capsolverKey = (await askSecret(hasCapKey ? 'CapSolver API key (Enter keeps the current one)' : 'CapSolver API key (Enter skips)')) || (hasCapKey ? prevCapKey : '');
 
   // ── SimpleLogin ──────────────────────────────────────────────────────────
   console.log('\n── Email Alias (SimpleLogin) ──────────────────────────────');
@@ -273,7 +277,7 @@ async function main() {
   console.log('Get a key at https://app.simplelogin.io/dashboard/api_key');
   console.log('Nothing is submitted for you until a key is set.\n');
   const hasRelayKey = relayConfigured(existing);
-  const simpleloginKey = await ask(hasRelayKey ? 'SimpleLogin API key (Enter keeps the current one)' : 'SimpleLogin API key');
+  const simpleloginKey = await askSecret(hasRelayKey ? 'SimpleLogin API key (Enter keeps the current one)' : 'SimpleLogin API key');
 
   // ── Email requests (phase 2) ─────────────────────────────────────────────
   console.log('\n── Email Requests (dedicated mailbox, optional) ───────────');

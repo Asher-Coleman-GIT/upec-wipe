@@ -311,3 +311,23 @@ test('preview: relay.required with no usable relay still blocks', async () => {
     RelayUnavailableError
   );
 });
+
+// Review 2026-10-15 (low): the alias cache in state.json was keyed by the real
+// email, unencrypted even after --encrypt-config.
+test('the alias cache key holds no email or name', async () => {
+  const state = makeState();
+  await getSubmissionEmail({ config: RELAY_CFG, person: PERSON_A, state, createImpl: async () => 'a1@sl.example' });
+  const keys = Object.keys(state.relayAliases);
+  assert.equal(keys.length, 1);
+  for (const pii of ['jane', 'doe', '@']) assert.ok(!keys[0].toLowerCase().includes(pii), `key leaks ${pii}: ${keys[0]}`);
+});
+
+test('an alias cached under the old email key is reused and moved to the new key', async () => {
+  const state = { relayAliases: { 'jane.doe@example.com': 'old@sl.example' } };
+  let created = 0;
+  const out = await getSubmissionEmail({ config: RELAY_CFG, person: PERSON_A, state, createImpl: async () => { created++; return 'new@sl.example'; } });
+  assert.equal(out, 'old@sl.example');
+  assert.equal(created, 0, 'no new alias is made');
+  assert.deepEqual(Object.values(state.relayAliases), ['old@sl.example']);
+  assert.equal(state.relayAliases['jane.doe@example.com'], undefined);
+});

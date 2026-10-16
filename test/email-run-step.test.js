@@ -125,3 +125,16 @@ test('an address that failed twice goes to manual', async () => {
   assert.equal(out.sent.length, 0);
   assert.match(out.lines.join('\n'), /manual Alpha/);
 });
+
+// Review 2026-10-15 (low): config could lower the 45 s pace and lift the
+// 100-per-run cap that CLAUDE.md states as guarantees.
+test('the pace never drops below 45 s and the cap never rises above 100', async () => {
+  const many = Array.from({ length: 150 }, (_, i) => ({ ...targets[0], name: `B${i}`, domain: `b${i}.example`, to: `p@b${i}.example` }));
+  const asked = [];
+  const { d } = deps({
+    config: { email: { ...config.email, paceSeconds: 1, maxPerRun: 5000 } },
+    targets: many, ask: async (q) => { asked.push(q); return 'no'; },
+  });
+  await runEmailStep(d);
+  assert.match(asked[0], /send 100 email\(s\), one every 45s/);
+});

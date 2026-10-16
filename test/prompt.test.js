@@ -66,3 +66,25 @@ test('ask echoes the answer and falls back to the default', async () => {
   h.p.close();
   assert.match(h.shown(), /City \[Exampleton\]: /);
 });
+
+// Review 2026-10-15 (low): readline kept the secret in its history, so Up at
+// the next question echoed the app password and offered it as the answer.
+test('Up arrow at the next question does not bring back a secret', async () => {
+  const h = harness();
+  const secret = h.p.askSecret('App password');
+  type(h.input, 'dummysecret123\n');
+  await secret;
+  const next = h.p.ask('Browser profile directory', '/default/dir');
+  h.input.write('\u001b[A');
+  type(h.input, '\n');
+  assert.equal(await next, '/default/dir');
+  assert.doesNotMatch(h.shown(), /dummysecret/);
+  h.p.close();
+});
+
+test('setup asks for API keys without echo and never shows the current key', () => {
+  const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'setup.js'), 'utf8');
+  assert.doesNotMatch(src, /ask\('CapSolver API key', \(existing\.capsolver/);
+  assert.match(src, /askSecret\([^)]*CapSolver API key/);
+  assert.match(src, /askSecret\([^)]*SimpleLogin API key/);
+});

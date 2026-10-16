@@ -15,6 +15,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 
 const secrets = require('../lib/secrets');
+const { encryptConfig, decryptConfig, isEncryptedEnvelope } = secrets;
 
 const PLAIN = {
   person: { firstName: 'Ada', lastName: 'Lovelace', email: 'ada@example.com' },
@@ -40,7 +41,7 @@ test('round-trip: decryptConfig(encryptConfig(x)) deep-equals x', () => {
 
 test('envelope has the documented v/salt/iv/tag/ciphertext fields as hex strings', () => {
   const env = secrets.encryptConfig(PLAIN, PASS);
-  assert.equal(env.v, 1);
+  assert.equal(env.v, 2);
   for (const k of ['salt', 'iv', 'tag', 'ciphertext']) {
     assert.equal(typeof env[k], 'string', `${k} should be a string`);
     assert.match(env[k], /^[0-9a-f]+$/, `${k} should be lowercase hex`);
@@ -110,4 +111,37 @@ test('decryptConfig rejects a value that is not an envelope', () => {
 test('decryptConfig rejects an unsupported envelope version', () => {
   const env = secrets.encryptConfig(PLAIN, PASS);
   assert.throws(() => secrets.decryptConfig({ ...env, v: 99 }, PASS), /version/i);
+});
+
+// Review 2026-10-15 (low): N=2^14 made offline guessing of a stolen
+// config.json.enc cheap, and a shortened GCM tag was accepted.
+test('new envelopes are v2 with the scrypt cost stored and at least 2^17', () => {
+  const env = encryptConfig({ a: 1 }, 'pw');
+  assert.equal(env.v, 2);
+  assert.ok(env.kdfParams && env.kdfParams.N >= 131072, JSON.stringify(env.kdfParams));
+  assert.deepEqual(decryptConfig(env, 'pw'), { a: 1 });
+  assert.equal(isEncryptedEnvelope(env), true);
+});
+
+test('a v1 envelope made with the old cost still decrypts', () => {
+  const crypto = require('node:crypto');
+  const salt = crypto.randomBytes(16);
+  const iv = crypto.randomBytes(12);
+  const key = crypto.scryptSync('pw', salt, 32, { N: 16384, r: 8, p: 1 });
+  const c = crypto.createCipheriv('aes-256-gcm', key, iv);
+  const ct = Buffer.concat([c.update(JSON.stringify({ old: true })), c.final()]);
+  const env = { v: 1, alg: 'aes-256-gcm', kdf: 'scrypt', salt: salt.toString('hex'), iv: iv.toString('hex'), tag: c.getAuthTag().toString('hex'), ciphertext: ct.toString('hex') };
+  assert.equal(isEncryptedEnvelope(env), true);
+  assert.deepEqual(decryptConfig(env, 'pw'), { old: true });
+});
+
+test('a shortened tag or a wrong-length IV is refused', () => {
+  const env = encryptConfig({ a: 1 }, 'pw');
+  assert.throws(() => decryptConfig({ ...env, tag: env.tag.slice(0, 8) }, 'pw'), /tag|envelope/);
+  assert.throws(() => decryptConfig({ ...env, iv: env.iv + '00' }, 'pw'), /iv|envelope/i);
+});
+
+test('a v2 envelope with an out-of-range cost is refused before any work', () => {
+  const env = encryptConfig({ a: 1 }, 'pw');
+  assert.throws(() => decryptConfig({ ...env, kdfParams: { N: 2 ** 30, r: 8, p: 1 } }, 'pw'), /cost|kdf/i);
 });
