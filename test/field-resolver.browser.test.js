@@ -263,4 +263,23 @@ describe('field-resolver browser integration', { skip: !ENABLED }, () => {
       await page.close();
     }
   });
+
+  // Review 2026-10-15 (low): an element id with a quote made the unescaped
+  // label[for="..."] selector throw inside the page, disabling the resolver.
+  test('an element id with a quote does not stop the resolver', async () => {
+    const html = `
+      <form>
+        <input id='odd"id' name="nickname" type="text">
+        <label for="contact-mail">Email address</label>
+        <input id="contact-mail" name="contact_mail_renamed" type="email">
+      </form>`;
+    const page = await makePage(html);
+    try {
+      const locator = await resolveField(page, 'input[name="email"]', 'jane@example.com');
+      assert.ok(locator !== null, 'resolveField returned null');
+      assert.equal(await locator.getAttribute('id'), 'contact-mail');
+    } finally {
+      await page.close();
+    }
+  });
 }); // end describe 'field-resolver browser integration'

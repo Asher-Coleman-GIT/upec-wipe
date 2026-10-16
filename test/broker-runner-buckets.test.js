@@ -25,6 +25,7 @@ let classifyReturn = { outcome: 'unknown', snippet: '' };
 
 // Controllable email-confirmation detection - default: no confirmation asked.
 let confirmReturn = { pending: false, snippet: '' };
+let fillCalls = 0;
 
 // Controllable page body for post-submit read
 let pageBody = 'Some generic page text with no confirmation';
@@ -53,7 +54,7 @@ function patchedLoad(request, parent, isMain) {
     STATUS_BUCKET: {},
   };
   if (request === './forms') return {
-    fillForm: async () => ({ filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }),
+    fillForm: async () => { fillCalls++; return { filled: [{ selector: 'input[name="first"]', value: 'Jane', kind: 'text' }], missed: [] }; },
     findListingUrl: async () => null,  // will be overridden per-test via broker.method
   };
   if (request === './captcha') return { detectAndSolveCaptcha: async () => true };
@@ -352,4 +353,22 @@ test('page excerpts lose the person\'s details and the alias before they are log
     for (const v of ['Test', 'User', 'Exampleton', '00000', alias]) assert.ok(!text.includes(v), `"${v}" left in: ${text}`);
     assert.match(text, /confirmation email/);
   }
+});
+
+// Review 2026-10-15 (low): --no-capsolver typed the member's details into a
+// CAPTCHA form, then abandoned it unsubmitted (page scripts can read fields).
+test('--no-capsolver hands a CAPTCHA broker over before its form is opened or filled', async () => {
+  clearAll();
+  fillCalls = 0;
+  configure({ dryRun: false, person: PERSON, capsolver: null, noCapsolver: true });
+  const gotos = [];
+  const ctx = makeContext();
+  const newPage = ctx.newPage;
+  ctx.newPage = async () => { const p = await newPage(); const g = p.goto; p.goto = async (u, o) => { gotos.push(u); return g(u, o); }; return p; };
+
+  await processBrokerWithPerson(ctx, { ...DIRECT_BROKER, captchaLikely: true }, PERSON);
+
+  assert.equal(logged.find(l => l.name === DIRECT_BROKER.name).status, 'manual');
+  assert.equal(fillCalls, 0, 'nothing is typed');
+  assert.deepEqual(gotos, [], 'the opt-out page is not opened');
 });
