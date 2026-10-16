@@ -18,7 +18,7 @@ const Module = require('module');
 const originalLoad = Module._load.bind(Module);
 
 const logged = [];
-const recorded = { success: [], failure: [] };
+const recorded = { success: [], failure: [], attempt: [] };
 
 // Controllable classify return - default is 'unknown' (neither success nor failure)
 let classifyReturn = { outcome: 'unknown', snippet: '' };
@@ -36,6 +36,7 @@ const configMock = {
   recordPendingConfirmation: () => {},
   recordManual: () => {},
   recordFailure: (name, kind) => recorded.failure.push({ name, kind }),
+  recordAttempt: (name, kind) => recorded.attempt.push({ name, kind }),
   loadState: () => ({ optOuts: {} }),
   saveCheckpoint: () => {},
   stateKey: (brokerName) => brokerName,
@@ -72,6 +73,7 @@ function clearAll() {
   logged.length = 0;
   recorded.success.length = 0;
   recorded.failure.length = 0;
+  recorded.attempt.length = 0;
 }
 
 const PERSON = { firstName: 'Test', lastName: 'User', email: 'test@example.com', country: 'US' };
@@ -149,6 +151,16 @@ test('notFound: recordSuccess is NOT called', async () => {
   );
 });
 
+// `upec-wipe list` must not call a searched broker "never run".
+test('notFound: the attempt is recorded as not_found', async () => {
+  clearAll();
+  configure({ dryRun: false, person: PERSON, capsolver: null });
+
+  await processBrokerWithPerson(makeContext(), SEARCH_BROKER, PERSON);
+
+  assert.deepEqual(recorded.attempt, [{ name: SEARCH_BROKER.name, kind: 'not_found' }]);
+});
+
 // ── unknown post-submit tests ─────────────────────────────────────────────────
 
 test('unknown post-submit: logResult called with status unverified', async () => {
@@ -175,6 +187,16 @@ test('unknown post-submit: recordSuccess is NOT called', async () => {
     0,
     'recordSuccess must NOT be called for an unknown/unverified outcome'
   );
+});
+
+test('unknown post-submit: the attempt is recorded as unverified', async () => {
+  clearAll();
+  classifyReturn = { outcome: 'unknown', snippet: '' };
+  configure({ dryRun: false, person: PERSON, capsolver: null });
+
+  await processBrokerWithPerson(makeContext(), DIRECT_BROKER, PERSON);
+
+  assert.deepEqual(recorded.attempt, [{ name: DIRECT_BROKER.name, kind: 'unverified' }]);
 });
 
 // ── success post-submit tests ─────────────────────────────────────────────────

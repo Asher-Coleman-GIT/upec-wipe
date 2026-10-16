@@ -152,3 +152,19 @@ test('recordSuccess removes pendingConfirm and pendingConfirmation keys from ent
   cfg.setDryRun(false);
   fs.rmSync(dir, { recursive: true, force: true });
 });
+
+test('recordAttempt stamps lastAttempt and history, never lastSuccess', () => {
+  const { stateFile } = makeTmpState();
+  cfg.setTestStatePath(stateFile);
+  cfg.setDryRun(false);
+  const state = cfg.loadState();
+  delete state.optOuts['BrokerA'];
+
+  cfg.recordAttempt('BrokerA', 'not_found');
+
+  const e = cfg.loadState().optOuts['BrokerA'];
+  assert.deepEqual(e.history, ['not_found']);
+  assert.ok(e.lastAttempt, 'lastAttempt is set');
+  assert.equal(e.lastSuccess, undefined);
+  assert.equal(cfg.shouldSkip('BrokerA'), null, 'the next run still searches');
+});

@@ -28,6 +28,13 @@ test('each state entry maps to what the member is waiting on', () => {
   assert.deepEqual(brokerStatus({ lastAttempt: '2026-10-09T10:00:00Z' }), { status: 'attempted', date: '2026-10-09' });
 });
 
+test('a search with no listing and a form with no confirmation are not "never run"', () => {
+  assert.deepEqual(brokerStatus({ history: ['not_found'], lastAttempt: '2026-10-14T10:00:00Z' }),
+    { status: 'not listed', date: '2026-10-14' });
+  assert.deepEqual(brokerStatus({ history: ['error', 'unverified'], lastAttempt: '2026-10-15T10:00:00Z' }),
+    { status: 'unverified', date: '2026-10-15' });
+});
+
 test('a pending confirmation or a manual hand-off wins over an older success', () => {
   const old = '2026-01-01T00:00:00Z';
   assert.equal(brokerStatus({ lastSuccess: old, pendingConfirm: { since: '2026-10-12T00:00:00Z' } }).status, 'awaiting confirm');
