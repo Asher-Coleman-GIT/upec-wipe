@@ -48,8 +48,9 @@ if (unknown) {
 }
 
 const flags = parseWatcherFlags(process.argv);
-if (flags.EMAIL && flags.VERIFY) {
-  console.error('--email cannot be combined with --verify.');
+const badCombo = require('./lib/cli-flags').checkFlagCombos(flags);
+if (badCombo) {
+  console.error(badCombo);
   process.exit(1);
 }
 // --assist: pause on bot-protection checks so the member can clear them in the

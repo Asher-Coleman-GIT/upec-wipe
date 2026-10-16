@@ -102,3 +102,20 @@ test('an empty or blank value is refused (an unset shell variable ran every brok
   assert.match(checkUnknownFlags(argv('--skip', '  ')), /--skip needs a value/);
   assert.match(checkUnknownFlags(argv('--email', '--only', ' , ')), /--only needs a value/);
 });
+
+// Review 2026-10-15 (low): verify and web-check are not modes, so combined
+// with other flags they fell through: `web-check --email` sent real email,
+// `preview --verify` searched with the real name, `verify --only X` ignored X.
+test('verify and web-check refuse flags they do not support', () => {
+  const { checkFlagCombos, parseWatcherFlags } = require('../lib/cli-flags');
+  const combo = (...a) => checkFlagCombos(parseWatcherFlags(argv(...a)));
+  for (const mode of ['--verify', '--web-check']) {
+    for (const extra of [['--email'], ['--preview'], ['--dry-run'], ['--retry-failed'], ['--resume'], ['--only', 'Spokeo'], ['--skip', 'Spokeo']]) {
+      assert.match(combo(mode, ...extra) || '', /cannot be combined/, `${mode} ${extra.join(' ')}`);
+    }
+    assert.equal(combo(mode), null);
+    assert.equal(combo(mode, '--assist'), null);
+  }
+  assert.match(combo('--verify', '--web-check'), /cannot be combined/);
+  assert.equal(combo('--email', '--only', 'Pipl'), null);
+});

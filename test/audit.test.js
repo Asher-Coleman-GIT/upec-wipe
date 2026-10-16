@@ -145,3 +145,12 @@ describe('writeAuditFile', () => {
     assert.match(path.basename(filePath), /^audit-\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}\.md$/);
   });
 });
+
+// Review 2026-10-15 (low): with several people the audit named only the first
+// over results that include everyone's submissions.
+describe('renderAuditMarkdown with several people', () => {
+  it('names every person the run was for', () => {
+    const md = renderAuditMarkdown({ persons: [{ firstName: 'Jane', lastName: 'Doe' }, { firstName: 'John', lastName: 'Doe' }], timestamp, results });
+    assert.match(md, /\*\*Requested by:\*\* Jane Doe, John Doe/);
+  });
+});
