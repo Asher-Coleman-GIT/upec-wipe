@@ -22,3 +22,11 @@ test('an ambiguous query refuses and lists the matches', () => {
 test('no match refuses', () => {
   assert.match(findEmailTarget(names, 'nobody').error, /No email broker/);
 });
+
+// A broker's letter signs with its legal name; runs use the short one.
+test('a legal name with its suffix matches the short name', () => {
+  const short = ['Adstra', 'Clearview AI', 'OWMN', 'Wiland'];
+  assert.deepEqual(findEmailTarget(short, 'Adstra LLC'), { name: 'Adstra' });
+  assert.deepEqual(findEmailTarget(short, 'Clearview AI, Inc.'), { name: 'Clearview AI' });
+  assert.deepEqual(findEmailTarget(short, 'OWMN, LTD.'), { name: 'OWMN' });
+});

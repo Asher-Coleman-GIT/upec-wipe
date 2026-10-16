@@ -108,3 +108,9 @@ test('recordManual takes an explicit since for a new entry', () => {
     assert.equal(state.optOuts[N].manual.since, '2026-10-14T21:16:42.000Z');
   });
 });
+
+test('findBroker: a legal name with its suffix matches the short catalog name', () => {
+  const names = ['Adstra', 'DT Client Services', 'PeopleFinders'];
+  assert.deepEqual(findBroker(names, 'Adstra LLC'), { name: 'Adstra' });
+  assert.deepEqual(findBroker(names, 'DT Client Services, LLC'), { name: 'DT Client Services' });
+});
