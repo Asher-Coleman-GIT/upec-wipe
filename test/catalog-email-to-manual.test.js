@@ -50,3 +50,24 @@ test('reply and read-email still know a broker that was emailed before it moved'
   assert.equal(fraiser.domain, 'fraiser.org');
   assert.equal(t.filter(x => x.name === 'Fraiser').length, 1);
 });
+
+// DataDelivers' privacy address bounced (2026-10-15); its site's own "Do Not
+// Sell" link is a hosted request portal, so members are sent there instead.
+test('DataDelivers, whose address bounced, is manual with its request portal', () => {
+  const r = records.find(x => x.domain === 'datadelivers.com');
+  assert.equal(r.review.state, 'manual');
+  assert.match(r.review.optOutUrl, /^https:\/\/dsr\.trustsuperset\.com\//);
+  assert.match(r.review.notes, /bounced/i);
+  assert.match(r.review.notes, /2026-10-15/);
+  const names = catalogEmailTargets(records, { explicitNames: new Set() }).map(t => t.name);
+  assert.equal(names.includes('DataDelivers'), false);
+});
+
+// Innovation Brands accepts email but answers with a mailbox check: it stays
+// an email target and its record says what to expect.
+test('Innovation Brands stays an email target and notes its verification link', () => {
+  const r = records.find(x => x.domain === 'proxima.ai' && x.review.state === 'email');
+  assert.match(r.review.note, /verif/i);
+  const names = catalogEmailTargets(records, { explicitNames: new Set() }).map(t => t.name);
+  assert.ok(names.includes('Innovation Brands'));
+});

@@ -71,7 +71,7 @@ Useful options: `--only <broker>`, `--skip <broker>`, `--resume`, `--retry-faile
 | --- | --- | --- |
 | **Explicit brokers** (`brokers.js`) | 31 | Spokeo, WhitePages, MyLife, PeopleConnect and others, with hand-mapped selectors. [STATUS.md](STATUS.md) has the per-broker table. |
 | **Reviewed catalog** (`data/catalog/`) | about 640 | Every site from the public broker lists, surveyed and reviewed: people-search sites as automatic forms, manual links or exclusions; dead, blocked and non-consumer sites recorded so they are not visited. |
-| **Email requests** (`run --email`) | 67 | 65 catalog business brokers whose policy gives a Utah right (62) or honors every US resident (3), plus Pipl and Spokeo's email channel. Each gets an opt-out of sale and targeted ads plus a deletion request under the Utah Consumer Privacy Act, sent from your dedicated mailbox. |
+| **Email requests** (`run --email`) | 48 | 47 catalog business brokers whose policy gives a Utah right (46) or honors every US resident (1), plus Pipl. Brokers that answered "use our form" or whose address bounced are manual links now. Each gets an opt-out of sale and targeted ads plus a deletion request under the Utah Consumer Privacy Act, sent from your dedicated mailbox. |
 
 Four are marked `verified` (run end to end on 2026-10-14): USPhonebook, SmartBackgroundChecks, SearchPeopleFree and PrivateRecords. For the rest, a read-only survey re-read the live forms, but they have not been tested end to end. `Submitted` means a broker accepted the form, not that you are deleted. Broker sites change their pages constantly and a selector that stops matching fails quietly; a form the tool cannot fill is never submitted. Details in [docs/REFERENCE.md](docs/REFERENCE.md#brokers-covered).
 

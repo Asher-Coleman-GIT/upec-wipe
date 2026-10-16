@@ -5,7 +5,9 @@
   "markup",
   "ca-registry"
  ],
- "formHosts": [],
+ "formHosts": [
+  "trustsuperset.com"
+ ],
  "group": "business",
  "survey": {
   "checkedAt": "2026-10-11T21:45:40.239Z",
@@ -34,14 +36,14 @@
   "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacy@datadelivers.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-15",
+  "optOutUrl": "https://dsr.trustsuperset.com/?orgId=275d6c62-eb0f-4f8a-80c2-b72573902714",
+  "notes": "Email request bounced (2026-10-15). Its site links \"Do Not Sell or Share\" to this request portal",
   "basis": {
    "kind": "utah",
    "quote": "Residents of Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Maryland, Minnesota, Montana, Nebraska, New Hampshire, Nevada, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, and Virginia residents have rights to: Confirm whether we process their personal information.",
    "url": "https://datadelivers.com/privacy-policy/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }
