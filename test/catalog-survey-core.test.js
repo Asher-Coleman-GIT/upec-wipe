@@ -113,3 +113,26 @@ test('mergeSurvey keeps the group of a record that is no longer unreviewed', () 
   const fresh = core.mergeSurvey({ domain: 'b.com', group: 'unknown', review: { state: 'unreviewed' } }, { domain: 'b.com', urls: [] }, { group: 'business' });
   assert.equal(fresh.group, 'business', 'an unreviewed record still takes the survey group');
 });
+
+// Review 2026-10-15: a re-survey replaced survey.contacts, so a page that timed
+// out or moved its mailto made an email record invalid (its `to` must come from
+// survey.contacts) and loadCatalog dropped the broker with only a warning.
+test('mergeSurvey keeps earlier contacts, and a failed re-survey keeps the earlier survey', () => {
+  const existing = {
+    domain: 'acme.example', name: 'Acme', group: 'business', sources: ['ca-registry'], formHosts: [],
+    survey: { checkedAt: 'old', status: 200, optOutUrl: 'https://acme.example/privacy', controls: ['#x'], fingerprint: 'abc', contacts: ['privacy@acme.example'] },
+    review: { state: 'email', to: 'privacy@acme.example' },
+  };
+  const cand = { domain: 'acme.example', name: 'Acme', sources: ['ca-registry'], contacts: [] };
+
+  const ok = core.mergeSurvey(existing, cand, { group: 'business', checkedAt: 'new', status: 200, contacts: ['help@acme.example'] });
+  assert.deepEqual(ok.survey.contacts.sort(), ['help@acme.example', 'privacy@acme.example']);
+
+  const failed = core.mergeSurvey(existing, cand, { group: 'unknown', checkedAt: 'new', error: 'Timeout 20000ms', contacts: [] });
+  assert.equal(failed.survey.fingerprint, 'abc', 'the earlier survey stays');
+  assert.deepEqual(failed.survey.controls, ['#x']);
+  assert.equal(failed.survey.checkedAt, 'new');
+  assert.match(failed.survey.error, /Timeout/);
+  assert.deepEqual(failed.survey.contacts, ['privacy@acme.example']);
+  assert.equal(failed.group, 'business');
+});

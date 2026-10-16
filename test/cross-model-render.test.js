@@ -9,6 +9,8 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const { parseFindings, countBySeverity, renderReport, cell } = require('../scripts/cross-model-render');
 
@@ -121,4 +123,30 @@ test('a finding containing a pipe does not corrupt the table', () => {
   const rows = md.split('\n').filter(l => l.startsWith('| 1 |'));
   assert.equal(rows.length, 1);
   assert.equal(rows[0].split(' | ').length, 7, 'the row must still have exactly 7 columns');
+});
+
+// Review 2026-10-15: a truncated or non-schema findings file rendered as "None.
+// The reviewer reported no findings" and the gate exited 0 (fail open).
+test('parseFindings marks a payload without a findings array as not usable', () => {
+  for (const bad of ['not json at all', '', 'null', '[]', '{"findings":"nope"}', '{"summary":"one P1","findings":[{"severity":"P1"']) {
+    assert.equal(parseFindings(bad).valid, false, JSON.stringify(bad));
+  }
+  assert.equal(parseFindings(JSON.stringify({ summary: 's', findings: [] })).valid, true);
+});
+
+test('the renderer exits 6 and writes no report for an unusable findings file', () => {
+  const os = require('node:os');
+  const { spawnSync } = require('node:child_process');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'xmr-'));
+  try {
+    const out = path.join(dir, 'out.json');
+    const report = path.join(dir, 'report.md');
+    fs.writeFileSync(out, '{"summary":"one P1","findings":[{"severity":"P1"');
+    const r = spawnSync(process.execPath, [path.join(__dirname, '..', 'scripts', 'cross-model-render.js')], {
+      encoding: 'utf8', env: { ...process.env, UPEC_WIPE_OUT_JSON: out, UPEC_WIPE_REPORT: report },
+    });
+    assert.equal(r.status, 6, r.stderr);
+    assert.match(r.stderr, /could not be read/);
+    assert.equal(fs.existsSync(report), false);
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });

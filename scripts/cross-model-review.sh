@@ -329,7 +329,7 @@ COUNTS="$(
   UPEC_WIPE_HEAD="$HEAD_SHA" \
   UPEC_WIPE_TARGETS="$TARGETS" \
   node "$REPO_ROOT/scripts/cross-model-render.js"
-)"
+)" || exit $?
 
 P1="${COUNTS%% *}"
 REST="${COUNTS#* }"

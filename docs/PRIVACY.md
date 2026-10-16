@@ -1,6 +1,6 @@
 # Privacy and data flow
 
-This page lists every place this fork sends data, what it sends, and which network path it uses. It describes the code on the `upec/hardening` branch. If you change the code, this page may stop being true.
+This page lists every place this fork sends data, what it sends, and which network path it uses. It describes the code on the `upec-wipe-main` branch. If you change the code, this page may stop being true.
 
 ## Short version
 

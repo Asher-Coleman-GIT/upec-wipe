@@ -14,17 +14,22 @@
 
 const fs = require('fs');
 
-/** @param {unknown} raw @returns {{summary: string, findings: object[]}} */
+/**
+ * `valid` is false when the payload is not JSON with a findings array: the
+ * caller must then fail, never report a clean review (review 2026-10-15).
+ * @param {unknown} raw @returns {{summary: string, findings: object[], valid: boolean}}
+ */
 function parseFindings(raw) {
   let parsed;
   try {
     parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;
   } catch (_) {
-    return { summary: '', findings: [] };
+    return { summary: '', findings: [], valid: false };
   }
-  if (!parsed || typeof parsed !== 'object') return { summary: '', findings: [] };
-  const findings = Array.isArray(parsed.findings) ? parsed.findings : [];
-  return { summary: typeof parsed.summary === 'string' ? parsed.summary : '', findings };
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return { summary: '', findings: [], valid: false };
+  const valid = Array.isArray(parsed.findings);
+  const findings = valid ? parsed.findings : [];
+  return { summary: typeof parsed.summary === 'string' ? parsed.summary : '', findings, valid };
 }
 
 function countBySeverity(findings) {
@@ -117,6 +122,10 @@ if (require.main === module) {
 
   const raw = fs.readFileSync(outJson, 'utf8');
   const data = parseFindings(raw);
+  if (!data.valid) {
+    process.stderr.write('The reviewer\'s findings file could not be read (not JSON with a findings array); treating the review as failed, not clean.\n');
+    process.exit(6);
+  }
   const counts = countBySeverity(data.findings);
 
   const md = renderReport(data, {

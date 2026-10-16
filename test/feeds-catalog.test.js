@@ -48,3 +48,14 @@ test('one registry failing does not discard the other', async () => {
   assert.deepEqual(out.stats, { ca: 1, vt: 0, total: 1 });
   assert.match(logs.join('\n'), /Vermont registry skipped: Vermont registry download is a web page/);
 });
+
+// Review 2026-10-15: the California CSV has quoted cells with line breaks;
+// splitting on newlines first cut the broker's row short (no URL or contact)
+// and turned the rest into fake "brokers" (about 69 in data/feeds-brokers.json).
+test('a quoted cell with line breaks stays one row', () => {
+  const { normalizeRegistryCsv } = require('../lib/feeds');
+  const csv = 'Data Broker Name,Notes,Website URL,Email Address\r\nAcme Data LLC,"line one\r\nline two, with a comma\nline three",https://acme.example/opt-out,privacy@acme.example\r\nBeta Co,,https://beta.example/,\r\n';
+  const rows = normalizeRegistryCsv(csv, 'ca', () => {});
+  assert.deepEqual(rows.map(r => r.name), ['Acme Data LLC', 'Beta Co']);
+  assert.equal(rows[0].optOutUrl, 'https://acme.example/opt-out');
+});
