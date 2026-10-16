@@ -189,3 +189,26 @@ test('MyLife is manual: its search ignores location, so a far-down listing would
   assert.equal(b.verifySearch, undefined);
   assert.match(b.notes, /mylife\.com/);
 });
+
+// Spokeo answers a name with nobody in that city with HTTP 404 and its own
+// "did not match any results" page (2026-10-15); a broken link is "Page Not
+// Found". notFoundText tells the two apart.
+const NF_BROKER = { name: 'Spokeo', verifySearch: { ...VS_BROKER.verifySearch, notFoundText: /did not match any results/i } };
+const textPage = (status, text) => ({ ...page({ status }), evaluate: async () => text });
+
+test('a 4xx page with the broker\'s own "no results" text is "not listed"', async () => {
+  const p = textPage(404, 'Results Not Found for Jane Doe Your search - Jane Doe - did not match any results.');
+  assert.equal(await searchListing(p, NF_BROKER, PERSON, { ...noSleep, check: async () => null }), null);
+});
+
+test('a 4xx page without that text still throws (a broken link is never "clear")', async () => {
+  const p = textPage(404, 'Page Not Found - Hmm, this page does not exist.');
+  await assert.rejects(searchListing(p, NF_BROKER, PERSON, { ...noSleep, check: async () => null }), /HTTP 404/);
+});
+
+test('Spokeo\'s notFoundText matches its no-results page, not its missing-page page', () => {
+  const dummy = { firstName: 'Jane', lastName: 'Doe', city: 'Austin', state: 'TX', country: 'US', email: 'jane@example.com' };
+  const spokeo = require('../brokers').forPerson(dummy).find(b => b.name === 'Spokeo');
+  assert.ok(spokeo.verifySearch.notFoundText.test('Your search - Jane Doe - did not match any results.'));
+  assert.equal(spokeo.verifySearch.notFoundText.test('Page Not Found - Spokeo. Hmm, this page doesn\'t exist.'), false);
+});

@@ -137,6 +137,9 @@ function buildBrokers(person) {
       url: `https://www.spokeo.com/${title(F)}-${title(L)}/${title(usStateName(ST))}/${title(C)}`,
       cardSelector: '#name-search-results-list > div',
       linkPattern: /spokeo\.com\/[^/]+\/[^/]+\/[^/]+\/p\d+/i,
+      // Nobody by that name in that city: HTTP 404 with this text (2026-10-15).
+      // A broken link is a different 404 page ("Page Not Found").
+      notFoundText: /did not match any results/i,
     },
     optOutUrl: 'https://www.spokeo.com/optout',
     formFields: { 'input[name="email"]': E },

@@ -343,3 +343,23 @@ test('result lines and the summary carry no emoji', () => {
   assert.doesNotMatch(out, /\p{Extended_Pictographic}/u);
   assert.match(lines[0], /^SUBMITTED +\[B\] detail$/);
 });
+
+// A form that was sent but showed no confirmation is not an error to the
+// member (SocialCatfish, 2026-10-15); it stays in the errors bucket so
+// --retry-failed picks it up, but the summary counts it on its own line.
+test('buildSummary counts unverified sends apart from errors', () => {
+  logger.resetResults();
+  logger.logResult('sent.example', 'unverified', 'no explicit confirmation - re-check next run');
+  logger.logResult('broken.example', 'error', 'Timeout');
+
+  const s = logger.buildSummary();
+  assert.match(s, /Errors:\s+1\b/);
+  assert.match(s, /Sent, no confirmation:\s+1\b/);
+  assert.equal(logger.results.errors.length, 2, 'both stay in the bucket --retry-failed reads');
+});
+
+test('buildSummary leaves out the unverified line when there are none', () => {
+  logger.resetResults();
+  logger.logResult('broken.example', 'error', 'Timeout');
+  assert.doesNotMatch(logger.buildSummary(), /Sent, no confirmation/);
+});
