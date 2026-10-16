@@ -115,3 +115,27 @@ test('buildFeedsFile returns empty brokers when both registries are empty', asyn
     delete require.cache[require.resolve('../lib/feeds')];
   }
 });
+
+// 2026-10-16: Vermont's bizfilings site was rebuilt; the old export address
+// serves the app's front page, the public search needs a reCAPTCHA token per
+// request and the bulk download a login. With no public file, Vermont is
+// skipped without a request unless VT_REGISTRY_URL names one.
+test('without VT_REGISTRY_URL Vermont is skipped with a reason and nothing is fetched for it', async () => {
+  const fetched = [];
+  const fetchImpl = async (url) => { fetched.push(url); return { ok: true, status: 200, headers: { get: () => null }, text: async () => 'Name,Website\n' }; };
+  delete process.env.VT_REGISTRY_URL;
+  process.env.CA_REGISTRY_URL = 'https://ca.test/registry.csv';
+  delete require.cache[require.resolve('../lib/feeds')];
+  const feeds = require('../lib/feeds');
+  const logged = [];
+  try {
+    const result = await feeds.buildFeedsFile({ fetchImpl, explicitHosts: [], logFn: (m) => logged.push(m) });
+    assert.deepEqual(fetched, ['https://ca.test/registry.csv']);
+    assert.equal(result.stats.vt, 0);
+    assert.match(logged.join('\n'), /Vermont .*no public download/i);
+    assert.match(logged.join('\n'), /VT_REGISTRY_URL/);
+  } finally {
+    delete process.env.CA_REGISTRY_URL;
+    delete require.cache[require.resolve('../lib/feeds')];
+  }
+});

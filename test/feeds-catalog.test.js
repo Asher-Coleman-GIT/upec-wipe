@@ -38,7 +38,12 @@ test('without a privacy-rights column the primary website is used', () => {
 });
 
 test('one registry failing does not discard the other', async () => {
+  // A configured Vermont address that answers with a web page, not CSV.
+  process.env.VT_REGISTRY_URL = 'https://vt.test/export';
+  delete require.cache[require.resolve('../lib/feeds')];
   const { buildFeedsFile } = require('../lib/feeds');
+  delete process.env.VT_REGISTRY_URL;
+  delete require.cache[require.resolve('../lib/feeds')];
   const logs = [];
   const fetchImpl = async (url) => url.includes('cppa')
     ? { ok: true, status: 200, text: async () => 'Data broker name:,Data broker primary website:\nAcme,https://acme.example.com' }

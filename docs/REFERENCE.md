@@ -242,7 +242,7 @@ Synology and other NAS users: see [SYNOLOGY.md](SYNOLOGY.md).
 node scripts/update-catalog-sources.js
 ```
 
-Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no browser, through the Mullvad check), dedups them against `brokers.js`, and writes `data/feeds-brokers.json`, which `scripts/catalog-candidates.js` reads with the bundled lists to find sites for the catalog. Entries that are not `https` are dropped.
+Fetches the California (SB 362) and Vermont data-broker registries over HTTP (no browser, through the Mullvad check), dedups them against `brokers.js`, and writes `data/feeds-brokers.json`, which `scripts/catalog-candidates.js` reads with the bundled lists to find sites for the catalog. Entries that are not `https` are dropped. Vermont has had no public download since its business-filings site was rebuilt in 2026 (the registry needs a login, and its search a CAPTCHA), so it is skipped with a note unless `VT_REGISTRY_URL` names an https CSV export.
 
 ### The dead-site list
 
