@@ -18,10 +18,13 @@ const Module = require('module');
 const originalLoad = Module._load.bind(Module);
 
 const logged = [];
-const recorded = { success: [], failure: [], attempt: [] };
+const recorded = { success: [], failure: [], attempt: [], pending: [] };
 
 // Controllable classify return - default is 'unknown' (neither success nor failure)
 let classifyReturn = { outcome: 'unknown', snippet: '' };
+
+// Controllable email-confirmation detection - default: no confirmation asked.
+let confirmReturn = { pending: false, snippet: '' };
 
 // Controllable page body for post-submit read
 let pageBody = 'Some generic page text with no confirmation';
@@ -33,7 +36,7 @@ const configMock = {
   shouldSkip: () => null,
   isPendingConfirmation: () => false,
   recordSuccess: (name, detail) => recorded.success.push({ name, detail }),
-  recordPendingConfirmation: () => {},
+  recordPendingConfirmation: (name, snippet) => recorded.pending.push({ name, snippet }),
   recordManual: () => {},
   recordFailure: (name, kind) => recorded.failure.push({ name, kind }),
   recordAttempt: (name, kind) => recorded.attempt.push({ name, kind }),
@@ -54,7 +57,7 @@ function patchedLoad(request, parent, isMain) {
     findListingUrl: async () => null,  // will be overridden per-test via broker.method
   };
   if (request === './captcha') return { detectAndSolveCaptcha: async () => true };
-  if (request === './confirm') return { detectConfirmationRequired: async () => ({ pending: false, snippet: '' }) };
+  if (request === './confirm') return { detectConfirmationRequired: async () => confirmReturn };
   if (request === './success') return { classifyPostSubmit: () => classifyReturn };
   if (request === './retry') return { withRetry: fn => fn() };
   if (request === './timing') return { jitterSleep: async () => {} };
@@ -74,6 +77,8 @@ function clearAll() {
   recorded.success.length = 0;
   recorded.failure.length = 0;
   recorded.attempt.length = 0;
+  recorded.pending.length = 0;
+  confirmReturn = { pending: false, snippet: '' };
 }
 
 const PERSON = { firstName: 'Test', lastName: 'User', email: 'test@example.com', country: 'US' };
@@ -291,4 +296,60 @@ test('B13: HTTP 200 does NOT short-circuit (normal flow continues)', async () =>
   assert.ok(entry, 'a result should be logged');
   assert.notEqual(entry.detail, undefined);
   assert.ok(!/HTTP 404|HTTP 5/.test(entry.detail || ''), 'a 200 page must not be treated as a dead HTTP status');
+});
+
+// Review 2026-10-15: "Invalid email. Please check your email address" read as
+// "check your email" (pending) and skipped the broker for 14 days.
+test('failure wording wins over a confirmation phrase on the same page', async () => {
+  clearAll();
+  confirmReturn = { pending: true, snippet: 'Please check your email address and try again.' };
+  classifyReturn = { outcome: 'failure', snippet: 'Invalid email.' };
+  configure({ dryRun: false, person: PERSON, capsolver: null });
+
+  await processBrokerWithPerson(makeContext(), DIRECT_BROKER, PERSON);
+
+  assert.equal(logged.find(l => l.name === DIRECT_BROKER.name).status, 'error');
+  assert.deepEqual(recorded.failure, [{ name: DIRECT_BROKER.name, kind: 'error' }]);
+});
+
+// Review 2026-10-15: with no visible submit button nothing was clicked, but the
+// form page itself was classified, and its instructions could read as success.
+test('no visible submit button hands the broker over by hand and classifies nothing', async () => {
+  clearAll();
+  classifyReturn = { outcome: 'success', snippet: 'Your request has been received.' };
+  configure({ dryRun: false, person: PERSON, capsolver: null });
+  const ctx = makeContext();
+  const newPage = ctx.newPage;
+  ctx.newPage = async () => {
+    const p = await newPage();
+    const base = p.locator;
+    p.locator = (sel) => (sel.includes('submit') ? { first: () => ({ count: async () => 0, isVisible: async () => false, click: async () => { throw new Error('must not click'); } }) } : base(sel));
+    return p;
+  };
+
+  await processBrokerWithPerson(ctx, DIRECT_BROKER, PERSON);
+
+  const entry = logged.find(l => l.name === DIRECT_BROKER.name);
+  assert.equal(entry.status, 'manual');
+  assert.match(entry.detail, /submit button was not found/);
+  assert.equal(recorded.success.length, 0);
+});
+
+// Review 2026-10-15: confirmation pages echo what was submitted; the excerpt
+// went unredacted into logs/run-*.json, the audit file and state.json.
+test('page excerpts lose the person\'s details and the alias before they are logged or saved', async () => {
+  clearAll();
+  const alias = 'relay.abc@alias.example';
+  confirmReturn = { pending: true, snippet: `Opt-out for Test User of Exampleton, TX 00000: we sent a confirmation email to ${alias}.` };
+  const person = { ...PERSON, city: 'Exampleton', zip: '00000' };
+  configure({ dryRun: false, person, capsolver: null, submissionEmail: alias });
+
+  await processBrokerWithPerson(makeContext(), DIRECT_BROKER, person);
+
+  const detail = logged.find(l => l.name === DIRECT_BROKER.name).detail;
+  const saved = recorded.pending[0].snippet;
+  for (const text of [detail, saved]) {
+    for (const v of ['Test', 'User', 'Exampleton', '00000', alias]) assert.ok(!text.includes(v), `"${v}" left in: ${text}`);
+    assert.match(text, /confirmation email/);
+  }
 });

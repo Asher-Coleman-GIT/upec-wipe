@@ -55,3 +55,11 @@ test('classifyPostSubmit: unknown when neither phrase present', () => {
 test('classifyPostSubmit: handles null gracefully', () => {
   assert.equal(classifyPostSubmit(null).outcome, 'unknown');
 });
+
+// Review 2026-10-15: success wording was checked first, so instructions such as
+// "once your request is received ..." beside an inline error read as success
+// and started the 90-day cooldown on a failed submission.
+test('failure wording wins over success wording on the same page', () => {
+  const r = classifyPostSubmit('Submit a removal request. Once your request is received we process it within 72 hours. Please enter a valid email.');
+  assert.equal(r.outcome, 'failure');
+});

@@ -96,3 +96,15 @@ test('a rehearsal ignores the member\'s re-check window: it is about the forms, 
   await createBrokerRunner({ dryRun: false, person: PERSON }).processBroker(ctx, SPOKEO);
   assert.equal(logged.at(-1).status, 'skipped', 'a real run still honours it');
 });
+
+// Review 2026-10-15: with no city on file, verifySearch can never match a card,
+// so the run said "Not listed - nothing to remove" and skipped the opt-out.
+test('a verifySearch broker with no city on file is handed over by hand, not "not listed"', async () => {
+  reset();
+  const noCity = { firstName: 'Jane', lastName: 'Doe', city: '', state: 'TX', country: 'US' };
+  await createBrokerRunner({ dryRun: false, person: noCity }).processBroker(ctx, SPOKEO);
+  assert.equal(searches.length, 0, 'no search is made');
+  assert.equal(logged.at(-1).status, 'manual');
+  assert.match(logged.at(-1).detail, /city/);
+  assert.match(logged.at(-1).detail, /s\.example\/optout/);
+});

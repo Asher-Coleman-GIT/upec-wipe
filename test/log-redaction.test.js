@@ -62,3 +62,11 @@ test('L11: a navigation error carrying a name-in-URL is logged without it', asyn
   assert.ok(err, 'an error was logged');
   assert.ok(!/Jane|jane@/i.test(err.d), `detail leaked: ${err.d}`);
 });
+
+test('redactPersonValues removes every detail and the alias, whole words only', () => {
+  const { redactPersonValues } = require('../lib/redact');
+  const persons = [{ firstName: 'Jane', lastName: 'Doe', city: 'Exampleton', zip: '00000', state: 'TX', email: 'jane@example.com' }];
+  const out = redactPersonValues('Request for JANE DOE, Exampleton TX 00000 (jane@example.com) via relay.x@alias.example. Janet agrees.', persons, ['relay.x@alias.example', null]);
+  assert.equal(out, 'Request for [redacted] [redacted], [redacted] TX [redacted] ([redacted]) via [redacted]. Janet agrees.');
+  assert.equal(redactPersonValues(null, persons), '');
+});
