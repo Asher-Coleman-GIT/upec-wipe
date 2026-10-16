@@ -26,9 +26,10 @@ Follow [docs/UPEC-MANUAL.md](docs/UPEC-MANUAL.md). Read
 
 ## Docker verification
 
-Status: pending manual verification on a Docker host. No Docker was available when
-the compose hardening (`user: pwuser`, `cap_drop: [ALL]`, `no-new-privileges`,
-passphrase secret) was written, so none of it has been run.
+Status: CI (`.github/workflows/test.yml`, job `docker`) builds the image and runs
+`scripts/ci/docker-smoke.js` in it on every push, which launches Chromium and fills a
+form. That run uses plain `docker run`, so the compose hardening (`user: pwuser`,
+`cap_drop: [ALL]`, `no-new-privileges`, passphrase secret) is still not run anywhere.
 
 Commands to run on a Docker host:
 
@@ -42,7 +43,7 @@ Do not add `SYS_ADMIN` back. Record the outcome here once checked.
 
 ## Still to verify
 
-- The Docker steps above (build, `--doctor`, `--preview`, Chromium under `cap_drop: [ALL]`, the passphrase secret).
+- The compose steps above (`--doctor`, `--preview`, Chromium under `cap_drop: [ALL]`, the passphrase secret). The image build and a plain Chromium launch are covered by CI.
 
 Secret file: `secrets/upec-wipe-passphrase` must be mode 600 on the host
 (`chmod 600 secrets/upec-wipe-passphrase`), because the tool refuses a group- or
