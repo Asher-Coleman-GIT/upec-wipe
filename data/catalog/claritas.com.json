@@ -5,7 +5,9 @@
   "markup",
   "ca-registry"
  ],
- "formHosts": [],
+ "formHosts": [
+  "onetrust.com"
+ ],
  "group": "business",
  "survey": {
   "checkedAt": "2026-10-11T21:42:47.384Z",
@@ -62,14 +64,14 @@
   "fingerprint": "2217784781a3c4b3a819a0d05bb7e9141092b3bf4fe87e69dfeb44ad5d070b6c"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacyinfo@claritas.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-16",
+  "optOutUrl": "https://privacyportal.onetrust.com/webform/68582716-6ce4-4f6e-bf08-78371b5f3292/6c7dc52d-0e2b-481f-9256-0755179e3783",
+  "notes": "Refused email requests (2026-10-16). Use its OneTrust privacy request form.",
   "basis": {
    "kind": "utah",
    "quote": "Residents This section applies only to residents of Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, and Virginia.",
    "url": "https://claritas.com/privacy-legal/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }
