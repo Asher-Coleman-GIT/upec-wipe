@@ -20,7 +20,15 @@ test('honored: completed, processed, no data held, suppressed', () => {
     'The information provided has been added to our suppression lists. We have marked this request as completed.',
     'The company has ceased operating as a data broker and no longer possesses personal information.',
     'All personal data associated with your account has either not been found in our database, or has been permanently removed.',
+    'We completed a search of the records it maintains. We did not locate any direct identifiable records for this individual in our systems.',
+    'We attempted to process your request. However, we were unable to locate any personal information associated with the details submitted.',
+    'We were unable to locate any personal information associated with the details submitted. We do not have personal information that we can reasonably link to you.',
   ]) assert.equal(c(t).outcome, 'honored', t);
+});
+
+test('"could not locate" or "do not have" followed by a form to fill in is not honored', () => {
+  assert.notEqual(c('We were unable to locate any records. Please complete our privacy request form with your full street address.').outcome, 'honored');
+  assert.notEqual(c('We do not have any records. Please complete our privacy request form with your full street address.').outcome, 'honored');
 });
 
 test('refused: email not accepted, use the form or portal', () => {
