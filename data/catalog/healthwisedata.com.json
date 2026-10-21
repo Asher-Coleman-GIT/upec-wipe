@@ -187,14 +187,14 @@
   "fingerprint": "09dae6cb0a51747184310866bfc0ea30989177710e49a829dfc3a83d71b2f610"
  },
  "review": {
-  "state": "email",
-  "reviewedAt": "2026-10-12",
-  "to": "privacy@healthwisedata.com",
+  "state": "manual",
+  "reviewedAt": "2026-10-21",
+  "optOutUrl": "https://healthwisedata.com/compliance-optout/",
+  "notes": "Refused email requests (2026-10-18). Use its privacy request form; it asks for a full street address.",
   "basis": {
    "kind": "utah",
    "quote": "states provide their residents with privacy rights, including California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Oregon, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Rhode Island, Tennessee, Texas, Utah, and Virginia.",
    "url": "https://healthwisedata.com/compliance-optout/"
-  },
-  "note": "Phase 2 qualification: consumer data and a Utah or all-US basis."
+  }
  }
 }
