@@ -31,7 +31,7 @@
     "playwright": "1.60.0"
   },
   "optionalDependencies": {
-    "nodemailer": "10.0.16"
+    "nodemailer": "10.1.4"
   },
   "engines": {
     "node": ">=20.0.0"
